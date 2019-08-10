@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/taurgis/salesforce-commerce-cloud-libraries.git"
+    "url": "git+ssh://git@github.com:taurgis/salesforce-commerce-cloud-libraries.git"
   },
   "author": {
     "name": "Thomas Theunen",
