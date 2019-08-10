@@ -10,10 +10,10 @@ With this project I hope to convert some of these libraries to work with Salesfo
 
 **Converted libraries**
 
-- [Moment.js](###Moment.JS)
-- [Lodash](###Lodash)
-- [date-fns](###date-fns)
-- [fast-xml-parser](###fast-xml-parser)
+- [Moment.js](#Moment.JS)
+- [Lodash](#Lodash)
+- [date-fns](#date-fns)
+- [fast-xml-parser](#fast-xml-parser)
 
 ## Setting up the libraries in your project ##
 
