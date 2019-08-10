@@ -9,7 +9,7 @@ exports.parse = function (xmlData, options) {
     options = buildOptions(options, x2xmlnode.defaultOptions, x2xmlnode.props);
     return nodeToJson.convertToJson(xmlToNodeobj.getTraversalObj(xmlData, options), options);
 };
-exports.convertTonimn = require('../src/nimndata').convert2nimn;
+exports.convertTonimn = require('./nimndata').convert2nimn;
 exports.getTraversalObj = xmlToNodeobj.getTraversalObj;
 exports.convertToJson = nodeToJson.convertToJson;
 exports.convertToJsonString = require('./node2json_str').convertToJsonString;

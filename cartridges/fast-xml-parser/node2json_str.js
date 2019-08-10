@@ -1,22 +1,22 @@
 'use strict';
 
-const util = require('./util');
-const buildOptions = require('./util').buildOptions;
-const x2j = require('./xmlstr2xmlnode');
+var util = require('./util');
+var buildOptions = require('./util').buildOptions;
+var x2j = require('./xmlstr2xmlnode');
 
 // TODO: do it later
-const convertToJsonString = function (node, options) {
+var convertToJsonString = function (node, options) {
     options = buildOptions(options, x2j.defaultOptions, x2j.props);
 
     options.indentBy = options.indentBy || '';
     return _cToJsonStr(node, options, 0);
 };
 
-const _cToJsonStr = function (node, options) {
+var _cToJsonStr = function (node, options) {
     let jObj = '{';
 
     // traver through all the children
-    const keys = Object.keys(node.child);
+    var keys = Object.keys(node.child);
 
     for (let index = 0; index < keys.length; index++) {
         var tagname = keys[index];

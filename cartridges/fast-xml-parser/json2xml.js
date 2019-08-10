@@ -1,8 +1,8 @@
 'use strict';
 // parse Empty Node as self closing node
-const buildOptions = require('./util').buildOptions;
+var buildOptions = require('./util').buildOptions;
 
-const defaultOptions = {
+var defaultOptions = {
     attributeNamePrefix: '@_',
     attrNodeName: false,
     textNodeName: '#text',
@@ -20,7 +20,7 @@ const defaultOptions = {
     }
 };
 
-const props = [
+var props = [
     'attributeNamePrefix',
     'attrNodeName',
     'textNodeName',
@@ -85,17 +85,17 @@ Parser.prototype.parse = function (jObj) {
 Parser.prototype.j2x = function (jObj, level) {
     let attrStr = '';
     let val = '';
-    const keys = Object.keys(jObj);
-    const len = keys.length;
+    var keys = Object.keys(jObj);
+    var len = keys.length;
     for (let i = 0; i < len; i++) {
-        const key = keys[i];
+        var key = keys[i];
         if (typeof jObj[key] === 'undefined') {
             // supress undefined node
         } else if (jObj[key] === null) {
             val += this.indentate(level) + '<' + key + '/' + this.tagEndChar;
         } else if (typeof jObj[key] !== 'object') {
             // premitive type
-            const attr = this.isAttribute(key);
+            var attr = this.isAttribute(key);
             if (attr) {
                 attrStr += ' ' + attr + '="' + this.options.attrValueProcessor('' + jObj[key]) + '"';
             } else if (this.isCDATA(key)) {
@@ -127,15 +127,15 @@ Parser.prototype.j2x = function (jObj, level) {
                 }
             } else {
                 // nested nodes
-                const arrLen = jObj[key].length;
+                var arrLen = jObj[key].length;
                 for (let j = 0; j < arrLen; j++) {
-                    const item = jObj[key][j];
+                    var item = jObj[key][j];
                     if (typeof item === 'undefined') {
                         // supress undefined node
                     } else if (item === null) {
                         val += this.indentate(level) + '<' + key + '/' + this.tagEndChar;
                     } else if (typeof item === 'object') {
-                        const result = this.j2x(item, level + 1);
+                        var result = this.j2x(item, level + 1);
                         val += this.buildObjNode(result.val, key, result.attrStr, level);
                     } else {
                         val += this.buildTextNode(item, key, '', level);
@@ -145,14 +145,14 @@ Parser.prototype.j2x = function (jObj, level) {
         } else {
             // nested node
             if (this.options.attrNodeName && key === this.options.attrNodeName) {
-                const Ks = Object.keys(jObj[key]);
-                const L = Ks.length;
+                var Ks = Object.keys(jObj[key]);
+                var L = Ks.length;
                 for (let j = 0; j < L; j++) {
                     attrStr += ' ' + Ks[j] + '="' + this.options.attrValueProcessor('' + jObj[key][Ks[j]]) + '"';
                 }
             } else {
-                const result = this.j2x(jObj[key], level + 1);
-                val += this.buildObjNode(result.val, key, result.attrStr, level);
+                var resultNested = this.j2x(jObj[key], level + 1);
+                val += this.buildObjNode(resultNested.val, key, resultNested.attrStr, level);
             }
         }
     }

@@ -1,9 +1,9 @@
 'use strict';
 
-const util = require('./util');
+var util = require('./util');
 
-const convertToJson = function (node, options) {
-    const jObj = {};
+var convertToJson = function (node, options) {
+    var jObj = {};
 
     // when no child node or attr is present
     if ((!node.child || util.isEmptyObject(node.child)) && (!node.attrsMap || util.isEmptyObject(node.attrsMap))) {
@@ -19,7 +19,7 @@ const convertToJson = function (node, options) {
 
     util.merge(jObj, node.attrsMap);
 
-    const keys = Object.keys(node.child);
+    var keys = Object.keys(node.child);
     for (let index = 0; index < keys.length; index++) {
         var tagname = keys[index];
         if (node.child[tagname] && node.child[tagname].length > 1) {

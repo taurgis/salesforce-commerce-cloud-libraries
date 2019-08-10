@@ -11,6 +11,10 @@
         "no-restricted-syntax": "off",
         "no-underscore-dangle": "off",
         "camelcase": "off",
-        "valid-jsdoc": "off"
+        "valid-jsdoc": "off",
+        "no-continue": "off",
+        "no-prototype-builtins": "off",
+        "no-nested-ternary": "off",
+        "consistent-return": "off"
     }
 }

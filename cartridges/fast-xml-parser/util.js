@@ -1,11 +1,11 @@
 'use strict';
 
-const getAllMatches = function (string, regex) {
-    const matches = [];
+var getAllMatches = function (string, regex) {
+    var matches = [];
     let match = regex.exec(string);
     while (match) {
-        const allmatches = [];
-        const len = match.length;
+        var allmatches = [];
+        var len = match.length;
         for (let index = 0; index < len; index++) {
             allmatches.push(match[index]);
         }
@@ -15,12 +15,12 @@ const getAllMatches = function (string, regex) {
     return matches;
 };
 
-const doesMatch = function (string, regex) {
-    const match = regex.exec(string);
+var doesMatch = function (string, regex) {
+    var match = regex.exec(string);
     return !(match === null || typeof match === 'undefined');
 };
 
-const doesNotMatch = function (string, regex) {
+var doesNotMatch = function (string, regex) {
     return !doesMatch(string, regex);
 };
 
@@ -39,8 +39,8 @@ exports.isEmptyObject = function (obj) {
  */
 exports.merge = function (target, a) {
     if (a) {
-        const keys = Object.keys(a); // will return an array of own properties
-        const len = keys.length; // don't make it inline
+        var keys = Object.keys(a); // will return an array of own properties
+        var len = keys.length; // don't make it inline
         for (let i = 0; i < len; i++) {
             target[keys[i]] = a[keys[i]];
         }
@@ -57,8 +57,8 @@ exports.getValue = function (v) {
     return '';
 };
 
-// const fakeCall = function(a) {return a;};
-// const fakeCallNoReturn = function() {};
+// var fakeCall = function(a) {return a;};
+// var fakeCallNoReturn = function() {};
 
 exports.buildOptions = function (options, defaultOptions, props) {
     var newOptions = {};
