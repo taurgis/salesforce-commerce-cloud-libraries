@@ -1,0 +1,20 @@
+{
+    "env": {
+        "commonjs": true
+    },
+    "rules": {
+        "no-lonely-if": "off",
+        "require-jsdoc": "off",
+        "no-use-before-define": "off",
+        "guard-for-in": "off",
+        "no-param-reassign": "off",
+        "no-restricted-syntax": "off",
+        "no-underscore-dangle": "off",
+        "camelcase": "off",
+        "valid-jsdoc": "off",
+        "no-continue": "off",
+        "no-prototype-builtins": "off",
+        "no-nested-ternary": "off",
+        "consistent-return": "off"
+    }
+}
