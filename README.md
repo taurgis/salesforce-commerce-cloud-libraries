@@ -10,10 +10,10 @@ With this project I hope to convert some of these libraries to work with Salesfo
 
 **Converted libraries**
 
-- [Moment.js](#momentjs)
-- [Lodash](#lodash)
-- [date-fns](#date-fns)
-- [fast-xml-parser](#fast-xml-parser)
+- Moment.js
+- Lodash
+- date-fns
+- fast-xml-parser
 
 ## Setting up the libraries in your project ##
 
@@ -34,105 +34,53 @@ With this project I hope to convert some of these libraries to work with Salesfo
 ## Converted libraries ##
 First of all, I want to thank the creators of the libraries for all the work they have done. All I have done is rewrite the code to work with Salesforce Commerce Cloud B2C, in some cases new functions will be added to the repository that is not in the original. So the documentation will start to differentiate after some time.
 
-> I will not always be monitoring updates that happen to the original repositories, so pull requests are always happily accepted to keep this repository up to date with new features or new libraries!
+> *I will not always be monitoring updates that happen to the original repositories, so pull requests are always happily accepted to keep this repository up to date with new features or new libraries!*
+>
+> **!!!** *Please note that not all scenario's have been tested and some functions may have not been converted fully. If you find any bugs, please report them with an example so we can see if it is possible to resolve.* **!!!**
 
-### Moment.JS ###
-A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+_____
 
-#### Original repository ####
- https://github.com/moment/moment/
+| Library | Repository | Version | Notes |
+|-|-|-| -|
+| Moment.js | https://github.com/moment/moment/ |  2.10.0 |  A lightweight JavaScript date library for parsing, validating, manipulating, and formatting dates.
+| lodash | https://github.com/lodash/lodash | 5.0.0 | A modern JavaScript utility library delivering modularity, performance, & extras.
+| date-fns | https://github.com/date-fns/date-fns | v2.0.0-beta.4 | date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
+| fast-xml-parser | https://github.com/NaturalIntelligence/fast-xml-parser | 3.12.16 | Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
 
-#### Version converted ####
-2.10.0
 
-#### Conversion notes ####
-
-The entire library is converted into one file and no separate files are available for functions like in Lodash or date-fns.
-
-#### Example code ####
+### Example code ###
 
 ``` javascript
-    var moment = require('moment/moment');
+var moment = require('moment/moment');
 
-    moment('2010-10-18').isAfter('2010-10-19')
+moment('2010-10-18').isAfter('2010-10-19')
 ```
 
 ___
 
-### Lodash ###
-A modern JavaScript utility library delivering modularity, performance, & extras.
-
-#### Original repository ####
-https://github.com/lodash/lodash
-
-#### Version converted ####
-5.0.0
-
-#### Conversion notes ####
-
-Every function available in the library has it's own *require*. This makes it very performant and easy to use a simple function without having to *require* the entire library.
-
-This library is not 100% converted as some functions behave differently and others are simply not possible within the Salesforce Commerce Cloud B2C environment (e.g. setTimout is not supported).
-
-#### Example code ####
 
 ``` javascript
-    var camelCase = require('lodash/camelCase');
-    var capitalize =  require('lodash/capitalize');
+var camelCase = require('lodash/camelCase');
+var capitalize =  require('lodash/capitalize');
 
-    camelCase('__FOO_BAR__TEST');
-    capitalize('fRED');
+camelCase('__FOO_BAR__TEST');
+capitalize('fRED');
 ```
 ___
 
-### date-fns ###
-date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
-
-#### Original repository ####
-https://github.com/date-fns/date-fns
-
-#### Support the library ####
-https://opencollective.com/date-fns
-
-#### Version converted ####
-v2.0.0-beta.4
-
-#### Conversion notes ####
-
-Every function available in the library has it's own *require*. This makes it very performant and easy to use a simple function without having to *require* the entire library.
-
-This library was converted from the latest BETA release, so it may contain bugs. Feel free to make pull requests to keep this library up to date!
-
-#### Example code ####
-
 ``` javascript
-    var addDays = require('date-fns/addDays');
-    var startOfYear = require('date-fns/startOfYear');
+var addDays = require('date-fns/addDays');
+var startOfYear = require('date-fns/startOfYear');
 
-    addDays(new Date(), 5);
-    startOfYear(new Date());
+addDays(new Date(), 5);
+startOfYear(new Date());
 ```
 ___
 
-### fast-xml-parser ###
-Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
-
-#### Original repository ####
-https://github.com/NaturalIntelligence/fast-xml-parser
-
-#### Version converted ####
-3.12.16
-
-#### Conversion notes ####
-
-Basic tests have been performed to parse XML to a JSON object, more complex XML's could cause issues. So if you find any, please make a pull request to resolve this issue!
-
-#### Example code ####
-
 ``` javascript
-    var parser = require('fast-xml-parser/parser');
+var parser = require('fast-xml-parser/parser');
 
-    var jsonObject = parser.parse('<note><to>Tove</to></note>');
+var jsonObject = parser.parse('<note><to>Tove</to></note>');
 ```
 
 # Linting
