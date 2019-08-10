@@ -10,8 +10,8 @@ With this project I hope to convert some of these libraries to work with Salesfo
 
 **Converted libraries**
 
-- [Moment.js](#Moment.JS)
-- [Lodash](#Lodash)
+- [Moment.js](#momentjs)
+- [Lodash](#lodash)
 - [date-fns](#date-fns)
 - [fast-xml-parser](#fast-xml-parser)
 
@@ -57,6 +57,8 @@ The entire library is converted into one file and no separate files are availabl
     moment('2010-10-18').isAfter('2010-10-19')
 ```
 
+___
+
 ### Lodash ###
 A modern JavaScript utility library delivering modularity, performance, & extras.
 
@@ -81,6 +83,7 @@ This library is not 100% converted as some functions behave differently and othe
     camelCase('__FOO_BAR__TEST');
     capitalize('fRED');
 ```
+___
 
 ### date-fns ###
 date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
@@ -109,6 +112,7 @@ This library was converted from the latest BETA release, so it may contain bugs.
     addDays(new Date(), 5);
     startOfYear(new Date());
 ```
+___
 
 ### fast-xml-parser ###
 Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
