@@ -1,5 +1,5 @@
 {
-  "name": "lib_javascript",
+  "name": "salesforce-commerce-cloud-libraries",
   "version": "1.0.0",
   "version-sfra": "4.1.0",
   "description": "A cartridge containing popuplar libraries converted / checked to work in the Salesforce Commerce Cloud B2C.",
@@ -44,7 +44,7 @@
   "pre-commit": [
     "precommit"
   ],
-  "packageName": "lib_javascript",
+  "packageName": "salesforce-commerce-cloud-libraries",
   "cartridges": [
     "moment",
     "lodash",
