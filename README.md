@@ -103,6 +103,13 @@ This library was converted from the latest BETA release, so it may contain bugs.
     startOfYear(new Date());
 ```
 
+# Linting
+Currently the same setup is used as SFRA. You can run a linting test with:
+
+```
+ npm run lint
+```
+
 # Contributing
 I am always looking for more interesting libraries that we could use in Commerce Cloud but require testing or need migration.
 
