@@ -8,6 +8,13 @@ Certain libraries don't work because of functions that are available in, for exa
 
 With this project I hope to convert some of these libraries to work with Salesforce Commerce Cloud B2C.
 
+**Converted libraries**
+
+- [Moment.js](###Moment.JS)
+- [Lodash](###Lodash)
+- [date-fns](###date-fns)
+- [fast-xml-parser](###fast-xml-parser)
+
 ## Setting up the libraries in your project ##
 
 * Download and unpack repo content
@@ -101,6 +108,27 @@ This library was converted from the latest BETA release, so it may contain bugs.
 
     addDays(new Date(), 5);
     startOfYear(new Date());
+```
+
+### fast-xml-parser ###
+Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
+
+#### Original repository ####
+https://github.com/NaturalIntelligence/fast-xml-parser
+
+#### Version converted ####
+3.12.16
+
+#### Conversion notes ####
+
+Basic tests have been performed to parse XML to a JSON object, more complex XML's could cause issues. So if you find any, please make a pull request to resolve this issue!
+
+#### Example code ####
+
+``` javascript
+    var parser = require('fast-xml-parser/parser');
+
+    var jsonObject = parser.parse('<note><to>Tove</to></note>');
 ```
 
 # Linting
