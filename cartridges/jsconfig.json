@@ -1,0 +1,29 @@
+{
+    "compilerOptions": {
+        "noLib": true,
+        "target": "es5",
+        "baseUrl": "./",
+        "paths": {
+            "*": [
+                "./*",
+                "modules/*",
+                "../../dw-api-types/*",
+                "lodash/*"
+            ]
+        }
+    },
+    "typeAcquisition": {
+        "enable": true,
+        "include": [
+            "jquery"
+        ]
+    },
+    "include": [
+        "../../dw-api-types/**/*.d.ts",
+        "./*/cartridge/scripts/**/*.js",
+        "./*/cartridge/controllers/**/*.js",
+        "./*/cartridge/models/**/*.js",
+        "./modules/**/*.js",
+        "./lodash/**/*.js"
+    ]
+}

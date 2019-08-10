@@ -1,0 +1,12 @@
+node_modules/
+npm-debug.log
+.idea/
+dw.json
+dw.demo.json
+.DS_Store
+.vscode
+*.code-workspace
+.settings
+.project/**/*
+.classpath
+.history

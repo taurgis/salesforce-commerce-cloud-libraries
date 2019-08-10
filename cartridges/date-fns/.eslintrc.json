@@ -1,0 +1,21 @@
+{
+    "env": {
+        "commonjs": true
+    },
+    "rules": {
+        "no-mixed-operators": "off",
+        "no-unused-vars": ["error", { "argsIgnorePattern": "^_" }],
+        "require-jsdoc": "off",
+        "no-use-before-define": "off",
+        "no-underscore-dangle": "off",
+        "new-cap":"off",
+        "no-param-reassign":"off",
+        "no-restricted-syntax": "off",
+        "no-prototype-builtins": "off",
+        "default-case": "off",
+        "consistent-return": "off",
+        "no-nested-ternary": "off",
+        "no-shadow": "off",
+        "radix": "off"
+    }
+}

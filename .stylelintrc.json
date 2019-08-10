@@ -1,0 +1,21 @@
+{
+    "extends": "stylelint-config-standard",
+    "plugins": [
+        "stylelint-scss"
+    ],
+    "rules": {
+        "at-rule-no-unknown": [true, { "ignoreAtRules": ["include", "each", "mixin", "if", "else", "content", "extend"] } ],
+        "indentation": 4,
+        "scss/at-import-no-partial-leading-underscore": true,
+        "scss/at-import-partial-extension-blacklist": ["scss"],
+        "scss/dollar-variable-no-missing-interpolation": true,
+        "scss/media-feature-value-dollar-variable": "always",
+        "scss/selector-no-redundant-nesting-selector": true,
+        "at-rule-empty-line-before": [ "always", { "ignoreAtRules": ["else"], "ignore": ["blockless-after-same-name-blockless", "inside-block"] } ],
+        "block-closing-brace-newline-after": [ "always", { "ignoreAtRules": ["if", "else"] } ],
+        "color-hex-length": "long",
+        "declaration-colon-newline-after": "always-multi-line",
+        "declaration-colon-space-after": "always-single-line",
+        "property-no-unknown": [true, { "ignoreProperties": ["scrollbar-color", "scrollbar-width"] } ]
+    }
+}

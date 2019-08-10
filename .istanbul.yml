@@ -1,0 +1,16 @@
+instrumentation:
+    root: .
+    extensions:
+        - .js
+    default-excludes: true
+    excludes: [
+        "**/static/**", # Those are pre-processed client-side scripts
+        "**/js/**", # Those are client-side scripts
+        "**/controllers/**", # We can't test controllers without too much mocking
+        "**/server/EventEmitter.js", # Third-party library
+        "**/modules/*.js", # Those are just wrappers around modules
+        "bin/*", # Those are task files
+        "**/scripts/payment/processor/*", # Those are payment processor files, we don't test them
+        "webpack.config.js" # This is webpack config for javascript
+    ]
+    include-all-sources: true

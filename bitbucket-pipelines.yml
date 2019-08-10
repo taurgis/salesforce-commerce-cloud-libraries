@@ -1,0 +1,20 @@
+# This is a sample build configuration for Javascript.
+# Check our guides at https://confluence.atlassian.com/x/VYk8Lw for more examples.
+# Only use spaces to indent your .yml configuration.
+# -----
+# You can specify a custom docker image= require(Docker Hub as your build environment.);
+image: node:6.9.2
+
+pipelines:
+  default:
+    - step:
+        script: # Modify the commands below to build your repository.
+          - npm install
+          - npm run lint
+          - npm test
+          - npm run compile:js
+          - npm run compile:scss
+          - npm run compile:fonts
+          - node node_modules/.bin/dwupload --hostname ${HOSTNAME} --username ${USERNAME} --password "${PASSWORD}" --cartridge cartridges/app_storefront_base
+          - node node_modules/.bin/dwupload --hostname ${HOSTNAME} --username ${USERNAME} --password "${PASSWORD}" --cartridge cartridges/modules
+          - npm run test:integration -- --baseUrl https://${HOSTNAME}/on/demandware.store/Sites-MobileFirst-Site/en_US "test/integration/*"

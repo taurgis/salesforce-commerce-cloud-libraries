@@ -1,0 +1,53 @@
+{
+  "name": "lib_javascript",
+  "version": "1.0.0",
+  "version-sfra": "4.1.0",
+  "description": "A cartridge containing popuplar libraries converted / checked to work in the Salesforce Commerce Cloud B2C.",
+  "main": "index.js",
+  "scripts": {
+    "lint": "sgmf-scripts --lint js",
+    "upload": "sgmf-scripts --upload",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge moment",
+    "uploadDw": "sgmf-scripts",
+    "watch": "sgmf-scripts --watch",
+    "precommit": "npm run lint --loglevel=silent"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/taurgis/salesforce-commerce-cloud-libraries.git"
+  },
+  "author": {
+    "name": "Thomas Theunen",
+    "email": "thomas.theunen@forward.eu",
+    "url": "https://thomastheunen.eu"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/taurgis/salesforce-commerce-cloud-libraries.git#readme",
+  "devDependencies": {
+    "eslint": "^5.7.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-airbnb-base": "^5.0.3",
+    "eslint-formatter-pretty": "^1.3.0",
+    "eslint-formatter-summary": "^1.0.2",
+    "eslint-plugin-import": "^2.14.0",
+    "eslint-plugin-jsx-a11y": "^6.1.2",
+    "eslint-plugin-react": "^7.11.1",
+    "sgmf-scripts": "^2.1.1"
+  },
+  "dependencies": {
+    "@babel/core": "^7.4.4",
+    "@babel/preset-env": "^7.4.4",
+    "babel-loader": "^8.0.5",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-plugin-jsx-a11y": "^6.1.1"
+  },
+  "pre-commit": [
+    "precommit"
+  ],
+  "packageName": "lib_javascript",
+  "cartridges": [
+    "moment",
+    "lodash",
+    "date-fns"
+  ]
+}

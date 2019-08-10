@@ -1,0 +1,12 @@
+var formatRelativeLocale = {
+    lastWeek: "'上个' eeee p",
+    yesterday: "'昨天' p",
+    today: "'今天' p",
+    tomorrow: "'明天' p",
+    nextWeek: "'下个' eeee p",
+    other: 'P'
+};
+
+module.exports = function formatRelative(token, _date, _baseDate, _options) {
+    return formatRelativeLocale[token];
+};

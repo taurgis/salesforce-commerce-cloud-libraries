@@ -1,0 +1,8 @@
+cartridges/*/cartridge/static/
+coverage/
+doc/
+bin/
+webpack.config.js
+cartridges/int_*/
+cartridges/plugin_marketing_cloud/
+cartridges/bc_akeneo/
