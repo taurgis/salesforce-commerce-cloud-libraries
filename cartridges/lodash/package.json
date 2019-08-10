@@ -37,7 +37,7 @@
     "curl-amd": "~0.8.12",
     "docdown": "~0.7.2",
     "dojo": "^1.12.1",
-    "ecstatic": "^2.1.0",
+    "ecstatic": "^2.2.2",
     "eslint": "^3.15.0",
     "eslint-plugin-import": "^2.14.0",
     "esm": "^3.1.3",
