@@ -2,7 +2,11 @@
 
 This repository contains libraries converted and tested to work with the latest version of Salesforce Commerce Cloud B2C (Formerly Demandware).
 
-The libraries converted/tested here are to enhance the developer experience in the back-end and to speed up development by using functions that are available in, for example, Node.JS but don't work in Salesforce Commerce Cloud because of slight differences in syntax or the unavailability of certain Objects.
+The libraries converted/tested here are to enhance the developer experience in the back-end and to speed up development.
+
+Certain libraries don't work because of functions that are available in, for example, Node.JS but don't work in Salesforce Commerce Cloud because of slight differences in syntax or the unavailability of certain Objects.
+
+With this project I hope to convert some of these libraries to work with Salesforce Commerce Cloud B2C.
 
 ## Setting up the libraries in your project ##
 
@@ -99,4 +103,10 @@ This library was converted from the latest BETA release, so it may contain bugs.
     startOfYear(new Date());
 ```
 
-# [Contributing](./CONTRIBUTING.md)
+# Contributing
+I am always looking for more interesting libraries that we could use in Commerce Cloud but require testing or need migration.
+
+If you yourself are unable to convert a library and want met to have a look, feel free to mail me at thomas.theunen@forward.eu.
+
+If you want to contribute code feel free to read the
+[contributing](./CONTRIBUTING.md) readme.
