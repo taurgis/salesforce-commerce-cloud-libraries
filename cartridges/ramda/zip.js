@@ -21,13 +21,13 @@ var _curry2 = require('./internal/_curry2');
  * @symb R.zip([a, b, c], [d, e, f]) = [[a, d], [b, e], [c, f]]
  */
 var zip = _curry2(function zip(a, b) {
-  var rv = [];
-  var idx = 0;
-  var len = Math.min(a.length, b.length);
-  while (idx < len) {
-    rv[idx] = [a[idx], b[idx]];
-    idx += 1;
-  }
-  return rv;
+    var rv = [];
+    var idx = 0;
+    var len = Math.min(a.length, b.length);
+    while (idx < len) {
+        rv[idx] = [a[idx], b[idx]];
+        idx += 1;
+    }
+    return rv;
 });
 module.exports = zip;

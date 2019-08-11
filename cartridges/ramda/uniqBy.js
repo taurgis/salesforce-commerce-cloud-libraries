@@ -21,19 +21,20 @@ var _curry2 = require('./internal/_curry2');
  *      R.uniqBy(Math.abs, [-1, -5, 2, 10, 1, 2]); //=> [-1, -5, 2, 10]
  */
 var uniqBy = _curry2(function uniqBy(fn, list) {
-  var set = new _Set();
-  var result = [];
-  var idx = 0;
-  var appliedItem, item;
+    var set = new _Set();
+    var result = [];
+    var idx = 0;
+    var appliedItem,
+        item;
 
-  while (idx < list.length) {
-    item = list[idx];
-    appliedItem = fn(item);
-    if (set.add(appliedItem)) {
-      result.push(item);
+    while (idx < list.length) {
+        item = list[idx];
+        appliedItem = fn(item);
+        if (set.add(appliedItem)) {
+            result.push(item);
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return result;
+    return result;
 });
 module.exports = uniqBy;

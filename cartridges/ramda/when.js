@@ -30,6 +30,6 @@ var _curry3 = require('./internal/_curry3');
  *      truncate('0123456789ABC'); //=> '0123456789…'
  */
 var when = _curry3(function when(pred, whenTrueFn, x) {
-  return pred(x) ? whenTrueFn(x) : x;
+    return pred(x) ? whenTrueFn(x) : x;
 });
 module.exports = when;

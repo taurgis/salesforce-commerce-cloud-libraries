@@ -26,6 +26,6 @@ var uniqWith = require('./uniqWith');
  *      R.unionWith(R.eqBy(R.prop('a')), l1, l2); //=> [{a: 1}, {a: 2}, {a: 4}]
  */
 var unionWith = _curry3(function unionWith(pred, list1, list2) {
-  return uniqWith(pred, _concat(list1, list2));
+    return uniqWith(pred, _concat(list1, list2));
 });
 module.exports = unionWith;

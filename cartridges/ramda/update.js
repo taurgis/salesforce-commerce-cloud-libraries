@@ -26,6 +26,6 @@ var always = require('./always');
  * @symb R.update(1, a, [b, c]) = [b, a]
  */
 var update = _curry3(function update(idx, x, list) {
-  return adjust(idx, always(x), list);
+    return adjust(idx, always(x), list);
 });
 module.exports = update;

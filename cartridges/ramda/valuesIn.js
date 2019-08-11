@@ -23,11 +23,11 @@ var _curry1 = require('./internal/_curry1');
  *      R.valuesIn(f); //=> ['X', 'Y']
  */
 var valuesIn = _curry1(function valuesIn(obj) {
-  var prop;
-  var vs = [];
-  for (prop in obj) {
-    vs[vs.length] = obj[prop];
-  }
-  return vs;
+    var prop;
+    var vs = [];
+    for (prop in obj) {
+        vs[vs.length] = obj[prop];
+    }
+    return vs;
 });
 module.exports = valuesIn;

@@ -21,6 +21,6 @@ var _curry2 = require('./internal/_curry2');
  *      R.xor(false, false); //=> false
  */
 var xor = _curry2(function xor(a, b) {
-  return Boolean(!a ^ !b);
+    return Boolean(!a ^ !b);
 });
 module.exports = xor;

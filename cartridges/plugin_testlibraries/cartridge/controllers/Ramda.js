@@ -90,12 +90,21 @@ server.get('Test', function (req, res, next) {
 
     const headLens = R.lensIndex(0);
 
-    const abby = {name: 'Abby', age: 7, hair: 'blond', grade: 2};
-      const fred = {name: 'Fred', age: 12, hair: 'brown', grade: 7};
-         const kids = [abby, fred];
-         const isOdd = function(n) { return n % 2 === 1};
+    const abby = { name: 'Abby', age: 7, hair: 'blond', grade: 2 };
+    const fred = { name: 'Fred', age: 12, hair: 'brown', grade: 7 };
+    const kids = [abby, fred];
+    const isOdd = function (n) { return n % 2 === 1 };
 
-         const xLens = R.lensProp('x');
+    const xLens = R.lensProp('x');
+    const l1 = [{ a: 1 }, { a: 2 }];
+    const l2 = [{ a: 1 }, { a: 4 }];
+
+    const pred = R.where({
+        a: R.equals('foo'),
+        b: R.complement(R.equals('bar')),
+        x: R.gt(R.__, 10),
+        y: R.lt(R.__, 20)
+    });
 
     res.json(
         {
@@ -166,35 +175,41 @@ server.get('Test', function (req, res, next) {
             //otherwise: recoverFromFailure(12345).then(console.log),
             over: R.over(headLens, R.toUpper, ['foo', 'bar', 'baz']),
             pair: R.pair('foo', 'bar'),
-            path: R.path(['a', 'b'], {a: {b: 2}}),
-            paths: R.paths([['a', 'b'], ['p', 0, 'q']], {a: {b: 2}, p: [{q: 3}]}),
-            pick:  R.pick(['a', 'd'], {a: 1, b: 2, c: 3, d: 4}),
-            pipe: R.pipe(Math.pow, R.negate, R.inc)(3,4),
-            pluck:  R.pluck(1, [[1, 2], [3, 4]]),
-            product: R.product([2,4,6,8,100,1]),
-            project:   R.project(['name', 'grade'], kids),
+            path: R.path(['a', 'b'], { a: { b: 2 } }),
+            paths: R.paths([['a', 'b'], ['p', 0, 'q']], { a: { b: 2 }, p: [{ q: 3 }] }),
+            pick: R.pick(['a', 'd'], { a: 1, b: 2, c: 3, d: 4 }),
+            pipe: R.pipe(Math.pow, R.negate, R.inc)(3, 4),
+            pluck: R.pluck(1, [[1, 2], [3, 4]]),
+            product: R.product([2, 4, 6, 8, 100, 1]),
+            project: R.project(['name', 'grade'], kids),
             range: R.range(1, 5),
-            reduce:  R.reduce(R.subtract, 0, [1, 2, 3, 4]),
-            reject:  R.reject(isOdd, [1, 2, 3, 4]),
-            remove: R.remove(2, 3, [1,2,3,4,5,6,7,8]),
-            reverse:  R.reverse([1, 2, 3]),
-            set: R.set(xLens, 4, {x: 1, y: 2}),
+            reduce: R.reduce(R.subtract, 0, [1, 2, 3, 4]),
+            reject: R.reject(isOdd, [1, 2, 3, 4]),
+            remove: R.remove(2, 3, [1, 2, 3, 4, 5, 6, 7, 8]),
+            reverse: R.reverse([1, 2, 3]),
+            set: R.set(xLens, 4, { x: 1, y: 2 }),
             slice: R.slice(1, 3, ['a', 'b', 'c', 'd']),
             split: R.split('.', 'a.b.c.xyz.d'),
             startsWith: R.startsWith('a', 'abc'),
-            symmetricDifference: R.symmetricDifference([1,2,3,4], [7,6,5,4,3]),
-            tail:  R.tail([1, 2, 3]),
+            symmetricDifference: R.symmetricDifference([1, 2, 3, 4], [7, 6, 5, 4, 3]),
+            tail: R.tail([1, 2, 3]),
             take: R.take(1, ['foo', 'bar', 'baz']),
             test: R.test(/^x/, 'xyz'),
             thunkify: R.thunkify(R.identity)(42)(),
-            toLower:  R.toLower('XYZ'),
-            toPairs: R.toPairs({a: 1, b: 2, c: 3}),
+            toLower: R.toLower('XYZ'),
+            toPairs: R.toPairs({ a: 1, b: 2, c: 3 }),
             transpose: R.transpose([[1, 'a'], [2, 'b'], [3, 'c']]),
             trim: R.trim('   xyz  '),
-            tryCatch: R.tryCatch(R.prop('x'), R.F)({x: true}),
+            tryCatch: R.tryCatch(R.prop('x'), R.F)({ x: true }),
             type: R.type([]),
-            unapply:  R.unapply(JSON.stringify)(1, 2, 3),
-            union: R.union([1, 2, 3], [2, 3, 4])
+            unapply: R.unapply(JSON.stringify)(1, 2, 3),
+            union: R.union([1, 2, 3], [2, 3, 4]),
+            unionWith: R.unionWith(R.eqBy(R.prop('a')), l1, l2),
+            unnest: R.unnest([1, [2], [[3]]]),
+            until: R.until(R.gt(R.__, 100), R.multiply(2))(1),
+            values: R.values({ a: 1, b: 2, c: 3 }),
+            where: pred({ a: 'foo', b: 'xxx', x: 11, y: 19 }),
+            without: R.without([1, 2], [1, 2, 1, 3, 4])
         });
 
     next();

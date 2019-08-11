@@ -26,13 +26,13 @@ var _curry3 = require('./internal/_curry3');
  * @symb R.zipWith(fn, [a, b, c], [d, e, f]) = [fn(a, d), fn(b, e), fn(c, f)]
  */
 var zipWith = _curry3(function zipWith(fn, a, b) {
-  var rv = [];
-  var idx = 0;
-  var len = Math.min(a.length, b.length);
-  while (idx < len) {
-    rv[idx] = fn(a[idx], b[idx]);
-    idx += 1;
-  }
-  return rv;
+    var rv = [];
+    var idx = 0;
+    var len = Math.min(a.length, b.length);
+    while (idx < len) {
+        rv[idx] = fn(a[idx], b[idx]);
+        idx += 1;
+    }
+    return rv;
 });
 module.exports = zipWith;

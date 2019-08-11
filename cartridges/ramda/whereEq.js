@@ -33,6 +33,6 @@ var where = require('./where');
  *      pred({a: 1, b: 1});        //=> false
  */
 var whereEq = _curry2(function whereEq(spec, testObj) {
-  return where(map(equals, spec), testObj);
+    return where(map(equals, spec), testObj);
 });
 module.exports = whereEq;
