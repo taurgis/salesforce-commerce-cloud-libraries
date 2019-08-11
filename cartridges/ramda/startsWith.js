@@ -24,7 +24,7 @@ var take = require('./take');
  *      R.startsWith(['a'], ['a', 'b', 'c'])    //=> true
  *      R.startsWith(['b'], ['a', 'b', 'c'])    //=> false
  */
-var startsWith = _curry2(function(prefix, list) {
-  return equals(take(prefix.length, list), prefix);
+var startsWith = _curry2(function (prefix, list) {
+    return equals(take(prefix.length, list), prefix);
 });
 module.exports = startsWith;

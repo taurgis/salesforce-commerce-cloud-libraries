@@ -31,6 +31,6 @@ var prop = require('./prop');
  * @symb R.pluck(0, [[1, 2], [3, 4], [5, 6]]) = [1, 3, 5]
  */
 var pluck = _curry2(function pluck(p, list) {
-  return map(prop(p), list);
+    return map(prop(p), list);
 });
 module.exports = pluck;

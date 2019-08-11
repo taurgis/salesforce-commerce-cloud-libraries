@@ -26,8 +26,8 @@ var _curry1 = require('./internal/_curry1');
  * @symb R.unapply(f)(a, b) = f([a, b])
  */
 var unapply = _curry1(function unapply(fn) {
-  return function() {
-    return fn(Array.prototype.slice.call(arguments, 0));
-  };
+    return function () {
+        return fn(Array.prototype.slice.call(arguments, 0));
+    };
 });
 module.exports = unapply;

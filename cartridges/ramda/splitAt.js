@@ -22,6 +22,6 @@ var slice = require('./slice');
  *      R.splitAt(-1, 'foobar');          //=> ['fooba', 'r']
  */
 var splitAt = _curry2(function splitAt(index, array) {
-  return [slice(0, index, array), slice(index, length(array), array)];
+    return [slice(0, index, array), slice(index, length(array), array)];
 });
 module.exports = splitAt;

@@ -28,6 +28,6 @@ var filter = require('./filter');
  *      R.reject(isOdd, {a: 1, b: 2, c: 3, d: 4}); //=> {b: 2, d: 4}
  */
 var reject = _curry2(function reject(pred, filterable) {
-  return filter(_complement(pred), filterable);
+    return filter(_complement(pred), filterable);
 });
 module.exports = reject;

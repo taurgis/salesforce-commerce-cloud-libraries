@@ -20,14 +20,14 @@ var slice = require('./slice');
  *      R.splitEvery(3, 'foobarbaz'); //=> ['foo', 'bar', 'baz']
  */
 var splitEvery = _curry2(function splitEvery(n, list) {
-  if (n <= 0) {
-    throw new Error('First argument to splitEvery must be a positive integer');
-  }
-  var result = [];
-  var idx = 0;
-  while (idx < list.length) {
-    result.push(slice(idx, idx += n, list));
-  }
-  return result;
+    if (n <= 0) {
+        throw new Error('First argument to splitEvery must be a positive integer');
+    }
+    var result = [];
+    var idx = 0;
+    while (idx < list.length) {
+        result.push(slice(idx, idx += n, list));
+    }
+    return result;
 });
 module.exports = splitEvery;

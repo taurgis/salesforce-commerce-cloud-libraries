@@ -22,6 +22,6 @@ var difference = require('./difference');
  *      R.symmetricDifference([7,6,5,4,3], [1,2,3,4]); //=> [7,6,5,1,2]
  */
 var symmetricDifference = _curry2(function symmetricDifference(list1, list2) {
-  return concat(difference(list1, list2), difference(list2, list1));
+    return concat(difference(list1, list2), difference(list2, list1));
 });
 module.exports = symmetricDifference;

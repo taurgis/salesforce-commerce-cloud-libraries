@@ -23,6 +23,6 @@ var paths = require('./paths');
  */
 
 var path = _curry2(function path(pathAr, obj) {
-  return paths([pathAr], obj)[0];
+    return paths([pathAr], obj)[0];
 });
 module.exports = path;

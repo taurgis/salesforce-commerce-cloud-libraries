@@ -26,6 +26,6 @@ var _curry3 = require('./internal/_curry3');
  *      R.replace(/foo/g, 'bar', 'foo foo foo'); //=> 'bar bar bar'
  */
 var replace = _curry3(function replace(regex, replacement, str) {
-  return str.replace(regex, replacement);
+    return str.replace(regex, replacement);
 });
 module.exports = replace;

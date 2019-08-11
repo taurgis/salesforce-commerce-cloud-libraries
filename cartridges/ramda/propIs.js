@@ -23,6 +23,6 @@ var is = require('./is');
  *      R.propIs(Number, 'x', {});            //=> false
  */
 var propIs = _curry3(function propIs(type, name, obj) {
-  return is(type, obj[name]);
+    return is(type, obj[name]);
 });
 module.exports = propIs;

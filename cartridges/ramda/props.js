@@ -23,8 +23,8 @@ var path = require('./path');
  *      fullName({last: 'Bullet-Tooth', age: 33, first: 'Tony'}); //=> 'Tony Bullet-Tooth'
  */
 var props = _curry2(function props(ps, obj) {
-  return  ps.map(function(p) {
-    return path([p], obj);
-  });
+    return ps.map(function (p) {
+        return path([p], obj);
+    });
 });
 module.exports = props;

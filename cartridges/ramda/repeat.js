@@ -27,6 +27,6 @@ var times = require('./times');
  * @symb R.repeat(a, 2) = [a, a]
  */
 var repeat = _curry2(function repeat(value, n) {
-  return times(always(value), n);
+    return times(always(value), n);
 });
 module.exports = repeat;

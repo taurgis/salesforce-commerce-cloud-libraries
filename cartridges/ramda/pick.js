@@ -20,14 +20,14 @@ var _curry2 = require('./internal/_curry2');
  *      R.pick(['a', 'e', 'f'], {a: 1, b: 2, c: 3, d: 4}); //=> {a: 1}
  */
 var pick = _curry2(function pick(names, obj) {
-  var result = {};
-  var idx = 0;
-  while (idx < names.length) {
-    if (names[idx] in obj) {
-      result[names[idx]] = obj[names[idx]];
+    var result = {};
+    var idx = 0;
+    while (idx < names.length) {
+        if (names[idx] in obj) {
+            result[names[idx]] = obj[names[idx]];
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return result;
+    return result;
 });
 module.exports = pick;

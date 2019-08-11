@@ -28,11 +28,11 @@ var tail = require('./tail');
  * @symb R.pipe(f, g, h)(a, b) = h(g(f(a, b)))
  */
 module.exports = function pipe() {
-  if (arguments.length === 0) {
-    throw new Error('pipe requires at least one argument');
-  }
-  return _arity(
-    arguments[0].length,
-    reduce(_pipe, arguments[0], tail(arguments))
-  );
-}
+    if (arguments.length === 0) {
+        throw new Error('pipe requires at least one argument');
+    }
+    return _arity(
+        arguments[0].length,
+        reduce(_pipe, arguments[0], tail(arguments))
+    );
+};

@@ -25,6 +25,6 @@ var drop = require('./drop');
  *      R.takeLast(3, 'ramda');               //=> 'mda'
  */
 var takeLast = _curry2(function takeLast(n, xs) {
-  return drop(n >= 0 ? xs.length - n : 0, xs);
+    return drop(n >= 0 ? xs.length - n : 0, xs);
 });
 module.exports = takeLast;

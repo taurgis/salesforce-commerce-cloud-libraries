@@ -20,12 +20,12 @@ var _curry1 = require('./internal/_curry1');
  *      R.thunkify((a, b) => a + b)(25, 17)(); //=> 42
  */
 var thunkify = _curry1(function thunkify(fn) {
-  return curryN(fn.length, function createThunk() {
-    var fnArgs = arguments;
-    return function invokeThunk() {
-      return fn.apply(this, fnArgs);
-    };
-  });
+    return curryN(fn.length, function createThunk() {
+        var fnArgs = arguments;
+        return function invokeThunk() {
+            return fn.apply(this, fnArgs);
+        };
+    });
 });
 
 module.exports = thunkify;

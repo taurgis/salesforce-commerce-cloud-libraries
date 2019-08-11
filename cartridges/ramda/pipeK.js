@@ -37,8 +37,8 @@ var reverse = require('./reverse');
  * @symb R.pipeK(f, g, h)(a) = R.chain(h, R.chain(g, f(a)))
  */
 module.exports = function pipeK() {
-  if (arguments.length === 0) {
-    throw new Error('pipeK requires at least one argument');
-  }
-  return composeK.apply(this, reverse(arguments));
-}
+    if (arguments.length === 0) {
+        throw new Error('pipeK requires at least one argument');
+    }
+    return composeK.apply(this, reverse(arguments));
+};

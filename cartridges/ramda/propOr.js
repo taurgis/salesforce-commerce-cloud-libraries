@@ -29,6 +29,6 @@ var pathOr = require('./pathOr');
  *      favoriteWithDefault(alice);  //=> 'Ramda'
  */
 var propOr = _curry3(function propOr(val, p, obj) {
-  return pathOr(val, [p], obj);
+    return pathOr(val, [p], obj);
 });
 module.exports = propOr;

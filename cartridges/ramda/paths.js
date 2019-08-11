@@ -20,19 +20,19 @@ var nth = require('./nth');
  *      R.paths([['a', 'b'], ['p', 'r']], {a: {b: 2}, p: [{q: 3}]}); //=> [2, undefined]
  */
 var paths = _curry2(function paths(pathsArray, obj) {
-  return pathsArray.map(function(paths) {
-    var val = obj;
-    var idx = 0;
-    var p;
-    while (idx < paths.length) {
-      if (val == null) {
-        return;
-      }
-      p = paths[idx];
-      val = _isInteger(p) ? nth(p, val) : val[p];
-      idx += 1;
-    }
-    return val;
-  });
+    return pathsArray.map(function (paths) {
+        var val = obj;
+        var idx = 0;
+        var p;
+        while (idx < paths.length) {
+            if (val == null) {
+                return;
+            }
+            p = paths[idx];
+            val = _isInteger(p) ? nth(p, val) : val[p];
+            idx += 1;
+        }
+        return val;
+    });
 });
 module.exports = paths;

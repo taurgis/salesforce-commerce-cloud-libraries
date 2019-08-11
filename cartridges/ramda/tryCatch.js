@@ -26,12 +26,12 @@ var _curry2 = require('./internal/_curry2');
  *      R.tryCatch(() => { throw 'this is not a valid value'}, (err, value)=>({error : err,  value }))('bar') // => {'error': 'this is not a valid value', 'value': 'bar'}
  */
 var tryCatch = _curry2(function _tryCatch(tryer, catcher) {
-  return _arity(tryer.length, function() {
-    try {
-      return tryer.apply(this, arguments);
-    } catch (e) {
-      return catcher.apply(this, _concat([e], arguments));
-    }
-  });
+    return _arity(tryer.length, function () {
+        try {
+            return tryer.apply(this, arguments);
+        } catch (e) {
+            return catcher.apply(this, _concat([e], arguments));
+        }
+    });
 });
 module.exports = tryCatch;

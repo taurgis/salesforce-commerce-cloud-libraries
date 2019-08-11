@@ -25,6 +25,6 @@ var _curry2 = require('./internal/_curry2');
  *      complementaryAngle(72); //=> 18
  */
 var subtract = _curry2(function subtract(a, b) {
-  return Number(a) - Number(b);
+    return Number(a) - Number(b);
 });
 module.exports = subtract;

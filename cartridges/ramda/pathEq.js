@@ -28,6 +28,6 @@ var path = require('./path');
  *      R.filter(isFamous, users); //=> [ user1 ]
  */
 var pathEq = _curry3(function pathEq(_path, val, obj) {
-  return equals(path(_path, obj), val);
+    return equals(path(_path, obj), val);
 });
 module.exports = pathEq;

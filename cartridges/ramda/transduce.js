@@ -51,6 +51,6 @@ var curryN = require('./curryN');
  *      R.transduce(firstOddTransducer, R.flip(R.append), [], R.range(0, 100)); //=> [1]
  */
 var transduce = curryN(4, function transduce(xf, fn, acc, list) {
-  return _reduce(xf(typeof fn === 'function' ? _xwrap(fn) : fn), acc, list);
+    return _reduce(xf(typeof fn === 'function' ? _xwrap(fn) : fn), acc, list);
 });
 module.exports = transduce;

@@ -22,8 +22,8 @@ var _curry3 = require('./internal/_curry3');
  *      R.remove(2, 3, [1,2,3,4,5,6,7,8]); //=> [1,2,6,7,8]
  */
 var remove = _curry3(function remove(start, count, list) {
-  var result = Array.prototype.slice.call(list, 0);
-  result.splice(start, count);
-  return result;
+    var result = Array.prototype.slice.call(list, 0);
+    result.splice(start, count);
+    return result;
 });
 module.exports = remove;

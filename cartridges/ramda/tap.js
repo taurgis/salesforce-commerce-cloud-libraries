@@ -24,7 +24,7 @@ var _xtap = require('./internal/_xtap');
  * @symb R.tap(f, a) = a
  */
 var tap = _curry2(_dispatchable([], _xtap, function tap(fn, x) {
-  fn(x);
-  return x;
+    fn(x);
+    return x;
 }));
 module.exports = tap;

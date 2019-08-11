@@ -27,12 +27,12 @@ var _curry2 = require('./internal/_curry2');
  * @symb R.unfold(f, x) = [f(x)[0], f(f(x)[1])[0], f(f(f(x)[1])[1])[0], ...]
  */
 var unfold = _curry2(function unfold(fn, seed) {
-  var pair = fn(seed);
-  var result = [];
-  while (pair && pair.length) {
-    result[result.length] = pair[0];
-    pair = fn(pair[1]);
-  }
-  return result;
+    var pair = fn(seed);
+    var result = [];
+    while (pair && pair.length) {
+        result[result.length] = pair[0];
+        pair = fn(pair[1]);
+    }
+    return result;
 });
 module.exports = unfold;

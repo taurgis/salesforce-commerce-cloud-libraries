@@ -23,6 +23,6 @@ var path = require('./path');
  *      R.pathOr('N/A', ['a', 'b'], {c: {b: 2}}); //=> "N/A"
  */
 var pathOr = _curry3(function pathOr(d, p, obj) {
-  return defaultTo(d, path(p, obj));
+    return defaultTo(d, path(p, obj));
 });
 module.exports = pathOr;

@@ -26,6 +26,6 @@ var over = require('./over');
  *      R.set(xLens, 8, {x: 1, y: 2});  //=> {x: 8, y: 2}
  */
 var set = _curry3(function set(lens, v, x) {
-  return over(lens, always(v), x);
+    return over(lens, always(v), x);
 });
 module.exports = set;

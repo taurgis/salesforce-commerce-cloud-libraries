@@ -23,14 +23,14 @@ var _curry3 = require('./internal/_curry3');
  * @symb R.scan(f, a, [b, c]) = [a, f(a, b), f(f(a, b), c)]
  */
 var scan = _curry3(function scan(fn, acc, list) {
-  var idx = 0;
-  var len = list.length;
-  var result = [acc];
-  while (idx < len) {
-    acc = fn(acc, list[idx]);
-    result[idx + 1] = acc;
-    idx += 1;
-  }
-  return result;
+    var idx = 0;
+    var len = list.length;
+    var result = [acc];
+    while (idx < len) {
+        acc = fn(acc, list[idx]);
+        result[idx + 1] = acc;
+        idx += 1;
+    }
+    return result;
 });
 module.exports = scan;

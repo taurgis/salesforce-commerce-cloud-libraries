@@ -22,18 +22,18 @@ var curryN = require('./curryN');
  *      uncurriedAddFour(1, 2, 3, 4); //=> 10
  */
 var uncurryN = _curry2(function uncurryN(depth, fn) {
-  return curryN(depth, function() {
-    var currentDepth = 1;
-    var value = fn;
-    var idx = 0;
-    var endIdx;
-    while (currentDepth <= depth && typeof value === 'function') {
-      endIdx = currentDepth === depth ? arguments.length : idx + value.length;
-      value = value.apply(this, Array.prototype.slice.call(arguments, idx, endIdx));
-      currentDepth += 1;
-      idx = endIdx;
-    }
-    return value;
-  });
+    return curryN(depth, function () {
+        var currentDepth = 1;
+        var value = fn;
+        var idx = 0;
+        var endIdx;
+        while (currentDepth <= depth && typeof value === 'function') {
+            endIdx = currentDepth === depth ? arguments.length : idx + value.length;
+            value = value.apply(this, Array.prototype.slice.call(arguments, idx, endIdx));
+            currentDepth += 1;
+            idx = endIdx;
+        }
+        return value;
+    });
 });
 module.exports = uncurryN;

@@ -31,6 +31,6 @@ var nAry = require('./nAry');
  * @symb R.unary(f)(a, b, c) = f(a)
  */
 var unary = _curry1(function unary(fn) {
-  return nAry(1, fn);
+    return nAry(1, fn);
 });
 module.exports = unary;

@@ -24,11 +24,11 @@ var tail = require('./tail');
  *      const followersForUser = R.pipeP(db.getUserById, db.getFollowers);
  */
 module.exports = function pipeP() {
-  if (arguments.length === 0) {
-    throw new Error('pipeP requires at least one argument');
-  }
-  return _arity(
-    arguments[0].length,
-    reduce(_pipeP, arguments[0], tail(arguments))
-  );
-}
+    if (arguments.length === 0) {
+        throw new Error('pipeP requires at least one argument');
+    }
+    return _arity(
+        arguments[0].length,
+        reduce(_pipeP, arguments[0], tail(arguments))
+    );
+};

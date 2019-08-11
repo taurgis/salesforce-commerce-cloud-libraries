@@ -30,8 +30,8 @@ var sequence = require('./sequence');
  *      R.traverse(Maybe.of, safeDiv(10), [2, 0, 5]); //=> Maybe.Nothing
  */
 var traverse = _curry3(function traverse(of, f, traversable) {
-  return typeof traversable['fantasy-land/traverse'] === 'function' ?
-    traversable['fantasy-land/traverse'](f, of) :
-    sequence(of, map(f, traversable));
+    return typeof traversable['fantasy-land/traverse'] === 'function' ?
+        traversable['fantasy-land/traverse'](f, of) :
+        sequence(of, map(f, traversable));
 });
 module.exports = traverse;

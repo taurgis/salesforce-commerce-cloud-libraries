@@ -28,6 +28,6 @@ var equals = require('./equals');
  *      R.filter(hasBrownHair, kids); //=> [fred, rusty]
  */
 var propEq = _curry3(function propEq(name, val, obj) {
-  return equals(val, obj[name]);
+    return equals(val, obj[name]);
 });
 module.exports = propEq;

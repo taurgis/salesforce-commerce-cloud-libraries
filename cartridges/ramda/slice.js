@@ -27,6 +27,6 @@ var _curry3 = require('./internal/_curry3');
  *      R.slice(0, 3, 'ramda');                     //=> 'ram'
  */
 var slice = _curry3(_checkForMethod('slice', function slice(fromIndex, toIndex, list) {
-  return Array.prototype.slice.call(list, fromIndex, toIndex);
+    return Array.prototype.slice.call(list, fromIndex, toIndex);
 }));
 module.exports = slice;

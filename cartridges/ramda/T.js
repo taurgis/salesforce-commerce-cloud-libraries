@@ -15,5 +15,5 @@
  *
  *      R.T(); //=> true
  */
-var T = function() {return true;};
+var T = function () { return true; };
 module.exports = T;

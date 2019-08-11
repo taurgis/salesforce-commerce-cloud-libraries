@@ -35,10 +35,10 @@ var _curry2 = require('./internal/_curry2');
  *      sortByNameCaseInsensitive(people); //=> [alice, bob, clara]
  */
 var sortBy = _curry2(function sortBy(fn, list) {
-  return Array.prototype.slice.call(list, 0).sort(function(a, b) {
-    var aa = fn(a);
-    var bb = fn(b);
-    return aa < bb ? -1 : aa > bb ? 1 : 0;
-  });
+    return Array.prototype.slice.call(list, 0).sort(function (a, b) {
+        var aa = fn(a);
+        var bb = fn(b);
+        return aa < bb ? -1 : aa > bb ? 1 : 0;
+    });
 });
 module.exports = sortBy;

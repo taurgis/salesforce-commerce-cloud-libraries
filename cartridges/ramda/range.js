@@ -19,15 +19,15 @@ var _isNumber = require('./internal/_isNumber');
  *      R.range(50, 53);  //=> [50, 51, 52]
  */
 var range = _curry2(function range(from, to) {
-  if (!(_isNumber(from) && _isNumber(to))) {
-    throw new TypeError('Both arguments to range must be numbers');
-  }
-  var result = [];
-  var n = from;
-  while (n < to) {
-    result.push(n);
-    n += 1;
-  }
-  return result;
+    if (!(_isNumber(from) && _isNumber(to))) {
+        throw new TypeError('Both arguments to range must be numbers');
+    }
+    var result = [];
+    var n = from;
+    while (n < to) {
+        result.push(n);
+        n += 1;
+    }
+    return result;
 });
 module.exports = range;
