@@ -1,0 +1,27 @@
+{
+    "env": {
+        "commonjs": true
+    },
+    "rules": {
+        "no-undef": "off",
+        "valid-jsdoc": "off",
+        "camelcase": "off",
+        "no-mixed-operators": "off",
+        "require-jsdoc": "off",
+        "no-param-reassign": "off",
+        "no-use-before-define": "off",
+        "block-scoped-var": "off",
+        "radix": "off",
+        "default-case": "off",
+        "no-shadow": "off",
+        "no-unused-vars": "off",
+        "no-underscore-dangle": "off",
+        "no-restricted-syntax": "off",
+        "no-nested-ternary": "off",
+        "no-useless-escape": "off",
+        "consistent-return": "off",
+        "no-array-constructor": "off",
+        "guard-for-in": "off"
+
+    }
+}

@@ -14,6 +14,7 @@ With this project I hope to convert some of these libraries to work with Salesfo
 - Lodash
 - date-fns
 - fast-xml-parser
+- chance
 
 ## Setting up the libraries in your project ##
 
@@ -46,7 +47,7 @@ _____
 | lodash | https://github.com/lodash/lodash | 5.0.0 | A modern JavaScript utility library delivering modularity, performance, & extras.
 | date-fns | https://github.com/date-fns/date-fns | v2.0.0-beta.4 | date-fns provides the most comprehensive, yet simple and consistent toolset for manipulating JavaScript dates in a browser & Node.js.
 | fast-xml-parser | https://github.com/NaturalIntelligence/fast-xml-parser | 3.12.16 | Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
-
+| chance | https://github.com/chancejs/chancejs | 1.1.0 | Utility library to generate anything random
 
 ### Example code ###
 
@@ -81,6 +82,12 @@ ___
 var parser = require('fast-xml-parser/parser');
 
 var jsonObject = parser.parse('<note><to>Tove</to></note>');
+```
+___
+``` javascript
+var parser = require('chance/chance');
+
+chance.guid();
 ```
 
 # Linting
