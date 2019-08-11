@@ -35,10 +35,10 @@ var or = require('./or');
  *      R.either([false, false, 'a'], [11]) // => [11, 11, "a"]
  */
 var either = _curry2(function either(f, g) {
-  return _isFunction(f) ?
-    function _either() {
-      return f.apply(this, arguments) || g.apply(this, arguments);
-    } :
-    lift(or)(f, g);
+    return _isFunction(f) ?
+        function _either() {
+            return f.apply(this, arguments) || g.apply(this, arguments);
+        } :
+        lift(or)(f, g);
 });
 module.exports = either;

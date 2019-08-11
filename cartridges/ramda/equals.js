@@ -28,6 +28,6 @@ var _equals = require('./internal/_equals');
  *      R.equals(a, b); //=> true
  */
 var equals = _curry2(function equals(a, b) {
-  return _equals(a, b, [], []);
+    return _equals(a, b, [], []);
 });
 module.exports = equals;

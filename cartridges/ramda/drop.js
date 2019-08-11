@@ -29,6 +29,6 @@ var slice = require('./slice');
  *      R.drop(3, 'ramda');               //=> 'da'
  */
 var drop = _curry2(_dispatchable(['drop'], _xdrop, function drop(n, xs) {
-  return slice(Math.max(0, n), Infinity, xs);
+    return slice(Math.max(0, n), Infinity, xs);
 }));
 module.exports = drop;

@@ -26,18 +26,18 @@ var last = require('./last');
  *      R.dropRepeatsWith(R.eqBy(Math.abs), l); //=> [1, 3, 4, -5, 3]
  */
 var dropRepeatsWith = _curry2(_dispatchable([], _xdropRepeatsWith, function dropRepeatsWith(pred, list) {
-  var result = [];
-  var idx = 1;
-  var len = list.length;
-  if (len !== 0) {
-    result[0] = list[0];
-    while (idx < len) {
-      if (!pred(last(result), list[idx])) {
-        result[result.length] = list[idx];
-      }
-      idx += 1;
+    var result = [];
+    var idx = 1;
+    var len = list.length;
+    if (len !== 0) {
+        result[0] = list[0];
+        while (idx < len) {
+            if (!pred(last(result), list[idx])) {
+                result[result.length] = list[idx];
+            }
+            idx += 1;
+        }
     }
-  }
-  return result;
+    return result;
 }));
 module.exports = dropRepeatsWith;

@@ -24,6 +24,6 @@ var equals = require('./equals');
  *      R.eqProps('c', o1, o2); //=> true
  */
 var eqProps = _curry3(function eqProps(prop, obj1, obj2) {
-  return equals(obj1[prop], obj2[prop]);
+    return equals(obj1[prop], obj2[prop]);
 });
 module.exports = eqProps;

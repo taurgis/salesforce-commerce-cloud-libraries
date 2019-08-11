@@ -25,5 +25,5 @@ var reduceBy = require('./reduceBy');
  *      const letters = ['a', 'b', 'A', 'a', 'B', 'c'];
  *      R.countBy(R.toLower)(letters);   //=> {'a': 3, 'b': 2, 'c': 1}
  */
-var countBy = reduceBy(function(acc, elem) { return acc + 1; }, 0);
+var countBy = reduceBy(function (acc) { return acc + 1; }, 0);
 module.exports = countBy;

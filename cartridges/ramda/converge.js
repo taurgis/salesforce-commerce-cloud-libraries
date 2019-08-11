@@ -35,12 +35,12 @@ var reduce = require('./reduce');
  * @symb R.converge(f, [g, h])(a, b) = f(g(a, b), h(a, b))
  */
 var converge = _curry2(function converge(after, fns) {
-  return curryN(reduce(max, 0, pluck('length', fns)), function() {
-    var args = arguments;
-    var context = this;
-    return after.apply(context, _map(function(fn) {
-      return fn.apply(context, args);
-    }, fns));
-  });
+    return curryN(reduce(max, 0, pluck('length', fns)), function () {
+        var args = arguments;
+        var context = this;
+        return after.apply(context, _map(function (fn) {
+            return fn.apply(context, args);
+        }, fns));
+    });
 });
 module.exports = converge;

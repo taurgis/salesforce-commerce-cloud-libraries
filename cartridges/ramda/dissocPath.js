@@ -27,21 +27,20 @@ var update = require('./update');
  *      R.dissocPath(['a', 'b', 'c'], {a: {b: {c: 42}}}); //=> {a: {b: {}}}
  */
 var dissocPath = _curry2(function dissocPath(path, obj) {
-  switch (path.length) {
-    case 0:
-      return obj;
-    case 1:
-      return _isInteger(path[0]) && _isArray(obj) ? remove(path[0], 1, obj) : dissoc(path[0], obj);
-    default:
-      var head = path[0];
-      var tail = Array.prototype.slice.call(path, 1);
-      if (obj[head] == null) {
-        return obj;
-      } else if (_isInteger(head) && _isArray(obj)) {
-        return update(head, dissocPath(tail, obj[head]), obj);
-      } else {
-        return assoc(head, dissocPath(tail, obj[head]), obj);
-      }
-  }
+    switch (path.length) {
+        case 0:
+            return obj;
+        case 1:
+            return _isInteger(path[0]) && _isArray(obj) ? remove(path[0], 1, obj) : dissoc(path[0], obj);
+        default:
+            var head = path[0];
+            var tail = Array.prototype.slice.call(path, 1);
+            if (obj[head] == null) {
+                return obj;
+            } else if (_isInteger(head) && _isArray(obj)) {
+                return update(head, dissocPath(tail, obj[head]), obj);
+            }
+            return assoc(head, dissocPath(tail, obj[head]), obj);
+    }
 });
 module.exports = dissocPath;

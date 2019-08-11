@@ -26,14 +26,14 @@ var _xfindIndex = require('./internal/_xfindIndex');
  *      R.findIndex(R.propEq('a', 4))(xs); //=> -1
  */
 var findIndex = _curry2(_dispatchable([], _xfindIndex, function findIndex(fn, list) {
-  var idx = 0;
-  var len = list.length;
-  while (idx < len) {
-    if (fn(list[idx])) {
-      return idx;
+    var idx = 0;
+    var len = list.length;
+    while (idx < len) {
+        if (fn(list[idx])) {
+            return idx;
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return -1;
+    return -1;
 }));
 module.exports = findIndex;

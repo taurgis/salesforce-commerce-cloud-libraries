@@ -25,16 +25,16 @@ var _curry3 = require('./internal/_curry3');
  *      R.differenceWith(cmp, l1, l2); //=> [{a: 1}, {a: 2}]
  */
 var differenceWith = _curry3(function differenceWith(pred, first, second) {
-  var out = [];
-  var idx = 0;
-  var firstLen = first.length;
-  while (idx < firstLen) {
-    if (!_includesWith(pred, first[idx], second) &&
+    var out = [];
+    var idx = 0;
+    var firstLen = first.length;
+    while (idx < firstLen) {
+        if (!_includesWith(pred, first[idx], second) &&
         !_includesWith(pred, first[idx], out)) {
-      out.push(first[idx]);
+            out.push(first[idx]);
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return out;
+    return out;
 });
 module.exports = differenceWith;

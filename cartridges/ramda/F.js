@@ -15,5 +15,5 @@
  *
  *      R.F(); //=> false
  */
-var F = function() {return false;};
+var F = function () { return false; };
 module.exports = F;

@@ -18,11 +18,11 @@ var _curry2 = require('./internal/_curry2');
  *      R.dissoc('b', {a: 1, b: 2, c: 3}); //=> {a: 1, c: 3}
  */
 var dissoc = _curry2(function dissoc(prop, obj) {
-  var result = {};
-  for (var p in obj) {
-    result[p] = obj[p];
-  }
-  delete result[prop];
-  return result;
+    var result = {};
+    for (var p in obj) {
+        result[p] = obj[p];
+    }
+    delete result[prop];
+    return result;
 });
 module.exports = dissoc;

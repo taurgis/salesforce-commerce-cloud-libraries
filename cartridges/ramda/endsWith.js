@@ -24,7 +24,7 @@ var takeLast = require('./takeLast');
  *      R.endsWith(['c'], ['a', 'b', 'c'])    //=> true
  *      R.endsWith(['b'], ['a', 'b', 'c'])    //=> false
  */
-var endsWith = _curry2(function(suffix, list) {
-  return equals(takeLast(suffix.length, list), suffix);
+var endsWith = _curry2(function (suffix, list) {
+    return equals(takeLast(suffix.length, list), suffix);
 });
 module.exports = endsWith;

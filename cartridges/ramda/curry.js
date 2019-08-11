@@ -44,6 +44,6 @@ var curryN = require('./curryN');
  *      g(4); //=> 10
  */
 var curry = _curry1(function curry(fn) {
-  return curryN(fn.length, fn);
+    return curryN(fn.length, fn);
 });
 module.exports = curry;

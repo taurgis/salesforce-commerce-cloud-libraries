@@ -20,6 +20,6 @@ var equals = require('./equals');
  *      R.eqBy(Math.abs, 5, -5); //=> true
  */
 var eqBy = _curry3(function eqBy(f, x, y) {
-  return equals(f(x), f(y));
+    return equals(f(x), f(y));
 });
 module.exports = eqBy;

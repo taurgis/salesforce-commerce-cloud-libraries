@@ -33,11 +33,11 @@ var slice = require('./slice');
  *      R.dropWhile(x => x !== 'd' , 'Ramda'); //=> 'da'
  */
 var dropWhile = _curry2(_dispatchable(['dropWhile'], _xdropWhile, function dropWhile(pred, xs) {
-  var idx = 0;
-  var len = xs.length;
-  while (idx < len && pred(xs[idx])) {
-    idx += 1;
-  }
-  return slice(idx, Infinity, xs);
+    var idx = 0;
+    var len = xs.length;
+    while (idx < len && pred(xs[idx])) {
+        idx += 1;
+    }
+    return slice(idx, Infinity, xs);
 }));
 module.exports = dropWhile;

@@ -27,8 +27,8 @@ var _curry3 = require('./internal/_curry3');
  *        //=> [{ name: 'Peter', age: 78 }, { name: 'Emma', age: 70 }, { name: 'Mikhail', age: 62 }]
  */
 var descend = _curry3(function descend(fn, a, b) {
-  var aa = fn(a);
-  var bb = fn(b);
-  return aa > bb ? -1 : aa < bb ? 1 : 0;
+    var aa = fn(a);
+    var bb = fn(b);
+    return aa > bb ? -1 : aa < bb ? 1 : 0;
 });
 module.exports = descend;

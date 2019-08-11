@@ -47,9 +47,9 @@ var _curryN = require('./internal/_curryN');
  *      g(4); //=> 10
  */
 var curryN = _curry2(function curryN(length, fn) {
-  if (length === 1) {
-    return _curry1(fn);
-  }
-  return _arity(length, _curryN(length, [], fn));
+    if (length === 1) {
+        return _curry1(fn);
+    }
+    return _arity(length, _curryN(length, [], fn));
 });
 module.exports = curryN;

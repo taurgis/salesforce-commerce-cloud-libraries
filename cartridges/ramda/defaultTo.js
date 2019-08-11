@@ -25,6 +25,6 @@ var _curry2 = require('./internal/_curry2');
  *      defaultTo42(parseInt('string')); //=> 42
  */
 var defaultTo = _curry2(function defaultTo(d, v) {
-  return v == null || v !== v ? d : v;
+    return v == null || v !== v ? d : v;
 });
 module.exports = defaultTo;

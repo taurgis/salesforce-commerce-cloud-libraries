@@ -35,6 +35,6 @@ var constructN = require('./constructN');
  *      R.map(sightNewAnimal, animalTypes); //=> ["It's a Lion!", "It's a Tiger!", "It's a Bear!"]
  */
 var construct = _curry1(function construct(Fn) {
-  return constructN(Fn.length, Fn);
+    return constructN(Fn.length, Fn);
 });
 module.exports = construct;

@@ -23,22 +23,22 @@ var _Set = require('./internal/_Set');
  *      R.difference([{a: 1}, {b: 2}], [{a: 1}, {c: 3}]) //=> [{b: 2}]
  */
 var difference = _curry2(function difference(first, second) {
-  var out = [];
-  var idx = 0;
-  var firstLen = first.length;
-  var secondLen = second.length;
-  var toFilterOut = new _Set();
+    var out = [];
+    var idx = 0;
+    var firstLen = first.length;
+    var secondLen = second.length;
+    var toFilterOut = new _Set();
 
-  for (var i = 0; i < secondLen; i += 1) {
-    toFilterOut.add(second[i]);
-  }
-
-  while (idx < firstLen) {
-    if (toFilterOut.add(first[idx])) {
-      out[out.length] = first[idx];
+    for (var i = 0; i < secondLen; i += 1) {
+        toFilterOut.add(second[i]);
     }
-    idx += 1;
-  }
-  return out;
+
+    while (idx < firstLen) {
+        if (toFilterOut.add(first[idx])) {
+            out[out.length] = first[idx];
+        }
+        idx += 1;
+    }
+    return out;
 });
 module.exports = difference;
