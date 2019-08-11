@@ -88,10 +88,10 @@ var jsonObject = parser.parse('<note><to>Tove</to></note>');
 ___
 ``` javascript
 var parser = require('chance/chance');
-___
 
 chance.guid();
 ```
+___
 
 ``` javascript
 var add = require('ramda/add');
