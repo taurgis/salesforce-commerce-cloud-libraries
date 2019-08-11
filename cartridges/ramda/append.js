@@ -23,6 +23,6 @@ var _curry2 = require('./internal/_curry2');
  *      R.append(['tests'], ['write', 'more']); //=> ['write', 'more', ['tests']]
  */
 var append = _curry2(function append(el, list) {
-  return _concat(list, [el]);
+    return _concat(list, [el]);
 });
 module.exports = append;

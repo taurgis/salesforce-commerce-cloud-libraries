@@ -36,10 +36,10 @@ var lift = require('./lift');
  *      R.both([false, false, 'a'], [11]); //=> [false, false, 11]
  */
 var both = _curry2(function both(f, g) {
-  return _isFunction(f) ?
-    function _both() {
-      return f.apply(this, arguments) && g.apply(this, arguments);
-    } :
-    lift(and)(f, g);
+    return _isFunction(f) ?
+        function _both() {
+            return f.apply(this, arguments) && g.apply(this, arguments);
+        } :
+        lift(and)(f, g);
 });
 module.exports = both;

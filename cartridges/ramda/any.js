@@ -29,13 +29,13 @@ var _xany = require('./internal/_xany');
  *      R.any(lessThan2)([1, 2]); //=> true
  */
 var any = _curry2(_dispatchable(['any'], _xany, function any(fn, list) {
-  var idx = 0;
-  while (idx < list.length) {
-    if (fn(list[idx])) {
-      return true;
+    var idx = 0;
+    while (idx < list.length) {
+        if (fn(list[idx])) {
+            return true;
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return false;
+    return false;
 }));
 module.exports = any;

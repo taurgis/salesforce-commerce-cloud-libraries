@@ -31,6 +31,6 @@ var nAry = require('./nAry');
  * @symb R.binary(f)(a, b, c) = f(a, b)
  */
 var binary = _curry1(function binary(fn) {
-  return nAry(2, fn);
+    return nAry(2, fn);
 });
 module.exports = binary;

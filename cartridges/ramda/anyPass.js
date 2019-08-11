@@ -32,16 +32,16 @@ var reduce = require('./reduce');
  *      isBlackCard({rank: 'Q', suit: '♦'}); //=> false
  */
 var anyPass = _curry1(function anyPass(preds) {
-  return curryN(reduce(max, 0, pluck('length', preds)), function() {
-    var idx = 0;
-    var len = preds.length;
-    while (idx < len) {
-      if (preds[idx].apply(this, arguments)) {
-        return true;
-      }
-      idx += 1;
-    }
-    return false;
-  });
+    return curryN(reduce(max, 0, pluck('length', preds)), function () {
+        var idx = 0;
+        var len = preds.length;
+        while (idx < len) {
+            if (preds[idx].apply(this, arguments)) {
+                return true;
+            }
+            idx += 1;
+        }
+        return false;
+    });
 });
 module.exports = anyPass;

@@ -38,8 +38,8 @@ var reverse = require('./reverse');
  *      // Followers: ["STEVE","SUZY"]
  */
 module.exports = function composeP() {
-  if (arguments.length === 0) {
-    throw new Error('composeP requires at least one argument');
-  }
-  return pipeP.apply(this, reverse(arguments));
-}
+    if (arguments.length === 0) {
+        throw new Error('composeP requires at least one argument');
+    }
+    return pipeP.apply(this, reverse(arguments));
+};

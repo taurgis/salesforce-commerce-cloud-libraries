@@ -34,6 +34,6 @@ var curry = require('./curry');
  * @symb R.call(f, a, b) = f(a, b)
  */
 var call = curry(function call(fn) {
-  return fn.apply(this, Array.prototype.slice.call(arguments, 1));
+    return fn.apply(this, Array.prototype.slice.call(arguments, 1));
 });
 module.exports = call;

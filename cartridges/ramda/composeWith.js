@@ -28,6 +28,6 @@ var reverse = require('./reverse');
  * @symb R.composeWith(f)([g, h, i])(...args) = f(g, f(h, i(...args)))
  */
 var composeWith = _curry2(function composeWith(xf, list) {
-  return pipeWith.apply(this, [xf, reverse(list)]);
+    return pipeWith.apply(this, [xf, reverse(list)]);
 });
 module.exports = composeWith;

@@ -22,6 +22,6 @@ var _curry2 = require('./internal/_curry2');
  * @symb R.apply(f, [a, b, c]) = f(a, b, c)
  */
 var apply = _curry2(function apply(fn, args) {
-  return fn.apply(this, args);
+    return fn.apply(this, args);
 });
 module.exports = apply;

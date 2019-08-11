@@ -28,8 +28,8 @@ var _assertPromise = require('./internal/_assertPromise');
  *      );
  */
 var andThen = _curry2(function andThen(f, p) {
-  _assertPromise('andThen', p);
+    _assertPromise('andThen', p);
 
-  return p.then(f);
+    return p.then(f);
 });
 module.exports = andThen;

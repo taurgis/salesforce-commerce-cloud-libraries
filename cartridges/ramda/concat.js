@@ -34,24 +34,24 @@ var toString = require('./toString');
  *      R.concat([], []); //=> []
  */
 var concat = _curry2(function concat(a, b) {
-  if (_isArray(a)) {
-    if (_isArray(b)) {
-      return a.concat(b);
+    if (_isArray(a)) {
+        if (_isArray(b)) {
+            return a.concat(b);
+        }
+        throw new TypeError(toString(b) + ' is not an array');
     }
-    throw new TypeError(toString(b) + ' is not an array');
-  }
-  if (_isString(a)) {
-    if (_isString(b)) {
-      return a + b;
+    if (_isString(a)) {
+        if (_isString(b)) {
+            return a + b;
+        }
+        throw new TypeError(toString(b) + ' is not a string');
     }
-    throw new TypeError(toString(b) + ' is not a string');
-  }
-  if (a != null && _isFunction(a['fantasy-land/concat'])) {
-    return a['fantasy-land/concat'](b);
-  }
-  if (a != null && _isFunction(a.concat)) {
-    return a.concat(b);
-  }
-  throw new TypeError(toString(a) + ' does not have a method named "concat" or "fantasy-land/concat"');
+    if (a != null && _isFunction(a['fantasy-land/concat'])) {
+        return a['fantasy-land/concat'](b);
+    }
+    if (a != null && _isFunction(a.concat)) {
+        return a.concat(b);
+    }
+    throw new TypeError(toString(a) + ' does not have a method named "concat" or "fantasy-land/concat"');
 });
 module.exports = concat;

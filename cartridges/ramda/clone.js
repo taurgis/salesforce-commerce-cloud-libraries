@@ -24,8 +24,8 @@ var _curry1 = require('./internal/_curry1');
  *      objects[0] === objectsClone[0]; //=> false
  */
 var clone = _curry1(function clone(value) {
-  return value != null && typeof value.clone === 'function' ?
-    value.clone() :
-    _clone(value, [], [], true);
+    return value != null && typeof value.clone === 'function' ?
+        value.clone() :
+        _clone(value, [], [], true);
 });
 module.exports = clone;

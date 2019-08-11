@@ -10,10 +10,10 @@ var values = require('./values');
 // Use custom mapValues function to avoid issues with specs that include a "map" key and R.map
 // delegating calls to .map
 function mapValues(fn, obj) {
-  return keys(obj).reduce(function(acc, key) {
-    acc[key] = fn(obj[key]);
-    return acc;
-  }, {});
+    return keys(obj).reduce(function (acc, key) {
+        acc[key] = fn(obj[key]);
+        return acc;
+    }, {});
 }
 
 /**
@@ -42,16 +42,16 @@ function mapValues(fn, obj) {
  * @symb R.applySpec({ x: f, y: { z: g } })(a, b) = { x: f(a, b), y: { z: g(a, b) } }
  */
 var applySpec = _curry1(function applySpec(spec) {
-  spec = mapValues(
-    function(v) { return typeof v == 'function' ? v : applySpec(v); },
-    spec
-  );
+    spec = mapValues(
+        function (v) { return typeof v === 'function' ? v : applySpec(v); },
+        spec
+    );
 
-  return curryN(
-    reduce(max, 0, pluck('length', values(spec))),
-    function() {
-      var args = arguments;
-      return mapValues(function(f) { return apply(f, args); }, spec);
-    });
+    return curryN(
+        reduce(max, 0, pluck('length', values(spec))),
+        function () {
+            var args = arguments;
+            return mapValues(function (f) { return apply(f, args); }, spec);
+        });
 });
 module.exports = applySpec;

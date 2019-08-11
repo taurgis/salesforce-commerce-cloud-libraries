@@ -31,14 +31,14 @@ var map = require('./map');
  * @symb R.ap([f, g], [a, b]) = [f(a), f(b), g(a), g(b)]
  */
 var ap = _curry2(function ap(applyF, applyX) {
-  return (
-    typeof applyX['fantasy-land/ap'] === 'function'
-      ? applyX['fantasy-land/ap'](applyF)
-      : typeof applyF.ap === 'function'
-        ? applyF.ap(applyX)
-        : typeof applyF === 'function'
-          ? function(x) { return applyF(x)(applyX(x)); }
-          : _reduce(function(acc, f) { return _concat(acc, map(f, applyX)); }, [], applyF)
-  );
+    return (
+        typeof applyX['fantasy-land/ap'] === 'function'
+            ? applyX['fantasy-land/ap'](applyF)
+            : typeof applyF.ap === 'function'
+                ? applyF.ap(applyX)
+                : typeof applyF === 'function'
+                    ? function (x) { return applyF(x)(applyX(x)); }
+                    : _reduce(function (acc, f) { return _concat(acc, map(f, applyX)); }, [], applyF)
+    );
 });
 module.exports = ap;
