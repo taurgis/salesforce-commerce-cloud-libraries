@@ -22,9 +22,9 @@ var nth = require('./nth');
  * @symb R.nthArg(1)(a, b, c) = b
  */
 var nthArg = _curry1(function nthArg(n) {
-  var arity = n < 0 ? 1 : n + 1;
-  return curryN(arity, function() {
-    return nth(n, arguments);
-  });
+    var arity = n < 0 ? 1 : n + 1;
+    return curryN(arity, function () {
+        return nth(n, arguments);
+    });
 });
 module.exports = nthArg;

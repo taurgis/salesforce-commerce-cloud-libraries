@@ -23,6 +23,6 @@ var _curry2 = require('./internal/_curry2');
  *      R.match(/a/, null); //=> TypeError: null does not have a method named "match"
  */
 var match = _curry2(function match(rx, str) {
-  return str.match(rx) || [];
+    return str.match(rx) || [];
 });
 module.exports = match;

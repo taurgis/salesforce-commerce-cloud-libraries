@@ -26,13 +26,13 @@ var _xfindLastIndex = require('./internal/_xfindLastIndex');
  *      R.findLastIndex(R.propEq('a', 4))(xs); //=> -1
  */
 var findLastIndex = _curry2(_dispatchable([], _xfindLastIndex, function findLastIndex(fn, list) {
-  var idx = list.length - 1;
-  while (idx >= 0) {
-    if (fn(list[idx])) {
-      return idx;
+    var idx = list.length - 1;
+    while (idx >= 0) {
+        if (fn(list[idx])) {
+            return idx;
+        }
+        idx -= 1;
     }
-    idx -= 1;
-  }
-  return -1;
+    return -1;
 }));
 module.exports = findLastIndex;

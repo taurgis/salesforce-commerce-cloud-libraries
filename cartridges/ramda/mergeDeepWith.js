@@ -30,8 +30,8 @@ var mergeDeepWithKey = require('./mergeDeepWithKey');
  *      //=> { a: true, b: true, c: { values: [10, 20, 15, 35] }}
  */
 var mergeDeepWith = _curry3(function mergeDeepWith(fn, lObj, rObj) {
-  return mergeDeepWithKey(function(k, lVal, rVal) {
-    return fn(lVal, rVal);
-  }, lObj, rObj);
+    return mergeDeepWithKey(function (k, lVal, rVal) {
+        return fn(lVal, rVal);
+    }, lObj, rObj);
 });
 module.exports = mergeDeepWith;

@@ -26,6 +26,6 @@ var _curry3 = require('./internal/_curry3');
  *      R.reduce(R.minBy(square), Infinity, []); //=> Infinity
  */
 var minBy = _curry3(function minBy(f, a, b) {
-  return f(b) < f(a) ? b : a;
+    return f(b) < f(a) ? b : a;
 });
 module.exports = minBy;

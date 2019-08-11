@@ -26,15 +26,15 @@ var map = require('./map');
  *      R.over(xLens, R.negate, {x: 1, y: 2});  //=> {x: -1, y: 2}
  */
 var lens = _curry2(function lens(getter, setter) {
-  return function(toFunctorFn) {
-    return function(target) {
-      return map(
-        function(focus) {
-          return setter(focus, target);
-        },
-        toFunctorFn(getter(target))
-      );
+    return function (toFunctorFn) {
+        return function (target) {
+            return map(
+                function (focus) {
+                    return setter(focus, target);
+                },
+                toFunctorFn(getter(target))
+            );
+        };
     };
-  };
 });
 module.exports = lens;

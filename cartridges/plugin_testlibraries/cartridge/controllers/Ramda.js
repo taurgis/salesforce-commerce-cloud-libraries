@@ -1,3 +1,4 @@
+/* eslint-disable */
 'use strict';
 
 var server = require('server');
@@ -66,6 +67,31 @@ server.get('Test', function (req, res, next) {
     };
 
     const xs = [{ a: 1 }, { a: 2 }, { a: 3 }];
+    const byGrade = R.groupBy(function (student) {
+        const score = student.score;
+        return score < 65 ? 'F' :
+            score < 70 ? 'D' :
+                score < 80 ? 'C' :
+                    score < 90 ? 'B' : 'A';
+    });
+    const students = [{ name: 'Abby', score: 84 },
+    { name: 'Eddy', score: 85 },
+    // ...
+    { name: 'Jack', score: 69 }];
+
+    const incCount = R.ifElse(
+        R.has('count'),
+        R.over(R.lensProp('count'), R.inc),
+        R.assoc('count', 1)
+    );
+
+    const double = function (x) { return x * 2 };
+
+    var recoverFromFailure = R.pipe(
+                failedFetch,
+                R.otherwise(useDefault),
+                R.then(R.pick(['firstName', 'lastName']))
+              );
 
     res.json(
         {
@@ -101,7 +127,39 @@ server.get('Test', function (req, res, next) {
             endsWith: R.endsWith(['c'], ['a', 'b', 'c']),
             eqProps: R.eqProps('c', o1, o2),
             evolve: R.evolve(transformations, tomato),
-            findIndexBy: R.findIndex(R.propEq('a', 2))(xs)
+            findIndexBy: R.findIndex(R.propEq('a', 2))(xs),
+            findLast: R.findLast(R.propEq('a', 1))([{ a: 1, b: 0 }, { a: 1, b: 1 }]),
+            flatten: R.flatten([1, 2, [3, 4], 5, [6, [7, 8, [9, [10, 11], 12]]]]),
+            fromPairs: R.fromPairs([['a', 1], ['b', 2], ['c', 3]]),
+            groupBy: byGrade(students),
+            gte: R.gte(2, 1),
+            hasPath: R.hasPath(['a', 'b'], { a: { c: 2 } }),
+            identical: R.identical(1, '1'),
+            ifElse: incCount({}),
+            includes: R.includes(3, [1, 2, 3]),
+            indexOf: R.indexOf(3, [1, 2, 3, 4]),
+            insertAll: R.insertAll(2, ['x', 'y', 'z'], [1, 2, 3, 4]),
+            intersperse: R.intersperse('a', ['b', 'n', 'n', 's']),
+            invert: R.invert(raceResultsByFirstName = {
+                first: 'alice',
+                second: 'jake',
+                third: 'alice',
+            }),
+            isEmpty: R.isEmpty([]),
+            keys: R.keys({ a: 1, b: 2, c: 3 }),
+            lens: R.view(R.lens(R.prop('x'), R.assoc('x')), { x: 1, y: 2 }),
+            map: R.map(double, [1, 2, 3]),
+            max: R.max(789, 123),
+            mean: R.mean([2, 7, 9]),
+            medium: R.median([2, 9, 7]),
+            merge: R.merge({ 'name': 'fred', 'age': 10 }, { 'age': 40 }),
+            mergeDeepLeft: R.mergeDeepLeft({ name: 'fred', age: 10, contact: { email: 'moo@example.com' } },
+                { age: 40, contact: { email: 'baa@example.com' } }),
+            modulo: R.modulo(-17, 3),
+            nth:  R.nth(1, ['foo', 'bar', 'baz', 'quux']),
+            of:  R.of([42]),
+            omit: R.omit(['a', 'd'], {a: 1, b: 2, c: 3, d: 4}),
+        //otherwise: recoverFromFailure(12345).then(console.log)
         });
 
     next();

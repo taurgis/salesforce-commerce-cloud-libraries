@@ -25,9 +25,9 @@ var keys = require('./keys');
  *      R.mapObjIndexed(prependKeyAndDouble, xyz); //=> { x: 'x2', y: 'y4', z: 'z6' }
  */
 var mapObjIndexed = _curry2(function mapObjIndexed(fn, obj) {
-  return _reduce(function(acc, key) {
-    acc[key] = fn(obj[key], key, obj);
-    return acc;
-  }, {}, keys(obj));
+    return _reduce(function (acc, key) {
+        acc[key] = fn(obj[key], key, obj);
+        return acc;
+    }, {}, keys(obj));
 });
 module.exports = mapObjIndexed;

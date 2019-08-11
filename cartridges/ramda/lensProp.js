@@ -25,6 +25,6 @@ var prop = require('./prop');
  *      R.over(xLens, R.negate, {x: 1, y: 2});  //=> {x: -1, y: 2}
  */
 var lensProp = _curry1(function lensProp(k) {
-  return lens(prop(k), assoc(k));
+    return lens(prop(k), assoc(k));
 });
 module.exports = lensProp;

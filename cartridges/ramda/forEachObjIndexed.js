@@ -25,13 +25,13 @@ var keys = require('./keys');
  * @symb R.forEachObjIndexed(f, {x: a, y: b}) = {x: a, y: b}
  */
 var forEachObjIndexed = _curry2(function forEachObjIndexed(fn, obj) {
-  var keyList = keys(obj);
-  var idx = 0;
-  while (idx < keyList.length) {
-    var key = keyList[idx];
-    fn(obj[key], key, obj);
-    idx += 1;
-  }
-  return obj;
+    var keyList = keys(obj);
+    var idx = 0;
+    while (idx < keyList.length) {
+        var key = keyList[idx];
+        fn(obj[key], key, obj);
+        idx += 1;
+    }
+    return obj;
 });
 module.exports = forEachObjIndexed;

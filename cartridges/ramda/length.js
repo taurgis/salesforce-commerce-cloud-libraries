@@ -18,6 +18,6 @@ var _isNumber = require('./internal/_isNumber');
  *      R.length([1, 2, 3]); //=> 3
  */
 var length = _curry1(function length(list) {
-  return list != null && _isNumber(list.length) ? list.length : NaN;
+    return list != null && _isNumber(list.length) ? list.length : NaN;
 });
 module.exports = length;

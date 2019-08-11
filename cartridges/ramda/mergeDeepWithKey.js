@@ -32,12 +32,11 @@ var mergeWithKey = require('./mergeWithKey');
  *      //=> { a: true, b: true, c: { thing: 'bar', values: [10, 20, 15, 35] }}
  */
 var mergeDeepWithKey = _curry3(function mergeDeepWithKey(fn, lObj, rObj) {
-  return mergeWithKey(function(k, lVal, rVal) {
-    if (_isObject(lVal) && _isObject(rVal)) {
-      return mergeDeepWithKey(fn, lVal, rVal);
-    } else {
-      return fn(k, lVal, rVal);
-    }
-  }, lObj, rObj);
+    return mergeWithKey(function (k, lVal, rVal) {
+        if (_isObject(lVal) && _isObject(rVal)) {
+            return mergeDeepWithKey(fn, lVal, rVal);
+        }
+        return fn(k, lVal, rVal);
+    }, lObj, rObj);
 });
 module.exports = mergeDeepWithKey;

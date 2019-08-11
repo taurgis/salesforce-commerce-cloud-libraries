@@ -28,6 +28,6 @@ var _curry2 = require('./internal/_curry2');
  *      R.hasIn('area', square);  //=> true
  */
 var hasIn = _curry2(function hasIn(prop, obj) {
-  return prop in obj;
+    return prop in obj;
 });
 module.exports = hasIn;

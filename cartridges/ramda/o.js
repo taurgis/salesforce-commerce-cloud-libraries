@@ -29,6 +29,6 @@ var _curry3 = require('./internal/_curry3');
  * @symb R.o(f, g, x) = f(g(x))
  */
 var o = _curry3(function o(f, g, x) {
-  return f(g(x));
+    return f(g(x));
 });
 module.exports = o;

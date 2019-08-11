@@ -23,11 +23,11 @@ var curryN = require('./curryN');
  * @symb R.flip(f)(a, b, c) = f(b, a, c)
  */
 var flip = _curry1(function flip(fn) {
-  return curryN(fn.length, function(a, b) {
-    var args = Array.prototype.slice.call(arguments, 0);
-    args[0] = b;
-    args[1] = a;
-    return fn.apply(this, args);
-  });
+    return curryN(fn.length, function (a, b) {
+        var args = Array.prototype.slice.call(arguments, 0);
+        args[0] = b;
+        args[1] = a;
+        return fn.apply(this, args);
+    });
 });
 module.exports = flip;

@@ -24,8 +24,8 @@ var mergeDeepWithKey = require('./mergeDeepWithKey');
  *      //=> { name: 'fred', age: 10, contact: { email: 'moo@example.com' }}
  */
 var mergeDeepLeft = _curry2(function mergeDeepLeft(lObj, rObj) {
-  return mergeDeepWithKey(function(k, lVal, rVal) {
-    return lVal;
-  }, lObj, rObj);
+    return mergeDeepWithKey(function (k, lVal) {
+        return lVal;
+    }, lObj, rObj);
 });
 module.exports = mergeDeepLeft;

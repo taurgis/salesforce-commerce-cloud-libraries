@@ -26,6 +26,6 @@ var _curry3 = require('./internal/_curry3');
  *      R.reduce(R.maxBy(square), 0, []); //=> 0
  */
 var maxBy = _curry3(function maxBy(f, a, b) {
-  return f(b) > f(a) ? b : a;
+    return f(b) > f(a) ? b : a;
 });
 module.exports = maxBy;

@@ -29,6 +29,6 @@ var path = require('./path');
  *      //=> {x: [{y: -2, z: 3}, {y: 4, z: 5}]}
  */
 var lensPath = _curry1(function lensPath(p) {
-  return lens(path(p), assocPath(p));
+    return lens(path(p), assocPath(p));
 });
 module.exports = lensPath;

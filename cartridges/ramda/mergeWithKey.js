@@ -28,21 +28,21 @@ var _has = require('./internal/_has');
  * @symb R.mergeWithKey(f, { x: 1, y: 2 }, { y: 5, z: 3 }) = { x: 1, y: f('y', 2, 5), z: 3 }
  */
 var mergeWithKey = _curry3(function mergeWithKey(fn, l, r) {
-  var result = {};
-  var k;
+    var result = {};
+    var k;
 
-  for (k in l) {
-    if (_has(k, l)) {
-      result[k] = _has(k, r) ? fn(k, l[k], r[k]) : l[k];
+    for (k in l) {
+        if (_has(k, l)) {
+            result[k] = _has(k, r) ? fn(k, l[k], r[k]) : l[k];
+        }
     }
-  }
 
-  for (k in r) {
-    if (_has(k, r) && !(_has(k, result))) {
-      result[k] = r[k];
+    for (k in r) {
+        if (_has(k, r) && !(_has(k, result))) {
+            result[k] = r[k];
+        }
     }
-  }
 
-  return result;
+    return result;
 });
 module.exports = mergeWithKey;

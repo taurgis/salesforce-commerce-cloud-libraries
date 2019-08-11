@@ -27,6 +27,6 @@ var hasPath = require('./hasPath');
  *      pointHas('z');  //=> false
  */
 var has = _curry2(function has(prop, obj) {
-  return hasPath([prop], obj);
+    return hasPath([prop], obj);
 });
 module.exports = has;

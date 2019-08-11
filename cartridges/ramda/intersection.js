@@ -23,14 +23,15 @@ var uniq = require('./uniq');
  *      R.intersection([1,2,3,4], [7,6,5,4,3]); //=> [4, 3]
  */
 var intersection = _curry2(function intersection(list1, list2) {
-  var lookupList, filteredList;
-  if (list1.length > list2.length) {
-    lookupList = list1;
-    filteredList = list2;
-  } else {
-    lookupList = list2;
-    filteredList = list1;
-  }
-  return uniq(_filter(flip(_includes)(lookupList), filteredList));
+    var lookupList,
+        filteredList;
+    if (list1.length > list2.length) {
+        lookupList = list1;
+        filteredList = list2;
+    } else {
+        lookupList = list2;
+        filteredList = list1;
+    }
+    return uniq(_filter(flip(_includes)(lookupList), filteredList));
 });
 module.exports = intersection;

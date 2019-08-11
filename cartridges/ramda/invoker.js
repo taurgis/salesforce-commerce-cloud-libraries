@@ -39,12 +39,12 @@ var toString = require('./toString');
  * @symb R.invoker(2, 'method')(a, b, o) = o['method'](a, b)
  */
 var invoker = _curry2(function invoker(arity, method) {
-  return curryN(arity + 1, function() {
-    var target = arguments[arity];
-    if (target != null && _isFunction(target[method])) {
-      return target[method].apply(target, Array.prototype.slice.call(arguments, 0, arity));
-    }
-    throw new TypeError(toString(target) + ' does not have a method named "' + method + '"');
-  });
+    return curryN(arity + 1, function () {
+        var target = arguments[arity];
+        if (target != null && _isFunction(target[method])) {
+            return target[method].apply(target, Array.prototype.slice.call(arguments, 0, arity));
+        }
+        throw new TypeError(toString(target) + ' does not have a method named "' + method + '"');
+    });
 });
 module.exports = invoker;

@@ -42,11 +42,11 @@ var reduceBy = require('./reduceBy');
  *      //   'F': [{name: 'Eddy', score: 58}]
  *      // }
  */
-var groupBy = _curry2(_checkForMethod('groupBy', reduceBy(function(acc, item) {
-  if (acc == null) {
-    acc = [];
-  }
-  acc.push(item);
-  return acc;
+var groupBy = _curry2(_checkForMethod('groupBy', reduceBy(function (acc, item) {
+    if (acc == null) {
+        acc = [];
+    }
+    acc.push(item);
+    return acc;
 }, null)));
 module.exports = groupBy;

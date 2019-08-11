@@ -26,6 +26,6 @@ var _curry2 = require('./internal/_curry2');
  * @symb R.mergeLeft(a, b) = {...b, ...a}
  */
 var mergeLeft = _curry2(function mergeLeft(l, r) {
-  return _objectAssign({}, r, l);
+    return _objectAssign({}, r, l);
 });
 module.exports = mergeLeft;

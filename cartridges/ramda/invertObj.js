@@ -30,16 +30,16 @@ var keys = require('./keys');
  *      //=> { 'alice': '0', 'jake':'1' }
  */
 var invertObj = _curry1(function invertObj(obj) {
-  var props = keys(obj);
-  var len = props.length;
-  var idx = 0;
-  var out = {};
+    var props = keys(obj);
+    var len = props.length;
+    var idx = 0;
+    var out = {};
 
-  while (idx < len) {
-    var key = props[idx];
-    out[obj[key]] = key;
-    idx += 1;
-  }
-  return out;
+    while (idx < len) {
+        var key = props[idx];
+        out[obj[key]] = key;
+        idx += 1;
+    }
+    return out;
 });
 module.exports = invertObj;

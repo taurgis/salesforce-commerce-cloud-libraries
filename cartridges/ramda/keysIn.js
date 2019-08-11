@@ -23,11 +23,11 @@ var _curry1 = require('./internal/_curry1');
  *      R.keysIn(f); //=> ['x', 'y']
  */
 var keysIn = _curry1(function keysIn(obj) {
-  var prop;
-  var ks = [];
-  for (prop in obj) {
-    ks[ks.length] = prop;
-  }
-  return ks;
+    var prop;
+    var ks = [];
+    for (prop in obj) {
+        ks[ks.length] = prop;
+    }
+    return ks;
 });
 module.exports = keysIn;

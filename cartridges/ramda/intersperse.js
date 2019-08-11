@@ -20,17 +20,17 @@ var _curry2 = require('./internal/_curry2');
  *      R.intersperse('a', ['b', 'n', 'n', 's']); //=> ['b', 'a', 'n', 'a', 'n', 'a', 's']
  */
 var intersperse = _curry2(_checkForMethod('intersperse', function intersperse(separator, list) {
-  var out = [];
-  var idx = 0;
-  var length = list.length;
-  while (idx < length) {
-    if (idx === length - 1) {
-      out.push(list[idx]);
-    } else {
-      out.push(list[idx], separator);
+    var out = [];
+    var idx = 0;
+    var length = list.length;
+    while (idx < length) {
+        if (idx === length - 1) {
+            out.push(list[idx]);
+        } else {
+            out.push(list[idx], separator);
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return out;
+    return out;
 }));
 module.exports = intersperse;

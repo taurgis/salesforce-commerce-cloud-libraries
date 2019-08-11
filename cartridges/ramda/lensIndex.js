@@ -25,6 +25,6 @@ var update = require('./update');
  *      R.over(headLens, R.toUpper, ['a', 'b', 'c']); //=> ['A', 'b', 'c']
  */
 var lensIndex = _curry1(function lensIndex(n) {
-  return lens(nth(n), update(n));
+    return lens(nth(n), update(n));
 });
 module.exports = lensIndex;

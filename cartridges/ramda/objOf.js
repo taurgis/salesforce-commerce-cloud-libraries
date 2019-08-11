@@ -22,8 +22,8 @@ var _curry2 = require('./internal/_curry2');
  *      matchPhrases(['foo', 'bar', 'baz']); //=> {must: [{match_phrase: 'foo'}, {match_phrase: 'bar'}, {match_phrase: 'baz'}]}
  */
 var objOf = _curry2(function objOf(key, val) {
-  var obj = {};
-  obj[key] = val;
-  return obj;
+    var obj = {};
+    obj[key] = val;
+    return obj;
 });
 module.exports = objOf;

@@ -29,6 +29,6 @@ var all = require('./all');
  *      R.none(isOdd, [1, 3, 5, 7, 8, 11]); //=> false
  */
 var none = _curry2(function none(fn, input) {
-  return all(_complement(fn), input);
+    return all(_complement(fn), input);
 });
 module.exports = none;

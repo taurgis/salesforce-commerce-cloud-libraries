@@ -20,6 +20,6 @@ var converge = require('./converge');
  * @symb R.juxt([f, g, h])(a, b) = [f(a, b), g(a, b), h(a, b)]
  */
 var juxt = _curry1(function juxt(fns) {
-  return converge(function() { return Array.prototype.slice.call(arguments, 0); }, fns);
+    return converge(function () { return Array.prototype.slice.call(arguments, 0); }, fns);
 });
 module.exports = juxt;

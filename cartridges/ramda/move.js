@@ -17,20 +17,20 @@ var _curry3 = require('./internal/_curry3');
  *      R.move(0, 2, ['a', 'b', 'c', 'd', 'e', 'f']); //=> ['b', 'c', 'a', 'd', 'e', 'f']
  *      R.move(-1, 0, ['a', 'b', 'c', 'd', 'e', 'f']); //=> ['f', 'a', 'b', 'c', 'd', 'e'] list rotation
  */
-var move = _curry3(function(from, to, list) {
-  var length = list.length;
-  var result = list.slice();
-  var positiveFrom = from < 0 ? length + from : from;
-  var positiveTo = to < 0 ? length + to : to;
-  var item = result.splice(positiveFrom, 1);
+var move = _curry3(function (from, to, list) {
+    var length = list.length;
+    var result = list.slice();
+    var positiveFrom = from < 0 ? length + from : from;
+    var positiveTo = to < 0 ? length + to : to;
+    var item = result.splice(positiveFrom, 1);
 
-  return positiveFrom < 0 || positiveFrom >= list.length
-      || positiveTo   < 0 || positiveTo   >= list.length
-    ? list
-    : []
-      .concat(result.slice(0, positiveTo))
-      .concat(item)
-      .concat(result.slice(positiveTo, list.length));
+    return positiveFrom < 0 || positiveFrom >= list.length
+      || positiveTo < 0 || positiveTo >= list.length
+        ? list
+        : []
+            .concat(result.slice(0, positiveTo))
+            .concat(item)
+            .concat(result.slice(positiveTo, list.length));
 });
 
 module.exports = move;

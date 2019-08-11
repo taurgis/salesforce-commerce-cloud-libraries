@@ -23,17 +23,16 @@ var equals = require('./equals');
  *      R.lastIndexOf(10, [1,2,3,4]); //=> -1
  */
 var lastIndexOf = _curry2(function lastIndexOf(target, xs) {
-  if (typeof xs.lastIndexOf === 'function' && !_isArray(xs)) {
-    return xs.lastIndexOf(target);
-  } else {
+    if (typeof xs.lastIndexOf === 'function' && !_isArray(xs)) {
+        return xs.lastIndexOf(target);
+    }
     var idx = xs.length - 1;
     while (idx >= 0) {
-      if (equals(xs[idx], target)) {
-        return idx;
-      }
-      idx -= 1;
+        if (equals(xs[idx], target)) {
+            return idx;
+        }
+        idx -= 1;
     }
     return -1;
-  }
 });
 module.exports = lastIndexOf;

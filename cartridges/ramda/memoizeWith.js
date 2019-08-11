@@ -32,13 +32,13 @@ var _has = require('./internal/_has');
  *      count; //=> 1
  */
 var memoizeWith = _curry2(function memoizeWith(mFn, fn) {
-  var cache = {};
-  return _arity(fn.length, function() {
-    var key = mFn.apply(this, arguments);
-    if (!_has(key, cache)) {
-      cache[key] = fn.apply(this, arguments);
-    }
-    return cache[key];
-  });
+    var cache = {};
+    return _arity(fn.length, function () {
+        var key = mFn.apply(this, arguments);
+        if (!_has(key, cache)) {
+            cache[key] = fn.apply(this, arguments);
+        }
+        return cache[key];
+    });
 });
 module.exports = memoizeWith;

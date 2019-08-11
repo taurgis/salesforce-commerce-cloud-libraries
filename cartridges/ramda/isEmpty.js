@@ -25,6 +25,6 @@ var equals = require('./equals');
  *      R.isEmpty({length: 0}); //=> false
  */
 var isEmpty = _curry1(function isEmpty(x) {
-  return x != null && equals(x, empty(x));
+    return x != null && equals(x, empty(x));
 });
 module.exports = isEmpty;

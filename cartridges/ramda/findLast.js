@@ -26,12 +26,14 @@ var _xfindLast = require('./internal/_xfindLast');
  *      R.findLast(R.propEq('a', 4))(xs); //=> undefined
  */
 var findLast = _curry2(_dispatchable([], _xfindLast, function findLast(fn, list) {
-  var idx = list.length - 1;
-  while (idx >= 0) {
-    if (fn(list[idx])) {
-      return list[idx];
+    var idx = list.length - 1;
+    while (idx >= 0) {
+        if (fn(list[idx])) {
+            return list[idx];
+        }
+        idx -= 1;
     }
-    idx -= 1;
-  }
+
+    return undefined;
 }));
 module.exports = findLast;

@@ -26,8 +26,8 @@ var mergeWithKey = require('./mergeWithKey');
  *      //=> { a: true, b: true, values: [10, 20, 15, 35] }
  */
 var mergeWith = _curry3(function mergeWith(fn, l, r) {
-  return mergeWithKey(function(_, _l, _r) {
-    return fn(_l, _r);
-  }, l, r);
+    return mergeWithKey(function (_, _l, _r) {
+        return fn(_l, _r);
+    }, l, r);
 });
 module.exports = mergeWith;
