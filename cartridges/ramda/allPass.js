@@ -31,16 +31,16 @@ var reduce = require('./reduce');
  *      isQueenOfSpades({rank: 'Q', suit: '♠︎'}); //=> true
  */
 var allPass = _curry1(function allPass(preds) {
-  return curryN(reduce(max, 0, pluck('length', preds)), function() {
-    var idx = 0;
-    var len = preds.length;
-    while (idx < len) {
-      if (!preds[idx].apply(this, arguments)) {
-        return false;
-      }
-      idx += 1;
-    }
-    return true;
-  });
+    return curryN(reduce(max, 0, pluck('length', preds)), function () {
+        var idx = 0;
+        var len = preds.length;
+        while (idx < len) {
+            if (!preds[idx].apply(this, arguments)) {
+                return false;
+            }
+            idx += 1;
+        }
+        return true;
+    });
 });
 module.exports = allPass;

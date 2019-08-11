@@ -28,13 +28,13 @@ var _xall = require('./internal/_xall');
  *      R.all(equals3)([3, 3, 1, 3]); //=> false
  */
 var all = _curry2(_dispatchable(['all'], _xall, function all(fn, list) {
-  var idx = 0;
-  while (idx < list.length) {
-    if (!fn(list[idx])) {
-      return false;
+    var idx = 0;
+    while (idx < list.length) {
+        if (!fn(list[idx])) {
+            return false;
+        }
+        idx += 1;
     }
-    idx += 1;
-  }
-  return true;
+    return true;
 }));
 module.exports = all;

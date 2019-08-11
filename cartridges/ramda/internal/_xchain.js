@@ -4,6 +4,6 @@ var map = require('../map');
 
 
 var _xchain = _curry2(function _xchain(f, xf) {
-  return map(f, _flatCat(xf));
+    return map(f, _flatCat(xf));
 });
 module.exports = _xchain;
