@@ -9,7 +9,7 @@ server.get('Test', function (req, res, next) {
     res.json(
         {
             string: chance.string(),
-            bool: chance.bool({ likelihood: 30 }),
+            bool: require('chance/bool')({ likelihood: 30 }),
             word: chance.word({ syllables: 3 }),
             name: chance.name(),
             birthday: chance.birthday({ type: 'child' }),
