@@ -11,7 +11,7 @@ var CHARS_UPPER = CHARS_LOWER.toUpperCase();
  * @returns {Character} - A random character value
  *
  * @example
- *      character(({ casing: 'lower' })); // => c
+ *      character(({ casing: 'lower' })); // => 'c'
  */
 module.exports = function character(options) {
     var characterOptions = initOptions(options);

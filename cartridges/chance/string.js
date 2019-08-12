@@ -11,7 +11,7 @@ var n = require('./lib/n');
  * @returns {string} - A random string value
  *
  * @example
- *      string({ pool: 'abcde' }); // => cccdeeabedebb
+ *      string({ pool: 'abcde' }); // => 'cccdeeabedebb'
  */
 module.exports = function string(options) {
     var stringOptions = initOptions(options, { length: natural({ min: 5, max: 20 }) });

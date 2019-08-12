@@ -17,6 +17,7 @@ server.get('Test', function (req, res, next) {
             letter: require('chance/letter')(),
             prime: require('chance/prime')({ min: 1, max: 20 }),
             string: require('chance/string')({ pool: 'abcde' }),
+            paragraph: require('chance/paragraph')(),
             word: chance.word({ syllables: 3 }),
             name: chance.name(),
             birthday: chance.birthday({ type: 'child' }),
