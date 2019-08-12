@@ -4,7 +4,7 @@
     },
     "rules": {
         "no-array-constructor": "off",
-        "no-mixed-operators": "off"
-
+        "no-mixed-operators": "off",
+        "no-prototype-builtins": "off"
     }
 }

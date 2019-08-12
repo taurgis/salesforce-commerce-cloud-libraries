@@ -6,7 +6,6 @@ var random = require('./lib/random');
  * Generates random true or false.
  *
  * @param {Object} options - Possible options foor bool
- *
  * @returns {boolean} - Returns true or false
  *
  * @example

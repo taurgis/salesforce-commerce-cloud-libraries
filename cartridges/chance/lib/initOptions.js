@@ -3,7 +3,7 @@ module.exports = function initOptions(options, defaults) {
 
     if (defaults) {
         Object.keys(defaults).forEach(function (key) {
-            if (typeof options[key] === 'undefined') {
+            if (!options || !options.hasOwnProperty(key)) {
                 combinedOptions[key] = defaults[key];
             }
         });
