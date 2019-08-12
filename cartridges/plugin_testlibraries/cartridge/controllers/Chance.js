@@ -16,6 +16,7 @@ server.get('Test', function (req, res, next) {
             character: require('chance/character')({ casing: 'upper' }),
             float: require('chance/floating')(),
             letter: require('chance/letter')(),
+            prime: require('chance/prime')({ min: 1, max: 20 }),
             word: chance.word({ syllables: 3 }),
             name: chance.name(),
             birthday: chance.birthday({ type: 'child' }),

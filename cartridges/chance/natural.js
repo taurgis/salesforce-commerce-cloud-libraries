@@ -8,10 +8,10 @@ var MAX_INT = Number(9007199254740992);
  * Return a random natural value.
  *
  * @param {Object} options - Possible options for natural
- * @returns {Character} - A random natural value
+ * @returns {number} - A random natural value
  *
  * @example
- *      chance.natural({ min: 1, max: 20 }); // => 20
+ *      natural({ min: 1, max: 20 }); // => 20
  */
 module.exports = function natural(options) {
     var naturalOptions = initOptions(options, { min: 0, max: MAX_INT });
