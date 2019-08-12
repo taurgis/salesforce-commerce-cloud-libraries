@@ -4,7 +4,7 @@ var integer = require('./integer');
 /**
  * Return a random falsy value.
  *
- * @param {Object} options - Possible options foor bool
+ * @param {Object} options - Possible options for falsy
  * @returns {null} - A random falsy value
  *
  * @example

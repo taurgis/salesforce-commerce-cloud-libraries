@@ -12,6 +12,8 @@ server.get('Test', function (req, res, next) {
             bool: require('chance/bool')({ likelihood: 30 }),
             falsy: require('chance/falsy')(),
             integer: require('chance/integer')(),
+            natural: require('chance/natural')(),
+            character: require('chance/character')({ casing: 'upper' }),
             word: chance.word({ syllables: 3 }),
             name: chance.name(),
             birthday: chance.birthday({ type: 'child' }),

@@ -8,8 +8,8 @@ var initOptions = require('./lib/initOptions');
 /**
  * Return a random integer value.
  *
- * @param {Object} options - Possible options foor bool
- * @returns {null} - A random falsy value
+ * @param {Object} options - Possible options for integer
+ * @returns {integer} - A random integer value
  *
  * @example
  *      integer({ min: -20, max: 20 }); // => 10
