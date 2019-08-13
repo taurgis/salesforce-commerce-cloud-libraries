@@ -2,8 +2,9 @@
 
 var testRange = require('./lib/testRange');
 var initOptions = require('./lib/initOptions');
-var get = require('./lib/get');
 var pick = require('./lib/pickOne');
+var months = require('./lib/months');
+
 /**
  * Return a random month value.
  *
@@ -20,6 +21,6 @@ module.exports = function month(options) {
     testRange(monthOptions.max > 12, 'Chance: Max cannot be greater than 12.');
     testRange(monthOptions.min > monthOptions.max, 'Chance: Min cannot be greater than Max.');
 
-    var generatedMonth = pick(get('months').slice(monthOptions.min - 1, monthOptions.max));
+    var generatedMonth = pick(months.slice(monthOptions.min - 1, monthOptions.max));
     return monthOptions.raw ? generatedMonth : generatedMonth.name;
 };

@@ -9,7 +9,7 @@ var hour = require('./hour');
 var minute = require('./minute');
 var second = require('./second');
 var millisecond = require('./millisecond');
-var get = require('./lib/get');
+var months = require('./lib/months');
 
 /**
  * Return a random date value.
@@ -41,7 +41,7 @@ module.exports = function date(options) {
 
         if (options && options.month) {
             // Mod 12 to allow months outside range of 0-11 (not encouraged, but also not prevented).
-            daysInMonth = get('months')[((options.month % 12) + 12) % 12].days;
+            daysInMonth = months[((options.month % 12) + 12) % 12].days;
         }
 
         dateOptions = initOptions(options, {
