@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'ئ‍ۆتكەن' eeee 'دە' p",
     yesterday: "'تۈنۈگۈن دە' p",

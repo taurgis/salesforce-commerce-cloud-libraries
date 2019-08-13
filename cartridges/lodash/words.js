@@ -1,3 +1,5 @@
+'use strict';
+
 var unicodeWords = require('./.internal/unicodeWords');
 
 var hasUnicodeWord = RegExp.prototype.test.bind(

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseIsEqual= require('./baseIsEqual.js');
 var get= require('../get.js');
 var hasIn= require('../hasIn.js');

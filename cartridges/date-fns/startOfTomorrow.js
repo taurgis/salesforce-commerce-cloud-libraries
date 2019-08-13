@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @name startOfTomorrow
  * @category Day Helpers

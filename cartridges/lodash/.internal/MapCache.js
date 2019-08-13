@@ -1,3 +1,5 @@
+'use strict';
+
 
 var Hash = require('./Hash');
 var HashMap = require('dw/util/HashMap');

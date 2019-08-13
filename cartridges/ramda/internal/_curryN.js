@@ -1,3 +1,5 @@
+'use strict';
+
 var _arity = require('./_arity');
 var _isPlaceholder = require('./_isPlaceholder');
 

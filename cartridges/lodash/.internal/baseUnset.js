@@ -1,3 +1,5 @@
+'use strict';
+
 var castPath= require('./castPath.js');
 var last= require('../last.js');
 var parent= require('./parent.js');

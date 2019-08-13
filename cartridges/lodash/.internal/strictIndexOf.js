@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * A specialized version of `indexOf` which performs strict equality
  * comparisons of values, i.e. `===`.

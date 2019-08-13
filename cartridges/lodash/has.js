@@ -1,3 +1,5 @@
+'use strict';
+
 
 /**
  * Checks if `key` is a direct property of `object`.

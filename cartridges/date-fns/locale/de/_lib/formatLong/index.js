@@ -1,3 +1,5 @@
+'use strict';
+
 var buildFormatLongFn = require('../../../_lib/buildFormatLongFn/index');
 
 // DIN 5008: https://de.wikipedia.org/wiki/Datumsformat#DIN_5008

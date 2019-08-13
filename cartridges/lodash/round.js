@@ -1,3 +1,5 @@
+'use strict';
+
 var createRound = require('./.internal/createRound.js');
 
 /**

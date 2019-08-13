@@ -1,3 +1,5 @@
+'use strict';
+
 var castSlice = require('./.internal/castSlice.js');
 var charsEndIndex = require('./.internal/charsEndIndex.js');
 var stringToArray = require('./.internal/stringToArray.js');

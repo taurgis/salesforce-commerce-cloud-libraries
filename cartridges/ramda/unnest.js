@@ -1,3 +1,5 @@
+'use strict';
+
 var _identity = require('./internal/_identity');
 var chain = require('./chain');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var Stack= require('./Stack.js');
 var baseIsEqual= require('./baseIsEqual.js');
 

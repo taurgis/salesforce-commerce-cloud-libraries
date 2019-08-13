@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./_curry2');
 var _flatCat = require('./_flatCat');
 var map = require('../map');

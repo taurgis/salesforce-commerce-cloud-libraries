@@ -1,3 +1,5 @@
+'use strict';
+
 var baseProperty = require('./.internal/baseProperty.js');
 var basePropertyDeep = require('./.internal/basePropertyDeep.js');
 var isKey = require('./.internal/isKey.js');

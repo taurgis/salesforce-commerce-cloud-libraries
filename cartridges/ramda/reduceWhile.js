@@ -1,3 +1,5 @@
+'use strict';
+
 var _curryN = require('./internal/_curryN');
 var _reduce = require('./internal/_reduce');
 var _reduced = require('./internal/_reduced');

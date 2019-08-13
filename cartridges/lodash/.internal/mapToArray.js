@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Converts `map` to its key-value pairs.
  *

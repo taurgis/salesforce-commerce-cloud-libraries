@@ -1,3 +1,5 @@
+'use strict';
+
 var _isArray = require('./_isArray');
 var _isTransformer = require('./_isTransformer');
 

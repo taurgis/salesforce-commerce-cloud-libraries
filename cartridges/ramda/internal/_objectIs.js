@@ -1,3 +1,5 @@
+'use strict';
+
 // Based on https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
 function _objectIs(a, b) {
     // SameValue algorithm

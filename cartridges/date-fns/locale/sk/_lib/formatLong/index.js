@@ -1,3 +1,5 @@
+'use strict';
+
 var buildFormatLongFn = require('../../../_lib/buildFormatLongFn/index');
 
 // https://www.unicode.org/cldr/charts/32/summary/sk.html?hide#1986

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Replaces matches for `pattern` in `string` with `replacement`.
  *

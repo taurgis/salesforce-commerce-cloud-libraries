@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function addLeadingZeros(number, targetLength) {
     var sign = number < 0 ? '-' : '';
     var output = Math.abs(number).toString();

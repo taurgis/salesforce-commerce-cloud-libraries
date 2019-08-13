@@ -1,3 +1,5 @@
+'use strict';
+
 var getTag = require('./.internal/getTag.js');
 var isArrayLike = require('./isArrayLike.js');
 var isString = require('./isString.js');

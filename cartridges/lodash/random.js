@@ -1,3 +1,5 @@
+'use strict';
+
 var toFinite = require('./toFinite.js');
 
 /** Built-in method references without a dependency on `root`. */

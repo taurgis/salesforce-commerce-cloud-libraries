@@ -1,3 +1,5 @@
+'use strict';
+
 var createMathOperation = require('./.internal/createMathOperation.js');
 
 /**

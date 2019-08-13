@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to generate unique IDs. */
 const idCounter = {};
 

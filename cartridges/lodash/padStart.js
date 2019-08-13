@@ -1,3 +1,5 @@
+'use strict';
+
 var createPadding = require('./.internal/createPadding.js');
 var stringSize = require('./.internal/stringSize.js');
 

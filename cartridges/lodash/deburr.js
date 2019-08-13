@@ -1,3 +1,5 @@
+'use strict';
+
 var deburrLetter = require('./.internal/deburrLetter');
 
 /** Used to match Latin Unicode letters (excluding mathematical operators). */

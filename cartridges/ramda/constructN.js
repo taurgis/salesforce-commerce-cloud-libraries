@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var curry = require('./curry');
 var nAry = require('./nAry');
@@ -56,7 +58,8 @@ var constructN = _curry2(function constructN(n, Fn) {
             case 7: return new Fn($0, $1, $2, $3, $4, $5, $6);
             case 8: return new Fn($0, $1, $2, $3, $4, $5, $6, $7);
             case 9: return new Fn($0, $1, $2, $3, $4, $5, $6, $7, $8);
-            case 10: return new Fn($0, $1, $2, $3, $4, $5, $6, $7, $8, $9);
+            case 10:
+            default: return new Fn($0, $1, $2, $3, $4, $5, $6, $7, $8, $9);
         }
     }));
 });

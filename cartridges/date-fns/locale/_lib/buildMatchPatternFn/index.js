@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function buildMatchPatternFn(args) {
     return function (dirtyString, dirtyOptions) {
         var string = String(dirtyString);

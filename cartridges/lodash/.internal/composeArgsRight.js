@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * This function is like `composeArgs` except that the arguments composition
  * is tailored for `partialRight`.

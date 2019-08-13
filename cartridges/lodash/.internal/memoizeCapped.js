@@ -1,3 +1,5 @@
+'use strict';
+
 var memoize = require('../memoize');
 
 /** Used as the maximum memoize cache size. */

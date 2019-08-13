@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry1 = require('./internal/_curry1');
 var empty = require('./empty');
 var equals = require('./equals');

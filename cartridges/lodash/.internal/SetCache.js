@@ -1,3 +1,5 @@
+'use strict';
+
 var MapCache = require('./MapCache');
 
 /** Used to stand-in for `undefined` hash values. */

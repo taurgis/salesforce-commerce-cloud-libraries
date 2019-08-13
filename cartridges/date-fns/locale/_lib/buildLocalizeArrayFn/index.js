@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @name buildLocalizeArrayFn
  * @category Locale Helpers

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates a clone of `arrayBuffer`.
  *

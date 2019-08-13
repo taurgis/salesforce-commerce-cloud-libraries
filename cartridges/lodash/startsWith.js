@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `string` starts with the given target string.
  *

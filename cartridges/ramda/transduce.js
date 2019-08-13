@@ -1,3 +1,5 @@
+'use strict';
+
 var _reduce = require('./internal/_reduce');
 var _xwrap = require('./internal/_xwrap');
 var curryN = require('./curryN');

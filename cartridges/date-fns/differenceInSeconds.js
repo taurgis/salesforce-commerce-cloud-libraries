@@ -1,3 +1,5 @@
+'use strict';
+
 var differenceInMilliseconds = require('./differenceInMilliseconds');
 
 /**

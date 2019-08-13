@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var _indexOf = require('./internal/_indexOf');
 var _isArray = require('./internal/_isArray');

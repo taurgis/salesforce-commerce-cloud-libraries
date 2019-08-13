@@ -1,3 +1,5 @@
+'use strict';
+
 var _clone = require('./internal/_clone');
 var _curryN = require('./internal/_curryN');
 var _dispatchable = require('./internal/_dispatchable');

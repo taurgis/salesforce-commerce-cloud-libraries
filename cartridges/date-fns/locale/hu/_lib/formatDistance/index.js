@@ -1,3 +1,5 @@
+'use strict';
+
 var translations = {
     about: 'körülbelül',
     over: 'több mint',

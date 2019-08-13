@@ -1,3 +1,5 @@
+'use strict';
+
 var freeGlobal = require('./freeGlobal');
 
 /** Detect free variable `globalThis` */

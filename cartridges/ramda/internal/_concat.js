@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Private `concat` function to merge two array-like objects.
  *

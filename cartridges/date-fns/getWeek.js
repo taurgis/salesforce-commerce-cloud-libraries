@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfWeek = require('./startOfWeek');
 var startOfWeekYear = require('./startOfWeekYear');
 var toDate = require('./toDate');

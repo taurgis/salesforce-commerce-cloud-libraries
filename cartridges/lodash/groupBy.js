@@ -1,3 +1,5 @@
+'use strict';
+
 var baseAssignValue = require('./.internal/baseAssignValue.js');
 var reduce = require('./reduce.js');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var eq = require('../eq');
 var equalArrays = require('./equalArrays');
 var mapToArray = require('./mapToArray');

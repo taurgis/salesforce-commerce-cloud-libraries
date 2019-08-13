@@ -1,3 +1,5 @@
+'use strict';
+
 var defaultLocale = require('./locale/en-US/index');
 var subMilliseconds = require('./subMilliseconds');
 var toDate = require('./toDate');

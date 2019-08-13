@@ -1,3 +1,5 @@
+'use strict';
+
 var equals = require('../equals');
 
 

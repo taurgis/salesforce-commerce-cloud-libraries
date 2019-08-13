@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to match `RegExp` flags= require(their coerced string values. */
 var reFlags = /\w*$/
 

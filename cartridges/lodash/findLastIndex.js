@@ -1,3 +1,5 @@
+'use strict';
+
 var baseFindIndex = require('./.internal/baseFindIndex');
 
 /**

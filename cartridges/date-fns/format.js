@@ -1,3 +1,5 @@
+'use strict';
+
 var isValid = require('./isValid');
 var defaultLocale = require('./locale/en-US/index');
 var subMilliseconds = require('./subMilliseconds');

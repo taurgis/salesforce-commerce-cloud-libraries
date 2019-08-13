@@ -1,3 +1,5 @@
+'use strict';
+
 var baseToString = require('./.internal/baseToString.js');
 var castSlice = require('./.internal/castSlice.js');
 var hasUnicode = require('./.internal/hasUnicode.js');

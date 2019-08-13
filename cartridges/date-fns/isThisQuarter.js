@@ -1,3 +1,5 @@
+'use strict';
+
 var isSameQuarter = require('./isSameQuarter');
 
 /**

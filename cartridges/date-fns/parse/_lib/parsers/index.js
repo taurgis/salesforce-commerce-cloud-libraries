@@ -1,3 +1,5 @@
+'use strict';
+
 var getUTCWeekYear = require('../../../_lib/getUTCWeekYear/index');
 var setUTCDay = require('../../../_lib/setUTCDay/index');
 var setUTCISODay = require('../../../_lib/setUTCISODay/index');

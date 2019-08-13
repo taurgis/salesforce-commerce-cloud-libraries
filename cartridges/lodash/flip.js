@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates a function that invokes `func` with arguments reversed.
  *

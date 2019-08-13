@@ -1,3 +1,5 @@
+'use strict';
+
 var formatDistanceLocale = {
     lessThanXSeconds: {
         one: '少於 1 秒',

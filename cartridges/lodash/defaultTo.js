@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks `value` to determine whether a default value should be returned in
  * its place. The `defaultValue` is returned if `value` is `NaN`, `null`,

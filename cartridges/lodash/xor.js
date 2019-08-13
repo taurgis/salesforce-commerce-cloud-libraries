@@ -1,3 +1,5 @@
+'use strict';
+
 var baseXor = require('./.internal/baseXor.js');
 var isArrayLikeObject = require('./isArrayLikeObject.js');
 

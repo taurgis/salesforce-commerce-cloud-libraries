@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry3 = require('./internal/_curry3');
 
 
@@ -26,6 +28,6 @@ var _curry3 = require('./internal/_curry3');
  *      safeInc(1); //=> 2
  */
 var unless = _curry3(function unless(pred, whenFalseFn, x) {
-  return pred(x) ? x : whenFalseFn(x);
+    return pred(x) ? x : whenFalseFn(x);
 });
 module.exports = unless;

@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'წინა' eeee LT'-ზე'",
     yesterday: "'გუშინ' LT'-ზე'",

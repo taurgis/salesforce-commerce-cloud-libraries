@@ -1,3 +1,5 @@
+'use strict';
+
 function declension(scheme, count) {
     // scheme for count=1 exists
     if (scheme.one !== undefined && count === 1) {

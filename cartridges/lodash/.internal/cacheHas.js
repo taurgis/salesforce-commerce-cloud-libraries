@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if a `cache` value for `key` exists.
  *

@@ -1,3 +1,5 @@
+'use strict';
+
 var getTimezoneOffsetInMilliseconds = require('./_lib/getTimezoneOffsetInMilliseconds/index');
 var startOfDay = require('./startOfDay');
 

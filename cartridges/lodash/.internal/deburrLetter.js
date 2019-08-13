@@ -1,3 +1,5 @@
+'use strict';
+
 var basePropertyOf = require('./basePropertyOf');
 
 /** Used to map Latin Unicode letters to basic Latin letters. */

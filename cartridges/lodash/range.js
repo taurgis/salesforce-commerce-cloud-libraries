@@ -1,3 +1,5 @@
+'use strict';
+
 var createRange = require('./.internal/createRange.js');
 
 /**

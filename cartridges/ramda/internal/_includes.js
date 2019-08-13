@@ -1,3 +1,5 @@
+'use strict';
+
 var _indexOf = require('./_indexOf');
 
 

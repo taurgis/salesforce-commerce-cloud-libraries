@@ -1,3 +1,5 @@
+'use strict';
+
 var baseDifference= require('./baseDifference.js');
 var baseFlatten= require('./baseFlatten.js');
 var baseUniq= require('./baseUniq.js');

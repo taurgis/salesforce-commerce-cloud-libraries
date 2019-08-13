@@ -1,3 +1,5 @@
+'use strict';
+
 var isArguments = require('../isArguments');
 
 /** Built-in value reference. */

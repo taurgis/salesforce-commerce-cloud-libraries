@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates a slice of `array`= require(`start` up to, but not including, `end`.);
  *

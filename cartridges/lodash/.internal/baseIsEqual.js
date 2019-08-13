@@ -1,3 +1,5 @@
+'use strict';
+
 var baseIsEqualDeep = require('./baseIsEqualDeep');
 var isObjectLike = require('../isObjectLike');
 

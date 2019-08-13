@@ -1,3 +1,5 @@
+'use strict';
+
 var _includes = require('./_includes');
 var _map = require('./_map');
 var _quote = require('./_quote');

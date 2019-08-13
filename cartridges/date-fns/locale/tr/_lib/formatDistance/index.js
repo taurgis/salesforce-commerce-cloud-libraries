@@ -1,3 +1,5 @@
+'use strict';
+
 var formatDistanceLocale = {
     lessThanXSeconds: {
         one: 'bir saniyeden az',

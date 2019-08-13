@@ -1,3 +1,5 @@
+'use strict';
+
 var baseSortedIndexBy = require('./.internal/baseSortedIndexBy.js');
 
 /**

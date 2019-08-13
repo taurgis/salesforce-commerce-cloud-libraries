@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayReduceRight = require('./.internal/arrayReduceRight.js');
 var baseEachRight = require('./.internal/baseEachRight.js');
 var baseReduce = require('./.internal/baseReduce.js');

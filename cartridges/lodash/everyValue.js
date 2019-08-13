@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `predicate` returns truthy for **all** properties of `object`.
  * Iteration is stopped once `predicate` returns falsey. The predicate is

@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function toInteger(dirtyNumber) {
     if (dirtyNumber === null || dirtyNumber === true || dirtyNumber === false) {
         return NaN;

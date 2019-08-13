@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function buildFormatLongFn(args) {
     return function (dirtyOptions) {
         var options = dirtyOptions || {};

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `value` is `undefined`.
  *

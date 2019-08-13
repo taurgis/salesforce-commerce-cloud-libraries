@@ -1,3 +1,5 @@
+'use strict';
+
 var isKey = require('./isKey');
 var stringToPath = require('./stringToPath');
 

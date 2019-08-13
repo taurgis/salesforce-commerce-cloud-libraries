@@ -1,3 +1,5 @@
+'use strict';
+
 var rsAstralRange = '\\ud800-\\udfff';
 var rsComboMarksRange = '\\u0300-\\u036f';
 var reComboHalfMarksRange = '\\ufe20-\\ufe2f';

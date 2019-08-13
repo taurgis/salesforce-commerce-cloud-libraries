@@ -1,3 +1,5 @@
+'use strict';
+
 var isArrayLike= require('../isArrayLike.js');
 var isIndex= require('./isIndex.js');
 

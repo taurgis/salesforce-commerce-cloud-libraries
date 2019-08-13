@@ -1,3 +1,5 @@
+'use strict';
+
 var baseSortedUniq = require('./.internal/baseSortedUniq.js');
 
 /**

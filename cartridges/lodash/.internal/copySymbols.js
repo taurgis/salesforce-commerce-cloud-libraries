@@ -1,3 +1,5 @@
+'use strict';
+
 var copyObject= require('./copyObject.js');
 var getSymbols= require('./getSymbols.js');
 

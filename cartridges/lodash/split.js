@@ -1,3 +1,5 @@
+'use strict';
+
 var castSlice = require('./.internal/castSlice.js');
 var hasUnicode = require('./.internal/hasUnicode.js');
 var isRegExp = require('./isRegExp.js');

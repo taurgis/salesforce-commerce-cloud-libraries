@@ -1,3 +1,5 @@
+'use strict';
+
 var isObjectLike = require('./isObjectLike.js');
 var isPlainObject = require('./isPlainObject.js');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var _filter = require('./_filter');
 
 

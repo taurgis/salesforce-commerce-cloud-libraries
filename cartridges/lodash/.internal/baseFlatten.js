@@ -1,3 +1,5 @@
+'use strict';
+
 var isFlattenable = require('./isFlattenable');
 /**
  * Appends the elements of `values` to `array`.

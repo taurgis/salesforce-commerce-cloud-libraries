@@ -1,3 +1,5 @@
+'use strict';
+
 var eachWeekendOfInterval = require('./eachWeekendOfInterval');
 var startOfYear = require('./startOfYear');
 var endOfYear = require('./endOfYear');

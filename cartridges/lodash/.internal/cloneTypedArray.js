@@ -1,3 +1,5 @@
+'use strict';
+
 var cloneArrayBuffer= require('./cloneArrayBuffer.js');
 
 /**

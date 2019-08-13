@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('../../toDate');
 
 // This function will be a part of public API when UTC function will be implemented.

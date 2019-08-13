@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The base implementation of `range` and `rangeRight` which doesn't
  * coerce arguments.

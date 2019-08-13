@@ -1,3 +1,5 @@
+'use strict';
+
 var curry = require('./curry');
 
 

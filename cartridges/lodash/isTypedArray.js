@@ -1,3 +1,5 @@
+'use strict';
+
 var getTag = require('./.internal/getTag');
 var nodeTypes = require('./.internal/nodeTypes');
 var isObjectLike = require('./isObjectLike');

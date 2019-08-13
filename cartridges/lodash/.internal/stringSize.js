@@ -1,3 +1,5 @@
+'use strict';
+
 var asciiSize= require('./asciiSize.js');
 var hasUnicode= require('./hasUnicode.js');
 var unicodeSize= require('./unicodeSize.js');

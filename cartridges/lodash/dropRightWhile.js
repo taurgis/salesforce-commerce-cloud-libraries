@@ -1,3 +1,5 @@
+'use strict';
+
 var baseWhile = require('./.internal/baseWhile');
 
 /**

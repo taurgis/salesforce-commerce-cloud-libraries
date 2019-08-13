@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _xdropRepeatsWith = require('./internal/_xdropRepeatsWith');

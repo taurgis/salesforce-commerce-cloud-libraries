@@ -1,3 +1,5 @@
+'use strict';
+
 var _includes = require('./_includes');
 
 

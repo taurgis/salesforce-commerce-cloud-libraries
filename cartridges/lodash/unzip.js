@@ -1,3 +1,5 @@
+'use strict';
+
 var filter = require('./filter.js');
 var map = require('./map.js');
 var baseProperty = require('./.internal/baseProperty.js');
