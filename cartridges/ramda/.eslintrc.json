@@ -15,6 +15,7 @@
       "no-self-compare": "off",
       "no-prototype-builtins": "off",
       "valid-jsdoc": "off",
-      "one-var": "off"
+      "one-var": "off",
+      "no-void": "off"
     }
 }

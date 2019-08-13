@@ -1,3 +1,5 @@
+'use strict';
+
 var map = require('./map.js');
 var basePickBy = require('./.internal/basePickBy.js');
 var getAllKeysIn = require('./.internal/getAllKeysIn.js');

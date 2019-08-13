@@ -1,3 +1,5 @@
+'use strict';
+
 var initOptions = require('./lib/initOptions');
 var character = require('./character');
 /**

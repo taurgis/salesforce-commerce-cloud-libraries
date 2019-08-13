@@ -1,3 +1,5 @@
+'use strict';
+
 function dateLongFormatter(pattern, formatLong) {
     switch (pattern) {
         case 'P':

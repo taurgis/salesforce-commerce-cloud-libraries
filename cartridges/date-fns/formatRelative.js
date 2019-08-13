@@ -1,3 +1,5 @@
+'use strict';
+
 var differenceInCalendarDays = require('./differenceInCalendarDays');
 var format = require('./format');
 var defaultLocale = require('./locale/en-US/index');

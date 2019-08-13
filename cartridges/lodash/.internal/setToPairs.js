@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Converts `set` to its value-value pairs.
  *

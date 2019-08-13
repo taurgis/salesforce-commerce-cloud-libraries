@@ -1,3 +1,5 @@
+'use strict';
+
 var copyArray = require('./.internal/copyArray.js');
 var getTag = require('./.internal/getTag.js');
 var isArrayLike = require('./isArrayLike.js');

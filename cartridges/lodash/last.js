@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Gets the last element of `array`.
  *

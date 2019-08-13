@@ -1,3 +1,5 @@
+'use strict';
+
 var SetCache= require('./SetCache.js');
 var arrayIncludes= require('./arrayIncludes.js');
 var arrayIncludesWith= require('./arrayIncludesWith.js');

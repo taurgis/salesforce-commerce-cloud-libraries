@@ -1,3 +1,5 @@
+'use strict';
+
 var MersenneTwister = function (seed) {
     var mersenneTwisterSeed;
     if (seed === undefined) {

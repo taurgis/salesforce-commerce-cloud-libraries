@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * This function is like `baseIndexOf` except that it accepts a comparator.
  *

@@ -1,3 +1,5 @@
+'use strict';
+
 var buildLocalizeFn = require('../../../_lib/buildLocalizeFn/index');
 
 // Vietnamese locale reference: http://www.localeplanet.com/icu/vi-VN/index.html

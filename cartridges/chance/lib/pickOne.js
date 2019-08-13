@@ -1,3 +1,5 @@
+'use strict';
+
 var natural = require('../natural');
 
 // Given an array, returns a single random element

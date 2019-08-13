@@ -1,3 +1,5 @@
+'use strict';
+
 var _arity = require('./internal/_arity');
 var _concat = require('./internal/_concat');
 var _curry2 = require('./internal/_curry2');

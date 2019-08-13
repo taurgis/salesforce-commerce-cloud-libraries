@@ -1,3 +1,5 @@
+'use strict';
+
 var compareAsc = require('./compareAsc');
 var differenceInMonths = require('./differenceInMonths');
 var differenceInSeconds = require('./differenceInSeconds');

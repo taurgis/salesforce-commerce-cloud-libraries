@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry3 = require('./internal/_curry3');
 
 // `Identity` is a functor that holds a single value, where `map` simply

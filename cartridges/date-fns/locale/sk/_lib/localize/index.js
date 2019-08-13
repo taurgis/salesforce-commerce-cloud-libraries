@@ -1,3 +1,5 @@
+'use strict';
+
 var buildLocalizeFn = require('../../../_lib/buildLocalizeFn/index');
 
 // https://www.unicode.org/cldr/charts/32/summary/sk.html#1772

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseOrderBy = require('./.internal/baseOrderBy.js');
 
 /**

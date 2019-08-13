@@ -1,3 +1,5 @@
+'use strict';
+
 var eq= require('../eq.js');
 
 /**

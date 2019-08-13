@@ -1,3 +1,5 @@
+'use strict';
+
 var _concat = require('./internal/_concat');
 var _curry3 = require('./internal/_curry3');
 var uniqWith = require('./uniqWith');

@@ -1,3 +1,5 @@
+'use strict';
+
 var MILLISECONDS_IN_MINUTE = 60000;
 
 /**

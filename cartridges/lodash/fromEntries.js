@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The inverse of `entries`is method returns an object composed
  *= require(key-value `pairs`.);

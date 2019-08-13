@@ -1,3 +1,5 @@
+'use strict';
+
 var getUTCISOWeekYear = require('../getUTCISOWeekYear/index');
 var startOfUTCISOWeek = require('../startOfUTCISOWeek/index');
 

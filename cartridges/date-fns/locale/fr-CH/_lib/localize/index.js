@@ -1,3 +1,5 @@
+'use strict';
+
 var buildLocalizeFn = require('../../../_lib/buildLocalizeFn/index');
 var buildLocalizeArrayFn = require('../../../_lib/buildLocalizeArrayFn/index');
 

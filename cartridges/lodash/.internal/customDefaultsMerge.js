@@ -1,3 +1,5 @@
+'use strict';
+
 var baseMerge= require('./baseMerge.js');
 var isObject= require('../isObject.js');
 

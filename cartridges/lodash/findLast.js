@@ -1,3 +1,5 @@
+'use strict';
+
 var findLastIndex = require('./findLastIndex');
 var isArrayLike = require('./isArrayLike');
 

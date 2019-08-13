@@ -1,3 +1,5 @@
+'use strict';
+
 var buildFormattingTokensRegExp = require('../../_lib/build_formatting_tokens_reg_exp/index.js');
 
 function buildFormatLocale() {

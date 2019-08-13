@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * This method is like `invert` except that the inverted object is generated
  *= require(the results of running each element of `object` thru `iteratee`. The);

@@ -1,3 +1,5 @@
+'use strict';
+
 var getDate = require('./getDate');
 var getDay = require('./getDay');
 var startOfMonth = require('./startOfMonth');

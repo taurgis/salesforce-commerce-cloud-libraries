@@ -1,3 +1,5 @@
+'use strict';
+
 var assignMergeValue= require('./assignMergeValue.js');
 var cloneBuffer= require('./cloneBuffer.js');
 var cloneTypedArray= require('./cloneTypedArray.js');

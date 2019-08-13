@@ -1,3 +1,5 @@
+'use strict';
+
 var map = require('./map.js');
 var baseAt = require('./.internal/baseAt.js');
 var basePullAt = require('./.internal/basePullAt.js');

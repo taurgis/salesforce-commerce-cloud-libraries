@@ -1,3 +1,5 @@
+'use strict';
+
 var getTimezoneOffsetInMilliseconds = require('./_lib/getTimezoneOffsetInMilliseconds/index');
 var compareAsc = require('./compareAsc');
 var toDate = require('./toDate');

@@ -1,3 +1,5 @@
+'use strict';
+
 var composeK = require('./composeK');
 var reverse = require('./reverse');
 

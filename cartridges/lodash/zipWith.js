@@ -1,3 +1,5 @@
+'use strict';
+
 var unzipWith = require('./unzipWith.js');
 
 /**

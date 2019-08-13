@@ -1,3 +1,5 @@
+'use strict';
+
 var basePullAll = require('./.internal/basePullAll.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Copies the values of `source` to `array`.
  *

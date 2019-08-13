@@ -1,3 +1,5 @@
+'use strict';
+
 // Same as nl
 // import formatDistance from '../nl/_lib/formatDistance/index.js'
 // import formatRelative from '../nl/_lib/formatRelative/index.js'

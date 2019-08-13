@@ -1,3 +1,5 @@
+'use strict';
+
 var testRange = require('./lib/testRange');
 var integer = require('./integer');
 var initOptions = require('./lib/initOptions');

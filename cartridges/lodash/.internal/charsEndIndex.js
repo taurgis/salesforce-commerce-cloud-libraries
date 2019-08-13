@@ -1,3 +1,5 @@
+'use strict';
+
 var baseIndexOf= require('./baseIndexOf.js');
 
 /**

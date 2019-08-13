@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'গত' eeee 'সময়' p",
     yesterday: "'গতকাল' 'সময়' p",

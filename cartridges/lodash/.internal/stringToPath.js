@@ -1,3 +1,5 @@
+'use strict';
+
 var memoizeCapped = require('./memoizeCapped');
 
 var charCodeOfDot = '.'.charCodeAt(0)

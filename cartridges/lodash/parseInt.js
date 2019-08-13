@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to match leading and trailing whitespace. */
 const reTrimStart = /^\s+/;
 

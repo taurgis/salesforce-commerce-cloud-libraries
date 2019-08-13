@@ -1,3 +1,5 @@
+'use strict';
+
 var isIndex = require('./.internal/isIndex.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseRange= require('./baseRange.js');
 var toFinite= require('../toFinite.js');
 

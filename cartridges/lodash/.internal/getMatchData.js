@@ -1,3 +1,5 @@
+'use strict';
+
 var isStrictComparable= require('./isStrictComparable.js');
 var keys= require('../keys.js');
 

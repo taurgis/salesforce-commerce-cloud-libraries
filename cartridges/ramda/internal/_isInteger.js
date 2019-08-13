@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Determine if the passed argument is an integer.
  *

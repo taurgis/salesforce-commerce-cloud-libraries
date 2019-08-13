@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function _quote(s) {
     var escaped = s
         .replace(/\\/g, '\\\\')

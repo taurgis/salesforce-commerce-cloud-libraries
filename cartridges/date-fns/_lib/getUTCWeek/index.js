@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('../../toDate');
 var startOfUTCWeek = require('../startOfUTCWeek/index');
 var startOfUTCWeekYear = require('../startOfUTCWeekYear/index');

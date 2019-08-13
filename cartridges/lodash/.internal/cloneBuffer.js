@@ -1,3 +1,5 @@
+'use strict';
+
 var root= require('./root.js');
 
 /** Detect free variable `exports`. */

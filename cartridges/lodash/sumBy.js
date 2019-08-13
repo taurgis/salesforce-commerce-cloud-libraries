@@ -1,3 +1,5 @@
+'use strict';
+
 var baseSum = require('./.internal/baseSum.js');
 
 /**

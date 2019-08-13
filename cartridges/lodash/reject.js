@@ -1,3 +1,5 @@
+'use strict';
+
 var filter = require('./filter.js');
 var filterObject = require('./filterObject.js');
 var negate = require('./negate.js');

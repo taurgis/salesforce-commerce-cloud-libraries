@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var _isInteger = require('./internal/_isInteger');
 var nth = require('./nth');
@@ -26,7 +28,7 @@ var paths = _curry2(function paths(pathsArray, obj) {
         var p;
         while (idx < paths.length) {
             if (val == null) {
-                return;
+                return undefined;
             }
             p = paths[idx];
             val = _isInteger(p) ? nth(p, val) : val[p];

@@ -1,3 +1,7 @@
+/* eslint-disable */
+
+'use strict';
+
 //  Chance.js 1.0.18
 //  http://chancejs.com
 //  (c) 2013 Victor Quinn

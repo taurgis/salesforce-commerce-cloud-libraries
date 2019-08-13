@@ -1,3 +1,5 @@
+'use strict';
+
 var pullAll = require('./pullAll.js');
 
 /**

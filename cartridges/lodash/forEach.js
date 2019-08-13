@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayEach = require('./.internal/arrayEach');
 var baseEach = require('./.internal/baseEach');
 

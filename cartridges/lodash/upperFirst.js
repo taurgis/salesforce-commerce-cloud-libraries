@@ -1,3 +1,5 @@
+'use strict';
+
 var createCaseFirst = require('./.internal/createCaseFirst');
 
 /**

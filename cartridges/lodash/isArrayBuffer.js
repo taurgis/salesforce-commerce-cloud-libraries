@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `value` is classified as an `ArrayBuffer` object.
  *

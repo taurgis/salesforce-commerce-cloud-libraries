@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to map HTML entities to characters. */
 const htmlUnescapes = {
     '&amp;': '&',

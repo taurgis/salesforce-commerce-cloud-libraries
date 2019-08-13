@@ -1,3 +1,5 @@
+'use strict';
+
 var differenceInCalendarWeeks = require('./differenceInCalendarWeeks');
 var lastDayOfMonth = require('./lastDayOfMonth');
 var startOfMonth = require('./startOfMonth');

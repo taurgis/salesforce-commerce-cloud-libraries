@@ -1,3 +1,5 @@
+'use strict';
+
 var _isPlaceholder = require('./_isPlaceholder');
 
 

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates an array of values by running each property of `object` thru
  * `iteratee`. The iteratee is invoked with three arguments: (value, key, object).

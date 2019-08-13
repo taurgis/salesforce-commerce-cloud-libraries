@@ -1,3 +1,5 @@
+'use strict';
+
 var Stack = require('./Stack');
 var equalArrays = require('./equalArrays');
 var equalByTag = require('./equalByTag');

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Gets the first element of `array`.
  *

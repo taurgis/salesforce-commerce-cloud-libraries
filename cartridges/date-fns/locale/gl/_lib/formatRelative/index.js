@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'o' eeee 'pasado á' LT",
     yesterday: "'onte á' p",

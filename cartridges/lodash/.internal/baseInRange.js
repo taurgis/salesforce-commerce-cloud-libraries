@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The base implementation of `inRange` which doesn't coerce arguments.
  *

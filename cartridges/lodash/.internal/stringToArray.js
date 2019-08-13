@@ -1,3 +1,5 @@
+'use strict';
+
 var asciiToArray = require('./asciiToArray');
 var hasUnicode = require('./hasUnicode');
 var unicodeToArray = require('./unicodeToArray');

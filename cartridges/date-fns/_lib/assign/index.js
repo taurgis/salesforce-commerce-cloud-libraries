@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function assign(target, dirtyObject) {
     if (target == null) {
         throw new TypeError(

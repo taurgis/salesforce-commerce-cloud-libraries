@@ -1,3 +1,5 @@
+'use strict';
+
 var multiply = require('./multiply');
 var reduce = require('./reduce');
 

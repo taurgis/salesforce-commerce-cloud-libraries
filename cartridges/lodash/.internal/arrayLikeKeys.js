@@ -1,3 +1,5 @@
+'use strict';
+
 var isArguments = require('../isArguments');
 var isBuffer = require('../isBuffer');
 var isIndex = require('./isIndex.js');

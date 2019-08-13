@@ -1,3 +1,5 @@
+'use strict';
+
 var formatters = {};
 
 var genetiveMonths = ['januara', 'februara', 'marta', 'aprila', 'maja', 'juna', 'jula', 'avgusta', 'septembra', 'oktobra', 'novembra', 'decembra'];

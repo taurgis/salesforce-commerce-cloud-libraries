@@ -1,3 +1,5 @@
+'use strict';
+
 var baseForOwn = require('./baseForOwn');
 var isArrayLike = require('../isArrayLike');
 

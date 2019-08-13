@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('./toDate');
 var formatters = require('./_lib/format/lightFormatters/index');
 var getTimezoneOffsetInMilliseconds = require('./_lib/getTimezoneOffsetInMilliseconds/index');

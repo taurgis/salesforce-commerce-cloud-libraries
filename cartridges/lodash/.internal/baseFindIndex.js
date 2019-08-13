@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The base implementation of `findIndex` and `findLastIndex`.
  *

@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function initOptions(options, defaults) {
     var combinedOptions = options || {};
 

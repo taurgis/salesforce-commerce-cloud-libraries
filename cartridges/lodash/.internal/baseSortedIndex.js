@@ -1,3 +1,5 @@
+'use strict';
+
 var baseSortedIndexBy= require('./baseSortedIndexBy.js');
 var isSymbol= require('../isSymbol.js');
 

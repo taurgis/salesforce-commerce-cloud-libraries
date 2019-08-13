@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfWeek = require('./startOfWeek');
 var getTimezoneOffsetInMilliseconds = require('./_lib/getTimezoneOffsetInMilliseconds/index');
 

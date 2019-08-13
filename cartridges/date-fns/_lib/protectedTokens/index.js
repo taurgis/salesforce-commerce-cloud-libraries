@@ -1,3 +1,5 @@
+'use strict';
+
 var protectedDayOfYearTokens = ['D', 'DD'];
 var protectedWeekYearTokens = ['YY', 'YYYY'];
 

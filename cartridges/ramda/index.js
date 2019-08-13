@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports.F = require('./F');
 module.exports.T = require('./T');
 module.exports.__ = require('./__');

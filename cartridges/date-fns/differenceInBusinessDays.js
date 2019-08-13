@@ -1,3 +1,5 @@
+'use strict';
+
 var compareAsc = require('./compareAsc');
 var eachDayOfInterval = require('./eachDayOfInterval');
 var isValid = require('./isValid');

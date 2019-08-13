@@ -1,3 +1,5 @@
+'use strict';
+
 var assocIndexOf = require('./assocIndexOf');
 
 /**

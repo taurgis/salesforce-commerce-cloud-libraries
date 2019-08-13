@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `path` is a direct or inherited property of `object`.
  *

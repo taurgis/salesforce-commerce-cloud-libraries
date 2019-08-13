@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: function (date, _baseDate, _options) {
         var weekday = date.getUTCDay();

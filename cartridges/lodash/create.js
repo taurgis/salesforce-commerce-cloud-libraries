@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates an object that inherits= require(the `prototype` object. If a);
  * `properties` object is given, its own enumerable string keyed properties

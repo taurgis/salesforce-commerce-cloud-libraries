@@ -1,3 +1,5 @@
+'use strict';
+
 var initOptions = require('./lib/initOptions');
 var n = require('./lib/n');
 var natural = require('./natural');
@@ -27,7 +29,7 @@ module.exports = function sentence(options) {
     text = capitalize(text);
 
     // Make sure punctuation has a usable value
-    if (punctuation !== false && !/^[\.\?;!:]$/.test(punctuation)) {
+    if (punctuation !== false && !/^[.?;!:]$/.test(punctuation)) {
         punctuation = '.';
     }
 

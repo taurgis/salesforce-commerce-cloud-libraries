@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to convert symbols to primitives and strings. */
 var symbolValueOf = null;
 /**

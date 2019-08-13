@@ -1,3 +1,5 @@
+'use strict';
+
 var formatDistanceLocale = {
     lessThanXSeconds: {
         past: '{{count}} წამზე ნაკლები ხნის წინ',

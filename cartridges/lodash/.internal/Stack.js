@@ -1,3 +1,5 @@
+'use strict';
+
 var ListCache = require('./ListCache');
 var MapCache = require('./MapCache');
 

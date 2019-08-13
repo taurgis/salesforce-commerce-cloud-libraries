@@ -1,3 +1,5 @@
+'use strict';
+
 var isSameYear = require('./isSameYear');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var castPath = require('./.internal/castPath.js');
 var isArguments = require('./isArguments.js');
 var isIndex = require('./.internal/isIndex.js');

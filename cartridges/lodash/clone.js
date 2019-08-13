@@ -1,3 +1,5 @@
+'use strict';
+
 var baseClone = require('./.internal/baseClone');
 
 /** Used to compose bitmasks for cloning. */

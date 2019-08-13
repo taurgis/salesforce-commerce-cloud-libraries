@@ -1,3 +1,5 @@
+'use strict';
+
 var initOptions = require('./lib/initOptions');
 var natural = require('./natural');
 var NUMBERS = '0123456789';

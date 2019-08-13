@@ -1,4 +1,4 @@
-
+'use strict';
 
 /**
  * A function that always returns `false`. Any passed in parameters are ignored.
@@ -16,4 +16,5 @@
  *      R.F(); //=> false
  */
 var F = function () { return false; };
+
 module.exports = F;

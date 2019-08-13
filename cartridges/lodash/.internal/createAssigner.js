@@ -1,3 +1,5 @@
+'use strict';
+
 var isIterateeCall= require('./isIterateeCall.js');
 
 /**

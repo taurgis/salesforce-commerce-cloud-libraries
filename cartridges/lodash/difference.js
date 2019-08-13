@@ -1,3 +1,5 @@
+'use strict';
+
 
 var baseDifference = require('./.internal/baseDifference');
 var isArrayLikeObject = require('./isArrayLikeObject');

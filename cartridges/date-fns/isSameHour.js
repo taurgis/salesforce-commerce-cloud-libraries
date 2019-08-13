@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfHour = require('./startOfHour');
 
 /**

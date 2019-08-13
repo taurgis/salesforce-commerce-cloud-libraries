@@ -1,3 +1,5 @@
+'use strict';
+
 var basePickBy= require('./basePickBy.js');
 var hasIn= require('../hasIn.js');
 

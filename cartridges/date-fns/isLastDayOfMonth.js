@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('./toDate');
 var endOfDay = require('./endOfDay');
 var endOfMonth = require('./endOfMonth');

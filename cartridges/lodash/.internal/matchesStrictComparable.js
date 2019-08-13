@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * A specialized version of `matchesProperty` for source values suitable
  * for strict equality comparisons, i.e. `===`.

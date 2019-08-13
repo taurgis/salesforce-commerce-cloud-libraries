@@ -1,3 +1,5 @@
+'use strict';
+
 var isSameUTCWeek = require('../../../../_lib/isSameUTCWeek/index');
 
 var accusativeWeekdays = ['воскресенье', 'понедельник', 'вторник', 'среду', 'четверг', 'пятницу', 'субботу'];

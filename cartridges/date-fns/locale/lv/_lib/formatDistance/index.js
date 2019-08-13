@@ -1,3 +1,5 @@
+'use strict';
+
 function buildLocalizeTokenFn(schema) {
     return function (count, options) {
         if (count === 1) {

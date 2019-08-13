@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Gets a random element= require(`array`.);
  *

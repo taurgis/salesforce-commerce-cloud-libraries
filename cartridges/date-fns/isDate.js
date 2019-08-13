@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * @name isDate
  * @category Common Helpers

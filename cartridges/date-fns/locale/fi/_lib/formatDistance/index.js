@@ -1,3 +1,5 @@
+'use strict';
+
 function futureSeconds(text) {
     return text.replace(/sekuntia?/, 'sekunnin');
 }

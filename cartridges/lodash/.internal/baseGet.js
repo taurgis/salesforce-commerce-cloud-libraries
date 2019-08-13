@@ -1,3 +1,5 @@
+'use strict';
+
 var castPath = require('./castPath');
 var toKey = require('./toKey');
 

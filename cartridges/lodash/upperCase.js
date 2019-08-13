@@ -1,3 +1,5 @@
+'use strict';
+
 var words = require('./words.js');
 
 /**

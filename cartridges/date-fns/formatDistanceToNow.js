@@ -1,3 +1,5 @@
+'use strict';
+
 var distanceInWords = require('./formatDistance');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var map = require('./map.js');
 var isSymbol = require('./isSymbol.js');
 

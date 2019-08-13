@@ -1,3 +1,5 @@
+'use strict';
+
 var assignValue = require('./.internal/assignValue.js');
 var baseZipObject = require('./.internal/baseZipObject.js');
 

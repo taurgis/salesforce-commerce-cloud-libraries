@@ -1,3 +1,5 @@
+'use strict';
+
 var baseUpdate = require('./.internal/baseUpdate.js');
 
 /**

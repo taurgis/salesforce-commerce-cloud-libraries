@@ -1,3 +1,5 @@
+'use strict';
+
 var MAX_INT = Number(9007199254740992);
 var MIN_INT = -MAX_INT;
 

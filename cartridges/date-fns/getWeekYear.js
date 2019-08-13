@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfWeek = require('./startOfWeek');
 var toDate = require('./toDate');
 var toInteger = require('./_lib/toInteger/index');

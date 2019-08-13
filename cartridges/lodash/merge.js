@@ -1,3 +1,5 @@
+'use strict';
+
 var baseMerge = require('./.internal/baseMerge.js');
 var createAssigner = require('./.internal/createAssigner.js');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates an array of function property names= require(own enumerable properties);
  * of `object`.

@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Sets the `toString` method of `func` to return `string`.
  *

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseEach = require('./baseEach.js');
 var baseSortBy = require('./baseSortBy.js');
 var compareMultiple = require('./compareMultiple.js');

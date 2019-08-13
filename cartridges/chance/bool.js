@@ -1,3 +1,5 @@
+'use strict';
+
 var initOptions = require('./lib/initOptions');
 var testRange = require('./lib/testRange');
 var random = require('./lib/random');

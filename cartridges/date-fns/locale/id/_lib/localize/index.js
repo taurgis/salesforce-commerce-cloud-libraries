@@ -1,3 +1,5 @@
+'use strict';
+
 var buildLocalizeFn = require('../../../_lib/buildLocalizeFn/index');
 
 // All data for localization are taken from this page
