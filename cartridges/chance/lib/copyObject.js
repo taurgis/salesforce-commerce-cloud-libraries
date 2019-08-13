@@ -1,3 +1,5 @@
+'use strict';
+
 var ohasOwnProperty = Object.prototype.hasOwnProperty;
 
 var oKeys = (Object.keys || function (obj) {
