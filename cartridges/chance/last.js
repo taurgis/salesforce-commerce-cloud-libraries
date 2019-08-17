@@ -19,9 +19,10 @@ module.exports = function last(options) {
     if (lastOptions.nationality === '*') {
         var allLastNames = [];
 
-        Object.keys(lastNames).forEach(function (key, i) {
+        Object.keys(lastNames).forEach(function (key) {
             allLastNames = allLastNames.concat(lastNames[key]);
         });
+
         return pick(allLastNames);
     }
 

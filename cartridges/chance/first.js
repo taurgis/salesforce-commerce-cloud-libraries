@@ -14,7 +14,7 @@ var gender = require('./gender');
  * @example
  *      first({ gender: "female" }); => 'Emma'
  */
-module.exports = function string(options) {
+module.exports = function first(options) {
     var firstOptions = initOptions(options, { gender: gender(), nationality: 'en' });
 
     return pick(firstNames[firstOptions.gender.toLowerCase()][firstOptions.nationality.toLowerCase()]);
