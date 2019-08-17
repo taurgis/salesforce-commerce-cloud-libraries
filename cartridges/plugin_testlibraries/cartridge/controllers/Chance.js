@@ -27,7 +27,13 @@ server.get('Test', function (req, res, next) {
             suffix: require('chance/suffix')(),
             name: require('chance/name')({ prefix: true, suffix: true, middle: true }),
             ssn: require('chance/ssn')(),
-            animal: require('chance/animal')()
+            animal: require('chance/animal')(),
+            androidId: require('chance/androidId')(),
+            appleToken: require('chance/appleToken')(),
+            bbpin: require('chance/bbPin')(),
+            hash: require('chance/hash')(),
+            wp7ANID: require('chance/wp7ANID')(),
+            wp8ANID2: require('chance/wp8ANID2')()
         });
 
     next();
