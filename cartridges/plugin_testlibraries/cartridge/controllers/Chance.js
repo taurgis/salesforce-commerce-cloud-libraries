@@ -25,7 +25,8 @@ server.get('Test', function (req, res, next) {
             gender: require('chance/gender')(),
             prefix: require('chance/prefix')(),
             suffix: require('chance/suffix')(),
-            name: require('chance/name')({ prefix: true, suffix: true, middle: true })
+            name: require('chance/name')({ prefix: true, suffix: true, middle: true }),
+            ssn: require('chance/ssn')()
         });
 
     next();
