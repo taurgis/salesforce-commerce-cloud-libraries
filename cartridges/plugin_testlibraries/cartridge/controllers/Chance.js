@@ -26,7 +26,8 @@ server.get('Test', function (req, res, next) {
             prefix: require('chance/prefix')(),
             suffix: require('chance/suffix')(),
             name: require('chance/name')({ prefix: true, suffix: true, middle: true }),
-            ssn: require('chance/ssn')()
+            ssn: require('chance/ssn')(),
+            animal: require('chance/animal')()
         });
 
     next();
