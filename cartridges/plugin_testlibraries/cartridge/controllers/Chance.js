@@ -1,69 +1,54 @@
 'use strict';
 
 var server = require('server');
+var timeFunction = require('../scripts/util/timeFunction');
 
-/**
- * Time library functions
- * @param {Object} functionToCall - The functions to time
- * @param {[Object]} parameters - The functions parameters
- * @returns {Object} - The executed functions with their time to execute
- */
-function timeLibraryFunctions(functionToCall, parameters) {
-    var startTime = new Date();
-    var executed = functionToCall.call(parameters);
-    var endTime = new Date();
-
-    return {
-        result: executed,
-        timeToExecute: (endTime - startTime) + 'ms'
-    };
-}
 
 /** Just an example controlle to test moment functions */
 server.get('Test', function (req, res, next) {
     res.json(
         {
-            bool: timeLibraryFunctions(require('chance/bool'), { likelihood: 30 }),
-            falsy: timeLibraryFunctions(require('chance/falsy')),
-            integer: timeLibraryFunctions(require('chance/integer')),
-            natural: timeLibraryFunctions(require('chance/natural')),
-            character: timeLibraryFunctions(require('chance/character'), { casing: 'upper' }),
-            float: timeLibraryFunctions(require('chance/floating')),
-            letter: timeLibraryFunctions(require('chance/letter')),
-            prime: timeLibraryFunctions(require('chance/prime'), { min: 1, max: 20 }),
-            string: timeLibraryFunctions(require('chance/string'), { pool: 'abcde' }),
+            bool: timeFunction(require('chance/bool'), { likelihood: 30 }),
+            falsy: timeFunction(require('chance/falsy')),
+            integer: timeFunction(require('chance/integer')),
+            natural: timeFunction(require('chance/natural')),
+            character: timeFunction(require('chance/character'), { casing: 'upper' }),
+            float: timeFunction(require('chance/floating')),
+            letter: timeFunction(require('chance/letter')),
+            prime: timeFunction(require('chance/prime'), { min: 1, max: 20 }),
+            string: timeFunction(require('chance/string'), { pool: 'abcde' }),
             // paragraph: require('chance/paragraph') --> this one really slows down the page load
-            age: timeLibraryFunctions(require('chance/age')),
-            birthday: timeLibraryFunctions(require('chance/birthday'), { type: 'child', string: true }),
-            cf: timeLibraryFunctions(require('chance/cf')),
-            first: timeLibraryFunctions(require('chance/first')),
-            last: timeLibraryFunctions(require('chance/last')),
-            cpf: timeLibraryFunctions(require('chance/cpf')),
-            gender: timeLibraryFunctions(require('chance/gender')),
-            prefix: timeLibraryFunctions(require('chance/prefix')),
-            suffix: timeLibraryFunctions(require('chance/suffix')),
-            name: timeLibraryFunctions(require('chance/name'), { prefix: true, suffix: true, middle: true }),
-            ssn: timeLibraryFunctions(require('chance/ssn')),
-            animal: timeLibraryFunctions(require('chance/animal')),
-            androidId: timeLibraryFunctions(require('chance/androidId')),
-            appleToken: timeLibraryFunctions(require('chance/appleToken')),
-            bbpin: timeLibraryFunctions(require('chance/bbPin')),
-            hash: timeLibraryFunctions(require('chance/hash')),
-            wp7ANID: timeLibraryFunctions(require('chance/wp7ANID')),
-            wp8ANID2: timeLibraryFunctions(require('chance/wp8ANID2')),
-            avatar: timeLibraryFunctions(require('chance/avatar')),
-            email: timeLibraryFunctions(require('chance/email')),
-            color: timeLibraryFunctions(require('chance/color')),
-            company: timeLibraryFunctions(require('chance/company')),
-            fbid: timeLibraryFunctions(require('chance/fbid')),
-            ga: timeLibraryFunctions(require('chance/googleAnalytics')),
-            hashtag: timeLibraryFunctions(require('chance/hashtag')),
-            ip: timeLibraryFunctions(require('chance/ip')),
-            ipv6: timeLibraryFunctions(require('chance/ipv6')),
-            klout: timeLibraryFunctions(require('chance/klout')),
-            profession: timeLibraryFunctions(require('chance/profession')),
-            twitter: timeLibraryFunctions(require('chance/twitter')),
-            url: timeLibraryFunctions(require('chance/url'))
+            age: timeFunction(require('chance/age')),
+            birthday: timeFunction(require('chance/birthday'), { type: 'child', string: true }),
+            cf: timeFunction(require('chance/cf')),
+            first: timeFunction(require('chance/first')),
+            last: timeFunction(require('chance/last')),
+            cpf: timeFunction(require('chance/cpf')),
+            gender: timeFunction(require('chance/gender')),
+            prefix: timeFunction(require('chance/prefix')),
+            suffix: timeFunction(require('chance/suffix')),
+            name: timeFunction(require('chance/name'), { prefix: true, suffix: true, middle: true }),
+            ssn: timeFunction(require('chance/ssn')),
+            animal: timeFunction(require('chance/animal')),
+            androidId: timeFunction(require('chance/androidId')),
+            appleToken: timeFunction(require('chance/appleToken')),
+            bbpin: timeFunction(require('chance/bbPin')),
+            hash: timeFunction(require('chance/hash')),
+            wp7ANID: timeFunction(require('chance/wp7ANID')),
+            wp8ANID2: timeFunction(require('chance/wp8ANID2')),
+            avatar: timeFunction(require('chance/avatar')),
+            email: timeFunction(require('chance/email')),
+            color: timeFunction(require('chance/color')),
+            company: timeFunction(require('chance/company')),
+            fbid: timeFunction(require('chance/fbid')),
+            ga: timeFunction(require('chance/googleAnalytics')),
+            hashtag: timeFunction(require('chance/hashtag')),
+            ip: timeFunction(require('chance/ip')),
+            ipv6: timeFunction(require('chance/ipv6')),
+            klout: timeFunction(require('chance/klout')),
+            profession: timeFunction(require('chance/profession')),
+            twitter: timeFunction(require('chance/twitter')),
+            url: timeFunction(require('chance/url'))
         });
 
     next();
