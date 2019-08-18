@@ -48,7 +48,8 @@ server.get('Test', function (req, res, next) {
             klout: timeFunction(require('chance/klout')),
             profession: timeFunction(require('chance/profession')),
             twitter: timeFunction(require('chance/twitter')),
-            url: timeFunction(require('chance/url'))
+            url: timeFunction(require('chance/url')),
+            address: timeFunction(require('chance/address'))
         });
 
     next();
