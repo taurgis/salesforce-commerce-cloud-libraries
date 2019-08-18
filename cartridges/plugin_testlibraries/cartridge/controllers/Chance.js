@@ -58,7 +58,9 @@ server.get('Test', function (req, res, next) {
             depth: timeFunction(require('chance/depth'), { min: -1000 }),
             geohash: timeFunction(require('chance/geohash')),
             locale: timeFunction(require('chance/locale'), { region: true }),
-            phone: timeFunction(require('chance/phone'))
+            phone: timeFunction(require('chance/phone')),
+            postal: timeFunction(require('chance/postal')),
+            postcode: timeFunction(require('chance/postcode'))
         });
 
     next();
