@@ -70,7 +70,8 @@ server.get('Test', function (req, res, next) {
             timestamp: timeFunction(require('chance/timestamp')),
             timezone: timeFunction(require('chance/timezone')),
             weekday: timeFunction(require('chance/weekday')),
-            cc: timeFunction(require('chance/cc'), { type: 'Mastercard' })
+            cc: timeFunction(require('chance/cc'), { type: 'Mastercard' }),
+            currency: timeFunction(require('chance/currency'))
         });
 
     next();
