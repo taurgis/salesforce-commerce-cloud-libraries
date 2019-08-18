@@ -56,7 +56,8 @@ server.get('Test', function (req, res, next) {
             coordinates: timeFunction(require('chance/coordinates')),
             country: timeFunction(require('chance/country'), { full: true }),
             depth: timeFunction(require('chance/depth'), { min: -1000 }),
-            geohash: timeFunction(require('chance/geohash'))
+            geohash: timeFunction(require('chance/geohash')),
+            locale: timeFunction(require('chance/locale'), { region: true })
         });
 
     next();
