@@ -30,5 +30,5 @@ module.exports = function (options) {
         'Chance: Likelihood accepts values from 0 to 100.'
     );
 
-    return random(options.seed) * 100 < combinedOptions.likelihood;
+    return random() * 100 < combinedOptions.likelihood;
 };
