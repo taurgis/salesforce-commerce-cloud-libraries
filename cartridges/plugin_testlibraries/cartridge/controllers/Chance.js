@@ -74,7 +74,8 @@ server.get('Test', function (req, res, next) {
             currency: timeFunction(require('chance/currency')),
             currencypair: timeFunction(require('chance/currency_pair')),
             dollar: timeFunction(require('chance/dollar')),
-            euro: timeFunction(require('chance/euro'))
+            euro: timeFunction(require('chance/euro')),
+            exp: timeFunction(require('chance/exp'))
         });
 
     next();
