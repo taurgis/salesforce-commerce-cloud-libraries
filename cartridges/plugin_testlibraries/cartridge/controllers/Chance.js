@@ -50,7 +50,8 @@ server.get('Test', function (req, res, next) {
             twitter: timeFunction(require('chance/twitter')),
             url: timeFunction(require('chance/url')),
             address: timeFunction(require('chance/address')),
-            altitude: timeFunction(require('chance/altitude'), { fixed: 7 })
+            altitude: timeFunction(require('chance/altitude'), { fixed: 7 }),
+            areaCode: timeFunction(require('chance/areacode'))
         });
 
     next();
