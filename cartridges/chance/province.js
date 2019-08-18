@@ -15,6 +15,7 @@ var pick = require('./lib/pickOne');
  */
 module.exports = function (options) {
     var provinceOptions = initOptions(options, { country: 'ca' });
+
     return (provinceOptions && provinceOptions.full) ?
         pick(provinces[provinceOptions.country.toLowerCase()]).name :
         pick(provinces[provinceOptions.country.toLowerCase()]).abbreviation;

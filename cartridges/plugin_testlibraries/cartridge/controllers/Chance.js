@@ -61,7 +61,8 @@ server.get('Test', function (req, res, next) {
             phone: timeFunction(require('chance/phone')),
             postal: timeFunction(require('chance/postal')),
             postcode: timeFunction(require('chance/postcode')),
-            province: timeFunction(require('chance/province'), { country: 'it', full: true })
+            province: timeFunction(require('chance/province'), { country: 'it', full: true }),
+            state: timeFunction(require('chance/state'))
         });
 
     next();
