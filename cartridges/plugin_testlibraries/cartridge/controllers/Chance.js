@@ -60,7 +60,8 @@ server.get('Test', function (req, res, next) {
             locale: timeFunction(require('chance/locale'), { region: true }),
             phone: timeFunction(require('chance/phone')),
             postal: timeFunction(require('chance/postal')),
-            postcode: timeFunction(require('chance/postcode'))
+            postcode: timeFunction(require('chance/postcode')),
+            province: timeFunction(require('chance/province'), { country: 'it', full: true })
         });
 
     next();
