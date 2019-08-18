@@ -51,7 +51,8 @@ server.get('Test', function (req, res, next) {
             url: timeFunction(require('chance/url')),
             address: timeFunction(require('chance/address')),
             altitude: timeFunction(require('chance/altitude'), { fixed: 7 }),
-            areaCode: timeFunction(require('chance/areacode'))
+            areaCode: timeFunction(require('chance/areacode')),
+            city: timeFunction(require('chance/city'))
         });
 
     next();
