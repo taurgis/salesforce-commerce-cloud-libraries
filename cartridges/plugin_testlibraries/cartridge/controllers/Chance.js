@@ -69,7 +69,8 @@ server.get('Test', function (req, res, next) {
             hammertime: timeFunction(require('chance/hammertime')),
             timestamp: timeFunction(require('chance/timestamp')),
             timezone: timeFunction(require('chance/timezone')),
-            weekday: timeFunction(require('chance/weekday'))
+            weekday: timeFunction(require('chance/weekday')),
+            cc: timeFunction(require('chance/cc'), { type: 'Mastercard' })
         });
 
     next();
