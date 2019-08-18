@@ -54,7 +54,8 @@ server.get('Test', function (req, res, next) {
             areaCode: timeFunction(require('chance/areacode')),
             city: timeFunction(require('chance/city')),
             coordinates: timeFunction(require('chance/coordinates')),
-            country: timeFunction(require('chance/country'), { full: true })
+            country: timeFunction(require('chance/country'), { full: true }),
+            depth: timeFunction(require('chance/depth'), { min: -1000 })
         });
 
     next();
