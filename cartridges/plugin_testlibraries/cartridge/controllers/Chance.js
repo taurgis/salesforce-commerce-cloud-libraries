@@ -49,7 +49,8 @@ server.get('Test', function (req, res, next) {
             profession: timeFunction(require('chance/profession')),
             twitter: timeFunction(require('chance/twitter')),
             url: timeFunction(require('chance/url')),
-            address: timeFunction(require('chance/address'))
+            address: timeFunction(require('chance/address')),
+            altitude: timeFunction(require('chance/altitude'), { fixed: 7 })
         });
 
     next();
