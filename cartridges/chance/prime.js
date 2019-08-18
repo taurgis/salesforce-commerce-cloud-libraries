@@ -19,7 +19,7 @@ var primes = [
  * @example
  *      prime({ min: 1, max: 20 }); // => 13
  */
-module.exports = function prime(options) {
+module.exports = function (options) {
     var primeOptions = initOptions(options, { min: 0, max: 10000 });
     testRange(primeOptions.min < 0, 'Chance: Min cannot be less than zero.');
     testRange(primeOptions.min > primeOptions.max, 'Chance: Min cannot be greater than Max.');

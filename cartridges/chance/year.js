@@ -12,7 +12,7 @@ var natural = require('./natural');
  * @example
  *      year({min: 1900, max: 2100}); // => 2042
  */
-module.exports = function year(options) {
+module.exports = function (options) {
     // Default to current year as min if none specified
     var yearOptions = initOptions(options, { min: new Date().getFullYear() });
 

@@ -13,7 +13,7 @@ var n = require('./lib/n');
  * @example
  *      cpf(); => '607.116.899-62'
  */
-module.exports = function cpf(options) {
+module.exports = function (options) {
     var cpfOptions = initOptions(options, {
         formatted: true
     });

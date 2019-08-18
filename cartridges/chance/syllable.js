@@ -14,7 +14,7 @@ var character = require('./character');
  * @example
  *     syllable(); // => 'fop'
  */
-module.exports = function syllable(options) {
+module.exports = function (options) {
     var syllableOptions = initOptions(options);
 
     var length = syllableOptions.length || natural({ min: 2, max: 3 });

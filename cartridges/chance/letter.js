@@ -11,7 +11,7 @@ var character = require('./character');
  * @example
  *      letter(({ casing: 'lower' })); // => c
  */
-module.exports = function letter(options) {
+module.exports = function (options) {
     var letterOptions = initOptions(options, { casing: 'lower' });
     var pool = 'abcdefghijklmnopqrstuvwxyz';
     var letterFromPool = character({ pool: pool });

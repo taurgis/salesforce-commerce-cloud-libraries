@@ -12,7 +12,7 @@ var integer = require('./integer');
  * @example
  *      falsy(); // => null
  */
-module.exports = function falsy(options) {
+module.exports = function (options) {
     // return a random falsy value
     var falsyOptions = initOptions(options, { pool: [false, null, 0, NaN, ''] });
     var pool = falsyOptions.pool;

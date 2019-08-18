@@ -13,7 +13,7 @@ var date = require('./date');
  * @example
  *      birthday({ type: 'child' }); // => Sat Sep 08 2001 00:00:00 GMT-0400 (EDT)
  */
-module.exports = function birthday(options) {
+module.exports = function (options) {
     var generatedAge = age(options);
     var currentYear = new Date().getFullYear();
     var birthdayOptions;

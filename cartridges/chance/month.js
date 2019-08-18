@@ -14,7 +14,7 @@ var months = require('./lib/months');
  * @example
  *      month(); // => 'January'
  */
-module.exports = function month(options) {
+module.exports = function (options) {
     var monthOptions = initOptions(options, { min: 1, max: 12 });
 
     testRange(monthOptions.min < 1, 'Chance: Min cannot be less than 1.');
