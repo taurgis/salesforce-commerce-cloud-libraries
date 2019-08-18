@@ -63,7 +63,13 @@ server.get('Test', function (req, res, next) {
             postcode: timeFunction(require('chance/postcode')),
             province: timeFunction(require('chance/province'), { country: 'it', full: true }),
             state: timeFunction(require('chance/state')),
-            zip: timeFunction(require('chance/zip'))
+            zip: timeFunction(require('chance/zip')),
+            ampm: timeFunction(require('chance/ampm')),
+            date: timeFunction(require('chance/date')),
+            hammertime: timeFunction(require('chance/hammertime')),
+            timestamp: timeFunction(require('chance/timestamp')),
+            timezone: timeFunction(require('chance/timezone')),
+            weekday: timeFunction(require('chance/weekday'))
         });
 
     next();

@@ -19,5 +19,5 @@ module.exports = function (options) {
     // Default to one century after current year as max if none specified
     yearOptions.max = (typeof yearOptions.max !== 'undefined') ? yearOptions.max : yearOptions.min + 100;
 
-    return natural(options).toString();
+    return natural(yearOptions).toString();
 };
