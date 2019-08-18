@@ -56,7 +56,14 @@ server.get('Test', function (req, res, next) {
             coordinates: timeFunction(require('chance/coordinates')),
             country: timeFunction(require('chance/country'), { full: true }),
             depth: timeFunction(require('chance/depth'), { min: -1000 }),
-            geohash: timeFunction(require('chance/geohash'))
+            geohash: timeFunction(require('chance/geohash')),
+            locale: timeFunction(require('chance/locale'), { region: true }),
+            phone: timeFunction(require('chance/phone')),
+            postal: timeFunction(require('chance/postal')),
+            postcode: timeFunction(require('chance/postcode')),
+            province: timeFunction(require('chance/province'), { country: 'it', full: true }),
+            state: timeFunction(require('chance/state')),
+            zip: timeFunction(require('chance/zip'))
         });
 
     next();
