@@ -61,7 +61,7 @@ module.exports = function (options) {
         dateObject = new Date(dateOptions.year, dateOptions.month, dateOptions.day, dateOptions.hour, dateOptions.minute, dateOptions.second, dateOptions.millisecond);
     }
 
-    if (options.american) {
+    if (dateOptions.american) {
         // Adding 1 to the month is necessary because Date() 0-indexes
         // months but not day for some odd reason.
         dateString = (dateObject.getMonth() + 1) + '/' + dateObject.getDate() + '/' + dateObject.getFullYear();
@@ -69,5 +69,5 @@ module.exports = function (options) {
         dateString = dateObject.getDate() + '/' + (dateObject.getMonth() + 1) + '/' + dateObject.getFullYear();
     }
 
-    return options.string ? dateString : dateObject;
+    return dateOptions.string ? dateString : dateObject;
 };
