@@ -33,7 +33,10 @@ server.get('Test', function (req, res, next) {
             bbpin: require('chance/bbPin')(),
             hash: require('chance/hash')(),
             wp7ANID: require('chance/wp7ANID')(),
-            wp8ANID2: require('chance/wp8ANID2')()
+            wp8ANID2: require('chance/wp8ANID2')(),
+            avatar: require('chance/avatar')(),
+            email: require('chance/email')(),
+            color: require('chance/color')()
         });
 
     next();

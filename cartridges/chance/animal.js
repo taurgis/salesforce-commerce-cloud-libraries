@@ -14,7 +14,7 @@ var pick = require('./lib/pickOne');
  * @example
  *      animal({type: 'zoo'}); => 'Lion'
  */
-module.exports = function animal(options) {
+module.exports = function (options) {
     // returns a random animal
     var animalOptions = initOptions(options);
 

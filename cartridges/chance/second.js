@@ -11,6 +11,6 @@ var minute = require('./minute');
  * @example
  *      second(); // => 19
  */
-module.exports = function second(options) {
+module.exports = function (options) {
     return minute(options);
 };

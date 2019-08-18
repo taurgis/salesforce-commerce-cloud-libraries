@@ -13,7 +13,7 @@ var testRange = require('./lib/testRange');
  * @example
  *      hour({twentyfour: true}); // => 21
  */
-module.exports = function hour(options) {
+module.exports = function (options) {
     var hourOptions = initOptions(options, {
         min: options && options.twentyfour ? 0 : 1,
         max: options && options.twentyfour ? 23 : 12

@@ -15,7 +15,7 @@ var n = require('./lib/n');
  * @example
  *      string({ pool: 'abcde' }); // => 'cccdeeabedebb'
  */
-module.exports = function string(options) {
+module.exports = function (options) {
     var stringOptions = initOptions(options, { length: natural({ min: 5, max: 20 }) });
     testRange(stringOptions.length < 0, 'Chance: Length cannot be less than zero.');
     var length = stringOptions.length;

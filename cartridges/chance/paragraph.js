@@ -14,7 +14,7 @@ var sentence = require('./sentence');
  * @example
  *      paragraph({ sentences: 1 }) // => 'Idefeulo foc omoemowa wahteze liv juvde puguprof epehuji upuga zige odfe igo sit pilamhul oto ukurecef.'
  */
-module.exports = function paragraph(options) {
+module.exports = function (options) {
     var paragraphOptions = initOptions(options);
 
     var sentences = paragraphOptions.sentences || natural({ min: 3, max: 7 });

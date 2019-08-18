@@ -13,7 +13,7 @@ var suffixes = require('./lib/suffixes');
  * @example
  *      suffix({ full: true }); => 'Juris Doctor'
  */
-module.exports = function suffix(options) {
+module.exports = function (options) {
     var suffixOptions = initOptions(options);
 
     return suffixOptions.full ?

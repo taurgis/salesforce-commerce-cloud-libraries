@@ -15,7 +15,7 @@ var capitalize = require('./lib/capitalize');
  * @example
  *      sentence({ words: 5 }); // => 'Waddik jeasmov cakgilta ficub up.'
  */
-module.exports = function sentence(options) {
+module.exports = function (options) {
     var sentenceOptions = initOptions(options);
 
     var words = sentenceOptions.words || natural({ min: 12, max: 18 });

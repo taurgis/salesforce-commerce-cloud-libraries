@@ -12,7 +12,7 @@ var pick = require('./lib/pickOne');
  * @example
  *      gender(); => 'Female'
  */
-module.exports = function gender(options) {
+module.exports = function (options) {
     var genderOptions = initOptions(options, { extraGenders: [] });
     return pick(['Male', 'Female'].concat(genderOptions.extraGenders));
 };

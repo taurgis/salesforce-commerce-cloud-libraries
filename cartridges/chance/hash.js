@@ -15,7 +15,7 @@ var HEX_POOL = NUMBERS + 'abcdef';
  * @example
  *      hash({casing: 'upper'}) => '3F2EB3FB85D88984C1EC4F46A3DBE740B5E0E56E'
  */
-module.exports = function hash(options) {
+module.exports = function (options) {
     var hashOptions = initOptions(options, { length: 40, casing: 'lower' });
     var pool = hashOptions.casing === 'upper' ? HEX_POOL.toUpperCase() : HEX_POOL;
     return string({ pool: pool, length: hashOptions.length });

@@ -20,7 +20,7 @@ var months = require('./lib/months');
  * @example
  *      date({string: true}); // => "5/27/2078"
  */
-module.exports = function date(options) {
+module.exports = function (options) {
     var dateString;
     var dateObject;
     var dateOptions;

@@ -14,7 +14,7 @@ var syllable = require('./syllable');
  * @example
  *      word({ length: 5 }); // => 'ralve'
  */
-module.exports = function word(options) {
+module.exports = function (options) {
     var wordOptions = initOptions(options);
 
     testRange(

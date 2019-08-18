@@ -12,7 +12,7 @@ var string = require('./string');
  * @example
  *      ssn(); => '411-90-0070'
  */
-module.exports = function socialSecurityNumber(options) {
+module.exports = function (options) {
     var ssnOptions = initOptions(options, { ssnFour: false, dashes: true });
     var ssnPool = '1234567890';
     var ssn;

@@ -12,7 +12,7 @@ var string = require('./string');
  * @example
  *      guid({version: 4}); => 'c71f58e3-34af-43c0-b405-2764d6947d21'
  */
-module.exports = function guid(options) {
+module.exports = function (options) {
     var guidOptions = initOptions(options, { version: 5 });
 
     var guidPool = 'abcdef1234567890';

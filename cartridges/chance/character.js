@@ -15,7 +15,7 @@ var CHARS_UPPER = CHARS_LOWER.toUpperCase();
  * @example
  *      character(({ casing: 'lower' })); // => 'c'
  */
-module.exports = function character(options) {
+module.exports = function (options) {
     var characterOptions = initOptions(options);
 
     var symbols = '!@#$%^&*()[]';

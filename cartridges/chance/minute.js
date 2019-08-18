@@ -13,7 +13,7 @@ var testRange = require('./lib/testRange');
  * @example
  *      minute(); // => 35
  */
-module.exports = function minute(options) {
+module.exports = function (options) {
     var minuteOptions = initOptions(options, { min: 0, max: 59 });
 
     testRange(minuteOptions.min < 0, 'Chance: Min cannot be less than 0.');

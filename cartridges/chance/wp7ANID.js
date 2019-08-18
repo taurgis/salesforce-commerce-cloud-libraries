@@ -7,7 +7,6 @@ var integer = require('./integer');
 /**
  * Return a random Windows Phone 7 ANID value.
  *
- * @param {Object} options - Possible options for Windows Phone 7 ANID
  * @returns {string} - A random Windows Phone 7 ANID value
  *
  * @example

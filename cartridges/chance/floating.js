@@ -15,7 +15,7 @@ var MAX_INT = Number(9007199254740992);
  * @example
  *      floating({ fixed: 7 }) // => -749512327.7447168
  */
-module.exports = function floating(options) {
+module.exports = function (options) {
     var floatingOptions = initOptions(options, { fixed: 4 });
     testRange(
         floatingOptions.fixed && floatingOptions.precision,

@@ -11,6 +11,6 @@ var natural = require('./natural');
  * @example
  *      millisecond(); // => 735
  */
-module.exports = function millisecond() {
+module.exports = function () {
     return natural({ max: 999 });
 };

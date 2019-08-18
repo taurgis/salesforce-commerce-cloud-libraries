@@ -16,7 +16,7 @@ var suffix = require('./suffix');
  * @example
  *      name({ middle: true }); => 'Nelgatwu Powuku Heup'
  */
-module.exports = function name(options) {
+module.exports = function (options) {
     var nameOptions = initOptions(options);
 
     var firstName = first(nameOptions);

@@ -13,7 +13,7 @@ var prefixes = require('./lib/prefixes');
  * @example
  *      prefix({ full: true }); => 'Mister'
  */
-module.exports = function prefix(options) {
+module.exports = function (options) {
     var prefixOptions = initOptions(options, { gender: 'all' });
     return prefixOptions.full ?
         pick(prefixes(prefixOptions.gender)).name :

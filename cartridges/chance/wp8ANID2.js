@@ -7,7 +7,6 @@ var Bytes = require('dw/util/Bytes');
 /**
  * Return a random Windows Phone 8 ANID2 value.
  *
- * @param {Object} options - Possible options for Windows Phone 8 ANID2
  * @returns {string} - A random Windows Phone 8 ANID2 value
  *
  * @example

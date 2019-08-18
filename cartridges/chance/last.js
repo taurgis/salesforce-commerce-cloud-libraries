@@ -13,7 +13,7 @@ var lastNames = require('./lib/lastNames');
  * @example
  *      last({ nationality: 'it' }); => 'Giovannini'
  */
-module.exports = function last(options) {
+module.exports = function (options) {
     var lastOptions = initOptions(options, { nationality: '*' });
 
     if (lastOptions.nationality === '*') {
