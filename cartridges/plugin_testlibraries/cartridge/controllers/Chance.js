@@ -72,7 +72,9 @@ server.get('Test', function (req, res, next) {
             weekday: timeFunction(require('chance/weekday')),
             cc: timeFunction(require('chance/cc'), { type: 'Mastercard' }),
             currency: timeFunction(require('chance/currency')),
-            currencypair: timeFunction(require('chance/currency_pair'))
+            currencypair: timeFunction(require('chance/currency_pair')),
+            dollar: timeFunction(require('chance/dollar')),
+            euro: timeFunction(require('chance/euro'))
         });
 
     next();
