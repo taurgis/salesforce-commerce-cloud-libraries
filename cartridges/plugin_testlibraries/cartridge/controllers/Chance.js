@@ -79,7 +79,8 @@ server.get('Test', function (req, res, next) {
             dice: timeFunction(require('chance/dice')),
             normal: timeFunction(require('chance/normal'), { mean: 100, dev: 15 }),
             radio: timeFunction(require('chance/radio')),
-            rpg: timeFunction(require('chance/rpg'), '5d6')
+            rpg: timeFunction(require('chance/rpg'), '5d6'),
+            weighted: timeFunction(require('chance/weighted'), [require('chance/fbid')(), require('chance/twitter')(), require('chance/ip')()], [10, 5, 1])
         });
 
     next();
