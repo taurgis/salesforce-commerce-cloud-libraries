@@ -1,3 +1,5 @@
+'use strict';
+
 var reduce = require('./reduce.js');
 
 /**

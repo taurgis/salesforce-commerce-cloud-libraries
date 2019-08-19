@@ -1,3 +1,5 @@
+'use strict';
+
 var Stack= require('./Stack.js');
 var assignMergeValue= require('./assignMergeValue.js');
 var baseFor= require('./baseFor.js');

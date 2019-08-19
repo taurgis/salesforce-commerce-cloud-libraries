@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var _assertPromise = require('./internal/_assertPromise');
 

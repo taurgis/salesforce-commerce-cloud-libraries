@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayReduce = require('./.internal/arrayReduce');
 var defaultTo = require('./defaultTo');
 

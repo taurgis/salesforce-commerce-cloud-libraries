@@ -1,3 +1,5 @@
+'use strict';
+
 var SetCache = require('./SetCache');
 var some = require('../some');
 var cacheHas = require('./cacheHas');

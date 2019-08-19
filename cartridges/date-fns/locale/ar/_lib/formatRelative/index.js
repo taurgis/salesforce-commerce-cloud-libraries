@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: '[last] dddd [at] LT',
     yesterday: '[yesterday at] LT',

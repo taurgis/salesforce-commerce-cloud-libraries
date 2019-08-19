@@ -1,3 +1,5 @@
+'use strict';
+
 var baseUnset= require('./baseUnset.js');
 var isIndex= require('./isIndex.js');
 

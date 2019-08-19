@@ -1,3 +1,5 @@
+'use strict';
+
 var baseGet= require('./baseGet.js');
 var baseSet= require('./baseSet.js');
 var castPath= require('./castPath.js');

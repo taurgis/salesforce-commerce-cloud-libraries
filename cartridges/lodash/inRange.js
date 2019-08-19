@@ -1,3 +1,5 @@
+'use strict';
+
 var baseInRange = require('./.internal/baseInRange.js');
 
 /**

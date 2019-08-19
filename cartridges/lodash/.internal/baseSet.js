@@ -1,3 +1,5 @@
+'use strict';
+
 var assignValue= require('./assignValue.js');
 var castPath= require('./castPath.js');
 var isIndex= require('./isIndex.js');

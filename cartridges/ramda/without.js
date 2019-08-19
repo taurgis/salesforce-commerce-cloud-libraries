@@ -1,3 +1,5 @@
+'use strict';
+
 var _includes = require('./internal/_includes');
 var _curry2 = require('./internal/_curry2');
 var flip = require('./flip');

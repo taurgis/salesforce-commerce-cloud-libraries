@@ -1,3 +1,5 @@
+'use strict';
+
 var isSameDay = require('./isSameDay');
 var subDays = require('./subDays');
 

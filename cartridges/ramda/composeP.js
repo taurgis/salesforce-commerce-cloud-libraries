@@ -1,3 +1,5 @@
+'use strict';
+
 var pipeP = require('./pipeP');
 var reverse = require('./reverse');
 

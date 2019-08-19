@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'Praėjusį' eeee p",
     yesterday: "'Vakar' p",

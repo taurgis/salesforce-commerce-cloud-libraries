@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "'την προηγούμενη' eeee 'στις' p",
     yesterday: "'χθες στις' p",

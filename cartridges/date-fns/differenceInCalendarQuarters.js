@@ -1,3 +1,5 @@
+'use strict';
+
 var getQuarter = require('./getQuarter');
 var toDate = require('./toDate');
 

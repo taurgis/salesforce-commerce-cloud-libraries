@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry3 = require('./internal/_curry3');
 var mergeDeepWithKey = require('./mergeDeepWithKey');
 

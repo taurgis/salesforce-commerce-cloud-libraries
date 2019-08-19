@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Converts an ASCII `string` to an array.
  *

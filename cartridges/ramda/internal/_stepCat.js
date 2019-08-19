@@ -1,3 +1,5 @@
+'use strict';
+
 var _objectAssign = require('./_objectAssign');
 var _identity = require('./_identity');
 var _isArrayLike = require('./_isArrayLike');

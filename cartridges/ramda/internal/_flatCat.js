@@ -1,3 +1,5 @@
+'use strict';
+
 var _forceReduced = require('./_forceReduced');
 var _isArrayLike = require('./_isArrayLike');
 var _reduce = require('./_reduce');

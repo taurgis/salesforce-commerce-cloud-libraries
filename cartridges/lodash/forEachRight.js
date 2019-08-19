@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayEachRight = require('./.internal/arrayEachRight');
 var baseEachRight = require('./.internal/baseEachRight');
 

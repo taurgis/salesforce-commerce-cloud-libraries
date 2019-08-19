@@ -1,3 +1,5 @@
+'use strict';
+
 var isSymbol= require('../isSymbol.js');
 
 /** Used as references for the maximum length and index of an array. */

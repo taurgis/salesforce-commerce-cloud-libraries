@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('../../toDate');
 
 var MILLISECONDS_IN_DAY = 86400000;

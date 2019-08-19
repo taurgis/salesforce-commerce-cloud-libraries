@@ -1,3 +1,5 @@
+'use strict';
+
 var isError = require('./isError.js');
 
 /**

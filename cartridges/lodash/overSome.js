@@ -1,3 +1,5 @@
+'use strict';
+
 var some = require('./some.js');
 
 /**

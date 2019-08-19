@@ -1,3 +1,5 @@
+'use strict';
+
 var isPrototype= require('./isPrototype.js');
 
 /**

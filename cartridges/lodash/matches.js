@@ -1,3 +1,5 @@
+'use strict';
+
 var baseClone = require('./.internal/baseClone.js');
 var baseMatches = require('./.internal/baseMatches.js');
 

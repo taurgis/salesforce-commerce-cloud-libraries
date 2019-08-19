@@ -1,3 +1,5 @@
+'use strict';
+
 var _complement = require('./internal/_complement');
 var _curry2 = require('./internal/_curry2');
 var filter = require('./filter');

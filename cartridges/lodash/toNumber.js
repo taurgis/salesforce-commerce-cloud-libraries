@@ -1,3 +1,5 @@
+'use strict';
+
 var isObject = require('./isObject.js');
 var isSymbol = require('./isSymbol.js');
 

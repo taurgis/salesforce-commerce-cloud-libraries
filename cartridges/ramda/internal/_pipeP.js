@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function _pipeP(f, g) {
     return function () {
         var ctx = this;

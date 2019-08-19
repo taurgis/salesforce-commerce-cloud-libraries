@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The base implementation of `property` without support for deep paths.
  *

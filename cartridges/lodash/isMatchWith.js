@@ -1,3 +1,5 @@
+'use strict';
+
 var baseIsMatch = require('./.internal/baseIsMatch.js');
 var getMatchData = require('./.internal/getMatchData.js');
 

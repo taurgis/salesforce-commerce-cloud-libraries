@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * A specialized version of `forEachRight` for arrays.
  *

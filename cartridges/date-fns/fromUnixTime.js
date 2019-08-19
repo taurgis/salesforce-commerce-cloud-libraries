@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('./toDate');
 var toInteger = require('./_lib/toInteger/index');
 

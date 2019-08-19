@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used to compose unicode character classes. */
 var rsAstralRange = '\\ud800-\\udfff'
 var rsComboMarksRange = '\\u0300-\\u036f'

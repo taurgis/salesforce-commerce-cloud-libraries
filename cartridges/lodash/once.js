@@ -1,3 +1,5 @@
+'use strict';
+
 var before = require('./before.js');
 
 /**

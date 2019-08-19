@@ -1,3 +1,5 @@
+'use strict';
+
 var _includesWith = require('./internal/_includesWith');
 var _curry3 = require('./internal/_curry3');
 

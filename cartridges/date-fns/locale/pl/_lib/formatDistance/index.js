@@ -1,3 +1,5 @@
+'use strict';
+
 function declensionGroup(scheme, count) {
     if (count === 1) {
         return scheme.one;

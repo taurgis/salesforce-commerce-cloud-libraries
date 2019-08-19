@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfISOWeekYear = require('./startOfISOWeekYear');
 var addWeeks = require('./addWeeks');
 

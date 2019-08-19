@@ -1,3 +1,5 @@
+'use strict';
+
 var buildFormatLongFn = require('../../../_lib/buildFormatLongFn/index');
 
 var dateFormats = {

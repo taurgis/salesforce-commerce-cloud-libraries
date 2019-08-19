@@ -1,3 +1,5 @@
+'use strict';
+
 var baseAssignValue= require('./baseAssignValue.js');
 var eq= require('../eq.js');
 

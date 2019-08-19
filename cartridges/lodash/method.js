@@ -1,3 +1,5 @@
+'use strict';
+
 var invoke = require('./invoke.js');
 
 /**

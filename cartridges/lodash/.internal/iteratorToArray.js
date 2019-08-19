@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Converts `iterator` to an array.
  *

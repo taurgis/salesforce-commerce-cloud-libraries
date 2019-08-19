@@ -1,3 +1,5 @@
+'use strict';
+
 var curryN = require('./curryN');
 var _curry1 = require('./internal/_curry1');
 

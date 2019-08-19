@@ -1,3 +1,5 @@
+'use strict';
+
 var baseUniq = require('./.internal/baseUniq.js');
 
 /**

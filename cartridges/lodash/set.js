@@ -1,3 +1,5 @@
+'use strict';
+
 var baseSet = require('./.internal/baseSet.js');
 
 /**

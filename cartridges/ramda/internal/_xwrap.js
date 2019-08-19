@@ -1,3 +1,5 @@
+'use strict';
+
 function XWrap(fn) {
     this.f = fn;
 }

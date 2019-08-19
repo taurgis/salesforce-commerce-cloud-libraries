@@ -1,3 +1,5 @@
+'use strict';
+
 var baseAt = require('./.internal/baseAt');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseIsEqual = require('./.internal/baseIsEqual.js');
 
 /**

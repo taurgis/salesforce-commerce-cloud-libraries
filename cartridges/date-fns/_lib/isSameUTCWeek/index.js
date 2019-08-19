@@ -1,3 +1,5 @@
+'use strict';
+
 var startOfUTCWeek = require('../startOfUTCWeek/index');
 
 // This function will be a part of public API when UTC function will be implemented.

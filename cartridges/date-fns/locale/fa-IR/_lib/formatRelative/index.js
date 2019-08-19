@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "eeee 'گذشته در' p",
     yesterday: "'دیروز در' p",

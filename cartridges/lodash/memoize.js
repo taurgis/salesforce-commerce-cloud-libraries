@@ -1,3 +1,5 @@
+'use strict';
+
 var Map = require('dw/util/HashMap');
 /**
  * Creates a function that memoizes the result of `func`. If `resolver` is

@@ -1,3 +1,5 @@
+'use strict';
+
 // NOTE: should prolly be improved
 // https://www.unicode.org/cldr/charts/32/summary/sk.html?hide#1308
 

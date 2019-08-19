@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: '先週のeeeeのp',
     yesterday: '昨日のp',

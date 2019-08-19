@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./_curry2');
 var _reduce = require('./_reduce');
 var _xfBase = require('./_xfBase');

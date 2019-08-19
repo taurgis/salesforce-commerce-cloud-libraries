@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * The base implementation of `isNaN` without support for number objects.
  *

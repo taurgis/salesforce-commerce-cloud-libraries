@@ -1,3 +1,5 @@
+'use strict';
+
 var castSlice = require('./castSlice');
 var hasUnicode = require('./hasUnicode');
 var stringToArray = require('./stringToArray');

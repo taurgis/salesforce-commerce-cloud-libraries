@@ -1,3 +1,5 @@
+'use strict';
+
 var buildMatchFn = require('../../../_lib/buildMatchFn/index');
 var buildParseFn = require('../../../_lib/buildParseFn/index');
 var buildMatchPatternFn = require('../../../_lib/buildMatchPatternFn/index');

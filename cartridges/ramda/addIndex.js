@@ -1,3 +1,5 @@
+'use strict';
+
 var _concat = require('./internal/_concat');
 var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');

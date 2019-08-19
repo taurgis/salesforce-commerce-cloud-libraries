@@ -1,3 +1,5 @@
+'use strict';
+
 var baseGet = require('./.internal/baseGet.js');
 
 /**

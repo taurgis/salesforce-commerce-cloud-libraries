@@ -1,3 +1,5 @@
+'use strict';
+
 var baseConformsTo= require('./baseConformsTo.js');
 var keys= require('../keys.js');
 

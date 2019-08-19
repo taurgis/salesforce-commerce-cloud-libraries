@@ -1,3 +1,5 @@
+'use strict';
+
 var differenceInMilliseconds = require('./differenceInMilliseconds');
 
 var MILLISECONDS_IN_MINUTE = 60000;

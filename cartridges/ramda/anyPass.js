@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');
 var max = require('./max');

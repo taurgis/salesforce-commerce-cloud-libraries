@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayReduce = require('./.internal/arrayReduce');
 var baseEach = require('./.internal/baseEach');
 var baseReduce = require('./.internal/baseReduce');

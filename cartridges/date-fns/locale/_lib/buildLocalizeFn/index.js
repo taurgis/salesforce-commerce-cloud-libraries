@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function buildLocalizeFn(args) {
     return function (dirtyIndex, dirtyOptions) {
         var options = dirtyOptions || {};

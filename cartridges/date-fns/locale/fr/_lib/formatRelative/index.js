@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "eeee 'dernier à' p",
     yesterday: "'hier à' p",

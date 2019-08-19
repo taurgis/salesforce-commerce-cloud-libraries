@@ -1,3 +1,5 @@
+'use strict';
+
 var isSameUTCWeek = require('../../../../_lib/isSameUTCWeek/index');
 
 // https://www.unicode.org/cldr/charts/32/summary/sk.html?hide#1308

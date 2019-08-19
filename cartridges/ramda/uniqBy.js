@@ -1,3 +1,5 @@
+'use strict';
+
 var _Set = require('./internal/_Set');
 var _curry2 = require('./internal/_curry2');
 

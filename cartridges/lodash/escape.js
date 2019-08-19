@@ -1,3 +1,5 @@
+'use strict';
+
 
 /** Used to map characters to HTML entities. */
 var htmlEscapes = {

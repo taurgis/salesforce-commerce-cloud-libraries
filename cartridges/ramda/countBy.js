@@ -1,3 +1,5 @@
+'use strict';
+
 var reduceBy = require('./reduceBy');
 
 

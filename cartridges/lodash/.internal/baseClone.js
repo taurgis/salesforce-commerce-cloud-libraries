@@ -1,3 +1,5 @@
+'use strict';
+
 var Stack = require('./Stack');
 var arrayEach= require('./arrayEach.js');
 var assignValue= require('./assignValue.js');

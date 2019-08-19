@@ -1,3 +1,5 @@
+'use strict';
+
 var _isFunction = require('./_isFunction');
 var _toString = require('./_toString');
 

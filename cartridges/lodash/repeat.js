@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Repeats the given string `n` times.
  *

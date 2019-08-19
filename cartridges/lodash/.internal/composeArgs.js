@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Creates an array that is the composition of partially applied arguments,
  * placeholders, and provided arguments into a single array of arguments.

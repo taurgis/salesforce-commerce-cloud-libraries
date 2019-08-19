@@ -1,3 +1,5 @@
+'use strict';
+
 var formatRelativeLocale = {
     lastWeek: "eeee 'lalu pukul' p",
     yesterday: "'Kemarin pukul' p",

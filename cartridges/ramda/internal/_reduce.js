@@ -1,3 +1,5 @@
+'use strict';
+
 var _isArrayLike = require('./_isArrayLike');
 var _xwrap = require('./_xwrap');
 var bind = require('../bind');

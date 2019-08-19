@@ -1,3 +1,5 @@
+'use strict';
+
 var toFinite = require('./toFinite.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var formatDistance = require('./_lib/formatDistance/index');
 var formatLong = require('./_lib/formatLong/index');
 var formatRelative = require('../en-US/_lib/formatRelative/index');

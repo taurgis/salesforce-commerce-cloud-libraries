@@ -1,3 +1,5 @@
+'use strict';
+
 var baseToNumber = require('./baseToNumber.js');
 var baseToString = require('./baseToString.js');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 var addLeadingZeros = require('../../addLeadingZeros/index.js');
 
 /*

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseUnset = require('./.internal/baseUnset.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var toInteger = require('./toInteger.js');
 
 /** Used as references for various `Number` constants. */

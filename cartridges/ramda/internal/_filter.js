@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function _filter(fn, list) {
     var idx = 0;
     var len = list.length;

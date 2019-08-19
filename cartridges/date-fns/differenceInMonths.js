@@ -1,3 +1,5 @@
+'use strict';
+
 var toDate = require('./toDate');
 var differenceInCalendarMonths = require('./differenceInCalendarMonths');
 var compareAsc = require('./compareAsc');

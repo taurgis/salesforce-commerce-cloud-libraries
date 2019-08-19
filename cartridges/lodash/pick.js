@@ -1,3 +1,5 @@
+'use strict';
+
 var basePick = require('./.internal/basePick.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _xfind = require('./internal/_xfind');
@@ -36,5 +38,7 @@ var find = _curry2(_dispatchable(['find'], _xfind, function find(fn, list) {
         }
         idx += 1;
     }
+
+    return null;
 }));
 module.exports = find;

@@ -1,3 +1,5 @@
+'use strict';
+
 var eachDayOfInterval = require('./eachDayOfInterval');
 var isSunday = require('./isSunday');
 var isWeekend = require('./isWeekend');

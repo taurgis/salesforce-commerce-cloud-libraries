@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Checks if `predicate` returns truthy for **all** elements of `array`.
  * Iteration is stopped once `predicate` returns falsey. The predicate is

@@ -1,3 +1,5 @@
+'use strict';
+
 type X2jOptions = {
   attributeNamePrefix: string;
   attrNodeName: false | string;

@@ -1,3 +1,5 @@
+'use strict';
+
 var every = require('./every.js');
 
 /**

@@ -1,3 +1,5 @@
+'use strict';
+
 var formatters = {};
 
 // Special case for day of month ordinals in long date format context:

@@ -1,3 +1,5 @@
+'use strict';
+
 var toInteger = require('./_lib/toInteger/index');
 var getISOWeekYear = require('./getISOWeekYear');
 var setISOWeekYear = require('./setISOWeekYear');

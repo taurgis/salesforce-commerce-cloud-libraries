@@ -1,3 +1,5 @@
+'use strict';
+
 var repeat= require('../repeat.js');
 var baseToString= require('./baseToString.js');
 var castSlice= require('./castSlice.js');

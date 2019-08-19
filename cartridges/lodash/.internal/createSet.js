@@ -1,3 +1,5 @@
+'use strict';
+
 var Set = require('dw/util/HashSet');
 
 /**

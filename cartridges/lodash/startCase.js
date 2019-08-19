@@ -1,3 +1,5 @@
+'use strict';
+
 var upperFirst = require('./upperFirst.js');
 var words = require('./words.js');
 

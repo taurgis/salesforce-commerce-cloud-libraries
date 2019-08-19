@@ -1,3 +1,5 @@
+'use strict';
+
 var accusativeWeekdays = [
     'neděli',
     'pondělí',

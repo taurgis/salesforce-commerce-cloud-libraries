@@ -1,3 +1,5 @@
+'use strict';
+
 var getTime = require('./getTime');
 
 /**

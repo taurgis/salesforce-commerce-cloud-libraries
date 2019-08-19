@@ -1,3 +1,5 @@
+'use strict';
+
 var lightFormatters = require('../lightFormatters/index');
 var getUTCDayOfYear = require('../../../_lib/getUTCDayOfYear/index');
 var getUTCISOWeek = require('../../../_lib/getUTCISOWeek/index');

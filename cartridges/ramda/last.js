@@ -1,3 +1,5 @@
+'use strict';
+
 var nth = require('./nth');
 
 

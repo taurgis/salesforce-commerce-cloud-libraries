@@ -1,3 +1,5 @@
+'use strict';
+
 var map= require('../map.js');
 var baseIndexOf= require('./baseIndexOf.js');
 var baseIndexOfWith= require('./baseIndexOfWith.js');

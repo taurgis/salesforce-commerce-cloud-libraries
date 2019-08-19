@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * Gets the argument placeholder value for `func`.
  *

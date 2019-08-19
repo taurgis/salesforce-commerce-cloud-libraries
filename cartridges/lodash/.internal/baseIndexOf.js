@@ -1,3 +1,5 @@
+'use strict';
+
 var baseFindIndex = require('./baseFindIndex');
 var baseIsNaN = require('./baseIsNaN');
 var strictIndexOf = require('./strictIndexOf');

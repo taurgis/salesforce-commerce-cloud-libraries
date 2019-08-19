@@ -1,3 +1,5 @@
+'use strict';
+
 var getSymbolsIn= require('./getSymbolsIn.js');
 
 /**

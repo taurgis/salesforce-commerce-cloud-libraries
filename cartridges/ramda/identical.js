@@ -1,3 +1,5 @@
+'use strict';
+
 var _objectIs = require('./internal/_objectIs');
 var _curry2 = require('./internal/_curry2');
 

@@ -1,3 +1,5 @@
+'use strict';
+
 /** Used as references for various `Number` constants. */
 var MAX_SAFE_INTEGER = 9007199254740991;
 
