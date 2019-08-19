@@ -19,8 +19,8 @@ var initOptions = require('./lib/initOptions');
 module.exports = function (options) {
     // 9007199254740992 (2^53) is the max integer number in JavaScript
     // See: http://vq.io/132sa2j
-    var integerOtions = initOptions(options, { min: MIN_INT, max: MAX_INT });
-    testRange(integerOtions.min > integerOtions.max, 'Chance: Min cannot be greater than Max.');
+    var integerOptions = initOptions(options, { min: MIN_INT, max: MAX_INT });
+    testRange(integerOptions.min > integerOptions.max, 'Chance: Min cannot be greater than Max.');
 
-    return Math.floor(random() * (integerOtions.max - integerOtions.min + 1) + integerOtions.min);
+    return Math.floor(random() * (integerOptions.max - integerOptions.min + 1) + integerOptions.min);
 };

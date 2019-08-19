@@ -75,7 +75,11 @@ server.get('Test', function (req, res, next) {
             currencypair: timeFunction(require('chance/currency_pair')),
             dollar: timeFunction(require('chance/dollar')),
             euro: timeFunction(require('chance/euro')),
-            exp: timeFunction(require('chance/exp'))
+            coin: timeFunction(require('chance/coin')),
+            dice: timeFunction(require('chance/dice')),
+            normal: timeFunction(require('chance/normal'), { mean: 100, dev: 15 }),
+            radio: timeFunction(require('chance/radio')),
+            rpg: timeFunction(require('chance/rpg'), '5d6')
         });
 
     next();
