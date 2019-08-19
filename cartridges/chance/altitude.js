@@ -3,7 +3,6 @@
 var floating = require('./floating');
 var initOptions = require('./lib/initOptions');
 
-
 /**
  * Return a random altitude value.
  *

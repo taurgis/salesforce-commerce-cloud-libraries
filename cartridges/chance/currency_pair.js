@@ -1,6 +1,6 @@
 'use strict';
 
-var unique = require('./lib/unique');
+var unique = require('./unique');
 var currency = require('./currency');
 
 /**

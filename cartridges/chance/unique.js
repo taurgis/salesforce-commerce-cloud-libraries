@@ -1,6 +1,6 @@
 'use strict';
 
-var testRange = require('./testRange');
+var testRange = require('./lib/testRange');
 
 /**
  *  Given a function that generates something random and a number of items to generate,
