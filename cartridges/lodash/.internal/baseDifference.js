@@ -3,7 +3,6 @@
 var SetCache = require('./SetCache');
 var arrayIncludes = require('./arrayIncludes');
 var arrayIncludesWith = require('./arrayIncludesWith');
-var map = require('../map');
 var cacheHas = require('./cacheHas');
 
 /** Used as the size to enable large array optimizations. */
