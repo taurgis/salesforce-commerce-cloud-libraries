@@ -2,7 +2,13 @@
 
 
 var Hash = require('./Hash');
-var HashMap = require('dw/util/HashMap');
+var HashMap;
+
+if(typeof Map  === 'undefined') {
+    HashMap = require('dw/util/HashMap');
+} else {
+    HashMap = Map;
+}
 
 /**
  * Gets the data for `map`.

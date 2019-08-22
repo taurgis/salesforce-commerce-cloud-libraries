@@ -58,7 +58,7 @@ function baseDifference(array, values, iteratee, comparator) {
   var isCommon = true;
   var length = array.length;
   var result = [];
-  var valuesLength = values.length;
+  var valuesLength = values ? values.length : 0;
 
   if (!length) {
     return result;
@@ -70,7 +70,7 @@ function baseDifference(array, values, iteratee, comparator) {
     includes = arrayIncludesWith;
     isCommon = false;
   }
-  else if (values.length >= LARGE_ARRAY_SIZE) {
+  else if (values && (values.length >= LARGE_ARRAY_SIZE)) {
     includes = cacheHas;
     isCommon = false;
     values = new SetCache(values);

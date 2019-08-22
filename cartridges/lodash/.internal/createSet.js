@@ -1,6 +1,12 @@
 'use strict';
 
-var Set = require('dw/util/HashSet');
+var HashSet;
+
+if(typeof Set === 'undefined') {
+    HashSet = require('dw/util/HashSet');
+} else {
+    HashSet = Set;
+}
 
 /**
  * Creates a set object of `values`.
@@ -10,7 +16,7 @@ var Set = require('dw/util/HashSet');
  * @returns {Object} Returns the new set.
  */
 var createSet = function (values) {
-    return new Set(values);
+    return new HashSet(values);
 };
 
 module.exports = createSet;
