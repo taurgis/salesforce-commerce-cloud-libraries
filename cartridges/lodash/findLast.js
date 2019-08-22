@@ -16,8 +16,7 @@ var isArrayLike = require('./isArrayLike');
  * @see find, findIndex, findKey, findLastIndex, findLastKey
  * @example
  *
- * findLast([1, 2, 3, 4], function(n) { return n % 2 == 1; })
- * // => 3
+ * findLast([1, 2, 3, 4], function(n) { return n % 2 == 1; }) => 3
  */
 function findLast(collection, predicate, fromIndex) {
     let iteratee;

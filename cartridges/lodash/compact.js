@@ -21,6 +21,8 @@ function compact(array) {
         return result;
     }
 
+    array = Array.prototype.slice.call(array, 0);
+
     array.forEach(function (value) {
         if (value) {
             result[resIndex++] = value;

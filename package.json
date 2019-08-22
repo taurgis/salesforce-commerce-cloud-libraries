@@ -10,7 +10,8 @@
     "uploadCartridge": "sgmf-scripts --uploadCartridge moment",
     "uploadDw": "sgmf-scripts",
     "watch": "sgmf-scripts --watch",
-    "precommit": "npm run lint --loglevel=silent"
+    "precommit": "npm run lint --loglevel=silent",
+    "test": "sgmf-scripts --test test/unit/**/*.js"
   },
   "repository": {
     "type": "git",

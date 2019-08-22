@@ -21,9 +21,11 @@ var isError = require('./isError.js');
  *   elements = []
  * }
  */
-function attempt(func, args) {
+function attempt(func) {
     try {
-        return func(args);
+        var args = Array.prototype.slice.call(arguments);
+        args.shift();
+        return func.apply(this, args);
     } catch (e) {
         return isError(e) ? e : new Error(e);
     }

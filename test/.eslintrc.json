@@ -1,0 +1,22 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "require-jsdoc": "off",
+    "max-len": "off",
+    "quote-props": "off",
+    "no-new": "off",
+    "valid-jsdoc": "off",
+    "new-cap": "off",
+    "no-underscore-dangle": "off"
+  },
+  "globals": {
+    "expect": "readonly",
+    "assert": "readonly",
+    "sinon": "readonly",
+    "faker": "readonly",
+    "testHelpers": "readonly",
+    "base": "readonly"
+  }
+}
