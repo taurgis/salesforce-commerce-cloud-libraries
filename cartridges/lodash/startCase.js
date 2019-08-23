@@ -24,7 +24,7 @@ var words = require('./words.js');
  * // => 'FOO BAR'
  */
 const startCase = function (string) {
-    return words(string.replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
+    return words(String(string).replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
         return result + (index ? ' ' : '') + upperFirst(word);
     }, '');
 };

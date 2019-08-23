@@ -24,7 +24,7 @@ const reQuotes = /['\u2019]/g;
  * // => 'foo bar'
  */
 const lowerCase = function (string) {
-    return words(string.replace(reQuotes, '')).reduce(function (result, word, index) {
+    return words(String(string).replace(reQuotes, '')).reduce(function (result, word, index) {
         return result + (index ? ' ' : '') + word.toLowerCase();
     }, '');
 };
