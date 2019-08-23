@@ -20,9 +20,9 @@ function before(n, func) {
     if (typeof func !== 'function') {
         throw new TypeError('Expected a function');
     }
-    return function (args) {
+    return function () {
         if (--n > 0) {
-            result = func.apply(this, args);
+            result = func.apply(this, arguments);
         }
         if (n <= 1) {
             func = undefined;
