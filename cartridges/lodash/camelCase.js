@@ -24,12 +24,9 @@ var words = require('./words');
  */
 var camelCase = function (string) {
     return words(String(string).replace(/['\u2019]/g, '')).reduce(function (reduceResult, reduceWord, index) {
-        var word = reduceWord;
-        var result = index === 1 ? reduceResult.toLowerCase() : reduceResult;
-        word = word.toLowerCase();
-
-        return result + (index > 0 ? upperFirst(word) : word);
-    });
+        var camelCaseWord = reduceWord.toLowerCase();
+        return reduceResult + (index ? upperFirst(camelCaseWord) : camelCaseWord);
+    }, '');
 };
 
 module.exports = camelCase;

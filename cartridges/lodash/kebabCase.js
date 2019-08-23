@@ -23,7 +23,7 @@ var words = require('./words.js');
  * // => 'foo-bar'
  */
 const kebabCase = function (string) {
-    return words(string.toString().replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
+    return words(String(string).replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
         return result + (index ? '-' : '') + word.toLowerCase();
     }, '');
 };

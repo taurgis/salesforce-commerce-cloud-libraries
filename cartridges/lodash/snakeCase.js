@@ -26,7 +26,7 @@ var words = require('./words.js');
  * // => 'foo_2_bar'
  */
 const snakeCase = function (string) {
-    return words(string.replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
+    return words(String(string).replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
         return result + (index ? '_' : '') + word.toLowerCase();
     }, '');
 };
