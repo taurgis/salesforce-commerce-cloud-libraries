@@ -45,10 +45,10 @@ describe('values methods', function () {
         });
 
         it('`_.' + methodName + '` should work with `arguments` objects', function () {
-            var values = [args, strictArgs];
-            var expected = map(values, () => [1, 2, 3]);
+            var valuesArray = [args, strictArgs];
+            var expected = map(valuesArray, () => [1, 2, 3]);
 
-            var actual = map(values, function (value) {
+            var actual = map(valuesArray, function (value) {
                 return func(value).sort();
             });
 
