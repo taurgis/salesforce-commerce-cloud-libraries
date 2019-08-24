@@ -46,7 +46,9 @@ describe('compact', function () {
         try {
             var actual = _(largeArray).slice(1).compact().value();
             pass = isEqual(actual, compact(slice(largeArray, 1)));
-        } catch (e) { // do nothing }
+        } catch (e) {
+            // do nothing
+        }
 
         assert.ok(pass);
         _.iteratee = iteratee;

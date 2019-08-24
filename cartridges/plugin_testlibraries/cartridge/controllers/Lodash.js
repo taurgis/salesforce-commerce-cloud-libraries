@@ -47,9 +47,11 @@ server.get('Test', function (req, res, next) {
 
     const array = ['hello', 'goodbye'];
     const other = ['hi', 'goodbye'];
+    var chained = require('lodash/wrapperLodash')([1, 2, 3]).take(2)
 
     res.json(
         {
+            wrapped: chained.value(),
             add: timeFunction(require('lodash/add'), 2, 2),
             after: afterTest,
             at: timeFunction(require('lodash/at'), atTestObject, ['a[0].b.c', 'a[1]']),

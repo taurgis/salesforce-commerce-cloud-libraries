@@ -37,14 +37,79 @@ LodashWrapper.prototype.push = function() {
     return new LodashWrapper(this.__wrapped__);
 }
 
+LodashWrapper.prototype.unshift = function() {
+    Array.prototype.unshift.apply(this.__wrapped__, arguments)
+
+    return new LodashWrapper(this.__wrapped__);
+}
+
 LodashWrapper.prototype.slice = function() {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
     return new LodashWrapper(require('../slice').apply(this, args));
 }
 
+LodashWrapper.prototype.map = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../map').apply(this, args));
+}
+
+LodashWrapper.prototype.filter = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../filter').apply(this, args));
+}
+
+LodashWrapper.prototype.tap = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../tap').apply(this, args));
+}
+
+LodashWrapper.prototype.reduce = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../reduce').apply(this, args));
+}
+
+LodashWrapper.prototype.concat = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../concat').apply(this, args));
+}
+
+LodashWrapper.prototype.reject = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../reject').apply(this, args));
+}
+
 LodashWrapper.prototype.reverse = function() {
     return new LodashWrapper(require('../reverse').apply(this, [this.__wrapped__]));
+}
+
+LodashWrapper.prototype.isArray = function() {
+    return new LodashWrapper(require('../isArray').apply(this, [this.__wrapped__]));
+}
+
+
+LodashWrapper.prototype.flatten = function() {
+    return new LodashWrapper(require('../flatten').apply(this, [this.__wrapped__]));
+}
+
+LodashWrapper.prototype.head = function() {
+    return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
+}
+
+LodashWrapper.prototype.chain = function() {
+    return this;
+}
+
+LodashWrapper.prototype.sortBy = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../sortBy').apply(this, args));
 }
 
 LodashWrapper.prototype.take = function() {
