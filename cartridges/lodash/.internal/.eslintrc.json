@@ -1,0 +1,21 @@
+{
+    "env": {
+        "commonjs": true
+    },
+    "rules": {
+      "no-underscore-dangle": ["error", { "allow": ["__routes"] }],
+      "no-restricted-syntax": "off",
+      "guard-for-in": "off",
+      "no-self-compare": "off",
+      "no-param-reassign": "off",
+      "no-nested-ternary": "off",
+      "no-shadow": "off",
+      "no-cond-assign": "off",
+      "no-mixed-operators": "off",
+      "valid-jsdoc": "off",
+      "no-prototype-builtins": "off",
+      "consistent-return": "off",
+      "no-sequences": "off",
+      "eqeqeq": "off"
+    }
+}
