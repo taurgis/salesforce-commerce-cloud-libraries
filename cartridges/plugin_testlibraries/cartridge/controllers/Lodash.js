@@ -11,6 +11,11 @@ server.get('Test', function (req, res, next) {
         afterTest = 'after is finished';
     });
 
+    function Foo() {
+        this.a = 1
+        this.b = 2
+    }
+
     var atTestObject = { a: [{ b: { c: 3 } }, 4] };
     var attemptTest = function () {
         throw new Error();
@@ -282,7 +287,7 @@ server.get('Test', function (req, res, next) {
             update: timeFunction(require('lodash/update'), { a: [{ b: { c: 3 } }] }, 'a[0].b.c', function (n) { return n ? n * n : 0; }),
             upperCase: timeFunction(require('lodash/upperCase'), '--foo-bar'),
             upperFirst: timeFunction(require('lodash/upperFirst'), 'fred'),
-            // values: require('lodash/values')('hi'),
+            values: timeFunction(require('lodash/values'), new Foo()),
             without: timeFunction(require('lodash/without'), [2, 1, 2, 3], 1, 2),
             words: timeFunction(require('lodash/words'), 'fred, barney, & pebbles'),
             xor: timeFunction(require('lodash/xor'), [2, 1], [2, 3]),

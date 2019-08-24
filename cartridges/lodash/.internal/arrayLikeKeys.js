@@ -1,10 +1,18 @@
 'use strict';
 
+var baseTimes = require('./baseTimes');
 var isArguments = require('../isArguments');
+var isArray = require('../isArray');
 var isBuffer = require('../isBuffer');
-var isIndex = require('./isIndex.js');
+var isIndex = require('./isIndex');
 var isTypedArray = require('../isTypedArray');
-var isString = require('../isString');
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
+
 /**
  * Creates an array of the enumerable property names of the array-like `value`.
  *
@@ -14,35 +22,30 @@ var isString = require('../isString');
  * @returns {Array} Returns the array of property names.
  */
 function arrayLikeKeys(value, inherited) {
-  var isArr = Array.isArray(value)
-  var isArg = !isArr && isArguments(value)
-  var isBuff = !isArr && !isArg && isBuffer(value)
-  var isType = !isArr && !isArg && !isBuff && isTypedArray(value)
-  var skipIndexes = isArr || isArg || isBuff || isType
-  var length = value.length
-  var result = new Array(skipIndexes ? length : 0)
-  let index = skipIndexes ? -1 : length
-  while (++index < length) {
-    result[index] = index.toString();
-  }
+    var isArr = isArray(value),
+        isArg = !isArr && isArguments(value),
+        isBuff = !isArr && !isArg && isBuffer(value),
+        isType = !isArr && !isArg && !isBuff && isTypedArray(value),
+        skipIndexes = isArr || isArg || isBuff || isType,
+        result = skipIndexes ? baseTimes(value.length, String) : [],
+        length = result.length;
 
-  if(isString(value)) {
-    value = value.split('');
-  }
-
-  value.forEach(function (key) {
-    if ((inherited || value.hasOwnProperty(key)) &&
-      !(skipIndexes && (
-        // Safari 9 has enumerable `arguments.length` in strict mode.
-        (key == 'length' ||
-          // Skip index properties.
-          isIndex(key, length))
-      ))) {
-      result.push(key)
+    for (var key in value) {
+        if ((inherited || hasOwnProperty.call(value, key)) &&
+            !(skipIndexes && (
+                // Safari 9 has enumerable `arguments.length` in strict mode.
+                key == 'length' ||
+                // Node.js 0.10 has enumerable non-index properties on buffers.
+                (isBuff && (key == 'offset' || key == 'parent')) ||
+                // PhantomJS 2 has enumerable non-index properties on typed arrays.
+                (isType && (key == 'buffer' || key == 'byteLength' || key == 'byteOffset')) ||
+                // Skip index properties.
+                isIndex(key, length)
+            ))) {
+            result.push(key);
+        }
     }
-  })
-
-  return result
+    return result;
 }
 
 module.exports = arrayLikeKeys;
