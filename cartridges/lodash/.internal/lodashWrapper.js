@@ -116,6 +116,12 @@ LodashWrapper.prototype.sortBy = function() {
     return new LodashWrapper(require('../sortBy').apply(this, args));
 }
 
+LodashWrapper.prototype.countBy = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../countBy').apply(this, args));
+}
+
 LodashWrapper.prototype.take = function() {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
