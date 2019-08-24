@@ -1,10 +1,8 @@
 'use strict';
 
-var coreJsData = require('./coreJsData');
-
 /** Used to detect methods masquerading as native. */
 var maskSrcKey = (function () {
-    var uid = /[^.]+$/.exec(coreJsData && coreJsData.keys && coreJsData.keys.IE_PROTO || '');
+    var uid = '';
     return uid ? ('Symbol(src)_1.' + uid) : '';
 }());
 
