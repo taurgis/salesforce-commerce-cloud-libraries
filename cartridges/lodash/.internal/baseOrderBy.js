@@ -1,12 +1,15 @@
 'use strict';
 
-var baseEach = require('./baseEach.js');
-var baseSortBy = require('./baseSortBy.js');
-var compareMultiple = require('./compareMultiple.js');
-var isArrayLike = require('../isArrayLike')
+var arrayMap = require('./arrayMap');
+var baseIteratee = require('./baseIteratee');
+var baseMap = require('./baseMap');
+var baseSortBy = require('./baseSortBy');
+var baseUnary = require('./baseUnary');
+var compareMultiple = require('./compareMultiple');
+var identity = require('../identity');
 
 /**
- * The base implementation of `orderBy` without param guards.
+ * The base implementation of `_.orderBy` without param guards.
  *
  * @private
  * @param {Array|Object} collection The collection to iterate over.
@@ -15,18 +18,19 @@ var isArrayLike = require('../isArrayLike')
  * @returns {Array} Returns the new sorted array.
  */
 function baseOrderBy(collection, iteratees, orders) {
-    let criteriaIndex = -1
-    let eachIndex = -1
-    iteratees = iteratees.length ? iteratees : [function (value) { return value; }]
+    var index = -1;
+    iteratees = arrayMap(iteratees.length ? iteratees : [identity], baseUnary(baseIteratee));
 
-    var result = isArrayLike(collection) ? new Array(collection.length) : []
-
-    baseEach(collection, function(value) {
-        var criteria = iteratees.map(function (iteratee) { return iteratee(value); })
-        result[++eachIndex] = { 'criteria': criteria, 'index': ++criteriaIndex, 'value': value }
+    var result = baseMap(collection, function (value, key, collection) {
+        var criteria = arrayMap(iteratees, function (iteratee) {
+            return iteratee(value);
+        });
+        return { 'criteria': criteria, 'index': ++index, 'value': value };
     });
 
-    return baseSortBy(result, function (object, other) { return compareMultiple(object, other, orders); })
+    return baseSortBy(result, function (object, other) {
+        return compareMultiple(object, other, orders);
+    });
 }
 
 module.exports = baseOrderBy;
