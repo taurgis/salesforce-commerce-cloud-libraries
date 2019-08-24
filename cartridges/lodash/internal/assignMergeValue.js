@@ -1,7 +1,7 @@
 'use strict';
 
-var baseAssignValue= require('./baseAssignValue.js');
-var eq= require('../eq.js');
+var baseAssignValue = require('./baseAssignValue.js');
+var eq = require('../eq.js');
 
 /**
  * This function is like `assignValue` except that it doesn't assign
@@ -13,10 +13,10 @@ var eq= require('../eq.js');
  * @param {*} value The value to assign.
  */
 function assignMergeValue(object, key, value) {
-  if ((value !== undefined && !eq(object[key], value)) ||
+    if ((value !== undefined && !eq(object[key], value)) ||
       (value === undefined && !(key in object))) {
-    baseAssignValue(object, key, value)
-  }
+        baseAssignValue(object, key, value);
+    }
 }
 
 module.exports = assignMergeValue;

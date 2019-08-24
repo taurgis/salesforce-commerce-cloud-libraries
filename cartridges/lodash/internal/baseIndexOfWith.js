@@ -11,15 +11,15 @@
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
 function baseIndexOfWith(array, value, fromIndex, comparator) {
-  let index = fromIndex - 1
-  var { length } = array
+    let index = fromIndex - 1;
+    var { length } = array;
 
-  while (++index < length) {
-    if (comparator(array[index], value)) {
-      return index
+    while (++index < length) {
+        if (comparator(array[index], value)) {
+            return index;
+        }
     }
-  }
-  return -1
+    return -1;
 }
 
 module.exports = baseIndexOfWith;

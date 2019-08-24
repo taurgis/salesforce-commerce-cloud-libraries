@@ -12,7 +12,7 @@ var keys = require('../keys');
  * @returns {Object} Returns `object`.
  */
 function baseForOwnRight(object, iteratee) {
-  return object && baseForRight(object, iteratee, keys)
+    return object && baseForRight(object, iteratee, keys);
 }
 
 module.exports = baseForOwnRight;

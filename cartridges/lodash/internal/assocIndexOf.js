@@ -11,13 +11,13 @@ var eq = require('../eq');
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
 function assocIndexOf(array, key) {
-  let { length } = array
-  while (length--) {
-    if (eq(array[length][0], key)) {
-      return length
+    let { length } = array;
+    while (length--) {
+        if (eq(array[length][0], key)) {
+            return length;
+        }
     }
-  }
-  return -1
+    return -1;
 }
 
 module.exports = assocIndexOf;

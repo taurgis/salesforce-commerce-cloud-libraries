@@ -11,15 +11,15 @@ var get = require('../get');
  * @returns {Array} Returns the picked elements.
  */
 function baseAt(object, paths) {
-  let index = -1
-  var length = paths.length
-  var result = new Array(length)
-  var skip = object == null
+    let index = -1;
+    var length = paths.length;
+    var result = new Array(length);
+    var skip = object == null;
 
-  while (++index < length) {
-    result[index] = skip ? undefined : get(object, paths[index])
-  }
-  return result
+    while (++index < length) {
+        result[index] = skip ? undefined : get(object, paths[index]);
+    }
+    return result;
 }
 
-module.exports = baseAt
+module.exports = baseAt;

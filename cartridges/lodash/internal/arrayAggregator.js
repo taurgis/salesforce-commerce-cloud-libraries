@@ -11,8 +11,8 @@
  * @returns {Function} Returns `accumulator`.
  */
 function arrayAggregator(array, setter, iteratee, accumulator) {
-    var index = -1,
-        length = array == null ? 0 : array.length;
+    var index = -1;
+    var length = array == null ? 0 : array.length;
 
     while (++index < length) {
         var value = array[index];

@@ -10,14 +10,14 @@
  * @returns {Array} Returns the new mapped array.
  */
 function arrayMap(array, iteratee) {
-    var index = -1,
-        length = array == null ? 0 : array.length,
-        result = Array(length);
+    var index = -1;
+    var length = array == null ? 0 : array.length;
+    var result = Array(length);
 
     while (++index < length) {
-      result[index] = iteratee(array[index], index, array);
+        result[index] = iteratee(array[index], index, array);
     }
     return result;
-  }
+}
 
-  module.exports = arrayMap;
+module.exports = arrayMap;

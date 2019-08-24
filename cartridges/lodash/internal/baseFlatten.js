@@ -10,14 +10,14 @@ var isFlattenable = require('./isFlattenable');
  * @returns {Array} Returns `array`.
  */
 function arrayPush(array, values) {
-  var index = -1,
-    length = values.length,
-    offset = array.length;
+    var index = -1;
+    var length = values.length;
+    var offset = array.length;
 
-  while (++index < length) {
-    array[offset + index] = values[index];
-  }
-  return array;
+    while (++index < length) {
+        array[offset + index] = values[index];
+    }
+    return array;
 }
 
 /**
@@ -32,26 +32,26 @@ function arrayPush(array, values) {
  * @returns {Array} Returns the new flattened array.
  */
 function baseFlatten(array, depth, predicate, isStrict, result) {
-  var index = -1;
-  var length = array.length;
+    var index = -1;
+    var length = array.length;
 
-  predicate || (predicate = isFlattenable);
-  result || (result = []);
+    predicate || (predicate = isFlattenable);
+    result || (result = []);
 
-  while (++index < length) {
-    var value = array[index];
-    if (depth > 0 && predicate(value)) {
-      if (depth > 1) {
-        // Recursively flatten arrays (susceptible to call stack limits).
-        baseFlatten(value, depth - 1, predicate, isStrict, result);
-      } else {
-        arrayPush(result, value);
-      }
-    } else if (!isStrict) {
-      result[result.length] = value;
+    while (++index < length) {
+        var value = array[index];
+        if (depth > 0 && predicate(value)) {
+            if (depth > 1) {
+                // Recursively flatten arrays (susceptible to call stack limits).
+                baseFlatten(value, depth - 1, predicate, isStrict, result);
+            } else {
+                arrayPush(result, value);
+            }
+        } else if (!isStrict) {
+            result[result.length] = value;
+        }
     }
-  }
-  return result;
+    return result;
 }
 
 module.exports = baseFlatten;

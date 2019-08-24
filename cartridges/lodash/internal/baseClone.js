@@ -1,61 +1,61 @@
 'use strict';
 
 var Stack = require('./Stack');
-var arrayEach= require('./arrayEach.js');
-var assignValue= require('./assignValue.js');
-var cloneBuffer= require('./cloneBuffer.js');
-var copyArray= require('./copyArray.js');
-var copyObject= require('./copyObject.js');
-var cloneArrayBuffer= require('./cloneArrayBuffer.js');
-var cloneDataView= require('./cloneDataView.js');
-var cloneRegExp= require('./cloneRegExp.js');
-var cloneSymbol= require('./cloneSymbol.js');
-var cloneTypedArray= require('./cloneTypedArray.js');
-var copySymbols= require('./copySymbols.js');
-var copySymbolsIn= require('./copySymbolsIn.js');
-var getAllKeys= require('./getAllKeys.js');
-var getAllKeysIn= require('./getAllKeysIn.js');
-var getTag= require('./getTag.js');
-var initCloneObject= require('./initCloneObject.js');
-var isBuffer= require('../isBuffer.js');
-var isObject= require('../isObject.js');
-var keys= require('../keys.js');
-var keysIn= require('../keysIn.js');
+var arrayEach = require('./arrayEach.js');
+var assignValue = require('./assignValue.js');
+var cloneBuffer = require('./cloneBuffer.js');
+var copyArray = require('./copyArray.js');
+var copyObject = require('./copyObject.js');
+var cloneArrayBuffer = require('./cloneArrayBuffer.js');
+var cloneDataView = require('./cloneDataView.js');
+var cloneRegExp = require('./cloneRegExp.js');
+var cloneSymbol = require('./cloneSymbol.js');
+var cloneTypedArray = require('./cloneTypedArray.js');
+var copySymbols = require('./copySymbols.js');
+var copySymbolsIn = require('./copySymbolsIn.js');
+var getAllKeys = require('./getAllKeys.js');
+var getAllKeysIn = require('./getAllKeysIn.js');
+var getTag = require('./getTag.js');
+var initCloneObject = require('./initCloneObject.js');
+var isBuffer = require('../isBuffer.js');
+var isObject = require('../isObject.js');
+var keys = require('../keys.js');
+var keysIn = require('../keysIn.js');
 
 /** Used to compose bitmasks for cloning. */
-var CLONE_DEEP_FLAG = 1
-var CLONE_FLAT_FLAG = 2
-var CLONE_SYMBOLS_FLAG = 4
+var CLONE_DEEP_FLAG = 1;
+var CLONE_FLAT_FLAG = 2;
+var CLONE_SYMBOLS_FLAG = 4;
 
 /** `Object#toString` result references. */
-var argsTag = '[object Arguments]'
-var arrayTag = '[object Array]'
-var boolTag = '[object Boolean]'
-var dateTag = '[object Date]'
-var errorTag = '[object Error]'
-var mapTag = '[object Map]'
-var numberTag = '[object Number]'
-var objectTag = '[object Object]'
-var regexpTag = '[object RegExp]'
-var setTag = '[object Set]'
-var stringTag = '[object String]'
-var symbolTag = '[object Symbol]'
-var weakMapTag = '[object WeakMap]'
+var argsTag = '[object Arguments]';
+var arrayTag = '[object Array]';
+var boolTag = '[object Boolean]';
+var dateTag = '[object Date]';
+var errorTag = '[object Error]';
+var mapTag = '[object Map]';
+var numberTag = '[object Number]';
+var objectTag = '[object Object]';
+var regexpTag = '[object RegExp]';
+var setTag = '[object Set]';
+var stringTag = '[object String]';
+var symbolTag = '[object Symbol]';
+var weakMapTag = '[object WeakMap]';
 
-var arrayBufferTag = '[object ArrayBuffer]'
-var dataViewTag = '[object DataView]'
-var float32Tag = '[object Float32Array]'
-var float64Tag = '[object Float64Array]'
-var int8Tag = '[object Int8Array]'
-var int16Tag = '[object Int16Array]'
-var int32Tag = '[object Int32Array]'
-var uint8Tag = '[object Uint8Array]'
-var uint8ClampedTag = '[object Uint8ClampedArray]'
-var uint16Tag = '[object Uint16Array]'
-var uint32Tag = '[object Uint32Array]'
+var arrayBufferTag = '[object ArrayBuffer]';
+var dataViewTag = '[object DataView]';
+var float32Tag = '[object Float32Array]';
+var float64Tag = '[object Float64Array]';
+var int8Tag = '[object Int8Array]';
+var int16Tag = '[object Int16Array]';
+var int32Tag = '[object Int32Array]';
+var uint8Tag = '[object Uint8Array]';
+var uint8ClampedTag = '[object Uint8ClampedArray]';
+var uint16Tag = '[object Uint16Array]';
+var uint32Tag = '[object Uint32Array]';
 
 /** Used to identify `toStringTag` values supported by `clone`. */
-var cloneableTags = {}
+var cloneableTags = {};
 cloneableTags[argsTag] = cloneableTags[arrayTag] =
 cloneableTags[arrayBufferTag] = cloneableTags[dataViewTag] =
 cloneableTags[boolTag] = cloneableTags[dateTag] =
@@ -66,11 +66,11 @@ cloneableTags[numberTag] = cloneableTags[objectTag] =
 cloneableTags[regexpTag] = cloneableTags[setTag] =
 cloneableTags[stringTag] = cloneableTags[symbolTag] =
 cloneableTags[uint8Tag] = cloneableTags[uint8ClampedTag] =
-cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true
-cloneableTags[errorTag] = cloneableTags[weakMapTag] = false
+cloneableTags[uint16Tag] = cloneableTags[uint32Tag] = true;
+cloneableTags[errorTag] = cloneableTags[weakMapTag] = false;
 
 /** Used to check objects for own properties. */
-var hasOwnProperty = Object.prototype.hasOwnProperty
+var hasOwnProperty = Object.prototype.hasOwnProperty;
 
 /**
  * Initializes an object clone based on its `toStringTag`.
@@ -85,39 +85,41 @@ var hasOwnProperty = Object.prototype.hasOwnProperty
  * @returns {Object} Returns the initialized clone.
  */
 function initCloneByTag(object, tag, isDeep) {
-  var Ctor = object.constructor
-  switch (tag) {
-    case arrayBufferTag:
-      return cloneArrayBuffer(object)
+    var Ctor = object.constructor;
+    switch (tag) {
+        case arrayBufferTag:
+            return cloneArrayBuffer(object);
 
-    case boolTag:
-    case dateTag:
-      return new Ctor(+object)
+        case boolTag:
+        case dateTag:
+            return new Ctor(+object);
 
-    case dataViewTag:
-      return cloneDataView(object, isDeep)
+        case dataViewTag:
+            return cloneDataView(object, isDeep);
 
-    case float32Tag: case float64Tag:
-    case int8Tag: case int16Tag: case int32Tag:
-    case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
-      return cloneTypedArray(object, isDeep)
+        case float32Tag: case float64Tag:
+        case int8Tag: case int16Tag: case int32Tag:
+        case uint8Tag: case uint8ClampedTag: case uint16Tag: case uint32Tag:
+            return cloneTypedArray(object, isDeep);
 
-    case mapTag:
-      return new Ctor
+        case mapTag:
+            return new Ctor();
 
-    case numberTag:
-    case stringTag:
-      return new Ctor(object)
+        case numberTag:
+        case stringTag:
+            return new Ctor(object);
 
-    case regexpTag:
-      return cloneRegExp(object)
+        case regexpTag:
+            return cloneRegExp(object);
 
-    case setTag:
-      return new Ctor
+        case setTag:
+            return new Ctor();
 
-    case symbolTag:
-      return cloneSymbol(object)
-  }
+        case symbolTag:
+            return cloneSymbol(object);
+        default:
+            break;
+    }
 }
 
 /**
@@ -128,15 +130,15 @@ function initCloneByTag(object, tag, isDeep) {
  * @returns {Array} Returns the initialized clone.
  */
 function initCloneArray(array) {
-  var { length } = array
-  var result = new array.constructor(length)
+    var { length } = array;
+    var result = new array.constructor(length);
 
-  // Add properties assigned by `RegExp#exec`.
-  if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
-    result.index = array.index
-    result.input = array.input
-  }
-  return result
+    // Add properties assigned by `RegExp#exec`.
+    if (length && typeof array[0] == 'string' && hasOwnProperty.call(array, 'index')) {
+        result.index = array.index;
+        result.input = array.input;
+    }
+    return result;
 }
 
 /**
@@ -156,83 +158,83 @@ function initCloneArray(array) {
  * @returns {*} Returns the cloned value.
  */
 function baseClone(value, bitmask, customizer, key, object, stack) {
-  let result
-  var isDeep = bitmask & CLONE_DEEP_FLAG
-  var isFlat = bitmask & CLONE_FLAT_FLAG
-  var isFull = bitmask & CLONE_SYMBOLS_FLAG
+    let result;
+    var isDeep = bitmask & CLONE_DEEP_FLAG;
+    var isFlat = bitmask & CLONE_FLAT_FLAG;
+    var isFull = bitmask & CLONE_SYMBOLS_FLAG;
 
-  if (customizer) {
-    result = object ? customizer(value, key, object, stack) : customizer(value)
-  }
-  if (result !== undefined) {
-    return result
-  }
-  if (!isObject(value)) {
-    return value
-  }
-  var isArr = Array.isArray(value)
-  var tag = getTag(value)
-  if (isArr) {
-    result = initCloneArray(value)
-    if (!isDeep) {
-      return copyArray(value, result)
+    if (customizer) {
+        result = object ? customizer(value, key, object, stack) : customizer(value);
     }
-  } else {
-    var isFunc = typeof value == 'function'
-
-    if (isBuffer(value)) {
-      return cloneBuffer(value, isDeep)
+    if (result !== undefined) {
+        return result;
     }
-    if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
-      result = (isFlat || isFunc) ? {} : initCloneObject(value)
-      if (!isDeep) {
-        return isFlat
-          ? copySymbolsIn(value, copyObject(value, keysIn(value), result))
-          : copySymbols(value, Object.assign(result, value))
-      }
+    if (!isObject(value)) {
+        return value;
+    }
+    var isArr = Array.isArray(value);
+    var tag = getTag(value);
+    if (isArr) {
+        result = initCloneArray(value);
+        if (!isDeep) {
+            return copyArray(value, result);
+        }
     } else {
-      if (isFunc || !cloneableTags[tag]) {
-        return object ? value : {}
-      }
-      result = initCloneByTag(value, tag, isDeep)
+        var isFunc = typeof value == 'function';
+
+        if (isBuffer(value)) {
+            return cloneBuffer(value, isDeep);
+        }
+        if (tag == objectTag || tag == argsTag || (isFunc && !object)) {
+            result = (isFlat || isFunc) ? {} : initCloneObject(value);
+            if (!isDeep) {
+                return isFlat
+                    ? copySymbolsIn(value, copyObject(value, keysIn(value), result))
+                    : copySymbols(value, Object.assign(result, value));
+            }
+        } else {
+            if (isFunc || !cloneableTags[tag]) {
+                return object ? value : {};
+            }
+            result = initCloneByTag(value, tag, isDeep);
+        }
     }
-  }
-  // Check for circular references and return its corresponding clone.
-  stack || (stack = new Stack)
-  var stacked = stack.get(value)
-  if (stacked) {
-    return stacked
-  }
-  stack.set(value, result)
-
-  if (tag == mapTag) {
-    value.forEach(function(subValue, key) {
-      result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack))
-    })
-    return result
-  }
-
-  if (tag == setTag) {
-    value.forEach(function(subValue) {
-      result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack))
-    })
-    return result
-  }
-
-  var keysFunc = isFull
-    ? (isFlat ? getAllKeysIn : getAllKeys)
-    : (isFlat ? keysIn : keys)
-
-  var props = isArr ? undefined : keysFunc(value)
-  arrayEach(props || value, function(subValue, key) {
-    if (props) {
-      key = subValue
-      subValue = value[key]
+    // Check for circular references and return its corresponding clone.
+    stack || (stack = new Stack());
+    var stacked = stack.get(value);
+    if (stacked) {
+        return stacked;
     }
-    // Recursively populate clone (susceptible to call stack limits).
-    assignValue(result, key, baseClone(subValue, bitmask, customizer, key, value, stack))
-  })
-  return result
+    stack.set(value, result);
+
+    if (tag == mapTag) {
+        value.forEach(function (subValue, key) {
+            result.set(key, baseClone(subValue, bitmask, customizer, key, value, stack));
+        });
+        return result;
+    }
+
+    if (tag == setTag) {
+        value.forEach(function (subValue) {
+            result.add(baseClone(subValue, bitmask, customizer, subValue, value, stack));
+        });
+        return result;
+    }
+
+    var keysFunc = isFull
+        ? (isFlat ? getAllKeysIn : getAllKeys)
+        : (isFlat ? keysIn : keys);
+
+    var props = isArr ? undefined : keysFunc(value);
+    arrayEach(props || value, function (subValue, key) {
+        if (props) {
+            key = subValue;
+            subValue = value[key];
+        }
+        // Recursively populate clone (susceptible to call stack limits).
+        assignValue(result, key, baseClone(subValue, bitmask, customizer, key, value, stack));
+    });
+    return result;
 }
 
 module.exports = baseClone;

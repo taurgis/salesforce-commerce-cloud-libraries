@@ -9,14 +9,14 @@
  * @returns {Array} Returns `array`.
  */
 function arrayPush(array, values) {
-    var index = -1,
-        length = values.length,
-        offset = array.length;
+    var index = -1;
+    var length = values.length;
+    var offset = array.length;
 
     while (++index < length) {
-      array[offset + index] = values[index];
+        array[offset + index] = values[index];
     }
     return array;
-  }
+}
 
-  module.exports = arrayPush;
+module.exports = arrayPush;

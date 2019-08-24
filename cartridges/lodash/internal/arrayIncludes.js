@@ -12,8 +12,8 @@ var baseIndexOf = require('./baseIndexOf');
  * @returns {boolean} Returns `true` if `target` is found, else `false`.
  */
 function arrayIncludes(array, value) {
-  var length = array == null ? 0 : array.length
-  return !!length && baseIndexOf(array, value, 0) > -1
+    var length = array == null ? 0 : array.length;
+    return !!length && baseIndexOf(array, value, 0) > -1;
 }
 
 module.exports = arrayIncludes;

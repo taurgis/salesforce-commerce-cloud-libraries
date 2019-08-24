@@ -8,7 +8,7 @@
  * @returns {Array} Returns the converted array.
  */
 function asciiToArray(string) {
-  return string.split('')
+    return string.split('');
 }
 
 module.exports = asciiToArray;

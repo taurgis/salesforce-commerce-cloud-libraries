@@ -8,7 +8,7 @@
  * @returns {number} Returns the string size.
  */
 function asciiSize({ length }) {
-  return length
+    return length;
 }
 
 module.exports = asciiSize;

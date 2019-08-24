@@ -7,7 +7,7 @@
  */
 function baseLodash() {
     // No operation performed.
-   ;
+
 }
 
 module.exports = baseLodash;

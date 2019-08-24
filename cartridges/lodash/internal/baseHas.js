@@ -15,7 +15,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {boolean} Returns `true` if `key` exists, else `false`.
  */
 function baseHas(object, key) {
-  return object != null && hasOwnProperty.call(object, key);
+    return object != null && hasOwnProperty.call(object, key);
 }
 
 module.exports = baseHas;

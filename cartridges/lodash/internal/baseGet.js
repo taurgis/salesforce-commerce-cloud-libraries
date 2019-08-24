@@ -12,15 +12,15 @@ var toKey = require('./toKey');
  * @returns {*} Returns the resolved value.
  */
 function baseGet(object, path) {
-  path = castPath(path, object)
+    path = castPath(path, object);
 
-  let index = 0
-  var length = path.length
+    let index = 0;
+    var length = path.length;
 
-  while (object != null && index < length) {
-    object = object[toKey(path[index++])]
-  }
-  return (index && index == length) ? object : undefined
+    while (object != null && index < length) {
+        object = object[toKey(path[index++])];
+    }
+    return (index && index == length) ? object : undefined;
 }
 
 module.exports = baseGet;

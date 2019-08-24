@@ -12,7 +12,7 @@ var keys = require('../keys');
  * @returns {Object} Returns `object`.
  */
 function baseForOwn(object, iteratee) {
-  return object && baseFor(object, iteratee, keys)
+    return object && baseFor(object, iteratee, keys);
 }
 
 module.exports = baseForOwn;

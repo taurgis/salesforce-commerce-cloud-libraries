@@ -12,22 +12,22 @@ var isArrayLike = require('../isArrayLike');
  * @returns {Array|Object} Returns `collection`.
  */
 function baseEach(collection, iteratee) {
-  if (collection == null) {
-    return collection
-  }
-  if (!isArrayLike(collection)) {
-    return baseForOwn(collection, iteratee)
-  }
-  var length = collection.length
-  var iterable = Object(collection)
-  let index = -1
-
-  while (++index < length) {
-    if (iteratee(iterable[index], index, iterable) === false) {
-      break
+    if (collection == null) {
+        return collection;
     }
-  }
-  return collection
+    if (!isArrayLike(collection)) {
+        return baseForOwn(collection, iteratee);
+    }
+    var length = collection.length;
+    var iterable = Object(collection);
+    let index = -1;
+
+    while (++index < length) {
+        if (iteratee(iterable[index], index, iterable) === false) {
+            break;
+        }
+    }
+    return collection;
 }
 
 module.exports = baseEach;

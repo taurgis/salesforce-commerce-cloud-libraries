@@ -14,9 +14,9 @@ var strictIndexOf = require('./strictIndexOf');
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
 function baseIndexOf(array, value, fromIndex) {
-  return value === value
-    ? strictIndexOf(array, value, fromIndex)
-    : baseFindIndex(array, baseIsNaN, fromIndex)
+    return value === value
+        ? strictIndexOf(array, value, fromIndex)
+        : baseFindIndex(array, baseIsNaN, fromIndex);
 }
 
 module.exports = baseIndexOf;

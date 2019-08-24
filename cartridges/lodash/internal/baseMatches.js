@@ -1,8 +1,8 @@
 'use strict';
 
-var baseIsMatch= require('./baseIsMatch.js');
-var getMatchData= require('./getMatchData.js');
-var matchesStrictComparable= require('./matchesStrictComparable.js');
+var baseIsMatch = require('./baseIsMatch.js');
+var getMatchData = require('./getMatchData.js');
+var matchesStrictComparable = require('./matchesStrictComparable.js');
 
 /**
  * The base implementation of `matches` which doesn't clone `source`.
@@ -12,11 +12,11 @@ var matchesStrictComparable= require('./matchesStrictComparable.js');
  * @returns {Function} Returns the new spec function.
  */
 function baseMatches(source) {
-  var matchData = getMatchData(source)
-  if (matchData.length == 1 && matchData[0][2]) {
-    return matchesStrictComparable(matchData[0][0], matchData[0][1])
-  }
-  return function(object) { return object === source || baseIsMatch(object, source, matchData) };
+    var matchData = getMatchData(source);
+    if (matchData.length == 1 && matchData[0][2]) {
+        return matchesStrictComparable(matchData[0][0], matchData[0][1]);
+    }
+    return function (object) { return object === source || baseIsMatch(object, source, matchData); };
 }
 
 module.exports = baseMatches;

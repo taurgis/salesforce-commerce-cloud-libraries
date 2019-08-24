@@ -9,15 +9,15 @@
  * @returns {Array} Returns `array`.
  */
 function arrayEach(array, iteratee) {
-  let index = -1
-  var length = array.length
+    let index = -1;
+    var length = array.length;
 
-  while (++index < length) {
-    if (iteratee(array[index], index, array) === false) {
-      break
+    while (++index < length) {
+        if (iteratee(array[index], index, array) === false) {
+            break;
+        }
     }
-  }
-  return array
+    return array;
 }
 
-module.exports =arrayEach;
+module.exports = arrayEach;

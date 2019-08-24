@@ -10,17 +10,17 @@
  * @returns {boolean} Returns `true` if `target` is found, else `false`.
  */
 function arrayIncludesWith(array, target, comparator) {
-  if (array == null) {
-    return false
-  }
-
-  for (let key in array) {
-    var value = array[key];
-    if (comparator(target, value)) {
-      return true
+    if (array == null) {
+        return false;
     }
-  }
-  return false
+
+    for (let key in array) {
+        var value = array[key];
+        if (comparator(target, value)) {
+            return true;
+        }
+    }
+    return false;
 }
 
 module.exports = arrayIncludesWith;

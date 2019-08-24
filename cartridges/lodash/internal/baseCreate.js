@@ -14,7 +14,12 @@ var objectCreate = Object.create;
  * @returns {Object} Returns the new object.
  */
 var baseCreate = (function () {
-    function object() { }
+    /**
+     * Empty object
+     */
+    function object() {
+        // DO NOTHING
+    }
     return function (proto) {
         if (!isObject(proto)) {
             return {};
@@ -23,7 +28,7 @@ var baseCreate = (function () {
             return objectCreate(proto);
         }
         object.prototype = proto;
-        var result = new object;
+        var result = new object(); // eslint-disable-line
         object.prototype = undefined;
         return result;
     };

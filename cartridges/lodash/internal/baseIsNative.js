@@ -15,8 +15,8 @@ var reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 var reIsHostCtor = /^\[object .+?Constructor\]$/;
 
 /** Used for built-in method references. */
-var funcProto = Function.prototype,
-    objectProto = Object.prototype;
+var funcProto = Function.prototype;
+var objectProto = Object.prototype;
 
 /** Used to resolve the decompiled source of functions. */
 var funcToString = funcProto.toString;

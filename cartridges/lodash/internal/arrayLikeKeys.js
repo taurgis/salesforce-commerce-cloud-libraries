@@ -22,13 +22,13 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {Array} Returns the array of property names.
  */
 function arrayLikeKeys(value, inherited) {
-    var isArr = isArray(value),
-        isArg = !isArr && isArguments(value),
-        isBuff = !isArr && !isArg && isBuffer(value),
-        isType = !isArr && !isArg && !isBuff && isTypedArray(value),
-        skipIndexes = isArr || isArg || isBuff || isType,
-        result = skipIndexes ? baseTimes(value.length, String) : [],
-        length = result.length;
+    var isArr = isArray(value);
+    var isArg = !isArr && isArguments(value);
+    var isBuff = !isArr && !isArg && isBuffer(value);
+    var isType = !isArr && !isArg && !isBuff && isTypedArray(value);
+    var skipIndexes = isArr || isArg || isBuff || isType;
+    var result = skipIndexes ? baseTimes(value.length, String) : [];
+    var length = result.length;
 
     for (var key in value) {
         if ((inherited || hasOwnProperty.call(value, key)) &&
