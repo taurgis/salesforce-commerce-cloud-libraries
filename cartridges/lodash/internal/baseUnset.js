@@ -1,9 +1,9 @@
 'use strict';
 
-var castPath= require('./castPath.js');
-var last= require('../last.js');
-var parent= require('./parent.js');
-var toKey= require('./toKey.js');
+var castPath = require('./castPath.js');
+var last = require('../last.js');
+var parent = require('./parent.js');
+var toKey = require('./toKey.js');
 
 /**
  * The base implementation of `unset`.
@@ -14,9 +14,9 @@ var toKey= require('./toKey.js');
  * @returns {boolean} Returns `true` if the property is deleted, else `false`.
  */
 function baseUnset(object, path) {
-  path = castPath(path, object)
-  object = parent(object, path)
-  return object == null || delete object[toKey(last(path))]
+    path = castPath(path, object);
+    object = parent(object, path);
+    return object == null || delete object[toKey(last(path))];
 }
 
 module.exports = baseUnset;

@@ -11,13 +11,13 @@
  * @returns {Array} Returns `array`.
  */
 function baseSortBy(array, comparer) {
-  let { length } = array
+    let { length } = array;
 
-  array.sort(comparer)
-  while (length--) {
-    array[length] = array[length].value
-  }
-  return array
+    array.sort(comparer);
+    while (length--) {
+        array[length] = array[length].value;
+    }
+    return array;
 }
 
 module.exports = baseSortBy;

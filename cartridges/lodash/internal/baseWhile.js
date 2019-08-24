@@ -13,15 +13,15 @@ var slice = require('../slice');
  * @returns {Array} Returns the slice of `array`.
  */
 function baseWhile(array, predicate, isDrop, fromRight) {
-  var { length } = array
-  let index = fromRight ? length : -1
+    var { length } = array;
+    let index = fromRight ? length : -1;
 
-  while ((fromRight ? index-- : ++index < length) &&
+    while ((fromRight ? index-- : ++index < length) &&
     predicate(array[index], index, array)) {}
 
-  return isDrop
-    ? slice(array, (fromRight ? 0 : index), (fromRight ? index + 1 : length))
-    : slice(array, (fromRight ? index + 1 : 0), (fromRight ? length : index))
+    return isDrop
+        ? slice(array, (fromRight ? 0 : index), (fromRight ? index + 1 : length))
+        : slice(array, (fromRight ? index + 1 : 0), (fromRight ? length : index));
 }
 
 module.exports = baseWhile;

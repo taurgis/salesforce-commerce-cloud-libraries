@@ -1,7 +1,7 @@
 'use strict';
 
-var baseGet= require('./baseGet.js');
-var baseSet= require('./baseSet.js');
+var baseGet = require('./baseGet.js');
+var baseSet = require('./baseSet.js');
 
 /**
  * The base implementation of `update`.
@@ -14,7 +14,7 @@ var baseSet= require('./baseSet.js');
  * @returns {Object} Returns `object`.
  */
 function baseUpdate(object, path, updater, customizer) {
-  return baseSet(object, path, updater(baseGet(object, path)), customizer)
+    return baseSet(object, path, updater(baseGet(object, path)), customizer);
 }
 
 module.exports = baseUpdate;

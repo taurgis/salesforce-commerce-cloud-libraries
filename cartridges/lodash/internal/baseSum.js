@@ -9,16 +9,16 @@
  * @returns {number} Returns the sum.
  */
 function baseSum(array, iteratee) {
-  let result
+    let result;
 
-  for (var key in array) {
-    var value = array[key];
-    var current = iteratee(value)
-    if (current !== undefined) {
-      result = result === undefined ? current : (result + current)
+    for (var key in array) {
+        var value = array[key];
+        var current = iteratee(value);
+        if (current !== undefined) {
+            result = result === undefined ? current : (result + current);
+        }
     }
-  }
-  return result
+    return result;
 }
 
 module.exports = baseSum;

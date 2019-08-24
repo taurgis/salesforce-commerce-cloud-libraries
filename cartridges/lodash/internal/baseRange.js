@@ -12,15 +12,15 @@
  * @returns {Array} Returns the range of numbers.
  */
 function baseRange(start, end, step, fromRight) {
-  let index = -1
-  let length = Math.max(Math.ceil((end - start) / (step || 1)), 0)
-  var result = new Array(length)
+    let index = -1;
+    let length = Math.max(Math.ceil((end - start) / (step || 1)), 0);
+    var result = new Array(length);
 
-  while (length--) {
-    result[fromRight ? length : ++index] = start
-    start += step
-  }
-  return result
+    while (length--) {
+        result[fromRight ? length : ++index] = start;
+        start += step;
+    }
+    return result;
 }
 
 module.exports = baseRange;

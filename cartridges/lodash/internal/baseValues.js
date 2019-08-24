@@ -11,7 +11,7 @@
  * @returns {Object} Returns the array of property values.
  */
 function baseValues(object, props) {
-    return props == null ? [] : props.map(function (key) { return object[key] })
+    return props == null ? [] : props.map(function (key) { return object[key]; });
 }
 
 module.exports = baseValues;

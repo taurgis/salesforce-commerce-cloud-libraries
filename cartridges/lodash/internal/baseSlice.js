@@ -10,8 +10,8 @@
  * @returns {Array} Returns the slice of `array`.
  */
 function baseSlice(array, start, end) {
-    var index = -1,
-        length = array.length;
+    var index = -1;
+    var length = array.length;
 
     if (start < 0) {
         start = -start > length ? 0 : (length + start);

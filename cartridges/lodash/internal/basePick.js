@@ -1,7 +1,7 @@
 'use strict';
 
-var basePickBy= require('./basePickBy.js');
-var hasIn= require('../hasIn.js');
+var basePickBy = require('./basePickBy.js');
+var hasIn = require('../hasIn.js');
 
 /**
  * The base implementation of `pick` without support for individual
@@ -13,7 +13,7 @@ var hasIn= require('../hasIn.js');
  * @returns {Object} Returns the new object.
  */
 function basePick(object, paths) {
-  return basePickBy(object, paths, function(value, path) { return hasIn(object, path); })
+    return basePickBy(object, paths, function (value, path) { return hasIn(object, path); });
 }
 
 module.exports = basePick;
