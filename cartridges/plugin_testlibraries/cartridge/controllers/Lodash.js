@@ -59,7 +59,7 @@ server.get('Test', function (req, res, next) {
             castArray: timeFunction(require('lodash/castArray'), 'abc'),
             ceil: timeFunction(require('lodash/ceil'), 6.004, 2),
             chunk: timeFunction(require('lodash/chunk'), ['a', 'b', 'c', 'd'], 2),
-            calmp: timeFunction(require('lodash/clamp'), 10, -5, 5),
+            clamp: timeFunction(require('lodash/clamp'), 10, -5, 5),
             compact: timeFunction(require('lodash/compact'), [0, 1, false, 2, '', 3]),
             cond: conditionalFunct({ a: '1', b: '2' }),
             countBy: timeFunction(require('lodash/countBy'), [
