@@ -19,9 +19,9 @@ var toKey = require('./toKey');
 function hasPath(object, path, hasFunc) {
     path = castPath(path, object);
 
-    var index = -1,
-        length = path.length,
-        result = false;
+    var index = -1;
+    var length = path.length;
+    var result = false;
 
     while (++index < length) {
         var key = toKey(path[index]);
@@ -34,7 +34,7 @@ function hasPath(object, path, hasFunc) {
         return result;
     }
     length = object == null ? 0 : object.length;
-    return !!length && isLength(length) && isIndex(key, length) &&
+    return !!length && isLength(length) && isIndex(key, length) && // eslint-disable-line
         (isArray(object) || isArguments(object));
 }
 

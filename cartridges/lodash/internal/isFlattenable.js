@@ -13,8 +13,8 @@ var spreadableSymbol = false;
  * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
  */
 function isFlattenable(value) {
-  return Array.isArray(value) || isArguments(value) ||
-    !!(value && value[spreadableSymbol])
+    return Array.isArray(value) || isArguments(value) ||
+    !!(value && value[spreadableSymbol]);
 }
 
 module.exports = isFlattenable;

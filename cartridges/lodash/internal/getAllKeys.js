@@ -11,11 +11,11 @@ var keys = require('../keys');
  * @returns {Array} Returns the array of property names and symbols.
  */
 function getAllKeys(object) {
-  var result = keys(object)
-  if (!Array.isArray(object)) {
-    result.push(getSymbols(object))
-  }
-  return result
+    var result = keys(object);
+    if (!Array.isArray(object)) {
+        result.push(getSymbols(object));
+    }
+    return result;
 }
 
 module.exports = getAllKeys;

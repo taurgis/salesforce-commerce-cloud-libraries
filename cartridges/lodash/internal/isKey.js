@@ -3,8 +3,8 @@
 var isSymbol = require('../isSymbol');
 
 /** Used to match property names within property paths. */
-var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/
-var reIsPlainProp = /^\w*$/
+var reIsDeepProp = /\.|\[(?:[^[\]]*|(["'])(?:(?!\1)[^\\]|\\.)*?\1)\]/;
+var reIsPlainProp = /^\w*$/;
 
 /**
  * Checks if `value` is a property name and not a property path.
@@ -15,15 +15,15 @@ var reIsPlainProp = /^\w*$/
  * @returns {boolean} Returns `true` if `value` is a property name, else `false`.
  */
 function isKey(value, object) {
-  if (Array.isArray(value)) {
-    return false
-  }
-  var type = typeof value
-  if (type == 'number' || type == 'boolean' || value == null || isSymbol(value)) {
-    return true
-  }
-  return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
-    (object != null && value in Object(object))
+    if (Array.isArray(value)) {
+        return false;
+    }
+    var type = typeof value;
+    if (type == 'number' || type == 'boolean' || value == null || isSymbol(value)) {
+        return true;
+    }
+    return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
+    (object != null && value in Object(object));
 }
 
-module.exports = isKey
+module.exports = isKey;

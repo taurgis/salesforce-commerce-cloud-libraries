@@ -1,6 +1,6 @@
 'use strict';
 
-var isPrototype= require('./isPrototype.js');
+var isPrototype = require('./isPrototype.js');
 
 /**
  * Initializes an object clone.
@@ -10,9 +10,9 @@ var isPrototype= require('./isPrototype.js');
  * @returns {Object} Returns the initialized clone.
  */
 function initCloneObject(object) {
-  return (typeof object.constructor == 'function' && !isPrototype(object))
-    ? Object.create(Object.getPrototypeOf(object))
-    : {}
+    return (typeof object.constructor == 'function' && !isPrototype(object))
+        ? Object.create(Object.getPrototypeOf(object))
+        : {};
 }
 
 module.exports = initCloneObject;

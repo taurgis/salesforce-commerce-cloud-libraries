@@ -1,7 +1,9 @@
 'use strict';
 
-var isArrayLike= require('../isArrayLike.js');
-var isIndex= require('./isIndex.js');
+var isArrayLike = require('../isArrayLike');
+var isIndex = require('./isIndex');
+var isObject = require('../isObject');
+var eq = require('../eq');
 
 /**
  * Checks if the given arguments are= require(an iteratee call.);
@@ -13,19 +15,18 @@ var isIndex= require('./isIndex.js');
  * @returns {boolean} Returns `true` if the arguments are= require(an iteratee call,);
  *  else `false`.
  */
-
 function isIterateeCall(value, index, object) {
-  if (!isObject(object)) {
-    return false;
-  }
-  var type = typeof index;
-  if (type == 'number'
+    if (!isObject(object)) {
+        return false;
+    }
+    var type = typeof index;
+    if (type == 'number'
         ? (isArrayLike(object) && isIndex(index, object.length))
         : (type == 'string' && index in object)
-      ) {
-    return eq(object[index], value);
-  }
-  return false;
+    ) {
+        return eq(object[index], value);
+    }
+    return false;
 }
 
 module.exports = isIterateeCall;

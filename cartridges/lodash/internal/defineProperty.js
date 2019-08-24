@@ -7,7 +7,9 @@ var defineProperty = (function () {
         var func = getNative(Object, 'defineProperty');
         func({}, '', {});
         return func;
-    } catch (e) { }
+    } catch (e) {
+        // DO NOTHING
+    }
 }());
 
 module.exports = defineProperty;

@@ -3,7 +3,6 @@
         "commonjs": true
     },
     "rules": {
-      "no-underscore-dangle": ["error", { "allow": ["__routes"] }],
       "no-restricted-syntax": "off",
       "guard-for-in": "off",
       "no-self-compare": "off",
@@ -19,6 +18,7 @@
       "eqeqeq": "off",
       "no-unused-expressions": "off",
       "no-labels": "off",
-      "no-continue": "off"
+      "no-continue": "off",
+      "no-underscore-dangle": "off"
     }
 }

@@ -1,7 +1,7 @@
 'use strict';
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeGetSymbols = function() { return []};
+var nativeGetSymbols = function () { return []; };
 
 /**
  * Creates an array of the own enumerable symbols of `object`.
@@ -10,12 +10,12 @@ var nativeGetSymbols = function() { return []};
  * @param {Object} object The object to query.
  * @returns {Array} Returns the array of symbols.
  */
-function getSymbols (object) {
-  if (object == null) {
-    return []
-  }
-  object = Object(object)
-  return nativeGetSymbols(object).filter(function(symbol) { return propertyIsEnumerable.call(object, symbol)})
+function getSymbols(object) {
+    if (object == null) {
+        return [];
+    }
+    object = Object(object);
+    return nativeGetSymbols(object).filter(function (symbol) { return propertyIsEnumerable.call(object, symbol); });
 }
 
 module.exports = getSymbols;

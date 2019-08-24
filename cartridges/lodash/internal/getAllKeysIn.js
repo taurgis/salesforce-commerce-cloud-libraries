@@ -1,6 +1,6 @@
 'use strict';
 
-var getSymbolsIn= require('./getSymbolsIn.js');
+var getSymbolsIn = require('./getSymbolsIn.js');
 
 /**
  * Creates an array of own and inherited enumerable property names and symbols of `object`.
@@ -10,14 +10,14 @@ var getSymbolsIn= require('./getSymbolsIn.js');
  * @returns {Array} Returns the array of property names and symbols.
  */
 function getAllKeysIn(object) {
-  var result = []
-  for (var key in object) {
-    result.push(key)
-  }
-  if (!Array.isArray(object)) {
-    result.push(getSymbolsIn(object))
-  }
-  return result
+    var result = [];
+    for (var key in object) {
+        result.push(key);
+    }
+    if (!Array.isArray(object)) {
+        result.push(getSymbolsIn(object));
+    }
+    return result;
 }
 
 module.exports = getAllKeysIn;
