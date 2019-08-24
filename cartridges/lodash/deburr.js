@@ -1,6 +1,7 @@
 'use strict';
 
 var deburrLetter = require('./.internal/deburrLetter');
+var toString = require('./toString');
 
 /** Used to match Latin Unicode letters (excluding mathematical operators). */
 var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
@@ -9,9 +10,7 @@ var reLatin = /[\xc0-\xd6\xd8-\xf6\xf8-\xff\u0100-\u017f]/g;
 var rsComboMarksRange = '\\u0300-\\u036f';
 var reComboHalfMarksRange = '\\ufe20-\\ufe2f';
 var rsComboSymbolsRange = '\\u20d0-\\u20ff';
-var rsComboMarksExtendedRange = '\\u1ab0-\\u1aff';
-var rsComboMarksSupplementRange = '\\u1dc0-\\u1dff';
-var rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange + rsComboMarksExtendedRange + rsComboMarksSupplementRange;
+var rsComboRange = rsComboMarksRange + reComboHalfMarksRange + rsComboSymbolsRange;
 
 /** Used to compose unicode capture groups. */
 var rsCombo = '[' + rsComboRange + ']';
@@ -29,16 +28,19 @@ var reComboMark = RegExp(rsCombo, 'g');
  * letters to basic Latin letters and removing
  * [combining diacritical marks](https://en.wikipedia.org/wiki/Combining_Diacritical_Marks).
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to deburr.
  * @returns {string} Returns the deburred string.
  * @example
  *
- * deburr('déjà vu')
+ * _.deburr('déjà vu');
  * // => 'deja vu'
  */
 function deburr(string) {
+    string = toString(string);
     return string && string.replace(reLatin, deburrLetter).replace(reComboMark, '');
 }
 
