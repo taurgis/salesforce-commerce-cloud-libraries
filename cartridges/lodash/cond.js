@@ -1,3 +1,5 @@
+'use strict';
+
 var apply = require('./.internal/apply');
 var arrayMap = require('./.internal/arrayMap');
 var baseIteratee = require('./.internal/baseIteratee');

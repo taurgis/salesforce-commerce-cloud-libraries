@@ -102,6 +102,10 @@ LodashWrapper.prototype.head = function() {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
 }
 
+LodashWrapper.prototype.constant = function() {
+    return new LodashWrapper(require('../constant').apply(this, [this.__wrapped__]));
+}
+
 LodashWrapper.prototype.chain = function() {
     return this;
 }
@@ -110,6 +114,12 @@ LodashWrapper.prototype.sortBy = function() {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
     return new LodashWrapper(require('../sortBy').apply(this, args));
+}
+
+LodashWrapper.prototype.countBy = function() {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../countBy').apply(this, args));
 }
 
 LodashWrapper.prototype.take = function() {
