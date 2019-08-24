@@ -102,6 +102,10 @@ LodashWrapper.prototype.head = function() {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
 }
 
+LodashWrapper.prototype.constant = function() {
+    return new LodashWrapper(require('../constant').apply(this, [this.__wrapped__]));
+}
+
 LodashWrapper.prototype.chain = function() {
     return this;
 }
