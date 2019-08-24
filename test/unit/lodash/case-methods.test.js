@@ -5,10 +5,13 @@ var lowerCase = require('../../../cartridges/lodash/lowerCase');
 var snakeCase = require('../../../cartridges/lodash/snakeCase');
 var startCase = require('../../../cartridges/lodash/startCase');
 var upperCase = require('../../../cartridges/lodash/upperCase');
+var capitalize = require('../../../cartridges/lodash/capitalize');
 var reduce = require('../../../cartridges/lodash/reduce');
 var each = require('../../../cartridges/lodash/each');
 var map = require('../../../cartridges/lodash/map');
 var stubTrue = require('../helpers/stubTrue');
+var burredLetters = require('../helpers/burredLetters');
+var deburredLetters = require('../helpers/deburredLetters');
 
 
 describe('case methods', function () {
@@ -59,6 +62,22 @@ describe('case methods', function () {
             });
 
             assert.deepStrictEqual(actual, map(strings, stubTrue));
+        });
+
+        it('`_.' + methodName + '` should deburr letters', function () {
+            var actual = map(burredLetters, function (burred, index) {
+                var letter = deburredLetters[index].replace(/['\u2019]/g, '');
+                if (caseName === 'start') {
+                    letter = letter === 'IJ' ? letter : capitalize(letter);
+                } else if (caseName === 'upper') {
+                    letter = letter.toUpperCase();
+                } else {
+                    letter = letter.toLowerCase();
+                }
+                return func(burred) === letter;
+            });
+
+            assert.deepStrictEqual(actual, map(burredLetters, stubTrue));
         });
 
         it('`_.' + methodName + '` should remove contraction apostrophes', function () {

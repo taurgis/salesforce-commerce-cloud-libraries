@@ -1,6 +1,13 @@
 'use strict';
 
-var Map = require('dw/util/HashMap');
+var HashMap;
+
+if (typeof Map === 'undefined') {
+    HashMap = require('dw/util/HashMap');
+} else {
+    HashMap = Map;
+}
+
 /**
  * Creates a function that memoizes the result of `func`. If `resolver` is
  * provided, it determines the cache key for storing the result based on the
@@ -58,10 +65,10 @@ function memoize(func, resolver) {
         memoized.cache = cache.put(key, result) || cache;
         return result;
     };
-    memoized.cache = new (memoize.Cache || Map)();
+    memoized.cache = new (memoize.Cache || HashMap)();
     return memoized;
 }
 
-memoize.Cache = Map;
+memoize.Cache = HashMap;
 
 module.exports = memoize;

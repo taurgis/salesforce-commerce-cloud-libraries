@@ -58,16 +58,16 @@ var deburredLetters = {
   '\u0132': 'IJ', '\u0133': 'ij',
   '\u0152': 'Oe', '\u0153': 'oe',
   '\u0149': "'n", '\u017f': 's'
-}
+};
 
 /**
- * Used by `deburr` to convert Latin-1 Supplement and Latin Extended-A
+ * Used by `_.deburr` to convert Latin-1 Supplement and Latin Extended-A
  * letters to basic Latin letters.
  *
  * @private
  * @param {string} letter The matched letter to deburr.
  * @returns {string} Returns the deburred letter.
  */
-var deburrLetter = basePropertyOf(deburredLetters)
+var deburrLetter = basePropertyOf(deburredLetters);
 
 module.exports = deburrLetter;

@@ -1,32 +1,31 @@
 'use strict';
 
-var upperFirst = require('./upperFirst.js');
-var words = require('./words');
+var capitalize = require('./capitalize');
+var createCompounder = require('./.internal/createCompounder');
 
 /**
  * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the camel cased string.
- * @see lowerCase, kebabCase, snakeCase, startCase, upperCase, upperFirst
  * @example
  *
- * camelCase('Foo Bar')
+ * _.camelCase('Foo Bar');
  * // => 'fooBar'
  *
- * camelCase('--foo-bar--')
+ * _.camelCase('--foo-bar--');
  * // => 'fooBar'
  *
- * camelCase('__FOO_BAR__')
+ * _.camelCase('__FOO_BAR__');
  * // => 'fooBar'
  */
-var camelCase = function (string) {
-    return words(String(string).replace(/['\u2019]/g, '')).reduce(function (reduceResult, reduceWord, index) {
-        var camelCaseWord = reduceWord.toLowerCase();
-        return reduceResult + (index ? upperFirst(camelCaseWord) : camelCaseWord);
-    }, '');
-};
+var camelCase = createCompounder(function (result, word, index) {
+    word = word.toLowerCase();
+    return result + (index ? capitalize(word) : word);
+});
 
 module.exports = camelCase;
