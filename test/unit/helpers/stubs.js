@@ -5,5 +5,7 @@ module.exports = {
     stubA: function () { return 'a'; },
     stubB: function () { return 'b'; },
     stubC: function () { return 'c'; },
-    empties: [[], {}].concat(require('./falsey').slice(1))
+    empties: [[], {}].concat(require('./falsey').slice(1)),
+    stubObject: function () { return {}; },
+    stubString: function () { return ''; }
 };

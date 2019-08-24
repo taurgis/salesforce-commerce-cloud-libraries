@@ -1,7 +1,5 @@
-'use strict';
-
-var assignValue= require('./assignValue.js');
-var baseAssignValue= require('./baseAssignValue.js');
+var assignValue = require('./assignValue');
+var baseAssignValue = require('./baseAssignValue');
 
 /**
  * Copies properties of `source` to `object`.
@@ -14,24 +12,29 @@ var baseAssignValue= require('./baseAssignValue.js');
  * @returns {Object} Returns `object`.
  */
 function copyObject(source, props, object, customizer) {
-  var isNew = !object
-  object || (object = {})
+    var isNew = !object;
+    object || (object = {});
 
-  for (var key in props) {
-    let newValue = customizer
-      ? customizer(object[key], source[key], key, object, source)
-      : undefined
+    var index = -1,
+        length = props.length;
 
-    if (newValue === undefined) {
-      newValue = source[key]
+    while (++index < length) {
+        var key = props[index];
+
+        var newValue = customizer
+            ? customizer(object[key], source[key], key, object, source)
+            : undefined;
+
+        if (newValue === undefined) {
+            newValue = source[key];
+        }
+        if (isNew) {
+            baseAssignValue(object, key, newValue);
+        } else {
+            assignValue(object, key, newValue);
+        }
     }
-    if (isNew) {
-      baseAssignValue(object, key, newValue)
-    } else {
-      assignValue(object, key, newValue)
-    }
-  }
-  return object
+    return object;
 }
 
 module.exports = copyObject;

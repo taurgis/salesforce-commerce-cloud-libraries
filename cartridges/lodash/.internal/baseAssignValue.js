@@ -1,5 +1,7 @@
 'use strict';
 
+var defineProperty = require('./defineProperty');
+
 /**
  * The base implementation of `assignValue` and `assignMergeValue` without
  * value checks.
@@ -10,16 +12,16 @@
  * @param {*} value The value to assign.
  */
 function baseAssignValue(object, key, value) {
-  if (key == '__proto__') {
-    Object.defineProperty(object, key, {
-      'configurable': true,
-      'enumerable': true,
-      'value': value,
-      'writable': true
-    })
-  } else {
-    object[key] = value
-  }
+    if (key == '__proto__' && defineProperty) {
+        defineProperty(object, key, {
+            'configurable': true,
+            'enumerable': true,
+            'value': value,
+            'writable': true
+        });
+    } else {
+        object[key] = value;
+    }
 }
 
 module.exports = baseAssignValue;

@@ -1,10 +1,13 @@
-'use strict';
+var baseAssign = require('./.internal/baseAssign');
+var baseCreate = require('./.internal/baseCreate');
 
 /**
- * Creates an object that inherits= require(the `prototype` object. If a);
+ * Creates an object that inherits from the `prototype` object. If a
  * `properties` object is given, its own enumerable string keyed properties
  * are assigned to the created object.
  *
+ * @static
+ * @memberOf _
  * @since 2.3.0
  * @category Object
  * @param {Object} prototype The object to inherit from.
@@ -13,29 +16,28 @@
  * @example
  *
  * function Shape() {
- *   this.x = 0
- *   this.y = 0
+ *   this.x = 0;
+ *   this.y = 0;
  * }
  *
  * function Circle() {
- *   Shape.call(this)
+ *   Shape.call(this);
  * }
  *
- * Circle.prototype = create(Shape.prototype, {
+ * Circle.prototype = _.create(Shape.prototype, {
  *   'constructor': Circle
- * })
+ * });
  *
- * var circle = new Circle
- * circle instanceof Circle
+ * var circle = new Circle;
+ * circle instanceof Circle;
  * // => true
  *
- * circle instanceof Shape
+ * circle instanceof Shape;
  * // => true
  */
 function create(prototype, properties) {
-    prototype = prototype === null ? null : Object(prototype);
-    var result = Object.create(prototype);
-    return properties == null ? result : Object.assign(result, properties);
+    var result = baseCreate(prototype);
+    return properties == null ? result : baseAssign(result, properties);
 }
 
 module.exports = create;
