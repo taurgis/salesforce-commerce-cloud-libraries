@@ -9,7 +9,7 @@ var capitalize = require('../../../cartridges/lodash/capitalize');
 var reduce = require('../../../cartridges/lodash/reduce');
 var each = require('../../../cartridges/lodash/each');
 var map = require('../../../cartridges/lodash/map');
-var stubTrue = require('../helpers/stubTrue');
+var stubTrue = require('../helpers/stubs').true;
 var burredLetters = require('../helpers/burredLetters');
 var deburredLetters = require('../helpers/deburredLetters');
 

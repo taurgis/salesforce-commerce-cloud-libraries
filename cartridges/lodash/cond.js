@@ -1,6 +1,10 @@
-'use strict';
+var apply = require('./.internal/apply');
+var arrayMap = require('./.internal/arrayMap');
+var baseIteratee = require('./.internal/baseIteratee');
+var baseRest = require('./.internal/baseRest');
 
-var map = require('./map');
+/** Error message constants. */
+var FUNC_ERROR_TEXT = 'Expected a function';
 
 /**
  * Creates a function that iterates over `pairs` and invokes the corresponding
@@ -8,48 +12,49 @@ var map = require('./map');
  * pairs are invoked with the `this` binding and arguments of the created
  * function.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Util
  * @param {Array} pairs The predicate-function pairs.
  * @returns {Function} Returns the new composite function.
  * @example
  *
- * var func = cond([
- *   [matches({ 'a': 1 }),         () => 'matches A'],
- *   [conforms({ 'b': isNumber }), () => 'matches B'],
- *   [() => true,                  () => 'no match']
- * ])
+ * var func = _.cond([
+ *   [_.matches({ 'a': 1 }),           _.constant('matches A')],
+ *   [_.conforms({ 'b': _.isNumber }), _.constant('matches B')],
+ *   [_.stubTrue,                      _.constant('no match')]
+ * ]);
  *
- * func({ 'a': 1, 'b': 2 })
+ * func({ 'a': 1, 'b': 2 });
  * // => 'matches A'
  *
- * func({ 'a': 0, 'b': 1 })
+ * func({ 'a': 0, 'b': 1 });
  * // => 'matches B'
  *
- * func({ 'a': '1', 'b': '2' })
+ * func({ 'a': '1', 'b': '2' });
  * // => 'no match'
  */
 function cond(pairs) {
     var length = pairs == null ? 0 : pairs.length;
-    var condPairs = !length ? [] : map(pairs, function (pair) {
-        if (typeof pair[1] !== 'function') {
-            throw new TypeError('Expected a function');
+    var toIteratee = baseIteratee;
+
+    pairs = !length ? [] : arrayMap(pairs, function (pair) {
+        if (typeof pair[1] != 'function') {
+            throw new TypeError(FUNC_ERROR_TEXT);
         }
-        return [pair[0], pair[1]];
+        return [toIteratee(pair[0]), pair[1]];
     });
 
-    return function (args) {
+    return baseRest(function (args) {
         var index = -1;
         while (++index < length) {
-            var pair = condPairs[index];
-            if (pair[0](args)) {
-                return pair[1](args);
+            var pair = pairs[index];
+            if (apply(pair[0], this, args)) {
+                return apply(pair[1], this, args);
             }
-            return [];
         }
-
-        return false;
-    };
+    });
 }
 
 module.exports = cond;
