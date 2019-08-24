@@ -12,10 +12,10 @@ var stringToPath = require('./stringToPath');
  * @returns {Array} Returns the cast property path array.
  */
 function castPath(value, object) {
-  if (Array.isArray(value)) {
-    return value
-  }
-  return isKey(value, object) ? [value] : stringToPath(value)
+    if (Array.isArray(value)) {
+        return value;
+    }
+    return isKey(value, object) ? [value] : stringToPath(value);
 }
 
-module.exports = castPath
+module.exports = castPath;

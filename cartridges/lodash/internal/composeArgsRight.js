@@ -12,30 +12,30 @@
  * @returns {Array} Returns the new array of composed arguments.
  */
 function composeArgsRight(args, partials, holders, isCurried) {
-  let argsIndex = -1
-  let holdersIndex = -1
-  let rightIndex = -1
+    let argsIndex = -1;
+    let holdersIndex = -1;
+    let rightIndex = -1;
 
-  var argsLength = args.length
-  var holdersLength = holders.length
-  var rightLength = partials.length
-  var rangeLength = Math.max(argsLength - holdersLength, 0)
-  var result = new Array(rangeLength + rightLength)
-  var isUncurried = !isCurried
+    var argsLength = args.length;
+    var holdersLength = holders.length;
+    var rightLength = partials.length;
+    var rangeLength = Math.max(argsLength - holdersLength, 0);
+    var result = new Array(rangeLength + rightLength);
+    var isUncurried = !isCurried;
 
-  while (++argsIndex < rangeLength) {
-    result[argsIndex] = args[argsIndex]
-  }
-  var offset = argsIndex
-  while (++rightIndex < rightLength) {
-    result[offset + rightIndex] = partials[rightIndex]
-  }
-  while (++holdersIndex < holdersLength) {
-    if (isUncurried || argsIndex < argsLength) {
-      result[offset + holders[holdersIndex]] = args[argsIndex++]
+    while (++argsIndex < rangeLength) {
+        result[argsIndex] = args[argsIndex];
     }
-  }
-  return result
+    var offset = argsIndex;
+    while (++rightIndex < rightLength) {
+        result[offset + rightIndex] = partials[rightIndex];
+    }
+    while (++holdersIndex < holdersLength) {
+        if (isUncurried || argsIndex < argsLength) {
+            result[offset + holders[holdersIndex]] = args[argsIndex++];
+        }
+    }
+    return result;
 }
 
 module.exports = composeArgsRight;

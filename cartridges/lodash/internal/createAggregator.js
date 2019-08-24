@@ -13,8 +13,8 @@ var isArray = require('../isArray');
  */
 function createAggregator(setter, initializer) {
     return function (collection, iteratee) {
-        var func = isArray(collection) ? arrayAggregator : baseAggregator,
-            accumulator = initializer ? initializer() : {};
+        var func = isArray(collection) ? arrayAggregator : baseAggregator;
+        var accumulator = initializer ? initializer() : {};
 
         return func(collection, setter, baseIteratee(iteratee, 2), accumulator);
     };

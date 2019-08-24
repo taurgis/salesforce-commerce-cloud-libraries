@@ -10,15 +10,15 @@ var isSymbol = require('../isSymbol');
  */
 function compareAscending(value, other) {
     if (value !== other) {
-        var valIsDefined = value !== undefined,
-            valIsNull = value === null,
-            valIsReflexive = value === value,
-            valIsSymbol = isSymbol(value);
+        var valIsDefined = value !== undefined;
+        var valIsNull = value === null;
+        var valIsReflexive = value === value;
+        var valIsSymbol = isSymbol(value);
 
-        var othIsDefined = other !== undefined,
-            othIsNull = other === null,
-            othIsReflexive = other === other,
-            othIsSymbol = isSymbol(other);
+        var othIsDefined = other !== undefined;
+        var othIsNull = other === null;
+        var othIsReflexive = other === other;
+        var othIsSymbol = isSymbol(other);
 
         if ((!othIsNull && !othIsSymbol && !valIsSymbol && value > other) ||
             (valIsSymbol && othIsDefined && othIsReflexive && !othIsNull && !othIsSymbol) ||

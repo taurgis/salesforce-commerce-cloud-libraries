@@ -17,7 +17,9 @@ function baseWhile(array, predicate, isDrop, fromRight) {
     let index = fromRight ? length : -1;
 
     while ((fromRight ? index-- : ++index < length) &&
-    predicate(array[index], index, array)) {}
+    predicate(array[index], index, array)) {
+        // DO NOTHING
+    }
 
     return isDrop
         ? slice(array, (fromRight ? 0 : index), (fromRight ? index + 1 : length))

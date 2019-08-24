@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIndexOf= require('./baseIndexOf.js');
+var baseIndexOf = require('./baseIndexOf.js');
 
 /**
  * Used by `trim` and `trimStart` to get the index of the first string symbol
@@ -12,11 +12,13 @@ var baseIndexOf= require('./baseIndexOf.js');
  * @returns {number} Returns the index of the first unmatched string symbol.
  */
 function charsStartIndex(strSymbols, chrSymbols) {
-  let index = -1
-  var length = strSymbols.length
+    let index = -1;
+    var length = strSymbols.length;
 
-  while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
-  return index
+    while (++index < length && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {
+        // DO NOTHING
+    }
+    return index;
 }
 
 module.exports = charsStartIndex;

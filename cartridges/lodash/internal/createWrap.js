@@ -14,12 +14,12 @@ var toInteger = require('../toInteger');
 var FUNC_ERROR_TEXT = 'Expected a function';
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-    WRAP_BIND_KEY_FLAG = 2,
-    WRAP_CURRY_FLAG = 8,
-    WRAP_CURRY_RIGHT_FLAG = 16,
-    WRAP_PARTIAL_FLAG = 32,
-    WRAP_PARTIAL_RIGHT_FLAG = 64;
+var WRAP_BIND_FLAG = 1;
+var WRAP_BIND_KEY_FLAG = 2;
+var WRAP_CURRY_FLAG = 8;
+var WRAP_CURRY_RIGHT_FLAG = 16;
+var WRAP_PARTIAL_FLAG = 32;
+var WRAP_PARTIAL_RIGHT_FLAG = 64;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMax = Math.max;
@@ -64,15 +64,15 @@ function createWrap(func, bitmask, thisArg, partials, holders, argPos, ary, arit
     length -= holders ? holders.length : 0;
 
     if (bitmask & WRAP_PARTIAL_RIGHT_FLAG) {
-        var partialsRight = partials,
-            holdersRight = holders;
+        var partialsRight = partials;
+        var holdersRight = holders;
 
         partials = holders = undefined;
     }
     var data = isBindKey ? undefined : getData(func);
 
     var newData = [
-        func, bitmask, thisArg, partials, holders, partialsRight, holdersRight,
+        func, bitmask, thisArg, partials, holders, partialsRight, holdersRight, // eslint-disable-line
         argPos, ary, arity
     ];
 
@@ -94,14 +94,14 @@ function createWrap(func, bitmask, thisArg, partials, holders, argPos, ary, arit
     if (!bitmask || bitmask == WRAP_BIND_FLAG) {
         var result = createBind(func, bitmask, thisArg);
     } else if (bitmask == WRAP_CURRY_FLAG || bitmask == WRAP_CURRY_RIGHT_FLAG) {
-        result = createCurry(func, bitmask, arity);
+        result = createCurry(func, bitmask, arity); // eslint-disable-line
     } else if ((bitmask == WRAP_PARTIAL_FLAG || bitmask == (WRAP_BIND_FLAG | WRAP_PARTIAL_FLAG)) && !holders.length) {
-        result = createPartial(func, bitmask, thisArg, partials);
+        result = createPartial(func, bitmask, thisArg, partials); // eslint-disable-line
     } else {
-        result = createHybrid.apply(undefined, newData);
+        result = createHybrid.apply(undefined, newData); // eslint-disable-line
     }
     var setter = data ? baseSetData : setData;
-    return setWrapToString(setter(result, newData), func, bitmask);
+    return setWrapToString(setter(result, newData), func, bitmask); // eslint-disable-line
 }
 
 module.exports = createWrap;

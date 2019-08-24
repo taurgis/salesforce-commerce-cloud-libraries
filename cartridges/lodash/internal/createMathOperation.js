@@ -12,26 +12,25 @@ var baseToString = require('./baseToString.js');
  * @returns {Function} Returns the new mathematical operation function.
  */
 function createMathOperation(operator, defaultValue) {
-  return function(value, other) {
-    if (value === undefined && other === undefined) {
-      return defaultValue
-    }
-    if (value !== undefined && other === undefined) {
-      return value
-    }
-    if (other !== undefined && value === undefined) {
-      return other
-    }
-    if (typeof value === 'string' || typeof other === 'string') {
-      value = baseToString(value)
-      other = baseToString(other)
-    }
-    else {
-      value = baseToNumber(value)
-      other = baseToNumber(other)
-    }
-    return operator(value, other)
-  }
+    return function (value, other) {
+        if (value === undefined && other === undefined) {
+            return defaultValue;
+        }
+        if (value !== undefined && other === undefined) {
+            return value;
+        }
+        if (other !== undefined && value === undefined) {
+            return other;
+        }
+        if (typeof value === 'string' || typeof other === 'string') {
+            value = baseToString(value);
+            other = baseToString(other);
+        } else {
+            value = baseToNumber(value);
+            other = baseToNumber(other);
+        }
+        return operator(value, other);
+    };
 }
 
 module.exports = createMathOperation;

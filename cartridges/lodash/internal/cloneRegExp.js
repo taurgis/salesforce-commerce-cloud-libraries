@@ -1,7 +1,7 @@
 'use strict';
 
 /** Used to match `RegExp` flags= require(their coerced string values. */
-var reFlags = /\w*$/
+var reFlags = /\w*$/;
 
 /**
  * Creates a clone of `regexp`.
@@ -11,9 +11,9 @@ var reFlags = /\w*$/
  * @returns {Object} Returns the cloned regexp.
  */
 function cloneRegExp(regexp) {
-  var result = new regexp.constructor(regexp.source, reFlags.exec(regexp))
-  result.lastIndex = regexp.lastIndex
-  return result
+    var result = new regexp.constructor(regexp.source, reFlags.exec(regexp));
+    result.lastIndex = regexp.lastIndex;
+    return result;
 }
 
 module.exports = cloneRegExp;

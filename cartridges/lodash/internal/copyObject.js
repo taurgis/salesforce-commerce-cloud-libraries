@@ -15,8 +15,8 @@ function copyObject(source, props, object, customizer) {
     var isNew = !object;
     object || (object = {});
 
-    var index = -1,
-        length = props.length;
+    var index = -1;
+    var length = props.length;
 
     while (++index < length) {
         var key = props[index];

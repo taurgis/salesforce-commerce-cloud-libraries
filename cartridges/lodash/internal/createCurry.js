@@ -20,11 +20,14 @@ var root = require('./root');
 function createCurry(func, bitmask, arity) {
     var Ctor = createCtor(func);
 
+    /**
+     * Wrapper function
+     */
     function wrapper() {
-        var length = arguments.length,
-            args = Array(length),
-            index = length,
-            placeholder = getHolder(wrapper);
+        var length = arguments.length;
+        var args = Array(length);
+        var index = length;
+        var placeholder = getHolder(wrapper);
 
         while (index--) {
             args[index] = arguments[index];

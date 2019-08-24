@@ -1,6 +1,6 @@
 'use strict';
 
-var cloneArrayBuffer= require('./cloneArrayBuffer.js');
+var cloneArrayBuffer = require('./cloneArrayBuffer.js');
 
 /**
  * Creates a clone of `typedArray`.
@@ -11,8 +11,8 @@ var cloneArrayBuffer= require('./cloneArrayBuffer.js');
  * @returns {Object} Returns the cloned typed array.
  */
 function cloneTypedArray(typedArray, isDeep) {
-  var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer
-  return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length)
+    var buffer = isDeep ? cloneArrayBuffer(typedArray.buffer) : typedArray.buffer;
+    return new typedArray.constructor(buffer, typedArray.byteOffset, typedArray.length);
 }
 
 module.exports = cloneTypedArray;

@@ -20,16 +20,19 @@ var WRAP_BIND_FLAG = 1;
  * @returns {Function} Returns the new wrapped function.
  */
 function createPartial(func, bitmask, thisArg, partials) {
-    var isBind = bitmask & WRAP_BIND_FLAG,
-        Ctor = createCtor(func);
+    var isBind = bitmask & WRAP_BIND_FLAG;
+    var Ctor = createCtor(func);
 
+    /**
+     * Wrapper function
+     */
     function wrapper() {
-        var argsIndex = -1,
-            argsLength = arguments.length,
-            leftIndex = -1,
-            leftLength = partials.length,
-            args = Array(leftLength + argsLength),
-            fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
+        var argsIndex = -1;
+        var argsLength = arguments.length;
+        var leftIndex = -1;
+        var leftLength = partials.length;
+        var args = Array(leftLength + argsLength);
+        var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
 
         while (++leftIndex < leftLength) {
             args[leftIndex] = partials[leftIndex];

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIndexOf= require('./baseIndexOf.js');
+var baseIndexOf = require('./baseIndexOf.js');
 
 /**
  * Used by `trim` and `trimEnd` to get the index of the last string symbol
@@ -12,10 +12,12 @@ var baseIndexOf= require('./baseIndexOf.js');
  * @returns {number} Returns the index of the last unmatched string symbol.
  */
 function charsEndIndex(strSymbols, chrSymbols) {
-  let index = strSymbols.length
+    let index = strSymbols.length;
 
-  while (index-- && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {}
-  return index
+    while (index-- && baseIndexOf(chrSymbols, strSymbols[index], 0) > -1) {
+        // DO NOTHING
+    }
+    return index;
 }
 
 module.exports = charsEndIndex;

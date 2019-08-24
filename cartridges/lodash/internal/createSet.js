@@ -2,7 +2,7 @@
 
 var HashSet;
 
-if(typeof Set === 'undefined') {
+if (typeof Set === 'undefined') {
     HashSet = require('dw/util/HashSet');
 } else {
     HashSet = Set;

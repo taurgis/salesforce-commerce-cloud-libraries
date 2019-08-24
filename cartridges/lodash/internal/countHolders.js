@@ -9,8 +9,8 @@
  * @returns {number} Returns the placeholder count.
  */
 function countHolders(array, placeholder) {
-    var length = array.length,
-        result = 0;
+    var length = array.length;
+    var result = 0;
 
     while (length--) {
         if (array[length] === placeholder) {

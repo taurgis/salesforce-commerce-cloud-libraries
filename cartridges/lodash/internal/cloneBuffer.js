@@ -1,18 +1,19 @@
 'use strict';
 
-var root= require('./root.js');
+var root = require('./root.js');
 
 /** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports !== null && !exports.nodeType && exports
+var freeExports = typeof exports == 'object' && exports !== null && !exports.nodeType && exports;
 
 /** Detect free variable `module`. */
-var freeModule = freeExports && typeof module == 'object' && module !== null && !module.nodeType && module
+var freeModule = freeExports && typeof module == 'object' && module !== null && !module.nodeType && module;
 
 /** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports
+var moduleExports = freeModule && freeModule.exports === freeExports;
 
 /** Built-in value references. */
-var Buffer = moduleExports ? root.Buffer : undefined, allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined
+var Buffer = moduleExports ? root.Buffer : undefined;
+var allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined;
 
 /**
  * Creates a clone of `buffer`.
@@ -23,14 +24,14 @@ var Buffer = moduleExports ? root.Buffer : undefined, allocUnsafe = Buffer ? Buf
  * @returns {Buffer} Returns the cloned buffer.
  */
 function cloneBuffer(buffer, isDeep) {
-  if (isDeep) {
-    return buffer.slice()
-  }
-  var length = buffer.length
-  var result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length)
+    if (isDeep) {
+        return buffer.slice();
+    }
+    var length = buffer.length;
+    var result = allocUnsafe ? allocUnsafe(length) : new buffer.constructor(length);
 
-  buffer.copy(result)
-  return result
+    buffer.copy(result);
+    return result;
 }
 
 module.exports = cloneBuffer;

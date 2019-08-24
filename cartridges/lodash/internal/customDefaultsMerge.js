@@ -1,7 +1,7 @@
 'use strict';
 
-var baseMerge= require('./baseMerge.js');
-var isObject= require('../isObject.js');
+var baseMerge = require('./baseMerge.js');
+var isObject = require('../isObject.js');
 
 /**
  * Used by `defaultsDeep` to customize its `merge` use to merge source
@@ -18,13 +18,13 @@ var isObject= require('../isObject.js');
  * @returns {*} Returns the value to assign.
  */
 function customDefaultsMerge(objValue, srcValue, key, object, source, stack) {
-  if (isObject(objValue) && isObject(srcValue)) {
+    if (isObject(objValue) && isObject(srcValue)) {
     // Recursively merge objects and arrays (susceptible to call stack limits).
-    stack.set(srcValue, objValue)
-    baseMerge(objValue, srcValue, undefined, customDefaultsMerge, stack)
-    stack['delete'](srcValue)
-  }
-  return objValue
+        stack.set(srcValue, objValue);
+        baseMerge(objValue, srcValue, undefined, customDefaultsMerge, stack);
+        stack.delete(srcValue);
+    }
+    return objValue;
 }
 
 module.exports = customDefaultsMerge;

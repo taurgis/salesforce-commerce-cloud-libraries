@@ -1,11 +1,11 @@
 'use strict';
 
-var repeat= require('../repeat.js');
-var baseToString= require('./baseToString.js');
-var castSlice= require('./castSlice.js');
-var hasUnicode= require('./hasUnicode.js');
-var stringSize= require('./stringSize.js');
-var stringToArray= require('./stringToArray.js');
+var repeat = require('../repeat.js');
+var baseToString = require('./baseToString.js');
+var castSlice = require('./castSlice.js');
+var hasUnicode = require('./hasUnicode.js');
+var stringSize = require('./stringSize.js');
+var stringToArray = require('./stringToArray.js');
 
 /**
  * Creates the padding for `string` based on `length`. The `chars` string
@@ -17,16 +17,16 @@ var stringToArray= require('./stringToArray.js');
  * @returns {string} Returns the padding for `string`.
  */
 function createPadding(length, chars) {
-  chars = chars === undefined ? ' ' : baseToString(chars)
+    chars = chars === undefined ? ' ' : baseToString(chars);
 
-  var charsLength = chars.length
-  if (charsLength < 2) {
-    return charsLength ? repeat(chars, length) : chars
-  }
-  var result = repeat(chars, Math.ceil(length / stringSize(chars)))
-  return hasUnicode(chars)
-    ? castSlice(stringToArray(result), 0, length).join('')
-    : result.slice(0, length)
+    var charsLength = chars.length;
+    if (charsLength < 2) {
+        return charsLength ? repeat(chars, length) : chars;
+    }
+    var result = repeat(chars, Math.ceil(length / stringSize(chars)));
+    return hasUnicode(chars)
+        ? castSlice(stringToArray(result), 0, length).join('')
+        : result.slice(0, length);
 }
 
 module.exports = createPadding;
