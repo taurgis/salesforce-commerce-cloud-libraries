@@ -1,10 +1,10 @@
 'use strict';
 
 var map = require('./map.js');
-var baseAt = require('./.internal/baseAt.js');
-var basePullAt = require('./.internal/basePullAt.js');
-var compareAscending = require('./.internal/compareAscending.js');
-var isIndex = require('./.internal/isIndex.js');
+var baseAt = require('./internal/baseAt.js');
+var basePullAt = require('./internal/basePullAt.js');
+var compareAscending = require('./internal/compareAscending.js');
+var isIndex = require('./internal/isIndex.js');
 
 /**
  * Removes elements= require(`array` corresponding to `indexes` and returns an);

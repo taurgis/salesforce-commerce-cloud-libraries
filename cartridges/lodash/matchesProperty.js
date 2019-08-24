@@ -1,7 +1,7 @@
 'use strict';
 
-var baseClone = require('./.internal/baseClone.js');
-var baseMatchesProperty = require('./.internal/baseMatchesProperty.js');
+var baseClone = require('./internal/baseClone.js');
+var baseMatchesProperty = require('./internal/baseMatchesProperty.js');
 
 /** Used to compose bitmasks for cloning. */
 const CLONE_DEEP_FLAG = 1;

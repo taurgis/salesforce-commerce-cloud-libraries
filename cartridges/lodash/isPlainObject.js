@@ -1,6 +1,6 @@
 'use strict';
 
-var getTag = require('./.internal/getTag');
+var getTag = require('./internal/getTag');
 var isObjectLike = require('./isObjectLike');
 
 /**

@@ -1,6 +1,6 @@
 'use strict';
 
-var deburrLetter = require('./.internal/deburrLetter');
+var deburrLetter = require('./internal/deburrLetter');
 var toString = require('./toString');
 
 /** Used to match Latin Unicode letters (excluding mathematical operators). */

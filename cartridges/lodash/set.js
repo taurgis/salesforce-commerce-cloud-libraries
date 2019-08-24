@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSet = require('./.internal/baseSet.js');
+var baseSet = require('./internal/baseSet.js');
 
 /**
  * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,

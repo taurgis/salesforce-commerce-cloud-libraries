@@ -1,9 +1,9 @@
 'use strict';
 
-var castSlice = require('./.internal/castSlice.js');
-var charsEndIndex = require('./.internal/charsEndIndex.js');
-var charsStartIndex = require('./.internal/charsStartIndex.js');
-var stringToArray = require('./.internal/stringToArray.js');
+var castSlice = require('./internal/castSlice.js');
+var charsEndIndex = require('./internal/charsEndIndex.js');
+var charsStartIndex = require('./internal/charsStartIndex.js');
+var stringToArray = require('./internal/stringToArray.js');
 
 /**
  * Removes leading and trailing whitespace or specified characters= require(`string`.);

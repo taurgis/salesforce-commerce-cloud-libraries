@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIndexOf = require('./.internal/baseIndexOf.js');
+var baseIndexOf = require('./internal/baseIndexOf.js');
 
 /**
  * Gets the index at which the first occurrence of `value` is found in `array`

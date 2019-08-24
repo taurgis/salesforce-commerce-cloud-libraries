@@ -1,4 +1,4 @@
-var baseClamp = require('./.internal/baseClamp');
+var baseClamp = require('./internal/baseClamp');
 var toNumber = require('./toNumber');
 
 /**

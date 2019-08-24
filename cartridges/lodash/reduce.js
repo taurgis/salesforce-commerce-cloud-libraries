@@ -1,8 +1,8 @@
 'use strict';
 
-var arrayReduce = require('./.internal/arrayReduce');
-var baseEach = require('./.internal/baseEach');
-var baseReduce = require('./.internal/baseReduce');
+var arrayReduce = require('./internal/arrayReduce');
+var baseEach = require('./internal/baseEach');
+var baseReduce = require('./internal/baseReduce');
 
 /**
  * Reduces `collection` to a value which is the accumulated result of running

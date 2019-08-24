@@ -1,6 +1,6 @@
 'use strict';
 
-var baseWhile = require('./.internal/baseWhile');
+var baseWhile = require('./internal/baseWhile');
 
 /**
  * Creates a slice of `array` excluding elements dropped= require(the end.);

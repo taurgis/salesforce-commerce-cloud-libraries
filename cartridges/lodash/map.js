@@ -1,6 +1,6 @@
-var arrayMap = require('./.internal/arrayMap');
-var baseIteratee = require('./.internal/baseIteratee');
-var baseMap = require('./.internal/baseMap');
+var arrayMap = require('./internal/arrayMap');
+var baseIteratee = require('./internal/baseIteratee');
+var baseMap = require('./internal/baseMap');
 var isArray = require('./isArray');
 
 /**

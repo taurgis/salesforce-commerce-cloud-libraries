@@ -1,6 +1,6 @@
 'use strict';
 
-var baseGet = require('./.internal/baseGet.js');
+var baseGet = require('./internal/baseGet.js');
 
 /**
  * The opposite of `property`s method creates a function that returns

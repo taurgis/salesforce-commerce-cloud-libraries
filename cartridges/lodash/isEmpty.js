@@ -1,10 +1,10 @@
 'use strict';
 
-var getTag = require('./.internal/getTag.js');
+var getTag = require('./internal/getTag.js');
 var isArguments = require('./isArguments.js');
 var isArrayLike = require('./isArrayLike.js');
 var isBuffer = require('./isBuffer.js');
-var isPrototype = require('./.internal/isPrototype.js');
+var isPrototype = require('./internal/isPrototype.js');
 var isTypedArray = require('./isTypedArray.js');
 
 

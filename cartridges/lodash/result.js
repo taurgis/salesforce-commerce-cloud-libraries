@@ -1,7 +1,7 @@
 'use strict';
 
-var castPath = require('./.internal/castPath.js');
-var toKey = require('./.internal/toKey.js');
+var castPath = require('./internal/castPath.js');
+var toKey = require('./internal/toKey.js');
 
 /**
  * This method is like `get` except that if the resolved value is a

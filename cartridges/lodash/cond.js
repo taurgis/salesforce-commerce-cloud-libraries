@@ -1,9 +1,9 @@
 'use strict';
 
-var apply = require('./.internal/apply');
-var arrayMap = require('./.internal/arrayMap');
-var baseIteratee = require('./.internal/baseIteratee');
-var baseRest = require('./.internal/baseRest');
+var apply = require('./internal/apply');
+var arrayMap = require('./internal/arrayMap');
+var baseIteratee = require('./internal/baseIteratee');
+var baseRest = require('./internal/baseRest');
 
 /** Error message constants. */
 var FUNC_ERROR_TEXT = 'Expected a function';

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseClone = require('./.internal/baseClone');
+var baseClone = require('./internal/baseClone');
 
 /** Used to compose bitmasks for cloning. */
 var CLONE_SYMBOLS_FLAG = 4;

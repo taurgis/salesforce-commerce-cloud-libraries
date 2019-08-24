@@ -1,10 +1,10 @@
 'use strict';
 
 var map = require('./map.js');
-var copyArray = require('./.internal/copyArray.js');
+var copyArray = require('./internal/copyArray.js');
 var isSymbol = require('./isSymbol.js');
-var stringToPath = require('./.internal/stringToPath.js');
-var toKey = require('./.internal/toKey.js');
+var stringToPath = require('./internal/stringToPath.js');
+var toKey = require('./internal/toKey.js');
 
 /**
  * Converts `value` to a property path array.

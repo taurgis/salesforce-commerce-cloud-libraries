@@ -1,7 +1,7 @@
 'use strict';
 
-var getTag = require('./.internal/getTag');
-var nodeTypes = require('./.internal/nodeTypes');
+var getTag = require('./internal/getTag');
+var nodeTypes = require('./internal/nodeTypes');
 var isObjectLike = require('./isObjectLike');
 
 /** Used to match `toStringTag` values of typed arrays. */

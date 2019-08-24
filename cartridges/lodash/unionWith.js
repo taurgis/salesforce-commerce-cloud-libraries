@@ -1,7 +1,7 @@
 'use strict';
 
-var baseFlatten = require('./.internal/baseFlatten.js');
-var baseUniq = require('./.internal/baseUniq.js');
+var baseFlatten = require('./internal/baseFlatten.js');
+var baseUniq = require('./internal/baseUniq.js');
 var isArrayLikeObject = require('./isArrayLikeObject.js');
 var last = require('./last.js');
 

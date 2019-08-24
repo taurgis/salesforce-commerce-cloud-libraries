@@ -1,11 +1,11 @@
 'use strict';
 
-var LazyWrapper = require('./.internal/lazyWrapper');
-var LodashWrapper = require('./.internal/lodashWrapper');
-var baseLodash = require('./.internal/baseLodash');
+var LazyWrapper = require('./internal/lazyWrapper');
+var LodashWrapper = require('./internal/lodashWrapper');
+var baseLodash = require('./internal/baseLodash');
 var isArray = require('./isArray');
 var isObjectLike = require('./isObjectLike');
-var wrapperClone = require('./.internal/wrapperClone');
+var wrapperClone = require('./internal/wrapperClone');
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;

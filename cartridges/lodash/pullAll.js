@@ -1,6 +1,6 @@
 'use strict';
 
-var basePullAll = require('./.internal/basePullAll.js');
+var basePullAll = require('./internal/basePullAll.js');
 
 /**
  * This method is like `pull` except that it accepts an array of values to remove.

@@ -1,8 +1,8 @@
 'use strict';
 
-var castSlice = require('./.internal/castSlice.js');
-var charsStartIndex = require('./.internal/charsStartIndex.js');
-var stringToArray = require('./.internal/stringToArray.js');
+var castSlice = require('./internal/castSlice.js');
+var charsStartIndex = require('./internal/charsStartIndex.js');
+var stringToArray = require('./internal/stringToArray.js');
 
 /**
  * Removes leading whitespace or specified characters= require(`string`.);

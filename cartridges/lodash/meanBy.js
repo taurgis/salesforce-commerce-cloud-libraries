@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSum = require('./.internal/baseSum.js');
+var baseSum = require('./internal/baseSum.js');
 
 /** Used as references for various `Number` constants. */
 const NAN = 0 / 0;

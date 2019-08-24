@@ -1,7 +1,7 @@
 'use strict';
 
-var baseIsMatch = require('./.internal/baseIsMatch.js');
-var getMatchData = require('./.internal/getMatchData.js');
+var baseIsMatch = require('./internal/baseIsMatch.js');
+var getMatchData = require('./internal/getMatchData.js');
 
 /**
  * Performs a partial deep comparison between `object` and `source` to

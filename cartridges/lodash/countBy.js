@@ -1,5 +1,5 @@
-var baseAssignValue = require('./.internal/baseAssignValue');
-var createAggregator = require('./.internal/createAggregator');
+var baseAssignValue = require('./internal/baseAssignValue');
+var createAggregator = require('./internal/createAggregator');
 
 /** Used for built-in method references. */
 var objectProto = Object.prototype;

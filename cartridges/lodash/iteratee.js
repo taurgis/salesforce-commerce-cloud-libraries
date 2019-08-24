@@ -1,7 +1,7 @@
 'use strict';
 
-var baseClone = require('./.internal/baseClone');
-var baseIteratee = require('./.internal/baseIteratee');
+var baseClone = require('./internal/baseClone');
+var baseIteratee = require('./internal/baseIteratee');
 
 /** Used to compose bitmasks for cloning. */
 var CLONE_DEEP_FLAG = 1;

@@ -1,7 +1,7 @@
 'use strict';
 
-var baseFindKey = require('./.internal/baseFindKey');
-var baseForOwnRight = require('./.internal/baseForOwnRight');
+var baseFindKey = require('./internal/baseFindKey');
+var baseForOwnRight = require('./internal/baseForOwnRight');
 
 /**
  * This method is like `findKey` except that it iterates over elements of

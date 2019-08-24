@@ -1,9 +1,9 @@
 'use strict';
 
-var castPath = require('./.internal/castPath.js');
+var castPath = require('./internal/castPath.js');
 var last = require('./last.js');
-var parent = require('./.internal/parent.js');
-var toKey = require('./.internal/toKey.js');
+var parent = require('./internal/parent.js');
+var toKey = require('./internal/toKey.js');
 
 /**
  * Invokes the method at `path` of `object`.

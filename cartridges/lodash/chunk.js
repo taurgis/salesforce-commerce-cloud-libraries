@@ -1,7 +1,7 @@
 'use strict';
 
-var baseSlice = require('./.internal/baseSlice');
-var isIterateeCall = require('./.internal/isIterateeCall');
+var baseSlice = require('./internal/baseSlice');
+var isIterateeCall = require('./internal/isIterateeCall');
 var toInteger = require('./toInteger');
 
 /* Built-in method references for those with the same name as other `lodash` methods. */

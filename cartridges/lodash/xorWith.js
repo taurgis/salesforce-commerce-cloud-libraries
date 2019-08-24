@@ -1,6 +1,6 @@
 'use strict';
 
-var baseXor = require('./.internal/baseXor.js');
+var baseXor = require('./internal/baseXor.js');
 var isArrayLikeObject = require('./isArrayLikeObject.js');
 var last = require('./last.js');
 

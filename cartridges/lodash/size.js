@@ -1,9 +1,9 @@
 'use strict';
 
-var getTag = require('./.internal/getTag.js');
+var getTag = require('./internal/getTag.js');
 var isArrayLike = require('./isArrayLike.js');
 var isString = require('./isString.js');
-var stringSize = require('./.internal/stringSize.js');
+var stringSize = require('./internal/stringSize.js');
 
 /** `Object#toString` result references. */
 const mapTag = '[object Map]';

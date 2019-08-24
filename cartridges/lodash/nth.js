@@ -1,6 +1,6 @@
 'use strict';
 
-var isIndex = require('./.internal/isIndex.js');
+var isIndex = require('./internal/isIndex.js');
 
 /**
  * Gets the element at index `n` of `array`. If `n` is negative, the nth

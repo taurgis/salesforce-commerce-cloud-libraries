@@ -1,7 +1,7 @@
 'use strict';
 
-var baseMerge = require('./.internal/baseMerge.js');
-var createAssigner = require('./.internal/createAssigner.js');
+var baseMerge = require('./internal/baseMerge.js');
+var createAssigner = require('./internal/createAssigner.js');
 
 /**
  * This method is like `merge` except that it accepts `customizer` which

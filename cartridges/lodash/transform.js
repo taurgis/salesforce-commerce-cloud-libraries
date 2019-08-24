@@ -1,7 +1,7 @@
 'use strict';
 
-var arrayEach = require('./.internal/arrayEach.js');
-var baseForOwn = require('./.internal/baseForOwn.js');
+var arrayEach = require('./internal/arrayEach.js');
+var baseForOwn = require('./internal/baseForOwn.js');
 var isBuffer = require('./isBuffer.js');
 var isObject = require('./isObject.js');
 var isTypedArray = require('./isTypedArray.js');

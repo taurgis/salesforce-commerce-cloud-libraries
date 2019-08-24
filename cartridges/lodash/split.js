@@ -1,9 +1,9 @@
 'use strict';
 
-var castSlice = require('./.internal/castSlice.js');
-var hasUnicode = require('./.internal/hasUnicode.js');
+var castSlice = require('./internal/castSlice.js');
+var hasUnicode = require('./internal/hasUnicode.js');
 var isRegExp = require('./isRegExp.js');
-var stringToArray = require('./.internal/stringToArray.js');
+var stringToArray = require('./internal/stringToArray.js');
 
 /** Used as references for the maximum length and index of an array. */
 const MAX_ARRAY_LENGTH = 4294967295;

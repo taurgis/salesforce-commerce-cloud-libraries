@@ -1,6 +1,6 @@
 'use strict';
 
-var basePick = require('./.internal/basePick.js');
+var basePick = require('./internal/basePick.js');
 
 /**
  * Creates an object composed of the picked `object` properties.

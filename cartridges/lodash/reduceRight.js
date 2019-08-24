@@ -1,8 +1,8 @@
 'use strict';
 
-var arrayReduceRight = require('./.internal/arrayReduceRight.js');
-var baseEachRight = require('./.internal/baseEachRight.js');
-var baseReduce = require('./.internal/baseReduce.js');
+var arrayReduceRight = require('./internal/arrayReduceRight.js');
+var baseEachRight = require('./internal/baseEachRight.js');
+var baseReduce = require('./internal/baseReduce.js');
 
 /**
  * This method is like `reduce` except that it iterates over elements of

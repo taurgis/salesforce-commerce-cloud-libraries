@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUniq = require('./.internal/baseUniq.js');
+var baseUniq = require('./internal/baseUniq.js');
 
 /**
  * This method is like `uniq` except that it accepts `iteratee` which is

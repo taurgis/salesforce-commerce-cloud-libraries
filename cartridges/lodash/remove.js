@@ -1,6 +1,6 @@
 'use strict';
 
-var basePullAt = require('./.internal/basePullAt.js');
+var basePullAt = require('./internal/basePullAt.js');
 
 /**
  * Removes all elements= require(`array` that `predicate` returns truthy for);

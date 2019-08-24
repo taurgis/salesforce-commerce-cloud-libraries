@@ -1,6 +1,6 @@
 'use strict';
 
-var baseInRange = require('./.internal/baseInRange.js');
+var baseInRange = require('./internal/baseInRange.js');
 
 /**
  * Checks if `number` is between `start` and up to, but not including, `end`. If

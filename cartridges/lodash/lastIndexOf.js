@@ -1,8 +1,8 @@
 'use strict';
 
-var baseFindIndex = require('./.internal/baseFindIndex.js');
-var baseIsNaN = require('./.internal/baseIsNaN.js');
-var strictLastIndexOf = require('./.internal/strictLastIndexOf.js');
+var baseFindIndex = require('./internal/baseFindIndex.js');
+var baseIsNaN = require('./internal/baseIsNaN.js');
+var strictLastIndexOf = require('./internal/strictLastIndexOf.js');
 
 /**
  * This method is like `indexOf` except that it iterates over elements of

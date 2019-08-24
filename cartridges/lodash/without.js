@@ -1,6 +1,6 @@
 'use strict';
 
-var baseDifference = require('./.internal/baseDifference.js');
+var baseDifference = require('./internal/baseDifference.js');
 var isArrayLikeObject = require('./isArrayLikeObject.js');
 
 /**

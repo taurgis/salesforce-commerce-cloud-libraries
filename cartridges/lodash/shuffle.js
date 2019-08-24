@@ -1,6 +1,6 @@
 'use strict';
 
-var copyArray = require('./.internal/copyArray.js');
+var copyArray = require('./internal/copyArray.js');
 
 /**
  * Creates an array of shuffled values, using a version of the

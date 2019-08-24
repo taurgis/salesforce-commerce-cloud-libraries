@@ -1,6 +1,6 @@
 'use strict';
 
-var baseFlatten = require('./.internal/baseFlatten.js');
+var baseFlatten = require('./internal/baseFlatten.js');
 
 /**
  * Flattens `array` a single level deep.

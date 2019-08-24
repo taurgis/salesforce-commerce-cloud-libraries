@@ -1,6 +1,6 @@
 'use strict';
 
-var baseAt = require('./.internal/baseAt');
+var baseAt = require('./internal/baseAt');
 
 /**
  * Creates an array of values corresponding to `paths` of `object`.
