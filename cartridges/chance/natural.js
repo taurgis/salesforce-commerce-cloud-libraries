@@ -15,7 +15,7 @@ var MAX_INT = Number(9007199254740992);
  * @example
  *      natural({ min: 1, max: 20 }); // => 20
  */
-module.exports = function (options) {
+module.exports = function natural(options) {
     var naturalOptions = initOptions(options, { min: 0, max: MAX_INT });
     if (typeof naturalOptions.numerals === 'number') {
         testRange(options.numerals < 1, 'Chance: Numerals cannot be less than one.');
