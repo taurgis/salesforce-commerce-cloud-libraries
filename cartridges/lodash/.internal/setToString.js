@@ -12,7 +12,7 @@ function setToString(func, string) {
   return Object.defineProperty(func, 'toString', {
     'configurable': true,
     'enumerable': false,
-    'value': () => string,
+    'value': function() {return string },
     'writable': true
   })
 }

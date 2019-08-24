@@ -1,6 +1,6 @@
 var assert = require('assert');
 var falsey = require('../helpers/falsey');
-var stubArray = require('../helpers/stubArray');
+var stubArray = require('../helpers/stubs').array;
 var chunk = require('../../../cartridges/lodash/chunk');
 var map = require('../../../cartridges/lodash/map');
 var isUndefined = require('../../../cartridges/lodash/isUndefined');

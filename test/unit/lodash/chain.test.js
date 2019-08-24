@@ -40,8 +40,8 @@ describe('chain', function () {
                 .map(function (value) { return value.split(''); })
                 .flatten()
                 .reduce(function (object, chr) {
-                    object[chr] || (object[chr] = 0);
-                    object[chr]++;
+                    object[chr] || (object[chr] = 0); // eslint-disable-line
+                    object[chr]++; // eslint-disable-line
                     return object;
                 }, {})
                 .value();
