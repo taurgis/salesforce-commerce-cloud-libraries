@@ -72,7 +72,7 @@ server.get('Test', function (req, res, next) {
             deburr: timeFunction(require('lodash/deburr'), 'téstêrûÜ'),
             defaultTo: timeFunction(require('lodash/defaultTo'), null, 2),
             defaultToAny: timeFunction(require('lodash/defaultToAny'), undefined, [null, undefined, 20, 40]),
-            defaults: timeFunction(require('lodash/defaults'), { a: 1 }, [{ b: 2 }, { a: 3 }]),
+            defaults: timeFunction(require('lodash/defaults'), { 'a': 1 }, { 'b': 2 }, { 'a': 3 }),
             difference: timeFunction(require('lodash/difference'), [2, 1], [2, 3]),
             differenceBy: timeFunction(require('lodash/differenceBy'), [2.1, 1.2], [[2.3, 3.4], Math.floor]),
             divide: timeFunction(require('lodash/divide'), 6, 3),
