@@ -1,8 +1,8 @@
 'use strict';
 
 var map = require('./map.js');
-var baseIntersection = require('./.internal/baseIntersection.js');
-var castArrayLikeObject = require('./.internal/castArrayLikeObject.js');
+var baseIntersection = require('./internal/baseIntersection.js');
+var castArrayLikeObject = require('./internal/castArrayLikeObject.js');
 var last = require('./last.js');
 
 /**

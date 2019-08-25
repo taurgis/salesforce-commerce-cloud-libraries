@@ -1,6 +1,6 @@
 'use strict';
 
-var createWrap = require('./.internal/createWrap');
+var createWrap = require('./internal/createWrap');
 
 /** Used to compose bitmasks for function metadata. */
 var WRAP_CURRY_FLAG = 8;

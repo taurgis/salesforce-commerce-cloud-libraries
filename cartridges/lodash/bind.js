@@ -1,7 +1,7 @@
-var baseRest = require('./.internal/baseRest');
-var createWrap = require('./.internal/createWrap');
-var getHolder = require('./.internal/getHolder');
-var replaceHolders = require('./.internal/replaceHolders');
+var baseRest = require('./internal/baseRest');
+var createWrap = require('./internal/createWrap');
+var getHolder = require('./internal/getHolder');
+var replaceHolders = require('./internal/replaceHolders');
 
 /** Used to compose bitmasks for function metadata. */
 var WRAP_BIND_FLAG = 1;

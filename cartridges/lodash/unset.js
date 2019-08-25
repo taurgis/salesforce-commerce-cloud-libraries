@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUnset = require('./.internal/baseUnset.js');
+var baseUnset = require('./internal/baseUnset.js');
 
 /**
  * Removes the property at `path` of `object`.

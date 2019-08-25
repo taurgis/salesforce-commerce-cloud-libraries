@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSortedIndexBy = require('./.internal/baseSortedIndexBy.js');
+var baseSortedIndexBy = require('./internal/baseSortedIndexBy.js');
 
 /**
  * This method is like `sortedIndex` except that it accepts `iteratee`

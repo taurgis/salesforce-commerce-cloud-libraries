@@ -1,6 +1,6 @@
 'use strict';
 
-var baseConformsTo = require('./.internal/baseConformsTo');
+var baseConformsTo = require('./internal/baseConformsTo');
 var keys = require('./keys');
 
 /**

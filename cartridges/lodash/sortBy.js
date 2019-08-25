@@ -1,7 +1,7 @@
-var baseFlatten = require('./.internal/baseFlatten');
-var baseOrderBy = require('./.internal/baseOrderBy');
-var baseRest = require('./.internal/baseRest');
-var isIterateeCall = require('./.internal/isIterateeCall');
+var baseFlatten = require('./internal/baseFlatten');
+var baseOrderBy = require('./internal/baseOrderBy');
+var baseRest = require('./internal/baseRest');
+var isIterateeCall = require('./internal/isIterateeCall');
 
 /**
  * Creates an array of elements, sorted in ascending order by the results of

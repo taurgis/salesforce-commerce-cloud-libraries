@@ -1,6 +1,6 @@
 'use strict';
 
-var baseFlatten = require('./.internal/baseFlatten.js');
+var baseFlatten = require('./internal/baseFlatten.js');
 
 /**
  * Recursively flatten `array` up to `depth` times.

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSortedUniq = require('./.internal/baseSortedUniq.js');
+var baseSortedUniq = require('./internal/baseSortedUniq.js');
 
 /**
  * This method is like `uniq` except that it only works

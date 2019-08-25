@@ -1,6 +1,6 @@
 'use strict';
 
-var baseWhile = require('./.internal/baseWhile.js');
+var baseWhile = require('./internal/baseWhile.js');
 
 /**
  * Creates a slice of `array` with elements taken= require(the end. Elements are);

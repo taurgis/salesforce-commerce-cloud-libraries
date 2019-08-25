@@ -1,7 +1,7 @@
 'use strict';
 
-var baseDifference = require('./.internal/baseDifference');
-var baseFlatten = require('./.internal/baseFlatten');
+var baseDifference = require('./internal/baseDifference');
+var baseFlatten = require('./internal/baseFlatten');
 var isArrayLikeObject = require('./isArrayLikeObject');
 var last = require('./last');
 

@@ -1,6 +1,6 @@
 'use strict';
 
-var createCaseFirst = require('./.internal/createCaseFirst');
+var createCaseFirst = require('./internal/createCaseFirst');
 
 /**
  * Converts the first character of `string` to upper case.

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIsEqual = require('./.internal/baseIsEqual');
+var baseIsEqual = require('./internal/baseIsEqual');
 
 /**
  * Performs a deep comparison between two values to determine if they are

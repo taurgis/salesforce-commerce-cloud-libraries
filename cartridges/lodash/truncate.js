@@ -1,12 +1,12 @@
 'use strict';
 
-var baseToString = require('./.internal/baseToString.js');
-var castSlice = require('./.internal/castSlice.js');
-var hasUnicode = require('./.internal/hasUnicode.js');
+var baseToString = require('./internal/baseToString.js');
+var castSlice = require('./internal/castSlice.js');
+var hasUnicode = require('./internal/hasUnicode.js');
 var isObject = require('./isObject.js');
 var isRegExp = require('./isRegExp.js');
-var stringSize = require('./.internal/stringSize.js');
-var stringToArray = require('./.internal/stringToArray.js');
+var stringSize = require('./internal/stringSize.js');
+var stringToArray = require('./internal/stringToArray.js');
 
 /** Used as default options for `truncate`. */
 const DEFAULT_TRUNC_LENGTH = 30;

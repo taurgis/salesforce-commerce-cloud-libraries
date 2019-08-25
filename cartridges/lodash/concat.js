@@ -1,8 +1,8 @@
 'use strict';
 
-var arrayPush = require('./.internal/arrayPush');
-var baseFlatten = require('./.internal/baseFlatten');
-var copyArray = require('./.internal/copyArray');
+var arrayPush = require('./internal/arrayPush');
+var baseFlatten = require('./internal/baseFlatten');
+var copyArray = require('./internal/copyArray');
 var isArray = require('./isArray');
 
 /**

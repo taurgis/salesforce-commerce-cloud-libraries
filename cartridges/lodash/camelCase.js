@@ -1,7 +1,7 @@
 'use strict';
 
 var capitalize = require('./capitalize');
-var createCompounder = require('./.internal/createCompounder');
+var createCompounder = require('./internal/createCompounder');
 
 /**
  * Converts `string` to [camel case](https://en.wikipedia.org/wiki/CamelCase).

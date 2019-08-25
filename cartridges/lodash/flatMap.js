@@ -1,6 +1,6 @@
 'use strict';
 
-var baseFlatten = require('./.internal/baseFlatten');
+var baseFlatten = require('./internal/baseFlatten');
 var map = require('./map');
 
 /**

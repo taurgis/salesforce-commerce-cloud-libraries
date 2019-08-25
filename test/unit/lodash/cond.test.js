@@ -30,8 +30,8 @@ describe('cond', function () {
         var expected = ['a', 'b', 'c'];
 
         var condFunction = cond([[
-            function () { args1 || (args1 = slice.call(arguments)); return true; },
-            function () { args2 || (args2 = slice.call(arguments)); }
+            function () { args1 || (args1 = slice.call(arguments)); return true; }, // eslint-disable-line
+            function () { args2 || (args2 = slice.call(arguments)); } // eslint-disable-line
         ]]);
 
         condFunction('a', 'b', 'c');

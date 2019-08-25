@@ -1,9 +1,9 @@
 'use strict';
 
-var baseRest = require('./.internal/baseRest');
-var createWrap = require('./.internal/createWrap');
-var getHolder = require('./.internal/getHolder');
-var replaceHolders = require('./.internal/replaceHolders');
+var baseRest = require('./internal/baseRest');
+var createWrap = require('./internal/createWrap');
+var getHolder = require('./internal/getHolder');
+var replaceHolders = require('./internal/replaceHolders');
 
 /** Used to compose bitmasks for function metadata. */
 var WRAP_PARTIAL_RIGHT_FLAG = 64;

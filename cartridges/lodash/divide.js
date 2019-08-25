@@ -1,6 +1,6 @@
 'use strict';
 
-var createMathOperation = require('./.internal/createMathOperation');
+var createMathOperation = require('./internal/createMathOperation');
 
 /**
  * Divide two numbers.

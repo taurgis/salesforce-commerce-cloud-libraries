@@ -1,7 +1,7 @@
 'use strict';
 
-var assignValue = require('./.internal/assignValue.js');
-var baseZipObject = require('./.internal/baseZipObject.js');
+var assignValue = require('./internal/assignValue.js');
+var baseZipObject = require('./internal/baseZipObject.js');
 
 /**
  * This method is like `fromPairs` except that it accepts two arrays,

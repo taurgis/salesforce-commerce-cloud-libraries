@@ -1,7 +1,7 @@
 'use strict';
 
-var createPadding = require('./.internal/createPadding.js');
-var stringSize = require('./.internal/stringSize.js');
+var createPadding = require('./internal/createPadding.js');
+var stringSize = require('./internal/stringSize.js');
 
 /**
  * Pads `string` on the left side if it's shorter than `length`. Padding

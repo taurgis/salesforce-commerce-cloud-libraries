@@ -1,6 +1,6 @@
 'use strict';
 
-var baseValues = require('./.internal/baseValues.js');
+var baseValues = require('./internal/baseValues.js');
 var keys = require('./keys.js');
 
 /**

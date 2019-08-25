@@ -1,10 +1,10 @@
 'use strict';
 
-var castPath = require('./.internal/castPath.js');
+var castPath = require('./internal/castPath.js');
 var isArguments = require('./isArguments.js');
-var isIndex = require('./.internal/isIndex.js');
+var isIndex = require('./internal/isIndex.js');
 var isLength = require('./isLength.js');
-var toKey = require('./.internal/toKey.js');
+var toKey = require('./internal/toKey.js');
 
 /**
  * Checks if `path` is a direct property of `object`.

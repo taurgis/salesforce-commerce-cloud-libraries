@@ -1,6 +1,6 @@
 'use strict';
 
-var createMathOperation = require('./.internal/createMathOperation.js');
+var createMathOperation = require('./internal/createMathOperation.js');
 
 /**
  * Multiply two numbers.

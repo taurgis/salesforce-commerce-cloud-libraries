@@ -1,6 +1,6 @@
 'use strict';
 
-var baseEach = require('./.internal/baseEach.js');
+var baseEach = require('./internal/baseEach.js');
 var invoke = require('./invoke.js');
 var isArrayLike = require('./isArrayLike.js');
 

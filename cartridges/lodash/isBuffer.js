@@ -1,6 +1,6 @@
 'use strict';
 
-var root = require('./.internal/root.js');
+var root = require('./internal/root.js');
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports === 'object' && exports !== null && !exports.nodeType && exports;

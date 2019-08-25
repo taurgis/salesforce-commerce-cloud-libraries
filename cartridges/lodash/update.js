@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUpdate = require('./.internal/baseUpdate.js');
+var baseUpdate = require('./internal/baseUpdate.js');
 
 /**
  * This method is like `set` except that it accepts `updater` to produce the

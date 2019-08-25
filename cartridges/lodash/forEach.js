@@ -1,7 +1,7 @@
 'use strict';
 
-var arrayEach = require('./.internal/arrayEach');
-var baseEach = require('./.internal/baseEach');
+var arrayEach = require('./internal/arrayEach');
+var baseEach = require('./internal/baseEach');
 
 /**
  * Iterates over elements of `collection` and invokes `iteratee` for each element.

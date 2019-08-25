@@ -1,6 +1,6 @@
 'use strict';
 
-var baseFindIndex = require('./.internal/baseFindIndex');
+var baseFindIndex = require('./internal/baseFindIndex');
 
 /**
  * This method is like `findIndex` except that it iterates over elements

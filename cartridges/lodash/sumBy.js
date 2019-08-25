@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSum = require('./.internal/baseSum.js');
+var baseSum = require('./internal/baseSum.js');
 
 /**
  * This method is like `sum` except that it accepts `iteratee` which is

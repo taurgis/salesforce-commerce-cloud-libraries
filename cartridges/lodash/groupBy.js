@@ -1,6 +1,6 @@
 'use strict';
 
-var baseAssignValue = require('./.internal/baseAssignValue.js');
+var baseAssignValue = require('./internal/baseAssignValue.js');
 var reduce = require('./reduce.js');
 
 /** Used to check objects for own properties. */

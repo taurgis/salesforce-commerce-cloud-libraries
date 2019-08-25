@@ -1,13 +1,13 @@
 'use strict';
 
-var copyArray = require('./.internal/copyArray.js');
-var getTag = require('./.internal/getTag.js');
+var copyArray = require('./internal/copyArray.js');
+var getTag = require('./internal/getTag.js');
 var isArrayLike = require('./isArrayLike.js');
 var isString = require('./isString.js');
-var iteratorToArray = require('./.internal/iteratorToArray.js');
-var mapToArray = require('./.internal/mapToArray.js');
-var setToArray = require('./.internal/setToArray.js');
-var stringToArray = require('./.internal/stringToArray.js');
+var iteratorToArray = require('./internal/iteratorToArray.js');
+var mapToArray = require('./internal/mapToArray.js');
+var setToArray = require('./internal/setToArray.js');
+var stringToArray = require('./internal/stringToArray.js');
 var values = require('./values.js');
 
 /** `Object#toString` result references. */
