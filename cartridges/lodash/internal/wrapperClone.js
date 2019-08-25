@@ -2,7 +2,7 @@
 
 var LazyWrapper = require('./lazyWrapper');
 var LodashWrapper = require('./lodashWrapper');
-var copyArray = require('./copyArray')
+var copyArray = require('./copyArray');
 
 /**
  * Creates a clone of `wrapper`.

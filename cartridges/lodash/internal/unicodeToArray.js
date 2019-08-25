@@ -13,12 +13,12 @@ var rsVarRange = '\\ufe0e\\ufe0f';
 /** Used to compose unicode capture groups. */
 var rsAstral = '[' + rsAstralRange + ']';
 var rsCombo = '[' + rsComboRange + ']';
-var rsFitz = '\\ud83c[\\udffb-\\udfff]'
+var rsFitz = '\\ud83c[\\udffb-\\udfff]';
 var rsModifier = '(?:' + rsCombo + '|' + rsFitz + ')';
 var rsNonAstral = '[^' + rsAstralRange + ']';
-var rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}'
-var rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]'
-var rsZWJ = '\\u200d'
+var rsRegional = '(?:\\ud83c[\\udde6-\\uddff]){2}';
+var rsSurrPair = '[\\ud800-\\udbff][\\udc00-\\udfff]';
+var rsZWJ = '\\u200d';
 
 /** Used to compose unicode regexes. */
 var reOptMod = rsModifier + '?';
@@ -39,7 +39,7 @@ var reUnicode = RegExp(rsFitz + '(?=' + rsFitz + ')|' + rsSymbol + rsSeq, 'g');
  * @returns {Array} Returns the converted array.
  */
 function unicodeToArray(string) {
-  return string.match(reUnicode) || []
+    return string.match(reUnicode) || [];
 }
 
 module.exports = unicodeToArray;

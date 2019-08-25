@@ -68,7 +68,7 @@ function createHybrid(func, bitmask, thisArg, partials, holders, partialsRight, 
         }
         length -= holdersCount; // eslint-disable-line
         if (isCurried && length < arity) {
-            var newHolders = replaceHolders(args, placeholder);// eslint-disable-line
+            var newHolders = replaceHolders(args, placeholder); // eslint-disable-line
             return createRecurry(
                 func, bitmask, createHybrid, wrapper.placeholder, thisArg,
                 args, newHolders, argPos, ary, arity - length

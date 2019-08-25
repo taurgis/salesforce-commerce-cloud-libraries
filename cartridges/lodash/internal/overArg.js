@@ -50,8 +50,8 @@ var overArgs = castRest(function (func, transforms) {
 
     var funcsLength = transforms.length;
     return baseRest(function (args) {
-        var index = -1,
-            length = nativeMin(args.length, funcsLength);
+        var index = -1;
+        var length = nativeMin(args.length, funcsLength);
 
         while (++index < length) {
             args[index] = transforms[index].call(this, args[index]);

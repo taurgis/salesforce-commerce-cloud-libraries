@@ -1,6 +1,6 @@
 'use strict';
 
-var isObject= require('../isObject.js');
+var isObject = require('../isObject.js');
 
 /**
  * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.
@@ -11,7 +11,7 @@ var isObject= require('../isObject.js');
  *  equality comparisons, else `false`.
  */
 function isStrictComparable(value) {
-  return value === value && !isObject(value)
+    return value === value && !isObject(value);
 }
 
 module.exports = isStrictComparable;

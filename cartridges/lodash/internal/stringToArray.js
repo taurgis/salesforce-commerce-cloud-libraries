@@ -12,9 +12,9 @@ var unicodeToArray = require('./unicodeToArray');
  * @returns {Array} Returns the converted array.
  */
 function stringToArray(string) {
-  return hasUnicode(string)
-    ? unicodeToArray(string)
-    : asciiToArray(string)
+    return hasUnicode(string)
+        ? unicodeToArray(string)
+        : asciiToArray(string);
 }
 
 module.exports = stringToArray;

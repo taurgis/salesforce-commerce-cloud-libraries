@@ -9,12 +9,12 @@
  * @returns {Function} Returns `func`.
  */
 function setToString(func, string) {
-  return Object.defineProperty(func, 'toString', {
-    'configurable': true,
-    'enumerable': false,
-    'value': function() {return string },
-    'writable': true
-  })
+    return Object.defineProperty(func, 'toString', {
+        configurable: true,
+        enumerable: false,
+        value: function () { return string; },
+        writable: true
+    });
 }
 
 module.exports = setToString;

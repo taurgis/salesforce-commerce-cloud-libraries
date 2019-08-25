@@ -4,7 +4,7 @@ var ListCache = require('./ListCache');
 var MapCache = require('./MapCache');
 
 /** Used as the size to enable large array optimizations. */
-var LARGE_ARRAY_SIZE = 200
+var LARGE_ARRAY_SIZE = 200;
 
 /**
  * Creates a stack cache object to store key-value pairs.
@@ -14,8 +14,8 @@ var LARGE_ARRAY_SIZE = 200
  * @param {Array} [entries] The key-value pairs to cache.
  */
 function Stack(entries) {
-    var data = this.__data__ = new ListCache(entries)
-    this.size = data.size
+    var data = this.__data__ = new ListCache(entries);
+    this.size = data.size;
 }
 
 
@@ -25,9 +25,9 @@ function Stack(entries) {
  * @memberOf Stack
  */
 Stack.prototype.clear = function () {
-    this.__data__ = new ListCache
-    this.size = 0
-}
+    this.__data__ = new ListCache();
+    this.size = 0;
+};
 
 /**
  * Removes `key` and its value= require(the stack.);
@@ -37,12 +37,12 @@ Stack.prototype.clear = function () {
  * @returns {boolean} Returns `true` if the entry was removed, else `false`.
  */
 Stack.prototype.delete = function (key) {
-    var data = this.__data__
-    var result = data['delete'](key)
+    var data = this.__data__;
+    var result = data.delete(key);
 
-    this.size = data.size
-    return result
-}
+    this.size = data.size;
+    return result;
+};
 
 /**
  * Gets the stack value for `key`.
@@ -52,8 +52,8 @@ Stack.prototype.delete = function (key) {
  * @returns {*} Returns the entry value.
  */
 Stack.prototype.get = function (key) {
-    return this.__data__.get(key)
-}
+    return this.__data__.get(key);
+};
 
 /**
  * Checks if a stack value for `key` exists.
@@ -63,8 +63,8 @@ Stack.prototype.get = function (key) {
  * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
  */
 Stack.prototype.has = function (key) {
-    return this.__data__.has(key)
-}
+    return this.__data__.has(key);
+};
 
 /**
  * Sets the stack `key` to `value`.
@@ -75,20 +75,20 @@ Stack.prototype.has = function (key) {
  * @returns {Object} Returns the stack cache instance.
  */
 Stack.prototype.set = function (key, value) {
-    let data = this.__data__
+    let data = this.__data__;
     if (data instanceof ListCache) {
-        var pairs = data.__data__
+        var pairs = data.__data__;
         if (pairs.length < LARGE_ARRAY_SIZE - 1) {
-            pairs.push([key, value])
-            this.size = ++data.size
-            return this
+            pairs.push([key, value]);
+            this.size = ++data.size;
+            return this;
         }
-        data = this.__data__ = new MapCache(pairs)
+        data = this.__data__ = new MapCache(pairs);
     }
-    data.set(key, value)
-    this.size = data.size
-    return this
-}
+    data.set(key, value);
+    this.size = data.size;
+    return this;
+};
 
 
 module.exports = Stack;

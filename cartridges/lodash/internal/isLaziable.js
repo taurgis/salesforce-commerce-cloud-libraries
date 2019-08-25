@@ -14,8 +14,8 @@ var lodash = require('../wrapperLodash');
  *  else `false`.
  */
 function isLaziable(func) {
-    var funcName = getFuncName(func),
-        other = lodash[funcName];
+    var funcName = getFuncName(func);
+    var other = lodash[funcName];
 
     if (typeof other != 'function' || !(funcName in LazyWrapper.prototype)) {
         return false;

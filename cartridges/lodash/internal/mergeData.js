@@ -8,12 +8,12 @@ var replaceHolders = require('./replaceHolders');
 var PLACEHOLDER = '__lodash_placeholder__';
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-    WRAP_BIND_KEY_FLAG = 2,
-    WRAP_CURRY_BOUND_FLAG = 4,
-    WRAP_CURRY_FLAG = 8,
-    WRAP_ARY_FLAG = 128,
-    WRAP_REARG_FLAG = 256;
+var WRAP_BIND_FLAG = 1;
+var WRAP_BIND_KEY_FLAG = 2;
+var WRAP_CURRY_BOUND_FLAG = 4;
+var WRAP_CURRY_FLAG = 8;
+var WRAP_ARY_FLAG = 128;
+var WRAP_REARG_FLAG = 256;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
 var nativeMin = Math.min;
@@ -35,10 +35,10 @@ var nativeMin = Math.min;
  * @returns {Array} Returns `data`.
  */
 function mergeData(data, source) {
-    var bitmask = data[1],
-        srcBitmask = source[1],
-        newBitmask = bitmask | srcBitmask,
-        isCommon = newBitmask < (WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG | WRAP_ARY_FLAG);
+    var bitmask = data[1];
+    var srcBitmask = source[1];
+    var newBitmask = bitmask | srcBitmask;
+    var isCommon = newBitmask < (WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG | WRAP_ARY_FLAG);
 
     var isCombo =
         ((srcBitmask == WRAP_ARY_FLAG) && (bitmask == WRAP_CURRY_FLAG)) ||
@@ -65,9 +65,9 @@ function mergeData(data, source) {
     // Compose partial right arguments.
     value = source[5];
     if (value) {
-        partials = data[5];
-        data[5] = partials ? composeArgsRight(partials, value, source[6]) : value;
-        data[6] = partials ? replaceHolders(data[5], PLACEHOLDER) : source[6];
+        partials = data[5]; // eslint-disable-line
+        data[5] = partials ? composeArgsRight(partials, value, source[6]) : value; // eslint-disable-line
+        data[6] = partials ? replaceHolders(data[5], PLACEHOLDER) : source[6]; // eslint-disable-line
     }
     // Use source `argPos` if available.
     value = source[7];

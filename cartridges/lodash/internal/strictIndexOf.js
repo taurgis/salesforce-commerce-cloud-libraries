@@ -11,15 +11,15 @@
  * @returns {number} Returns the index of the matched value, else `-1`.
  */
 function strictIndexOf(array, value, fromIndex) {
-  let index = fromIndex - 1
-  var { length } = array
+    let index = fromIndex - 1;
+    var { length } = array;
 
-  while (++index < length) {
-    if (array[index] === value) {
-      return index
+    while (++index < length) {
+        if (array[index] === value) {
+            return index;
+        }
     }
-  }
-  return -1
+    return -1;
 }
 
 module.exports = strictIndexOf;

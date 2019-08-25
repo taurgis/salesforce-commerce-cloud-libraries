@@ -1,5 +1,6 @@
 'use strict';
 
+/** Used to compose unicode character classes. */
 var rsAstralRange = '\\ud800-\\udfff';
 var rsComboMarksRange = '\\u0300-\\u036f';
 var reComboHalfMarksRange = '\\ufe20-\\ufe2f';
@@ -15,8 +16,8 @@ var rsUpperRange = 'A-Z\\xc0-\\xd6\\xd8-\\xde';
 var rsVarRange = '\\ufe0e\\ufe0f';
 var rsBreakRange = rsMathOpRange + rsNonCharRange + rsPunctuationRange + rsSpaceRange;
 
+/** Used to compose unicode capture groups. */
 var rsApos = "['\u2019]";
-var rsAstral = '[' + rsAstralRange + ']';
 var rsBreak = '[' + rsBreakRange + ']';
 var rsCombo = '[' + rsComboRange + ']';
 var rsDigits = '\\d+';
@@ -43,17 +44,17 @@ var rsOrdLower = '\\d*(?:1st|2nd|3rd|(?![123])\\dth)(?=\\b|[A-Z_])';
 var rsOrdUpper = '\\d*(?:1ST|2ND|3RD|(?![123])\\dTH)(?=\\b|[a-z_])';
 var rsSeq = rsOptVar + reOptMod + rsOptJoin;
 var rsEmoji = '(?:' + [rsDingbat, rsRegional, rsSurrPair].join('|') + ')' + rsSeq;
-var rsSymbol = '(?:' + [rsNonAstral + rsCombo + '?', rsCombo, rsRegional, rsSurrPair, rsAstral].join('|') + ')';
 
+/** Used to match complex or compound words. */
 var reUnicodeWord = RegExp([
-  rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
-  rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')',
-  rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower,
-  rsUpper + '+' + rsOptContrUpper,
-  rsOrdUpper,
-  rsOrdLower,
-  rsDigits,
-  rsEmoji
+    rsUpper + '?' + rsLower + '+' + rsOptContrLower + '(?=' + [rsBreak, rsUpper, '$'].join('|') + ')',
+    rsMiscUpper + '+' + rsOptContrUpper + '(?=' + [rsBreak, rsUpper + rsMiscLower, '$'].join('|') + ')',
+    rsUpper + '?' + rsMiscLower + '+' + rsOptContrLower,
+    rsUpper + '+' + rsOptContrUpper,
+    rsOrdUpper,
+    rsOrdLower,
+    rsDigits,
+    rsEmoji
 ].join('|'), 'g');
 
 /**
@@ -63,8 +64,8 @@ var reUnicodeWord = RegExp([
  * @param {string} The string to inspect.
  * @returns {Array} Returns the words of `string`.
  */
-var unicodeWords = function unicodeWords(string) {
-  return string.match(reUnicodeWord) || [];
-};
+function unicodeWords(string) {
+    return string.match(reUnicodeWord) || [];
+}
 
-module.exports = unicodeWords
+module.exports = unicodeWords;

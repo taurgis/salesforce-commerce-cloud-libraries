@@ -17,12 +17,12 @@ var nativeNow = Date.now;
  * @returns {Function} Returns the new shortable function.
  */
 function shortOut(func) {
-    var count = 0,
-        lastCalled = 0;
+    var count = 0;
+    var lastCalled = 0;
 
     return function () {
-        var stamp = nativeNow(),
-            remaining = HOT_SPAN - (stamp - lastCalled);
+        var stamp = nativeNow();
+        var remaining = HOT_SPAN - (stamp - lastCalled);
 
         lastCalled = stamp;
         if (remaining > 0) {

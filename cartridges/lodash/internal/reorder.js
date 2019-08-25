@@ -17,9 +17,9 @@ var nativeMin = Math.min;
  * @returns {Array} Returns `array`.
  */
 function reorder(array, indexes) {
-    var arrLength = array.length,
-        length = nativeMin(indexes.length, arrLength),
-        oldArray = copyArray(array);
+    var arrLength = array.length;
+    var length = nativeMin(indexes.length, arrLength);
+    var oldArray = copyArray(array);
 
     while (length--) {
         var index = indexes[length];

@@ -17,10 +17,10 @@ var nativeMax = Math.max;
 function overRest(func, start, transform) {
     start = nativeMax(start === undefined ? (func.length - 1) : start, 0);
     return function () {
-        var args = arguments,
-            index = -1,
-            length = nativeMax(args.length - start, 0),
-            array = Array(length);
+        var args = arguments;
+        var index = -1;
+        var length = nativeMax(args.length - start, 0);
+        var array = Array(length);
 
         while (++index < length) {
             array[index] = args[start + index];

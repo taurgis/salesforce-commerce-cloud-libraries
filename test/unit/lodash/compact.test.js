@@ -4,7 +4,6 @@ var slice = require('../../../cartridges/lodash/slice');
 var range = require('../../../cartridges/lodash/range');
 var isEqual = require('../../../cartridges/lodash/isEqual');
 var identity = require('../../../cartridges/lodash/identity');
-var thru = require('../../../cartridges/lodash/thru');
 var take = require('../../../cartridges/lodash/take');
 var _ = require('../../../cartridges/lodash/chain');
 var falsey = require('../helpers/falsey');

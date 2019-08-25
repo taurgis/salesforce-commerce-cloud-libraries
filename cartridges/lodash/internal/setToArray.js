@@ -8,14 +8,14 @@
  * @returns {Array} Returns the values.
  */
 function setToArray(set) {
-  let index = -1
-  var result = new Array(set.size)
+    let index = -1;
+    var result = new Array(set.size);
 
-  set.forEach(function(value) {
-    result[++index] = value
-  });
+    set.forEach(function (value) {
+        result[++index] = value;
+    });
 
-  return result
+    return result;
 }
 
 module.exports = setToArray;

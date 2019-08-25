@@ -1,5 +1,3 @@
-'use strict';
-
 var baseCreate = require('./baseCreate');
 var baseLodash = require('./baseLodash');
 
@@ -22,5 +20,9 @@ function LazyWrapper(value) {
     this.__takeCount__ = MAX_ARRAY_LENGTH;
     this.__views__ = [];
 }
+
+// Ensure `LazyWrapper` is an instance of `baseLodash`.
+LazyWrapper.prototype = baseCreate(baseLodash.prototype);
+LazyWrapper.prototype.constructor = LazyWrapper;
 
 module.exports = LazyWrapper;

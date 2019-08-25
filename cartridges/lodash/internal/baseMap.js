@@ -12,8 +12,8 @@ var isArrayLike = require('../isArrayLike');
  * @returns {Array} Returns the new mapped array.
  */
 function baseMap(collection, iteratee) {
-    var index = -1,
-        result = isArrayLike(collection) ? Array(collection.length) : [];
+    var index = -1;
+    var result = isArrayLike(collection) ? Array(collection.length) : [];
 
     baseEach(collection, function (value, key, collection) {
         result[++index] = iteratee(value, key, collection);

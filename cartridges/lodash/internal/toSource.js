@@ -17,10 +17,14 @@ function toSource(func) {
     if (func != null) {
         try {
             return funcToString.call(func);
-        } catch (e) { }
+        } catch (e) {
+            // DO NOTHING
+        }
         try {
             return (func + '');
-        } catch (e) { }
+        } catch (e) {
+            // DO NOTHING
+        }
     }
     return '';
 }

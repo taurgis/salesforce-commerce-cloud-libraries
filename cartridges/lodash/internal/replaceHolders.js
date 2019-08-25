@@ -13,10 +13,10 @@ var PLACEHOLDER = '__lodash_placeholder__';
  * @returns {Array} Returns the new array of placeholder indexes.
  */
 function replaceHolders(array, placeholder) {
-    var index = -1,
-        length = array.length,
-        resIndex = 0,
-        result = [];
+    var index = -1;
+    var length = array.length;
+    var resIndex = 0;
+    var result = [];
 
     while (++index < length) {
         var value = array[index];

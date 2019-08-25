@@ -4,15 +4,15 @@ var arrayEach = require('./arrayEach');
 var arrayIncludes = require('./arrayIncludes');
 
 /** Used to compose bitmasks for function metadata. */
-var WRAP_BIND_FLAG = 1,
-    WRAP_BIND_KEY_FLAG = 2,
-    WRAP_CURRY_FLAG = 8,
-    WRAP_CURRY_RIGHT_FLAG = 16,
-    WRAP_PARTIAL_FLAG = 32,
-    WRAP_PARTIAL_RIGHT_FLAG = 64,
-    WRAP_ARY_FLAG = 128,
-    WRAP_REARG_FLAG = 256,
-    WRAP_FLIP_FLAG = 512;
+var WRAP_BIND_FLAG = 1;
+var WRAP_BIND_KEY_FLAG = 2;
+var WRAP_CURRY_FLAG = 8;
+var WRAP_CURRY_RIGHT_FLAG = 16;
+var WRAP_PARTIAL_FLAG = 32;
+var WRAP_PARTIAL_RIGHT_FLAG = 64;
+var WRAP_ARY_FLAG = 128;
+var WRAP_REARG_FLAG = 256;
+var WRAP_FLIP_FLAG = 512;
 
 /** Used to associate wrap methods with their bit flags. */
 var wrapFlags = [

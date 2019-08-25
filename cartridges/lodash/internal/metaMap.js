@@ -1,3 +1,3 @@
 'use strict';
 
-module.exports = new WeakMap;
+module.exports = new WeakMap();

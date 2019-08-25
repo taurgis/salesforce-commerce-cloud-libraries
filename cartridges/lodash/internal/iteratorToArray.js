@@ -8,13 +8,13 @@
  * @returns {Array} Returns the converted array.
  */
 function iteratorToArray(iterator) {
-  let data
-  var result = []
+    let data;
+    var result = [];
 
-  while (!(data = iterator.next()).done) {
-    result.push(data.value)
-  }
-  return result
+    while (!(data = iterator.next()).done) {
+        result.push(data.value);
+    }
+    return result;
 }
 
 module.exports = iteratorToArray;
