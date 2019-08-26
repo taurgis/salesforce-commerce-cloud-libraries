@@ -1,11 +1,11 @@
 'use strict';
 
-var Stack = require('./Stack.js');
-var assignMergeValue = require('./assignMergeValue.js');
-var baseFor = require('./baseFor.js');
-var baseMergeDeep = require('./baseMergeDeep.js');
-var isObject = require('../isObject.js');
-var keysIn = require('../keysIn.js');
+var Stack = require('./Stack');
+var assignMergeValue = require('./assignMergeValue');
+var baseFor = require('./baseFor');
+var baseMergeDeep = require('./baseMergeDeep');
+var isObject = require('../isObject');
+var keysIn = require('../keysIn');
 
 /**
  * The base implementation of `merge` without support for multiple sources.

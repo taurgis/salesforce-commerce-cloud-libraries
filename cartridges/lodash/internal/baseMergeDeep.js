@@ -1,17 +1,18 @@
-'use strict';
-
-var assignMergeValue = require('./assignMergeValue.js');
-var cloneBuffer = require('./cloneBuffer.js');
-var cloneTypedArray = require('./cloneTypedArray.js');
-var copyArray = require('./copyArray.js');
-var initCloneObject = require('./initCloneObject.js');
-var isArguments = require('../isArguments.js');
-var isArrayLikeObject = require('../isArrayLikeObject.js');
-var isBuffer = require('../isBuffer.js');
-var isObject = require('../isObject.js');
-var isPlainObject = require('../isPlainObject.js');
-var isTypedArray = require('../isTypedArray.js');
-var toPlainObject = require('../toPlainObject.js');
+var assignMergeValue = require('./assignMergeValue');
+var cloneBuffer = require('./cloneBuffer');
+var cloneTypedArray = require('./cloneTypedArray');
+var copyArray = require('./copyArray');
+var initCloneObject = require('./initCloneObject');
+var isArguments = require('../isArguments');
+var isArray = require('../isArray');
+var isArrayLikeObject = require('../isArrayLikeObject');
+var isBuffer = require('../isBuffer');
+var isFunction = require('../isFunction');
+var isObject = require('../isObject');
+var isPlainObject = require('../isPlainObject');
+var isTypedArray = require('../isTypedArray');
+var safeGet = require('./safeGet');
+var toPlainObject = require('../toPlainObject');
 
 /**
  * A specialized version of `baseMerge` for arrays and objects which performs
@@ -29,28 +30,28 @@ var toPlainObject = require('../toPlainObject.js');
  *  counterparts.
  */
 function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, stack) {
-    var objValue = object[key];
-    var srcValue = source[key];
+    var objValue = safeGet(object, key);
+    var srcValue = safeGet(source, key);
     var stacked = stack.get(srcValue);
 
     if (stacked) {
         assignMergeValue(object, key, stacked);
         return;
     }
-    let newValue = customizer
-        ? customizer(objValue, srcValue, key.toString(), object, source, stack)
+    var newValue = customizer
+        ? customizer(objValue, srcValue, (key + ''), object, source, stack)
         : undefined;
 
-    let isCommon = newValue === undefined;
+    var isCommon = newValue === undefined;
 
     if (isCommon) {
-        var isArr = Array.isArray(srcValue);
+        var isArr = isArray(srcValue);
         var isBuff = !isArr && isBuffer(srcValue);
         var isTyped = !isArr && !isBuff && isTypedArray(srcValue);
 
         newValue = srcValue;
         if (isArr || isBuff || isTyped) {
-            if (Array.isArray(objValue)) {
+            if (isArray(objValue)) {
                 newValue = objValue;
             } else if (isArrayLikeObject(objValue)) {
                 newValue = copyArray(objValue);
@@ -67,7 +68,7 @@ function baseMergeDeep(object, source, key, srcIndex, mergeFunc, customizer, sta
             newValue = objValue;
             if (isArguments(objValue)) {
                 newValue = toPlainObject(objValue);
-            } else if ((srcIndex && typeof objValue == 'function') || !isObject(objValue)) {
+            } else if (!isObject(objValue) || isFunction(objValue)) {
                 newValue = initCloneObject(srcValue);
             }
         } else {

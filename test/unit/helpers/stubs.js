@@ -7,5 +7,6 @@ module.exports = {
     stubC: function () { return 'c'; },
     empties: [[], {}].concat(require('./falsey').slice(1)),
     stubObject: function () { return {}; },
-    stubString: function () { return ''; }
+    stubString: function () { return ''; },
+    noop: function () {}
 };

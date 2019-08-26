@@ -1,10 +1,10 @@
 'use strict';
 
-var baseMerge = require('./baseMerge.js');
-var isObject = require('../isObject.js');
+var baseMerge = require('./baseMerge');
+var isObject = require('../isObject');
 
 /**
- * Used by `defaultsDeep` to customize its `merge` use to merge source
+ * Used by `_.defaultsDeep` to customize its `_.merge` use to merge source
  * objects into destination objects that are passed thru.
  *
  * @private
