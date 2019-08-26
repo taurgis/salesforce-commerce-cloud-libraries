@@ -9,7 +9,9 @@
     "no-new": "off",
     "valid-jsdoc": "off",
     "new-cap": "off",
-    "no-underscore-dangle": "off"
+    "no-underscore-dangle": "off",
+    "no-self-compare": "off",
+    "no-unused-expressions": "off"
   },
   "globals": {
     "expect": "readonly",
