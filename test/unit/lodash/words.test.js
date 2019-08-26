@@ -5,7 +5,6 @@ var words = require('../../../cartridges/lodash/words');
 var map = require('../../../cartridges/lodash/map');
 var each = require('../../../cartridges/lodash/each');
 var times = require('../../../cartridges/lodash/times');
-var now = require('../../../cartridges/lodash/now');
 
 describe('words', function () {
     it('should match words containing Latin Unicode letters', function () {
