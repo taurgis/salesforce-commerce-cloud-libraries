@@ -126,6 +126,12 @@ LodashWrapper.prototype.countBy = function () {
     return new LodashWrapper(require('../countBy').apply(this, args));
 };
 
+LodashWrapper.prototype.fill = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../fill').apply(this, args));
+};
+
 LodashWrapper.prototype.take = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
