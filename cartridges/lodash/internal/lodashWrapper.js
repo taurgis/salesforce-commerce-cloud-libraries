@@ -106,6 +106,10 @@ LodashWrapper.prototype.constant = function () {
     return new LodashWrapper(require('../constant').apply(this, [this.__wrapped__]));
 };
 
+LodashWrapper.prototype.last = function () {
+    return new LodashWrapper(require('../last').apply(this, [this.__wrapped__]));
+};
+
 LodashWrapper.prototype.chain = function () {
     return this;
 };
@@ -139,6 +143,13 @@ LodashWrapper.prototype.dropRight = function () {
     args.unshift(this.__wrapped__);
     return new LodashWrapper(require('../dropRight').apply(this, args));
 };
+
+LodashWrapper.prototype.dropWhile = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropWhile').apply(this, args));
+};
+
 
 LodashWrapper.prototype.dropRightWhile = function () {
     var args = Array.prototype.slice.call(arguments);
