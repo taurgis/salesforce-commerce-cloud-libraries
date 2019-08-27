@@ -128,4 +128,22 @@ LodashWrapper.prototype.take = function () {
     return new LodashWrapper(require('../take').apply(this, args));
 };
 
+LodashWrapper.prototype.drop = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../drop').apply(this, args));
+};
+
+LodashWrapper.prototype.dropRight = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropRight').apply(this, args));
+};
+
+LodashWrapper.prototype.dropRightWhile = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropRightWhile').apply(this, args));
+};
+
 module.exports = LodashWrapper;

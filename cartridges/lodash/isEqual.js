@@ -31,9 +31,6 @@ var baseIsEqual = require('./internal/baseIsEqual');
  * // => false
  */
 function isEqual(value, other) {
-    console.log(value);
-    console.log(other);
-    console.log(baseIsEqual(value, other));
     return baseIsEqual(value, other);
 }
 
