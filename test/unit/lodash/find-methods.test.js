@@ -1,6 +1,5 @@
 var assert = require('assert');
 var empties = require('../helpers/stubs').empties;
-var slice = Array.prototype.slice;
 var LARGE_ARRAY_SIZE = require('../helpers/largeArraySize');
 var isEven = require('../helpers/isEven');
 var each = require('../../../cartridges/lodash/each');

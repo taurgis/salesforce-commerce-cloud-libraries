@@ -1,6 +1,6 @@
 'use strict';
 
-var isFunction = require('./isFunction');
+var isNil = require('./isNil');
 
 /**
  * Creates an array of values by running each element in `collection` thru
@@ -50,7 +50,11 @@ function map(array, iteratee) {
     const result = new Array(length);
 
     while (++index < length) {
-        result[index] = iteratee(array[index], index, array);
+        if (isNil(iteratee)) {
+            result[index] = array[index];
+        } else {
+            result[index] = iteratee(array[index], index, array);
+        }
     }
 
     return result;
