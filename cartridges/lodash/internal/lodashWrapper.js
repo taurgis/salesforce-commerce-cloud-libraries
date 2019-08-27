@@ -163,4 +163,34 @@ LodashWrapper.prototype.dropRightWhile = function () {
     return new LodashWrapper(require('../dropRightWhile').apply(this, args));
 };
 
+LodashWrapper.prototype.filter = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../filter').apply(this, args));
+};
+
+LodashWrapper.prototype.reject = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../reject').apply(this, args));
+};
+
+LodashWrapper.prototype.mapValues = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../mapValues').apply(this, args));
+};
+
+LodashWrapper.prototype.find = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../find').apply(this, args));
+};
+
+LodashWrapper.prototype.findLast = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLast').apply(this, args));
+};
+
 module.exports = LodashWrapper;
