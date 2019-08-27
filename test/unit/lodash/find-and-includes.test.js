@@ -1,7 +1,6 @@
 var assert = require('assert');
 var falsey = require('../helpers/falsey');
 var args = require('../helpers/args');
-var _ = require('../../../cartridges/lodash/wrapperLodash');
 var identity = require('../../../cartridges/lodash/identity');
 var each = require('../../../cartridges/lodash/each');
 var curry = require('../../../cartridges/lodash/curry');
@@ -22,8 +21,8 @@ describe('find and includes', function () {
                 default: return null;
             }
         }());
-        var isIncludes = methodName == 'includes';
-        var resolve = methodName == 'find' ? curry(eq) : identity;
+        var isIncludes = methodName === 'includes';
+        var resolve = methodName === 'find' ? curry(eq) : identity;
 
         each({
             'an `arguments` object': args,

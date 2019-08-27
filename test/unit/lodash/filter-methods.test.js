@@ -11,7 +11,6 @@ var mapValues = require('../../../cartridges/lodash/mapValues');
 var _ = require('../../../cartridges/lodash/wrapperLodash');
 var LARGE_ARRAY_SIZE = require('../helpers/largeArraySize');
 var square = require('../helpers/square');
-var slice = Array.prototype.slice;
 
 describe('filter methods', function () {
     each(['filter', 'reject'], function (methodName) {
