@@ -1,5 +1,6 @@
 'use strict';
 
+var baseGetAllKeys = require('./baseGetAllKeys');
 var getSymbols = require('./getSymbols');
 var keys = require('../keys');
 
@@ -11,11 +12,7 @@ var keys = require('../keys');
  * @returns {Array} Returns the array of property names and symbols.
  */
 function getAllKeys(object) {
-    var result = keys(object);
-    if (!Array.isArray(object)) {
-        result.push(getSymbols(object));
-    }
-    return result;
+    return baseGetAllKeys(object, keys, getSymbols);
 }
 
 module.exports = getAllKeys;

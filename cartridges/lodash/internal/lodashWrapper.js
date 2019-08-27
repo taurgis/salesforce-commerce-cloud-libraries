@@ -98,12 +98,26 @@ LodashWrapper.prototype.flatten = function () {
     return new LodashWrapper(require('../flatten').apply(this, [this.__wrapped__]));
 };
 
+LodashWrapper.prototype.flattenDeep = function () {
+    return new LodashWrapper(require('../flattenDeep').apply(this, [this.__wrapped__]));
+};
+
+LodashWrapper.prototype.flattenDepth = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flattenDepth').apply(this, args));
+};
+
 LodashWrapper.prototype.head = function () {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
 };
 
 LodashWrapper.prototype.constant = function () {
     return new LodashWrapper(require('../constant').apply(this, [this.__wrapped__]));
+};
+
+LodashWrapper.prototype.last = function () {
+    return new LodashWrapper(require('../last').apply(this, [this.__wrapped__]));
 };
 
 LodashWrapper.prototype.chain = function () {
@@ -122,10 +136,127 @@ LodashWrapper.prototype.countBy = function () {
     return new LodashWrapper(require('../countBy').apply(this, args));
 };
 
+LodashWrapper.prototype.fill = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../fill').apply(this, args));
+};
+
 LodashWrapper.prototype.take = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
     return new LodashWrapper(require('../take').apply(this, args));
+};
+
+LodashWrapper.prototype.drop = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../drop').apply(this, args));
+};
+
+LodashWrapper.prototype.dropRight = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropRight').apply(this, args));
+};
+
+LodashWrapper.prototype.dropWhile = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropWhile').apply(this, args));
+};
+
+
+LodashWrapper.prototype.dropRightWhile = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../dropRightWhile').apply(this, args));
+};
+
+LodashWrapper.prototype.filter = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../filter').apply(this, args));
+};
+
+LodashWrapper.prototype.reject = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../reject').apply(this, args));
+};
+
+LodashWrapper.prototype.mapValues = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../mapValues').apply(this, args));
+};
+
+LodashWrapper.prototype.find = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../find').apply(this, args));
+};
+
+LodashWrapper.prototype.findIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findIndex').apply(this, args));
+};
+
+LodashWrapper.prototype.findLastIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLastIndex').apply(this, args));
+};
+
+
+LodashWrapper.prototype.findKey = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findKey').apply(this, args));
+};
+
+LodashWrapper.prototype.findLastKey = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLastKey').apply(this, args));
+};
+
+LodashWrapper.prototype.findLast = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLast').apply(this, args));
+};
+
+LodashWrapper.prototype.flow = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flow').apply(this, args));
+};
+
+
+LodashWrapper.prototype.flowRight = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flowRight').apply(this, args));
+};
+
+LodashWrapper.prototype.plant = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../plant').apply(this, args));
+};
+
+LodashWrapper.prototype.fromPairs = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../fromPairs').apply(this, args));
+};
+
+LodashWrapper.prototype.toPairs = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../toPairs').apply(this, args));
 };
 
 module.exports = LodashWrapper;

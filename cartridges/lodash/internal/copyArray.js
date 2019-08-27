@@ -9,10 +9,10 @@
  * @returns {Array} Returns `array`.
  */
 function copyArray(source, array) {
-    let index = -1;
+    var index = -1;
     var length = source.length;
 
-    array || (array = new Array(length));
+    array || (array = Array(length));
     while (++index < length) {
         array[index] = source[index];
     }
@@ -20,3 +20,4 @@ function copyArray(source, array) {
 }
 
 module.exports = copyArray;
+

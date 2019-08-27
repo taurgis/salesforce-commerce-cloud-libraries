@@ -1,9 +1,11 @@
 'use strict';
 
-var isArguments = require('../isArguments');
 
-/** Built-in value reference. */
-var spreadableSymbol = false;
+var isArguments = require('../isArguments');
+var isArray = require('../isArray');
+
+/** Built-in value references. */
+var spreadableSymbol;
 
 /**
  * Checks if `value` is a flattenable `arguments` object or array.
@@ -13,8 +15,8 @@ var spreadableSymbol = false;
  * @returns {boolean} Returns `true` if `value` is flattenable, else `false`.
  */
 function isFlattenable(value) {
-    return Array.isArray(value) || isArguments(value) ||
-    !!(value && value[spreadableSymbol]);
+    return isArray(value) || isArguments(value) ||
+    !!(spreadableSymbol && value && value[spreadableSymbol]);
 }
 
 module.exports = isFlattenable;

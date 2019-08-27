@@ -80,17 +80,17 @@ server.get('Test', function (req, res, next) {
             drop: timeFunction(require('lodash/drop'), [1, 2, 3], 2),
             dropRight: timeFunction(require('lodash/dropRight'), [1, 2, 3], 2),
             dropRightWhile: timeFunction(require('lodash/dropRightWhile'), [
-                { user: 'barney', active: false },
-                { user: 'fred', active: true },
-                { user: 'pebbles', active: true }
-            ], function ({ active }) { return active; }),
+                { 'user': 'barney', 'active': true },
+                { 'user': 'fred', 'active': false },
+                { 'user': 'pebbles', 'active': false }
+            ], function (o) { return !o.active; }),
             dropWhile: timeFunction(require('lodash/dropWhile'), [
                 { user: 'barney', active: true },
                 { user: 'fred', active: true },
                 { user: 'pebbles', active: false }
             ], function ({ active }) { return active; }),
             forEach: forEachTest,
-            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'b'),
+            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'c'),
             eq: timeFunction(require('lodash/eq'), 'a', Object('a')),
             // eqDeep: require('lodash/eqDeep')({ a: 1 }, { a: 1 }),
             escape: timeFunction(require('lodash/escape'), 'fred, barney, & pebbles'),

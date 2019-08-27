@@ -1,22 +1,10 @@
 'use strict';
 
-var root = require('./root.js');
-
-/** Detect free variable `exports`. */
-var freeExports = typeof exports == 'object' && exports !== null && !exports.nodeType && exports;
-
-/** Detect free variable `module`. */
-var freeModule = freeExports && typeof module == 'object' && module !== null && !module.nodeType && module;
-
-/** Detect the popular CommonJS extension `module.exports`. */
-var moduleExports = freeModule && freeModule.exports === freeExports;
-
 /** Built-in value references. */
-var Buffer = moduleExports ? root.Buffer : undefined;
-var allocUnsafe = Buffer ? Buffer.allocUnsafe : undefined;
+var allocUnsafe;
 
 /**
- * Creates a clone of `buffer`.
+ * Creates a clone of  `buffer`.
  *
  * @private
  * @param {Buffer} buffer The buffer to clone.

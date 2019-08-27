@@ -1,27 +1,10 @@
 'use strict';
 
+var arrayPush = require('./arrayPush');
 var isFlattenable = require('./isFlattenable');
-/**
- * Appends the elements of `values` to `array`.
- *
- * @private
- * @param {Array} array The array to modify.
- * @param {Array} values The values to append.
- * @returns {Array} Returns `array`.
- */
-function arrayPush(array, values) {
-    var index = -1;
-    var length = values.length;
-    var offset = array.length;
-
-    while (++index < length) {
-        array[offset + index] = values[index];
-    }
-    return array;
-}
 
 /**
- * The base implementation of `flatten` with support for restricting flattening.
+ * The base implementation of `_.flatten` with support for restricting flattening.
  *
  * @private
  * @param {Array} array The array to flatten.
@@ -40,6 +23,7 @@ function baseFlatten(array, depth, predicate, isStrict, result) {
 
     while (++index < length) {
         var value = array[index];
+
         if (depth > 0 && predicate(value)) {
             if (depth > 1) {
                 // Recursively flatten arrays (susceptible to call stack limits).

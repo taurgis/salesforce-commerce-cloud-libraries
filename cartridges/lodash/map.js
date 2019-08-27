@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayMap = require('./internal/arrayMap');
 var baseIteratee = require('./internal/baseIteratee');
 var baseMap = require('./internal/baseMap');
@@ -30,10 +32,10 @@ var isArray = require('./isArray');
  *   return n * n;
  * }
  *
- * _.map([4, 8], square);
+ * map([4, 8], square);
  * // => [16, 64]
  *
- * _.map({ 'a': 4, 'b': 8 }, square);
+ * map({ 'a': 4, 'b': 8 }, square);
  * // => [16, 64] (iteration order is not guaranteed)
  *
  * var users = [
@@ -51,3 +53,4 @@ function map(collection, iteratee) {
 }
 
 module.exports = map;
+

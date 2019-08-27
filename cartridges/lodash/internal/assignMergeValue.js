@@ -1,7 +1,7 @@
 'use strict';
 
-var baseAssignValue = require('./baseAssignValue.js');
-var eq = require('../eq.js');
+var baseAssignValue = require('./baseAssignValue');
+var eq = require('../eq');
 
 /**
  * This function is like `assignValue` except that it doesn't assign
