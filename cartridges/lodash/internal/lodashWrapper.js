@@ -187,6 +187,31 @@ LodashWrapper.prototype.find = function () {
     return new LodashWrapper(require('../find').apply(this, args));
 };
 
+LodashWrapper.prototype.findIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findIndex').apply(this, args));
+};
+
+LodashWrapper.prototype.findLastIndex = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLastIndex').apply(this, args));
+};
+
+
+LodashWrapper.prototype.findKey = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findKey').apply(this, args));
+};
+
+LodashWrapper.prototype.findLastKey = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../findLastKey').apply(this, args));
+};
+
 LodashWrapper.prototype.findLast = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);

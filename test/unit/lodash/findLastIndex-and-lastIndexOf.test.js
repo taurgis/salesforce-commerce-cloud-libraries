@@ -1,7 +1,6 @@
 var assert = require('assert');
 var falsey = require('../helpers/falsey');
 var stubZero = require('../helpers/stubs').stubZero;
-var _ = require('../../../cartridges/lodash/wrapperLodash');
 var each = require('../../../cartridges/lodash/each');
 var map = require('../../../cartridges/lodash/map');
 var curry = require('../../../cartridges/lodash/curry');
