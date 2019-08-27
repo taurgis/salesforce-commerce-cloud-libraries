@@ -1,9 +1,14 @@
 'use strict';
-
 var getAllKeys = require('./getAllKeys');
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * A specialized version of `baseIsEqualDeep` for objects with support for
@@ -28,11 +33,10 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
     if (objLength != othLength && !isPartial) {
         return false;
     }
-    let key;
-    let index = objLength;
+    var index = objLength;
     while (index--) {
-        key = objProps[index];
-        if (!(isPartial ? key in other : other.hasOwnProperty(key))) {
+        var key = objProps[index];
+        if (!(isPartial ? key in other : hasOwnProperty.call(other, key))) {
             return false;
         }
     }
@@ -41,19 +45,18 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
     if (stacked && stack.get(other)) {
         return stacked == other;
     }
-    let result = true;
+    var result = true;
     stack.set(object, other);
     stack.set(other, object);
 
-    let compared;
-    let skipCtor = isPartial;
+    var skipCtor = isPartial;
     while (++index < objLength) {
         key = objProps[index];
         var objValue = object[key];
         var othValue = other[key];
 
         if (customizer) {
-            compared = isPartial
+            var compared = isPartial
                 ? customizer(othValue, objValue, key, other, object, stack)
                 : customizer(objValue, othValue, key, object, other, stack);
         }

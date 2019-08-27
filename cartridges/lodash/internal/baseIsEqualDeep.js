@@ -5,6 +5,7 @@ var equalArrays = require('./equalArrays');
 var equalByTag = require('./equalByTag');
 var equalObjects = require('./equalObjects');
 var getTag = require('./getTag');
+var isArray = require('../isArray');
 var isBuffer = require('../isBuffer');
 var isTypedArray = require('../isTypedArray');
 
@@ -16,6 +17,11 @@ var argsTag = '[object Arguments]';
 var arrayTag = '[object Array]';
 var objectTag = '[object Object]';
 
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * A specialized version of `baseIsEqual` for arrays and objects which performs
@@ -32,15 +38,15 @@ var objectTag = '[object Object]';
  * @returns {boolean} Returns `true` if the objects are equivalent, else `false`.
  */
 function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
-    let objIsArr = Array.isArray(object);
-    var othIsArr = Array.isArray(other);
-    let objTag = objIsArr ? arrayTag : getTag(object);
-    let othTag = othIsArr ? arrayTag : getTag(other);
+    var objIsArr = isArray(object);
+    var othIsArr = isArray(other);
+    var objTag = objIsArr ? arrayTag : getTag(object);
+    var othTag = othIsArr ? arrayTag : getTag(other);
 
     objTag = objTag == argsTag ? objectTag : objTag;
     othTag = othTag == argsTag ? objectTag : othTag;
 
-    let objIsObj = objTag == objectTag;
+    var objIsObj = objTag == objectTag;
     var othIsObj = othTag == objectTag;
     var isSameTag = objTag == othTag;
 
@@ -58,8 +64,8 @@ function baseIsEqualDeep(object, other, bitmask, customizer, equalFunc, stack) {
             : equalByTag(object, other, objTag, bitmask, customizer, equalFunc, stack);
     }
     if (!(bitmask & COMPARE_PARTIAL_FLAG)) {
-        var objIsWrapped = objIsObj && object.hasOwnProperty('__wrapped__');
-        var othIsWrapped = othIsObj && other.hasOwnProperty('__wrapped__');
+        var objIsWrapped = objIsObj && hasOwnProperty.call(object, '__wrapped__');
+        var othIsWrapped = othIsObj && hasOwnProperty.call(other, '__wrapped__');
 
         if (objIsWrapped || othIsWrapped) {
             var objUnwrapped = objIsWrapped ? object.value() : object;

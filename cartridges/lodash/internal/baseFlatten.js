@@ -1,9 +1,10 @@
 'use strict';
 
+var arrayPush = require('./arrayPush');
 var isFlattenable = require('./isFlattenable');
 
 /**
- * The base implementation of `flatten` with support for restricting flattening.
+ * The base implementation of `_.flatten` with support for restricting flattening.
  *
  * @private
  * @param {Array} array The array to flatten.
@@ -14,20 +15,20 @@ var isFlattenable = require('./isFlattenable');
  * @returns {Array} Returns the new flattened array.
  */
 function baseFlatten(array, depth, predicate, isStrict, result) {
+    var index = -1;
+    var length = array.length;
+
     predicate || (predicate = isFlattenable);
     result || (result = []);
 
-    if (array == null) {
-        return result;
-    }
-
-    for (const value of array) {
+    while (++index < length) {
+        var value = array[index];
         if (depth > 0 && predicate(value)) {
             if (depth > 1) {
                 // Recursively flatten arrays (susceptible to call stack limits).
                 baseFlatten(value, depth - 1, predicate, isStrict, result);
             } else {
-                result.push(...value);
+                arrayPush(result, value);
             }
         } else if (!isStrict) {
             result[result.length] = value;

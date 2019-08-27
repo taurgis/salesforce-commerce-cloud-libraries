@@ -30,6 +30,7 @@ function differenceWith(array) {
     var values = Array.prototype.slice.call(arguments);
     values.shift();
     let comparator = last(values);
+
     if (isArrayLikeObject(comparator)) {
         comparator = undefined;
     }
