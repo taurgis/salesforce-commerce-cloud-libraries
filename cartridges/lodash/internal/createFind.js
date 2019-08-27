@@ -3,6 +3,7 @@
 var baseIteratee = require('./baseIteratee');
 var isArrayLike = require('../isArrayLike');
 var keys = require('../keys');
+var toInteger = require('../toInteger');
 
 /**
  * Creates a `_.find` or `_.findLast` function.
@@ -19,7 +20,7 @@ function createFind(findIndexFunc) {
             collection = keys(collection);
             predicate = function (key) { return iteratee(iterable[key], key, iterable); };
         }
-        var index = findIndexFunc(collection, predicate, fromIndex);
+        var index = findIndexFunc(collection, predicate, toInteger(fromIndex));
         return index > -1 ? iterable[iteratee ? collection[index] : index] : undefined; // eslint-disable-line
     };
 }

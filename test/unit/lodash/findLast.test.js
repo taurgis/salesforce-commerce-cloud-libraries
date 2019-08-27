@@ -63,24 +63,23 @@ describe('findLast', function () {
             assert.deepStrictEqual(actual, expected);
         });
 
-        /*
-            TODO: Fix test
-            it('should work with ' + key + ' and coerce `fromIndex` to an integer', function () {
-                var expected = [
-                    values[0],
-                    values[0],
-                    undefined
-                ];
 
-                var actual = [
-                    findLast(collection, resolve(values[0]), 0.1),
-                    findLast(collection, resolve(values[0]), NaN),
-                    findLast(collection, resolve(values[2]), '1')
-                ];
+        it('should work with ' + key + ' and coerce `fromIndex` to an integer', function () {
+            var expected = [
+                values[0],
+                values[0],
+                undefined
+            ];
 
-                assert.deepStrictEqual(actual, expected);
-            });
-        */
+            var actual = [
+                findLast(collection, resolve(values[0]), 0.1),
+                findLast(collection, resolve(values[0]), NaN),
+                findLast(collection, resolve(values[2]), '1')
+            ];
+
+            assert.deepStrictEqual(actual, expected);
+        });
+
 
         it('should work with ' + key + ' and a negative `fromIndex`', function () {
             var expected = [
