@@ -259,4 +259,10 @@ LodashWrapper.prototype.toPairs = function () {
     return new LodashWrapper(require('../toPairs').apply(this, args));
 };
 
+LodashWrapper.prototype.groupBy = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../groupBy').apply(this, args));
+};
+
 module.exports = LodashWrapper;
