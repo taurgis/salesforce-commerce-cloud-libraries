@@ -23,6 +23,7 @@ function baseFlatten(array, depth, predicate, isStrict, result) {
 
     while (++index < length) {
         var value = array[index];
+
         if (depth > 0 && predicate(value)) {
             if (depth > 1) {
                 // Recursively flatten arrays (susceptible to call stack limits).

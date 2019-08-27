@@ -1,6 +1,9 @@
 'use strict';
 
-var isNil = require('./isNil');
+var arrayMap = require('./internal/arrayMap');
+var baseIteratee = require('./internal/baseIteratee');
+var baseMap = require('./internal/baseMap');
+var isArray = require('./isArray');
 
 /**
  * Creates an array of values by running each element in `collection` thru
@@ -41,23 +44,13 @@ var isNil = require('./isNil');
  * ];
  *
  * // The `_.property` iteratee shorthand.
- * map(users, 'user');
+ * _.map(users, 'user');
  * // => ['barney', 'fred']
  */
-function map(array, iteratee) {
-    let index = -1;
-    const length = array == null ? 0 : array.length;
-    const result = new Array(length);
-
-    while (++index < length) {
-        if (isNil(iteratee)) {
-            result[index] = array[index];
-        } else {
-            result[index] = iteratee(array[index], index, array);
-        }
-    }
-
-    return result;
+function map(collection, iteratee) {
+    var func = isArray(collection) ? arrayMap : baseMap;
+    return func(collection, baseIteratee(iteratee, 3));
 }
 
 module.exports = map;
+

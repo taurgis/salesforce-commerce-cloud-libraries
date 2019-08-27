@@ -98,6 +98,16 @@ LodashWrapper.prototype.flatten = function () {
     return new LodashWrapper(require('../flatten').apply(this, [this.__wrapped__]));
 };
 
+LodashWrapper.prototype.flattenDeep = function () {
+    return new LodashWrapper(require('../flattenDeep').apply(this, [this.__wrapped__]));
+};
+
+LodashWrapper.prototype.flattenDepth = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flattenDepth').apply(this, args));
+};
+
 LodashWrapper.prototype.head = function () {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
 };
