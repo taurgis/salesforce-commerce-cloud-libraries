@@ -247,4 +247,16 @@ LodashWrapper.prototype.plant = function () {
     return new LodashWrapper(require('../plant').apply(this, args));
 };
 
+LodashWrapper.prototype.fromPairs = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../fromPairs').apply(this, args));
+};
+
+LodashWrapper.prototype.toPairs = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../toPairs').apply(this, args));
+};
+
 module.exports = LodashWrapper;
