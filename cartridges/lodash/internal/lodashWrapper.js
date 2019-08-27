@@ -265,4 +265,11 @@ LodashWrapper.prototype.groupBy = function () {
     return new LodashWrapper(require('../groupBy').apply(this, args));
 };
 
+LodashWrapper.prototype.first = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../first').apply(this, args));
+};
+
+
 module.exports = LodashWrapper;
