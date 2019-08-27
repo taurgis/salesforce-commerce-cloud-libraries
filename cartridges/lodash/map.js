@@ -52,6 +52,7 @@ function map(array, iteratee) {
     while (++index < length) {
         result[index] = iteratee(array[index], index, array);
     }
+
     return result;
 }
 
