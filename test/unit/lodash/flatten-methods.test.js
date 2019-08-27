@@ -3,10 +3,7 @@ var args = require('../helpers/args');
 var flatten = require('../../../cartridges/lodash/flatten');
 var flattenDeep = require('../../../cartridges/lodash/flattenDeep');
 var flattenDepth = require('../../../cartridges/lodash/flattenDepth');
-var map = require('../../../cartridges/lodash/map');
 var each = require('../../../cartridges/lodash/each');
-var times = require('../../../cartridges/lodash/times');
-var constant = require('../../../cartridges/lodash/constant');
 var _ = require('../../../cartridges/lodash/wrapperLodash');
 
 describe('flatten methods', function () {

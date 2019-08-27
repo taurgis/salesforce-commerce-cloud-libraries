@@ -228,4 +228,23 @@ LodashWrapper.prototype.findLast = function () {
     return new LodashWrapper(require('../findLast').apply(this, args));
 };
 
+LodashWrapper.prototype.flow = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flow').apply(this, args));
+};
+
+
+LodashWrapper.prototype.flowRight = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../flowRight').apply(this, args));
+};
+
+LodashWrapper.prototype.plant = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../plant').apply(this, args));
+};
+
 module.exports = LodashWrapper;

@@ -11,7 +11,8 @@
     "new-cap": "off",
     "no-underscore-dangle": "off",
     "no-self-compare": "off",
-    "no-unused-expressions": "off"
+    "no-unused-expressions": "off",
+    "block-scoped-var": "off"
   },
   "globals": {
     "expect": "readonly",
