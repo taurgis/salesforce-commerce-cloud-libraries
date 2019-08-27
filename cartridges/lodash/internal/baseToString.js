@@ -1,17 +1,17 @@
 'use strict';
-
+var arrayMap = require('./arrayMap');
+var isArray = require('../isArray');
 var isSymbol = require('../isSymbol');
 
 /** Used as references for various `Number` constants. */
 var INFINITY = 1 / 0;
 
 /** Used to convert symbols to primitives and strings. */
-var symbolToString = function (value) {
-    return value.toString();
-};
+
+var symbolToString;
 
 /**
- * The base implementation of `toString` which doesn't convert nullish
+ * The base implementation of `_.toString` which doesn't convert nullish
  * values to empty strings.
  *
  * @private
@@ -23,14 +23,14 @@ function baseToString(value) {
     if (typeof value == 'string') {
         return value;
     }
-    if (Array.isArray(value)) {
+    if (isArray(value)) {
     // Recursively convert values (susceptible to call stack limits).
-        return value.map(baseToString).toString();
+        return arrayMap(value, baseToString) + '';
     }
     if (isSymbol(value)) {
         return symbolToString ? symbolToString.call(value) : '';
     }
-    var result = value.toString();
+    var result = (value + '');
     return (result == '0' && (1 / value) == -INFINITY) ? '-0' : result;
 }
 

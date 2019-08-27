@@ -90,7 +90,7 @@ server.get('Test', function (req, res, next) {
                 { user: 'pebbles', active: false }
             ], function ({ active }) { return active; }),
             forEach: forEachTest,
-            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'b'),
+            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'c'),
             eq: timeFunction(require('lodash/eq'), 'a', Object('a')),
             // eqDeep: require('lodash/eqDeep')({ a: 1 }, { a: 1 }),
             escape: timeFunction(require('lodash/escape'), 'fred, barney, & pebbles'),

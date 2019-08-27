@@ -1,7 +1,6 @@
-var arrayMap = require('./internal/arrayMap');
-var baseIteratee = require('./internal/baseIteratee');
-var baseMap = require('./internal/baseMap');
-var isArray = require('./isArray');
+'use strict';
+
+var isFunction = require('./isFunction');
 
 /**
  * Creates an array of values by running each element in `collection` thru
@@ -30,10 +29,10 @@ var isArray = require('./isArray');
  *   return n * n;
  * }
  *
- * _.map([4, 8], square);
+ * map([4, 8], square);
  * // => [16, 64]
  *
- * _.map({ 'a': 4, 'b': 8 }, square);
+ * map({ 'a': 4, 'b': 8 }, square);
  * // => [16, 64] (iteration order is not guaranteed)
  *
  * var users = [
@@ -42,12 +41,18 @@ var isArray = require('./isArray');
  * ];
  *
  * // The `_.property` iteratee shorthand.
- * _.map(users, 'user');
+ * map(users, 'user');
  * // => ['barney', 'fred']
  */
-function map(collection, iteratee) {
-    var func = isArray(collection) ? arrayMap : baseMap;
-    return func(collection, baseIteratee(iteratee, 3));
+function map(array, iteratee) {
+    let index = -1;
+    const length = array == null ? 0 : array.length;
+    const result = new Array(length);
+
+    while (++index < length) {
+        result[index] = iteratee(array[index], index, array);
+    }
+    return result;
 }
 
 module.exports = map;
