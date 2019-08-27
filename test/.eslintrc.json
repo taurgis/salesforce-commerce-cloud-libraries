@@ -13,7 +13,8 @@
     "no-self-compare": "off",
     "no-unused-expressions": "off",
     "block-scoped-var": "off",
-    "no-sparse-arrays": "off"
+    "no-sparse-arrays": "off",
+    "consistent-return": "off"
   },
   "globals": {
     "expect": "readonly",

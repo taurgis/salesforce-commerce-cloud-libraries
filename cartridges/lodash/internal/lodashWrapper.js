@@ -271,5 +271,17 @@ LodashWrapper.prototype.first = function () {
     return new LodashWrapper(require('../first').apply(this, args));
 };
 
+LodashWrapper.prototype.includes = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../includes').apply(this, args));
+};
+
+LodashWrapper.prototype.initial = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../initial').apply(this, args));
+};
+
 
 module.exports = LodashWrapper;
