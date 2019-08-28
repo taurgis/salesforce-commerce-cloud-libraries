@@ -265,31 +265,8 @@ LodashWrapper.prototype.groupBy = function () {
     return new LodashWrapper(require('../groupBy').apply(this, args));
 };
 
-LodashWrapper.prototype.first = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../first').apply(this, args));
-};
 
-LodashWrapper.prototype.includes = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../includes').apply(this, args));
-};
-
-LodashWrapper.prototype.initial = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../initial').apply(this, args));
-};
-
-LodashWrapper.prototype.intersection = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../intersection').apply(this, args));
-};
-
-each(['intersectionBy', 'intersectionWith', 'invert', 'invertBy', 'invoke'], function (method) {
+each(['first', 'includes', 'initial', 'intersection', 'intersectionBy', 'intersectionWith', 'invert', 'invertBy', 'invoke', 'invokeMap'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);
