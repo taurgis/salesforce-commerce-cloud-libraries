@@ -1,6 +1,6 @@
 var baseCreate = require('./baseCreate');
 var baseLodash = require('./baseLodash');
-
+var each = require('../each');
 /**
  * The base constructor for creating `lodash` wrapper objects.
  *
@@ -289,17 +289,12 @@ LodashWrapper.prototype.intersection = function () {
     return new LodashWrapper(require('../intersection').apply(this, args));
 };
 
-LodashWrapper.prototype.intersectionBy = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../intersectionBy').apply(this, args));
-};
-
-LodashWrapper.prototype.intersectionWith = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../intersectionWith').apply(this, args));
-};
-
+each(['intersectionBy', 'intersectionWith', 'invert', 'invertBy', 'invoke'], function (method) {
+    LodashWrapper.prototype[method] = function () {
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(this.__wrapped__);
+        return new LodashWrapper(require('../' + method).apply(this, args));
+    };
+});
 
 module.exports = LodashWrapper;
