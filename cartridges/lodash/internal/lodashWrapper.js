@@ -283,5 +283,23 @@ LodashWrapper.prototype.initial = function () {
     return new LodashWrapper(require('../initial').apply(this, args));
 };
 
+LodashWrapper.prototype.intersection = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../intersection').apply(this, args));
+};
+
+LodashWrapper.prototype.intersectionBy = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../intersectionBy').apply(this, args));
+};
+
+LodashWrapper.prototype.intersectionWith = function () {
+    var args = Array.prototype.slice.call(arguments);
+    args.unshift(this.__wrapped__);
+    return new LodashWrapper(require('../intersectionWith').apply(this, args));
+};
+
 
 module.exports = LodashWrapper;
