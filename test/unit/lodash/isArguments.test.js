@@ -2,7 +2,6 @@ var assert = require('assert');
 var isArguments = require('../../../cartridges/lodash/isArguments');
 var _ = require('../../../cartridges/lodash/wrapperLodash');
 var map = require('../../../cartridges/lodash/map');
-var stubFalse = require('../helpers/stubs').stubFalse;
 var noop = require('../helpers/stubs').noop;
 var args = require('../helpers/args');
 var falsey = require('../helpers/falsey');
