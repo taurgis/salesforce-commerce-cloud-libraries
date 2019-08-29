@@ -1,7 +1,7 @@
 var assert = require('assert');
 var { stubTrue, stubFalse } = require('../helpers/stubs');
 var { MAX_SAFE_INTEGER } = require('../helpers/max');
-var _isIndex = require('../../../cartridges/lodash/isIndex');
+var _isIndex = require('../../../cartridges/lodash/internal/isIndex');
 var map = require('../../../cartridges/lodash/map');
 
 
