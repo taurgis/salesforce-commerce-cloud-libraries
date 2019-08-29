@@ -14,7 +14,8 @@
     "no-unused-expressions": "off",
     "block-scoped-var": "off",
     "no-sparse-arrays": "off",
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "no-param-reassign": "off"
   },
   "globals": {
     "expect": "readonly",

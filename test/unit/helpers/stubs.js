@@ -17,5 +17,6 @@ module.exports = {
     stubThree: function () { return 3; },
     stubFour: function () { return 4; },
     stubNaN: function () { return NaN; },
-    stubNull: function () { return null; }
+    stubNull: function () { return null; },
+    falsey: [, null, undefined, false, 0, NaN, '']
 };
