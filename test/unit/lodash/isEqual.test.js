@@ -7,7 +7,6 @@ var constant = require('../../../cartridges/lodash/constant');
 var partial = require('../../../cartridges/lodash/partial');
 var _ = require('../../../cartridges/lodash/wrapperLodash');
 var args = require('../helpers/args');
-var stubFalse = require('../helpers/stubs').stubFalse;
 var noop = require('../helpers/stubs').noop;
 var create = Object.create;
 
