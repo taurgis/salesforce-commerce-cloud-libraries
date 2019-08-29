@@ -210,63 +210,11 @@ LodashWrapper.prototype.findLastIndex = function () {
 };
 
 
-LodashWrapper.prototype.findKey = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findKey').apply(this, args));
-};
-
-LodashWrapper.prototype.findLastKey = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findLastKey').apply(this, args));
-};
-
-LodashWrapper.prototype.findLast = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findLast').apply(this, args));
-};
-
-LodashWrapper.prototype.flow = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../flow').apply(this, args));
-};
-
-
-LodashWrapper.prototype.flowRight = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../flowRight').apply(this, args));
-};
-
-LodashWrapper.prototype.plant = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../plant').apply(this, args));
-};
-
-LodashWrapper.prototype.fromPairs = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../fromPairs').apply(this, args));
-};
-
-LodashWrapper.prototype.toPairs = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../toPairs').apply(this, args));
-};
-
-LodashWrapper.prototype.groupBy = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../groupBy').apply(this, args));
-};
-
-
-each(['first', 'includes', 'initial', 'intersection', 'intersectionBy', 'intersectionWith', 'invert', 'invertBy', 'invoke', 'invokeMap'], function (method) {
+each(['findLastIndex', 'findKey', 'findLastKey', 'findLast', 'flow',
+    'flowRight', 'plant', 'fromPairs', 'toPairs', 'groupBy',
+    'first', 'includes', 'initial', 'intersection', 'intersectionBy',
+    'intersectionWith', 'invert', 'invertBy', 'invoke', 'invokeMap',
+    'isEmpty', 'isEqual'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);
