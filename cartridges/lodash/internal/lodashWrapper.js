@@ -216,7 +216,8 @@ each(['findLastIndex', 'findKey', 'findLastKey', 'findLast', 'flow',
     'intersectionWith', 'invert', 'invertBy', 'invoke', 'invokeMap',
     'isEmpty', 'isEqual', 'forEach', 'forEachRight', 'forIn', 'forInRight',
     'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
-    'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each'], function (method) {
+    'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
+    'join'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

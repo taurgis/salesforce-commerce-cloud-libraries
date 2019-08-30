@@ -1,5 +1,8 @@
 'use strict';
 
+var isArray = require('./isArray');
+var arrayLikeKeys = require('./internal/arrayLikeKeys');
+
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
  *
@@ -24,6 +27,11 @@
  */
 function keysIn(object) {
     const result = [];
+
+    if (isArray(object)) {
+        return arrayLikeKeys(object);
+    }
+
     for (var key in object) {
         result.push(key);
     }
