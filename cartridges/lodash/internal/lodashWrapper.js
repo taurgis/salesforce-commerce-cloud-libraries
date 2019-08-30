@@ -31,6 +31,12 @@ LodashWrapper.prototype.compact = function () {
     return new LodashWrapper(require('../compact').apply(this, [this.__wrapped__]));
 };
 
+LodashWrapper.prototype.sort = function () {
+    Array.prototype.sort.apply(this.__wrapped__, arguments);
+
+    return new LodashWrapper(this.__wrapped__);
+};
+
 LodashWrapper.prototype.push = function () {
     Array.prototype.push.apply(this.__wrapped__, arguments);
 
@@ -122,6 +128,10 @@ LodashWrapper.prototype.last = function () {
 
 LodashWrapper.prototype.chain = function () {
     return this;
+};
+
+LodashWrapper.prototype.commit = function () {
+    return require('../commit').apply(this);
 };
 
 LodashWrapper.prototype.sortBy = function () {
@@ -217,7 +227,7 @@ each(['findLastIndex', 'findKey', 'findLastKey', 'findLast', 'flow',
     'isEmpty', 'isEqual', 'forEach', 'forEachRight', 'forIn', 'forInRight',
     'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
     'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
-    'join'], function (method) {
+    'join', 'takeRight'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

@@ -12,7 +12,7 @@ var get = require('../get');
  */
 function baseAt(object, paths) {
     let index = -1;
-    var length = paths.length;
+    var length = paths ? paths.length : 0;
     var result = new Array(length);
     var skip = object == null;
 
