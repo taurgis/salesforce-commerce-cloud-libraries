@@ -1,6 +1,6 @@
 var baseCreate = require('./baseCreate');
 var baseLodash = require('./baseLodash');
-
+var each = require('../each');
 /**
  * The base constructor for creating `lodash` wrapper objects.
  *
@@ -29,6 +29,12 @@ LodashWrapper.prototype.thru = function () {
 
 LodashWrapper.prototype.compact = function () {
     return new LodashWrapper(require('../compact').apply(this, [this.__wrapped__]));
+};
+
+LodashWrapper.prototype.sort = function () {
+    Array.prototype.sort.apply(this.__wrapped__, arguments);
+
+    return new LodashWrapper(this.__wrapped__);
 };
 
 LodashWrapper.prototype.push = function () {
@@ -124,6 +130,10 @@ LodashWrapper.prototype.chain = function () {
     return this;
 };
 
+LodashWrapper.prototype.commit = function () {
+    return require('../commit').apply(this);
+};
+
 LodashWrapper.prototype.sortBy = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
@@ -210,53 +220,19 @@ LodashWrapper.prototype.findLastIndex = function () {
 };
 
 
-LodashWrapper.prototype.findKey = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findKey').apply(this, args));
-};
-
-LodashWrapper.prototype.findLastKey = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findLastKey').apply(this, args));
-};
-
-LodashWrapper.prototype.findLast = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../findLast').apply(this, args));
-};
-
-LodashWrapper.prototype.flow = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../flow').apply(this, args));
-};
-
-
-LodashWrapper.prototype.flowRight = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../flowRight').apply(this, args));
-};
-
-LodashWrapper.prototype.plant = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../plant').apply(this, args));
-};
-
-LodashWrapper.prototype.fromPairs = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../fromPairs').apply(this, args));
-};
-
-LodashWrapper.prototype.toPairs = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../toPairs').apply(this, args));
-};
+each(['findLastIndex', 'findKey', 'findLastKey', 'findLast', 'flow',
+    'flowRight', 'plant', 'fromPairs', 'toPairs', 'groupBy',
+    'first', 'includes', 'initial', 'intersection', 'intersectionBy',
+    'intersectionWith', 'invert', 'invertBy', 'invoke', 'invokeMap',
+    'isEmpty', 'isEqual', 'forEach', 'forEachRight', 'forIn', 'forInRight',
+    'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
+    'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
+    'join', 'takeRight'], function (method) {
+    LodashWrapper.prototype[method] = function () {
+        var args = Array.prototype.slice.call(arguments);
+        args.unshift(this.__wrapped__);
+        return new LodashWrapper(require('../' + method).apply(this, args));
+    };
+});
 
 module.exports = LodashWrapper;
