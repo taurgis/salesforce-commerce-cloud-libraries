@@ -28,7 +28,7 @@ function baseExtremum(array, iteratee, comparator) {
             var result = value;
         }
     }
-    return result;
+    return result; // eslint-disable-line
 }
 
 module.exports = baseExtremum;

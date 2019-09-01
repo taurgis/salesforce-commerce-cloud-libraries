@@ -2,21 +2,11 @@
 
 var memoizeCapped = require('./memoizeCapped');
 
-var charCodeOfDot = '.'.charCodeAt(0);
+/** Used to match property names within property paths. */
+var rePropName = /[^.[\]]+|\[(?:(-?\d+(?:\.\d+)?)|(["'])((?:(?!\2)[^\\]|\\.)*?)\2)\]|(?=(?:\.|\[\])(?:\.|\[\]|$))/g;
+
+/** Used to match backslashes in property paths. */
 var reEscapeChar = /\\(\\)?/g;
-var rePropName = RegExp(
-    // Match anything that isn't a dot or bracket.
-    '[^.[\\]]+|' +
-  // Or match property names within brackets.
-  '\\[(?:' +
-    // Match a non-string expression.
-    '([^"\'][^[]*)|' +
-    // Or match strings (supports escaping characters).
-    '(["\'])((?:(?!\\2)[^\\\\]|\\\\.)*?)\\2' +
-  ')\\]|' +
-  // Or match "" as the space between consecutive dots or empty brackets.
-  '(?=(?:\\.|\\[\\])(?:\\.|\\[\\]|$))'
-    , 'g');
 
 /**
  * Converts `string` to a property path array.
@@ -27,17 +17,11 @@ var rePropName = RegExp(
  */
 var stringToPath = memoizeCapped(function (string) {
     var result = [];
-    if (string.charCodeAt(0) === charCodeOfDot) {
+    if (string.charCodeAt(0) === 46 /* . */) {
         result.push('');
     }
-    string.replace(rePropName, function (match, expression, quote, subString) {
-        let key = match;
-        if (quote) {
-            key = subString.replace(reEscapeChar, '$1');
-        } else if (expression) {
-            key = expression.trim();
-        }
-        result.push(key);
+    string.replace(rePropName, function (match, number, quote, subString) {
+        result.push(quote ? subString.replace(reEscapeChar, '$1') : (number || match));
     });
     return result;
 });

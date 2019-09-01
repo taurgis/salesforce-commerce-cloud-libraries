@@ -1,12 +1,12 @@
 'use strict';
 
-var castPath = require('./castPath.js');
-var last = require('../last.js');
-var parent = require('./parent.js');
-var toKey = require('./toKey.js');
+var castPath = require('./castPath');
+var last = require('../last');
+var parent = require('./parent');
+var toKey = require('./toKey');
 
 /**
- * The base implementation of `unset`.
+ * The base implementation of `_.unset`.
  *
  * @private
  * @param {Object} object The object to modify.

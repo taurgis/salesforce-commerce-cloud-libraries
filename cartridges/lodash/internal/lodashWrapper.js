@@ -156,7 +156,8 @@ each(['fill', 'take', 'drop', 'dropRight', 'dropWhile', 'dropRightWhile',
     'isEmpty', 'isEqual', 'forEach', 'forEachRight', 'forIn', 'forInRight',
     'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
     'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
-    'join', 'takeRight', 'add', 'divide', 'multiply', 'subtract', 'mixin', 'times'], function (method) {
+    'join', 'takeRight', 'add', 'divide', 'multiply', 'subtract', 'mixin', 'times',
+    'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

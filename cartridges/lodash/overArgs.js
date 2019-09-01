@@ -1,4 +1,5 @@
 'use strict';
+
 var apply = require('./internal/apply');
 var arrayMap = require('./internal/arrayMap');
 var baseFlatten = require('./internal/baseFlatten');

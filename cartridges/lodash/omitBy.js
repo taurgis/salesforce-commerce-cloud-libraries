@@ -1,5 +1,4 @@
 'use strict';
-
 var baseIteratee = require('./internal/baseIteratee');
 var negate = require('./negate');
 var pickBy = require('./pickBy');

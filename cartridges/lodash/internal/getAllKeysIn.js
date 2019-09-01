@@ -1,7 +1,5 @@
 'use strict';
 
-var getSymbolsIn = require('./getSymbolsIn.js');
-
 /**
  * Creates an array of own and inherited enumerable property names and symbols of `object`.
  *
@@ -14,9 +12,7 @@ function getAllKeysIn(object) {
     for (var key in object) {
         result.push(key);
     }
-    if (!Array.isArray(object)) {
-        result.push(getSymbolsIn(object));
-    }
+
     return result;
 }
 

@@ -51,24 +51,24 @@ function equalObjects(object, other, bitmask, customizer, equalFunc, stack) {
 
     var skipCtor = isPartial;
     while (++index < objLength) {
-        key = objProps[index];
-        var objValue = object[key];
-        var othValue = other[key];
+        key = objProps[index]; // eslint-disable-line
+        var objValue = object[key]; // eslint-disable-line
+        var othValue = other[key]; // eslint-disable-line
 
         if (customizer) {
             var compared = isPartial
-                ? customizer(othValue, objValue, key, other, object, stack)
-                : customizer(objValue, othValue, key, object, other, stack);
+                ? customizer(othValue, objValue, key, other, object, stack) // eslint-disable-line
+                : customizer(objValue, othValue, key, object, other, stack); // eslint-disable-line
         }
         // Recursively compare objects (susceptible to call stack limits).
-        if (!(compared === undefined
+        if (!(compared === undefined // eslint-disable-line
             ? (objValue === othValue || equalFunc(objValue, othValue, bitmask, customizer, stack))
-            : compared
+            : compared // eslint-disable-line
         )) {
             result = false;
             break;
         }
-        skipCtor || (skipCtor = key == 'constructor');
+        skipCtor || (skipCtor = key == 'constructor'); // eslint-disable-line
     }
     if (result && !skipCtor) {
         var objCtor = object.constructor;

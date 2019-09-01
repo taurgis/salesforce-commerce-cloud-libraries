@@ -1,4 +1,5 @@
 'use strict';
+
 var assignValue = require('./assignValue');
 var baseAssignValue = require('./baseAssignValue');
 
