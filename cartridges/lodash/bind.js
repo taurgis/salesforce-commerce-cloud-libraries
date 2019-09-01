@@ -1,3 +1,5 @@
+'use strict';
+
 var baseRest = require('./internal/baseRest');
 var createWrap = require('./internal/createWrap');
 var getHolder = require('./internal/getHolder');
