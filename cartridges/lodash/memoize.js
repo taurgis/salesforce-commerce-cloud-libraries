@@ -1,3 +1,5 @@
+'use strict';
+
 var MapCache = require('./internal/MapCache');
 
 /** Error message constants. */

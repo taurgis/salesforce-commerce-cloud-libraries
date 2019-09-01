@@ -1,5 +1,7 @@
 'use strict';
 
+var isFunction = require('./isFunction');
+var isArray = require('./isArray');
 /**
  * Checks if `predicate` returns truthy for **any** element of `array`.
  * Iteration is stopped once `predicate` returns truthy. The predicate is
@@ -21,8 +23,12 @@ function some(array, predicate) {
     var length = array == null ? 0 : array.length;
 
     while (++index < length) {
-        if (predicate(array[index], index, array)) {
+        if (isFunction(predicate) && predicate(array[index], index, array)) {
             return true;
+        } else if (isArray(predicate) && predicate.length === 2) {
+            if (array[index][predicate[0]] === predicate[1]) {
+                return true;
+            }
         }
     }
     return false;

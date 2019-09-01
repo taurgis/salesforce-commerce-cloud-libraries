@@ -1,7 +1,8 @@
 'use strict';
 
 /**
- * The base implementation of `sum` and `sumBy`.
+ * The base implementation of `_.sum` and `_.sumBy` without support for
+ * iteratee shorthands.
  *
  * @private
  * @param {Array} array The array to iterate over.
@@ -9,11 +10,12 @@
  * @returns {number} Returns the sum.
  */
 function baseSum(array, iteratee) {
-    let result;
+    var result;
+    var index = -1;
+    var length = array.length;
 
-    for (var key in array) {
-        var value = array[key];
-        var current = iteratee(value);
+    while (++index < length) {
+        var current = iteratee(array[index]);
         if (current !== undefined) {
             result = result === undefined ? current : (result + current);
         }

@@ -77,7 +77,7 @@ function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
             // for more details.
             return object == other.toString();
         case mapTag:
-            let convert = mapToArray; // eslint-disable-line
+            var convert = mapToArray; // eslint-disable-line
             break;
         case setTag:
             var isPartial = bitmask & COMPARE_PARTIAL_FLAG;

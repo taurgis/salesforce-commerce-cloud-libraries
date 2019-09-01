@@ -33,7 +33,7 @@ function toFinite(value) {
     }
     value = toNumber(value);
     if (value === INFINITY || value === -INFINITY) {
-        const sign = (value < 0 ? -1 : 1);
+        var sign = (value < 0 ? -1 : 1);
         return sign * MAX_INTEGER;
     }
     return value === value ? value : 0;

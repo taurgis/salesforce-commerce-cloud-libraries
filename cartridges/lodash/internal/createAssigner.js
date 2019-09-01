@@ -1,19 +1,19 @@
 'use strict';
-
-var isIterateeCall = require('./isIterateeCall.js');
+var baseRest = require('./baseRest');
+var isIterateeCall = require('./isIterateeCall');
 
 /**
- * Creates a function like `assign`.
+ * Creates a function like `_.assign`.
  *
  * @private
  * @param {Function} assigner The function to assign values.
  * @returns {Function} Returns the new assigner function.
  */
 function createAssigner(assigner) {
-    return function (object, sources) {
-        let index = -1;
-        let length = sources.length;
-        let customizer = length > 1 ? sources[length - 1] : undefined;
+    return baseRest(function (object, sources) {
+        var index = -1;
+        var length = sources.length;
+        var customizer = length > 1 ? sources[length - 1] : undefined;
         var guard = length > 2 ? sources[2] : undefined;
 
         customizer = (assigner.length > 3 && typeof customizer == 'function')
@@ -32,7 +32,7 @@ function createAssigner(assigner) {
             }
         }
         return object;
-    };
+    });
 }
 
 module.exports = createAssigner;

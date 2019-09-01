@@ -1,0 +1,68 @@
+var assert = require('assert');
+var identity = require('../../../cartridges/lodash/identity');
+var map = require('../../../cartridges/lodash/map');
+var each = require('../../../cartridges/lodash/each');
+var constant = require('../../../cartridges/lodash/constant');
+var _ = require('../../../cartridges/lodash/wrapperLodash');
+var times = require('../../../cartridges/lodash/times');
+var { falsey, stubArray } = require('../helpers/stubs');
+var slice = Array.prototype.slice;
+var doubled = require('../helpers/doubled');
+
+
+describe('times', function () {
+    it('should coerce non-finite `n` values to `0`', function () {
+        each([-Infinity, NaN, Infinity], function (n) {
+            assert.deepStrictEqual(times(n), []);
+        });
+    });
+
+    it('should coerce `n` to an integer', function () {
+        var actual = times(2.6, identity);
+        assert.deepStrictEqual(actual, [0, 1]);
+    });
+
+    it('should provide correct `iteratee` arguments', function () {
+        var args;
+
+        times(1, function () {
+            args || (args = slice.call(arguments));
+        });
+
+        assert.deepStrictEqual(args, [0]);
+    });
+
+    it('should use `_.identity` when `iteratee` is nullish', function () {
+        var values = [, null, undefined];
+        var expected = map(values, constant([0, 1, 2]));
+
+        var actual = map(values, function (value, index) {
+            return index ? times(3, value) : times(3);
+        });
+
+        assert.deepStrictEqual(actual, expected);
+    });
+
+    it('should return an array of the results of each `iteratee` execution', function () {
+        assert.deepStrictEqual(times(3, doubled), [0, 2, 4]);
+    });
+
+    it('should return an empty array for falsey and negative `n` values', function () {
+        var values = falsey.concat(-1, -Infinity);
+        var expected = [[], [], [], [], [], [], [], [], []];
+
+        var actual = map(values, function (value, index) {
+            return index ? times(value) : times();
+        });
+
+        assert.deepStrictEqual(actual, expected);
+    });
+
+    it('should return an unwrapped value when implicitly chaining', function () {
+        assert.deepStrictEqual(_(3).times().value(), [0, 1, 2]);
+    });
+
+    it('should return a wrapped value when explicitly chaining', function () {
+        assert.ok(_(3).chain().times() instanceof _);
+    });
+});
