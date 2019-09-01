@@ -1,6 +1,7 @@
 'use strict';
 
 var isIndex = require('./internal/isIndex.js');
+var toInteger = require('./toInteger');
 
 /**
  * Gets the element at index `n` of `array`. If `n` is negative, the nth
@@ -26,7 +27,11 @@ function nth(array, n) {
     if (!length) {
         return;
     }
+
+    n = toInteger(n);
+
     n += n < 0 ? length : 0;
+
 
     return isIndex(n, length) ? array[n] : undefined;
 }
