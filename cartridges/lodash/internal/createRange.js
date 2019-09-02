@@ -1,18 +1,22 @@
 'use strict';
 
-var baseRange = require('./baseRange.js');
-var toFinite = require('../toFinite.js');
+var baseRange = require('./baseRange');
+var isIterateeCall = require('./isIterateeCall');
+var toFinite = require('../toFinite');
 
 /**
- * Creates a `range` or `rangeRight` function.
+ * Creates a `_.range` or `_.rangeRight` function.
  *
  * @private
- * @param {boolean} [fromRight] Specify iterating= require(right to left.);
+ * @param {boolean} [fromRight] Specify iterating from right to left.
  * @returns {Function} Returns the new range function.
  */
 function createRange(fromRight) {
     return function (start, end, step) {
-    // Ensure the sign of `-0` is preserved.
+        if (step && typeof step != 'number' && isIterateeCall(start, end, step)) {
+            end = step = undefined;
+        }
+        // Ensure the sign of `-0` is preserved.
         start = toFinite(start);
         if (end === undefined) {
             end = start;
