@@ -80,10 +80,6 @@ LodashWrapper.prototype.concat = function () {
     return new LodashWrapper(require('../concat').apply(this, args));
 };
 
-LodashWrapper.prototype.reverse = function () {
-    return new LodashWrapper(require('../reverse').apply(this, [this.__wrapped__]));
-};
-
 LodashWrapper.prototype.isArray = function () {
     return new LodashWrapper(require('../isArray').apply(this, [this.__wrapped__]));
 };
@@ -106,10 +102,6 @@ LodashWrapper.prototype.constant = function () {
     return new LodashWrapper(require('../constant').apply(this, [this.__wrapped__]));
 };
 
-LodashWrapper.prototype.last = function () {
-    return new LodashWrapper(require('../last').apply(this, [this.__wrapped__]));
-};
-
 LodashWrapper.prototype.chain = function () {
     return this;
 };
@@ -130,7 +122,8 @@ each(['countBy', 'sortBy', 'flattenDepth', 'reject', 'reduce',
     'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
     'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
     'join', 'takeRight', 'add', 'divide', 'multiply', 'subtract', 'mixin', 'times',
-    'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign', 'reduce', 'reduceRight'], function (method) {
+    'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign', 'reduce', 'reduceRight',
+    'result', 'reverse', 'pull', 'last'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

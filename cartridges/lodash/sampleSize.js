@@ -1,42 +1,40 @@
 'use strict';
 
-var copyArray = require('./internal/copyArray.js');
-var slice = require('./slice.js');
+var arraySampleSize = require('./internal/arraySampleSize');
+var baseSampleSize = require('./internal/baseSampleSize');
+var isArray = require('./isArray');
+var isIterateeCall = require('./internal/isIterateeCall');
+var toInteger = require('./toInteger');
 
 /**
- * Gets `n` random elements at unique keys= require(`array` up to the);
- * size of `array`.
+ * Gets `n` random elements at unique keys from `collection` up to the
+ * size of `collection`.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
- * @category Array
- * @param {Array} array The array to sample.
+ * @category Collection
+ * @param {Array|Object} collection The collection to sample.
  * @param {number} [n=1] The number of elements to sample.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {Array} Returns the random elements.
  * @example
  *
- * sampleSize([1, 2, 3], 2)
+ * _.sampleSize([1, 2, 3], 2);
  * // => [3, 1]
  *
- * sampleSize([1, 2, 3], 4)
+ * _.sampleSize([1, 2, 3], 4);
  * // => [2, 3, 1]
  */
-function sampleSize(array, n) {
-    n = n == null ? 1 : n;
-    const length = array == null ? 0 : array.length;
-    if (!length || n < 1) {
-        return [];
+function sampleSize(collection, n, guard) {
+    if ((guard ? isIterateeCall(collection, n, guard) : n === undefined)) {
+        n = 1;
+    } else {
+        n = toInteger(n);
     }
-    n = n > length ? length : n;
-    let index = -1;
-    const lastIndex = length - 1;
-    const result = copyArray(array);
-    while (++index < n) {
-        var rand = index + Math.floor(Math.random() * (lastIndex - index + 1));
-        var value = result[rand];
-        result[rand] = result[index];
-        result[index] = value;
-    }
-    return slice(result, 0, n);
+
+    var func = isArray(collection) ? arraySampleSize : baseSampleSize;
+    return func(collection, n);
 }
 
 module.exports = sampleSize;
