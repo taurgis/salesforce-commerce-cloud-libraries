@@ -16,7 +16,14 @@ var toKey = require('./toKey');
 function baseUnset(object, path) {
     path = castPath(path, object);
     object = parent(object, path);
-    return object == null || delete object[toKey(last(path))];
+    try {
+        return object == null || delete object[toKey(last(path))];
+    } catch (e) {
+        // DO NOTHING
+    }
+
+    return false;
 }
 
 module.exports = baseUnset;
+
