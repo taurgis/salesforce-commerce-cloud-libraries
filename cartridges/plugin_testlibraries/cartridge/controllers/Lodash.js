@@ -189,12 +189,12 @@ server.get('Test', function (req, res, next) {
             multiply: timeFunction(require('lodash/multiply'), 6, 4),
             negate: timeFunction(require('lodash/filter'), [1, 2, 3, 4, 5, 6], require('lodash/negate')(function (n) { return n % 2 == 0; })),
             nth: timeFunction(require('lodash/nth'), ['a', 'b', 'c', 'd'], -1),
-            /* orderBy: require('lodash/orderBy')([
+             orderBy: require('lodash/orderBy')([
                 { user: 'fred', age: 48 },
                 { user: 'barney', age: 34 },
                 { user: 'fred', age: 40 },
                 { user: 'barney', age: 36 }
-            ], ['user', 'age'], ['asc', 'desc']) */
+            ], ['user', 'age'], ['asc', 'desc']),
             over: require('lodash/over')([Math.max, Math.min])(1, 2, 3, 4),
             overEvery: require('lodash/overEvery')([Boolean, isFinite])(null),
             overSome: require('lodash/overSome')([Boolean, isFinite])(null),

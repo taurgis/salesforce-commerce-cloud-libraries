@@ -1,10 +1,10 @@
 'use strict';
 
-var baseGet = require('./baseGet.js');
-var baseSet = require('./baseSet.js');
+var baseGet = require('./baseGet');
+var baseSet = require('./baseSet');
 
 /**
- * The base implementation of `update`.
+ * The base implementation of `_.update`.
  *
  * @private
  * @param {Object} object The object to modify.
