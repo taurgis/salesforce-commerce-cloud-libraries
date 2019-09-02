@@ -9,7 +9,6 @@ var identity = require('../../../cartridges/lodash/identity');
 var constant = require('../../../cartridges/lodash/constant');
 var iteratee = require('../../../cartridges/lodash/iteratee');
 var each = require('../../../cartridges/lodash/each');
-var _ = require('../../../cartridges/lodash/wrapperLodash');
 var slice = Array.prototype.slice;
 
 describe('iteratee', function () {

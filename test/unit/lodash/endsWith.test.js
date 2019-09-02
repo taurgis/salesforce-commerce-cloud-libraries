@@ -1,9 +1,6 @@
 var assert = require('assert');
 var MAX_SAFE_INTEGER = require('../helpers/max').MAX_SAFE_INTEGER;
-var falsey = require('../helpers/falsey');
-var stubTrue = require('../helpers/stubs').stubTrue;
 var endsWith = require('../../../cartridges/lodash/endsWith');
-var map = require('../../../cartridges/lodash/map');
 var each = require('../../../cartridges/lodash/each');
 var every = require('../../../cartridges/lodash/every');
 

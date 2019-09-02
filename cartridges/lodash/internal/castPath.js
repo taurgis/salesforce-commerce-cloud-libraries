@@ -21,4 +21,3 @@ function castPath(value, object) {
 }
 
 module.exports = castPath;
-

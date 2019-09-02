@@ -5,7 +5,7 @@ var each = require('../../../cartridges/lodash/each');
 var constant = require('../../../cartridges/lodash/constant');
 var _ = require('../../../cartridges/lodash/wrapperLodash');
 var times = require('../../../cartridges/lodash/times');
-var { falsey, stubArray } = require('../helpers/stubs');
+var { falsey } = require('../helpers/stubs');
 var slice = Array.prototype.slice;
 var doubled = require('../helpers/doubled');
 

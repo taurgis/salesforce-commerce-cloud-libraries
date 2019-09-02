@@ -1,10 +1,16 @@
 'use strict';
 
-var baseUnset = require('./baseUnset.js');
-var isIndex = require('./isIndex.js');
+var baseUnset = require('./baseUnset');
+var isIndex = require('./isIndex');
+
+/** Used for built-in method references. */
+var arrayProto = Array.prototype;
+
+/** Built-in value references. */
+var splice = arrayProto.splice;
 
 /**
- * The base implementation of `pullAt` without support for individual
+ * The base implementation of `_.pullAt` without support for individual
  * indexes or capturing the removed elements.
  *
  * @private
@@ -13,16 +19,15 @@ var isIndex = require('./isIndex.js');
  * @returns {Array} Returns `array`.
  */
 function basePullAt(array, indexes) {
-    let length = array ? indexes.length : 0;
+    var length = array ? indexes.length : 0;
     var lastIndex = length - 1;
 
     while (length--) {
-        let previous;
         var index = indexes[length];
-        if (length == lastIndex || index !== previous) {
-            previous = index;
+        if (length == lastIndex || index !== previous) { // eslint-disable-line
+            var previous = index;
             if (isIndex(index)) {
-                array.splice(index, 1);
+                splice.call(array, index, 1);
             } else {
                 baseUnset(array, index);
             }

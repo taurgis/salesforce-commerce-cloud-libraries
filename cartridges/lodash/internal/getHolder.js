@@ -13,3 +13,4 @@ function getHolder(func) {
 }
 
 module.exports = getHolder;
+

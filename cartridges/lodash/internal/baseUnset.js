@@ -1,12 +1,12 @@
 'use strict';
 
-var castPath = require('./castPath.js');
-var last = require('../last.js');
-var parent = require('./parent.js');
-var toKey = require('./toKey.js');
+var castPath = require('./castPath');
+var last = require('../last');
+var parent = require('./parent');
+var toKey = require('./toKey');
 
 /**
- * The base implementation of `unset`.
+ * The base implementation of `_.unset`.
  *
  * @private
  * @param {Object} object The object to modify.
@@ -16,7 +16,14 @@ var toKey = require('./toKey.js');
 function baseUnset(object, path) {
     path = castPath(path, object);
     object = parent(object, path);
-    return object == null || delete object[toKey(last(path))];
+    try {
+        return object == null || delete object[toKey(last(path))];
+    } catch (e) {
+        // DO NOTHING
+    }
+
+    return false;
 }
 
 module.exports = baseUnset;
+
