@@ -1,13 +1,12 @@
 'use strict';
 
-var root = require('./internal/root');
 var toString = require('./toString');
 
 /** Used to match leading and trailing whitespace. */
 var reTrimStart = /^\s+/;
 
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeParseInt = root.parseInt;
+var nativeParseInt = parseInt;
 
 /**
  * Converts `string` to an integer of the specified radix. If `radix` is
@@ -33,7 +32,7 @@ var nativeParseInt = root.parseInt;
  * _.map(['6', '08', '10'], _.parseInt);
  * // => [6, 8, 10]
  */
-function parseInt(string, radix, guard) {
+function parseIntLodash(string, radix, guard) {
     if (guard || radix == null) {
         radix = 0;
     } else if (radix) {
@@ -42,4 +41,4 @@ function parseInt(string, radix, guard) {
     return nativeParseInt(toString(string).replace(reTrimStart, ''), radix || 0);
 }
 
-module.exports = parseInt;
+module.exports = parseIntLodash;

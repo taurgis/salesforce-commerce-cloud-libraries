@@ -216,7 +216,7 @@ server.get('Test', function (req, res, next) {
             pull: timeFunction(require('lodash/pull'), ['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c'),
             pullAll: timeFunction(require('lodash/pullAll'), ['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c']),
             pullAt: timeFunction(require('lodash/pullAt'), ['a', 'b', 'c', 'd'], [1, 3]),
-            random: timeFunction(require('lodash/random'), 5),
+
             range: timeFunction(require('lodash/range'), 4),
             rangeRight: timeFunction(require('lodash/rangeRight'), 4),
             reduce: timeFunction(require('lodash/reduce'), { a: 1, b: 2, c: 1 }, function (result, value, key) {
