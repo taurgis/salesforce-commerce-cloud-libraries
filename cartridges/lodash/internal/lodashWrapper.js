@@ -73,22 +73,11 @@ LodashWrapper.prototype.tap = function () {
     return new LodashWrapper(require('../tap').apply(this, args));
 };
 
-LodashWrapper.prototype.reduce = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../reduce').apply(this, args));
-};
 
 LodashWrapper.prototype.concat = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
     return new LodashWrapper(require('../concat').apply(this, args));
-};
-
-LodashWrapper.prototype.reject = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../reject').apply(this, args));
 };
 
 LodashWrapper.prototype.reverse = function () {
@@ -108,11 +97,6 @@ LodashWrapper.prototype.flattenDeep = function () {
     return new LodashWrapper(require('../flattenDeep').apply(this, [this.__wrapped__]));
 };
 
-LodashWrapper.prototype.flattenDepth = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../flattenDepth').apply(this, args));
-};
 
 LodashWrapper.prototype.head = function () {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
@@ -134,20 +118,9 @@ LodashWrapper.prototype.commit = function () {
     return require('../commit').apply(this);
 };
 
-LodashWrapper.prototype.sortBy = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../sortBy').apply(this, args));
-};
 
-LodashWrapper.prototype.countBy = function () {
-    var args = Array.prototype.slice.call(arguments);
-    args.unshift(this.__wrapped__);
-    return new LodashWrapper(require('../countBy').apply(this, args));
-};
-
-
-each(['fill', 'take', 'drop', 'dropRight', 'dropWhile', 'dropRightWhile',
+each(['countBy', 'sortBy', 'flattenDepth', 'reject', 'reduce',
+    'fill', 'take', 'drop', 'dropRight', 'dropWhile', 'dropRightWhile',
     'filter', 'reject', 'mapValues', 'find', 'findIndex', 'findLastIndex',
     'findKey', 'findLastKey', 'findLast', 'flow',
     'flowRight', 'plant', 'fromPairs', 'toPairs', 'groupBy',
@@ -157,7 +130,7 @@ each(['fill', 'take', 'drop', 'dropRight', 'dropWhile', 'dropRightWhile',
     'forOwn', 'max', 'maxBy', 'min', 'minBy', 'some', 'omitBy', 'partition',
     'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
     'join', 'takeRight', 'add', 'divide', 'multiply', 'subtract', 'mixin', 'times',
-    'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign'], function (method) {
+    'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign', 'reduce', 'reduceRight'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);
