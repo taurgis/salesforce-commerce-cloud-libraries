@@ -1,24 +1,29 @@
 'use strict';
 
-var baseToString = require('./internal/baseToString.js');
-var castSlice = require('./internal/castSlice.js');
-var hasUnicode = require('./internal/hasUnicode.js');
-var isObject = require('./isObject.js');
-var isRegExp = require('./isRegExp.js');
-var stringSize = require('./internal/stringSize.js');
-var stringToArray = require('./internal/stringToArray.js');
+var baseToString = require('./internal/baseToString');
+var castSlice = require('./internal/castSlice');
+var hasUnicode = require('./internal/hasUnicode');
+var isObject = require('./isObject');
+var isRegExp = require('./isRegExp');
+var stringSize = require('./internal/stringSize');
+var stringToArray = require('./internal/stringToArray');
+var toInteger = require('./toInteger');
+var toString = require('./toString');
 
-/** Used as default options for `truncate`. */
-const DEFAULT_TRUNC_LENGTH = 30;
-const DEFAULT_TRUNC_OMISSION = '...';
+/** Used as default options for `_.truncate`. */
+var DEFAULT_TRUNC_LENGTH = 30;
+var DEFAULT_TRUNC_OMISSION = '...';
 
-const reFlags = /\w*$/;
+/** Used to match `RegExp` flags from their coerced string values. */
+var reFlags = /\w*$/;
 
 /**
  * Truncates `string` if it's longer than the given maximum string length.
  * The last characters of the truncated string are replaced with the omission
  * string which defaults to "...".
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to truncate.
@@ -27,53 +32,52 @@ const reFlags = /\w*$/;
  * @param {string} [options.omission='...'] The string to indicate text is omitted.
  * @param {RegExp|string} [options.separator] The separator pattern to truncate to.
  * @returns {string} Returns the truncated string.
- * @see replace
  * @example
  *
- * truncate('hi-diddly-ho there, neighborino')
+ * _.truncate('hi-diddly-ho there, neighborino');
  * // => 'hi-diddly-ho there, neighbo...'
  *
- * truncate('hi-diddly-ho there, neighborino', {
+ * _.truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': ' '
- * })
+ * });
  * // => 'hi-diddly-ho there,...'
  *
- * truncate('hi-diddly-ho there, neighborino', {
+ * _.truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': /,? +/
- * })
+ * });
  * // => 'hi-diddly-ho there...'
  *
- * truncate('hi-diddly-ho there, neighborino', {
+ * _.truncate('hi-diddly-ho there, neighborino', {
  *   'omission': ' [...]'
- * })
+ * });
  * // => 'hi-diddly-ho there, neig [...]'
  */
 function truncate(string, options) {
-    let separator;
-    let length = DEFAULT_TRUNC_LENGTH;
-    let omission = DEFAULT_TRUNC_OMISSION;
+    var length = DEFAULT_TRUNC_LENGTH;
+    var omission = DEFAULT_TRUNC_OMISSION;
 
     if (isObject(options)) {
-        separator = options.separator ? options.separator : separator;
-        length = options.length ? options.length : length;
-        omission = options.omission ? baseToString(options.omission) : omission;
+        var separator = 'separator' in options ? options.separator : separator;
+        length = 'length' in options ? toInteger(options.length) : length;
+        omission = 'omission' in options ? baseToString(options.omission) : omission;
     }
-    let strSymbols;
-    let strLength = string.length;
+    string = toString(string);
+
+    var strLength = string.length;
     if (hasUnicode(string)) {
-        strSymbols = stringToArray(string);
+        var strSymbols = stringToArray(string);
         strLength = strSymbols.length;
     }
     if (length >= strLength) {
         return string;
     }
-    let end = length - stringSize(omission);
+    var end = length - stringSize(omission);
     if (end < 1) {
         return omission;
     }
-    let result = strSymbols
+    var result = strSymbols
         ? castSlice(strSymbols, 0, end).join('')
         : string.slice(0, end);
 
@@ -85,21 +89,20 @@ function truncate(string, options) {
     }
     if (isRegExp(separator)) {
         if (string.slice(end).search(separator)) {
-            let match;
-            let newEnd;
-            const substring = result;
+            var match;
+            var substring = result;
 
             if (!separator.global) {
-                separator = RegExp(separator.source, (reFlags.exec(separator) || '') + 'g');
+                separator = RegExp(separator.source, toString(reFlags.exec(separator)) + 'g');
             }
             separator.lastIndex = 0;
             while ((match = separator.exec(substring))) {
-                newEnd = match.index;
+                var newEnd = match.index;
             }
             result = result.slice(0, newEnd === undefined ? end : newEnd);
         }
-    } else if (string.indexOf(baseToString(separator), end) !== end) {
-        const index = result.lastIndexOf(separator);
+    } else if (string.indexOf(baseToString(separator), end) != end) {
+        var index = result.lastIndexOf(separator);
         if (index > -1) {
             result = result.slice(0, index);
         }

@@ -3,9 +3,10 @@
 var castSlice = require('./castSlice');
 var hasUnicode = require('./hasUnicode');
 var stringToArray = require('./stringToArray');
+var toString = require('../toString');
 
 /**
- * Creates a function like `lowerFirst`.
+ * Creates a function like `_.lowerFirst`.
  *
  * @private
  * @param {string} methodName The name of the `String` case method to use.
@@ -13,13 +14,15 @@ var stringToArray = require('./stringToArray');
  */
 function createCaseFirst(methodName) {
     return function (string) {
+        string = toString(string);
+
         var strSymbols = hasUnicode(string)
             ? stringToArray(string)
             : undefined;
 
         var chr = strSymbols
             ? strSymbols[0]
-            : string[0];
+            : string.charAt(0);
 
         var trailing = strSymbols
             ? castSlice(strSymbols, 1).join('')

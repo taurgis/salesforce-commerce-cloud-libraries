@@ -123,7 +123,7 @@ each(['countBy', 'sortBy', 'flattenDepth', 'reject', 'reduce',
     'keyBy', 'mapKeys', 'forOwnRight', 'every', 'eachRight', 'pickBy', 'each',
     'join', 'takeRight', 'add', 'divide', 'multiply', 'subtract', 'mixin', 'times',
     'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign', 'reduce', 'reduceRight',
-    'result', 'reverse', 'pull', 'last', 'split'], function (method) {
+    'result', 'reverse', 'pull', 'last', 'split', 'tail', 'takeRightWhile', 'takeWhile'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

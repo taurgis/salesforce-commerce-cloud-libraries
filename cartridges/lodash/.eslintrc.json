@@ -19,6 +19,7 @@
       "no-unused-expressions": "off",
       "no-labels": "off",
       "no-continue": "off",
-      "no-underscore-dangle": "off"
+      "no-underscore-dangle": "off",
+      "block-scoped-var": "off"
     }
 }
