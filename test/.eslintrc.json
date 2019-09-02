@@ -17,7 +17,8 @@
     "consistent-return": "off",
     "no-param-reassign": "off",
     "no-delete-var": "off",
-    "no-use-before-define": "off"
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off"
   },
   "globals": {
     "expect": "readonly",
