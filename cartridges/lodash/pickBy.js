@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayMap = require('./internal/arrayMap');
 var baseIteratee = require('./internal/baseIteratee');
 var basePickBy = require('./internal/basePickBy');
