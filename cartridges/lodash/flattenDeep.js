@@ -1,6 +1,6 @@
 'use strict';
 
-var baseFlatten = require('./.internal/baseFlatten.js');
+var baseFlatten = require('./internal/baseFlatten.js');
 
 /** Used as references for various `Number` constants. */
 const INFINITY = 1 / 0;

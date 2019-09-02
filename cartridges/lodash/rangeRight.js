@@ -1,6 +1,6 @@
 'use strict';
 
-var createRange = require('./.internal/createRange.js');
+var createRange = require('./internal/createRange.js');
 
 /**
  * This method is like `range` except that it populates values in

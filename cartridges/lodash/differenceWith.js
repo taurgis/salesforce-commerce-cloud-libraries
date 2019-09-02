@@ -1,7 +1,7 @@
 'use strict';
 
-var baseDifference = require('./.internal/baseDifference');
-var baseFlatten = require('./.internal/baseFlatten');
+var baseDifference = require('./internal/baseDifference');
+var baseFlatten = require('./internal/baseFlatten');
 var isArrayLikeObject = require('./isArrayLikeObject');
 var last = require('./last');
 
@@ -26,8 +26,11 @@ var last = require('./last');
  * differenceWith(objects, [[{ 'x': 1, 'y': 2 }], isEqual])
  * // => [{ 'x': 2, 'y': 1 }]
  */
-function differenceWith(array, values) {
+function differenceWith(array) {
+    var values = Array.prototype.slice.call(arguments);
+    values.shift();
     let comparator = last(values);
+
     if (isArrayLikeObject(comparator)) {
         comparator = undefined;
     }

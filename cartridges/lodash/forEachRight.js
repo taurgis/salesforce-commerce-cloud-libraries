@@ -1,7 +1,7 @@
 'use strict';
 
-var arrayEachRight = require('./.internal/arrayEachRight');
-var baseEachRight = require('./.internal/baseEachRight');
+var arrayEachRight = require('./internal/arrayEachRight');
+var baseEachRight = require('./internal/baseEachRight');
 
 /**
  * This method is like `forEach` except that it iterates over elements of

@@ -18,7 +18,7 @@ function tail(array) {
         return [];
     }
 
-    return array.slice(1);
+    return Array.prototype.slice.call(array, 1);
 }
 
 module.exports = tail;

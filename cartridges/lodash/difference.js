@@ -1,7 +1,8 @@
 'use strict';
 
 
-var baseDifference = require('./.internal/baseDifference');
+var baseDifference = require('./internal/baseDifference');
+var baseFlatten = require('./internal/baseFlatten');
 var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
@@ -23,9 +24,11 @@ var isArrayLikeObject = require('./isArrayLikeObject');
  * difference([2, 1], [2, 3])
  * // => [1]
  */
-function difference(array, values) {
+function difference(array) {
+    var values = Array.prototype.slice.call(arguments);
+    values.shift();
     return isArrayLikeObject(array)
-        ? baseDifference(array, values)
+        ? baseDifference(array, baseFlatten(values, 1, isArrayLikeObject, true))
         : [];
 }
 

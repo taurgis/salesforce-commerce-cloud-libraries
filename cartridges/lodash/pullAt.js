@@ -1,40 +1,45 @@
 'use strict';
 
-var map = require('./map.js');
-var baseAt = require('./.internal/baseAt.js');
-var basePullAt = require('./.internal/basePullAt.js');
-var compareAscending = require('./.internal/compareAscending.js');
-var isIndex = require('./.internal/isIndex.js');
+var arrayMap = require('./internal/arrayMap');
+var baseAt = require('./internal/baseAt');
+var basePullAt = require('./internal/basePullAt');
+var compareAscending = require('./internal/compareAscending');
+var flatRest = require('./internal/flatRest');
+var isIndex = require('./internal/isIndex');
 
 /**
- * Removes elements= require(`array` corresponding to `indexes` and returns an);
+ * Removes elements from `array` corresponding to `indexes` and returns an
  * array of removed elements.
  *
- * **Note:** Unlike `at`, this method mutates `array`.
+ * **Note:** Unlike `_.at`, this method mutates `array`.
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to modify.
  * @param {...(number|number[])} [indexes] The indexes of elements to remove.
  * @returns {Array} Returns the new array of removed elements.
- * @see pull, pullAll, pullAllBy, pullAllWith, remove, reject
  * @example
  *
- * const array = ['a', 'b', 'c', 'd']
- * const pulled = pullAt(['a', 'b', 'c', 'd'], [1, 3])
+ * var array = ['a', 'b', 'c', 'd'];
+ * var pulled = _.pullAt(array, [1, 3]);
  *
- * console.log(array)
+ * console.log(array);
  * // => ['a', 'c']
  *
- * console.log(pulled)
+ * console.log(pulled);
  * // => ['b', 'd']
  */
-function pullAt(array, indexes) {
-    const length = array == null ? 0 : array.length;
-    const result = baseAt(array, indexes);
+var pullAt = flatRest(function (array, indexes) {
+    var length = array == null ? 0 : array.length;
+    var result = baseAt(array, indexes);
 
-    basePullAt(array, map(indexes, function (index) { return isIndex(index, length) ? +index : index; }).sort(compareAscending));
+    basePullAt(array, arrayMap(indexes, function (index) {
+        return isIndex(index, length) ? +index : index;
+    }).sort(compareAscending));
+
     return result;
-}
+});
 
 module.exports = pullAt;

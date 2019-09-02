@@ -1,0 +1,31 @@
+{
+  "env": {
+    "mocha": true
+  },
+  "rules": {
+    "require-jsdoc": "off",
+    "max-len": "off",
+    "quote-props": "off",
+    "no-new": "off",
+    "valid-jsdoc": "off",
+    "new-cap": "off",
+    "no-underscore-dangle": "off",
+    "no-self-compare": "off",
+    "no-unused-expressions": "off",
+    "block-scoped-var": "off",
+    "no-sparse-arrays": "off",
+    "consistent-return": "off",
+    "no-param-reassign": "off",
+    "no-delete-var": "off",
+    "no-use-before-define": "off",
+    "no-nested-ternary": "off"
+  },
+  "globals": {
+    "expect": "readonly",
+    "assert": "readonly",
+    "sinon": "readonly",
+    "faker": "readonly",
+    "testHelpers": "readonly",
+    "base": "readonly"
+  }
+}

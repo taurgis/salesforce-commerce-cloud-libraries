@@ -3,13 +3,15 @@
 /**
  * Gets the last element of `array`.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to query.
  * @returns {*} Returns the last element of `array`.
  * @example
  *
- * last([1, 2, 3])
+ * _.last([1, 2, 3]);
  * // => 3
  */
 function last(array) {
@@ -18,3 +20,4 @@ function last(array) {
 }
 
 module.exports = last;
+

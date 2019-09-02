@@ -1,6 +1,6 @@
 'use strict';
 
-var arrayLikeKeys = require('./.internal/arrayLikeKeys');
+var arrayLikeKeys = require('./internal/arrayLikeKeys');
 var isArrayLike = require('./isArrayLike');
 
 /**

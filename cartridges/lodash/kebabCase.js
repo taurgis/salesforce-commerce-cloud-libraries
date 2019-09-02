@@ -1,31 +1,30 @@
 'use strict';
 
-var words = require('./words.js');
+var createCompounder = require('./internal/createCompounder');
 
 /**
  * Converts `string` to
  * [kebab case](https://en.wikipedia.org/wiki/Letter_case#Special_case_styles).
  *
+ * @static
+ * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to convert.
  * @returns {string} Returns the kebab cased string.
- * @see camelCase, lowerCase, snakeCase, startCase, upperCase, upperFirst
  * @example
  *
- * kebabCase('Foo Bar')
+ * _.kebabCase('Foo Bar');
  * // => 'foo-bar'
  *
- * kebabCase('fooBar')
+ * _.kebabCase('fooBar');
  * // => 'foo-bar'
  *
- * kebabCase('__FOO_BAR__')
+ * _.kebabCase('__FOO_BAR__');
  * // => 'foo-bar'
  */
-const kebabCase = function (string) {
-    return words(string.toString().replace(/['\u2019]/g, '')).reduce(function (result, word, index) {
-        return result + (index ? '-' : '') + word.toLowerCase();
-    }, '');
-};
+var kebabCase = createCompounder(function (result, word, index) {
+    return result + (index ? '-' : '') + word.toLowerCase();
+});
 
 module.exports = kebabCase;

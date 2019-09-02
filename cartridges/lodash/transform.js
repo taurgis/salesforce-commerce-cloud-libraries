@@ -1,13 +1,18 @@
 'use strict';
 
-var arrayEach = require('./.internal/arrayEach.js');
-var baseForOwn = require('./.internal/baseForOwn.js');
-var isBuffer = require('./isBuffer.js');
-var isObject = require('./isObject.js');
-var isTypedArray = require('./isTypedArray.js');
+var arrayEach = require('./internal/arrayEach');
+var baseCreate = require('./internal/baseCreate');
+var baseForOwn = require('./internal/baseForOwn');
+var baseIteratee = require('./internal/baseIteratee');
+var getPrototype = require('./internal/getPrototype');
+var isArray = require('./isArray');
+var isBuffer = require('./isBuffer');
+var isFunction = require('./isFunction');
+var isObject = require('./isObject');
+var isTypedArray = require('./isTypedArray');
 
 /**
- * An alternative to `reduce` this method transforms `object` to a new
+ * An alternative to `_.reduce`; this method transforms `object` to a new
  * `accumulator` object which is the result of running each of its own
  * enumerable string keyed properties thru `iteratee`, with each invocation
  * potentially mutating the `accumulator` object. If `accumulator` is not
@@ -15,38 +20,38 @@ var isTypedArray = require('./isTypedArray.js');
  * iteratee is invoked with four arguments: (accumulator, value, key, object).
  * Iteratee functions may exit iteration early by explicitly returning `false`.
  *
+ * @static
+ * @memberOf _
  * @since 1.3.0
  * @category Object
  * @param {Object} object The object to iterate over.
- * @param {Function} iteratee The function invoked per iteration.
+ * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @param {*} [accumulator] The custom accumulator value.
  * @returns {*} Returns the accumulated value.
- * @see reduce, reduceRight
  * @example
  *
- * transform([2, 3, 4], (result, n) => {
- *   result.push(n *= n)
- *   return n % 2 == 0
- * }, [])
+ * _.transform([2, 3, 4], function(result, n) {
+ *   result.push(n *= n);
+ *   return n % 2 == 0;
+ * }, []);
  * // => [4, 9]
  *
- * transform({ 'a': 1, 'b': 2, 'c': 1 }, (result, value, key) => {
- *   (result[value] || (result[value] = [])).push(key)
- * }, {})
+ * _.transform({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
+ *   (result[value] || (result[value] = [])).push(key);
+ * }, {});
  * // => { '1': ['a', 'c'], '2': ['b'] }
  */
 function transform(object, iteratee, accumulator) {
-    const isArr = Array.isArray(object);
-    const isArrLike = isArr || isBuffer(object) || isTypedArray(object);
+    var isArr = isArray(object);
+    var isArrLike = isArr || isBuffer(object) || isTypedArray(object);
 
+    iteratee = baseIteratee(iteratee, 4);
     if (accumulator == null) {
-        const Ctor = object && object.constructor;
+        var Ctor = object && object.constructor;
         if (isArrLike) {
             accumulator = isArr ? new Ctor() : [];
         } else if (isObject(object)) {
-            accumulator = typeof Ctor === 'function'
-                ? Object.create(Object.getPrototypeOf(object))
-                : {};
+            accumulator = isFunction(Ctor) ? baseCreate(getPrototype(object)) : {};
         } else {
             accumulator = {};
         }

@@ -1,34 +1,31 @@
 'use strict';
-
-var every = require('./every.js');
+var arrayEvery = require('./internal/arrayEvery');
+var createOver = require('./internal/createOver');
 
 /**
  * Creates a function that checks if **all** of the `predicates` return
  * truthy when invoked with the arguments it receives.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Util
- * @param {Function[]} [predicates=[identity]]
+ * @param {...(Function|Function[])} [predicates=[_.identity]]
  *  The predicates to check.
  * @returns {Function} Returns the new function.
  * @example
  *
- * const func = overEvery([Boolean, isFinite])
+ * var func = _.overEvery([Boolean, isFinite]);
  *
- * func('1')
+ * func('1');
  * // => true
  *
- * func(null)
+ * func(null);
  * // => false
  *
- * func(NaN)
+ * func(NaN);
  * // => false
  */
-function overEvery(iteratees) {
-    return function () {
-        var args = Array.prototype.slice.call(arguments);
-        return every(iteratees, function (iteratee) { return iteratee.apply(this, args); });
-    };
-}
+var overEvery = createOver(arrayEvery);
 
 module.exports = overEvery;

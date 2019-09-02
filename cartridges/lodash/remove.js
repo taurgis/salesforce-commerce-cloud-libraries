@@ -1,41 +1,45 @@
 'use strict';
-
-var basePullAt = require('./.internal/basePullAt.js');
+var baseIteratee = require('./internal/baseIteratee');
+var basePullAt = require('./internal/basePullAt');
 
 /**
- * Removes all elements= require(`array` that `predicate` returns truthy for);
+ * Removes all elements from `array` that `predicate` returns truthy for
  * and returns an array of the removed elements. The predicate is invoked
  * with three arguments: (value, index, array).
  *
- * **Note:** Unlike `filter`, this method mutates `array`. Use `pull`
- * to pull elements= require(an array by value.);
+ * **Note:** Unlike `_.filter`, this method mutates `array`. Use `_.pull`
+ * to pull elements from an array by value.
  *
+ * @static
+ * @memberOf _
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to modify.
- * @param {Function} predicate The function invoked per iteration.
+ * @param {Function} [predicate=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the new array of removed elements.
- * @see pull, pullAll, pullAllBy, pullAllWith, pullAt, reject, filter
  * @example
  *
- * const array = [1, 2, 3, 4]
- * const evens = remove([1, 2, 3, 4], function(n) { return n % 2 == 0;})
+ * var array = [1, 2, 3, 4];
+ * var evens = _.remove(array, function(n) {
+ *   return n % 2 == 0;
+ * });
  *
- * console.log(array)
+ * console.log(array);
  * // => [1, 3]
  *
- * console.log(evens)
+ * console.log(evens);
  * // => [2, 4]
  */
 function remove(array, predicate) {
-    const result = [];
-    if (!(array != null && array.length)) {
+    var result = [];
+    if (!(array && array.length)) {
         return result;
     }
-    let index = -1;
-    const indexes = [];
-    const { length } = array;
+    var index = -1;
+    var indexes = [];
+    var length = array.length;
 
+    predicate = baseIteratee(predicate, 3);
     while (++index < length) {
         var value = array[index];
         if (predicate(value, index, array)) {

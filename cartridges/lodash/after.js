@@ -22,9 +22,14 @@ function after(n, func) {
     if (typeof func !== 'function') {
         throw new TypeError('Expected a function');
     }
-    return function (args) {
+
+    if (isNaN(n)) {
+        afterN = 0;
+    }
+
+    return function () {
         if (--afterN < 1) {
-            return func.apply(this, args);
+            return func.apply(this, arguments);
         }
 
         return false;

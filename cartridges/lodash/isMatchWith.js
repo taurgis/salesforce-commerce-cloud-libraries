@@ -1,7 +1,7 @@
 'use strict';
 
-var baseIsMatch = require('./.internal/baseIsMatch.js');
-var getMatchData = require('./.internal/getMatchData.js');
+var baseIsMatch = require('./internal/baseIsMatch.js');
+var getMatchData = require('./internal/getMatchData.js');
 
 /**
  * This method is like `isMatch` except that it accepts `customizer` which

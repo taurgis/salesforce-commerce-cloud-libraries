@@ -1,14 +1,17 @@
 'use strict';
 
-var baseUpdate = require('./.internal/baseUpdate.js');
+var baseUpdate = require('./internal/baseUpdate');
+var castFunction = require('./internal/castFunction');
 
 /**
- * This method is like `set` except that it accepts `updater` to produce the
- * value to set. Use `updateWith` to customize `path` creation. The `updater`
+ * This method is like `_.set` except that accepts `updater` to produce the
+ * value to set. Use `_.updateWith` to customize `path` creation. The `updater`
  * is invoked with one argument: (value).
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
+ * @memberOf _
  * @since 4.6.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -17,18 +20,18 @@ var baseUpdate = require('./.internal/baseUpdate.js');
  * @returns {Object} Returns `object`.
  * @example
  *
- * const object = { 'a': [{ 'b': { 'c': 3 } }] }
+ * var object = { 'a': [{ 'b': { 'c': 3 } }] };
  *
- * update(object, 'a[0].b.c', n => n * n)
- * console.log(object.a[0].b.c)
+ * _.update(object, 'a[0].b.c', function(n) { return n * n; });
+ * console.log(object.a[0].b.c);
  * // => 9
  *
- * update(object, 'x[0].y.z', n => n ? n + 1 : 0)
- * console.log(object.x[0].y.z)
+ * _.update(object, 'x[0].y.z', function(n) { return n ? n + 1 : 0; });
+ * console.log(object.x[0].y.z);
  * // => 0
  */
 function update(object, path, updater) {
-    return object == null ? object : baseUpdate(object, path, updater);
+    return object == null ? object : baseUpdate(object, path, castFunction(updater));
 }
 
 module.exports = update;

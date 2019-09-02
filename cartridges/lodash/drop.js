@@ -1,35 +1,40 @@
 'use strict';
 
-var slice = require('./slice');
+var baseSlice = require('./internal/baseSlice');
+var toInteger = require('./toInteger');
 
 /**
- * Creates a slice of `array` with `n` elements dropped= require(the beginning.);
+ * Creates a slice of `array` with `n` elements dropped from the beginning.
  *
+ * @static
+ * @memberOf _
  * @since 0.5.0
  * @category Array
  * @param {Array} array The array to query.
- * @param {number} [amount=1] The number of elements to drop.
+ * @param {number} [n=1] The number of elements to drop.
+ * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * drop([1, 2, 3])
+ * _.drop([1, 2, 3]);
  * // => [2, 3]
  *
- * drop([1, 2, 3], 2)
+ * _.drop([1, 2, 3], 2);
  * // => [3]
  *
- * drop([1, 2, 3], 5)
+ * _.drop([1, 2, 3], 5);
  * // => []
  *
- * drop([1, 2, 3], 0)
+ * _.drop([1, 2, 3], 0);
  * // => [1, 2, 3]
  */
-function drop(array, amount) {
-    var n = amount || 1;
+function drop(array, n, guard) {
     var length = array == null ? 0 : array.length;
-    return length
-        ? slice(array, n < 0 ? 0 : n, length)
-        : [];
+    if (!length) {
+        return [];
+    }
+    n = (guard || n === undefined) ? 1 : toInteger(n);
+    return baseSlice(array, n < 0 ? 0 : n, length);
 }
 
 module.exports = drop;

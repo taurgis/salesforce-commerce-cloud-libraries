@@ -1,7 +1,7 @@
 'use strict';
 
-var baseDifference = require('./.internal/baseDifference');
-var baseFlatten = require('./.internal/baseFlatten');
+var baseDifference = require('./internal/baseDifference');
+var baseFlatten = require('./internal/baseFlatten');
 var isArrayLikeObject = require('./isArrayLikeObject');
 var last = require('./last');
 
@@ -22,10 +22,12 @@ var last = require('./last');
  * @returns {Array} Returns the new array of filtered values.
  * @example
  *
- * differenceBy([2.1, 1.2], [[2.3, 3.4], Math.floor])
+ * differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)
  * // => [1.2]
  */
-function differenceBy(array, values) {
+function differenceBy(array) {
+    var values = Array.prototype.slice.call(arguments);
+    values.shift();
     let iteratee = last(values);
     if (isArrayLikeObject(iteratee)) {
         iteratee = undefined;

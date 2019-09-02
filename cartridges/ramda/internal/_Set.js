@@ -4,7 +4,6 @@ var _includes = require('./_includes');
 
 
 function _Set() {
-    /* globals Set */
     this._nativeSet = typeof Set === 'function' ? new Set() : null;
     this._items = {};
 }

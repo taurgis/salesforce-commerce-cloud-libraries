@@ -11,6 +11,11 @@ server.get('Test', function (req, res, next) {
         afterTest = 'after is finished';
     });
 
+    function Foo() {
+        this.a = 1
+        this.b = 2
+    }
+
     var atTestObject = { a: [{ b: { c: 3 } }, 4] };
     var attemptTest = function () {
         throw new Error();
@@ -42,9 +47,11 @@ server.get('Test', function (req, res, next) {
 
     const array = ['hello', 'goodbye'];
     const other = ['hi', 'goodbye'];
+    var chained = require('lodash/wrapperLodash')([1, 2, 3]).take(2)
 
     res.json(
         {
+            wrapped: chained.value(),
             add: timeFunction(require('lodash/add'), 2, 2),
             after: afterTest,
             at: timeFunction(require('lodash/at'), atTestObject, ['a[0].b.c', 'a[1]']),
@@ -54,7 +61,7 @@ server.get('Test', function (req, res, next) {
             castArray: timeFunction(require('lodash/castArray'), 'abc'),
             ceil: timeFunction(require('lodash/ceil'), 6.004, 2),
             chunk: timeFunction(require('lodash/chunk'), ['a', 'b', 'c', 'd'], 2),
-            calmp: timeFunction(require('lodash/clamp'), 10, -5, 5),
+            clamp: timeFunction(require('lodash/clamp'), 10, -5, 5),
             compact: timeFunction(require('lodash/compact'), [0, 1, false, 2, '', 3]),
             cond: conditionalFunct({ a: '1', b: '2' }),
             countBy: timeFunction(require('lodash/countBy'), [
@@ -65,7 +72,7 @@ server.get('Test', function (req, res, next) {
             deburr: timeFunction(require('lodash/deburr'), 'téstêrûÜ'),
             defaultTo: timeFunction(require('lodash/defaultTo'), null, 2),
             defaultToAny: timeFunction(require('lodash/defaultToAny'), undefined, [null, undefined, 20, 40]),
-            defaults: timeFunction(require('lodash/defaults'), { a: 1 }, [{ b: 2 }, { a: 3 }]),
+            defaults: timeFunction(require('lodash/defaults'), { 'a': 1 }, { 'b': 2 }, { 'a': 3 }),
             difference: timeFunction(require('lodash/difference'), [2, 1], [2, 3]),
             differenceBy: timeFunction(require('lodash/differenceBy'), [2.1, 1.2], [[2.3, 3.4], Math.floor]),
             divide: timeFunction(require('lodash/divide'), 6, 3),
@@ -73,17 +80,17 @@ server.get('Test', function (req, res, next) {
             drop: timeFunction(require('lodash/drop'), [1, 2, 3], 2),
             dropRight: timeFunction(require('lodash/dropRight'), [1, 2, 3], 2),
             dropRightWhile: timeFunction(require('lodash/dropRightWhile'), [
-                { user: 'barney', active: false },
-                { user: 'fred', active: true },
-                { user: 'pebbles', active: true }
-            ], function ({ active }) { return active; }),
+                { 'user': 'barney', 'active': true },
+                { 'user': 'fred', 'active': false },
+                { 'user': 'pebbles', 'active': false }
+            ], function (o) { return !o.active; }),
             dropWhile: timeFunction(require('lodash/dropWhile'), [
                 { user: 'barney', active: true },
                 { user: 'fred', active: true },
                 { user: 'pebbles', active: false }
             ], function ({ active }) { return active; }),
             forEach: forEachTest,
-            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'b'),
+            endsWith: timeFunction(require('lodash/endsWith'), 'abc', 'c'),
             eq: timeFunction(require('lodash/eq'), 'a', Object('a')),
             // eqDeep: require('lodash/eqDeep')({ a: 1 }, { a: 1 }),
             escape: timeFunction(require('lodash/escape'), 'fred, barney, & pebbles'),
@@ -182,12 +189,12 @@ server.get('Test', function (req, res, next) {
             multiply: timeFunction(require('lodash/multiply'), 6, 4),
             negate: timeFunction(require('lodash/filter'), [1, 2, 3, 4, 5, 6], require('lodash/negate')(function (n) { return n % 2 == 0; })),
             nth: timeFunction(require('lodash/nth'), ['a', 'b', 'c', 'd'], -1),
-            /* orderBy: require('lodash/orderBy')([
+             orderBy: require('lodash/orderBy')([
                 { user: 'fred', age: 48 },
                 { user: 'barney', age: 34 },
                 { user: 'fred', age: 40 },
                 { user: 'barney', age: 36 }
-            ], ['user', 'age'], ['asc', 'desc']) */
+            ], ['user', 'age'], ['asc', 'desc']),
             over: require('lodash/over')([Math.max, Math.min])(1, 2, 3, 4),
             overEvery: require('lodash/overEvery')([Boolean, isFinite])(null),
             overSome: require('lodash/overSome')([Boolean, isFinite])(null),
@@ -209,7 +216,7 @@ server.get('Test', function (req, res, next) {
             pull: timeFunction(require('lodash/pull'), ['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c'),
             pullAll: timeFunction(require('lodash/pullAll'), ['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c']),
             pullAt: timeFunction(require('lodash/pullAt'), ['a', 'b', 'c', 'd'], [1, 3]),
-            random: timeFunction(require('lodash/random'), 5),
+
             range: timeFunction(require('lodash/range'), 4),
             rangeRight: timeFunction(require('lodash/rangeRight'), 4),
             reduce: timeFunction(require('lodash/reduce'), { a: 1, b: 2, c: 1 }, function (result, value, key) {
@@ -282,7 +289,7 @@ server.get('Test', function (req, res, next) {
             update: timeFunction(require('lodash/update'), { a: [{ b: { c: 3 } }] }, 'a[0].b.c', function (n) { return n ? n * n : 0; }),
             upperCase: timeFunction(require('lodash/upperCase'), '--foo-bar'),
             upperFirst: timeFunction(require('lodash/upperFirst'), 'fred'),
-            // values: require('lodash/values')('hi'),
+            values: timeFunction(require('lodash/values'), new Foo()),
             without: timeFunction(require('lodash/without'), [2, 1, 2, 3], 1, 2),
             words: timeFunction(require('lodash/words'), 'fred, barney, & pebbles'),
             xor: timeFunction(require('lodash/xor'), [2, 1], [2, 3]),

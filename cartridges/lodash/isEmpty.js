@@ -1,12 +1,23 @@
 'use strict';
 
-var getTag = require('./.internal/getTag.js');
-var isArguments = require('./isArguments.js');
-var isArrayLike = require('./isArrayLike.js');
-var isBuffer = require('./isBuffer.js');
-var isPrototype = require('./.internal/isPrototype.js');
-var isTypedArray = require('./isTypedArray.js');
+var baseKeys = require('./internal/baseKeys');
+var getTag = require('./internal/getTag');
+var isArguments = require('./isArguments');
+var isArray = require('./isArray');
+var isArrayLike = require('./isArrayLike');
+var isBuffer = require('./isBuffer');
+var isPrototype = require('./internal/isPrototype');
+var isTypedArray = require('./isTypedArray');
 
+/** `Object#toString` result references. */
+var mapTag = '[object Map]';
+var setTag = '[object Set]';
+
+/** Used for built-in method references. */
+var objectProto = Object.prototype;
+
+/** Used to check objects for own properties. */
+var hasOwnProperty = objectProto.hasOwnProperty;
 
 /**
  * Checks if `value` is an empty object, collection, map, or set.
@@ -18,28 +29,27 @@ var isTypedArray = require('./isTypedArray.js');
  * jQuery-like collections are considered empty if they have a `length` of `0`.
  * Similarly, maps and sets are considered empty if they have a `size` of `0`.
  *
+ * @static
+ * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is empty, else `false`.
  * @example
  *
- * isEmpty(null)
+ * _.isEmpty(null);
  * // => true
  *
- * isEmpty(true)
+ * _.isEmpty(true);
  * // => true
  *
- * isEmpty(1)
+ * _.isEmpty(1);
  * // => true
  *
- * isEmpty([1, 2, 3])
+ * _.isEmpty([1, 2, 3]);
  * // => false
  *
- * isEmpty('abc')
- * // => false
- *
- * isEmpty({ 'a': 1 })
+ * _.isEmpty({ 'a': 1 });
  * // => false
  */
 function isEmpty(value) {
@@ -47,20 +57,19 @@ function isEmpty(value) {
         return true;
     }
     if (isArrayLike(value) &&
-      (Array.isArray(value) || typeof value === 'string' || typeof value.splice === 'function' ||
+      (isArray(value) || typeof value == 'string' || typeof value.splice == 'function' ||
         isBuffer(value) || isTypedArray(value) || isArguments(value))) {
         return !value.length;
     }
-    const tag = getTag(value);
-    if (tag === '[object Map]' || tag === '[object Set]') {
+    var tag = getTag(value);
+    if (tag == mapTag || tag == setTag) {
         return !value.size;
     }
     if (isPrototype(value)) {
-        return !Object.keys(value).length;
+        return !baseKeys(value).length;
     }
-
     for (var key in value) {
-        if (value.hasOwnProperty(key)) {
+        if (hasOwnProperty.call(value, key)) {
             return false;
         }
     }
