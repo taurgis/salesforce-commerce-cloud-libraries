@@ -1,12 +1,14 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
-var eq = require('./eq.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
+var eq = require('./eq');
 
 /**
- * This method is like `lastIndexOf` except that it performs a binary
+ * This method is like `_.lastIndexOf` except that it performs a binary
  * search on a sorted `array`.
  *
+ * @static
+ * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -14,13 +16,13 @@ var eq = require('./eq.js');
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * sortedLastIndexOf([4, 5, 5, 5, 6], 5)
+ * _.sortedLastIndexOf([4, 5, 5, 5, 6], 5);
  * // => 3
  */
 function sortedLastIndexOf(array, value) {
-    const length = array == null ? 0 : array.length;
+    var length = array == null ? 0 : array.length;
     if (length) {
-        const index = baseSortedIndex(array, value, true) - 1;
+        var index = baseSortedIndex(array, value, true) - 1;
         if (eq(array[index], value)) {
             return index;
         }
