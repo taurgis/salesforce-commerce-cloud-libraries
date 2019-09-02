@@ -1,11 +1,10 @@
 var assert = require('assert');
 var sampleSize = require('../../../cartridges/lodash/sampleSize');
-var transform = require('../../../cartridges/lodash/transform');
 var each = require('../../../cartridges/lodash/each');
 var map = require('../../../cartridges/lodash/map');
 var values = require('../../../cartridges/lodash/values');
 var difference = require('../../../cartridges/lodash/difference');
-var { falsey, empties, stubArray } = require('../helpers/stubs');
+var { falsey } = require('../helpers/stubs');
 
 describe('sampleSize', function () {
     var array = [1, 2, 3];
