@@ -94,6 +94,10 @@ server.get('Test', function (req, res, next) {
     var curriedRight = require('lodash/curryRight')(abc);
     var objectsDifferenceWith = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
 
+    function duplicate(n) {
+        return [[[n, n]]]
+    }
+
     res.json(
         {
             wrapped: chained.value(),
@@ -157,15 +161,31 @@ server.get('Test', function (req, res, next) {
             escapeRegex: timeFunction(require('lodash/escapeRegExp'), '[lodash](https://lodash.com/)'),
             every: timeFunction(require('lodash/every'), [true, 1, null, 'yes'], Boolean),
             everyValue: timeFunction(require('lodash/everyValue'), { a: 0, b: 'yes', c: false }, Boolean),
+            fill: timeFunction(require('lodash/fill'), Array(3), 2),
             filter: timeFunction(require('lodash/filter'), [{ user: 'barney', active: true },
             { user: 'fred', active: false }], function (value) { return value.active; }),
             filterObject: timeFunction(require('lodash/filterObject'), { a: 5, b: 8, c: 10 }, function (n) { return !(n % 5); }),
+            find: timeFunction(require('lodash/find'), {
+                barney: { age: 36, active: true },
+                fred: { age: 40, active: false },
+                pebbles: { age: 1, active: true }
+            }, function ({ age }) { return age < 40; }),
+            findIndex: timeFunction(require('lodash/findIndex'), [
+                { 'user': 'barney', age: 50 },
+                { 'user': 'fred', age: 41 },
+                { 'user': 'pebbles', age: 1 }
+            ], function ({ age }) { return age < 40; }),
             findKey: timeFunction(require('lodash/findKey'), {
                 barney: { age: 36, active: true },
                 fred: { age: 40, active: false },
                 pebbles: { age: 1, active: true }
             }, function ({ age }) { return age < 40; }),
             findLast: timeFunction(require('lodash/findLast'), [1, 2, 3, 4], function (n) { return n % 2 === 1; }),
+            findLastIndex: timeFunction(require('lodash/findLastIndex'), [
+                { 'user': 'barney', age: 50 },
+                { 'user': 'fred', age: 41 },
+                { 'user': 'pebbles', age: 1 }
+            ], function ({ age }) { return age < 40; }),
             findLastKey: timeFunction(require('lodash/findLastKey'), {
                 barney: { age: 36, active: true },
                 fred: { age: 40, active: false },
@@ -175,6 +195,7 @@ server.get('Test', function (req, res, next) {
             flatMap: timeFunction(require('lodash/flatMap'), [1, 2], function duplicate(n) {
                 return [n, n];
             }),
+            flatMapDeep: timeFunction(require('lodash/flatMapDeep'), [1, 2], duplicate),
             flatMapDepth: timeFunction(require('lodash/flatMapDepth'), [1, 2], function duplicate(n) {
                 return [[[n, n]]];
             }, 2),

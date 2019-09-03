@@ -24,7 +24,7 @@ var isTypedArray = require('./isTypedArray');
  * @since 1.3.0
  * @category Object
  * @param {Object} object The object to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @param {*} [accumulator] The custom accumulator value.
  * @returns {*} Returns the accumulated value.
  * @example

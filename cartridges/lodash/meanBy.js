@@ -12,7 +12,7 @@ var baseMean = require('./internal/baseMean');
  * @since 4.7.0
  * @category Math
  * @param {Array} array The array to iterate over.
- * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
+ * @param {Function} [iteratee=identity] The iteratee invoked per element.
  * @returns {number} Returns the mean.
  * @example
  *

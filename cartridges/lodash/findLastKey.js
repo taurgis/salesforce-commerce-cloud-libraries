@@ -5,7 +5,7 @@ var baseForOwnRight = require('./internal/baseForOwnRight');
 var baseIteratee = require('./internal/baseIteratee');
 
 /**
- * This method is like `_.findKey` except that it iterates over elements of
+ * This method is like `findKey` except that it iterates over elements of
  * a collection in the opposite order.
  *
  * @static
@@ -23,15 +23,15 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'age': 1,  'active': true }
  * };
  *
- * findLastKey(users, function(o) { return o.age < 40; }); => returns 'pebbles' assuming `_.findKey` returns 'barney'
+ * findLastKey(users, function(o) { return o.age < 40; }); => returns 'pebbles' assuming `findKey` returns 'barney'
  *
- * // The `_.matches` iteratee shorthand.
+ * * The `_.matches` iteratee shorthand. *
  * findLastKey(users, { 'age': 36, 'active': true }); => 'barney'
  *
- * // The `_.matchesProperty` iteratee shorthand.
+ * * The `_.matchesProperty` iteratee shorthand. *
  * findLastKey(users, ['active', false]); => 'fred'
  *
- * // The `_.property` iteratee shorthand.
+ * * The `_.property` iteratee shorthand. *
  * findLastKey(users, 'active'); => 'pebbles'
  */
 function findLastKey(object, predicate) {

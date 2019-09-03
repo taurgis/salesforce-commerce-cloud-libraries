@@ -1,4 +1,5 @@
 'use strict';
+
 var baseFill = require('./internal/baseFill');
 var isIterateeCall = require('./internal/isIterateeCall');
 

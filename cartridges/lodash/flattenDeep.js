@@ -8,6 +8,7 @@ const INFINITY = 1 / 0;
 /**
  * Recursively flattens `array`.
  *
+ * @static
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to flatten.

@@ -25,13 +25,13 @@ var findIndex = require('./findIndex');
  *
  * find(users, function(o) { return o.age < 40; }); => object for 'barney'
  *
- * // The `_.matches` iteratee shorthand.
+ * * The `_.matches` iteratee shorthand. *
  * find(users, { 'age': 1, 'active': true }); => object for 'pebbles'
  *
- * // The `_.matchesProperty` iteratee shorthand.
+ * * The `_.matchesProperty` iteratee shorthand. *
  * find(users, ['active', false]); => object for 'fred'
  *
- * // The `_.property` iteratee shorthand.
+ * * The `_.property` iteratee shorthand. *
  * find(users, 'active'); => object for 'barney'
  */
 var find = createFind(findIndex);

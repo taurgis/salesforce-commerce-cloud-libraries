@@ -28,13 +28,13 @@ var isArray = require('./isArray');
  *
  * filter(users, function(o) { return !o.active; }); => objects for ['fred']
  *
- * // The `_.matches` iteratee shorthand.
+ * * The `_.matches` iteratee shorthand. *
  * filter(users, { 'age': 36, 'active': true }); => objects for ['barney']
  *
- * // The `_.matchesProperty` iteratee shorthand.
+ * * The `_.matchesProperty` iteratee shorthand. *
  * filter(users, ['active', false]); => objects for ['fred']
  *
- * // The `_.property` iteratee shorthand.
+ * * The `_.property` iteratee shorthand. *
  * filter(users, 'active'); => objects for ['barney']
  */
 function filter(collection, predicate) {

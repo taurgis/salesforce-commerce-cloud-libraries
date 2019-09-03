@@ -1,6 +1,6 @@
 'use strict';
 
-var overArg = require('./overArg');
+var overArg = require('../overArgs');
 
 /** Built-in value references. */
 var getPrototype = overArg(Object.getPrototypeOf, Object);
