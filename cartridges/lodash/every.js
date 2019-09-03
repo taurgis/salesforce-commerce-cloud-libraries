@@ -20,13 +20,13 @@ var isIterateeCall = require('./internal/isIterateeCall');
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {boolean} Returns `true` if all elements pass the predicate check,
  *  else `false`.
  * @example
  *
- * _.every([true, 1, null, 'yes'], Boolean);
+ * every([true, 1, null, 'yes'], Boolean);
  * // => false
  *
  * var users = [
@@ -35,15 +35,15 @@ var isIterateeCall = require('./internal/isIterateeCall');
  * ];
  *
  * // The `_.matches` iteratee shorthand.
- * _.every(users, { 'user': 'barney', 'active': false });
+ * every(users, { 'user': 'barney', 'active': false });
  * // => false
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.every(users, ['active', false]);
+ * every(users, ['active', false]);
  * // => true
  *
  * // The `_.property` iteratee shorthand.
- * _.every(users, 'active');
+ * every(users, 'active');
  * // => false
  */
 function every(collection, predicate, guard) {

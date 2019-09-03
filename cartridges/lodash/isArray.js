@@ -11,16 +11,16 @@
  * @returns {boolean} Returns `true` if `value` is an array, else `false`.
  * @example
  *
- * _.isArray([1, 2, 3]);
+ * isArray([1, 2, 3]);
  * // => true
  *
- * _.isArray(document.body.children);
+ * isArray(document.body.children);
  * // => false
  *
- * _.isArray('abc');
+ * isArray('abc');
  * // => false
  *
- * _.isArray(_.noop);
+ * isArray(_.noop);
  * // => false
  */
 var isArray = Array.isArray;

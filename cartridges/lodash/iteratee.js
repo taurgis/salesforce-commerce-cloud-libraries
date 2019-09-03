@@ -27,25 +27,25 @@ var CLONE_DEEP_FLAG = 1;
  * ];
  *
  * // The `_.matches` iteratee shorthand.
- * _.filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
+ * filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
  * // => [{ 'user': 'barney', 'age': 36, 'active': true }]
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.filter(users, _.iteratee(['user', 'fred']));
+ * filter(users, _.iteratee(['user', 'fred']));
  * // => [{ 'user': 'fred', 'age': 40 }]
  *
  * // The `_.property` iteratee shorthand.
- * _.map(users, _.iteratee('user'));
+ * map(users, _.iteratee('user'));
  * // => ['barney', 'fred']
  *
  * // Create custom iteratee shorthands.
- * _.iteratee = _.wrap(_.iteratee, function(iteratee, func) {
+ * iteratee = _.wrap(_.iteratee, function(iteratee, func) {
  *   return !_.isRegExp(func) ? iteratee(func) : function(string) {
  *     return func.test(string);
  *   };
  * });
  *
- * _.filter(['abc', 'def'], /ef/);
+ * filter(['abc', 'def'], /ef/);
  * // => ['def']
  */
 function iteratee(func) {

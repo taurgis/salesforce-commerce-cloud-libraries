@@ -24,10 +24,10 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  *  else `false`.
  * @example
  *
- * _.isArguments(function() { return arguments; }());
+ * isArguments(function() { return arguments; }());
  * // => true
  *
- * _.isArguments([1, 2, 3]);
+ * isArguments([1, 2, 3]);
  * // => false
  */
 var isArguments = baseIsArguments(function () { return arguments; }()) ? baseIsArguments : function (value) {

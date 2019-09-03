@@ -34,22 +34,22 @@ var reFlags = /\w*$/;
  * @returns {string} Returns the truncated string.
  * @example
  *
- * _.truncate('hi-diddly-ho there, neighborino');
+ * truncate('hi-diddly-ho there, neighborino');
  * // => 'hi-diddly-ho there, neighbo...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': ' '
  * });
  * // => 'hi-diddly-ho there,...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': /,? +/
  * });
  * // => 'hi-diddly-ho there...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'omission': ' [...]'
  * });
  * // => 'hi-diddly-ho there, neig [...]'

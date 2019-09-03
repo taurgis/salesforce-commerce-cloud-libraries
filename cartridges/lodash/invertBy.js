@@ -34,10 +34,10 @@ var nativeObjectToString = objectProto.toString;
  *
  * var object = { 'a': 1, 'b': 2, 'c': 1 };
  *
- * _.invertBy(object);
+ * invertBy(object);
  * // => { '1': ['a', 'c'], '2': ['b'] }
  *
- * _.invertBy(object, function(value) {
+ * invertBy(object, function(value) {
  *   return 'group' + value;
  * });
  * // => { 'group1': ['a', 'c'], 'group2': ['b'] }

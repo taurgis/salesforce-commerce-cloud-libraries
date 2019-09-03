@@ -23,7 +23,7 @@ var reHasEscapedHtml = RegExp(reEscapedHtml.source);
  * @returns {string} Returns the unescaped string.
  * @example
  *
- * _.unescape('fred, barney, &amp; pebbles');
+ * unescape('fred, barney, &amp; pebbles');
  * // => 'fred, barney, & pebbles'
  */
 function unescape(string) {

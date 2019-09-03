@@ -10,7 +10,6 @@ var isArray = require('./isArray');
  * and/or values.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to concatenate.
@@ -19,13 +18,11 @@ var isArray = require('./isArray');
  * @example
  *
  * var array = [1];
- * var other = _.concat(array, 2, [3], [[4]]);
+ * var other = concat(array, 2, [3], [[4]]);
  *
- * console.log(other);
- * // => [1, 2, 3, [4]]
+ * console.log(other); => [1, 2, 3, [4]]
  *
- * console.log(array);
- * // => [1]
+ * console.log(array); => [1]
  */
 function concat() {
     var length = arguments.length;

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseClamp = require('./internal/baseClamp');
 var toNumber = require('./toNumber');
 
@@ -5,7 +7,6 @@ var toNumber = require('./toNumber');
  * Clamps `number` within the inclusive `lower` and `upper` bounds.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Number
  * @param {number} number The number to clamp.
@@ -14,11 +15,9 @@ var toNumber = require('./toNumber');
  * @returns {number} Returns the clamped number.
  * @example
  *
- * _.clamp(-10, -5, 5);
- * // => -5
+ * clamp(-10, -5, 5); => -5
  *
- * _.clamp(10, -5, 5);
- * // => 5
+ * clamp(10, -5, 5); => 5
  */
 function clamp(number, lower, upper) {
     if (upper === undefined) {

@@ -17,13 +17,13 @@ var baseUnset = require('./internal/baseUnset');
  * @example
  *
  * var object = { 'a': [{ 'b': { 'c': 7 } }] };
- * _.unset(object, 'a[0].b.c');
+ * unset(object, 'a[0].b.c');
  * // => true
  *
  * console.log(object);
  * // => { 'a': [{ 'b': {} }] };
  *
- * _.unset(object, ['a', '0', 'b', 'c']);
+ * unset(object, ['a', '0', 'b', 'c']);
  * // => true
  *
  * console.log(object);

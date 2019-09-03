@@ -2,8 +2,12 @@
 
 var server = require('server');
 var timeFunction = require('../scripts/util/timeFunction');
-/** Just an example controlle to test moment functions */
+
+/** Just an example controller to test lodash functions */
 server.get('Test', function (req, res, next) {
+    var conforms = require('lodash/conforms');
+    var filter = require('lodash/filter');
+    var isEqual = require('lodash/isEqual');
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -28,7 +32,8 @@ server.get('Test', function (req, res, next) {
     afterTestFunction();
 
     var conditionalFunct = require('lodash/cond')([
-        [function () { return true; }, function () { return 'no match'; }]
+        [require('lodash/matches')({ 'a': 1 }), require('lodash/constant')('matches A')],
+        [require('lodash/conforms')({ 'b': require('lodash/isNumber') }), require('lodash/constant')('matches B')]
     ]);
 
     var forEachTest = [];
@@ -75,6 +80,20 @@ server.get('Test', function (req, res, next) {
         }
     }, 'greet', 'hi');
 
+    var objects = [
+        { 'a': 2, 'b': 1 },
+        { 'a': 1, 'b': 2 }
+    ];
+    var object = { 'a': 1, 'b': 2 };
+
+    var abc = function (a, b, c) {
+        return [a, b, c];
+    };
+
+    var curried = require('lodash/curry')(abc);
+    var curriedRight = require('lodash/curryRight')(abc);
+    var objectsDifferenceWith = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }];
+
     res.json(
         {
             wrapped: chained.value(),
@@ -95,21 +114,29 @@ server.get('Test', function (req, res, next) {
             ceil: timeFunction(require('lodash/ceil'), 6.004, 2),
             chunk: timeFunction(require('lodash/chunk'), ['a', 'b', 'c', 'd'], 2),
             clamp: timeFunction(require('lodash/clamp'), 10, -5, 5),
+            clone: timeFunction(require('lodash/clone'), [{ 'a': 1 }, { 'b': 2 }]),
+            cloneDeep: timeFunction(require('lodash/cloneDeep'), [{ 'a': 1 }, { 'b': 2 }]),
             compact: timeFunction(require('lodash/compact'), [0, 1, false, 2, '', 3]),
-            cond: conditionalFunct({ a: '1', b: '2' }),
+            concat: timeFunction(require('lodash/concat'), [1], 2, [3], [[4]]),
+            cond: conditionalFunct({ a: 1, b: 2 }),
+            conforms: timeFunction(filter, objects, conforms({ 'b': function (n) { return n > 1; } })),
+            conformsTo: timeFunction(require('lodash/conformsTo'), object, { 'b': function (n) { return n > 1; } }),
             countBy: timeFunction(require('lodash/countBy'), [
                 { user: 'barney', active: true },
                 { user: 'betty', active: true },
                 { user: 'fred', active: false }
             ], 'active'),
+            curry: curried(1)(2)(3),
+            curryright: curriedRight(1)(2)(3),
             deburr: timeFunction(require('lodash/deburr'), 'téstêrûÜ'),
+            defaults: timeFunction(require('lodash/defaults'), { 'a': 1 }, { 'b': 2 }, { 'a': 3 }),
+            defaultsDeep: timeFunction(require('lodash/defaultsDeep'), { 'a': { 'b': 2 } }, { 'a': { 'b': 1, 'c': 3 } }),
             defaultTo: timeFunction(require('lodash/defaultTo'), null, 2),
             defaultToAny: timeFunction(require('lodash/defaultToAny'), undefined, [null, undefined, 20, 40]),
-            defaults: timeFunction(require('lodash/defaults'), { a: 1 }, { b: 2 }, { a: 3 }),
             difference: timeFunction(require('lodash/difference'), [2, 1], [2, 3]),
-            differenceBy: timeFunction(require('lodash/differenceBy'), [2.1, 1.2], [[2.3, 3.4], Math.floor]),
+            differenceBy: timeFunction(require('lodash/differenceBy'), [2.1, 1.2], [2.3, 3.4], Math.floor),
+            differenceWith: require('lodash/differenceWith')(objectsDifferenceWith, [{ 'x': 1, 'y': 2 }], isEqual),
             divide: timeFunction(require('lodash/divide'), 6, 3),
-            last: timeFunction(require('lodash/last'), ['test1', 'test2']),
             drop: timeFunction(require('lodash/drop'), [1, 2, 3], 2),
             dropRight: timeFunction(require('lodash/dropRight'), [1, 2, 3], 2),
             dropRightWhile: timeFunction(require('lodash/dropRightWhile'), [
@@ -196,6 +223,7 @@ server.get('Test', function (req, res, next) {
             kebabCase: timeFunction(require('lodash/kebabCase'), 'fooBar'),
             keyBy: timeFunction(require('lodash/keyBy'), [{ dir: 'left', code: 97 }, { dir: 'right', code: 100 }], function ({ code }) { return String.fromCharCode(code); }),
             keys: timeFunction(require('lodash/keys'), { a: 1, b: 2 }),
+            last: timeFunction(require('lodash/last'), ['test1', 'test2']),
             lastIndexOf: timeFunction(require('lodash/lastIndexOf'), [1, 2, 1, 2], 2),
             lowerCase: timeFunction(require('lodash/lowerCase'), '--Foo-Bar--'),
             lowerFirst: timeFunction(require('lodash/lowerFirst'), 'Fred'),

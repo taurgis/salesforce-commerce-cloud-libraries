@@ -11,7 +11,7 @@
  * @returns {*} Returns the last element of `array`.
  * @example
  *
- * _.last([1, 2, 3]);
+ * last([1, 2, 3]);
  * // => 3
  */
 function last(array) {

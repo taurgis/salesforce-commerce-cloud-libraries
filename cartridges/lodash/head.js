@@ -12,10 +12,10 @@
  * @returns {*} Returns the first element of `array`.
  * @example
  *
- * _.head([1, 2, 3]);
+ * head([1, 2, 3]);
  * // => 1
  *
- * _.head([]);
+ * head([]);
  * // => undefined
  */
 function head(array) {

@@ -16,16 +16,16 @@ var toInteger = require('./toInteger');
  * @returns {boolean} Returns `true` if `value` is an integer, else `false`.
  * @example
  *
- * _.isInteger(3);
+ * isInteger(3);
  * // => true
  *
- * _.isInteger(Number.MIN_VALUE);
+ * isInteger(Number.MIN_VALUE);
  * // => false
  *
- * _.isInteger(Infinity);
+ * isInteger(Infinity);
  * // => false
  *
- * _.isInteger('3');
+ * isInteger('3');
  * // => false
  */
 function isInteger(value) {

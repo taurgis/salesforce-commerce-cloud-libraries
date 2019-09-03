@@ -44,7 +44,7 @@ var isArray = require('./isArray');
  * ];
  *
  * // The `_.property` iteratee shorthand.
- * _.map(users, 'user');
+ * map(users, 'user');
  * // => ['barney', 'fred']
  */
 function map(collection, iteratee) {

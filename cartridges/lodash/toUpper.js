@@ -14,13 +14,13 @@ var toString = require('./toString');
  * @returns {string} Returns the upper cased string.
  * @example
  *
- * _.toUpper('--foo-bar--');
+ * toUpper('--foo-bar--');
  * // => '--FOO-BAR--'
  *
- * _.toUpper('fooBar');
+ * toUpper('fooBar');
  * // => 'FOOBAR'
  *
- * _.toUpper('__foo_bar__');
+ * toUpper('__foo_bar__');
  * // => '__FOO_BAR__'
  */
 function toUpper(value) {

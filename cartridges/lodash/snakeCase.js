@@ -14,13 +14,13 @@ var createCompounder = require('./internal/createCompounder');
  * @returns {string} Returns the snake cased string.
  * @example
  *
- * _.snakeCase('Foo Bar');
+ * snakeCase('Foo Bar');
  * // => 'foo_bar'
  *
- * _.snakeCase('fooBar');
+ * snakeCase('fooBar');
  * // => 'foo_bar'
  *
- * _.snakeCase('--FOO-BAR--');
+ * snakeCase('--FOO-BAR--');
  * // => 'foo_bar'
  */
 var snakeCase = createCompounder(function (result, word, index) {

@@ -18,10 +18,10 @@ var toInteger = require('./toInteger');
  *
  * var array = ['a', 'b', 'c', 'd'];
  *
- * _.nth(array, 1);
+ * nth(array, 1);
  * // => 'b'
  *
- * _.nth(array, -2);
+ * nth(array, -2);
  * // => 'c';
  */
 function nth(array, n) {

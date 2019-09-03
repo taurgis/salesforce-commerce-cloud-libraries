@@ -14,7 +14,7 @@ var ary = require('./ary');
  * @returns {Function} Returns the new capped function.
  * @example
  *
- * _.map(['6', '8', '10'], _.unary(parseInt));
+ * map(['6', '8', '10'], _.unary(parseInt));
  * // => [6, 8, 10]
  */
 function unary(func) {

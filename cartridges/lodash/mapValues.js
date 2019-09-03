@@ -24,11 +24,11 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'user': 'pebbles', 'age': 1 }
  * };
  *
- * _.mapValues(users, function(o) { return o.age; });
+ * mapValues(users, function(o) { return o.age; });
  * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  *
  * // The `_.property` iteratee shorthand.
- * _.mapValues(users, 'age');
+ * mapValues(users, 'age');
  * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValues(object, iteratee) {

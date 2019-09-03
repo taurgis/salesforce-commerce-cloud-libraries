@@ -19,13 +19,13 @@ var toString = require('./toString');
  * @returns {string} Returns the padded string.
  * @example
  *
- * _.padStart('abc', 6);
+ * padStart('abc', 6);
  * // => '   abc'
  *
- * _.padStart('abc', 6, '_-');
+ * padStart('abc', 6, '_-');
  * // => '_-_abc'
  *
- * _.padStart('abc', 3);
+ * padStart('abc', 3);
  * // => 'abc'
  */
 function padStart(string, length, chars) {

@@ -24,7 +24,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * _.toPairsIn(new Foo);
+ * toPairsIn(new Foo);
  * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
  */
 var toPairsIn = createToPairs(keysIn);

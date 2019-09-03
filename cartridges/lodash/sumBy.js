@@ -19,11 +19,11 @@ var baseSum = require('./internal/baseSum');
  *
  * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  *
- * _.sumBy(objects, function(o) { return o.n; });
+ * sumBy(objects, function(o) { return o.n; });
  * // => 20
  *
  * // The `_.property` iteratee shorthand.
- * _.sumBy(objects, 'n');
+ * sumBy(objects, 'n');
  * // => 20
  */
 function sumBy(array, iteratee) {

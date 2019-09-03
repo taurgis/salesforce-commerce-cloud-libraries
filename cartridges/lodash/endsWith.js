@@ -18,13 +18,13 @@ var toString = require('./toString');
  *  else `false`.
  * @example
  *
- * _.endsWith('abc', 'c');
+ * endsWith('abc', 'c');
  * // => true
  *
- * _.endsWith('abc', 'b');
+ * endsWith('abc', 'b');
  * // => false
  *
- * _.endsWith('abc', 'b', 2);
+ * endsWith('abc', 'b', 2);
  * // => true
  */
 function endsWith(string, target, position) {

@@ -25,7 +25,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * _.forInRight(new Foo, function(value, key) {
+ * forInRight(new Foo, function(value, key) {
  *   console.log(key);
  * });
  * // => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.

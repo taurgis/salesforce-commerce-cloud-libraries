@@ -70,7 +70,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  *  The sourceURL of the compiled template.
  * @param {string} [options.variable='obj']
  *  The data object variable name.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {Function} Returns the compiled template function.
  * @example
  *
@@ -126,7 +126,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * // }
  *
  * // Use custom template delimiters.
- * _.templateSettings.interpolate = /{{([\s\S]+?)}}/g;
+ * templateSettings.interpolate = /{{([\s\S]+?)}}/g;
  * var compiled = _.template('hello {{ user }}!');
  * compiled({ 'user': 'mustache' });
  * // => 'hello mustache!'

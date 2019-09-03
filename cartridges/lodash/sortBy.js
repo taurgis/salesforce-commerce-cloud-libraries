@@ -26,10 +26,10 @@ var isIterateeCall = require('./internal/isIterateeCall');
  *   { 'user': 'barney', 'age': 34 }
  * ];
  *
- * _.sortBy(users, [function(o) { return o.user; }]);
+ * sortBy(users, [function(o) { return o.user; }]);
  * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
  *
- * _.sortBy(users, ['user', 'age']);
+ * sortBy(users, ['user', 'age']);
  * // => objects for [['barney', 34], ['barney', 36], ['fred', 40], ['fred', 48]]
  */
 var sortBy = baseRest(function (collection, iteratees) {

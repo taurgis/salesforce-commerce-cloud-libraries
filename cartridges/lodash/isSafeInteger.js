@@ -20,16 +20,16 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * @returns {boolean} Returns `true` if `value` is a safe integer, else `false`.
  * @example
  *
- * _.isSafeInteger(3);
+ * isSafeInteger(3);
  * // => true
  *
- * _.isSafeInteger(Number.MIN_VALUE);
+ * isSafeInteger(Number.MIN_VALUE);
  * // => false
  *
- * _.isSafeInteger(Infinity);
+ * isSafeInteger(Infinity);
  * // => false
  *
- * _.isSafeInteger('3');
+ * isSafeInteger('3');
  * // => false
  */
 function isSafeInteger(value) {

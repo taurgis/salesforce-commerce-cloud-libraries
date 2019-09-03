@@ -18,16 +18,16 @@ var isNumber = require('./isNumber');
  * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
  * @example
  *
- * _.isNaN(NaN);
+ * isNaN(NaN);
  * // => true
  *
- * _.isNaN(new Number(NaN));
+ * isNaN(new Number(NaN));
  * // => true
  *
  * isNaN(undefined);
  * // => true
  *
- * _.isNaN(undefined);
+ * isNaN(undefined);
  * // => false
  */
 function isNaN(value) {

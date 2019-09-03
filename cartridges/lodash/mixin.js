@@ -33,14 +33,14 @@ var keys = require('./keys');
  *   });
  * }
  *
- * _.mixin({ 'vowels': vowels });
- * _.vowels('fred');
+ * mixin({ 'vowels': vowels });
+ * vowels('fred');
  * // => ['e']
  *
  * _('fred').vowels().value();
  * // => ['e']
  *
- * _.mixin({ 'vowels': vowels }, { 'chain': false });
+ * mixin({ 'vowels': vowels }, { 'chain': false });
  * _('fred').vowels();
  * // => ['e']
  */

@@ -15,16 +15,16 @@ var hasPath = require('./internal/hasPath');
  *
  * var object = _.create({ 'a': _.create({ 'b': 2 }) });
  *
- * _.hasIn(object, 'a');
+ * hasIn(object, 'a');
  * // => true
  *
- * _.hasIn(object, 'a.b');
+ * hasIn(object, 'a.b');
  * // => true
  *
- * _.hasIn(object, ['a', 'b']);
+ * hasIn(object, ['a', 'b']);
  * // => true
  *
- * _.hasIn(object, 'b');
+ * hasIn(object, 'b');
  * // => false
  */
 function hasIn(object, path) {

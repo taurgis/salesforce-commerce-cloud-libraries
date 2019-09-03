@@ -19,11 +19,11 @@ var baseMean = require('./internal/baseMean');
  *
  * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  *
- * _.meanBy(objects, function(o) { return o.n; });
+ * meanBy(objects, function(o) { return o.n; });
  * // => 5
  *
  * // The `_.property` iteratee shorthand.
- * _.meanBy(objects, 'n');
+ * meanBy(objects, 'n');
  * // => 5
  */
 function meanBy(array, iteratee) {

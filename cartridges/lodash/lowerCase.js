@@ -13,13 +13,13 @@ var createCompounder = require('./internal/createCompounder');
  * @returns {string} Returns the lower cased string.
  * @example
  *
- * _.lowerCase('--Foo-Bar--');
+ * lowerCase('--Foo-Bar--');
  * // => 'foo bar'
  *
- * _.lowerCase('fooBar');
+ * lowerCase('fooBar');
  * // => 'foo bar'
  *
- * _.lowerCase('__FOO_BAR__');
+ * lowerCase('__FOO_BAR__');
  * // => 'foo bar'
  */
 var lowerCase = createCompounder(function (result, word, index) {

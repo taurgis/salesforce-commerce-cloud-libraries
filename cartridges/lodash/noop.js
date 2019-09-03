@@ -9,7 +9,7 @@
  * @category Util
  * @example
  *
- * _.times(2, _.noop);
+ * times(2, _.noop);
  * // => [undefined, undefined]
  */
 function noop() {

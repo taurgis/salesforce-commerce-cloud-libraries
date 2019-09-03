@@ -27,7 +27,7 @@ var MAX_ARRAY_LENGTH = 4294967295;
  * @returns {Array} Returns the string segments.
  * @example
  *
- * _.split('a-b-c', '-', 2);
+ * split('a-b-c', '-', 2);
  * // => ['a', 'b']
  */
 function split(string, separator, limit) {

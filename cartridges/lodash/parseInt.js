@@ -22,14 +22,14 @@ var nativeParseInt = parseInt;
  * @category String
  * @param {string} string The string to convert.
  * @param {number} [radix=10] The radix to interpret `value` by.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {number} Returns the converted integer.
  * @example
  *
- * _.parseInt('08');
+ * parseInt('08');
  * // => 8
  *
- * _.map(['6', '08', '10'], _.parseInt);
+ * map(['6', '08', '10'], _.parseInt);
  * // => [6, 8, 10]
  */
 function parseIntLodash(string, radix, guard) {

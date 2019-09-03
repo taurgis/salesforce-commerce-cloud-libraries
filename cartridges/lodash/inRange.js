@@ -21,25 +21,25 @@ var toNumber = require('./toNumber');
  * @see _.range, _.rangeRight
  * @example
  *
- * _.inRange(3, 2, 4);
+ * inRange(3, 2, 4);
  * // => true
  *
- * _.inRange(4, 8);
+ * inRange(4, 8);
  * // => true
  *
- * _.inRange(4, 2);
+ * inRange(4, 2);
  * // => false
  *
- * _.inRange(2, 2);
+ * inRange(2, 2);
  * // => false
  *
- * _.inRange(1.2, 2);
+ * inRange(1.2, 2);
  * // => true
  *
- * _.inRange(5.2, 4);
+ * inRange(5.2, 4);
  * // => false
  *
- * _.inRange(-3, -2, -6);
+ * inRange(-3, -2, -6);
  * // => true
  */
 function inRange(number, start, end) {

@@ -13,7 +13,7 @@ var baseIteratee = require('./internal/baseIteratee');
  * @since 1.1.0
  * @category Object
  * @param {Object} object The object to inspect.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
  * @returns {string|undefined} Returns the key of the matched element,
  *  else `undefined`.
  * @example
@@ -24,19 +24,19 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'age': 1,  'active': true }
  * };
  *
- * _.findKey(users, function(o) { return o.age < 40; });
+ * findKey(users, function(o) { return o.age < 40; });
  * // => 'barney' (iteration order is not guaranteed)
  *
  * // The `_.matches` iteratee shorthand.
- * _.findKey(users, { 'age': 1, 'active': true });
+ * findKey(users, { 'age': 1, 'active': true });
  * // => 'pebbles'
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.findKey(users, ['active', false]);
+ * findKey(users, ['active', false]);
  * // => 'fred'
  *
  * // The `_.property` iteratee shorthand.
- * _.findKey(users, 'active');
+ * findKey(users, 'active');
  * // => 'barney'
  */
 function findKey(object, predicate) {

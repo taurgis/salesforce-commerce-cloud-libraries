@@ -13,7 +13,7 @@ var baseWhile = require('./internal/baseWhile');
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to query.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
@@ -23,19 +23,19 @@ var baseWhile = require('./internal/baseWhile');
  *   { 'user': 'pebbles', 'active': false }
  * ];
  *
- * _.takeRightWhile(users, function(o) { return !o.active; });
+ * takeRightWhile(users, function(o) { return !o.active; });
  * // => objects for ['fred', 'pebbles']
  *
  * // The `_.matches` iteratee shorthand.
- * _.takeRightWhile(users, { 'user': 'pebbles', 'active': false });
+ * takeRightWhile(users, { 'user': 'pebbles', 'active': false });
  * // => objects for ['pebbles']
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.takeRightWhile(users, ['active', false]);
+ * takeRightWhile(users, ['active', false]);
  * // => objects for ['fred', 'pebbles']
  *
  * // The `_.property` iteratee shorthand.
- * _.takeRightWhile(users, 'active');
+ * takeRightWhile(users, 'active');
  * // => []
  */
 function takeRightWhile(array, predicate) {

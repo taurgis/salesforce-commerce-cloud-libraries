@@ -13,13 +13,13 @@ var createCompounder = require('./internal/createCompounder');
  * @returns {string} Returns the upper cased string.
  * @example
  *
- * _.upperCase('--foo-bar');
+ * upperCase('--foo-bar');
  * // => 'FOO BAR'
  *
- * _.upperCase('fooBar');
+ * upperCase('fooBar');
  * // => 'FOO BAR'
  *
- * _.upperCase('__foo_bar__');
+ * upperCase('__foo_bar__');
  * // => 'FOO BAR'
  */
 var upperCase = createCompounder(function (result, word, index) {

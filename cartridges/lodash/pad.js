@@ -23,13 +23,13 @@ var nativeFloor = Math.floor;
  * @returns {string} Returns the padded string.
  * @example
  *
- * _.pad('abc', 8);
+ * pad('abc', 8);
  * // => '  abc   '
  *
- * _.pad('abc', 8, '_-');
+ * pad('abc', 8, '_-');
  * // => '_-abc_-_'
  *
- * _.pad('abc', 3);
+ * pad('abc', 3);
  * // => 'abc'
  */
 function pad(string, length, chars) {

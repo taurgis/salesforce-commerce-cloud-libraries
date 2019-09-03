@@ -32,8 +32,8 @@ var createAssigner = require('./internal/createAssigner');
  * mergeWith(object, other, customizer)
  * // => { 'a': [1, 3], 'b': [2, 4] }
  */
-const mergeWith = createAssigner((object, source, srcIndex, customizer) => {
-    baseMerge(object, source, srcIndex, customizer);
+const mergeWith = createAssigner(function (object, source, srcIndex, customizer) {
+    return baseMerge(object, source, srcIndex, customizer);
 });
 
 module.exports = mergeWith;

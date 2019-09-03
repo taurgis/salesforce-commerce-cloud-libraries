@@ -16,10 +16,10 @@ var idCounter = 0;
  * @returns {string} Returns the unique ID.
  * @example
  *
- * _.uniqueId('contact_');
+ * uniqueId('contact_');
  * // => 'contact_104'
  *
- * _.uniqueId();
+ * uniqueId();
  * // => '105'
  */
 function uniqueId(prefix) {

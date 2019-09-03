@@ -15,7 +15,7 @@ var negate = require('./negate');
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
  * @returns {Array} Returns the new filtered array.
  * @see _.filter
  * @example
@@ -25,19 +25,19 @@ var negate = require('./negate');
  *   { 'user': 'fred',   'age': 40, 'active': true }
  * ];
  *
- * _.reject(users, function(o) { return !o.active; });
+ * reject(users, function(o) { return !o.active; });
  * // => objects for ['fred']
  *
  * // The `_.matches` iteratee shorthand.
- * _.reject(users, { 'age': 40, 'active': true });
+ * reject(users, { 'age': 40, 'active': true });
  * // => objects for ['barney']
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.reject(users, ['active', false]);
+ * reject(users, ['active', false]);
  * // => objects for ['fred']
  *
  * // The `_.property` iteratee shorthand.
- * _.reject(users, 'active');
+ * reject(users, 'active');
  * // => objects for ['barney']
  */
 function reject(collection, predicate) {

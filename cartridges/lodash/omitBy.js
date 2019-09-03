@@ -14,13 +14,13 @@ var pickBy = require('./pickBy');
  * @since 4.0.0
  * @category Object
  * @param {Object} object The source object.
- * @param {Function} [predicate=_.identity] The function invoked per property.
+ * @param {Function} [predicate=identity] The function invoked per property.
  * @returns {Object} Returns the new object.
  * @example
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * _.omitBy(object, _.isNumber);
+ * omitBy(object, _.isNumber);
  * // => { 'b': '2' }
  */
 function omitBy(object, predicate) {

@@ -13,7 +13,7 @@ var root = require('./internal/root');
  * @returns {number} Returns the timestamp.
  * @example
  *
- * _.defer(function(stamp) {
+ * defer(function(stamp) {
  *   console.log(_.now() - stamp);
  * }, _.now());
  * // => Logs the number of milliseconds it took for the deferred invocation.

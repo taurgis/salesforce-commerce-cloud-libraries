@@ -22,10 +22,10 @@ var isArrayLike = require('./isArrayLike');
  * @returns {Array} Returns the array of results.
  * @example
  *
- * _.invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
+ * invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
  * // => [[1, 5, 7], [1, 2, 3]]
  *
- * _.invokeMap([123, 456], String.prototype.split, '');
+ * invokeMap([123, 456], String.prototype.split, '');
  * // => [['1', '2', '3'], ['4', '5', '6']]
  */
 var invokeMap = baseRest(function (collection, path, args) {

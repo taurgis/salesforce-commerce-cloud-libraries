@@ -15,12 +15,11 @@ var WRAP_CURRY_RIGHT_FLAG = 16;
  * **Note:** This method doesn't set the "length" property of curried functions.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Function
  * @param {Function} func The function to curry.
  * @param {number} [arity=func.length] The arity of `func`.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {Function} Returns the new curried function.
  * @example
  *
@@ -28,20 +27,16 @@ var WRAP_CURRY_RIGHT_FLAG = 16;
  *   return [a, b, c];
  * };
  *
- * var curried = _.curryRight(abc);
+ * var curried = curryRight(abc);
  *
- * curried(3)(2)(1);
- * // => [1, 2, 3]
+ * curried(3)(2)(1); => [1, 2, 3]
  *
- * curried(2, 3)(1);
- * // => [1, 2, 3]
+ * curried(2, 3)(1); => [1, 2, 3]
  *
- * curried(1, 2, 3);
- * // => [1, 2, 3]
+ * curried(1, 2, 3); => [1, 2, 3]
  *
- * // Curried with placeholders.
- * curried(3)(1, _)(2);
- * // => [1, 2, 3]
+ * * Curried with placeholders. *
+ * curried(3)(1, _)(2); => [1, 2, 3]
  */
 function curryRight(func, arity, guard) {
     arity = guard ? undefined : arity;

@@ -37,19 +37,19 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {boolean} Returns `true` if `value` is empty, else `false`.
  * @example
  *
- * _.isEmpty(null);
+ * isEmpty(null);
  * // => true
  *
- * _.isEmpty(true);
+ * isEmpty(true);
  * // => true
  *
- * _.isEmpty(1);
+ * isEmpty(1);
  * // => true
  *
- * _.isEmpty([1, 2, 3]);
+ * isEmpty([1, 2, 3]);
  * // => false
  *
- * _.isEmpty({ 'a': 1 });
+ * isEmpty({ 'a': 1 });
  * // => false
  */
 function isEmpty(value) {

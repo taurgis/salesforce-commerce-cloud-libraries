@@ -14,7 +14,7 @@ var WRAP_ARY_FLAG = 128;
  * @category Function
  * @param {Function} func The function to cap arguments for.
  * @param {number} [n=func.length] The arity cap.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {Function} Returns the new capped function.
  * @example
  *

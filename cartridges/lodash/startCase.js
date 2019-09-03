@@ -15,13 +15,13 @@ var upperFirst = require('./upperFirst');
  * @returns {string} Returns the start cased string.
  * @example
  *
- * _.startCase('--foo-bar--');
+ * startCase('--foo-bar--');
  * // => 'Foo Bar'
  *
- * _.startCase('fooBar');
+ * startCase('fooBar');
  * // => 'Foo Bar'
  *
- * _.startCase('__FOO_BAR__');
+ * startCase('__FOO_BAR__');
  * // => 'FOO BAR'
  */
 var startCase = createCompounder(function (result, word, index) {

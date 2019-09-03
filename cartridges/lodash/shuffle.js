@@ -16,7 +16,7 @@ var isArray = require('./isArray');
  * @returns {Array} Returns the new shuffled array.
  * @example
  *
- * _.shuffle([1, 2, 3, 4]);
+ * shuffle([1, 2, 3, 4]);
  * // => [4, 1, 3, 2]
  */
 function shuffle(collection) {

@@ -19,17 +19,17 @@ var reTrim = /^\s+|\s+$/g;
  * @category String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {string} Returns the trimmed string.
  * @example
  *
- * _.trim('  abc  ');
+ * trim('  abc  ');
  * // => 'abc'
  *
- * _.trim('-_-abc-_-', '_-');
+ * trim('-_-abc-_-', '_-');
  * // => 'abc'
  *
- * _.map(['  foo  ', '  bar  '], _.trim);
+ * map(['  foo  ', '  bar  '], _.trim);
  * // => ['foo', 'bar']
  */
 function trim(string, chars, guard) {

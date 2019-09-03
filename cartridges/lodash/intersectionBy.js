@@ -23,11 +23,11 @@ var last = require('./last');
  * @returns {Array} Returns the new array of intersecting values.
  * @example
  *
- * _.intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor);
+ * intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor);
  * // => [2.1]
  *
  * // The `_.property` iteratee shorthand.
- * _.intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
+ * intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
  * // => [{ 'x': 1 }]
  */
 var intersectionBy = baseRest(function (arrays) {

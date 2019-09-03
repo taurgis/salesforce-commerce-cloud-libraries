@@ -19,10 +19,10 @@ var baseRest = require('./internal/baseRest');
  * var array = _.times(3, _.constant),
  *     object = { 'a': array, 'b': array, 'c': array };
  *
- * _.map(['a[2]', 'c[0]'], _.methodOf(object));
+ * map(['a[2]', 'c[0]'], _.methodOf(object));
  * // => [2, 0]
  *
- * _.map([['a', '2'], ['c', '0']], _.methodOf(object));
+ * map([['a', '2'], ['c', '0']], _.methodOf(object));
  * // => [2, 0]
  */
 var methodOf = baseRest(function (object, args) {

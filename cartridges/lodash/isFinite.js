@@ -19,16 +19,16 @@ var nativeIsFinite = root.isFinite;
  * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
  * @example
  *
- * _.isFinite(3);
+ * isFinite(3);
  * // => true
  *
- * _.isFinite(Number.MIN_VALUE);
+ * isFinite(Number.MIN_VALUE);
  * // => true
  *
- * _.isFinite(Infinity);
+ * isFinite(Infinity);
  * // => false
  *
- * _.isFinite('3');
+ * isFinite('3');
  * // => false
  */
 function isFinite(value) {

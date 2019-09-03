@@ -26,7 +26,7 @@ var nativeMin = Math.min;
  * @returns {Array} Returns the array of results.
  * @example
  *
- * _.times(3, String);
+ * times(3, String);
  * // => ['0', '1', '2']
  *
  *  _.times(4, _.constant(0));

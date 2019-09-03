@@ -124,10 +124,10 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * // Returns a wrapped value.
  * var squares = wrapped.map(square);
  *
- * _.isArray(squares);
+ * isArray(squares);
  * // => false
  *
- * _.isArray(squares.value());
+ * isArray(squares.value());
  * // => true
  */
 function lodash(value) {

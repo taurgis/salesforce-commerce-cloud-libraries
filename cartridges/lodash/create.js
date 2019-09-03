@@ -1,3 +1,5 @@
+'use strict';
+
 var baseAssign = require('./internal/baseAssign');
 var baseCreate = require('./internal/baseCreate');
 
@@ -7,7 +9,6 @@ var baseCreate = require('./internal/baseCreate');
  * are assigned to the created object.
  *
  * @static
- * @memberOf _
  * @since 2.3.0
  * @category Object
  * @param {Object} prototype The object to inherit from.
@@ -24,16 +25,14 @@ var baseCreate = require('./internal/baseCreate');
  *   Shape.call(this);
  * }
  *
- * Circle.prototype = _.create(Shape.prototype, {
+ * Circle.prototype = create(Shape.prototype, {
  *   'constructor': Circle
  * });
  *
  * var circle = new Circle;
- * circle instanceof Circle;
- * // => true
+ * circle instanceof Circle; => true
  *
- * circle instanceof Shape;
- * // => true
+ * circle instanceof Shape; => true
  */
 function create(prototype, properties) {
     var result = baseCreate(prototype);

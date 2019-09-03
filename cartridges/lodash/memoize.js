@@ -47,7 +47,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * // => ['a', 'b']
  *
  * // Replace `_.memoize.Cache`.
- * _.memoize.Cache = WeakMap;
+ * memoize.Cache = WeakMap;
  */
 function memoize(func, resolver) {
     if (typeof func != 'function' || (resolver != null && typeof resolver != 'function')) {

@@ -14,13 +14,13 @@ var baseToString = require('./internal/baseToString');
  * @returns {string} Returns the converted string.
  * @example
  *
- * _.toString(null);
+ * toString(null);
  * // => ''
  *
- * _.toString(-0);
+ * toString(-0);
  * // => '-0'
  *
- * _.toString([1, 2, 3]);
+ * toString([1, 2, 3]);
  * // => '1,2,3'
  */
 function toString(value) {

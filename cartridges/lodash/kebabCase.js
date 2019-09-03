@@ -14,13 +14,13 @@ var createCompounder = require('./internal/createCompounder');
  * @returns {string} Returns the kebab cased string.
  * @example
  *
- * _.kebabCase('Foo Bar');
+ * kebabCase('Foo Bar');
  * // => 'foo-bar'
  *
- * _.kebabCase('fooBar');
+ * kebabCase('fooBar');
  * // => 'foo-bar'
  *
- * _.kebabCase('__FOO_BAR__');
+ * kebabCase('__FOO_BAR__');
  * // => 'foo-bar'
  */
 var kebabCase = createCompounder(function (result, word, index) {

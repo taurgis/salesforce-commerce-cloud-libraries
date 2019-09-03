@@ -17,7 +17,7 @@ var nativeMin = Math.min;
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to inspect.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
  * @param {number} [fromIndex=array.length-1] The index to search from.
  * @returns {number} Returns the index of the found element, else `-1`.
  * @example
@@ -28,19 +28,19 @@ var nativeMin = Math.min;
  *   { 'user': 'pebbles', 'active': false }
  * ];
  *
- * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
+ * findLastIndex(users, function(o) { return o.user == 'pebbles'; });
  * // => 2
  *
  * // The `_.matches` iteratee shorthand.
- * _.findLastIndex(users, { 'user': 'barney', 'active': true });
+ * findLastIndex(users, { 'user': 'barney', 'active': true });
  * // => 0
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * _.findLastIndex(users, ['active', false]);
+ * findLastIndex(users, ['active', false]);
  * // => 2
  *
  * // The `_.property` iteratee shorthand.
- * _.findLastIndex(users, 'active');
+ * findLastIndex(users, 'active');
  * // => 0
  */
 function findLastIndex(array, predicate, fromIndex) {

@@ -14,13 +14,13 @@ var toString = require('./toString');
  * @returns {string} Returns the lower cased string.
  * @example
  *
- * _.toLower('--Foo-Bar--');
+ * toLower('--Foo-Bar--');
  * // => '--foo-bar--'
  *
- * _.toLower('fooBar');
+ * toLower('fooBar');
  * // => 'foobar'
  *
- * _.toLower('__FOO_BAR__');
+ * toLower('__FOO_BAR__');
  * // => '__foo_bar__'
  */
 function toLower(value) {

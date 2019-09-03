@@ -24,7 +24,7 @@ var castFunction = require('./internal/castFunction');
  *
  * Foo.prototype.c = 3;
  *
- * _.forOwnRight(new Foo, function(value, key) {
+ * forOwnRight(new Foo, function(value, key) {
  *   console.log(key);
  * });
  * // => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.

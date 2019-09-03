@@ -17,10 +17,10 @@ var toInteger = require('./toInteger');
  *
  * var array = [1, [2, [3, [4]], 5]];
  *
- * _.flattenDepth(array, 1);
+ * flattenDepth(array, 1);
  * // => [1, 2, [3, [4]], 5]
  *
- * _.flattenDepth(array, 2);
+ * flattenDepth(array, 2);
  * // => [1, 2, 3, [4], 5]
  */
 function flattenDepth(array, depth) {

@@ -15,27 +15,23 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * function.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Util
  * @param {Array} pairs The predicate-function pairs.
  * @returns {Function} Returns the new composite function.
  * @example
  *
- * var func = _.cond([
- *   [_.matches({ 'a': 1 }),           _.constant('matches A')],
- *   [_.conforms({ 'b': _.isNumber }), _.constant('matches B')],
- *   [_.stubTrue,                      _.constant('no match')]
+ * var func = cond([
+ *   [matches({ 'a': 1 }),           constant('matches A')],
+ *   [conforms({ 'b': _.isNumber }), constant('matches B')],
+ *   [stubTrue,                      constant('no match')]
  * ]);
  *
- * func({ 'a': 1, 'b': 2 });
- * // => 'matches A'
+ * func({ 'a': 1, 'b': 2 }); => 'matches A'
  *
- * func({ 'a': 0, 'b': 1 });
- * // => 'matches B'
+ * func({ 'a': 0, 'b': 1 }); => 'matches B'
  *
- * func({ 'a': '1', 'b': '2' });
- * // => 'no match'
+ * func({ 'a': '1', 'b': '2' }); => 'no match'
  */
 function cond(pairs) {
     var length = pairs == null ? 0 : pairs.length;

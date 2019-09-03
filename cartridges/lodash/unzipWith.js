@@ -22,7 +22,7 @@ var unzip = require('./unzip');
  * var zipped = _.zip([1, 2], [10, 20], [100, 200]);
  * // => [[1, 10, 100], [2, 20, 200]]
  *
- * _.unzipWith(zipped, _.add);
+ * unzipWith(zipped, _.add);
  * // => [3, 30, 300]
  */
 function unzipWith(array, iteratee) {

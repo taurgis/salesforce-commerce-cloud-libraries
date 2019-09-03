@@ -20,10 +20,10 @@ var baseRest = require('./internal/baseRest');
  *   { 'a': { 'b': _.constant(1) } }
  * ];
  *
- * _.map(objects, _.method('a.b'));
+ * map(objects, _.method('a.b'));
  * // => [2, 1]
  *
- * _.map(objects, _.method(['a', 'b']));
+ * map(objects, _.method(['a', 'b']));
  * // => [2, 1]
  */
 var method = baseRest(function (path, args) {

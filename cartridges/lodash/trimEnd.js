@@ -18,14 +18,14 @@ var reTrimEnd = /\s+$/;
  * @category String
  * @param {string} [string=''] The string to trim.
  * @param {string} [chars=whitespace] The characters to trim.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {string} Returns the trimmed string.
  * @example
  *
- * _.trimEnd('  abc  ');
+ * trimEnd('  abc  ');
  * // => '  abc'
  *
- * _.trimEnd('-_-abc-_-', '_-');
+ * trimEnd('-_-abc-_-', '_-');
  * // => '-_-abc'
  */
 function trimEnd(string, chars, guard) {

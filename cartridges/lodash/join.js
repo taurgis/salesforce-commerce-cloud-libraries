@@ -18,7 +18,7 @@ var nativeJoin = arrayProto.join;
  * @returns {string} Returns the joined string.
  * @example
  *
- * _.join(['a', 'b', 'c'], '~');
+ * join(['a', 'b', 'c'], '~');
  * // => 'a~b~c'
  */
 function join(array, separator) {

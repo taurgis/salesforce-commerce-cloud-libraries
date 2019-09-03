@@ -27,7 +27,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * _.forIn(new Foo, function(value, key) {
+ * forIn(new Foo, function(value, key) {
  *   console.log(key);
  * });
  * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).

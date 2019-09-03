@@ -15,7 +15,7 @@ var isArray = require('./isArray');
  * @returns {*} Returns the random element.
  * @example
  *
- * _.sample([1, 2, 3, 4]);
+ * sample([1, 2, 3, 4]);
  * // => 2
  */
 function sample(collection) {

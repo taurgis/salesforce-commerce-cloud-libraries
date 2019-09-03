@@ -22,11 +22,11 @@ var nativeMax = Math.max;
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * _.indexOf([1, 2, 1, 2], 2);
+ * indexOf([1, 2, 1, 2], 2);
  * // => 1
  *
  * // Search from the `fromIndex`.
- * _.indexOf([1, 2, 1, 2], 2, 2);
+ * indexOf([1, 2, 1, 2], 2, 2);
  * // => 3
  */
 function indexOf(array, value, fromIndex) {

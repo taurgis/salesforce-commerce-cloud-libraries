@@ -32,16 +32,16 @@ var freeParseInt = parseInt;
  * @returns {number} Returns the number.
  * @example
  *
- * _.toNumber(3.2);
+ * toNumber(3.2);
  * // => 3.2
  *
- * _.toNumber(Number.MIN_VALUE);
+ * toNumber(Number.MIN_VALUE);
  * // => 5e-324
  *
- * _.toNumber(Infinity);
+ * toNumber(Infinity);
  * // => Infinity
  *
- * _.toNumber('3.2');
+ * toNumber('3.2');
  * // => 3.2
  */
 function toNumber(value) {

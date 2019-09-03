@@ -14,17 +14,17 @@ var toString = require('./toString');
  * @category String
  * @param {string} [string=''] The string to repeat.
  * @param {number} [n=1] The number of times to repeat the string.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {string} Returns the repeated string.
  * @example
  *
- * _.repeat('*', 3);
+ * repeat('*', 3);
  * // => '***'
  *
- * _.repeat('abc', 2);
+ * repeat('abc', 2);
  * // => 'abcabc'
  *
- * _.repeat('abc', 0);
+ * repeat('abc', 0);
  * // => ''
  */
 function repeat(string, n, guard) {

@@ -21,7 +21,7 @@ var map = require('./map');
  *   return [n, n];
  * }
  *
- * _.flatMap([1, 2], duplicate);
+ * flatMap([1, 2], duplicate);
  * // => [1, 1, 2, 2]
  */
 function flatMap(collection, iteratee) {

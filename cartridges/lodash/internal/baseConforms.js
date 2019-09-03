@@ -12,7 +12,7 @@ var keys = require('../keys.js');
  */
 function baseConforms(source) {
     var props = keys(source);
-    return (object) => baseConformsTo(object, source, props);
+    return function (object) { return baseConformsTo(object, source, props); };
 }
 
 module.exports = baseConforms;

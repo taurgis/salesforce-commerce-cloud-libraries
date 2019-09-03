@@ -12,7 +12,7 @@
  * @returns {Object} Returns the new object.
  * @example
  *
- * _.fromPairs([['a', 1], ['b', 2]]);
+ * fromPairs([['a', 1], ['b', 2]]);
  * // => { 'a': 1, 'b': 2 }
  */
 function fromPairs(pairs) {
