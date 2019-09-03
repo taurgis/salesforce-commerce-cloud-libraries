@@ -1,4 +1,3 @@
-/* eslint-disable */
 'use strict';
 
 var server = require('server');
@@ -12,11 +11,15 @@ server.get('Test', function (req, res, next) {
     });
 
     function Foo() {
-        this.a = 1
-        this.b = 2
+        this.a = 1;
     }
 
-    var atTestObject = { a: [{ b: { c: 3 } }, 4] };
+    function Bar() {
+        this.c = 3;
+    }
+
+    Foo.prototype.b = 2;
+    Bar.prototype.d = 4;
     var attemptTest = function () {
         throw new Error();
     };
@@ -37,7 +40,7 @@ server.get('Test', function (req, res, next) {
         return /^h(?:i|ello)$/.test(value);
     }
 
-    function customizer(objValue, othValue) {
+    function customizerGreeting(objValue, othValue) {
         if (isGreeting(objValue) && isGreeting(othValue)) {
             return true;
         }
@@ -47,15 +50,45 @@ server.get('Test', function (req, res, next) {
 
     const array = ['hello', 'goodbye'];
     const other = ['hi', 'goodbye'];
-    var chained = require('lodash/wrapperLodash')([1, 2, 3]).take(2)
+    var chained = require('lodash/wrapperLodash')([1, 2, 3]).take(2);
+
+    function customizer(objValue, srcValue) {
+        return require('lodash/isUndefined')(objValue) ? srcValue : objValue;
+    }
+
+    function customizerAssignWith(objValue, srcValue) {
+        return require('lodash/isUndefined')(objValue) ? srcValue : objValue;
+    }
+
+    var defaults = require('lodash/partialRight')(require('lodash/assignInWith'), customizer);
+    var defaultsAssignWith = require('lodash/partialRight')(require('lodash/assignWith'), customizerAssignWith);
+
+    function greet(greeting, punctuation) {
+        return greeting + ' ' + this.user + punctuation;
+    }
+
+    var bound = require('lodash/bind')(greet, { 'user': 'fred' }, 'hi')
+    var boundKey = require('lodash/bindKey')({
+        'user': 'fred',
+        'greet': function (greeting, punctuation) {
+            return greeting + ' ' + this.user + punctuation;
+        }
+    }, 'greet', 'hi');
 
     res.json(
         {
             wrapped: chained.value(),
             add: timeFunction(require('lodash/add'), 2, 2),
             after: afterTest,
-            at: timeFunction(require('lodash/at'), atTestObject, ['a[0].b.c', 'a[1]']),
+            ary: timeFunction(require('lodash/map'), [6, 8, 10], require('lodash/ary')(parseInt, 1)),
+            assign: timeFunction(require('lodash/assign'), { a: 0 }, new Foo(), new Bar()),
+            assignIn: timeFunction(require('lodash/assignIn'), { a: 0 }, new Foo(), new Bar()),
+            assignInWith: timeFunction(defaults, { a: 1 }, { b: 2 }, { a: 3 }),
+            assignWith: timeFunction(defaultsAssignWith, { a: 1 }, { b: 2 }, { a: 3 }),
+            at: timeFunction(require('lodash/at'), { a: [{ b: { c: 3 } }, 4] }, ['a[0].b.c', 'a[1]']),
             attempt: timeFunction(require('lodash/attempt'), attemptTest),
+            bind: timeFunction(bound, '!'),
+            bindKey: timeFunction(boundKey, '!'),
             camelCase: timeFunction(require('lodash/camelCase'), '__FOO_BAR__TEST'),
             capitalize: timeFunction(require('lodash/capitalize'), 'fRED'),
             castArray: timeFunction(require('lodash/castArray'), 'abc'),
@@ -72,7 +105,7 @@ server.get('Test', function (req, res, next) {
             deburr: timeFunction(require('lodash/deburr'), 'téstêrûÜ'),
             defaultTo: timeFunction(require('lodash/defaultTo'), null, 2),
             defaultToAny: timeFunction(require('lodash/defaultToAny'), undefined, [null, undefined, 20, 40]),
-            defaults: timeFunction(require('lodash/defaults'), { 'a': 1 }, { 'b': 2 }, { 'a': 3 }),
+            defaults: timeFunction(require('lodash/defaults'), { a: 1 }, { b: 2 }, { a: 3 }),
             difference: timeFunction(require('lodash/difference'), [2, 1], [2, 3]),
             differenceBy: timeFunction(require('lodash/differenceBy'), [2.1, 1.2], [[2.3, 3.4], Math.floor]),
             divide: timeFunction(require('lodash/divide'), 6, 3),
@@ -80,9 +113,9 @@ server.get('Test', function (req, res, next) {
             drop: timeFunction(require('lodash/drop'), [1, 2, 3], 2),
             dropRight: timeFunction(require('lodash/dropRight'), [1, 2, 3], 2),
             dropRightWhile: timeFunction(require('lodash/dropRightWhile'), [
-                { 'user': 'barney', 'active': true },
-                { 'user': 'fred', 'active': false },
-                { 'user': 'pebbles', 'active': false }
+                { user: 'barney', active: true },
+                { user: 'fred', active: false },
+                { user: 'pebbles', active: false }
             ], function (o) { return !o.active; }),
             dropWhile: timeFunction(require('lodash/dropWhile'), [
                 { user: 'barney', active: true },
@@ -138,14 +171,14 @@ server.get('Test', function (req, res, next) {
             invertBy: timeFunction(require('lodash/invertBy'), { a: 1, b: 2, c: 1 }, function (value) { return 'group' + value; }),
             invoke: timeFunction(require('lodash/invoke'), { a: [{ b: { c: [1, 2, 3, 4] } }] }, 'a[0].b.c.slice', [1, 3]),
             invokeMap: timeFunction(require('lodash/invokeMap'), [[5, 1, 7], [3, 2, 1]], 'sort'),
-            isArguments: timeFunction(require('lodash/isArguments'), function () { return arguments; }()),
+            isArguments: timeFunction(require('lodash/isArguments'), (function () { return arguments; }())),
             isArrayLike: timeFunction(require('lodash/isArrayLike'), [1, 2, 3]),
             isArrayLikeObject: timeFunction(require('lodash/isArrayLikeObject'), [1, 2, 3]),
             isBoolean: timeFunction(require('lodash/isBoolean'), null),
             isBuffer: timeFunction(require('lodash/isBuffer'), 'test'),
             isDate: timeFunction(require('lodash/isDate'), 'test'),
             isEmpty: timeFunction(require('lodash/isEmpty'), [1, 2, 3]),
-            isEqualWith: timeFunction(require('lodash/isEqualWith'), array, other, customizer),
+            isEqualWith: timeFunction(require('lodash/isEqualWith'), array, other, customizerGreeting),
             isError: timeFunction(require('lodash/isError'), new Error()),
             isFunction: timeFunction(require('lodash/isFunction'), CustomerMgr.getCustomerByLogin),
             isLength: timeFunction(require('lodash/isLength'), 3),
@@ -189,7 +222,7 @@ server.get('Test', function (req, res, next) {
             multiply: timeFunction(require('lodash/multiply'), 6, 4),
             negate: timeFunction(require('lodash/filter'), [1, 2, 3, 4, 5, 6], require('lodash/negate')(function (n) { return n % 2 == 0; })),
             nth: timeFunction(require('lodash/nth'), ['a', 'b', 'c', 'd'], -1),
-             orderBy: require('lodash/orderBy')([
+            orderBy: require('lodash/orderBy')([
                 { user: 'fred', age: 48 },
                 { user: 'barney', age: 34 },
                 { user: 'fred', age: 40 },
@@ -297,7 +330,7 @@ server.get('Test', function (req, res, next) {
             zip: timeFunction(require('lodash/zip'), ['a', 'b'], [1, 2], [true, false]),
             zipObject: timeFunction(require('lodash/zipObject'), ['a', 'b'], [1, 2]),
             zipObjectDeep: timeFunction(require('lodash/zipObjectDeep'), ['a.b[0].c', 'a.b[1].d'], [1, 2]),
-            get: timeFunction(require('lodash/get'), { 'a': [{ 'b': { 'c': 3 } }] }, 'a[0].b.c')
+            get: timeFunction(require('lodash/get'), { a: [{ b: { c: 3 } }] }, 'a[0].b.c')
         });
 
     next();

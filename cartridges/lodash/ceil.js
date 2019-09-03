@@ -6,7 +6,6 @@ var createRound = require('./internal/createRound');
  * Computes `number` rounded up to `precision`.
  *
  * @static
- * @memberOf _
  * @since 3.10.0
  * @category Math
  * @param {number} number The number to round up.
@@ -14,14 +13,11 @@ var createRound = require('./internal/createRound');
  * @returns {number} Returns the rounded up number.
  * @example
  *
- * _.ceil(4.006);
- * // => 5
+ * ceil(4.006); => 5
  *
- * _.ceil(6.004, 2);
- * // => 6.01
+ * ceil(6.004, 2); => 6.01
  *
- * _.ceil(6040, -2);
- * // => 6100
+ * ceil(6040, -2); => 6100
  */
 var ceil = createRound('ceil');
 

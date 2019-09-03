@@ -5,6 +5,7 @@
  * of the created function, while it's called less than `n` times. Subsequent
  * calls to the created function return the result of the last `func` invocation.
  *
+ * @static
  * @since 3.0.0
  * @category Function
  * @param {number} n The number of calls at which `func` is no longer invoked.
@@ -12,8 +13,10 @@
  * @returns {Function} Returns the new restricted function.
  * @example
  *
- * jQuery(element).on('click', before(5, addContactToList))
- * // => Allows adding up to 4 contacts to the list.
+ * jQuery(element).on('click', before(5, addContactToList)) => Allows adding up to 4 contacts to the list.
+ *
+ * @implNote This does not have much use on ther SalesForce Commerce cloud side. So no tests have been run
+ * on functionality
  */
 function before(n, func) {
     let result;
