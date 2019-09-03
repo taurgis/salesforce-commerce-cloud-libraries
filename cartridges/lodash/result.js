@@ -18,17 +18,13 @@ var toKey = require('./internal/toKey.js');
  *
  * const object = { 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }
  *
- * result({ 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }, 'a[0].b.c1')
- * // => 3
+ * result({ 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }, 'a[0].b.c1') => 3
  *
- * result(object, 'a[0].b.c2')
- * // => 4
+ * result(object, 'a[0].b.c2') => 4
  *
- * result(object, 'a[0].b.c3', 'default')
- * // => 'default'
+ * result(object, 'a[0].b.c3', 'default') => 'default'
  *
- * result(object, 'a[0].b.c3', () => 'default')
- * // => 'default'
+ * result(object, 'a[0].b.c3', () => 'default') => 'default'
  */
 function result(object, path, defaultValue) {
     path = castPath(path, object);

@@ -16,8 +16,7 @@ var unzipWith = require('./unzipWith.js');
  * @see unzip, unzipWith, zip, zipObject, zipObjectDeep, zipWith
  * @example
  *
- * zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c)
- * // => [111, 222]
+ * zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c) => [111, 222]
  */
 function zipWith() {
     var arrays = Array.prototype.slice.call(arguments);

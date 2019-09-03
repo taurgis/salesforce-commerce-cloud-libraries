@@ -30,8 +30,7 @@ const CLONE_DEEP_FLAG = 1;
  * find([
  *   { 'a': 1, 'b': 2, 'c': 3 },
  *   { 'a': 4, 'b': 5, 'c': 6 }
- * ], matchesProperty('a', 4))
- * // => { 'a': 4, 'b': 5, 'c': 6 }
+ * ], matchesProperty('a', 4)) => { 'a': 4, 'b': 5, 'c': 6 }
  */
 function matchesProperty(path, srcValue) {
     return baseMatchesProperty(path, baseClone(srcValue, CLONE_DEEP_FLAG));

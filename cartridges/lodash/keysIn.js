@@ -8,7 +8,6 @@ var arrayLikeKeys = require('./internal/arrayLikeKeys');
  *
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Object
  * @param {Object} object The object to query.
@@ -22,8 +21,7 @@ var arrayLikeKeys = require('./internal/arrayLikeKeys');
  *
  * Foo.prototype.c = 3;
  *
- * keysIn(new Foo);
- * // => ['a', 'b', 'c'] (iteration order is not guaranteed)
+ * keysIn(new Foo); => ['a', 'b', 'c'] (iteration order is not guaranteed)
  */
 function keysIn(object) {
     const result = [];

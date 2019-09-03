@@ -16,8 +16,7 @@ var baseUniq = require('./internal/baseUniq.js');
  * @see uniqBy, uniqWith
  * @example
  *
- * uniq([2, 1, 2])
- * // => [2, 1]
+ * uniq([2, 1, 2]) => [2, 1]
  */
 function uniq(array) {
     return (array != null && array.length)

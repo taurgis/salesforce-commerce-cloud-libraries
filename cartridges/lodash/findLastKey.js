@@ -9,7 +9,6 @@ var baseIteratee = require('./internal/baseIteratee');
  * a collection in the opposite order.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Object
  * @param {Object} object The object to inspect.
@@ -24,20 +23,16 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'age': 1,  'active': true }
  * };
  *
- * findLastKey(users, function(o) { return o.age < 40; });
- * // => returns 'pebbles' assuming `_.findKey` returns 'barney'
+ * findLastKey(users, function(o) { return o.age < 40; }); => returns 'pebbles' assuming `_.findKey` returns 'barney'
  *
  * // The `_.matches` iteratee shorthand.
- * findLastKey(users, { 'age': 36, 'active': true });
- * // => 'barney'
+ * findLastKey(users, { 'age': 36, 'active': true }); => 'barney'
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * findLastKey(users, ['active', false]);
- * // => 'fred'
+ * findLastKey(users, ['active', false]); => 'fred'
  *
  * // The `_.property` iteratee shorthand.
- * findLastKey(users, 'active');
- * // => 'pebbles'
+ * findLastKey(users, 'active'); => 'pebbles'
  */
 function findLastKey(object, predicate) {
     return baseFindKey(object, baseIteratee(predicate, 3), baseForOwnRight);

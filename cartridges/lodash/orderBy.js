@@ -32,8 +32,7 @@ var baseOrderBy = require('./internal/baseOrderBy.js');
  *   { 'user': 'barney', 'age': 34 },
  *   { 'user': 'fred',   'age': 40 },
 *   { 'user': 'barney', 'age': 36 }
- * ], ['user', 'age'], ['asc', 'desc'])
- * // => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
+ * ], ['user', 'age'], ['asc', 'desc']) => objects for [['barney', 36], ['barney', 34], ['fred', 48], ['fred', 40]]
  *
  * // Sort by `user` then by `age` using custom compare functions for each
  * orderBy(users, ['user', 'age'], [

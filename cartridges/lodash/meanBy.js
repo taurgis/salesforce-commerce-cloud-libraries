@@ -9,7 +9,6 @@ var baseMean = require('./internal/baseMean');
  * The iteratee is invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 4.7.0
  * @category Math
  * @param {Array} array The array to iterate over.
@@ -19,12 +18,10 @@ var baseMean = require('./internal/baseMean');
  *
  * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  *
- * meanBy(objects, function(o) { return o.n; });
- * // => 5
+ * meanBy(objects, function(o) { return o.n; }); => 5
  *
  * // The `_.property` iteratee shorthand.
- * meanBy(objects, 'n');
- * // => 5
+ * meanBy(objects, 'n'); => 5
  */
 function meanBy(array, iteratee) {
     return baseMean(array, baseIteratee(iteratee, 2));

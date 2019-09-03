@@ -12,14 +12,11 @@
  * @see gt, gte, lt
  * @example
  *
- * lte(1, 3)
- * // => true
+ * lte(1, 3) => true
  *
- * lte(3, 3)
- * // => true
+ * lte(3, 3) => true
  *
- * lte(3, 1)
- * // => false
+ * lte(3, 1) => false
  */
 function lte(value, other) {
     if (!(typeof value === 'string' && typeof other === 'string')) {

@@ -5,7 +5,6 @@ var hasPath = require('./internal/hasPath');
  * Checks if `path` is a direct or inherited property of `object`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The object to query.
@@ -15,17 +14,13 @@ var hasPath = require('./internal/hasPath');
  *
  * var object = _.create({ 'a': _.create({ 'b': 2 }) });
  *
- * hasIn(object, 'a');
- * // => true
+ * hasIn(object, 'a'); => true
  *
- * hasIn(object, 'a.b');
- * // => true
+ * hasIn(object, 'a.b'); => true
  *
- * hasIn(object, ['a', 'b']);
- * // => true
+ * hasIn(object, ['a', 'b']); => true
  *
- * hasIn(object, 'b');
- * // => false
+ * hasIn(object, 'b'); => false
  */
 function hasIn(object, path) {
     return object != null && hasPath(object, path, baseHasIn);

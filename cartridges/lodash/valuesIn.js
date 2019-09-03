@@ -10,7 +10,6 @@ var keysIn = require('./keysIn');
  * **Note:** Non-object values are coerced to objects.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Object
  * @param {Object} object The object to query.
@@ -24,8 +23,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * valuesIn(new Foo);
- * // => [1, 2, 3] (iteration order is not guaranteed)
+ * valuesIn(new Foo); => [1, 2, 3] (iteration order is not guaranteed)
  */
 function valuesIn(object) {
     return object == null ? [] : baseValues(object, keysIn(object));

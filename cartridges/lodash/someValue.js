@@ -13,8 +13,7 @@
  *  else `false`.
  * @example
  *
- * someValues({ 'a': 0, 'b': 'yes', 'c': false }, Boolean)
- * // => true
+ * someValues({ 'a': 0, 'b': 'yes', 'c': false }, Boolean) => true
  */
 function someValues(object, predicate) {
     object = Object(object);

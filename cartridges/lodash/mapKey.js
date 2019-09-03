@@ -16,8 +16,7 @@
  *
  * mapKey({ 'a': 1, 'b': 2 }, function(value, key) {
  *   return key + value
- * })
- * // => { 'a1': 1, 'b2': 2 }
+ * }) => { 'a1': 1, 'b2': 2 }
  */
 function mapKey(object, iteratee) {
     object = Object(object);

@@ -19,14 +19,11 @@ const setTag = '[object Set]';
  * @returns {number} Returns the collection size.
  * @example
  *
- * size([1, 2, 3])
- * // => 3
+ * size([1, 2, 3]) => 3
  *
- * size({ 'a': 1, 'b': 2 })
- * // => 2
+ * size({ 'a': 1, 'b': 2 }) => 2
  *
- * size('pebbles')
- * // => 7
+ * size('pebbles') => 7
  */
 function size(collection) {
     if (collection == null) {

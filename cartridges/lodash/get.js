@@ -17,14 +17,11 @@ var baseGet = require('./internal/baseGet');
  *
  * var object = { 'a': [{ 'b': { 'c': 3 } }] }
  *
- * get(object, 'a[0].b.c')
- * // => 3
+ * get(object, 'a[0].b.c') => 3
  *
- * get(object, ['a', '0', 'b', 'c'])
- * // => 3
+ * get(object, ['a', '0', 'b', 'c']) => 3
  *
- * get(object, 'a.b.c', 'default')
- * // => 'default'
+ * get(object, 'a.b.c', 'default') => 'default'
  */
 function get(object, path, defaultValue) {
     var result = object == null ? undefined : baseGet(object, path);

@@ -15,7 +15,6 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * [rest parameter](https://mdn.io/rest_parameters).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Function
  * @param {Function} func The function to apply a rest parameter to.
@@ -28,8 +27,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
  * });
  *
- * say('hello', 'fred', 'barney', 'pebbles');
- * // => 'hello fred, barney, & pebbles'
+ * say('hello', 'fred', 'barney', 'pebbles'); => 'hello fred, barney, & pebbles'
  */
 function rest(func, start) {
     if (typeof func != 'function') {

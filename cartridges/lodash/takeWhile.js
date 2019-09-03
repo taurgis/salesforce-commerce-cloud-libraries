@@ -9,7 +9,6 @@ var baseWhile = require('./internal/baseWhile');
  * three arguments: (value, index, array).
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to query.
@@ -23,20 +22,16 @@ var baseWhile = require('./internal/baseWhile');
  *   { 'user': 'pebbles', 'active': true }
  * ];
  *
- * takeWhile(users, function(o) { return !o.active; });
- * // => objects for ['barney', 'fred']
+ * takeWhile(users, function(o) { return !o.active; }); => objects for ['barney', 'fred']
  *
  * // The `_.matches` iteratee shorthand.
- * takeWhile(users, { 'user': 'barney', 'active': false });
- * // => objects for ['barney']
+ * takeWhile(users, { 'user': 'barney', 'active': false }); => objects for ['barney']
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * takeWhile(users, ['active', false]);
- * // => objects for ['barney', 'fred']
+ * takeWhile(users, ['active', false]); => objects for ['barney', 'fred']
  *
  * // The `_.property` iteratee shorthand.
- * takeWhile(users, 'active');
- * // => []
+ * takeWhile(users, 'active'); => []
  */
 function takeWhile(array, predicate) {
     return (array && array.length)

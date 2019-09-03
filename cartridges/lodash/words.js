@@ -28,11 +28,9 @@ function asciiWords(string) {
  * @returns {Array} Returns the words of `string`.
  * @example
  *
- * words('fred, barney, & pebbles')
- * // => ['fred', 'barney', 'pebbles']
+ * words('fred, barney, & pebbles') => ['fred', 'barney', 'pebbles']
  *
- * words('fred, barney, & pebbles', /[^, ]+/g)
- * // => ['fred', 'barney', '&', 'pebbles']
+ * words('fred, barney, & pebbles', /[^, ]+/g) => ['fred', 'barney', '&', 'pebbles']
  */
 function words(string, pattern) {
     if (pattern === undefined) {

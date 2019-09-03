@@ -11,11 +11,9 @@ var createCaseFirst = require('./internal/createCaseFirst.js');
  * @returns {string} Returns the converted string.
  * @example
  *
- * lowerFirst('Fred')
- * // => 'fred'
+ * lowerFirst('Fred') => 'fred'
  *
- * lowerFirst('FRED')
- * // => 'fRED'
+ * lowerFirst('FRED') => 'fRED'
  */
 const lowerFirst = createCaseFirst('toLowerCase');
 

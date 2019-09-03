@@ -13,7 +13,6 @@ var nativeMax = Math.max;
  * offset from the end of `array`.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -22,12 +21,10 @@ var nativeMax = Math.max;
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * indexOf([1, 2, 1, 2], 2);
- * // => 1
+ * indexOf([1, 2, 1, 2], 2); => 1
  *
  * // Search from the `fromIndex`.
- * indexOf([1, 2, 1, 2], 2, 2);
- * // => 3
+ * indexOf([1, 2, 1, 2], 2, 2); => 3
  */
 function indexOf(array, value, fromIndex) {
     var length = array == null ? 0 : array.length;

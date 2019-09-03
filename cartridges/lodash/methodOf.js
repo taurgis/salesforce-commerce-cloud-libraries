@@ -8,7 +8,6 @@ var baseRest = require('./internal/baseRest');
  * provided to the invoked method.
  *
  * @static
- * @memberOf _
  * @since 3.7.0
  * @category Util
  * @param {Object} object The object to query.
@@ -19,11 +18,9 @@ var baseRest = require('./internal/baseRest');
  * var array = _.times(3, _.constant),
  *     object = { 'a': array, 'b': array, 'c': array };
  *
- * map(['a[2]', 'c[0]'], _.methodOf(object));
- * // => [2, 0]
+ * map(['a[2]', 'c[0]'], _.methodOf(object)); => [2, 0]
  *
- * map([['a', '2'], ['c', '0']], _.methodOf(object));
- * // => [2, 0]
+ * map([['a', '2'], ['c', '0']], _.methodOf(object)); => [2, 0]
  */
 var methodOf = baseRest(function (object, args) {
     return function (path) {

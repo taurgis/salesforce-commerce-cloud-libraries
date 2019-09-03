@@ -11,7 +11,6 @@ var toNumber = require('./toNumber');
  * negative ranges.
  *
  * @static
- * @memberOf _
  * @since 3.3.0
  * @category Number
  * @param {number} number The number to check.
@@ -21,26 +20,19 @@ var toNumber = require('./toNumber');
  * @see _.range, _.rangeRight
  * @example
  *
- * inRange(3, 2, 4);
- * // => true
+ * inRange(3, 2, 4); => true
  *
- * inRange(4, 8);
- * // => true
+ * inRange(4, 8); => true
  *
- * inRange(4, 2);
- * // => false
+ * inRange(4, 2); => false
  *
- * inRange(2, 2);
- * // => false
+ * inRange(2, 2); => false
  *
- * inRange(1.2, 2);
- * // => true
+ * inRange(1.2, 2); => true
  *
- * inRange(5.2, 4);
- * // => false
+ * inRange(5.2, 4); => false
  *
- * inRange(-3, -2, -6);
- * // => true
+ * inRange(-3, -2, -6); => true
  */
 function inRange(number, start, end) {
     start = toFinite(start);

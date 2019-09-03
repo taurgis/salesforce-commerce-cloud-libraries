@@ -12,11 +12,9 @@ var isObject = require('./isObject.js');
  * @returns {boolean} Returns `true` if `value` is a function, else `false`.
  * @example
  *
- * isFunction(_)
- * // => true
+ * isFunction(_) => true
  *
- * isFunction(/abc/)
- * // => false
+ * isFunction(/abc/) => false
  */
 function isFunction(value) {
     if (!isObject(value)) {

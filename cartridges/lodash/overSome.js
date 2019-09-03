@@ -8,7 +8,6 @@ var createOver = require('./internal/createOver');
  * truthy when invoked with the arguments it receives.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Util
  * @param {...(Function|Function[])} [predicates=[_.identity]]
@@ -18,14 +17,11 @@ var createOver = require('./internal/createOver');
  *
  * var func = _.overSome([Boolean, isFinite]);
  *
- * func('1');
- * // => true
+ * func('1'); => true
  *
- * func(null);
- * // => true
+ * func(null); => true
  *
- * func(NaN);
- * // => false
+ * func(NaN); => false
  */
 var overSome = createOver(arraySome);
 

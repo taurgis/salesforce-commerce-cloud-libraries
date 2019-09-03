@@ -14,7 +14,6 @@ var nativeMin = Math.min;
  * `array` from right to left.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -23,12 +22,10 @@ var nativeMin = Math.min;
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * lastIndexOf([1, 2, 1, 2], 2);
- * // => 3
+ * lastIndexOf([1, 2, 1, 2], 2); => 3
  *
  * // Search from the `fromIndex`.
- * lastIndexOf([1, 2, 1, 2], 2, 2);
- * // => 1
+ * lastIndexOf([1, 2, 1, 2], 2, 2); => 1
  */
 function lastIndexOf(array, value, fromIndex) {
     var length = array == null ? 0 : array.length;

@@ -21,8 +21,7 @@ var pullAll = require('./pullAll.js');
  * const array = ['a', 'b', 'c', 'a', 'b', 'c']
  *
  * pull(['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')
- * console.log(array)
- * // => ['b', 'b']
+ * console.log(array) => ['b', 'b']
  */
 function pull(array) {
     var values = Array.prototype.slice.call(arguments);

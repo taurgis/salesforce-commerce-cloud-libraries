@@ -11,7 +11,6 @@ var baseIteratee = require('./internal/baseIteratee');
  * with three arguments: (value, key, object).
  *
  * @static
- * @memberOf _
  * @since 3.8.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -22,8 +21,7 @@ var baseIteratee = require('./internal/baseIteratee');
  *
  * mapKeys({ 'a': 1, 'b': 2 }, function(value, key) {
  *   return key + value;
- * });
- * // => { 'a1': 1, 'b2': 2 }
+ * }); => { 'a1': 1, 'b2': 2 }
  */
 function mapKeys(object, iteratee) {
     var result = {};

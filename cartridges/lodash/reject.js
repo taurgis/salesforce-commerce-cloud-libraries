@@ -11,7 +11,6 @@ var negate = require('./negate');
  * that `predicate` does **not** return truthy for.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -25,20 +24,16 @@ var negate = require('./negate');
  *   { 'user': 'fred',   'age': 40, 'active': true }
  * ];
  *
- * reject(users, function(o) { return !o.active; });
- * // => objects for ['fred']
+ * reject(users, function(o) { return !o.active; }); => objects for ['fred']
  *
  * // The `_.matches` iteratee shorthand.
- * reject(users, { 'age': 40, 'active': true });
- * // => objects for ['barney']
+ * reject(users, { 'age': 40, 'active': true }); => objects for ['barney']
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * reject(users, ['active', false]);
- * // => objects for ['fred']
+ * reject(users, ['active', false]); => objects for ['fred']
  *
  * // The `_.property` iteratee shorthand.
- * reject(users, 'active');
- * // => objects for ['barney']
+ * reject(users, 'active'); => objects for ['barney']
  */
 function reject(collection, predicate) {
     var func = isArray(collection) ? arrayFilter : baseFilter;

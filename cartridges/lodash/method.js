@@ -7,7 +7,6 @@ var baseRest = require('./internal/baseRest');
  * Any additional arguments are provided to the invoked method.
  *
  * @static
- * @memberOf _
  * @since 3.7.0
  * @category Util
  * @param {Array|string} path The path of the method to invoke.
@@ -20,11 +19,9 @@ var baseRest = require('./internal/baseRest');
  *   { 'a': { 'b': _.constant(1) } }
  * ];
  *
- * map(objects, _.method('a.b'));
- * // => [2, 1]
+ * map(objects, _.method('a.b')); => [2, 1]
  *
- * map(objects, _.method(['a', 'b']));
- * // => [2, 1]
+ * map(objects, _.method(['a', 'b'])); => [2, 1]
  */
 var method = baseRest(function (path, args) {
     return function (object) {

@@ -12,11 +12,9 @@ var isObjectLike = require('./isObjectLike.js');
  * @returns {boolean} Returns `true` if `value` is a weak map, else `false`.
  * @example
  *
- * isWeakMap(new WeakMap)
- * // => true
+ * isWeakMap(new WeakMap) => true
  *
- * isWeakMap(new Map)
- * // => false
+ * isWeakMap(new Map) => false
  */
 function isWeakMap(value) {
     return isObjectLike(value) && getTag(value) == '[object WeakMap]';

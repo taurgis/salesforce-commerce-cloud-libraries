@@ -9,7 +9,6 @@ var keys = require('./keys');
  * entries are returned.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @alias entries
  * @category Object
@@ -24,8 +23,7 @@ var keys = require('./keys');
  *
  * Foo.prototype.c = 3;
  *
- * toPairs(new Foo);
- * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+ * toPairs(new Foo); => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
  */
 var toPairs = createToPairs(keys);
 

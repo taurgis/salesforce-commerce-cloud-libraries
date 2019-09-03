@@ -16,7 +16,6 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * iteratee is invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 0.5.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.

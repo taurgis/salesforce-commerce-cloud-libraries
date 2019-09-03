@@ -9,7 +9,6 @@ var map = require('./map');
  * with three arguments: (value, index|key, collection).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -21,8 +20,7 @@ var map = require('./map');
  *   return [n, n];
  * }
  *
- * flatMap([1, 2], duplicate);
- * // => [1, 1, 2, 2]
+ * flatMap([1, 2], duplicate); => [1, 1, 2, 2]
  */
 function flatMap(collection, iteratee) {
     return baseFlatten(map(collection, iteratee), 1);

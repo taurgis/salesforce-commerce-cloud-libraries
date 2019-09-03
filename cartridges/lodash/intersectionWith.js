@@ -21,8 +21,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * intersectionWith([{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual)
- * // => [{ 'x': 1, 'y': 2 }]
+ * intersectionWith([{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual) => [{ 'x': 1, 'y': 2 }]
  */
 function intersectionWith() {
     var arrays = Array.prototype.slice.call(arguments);

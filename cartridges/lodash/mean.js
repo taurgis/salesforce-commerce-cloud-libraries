@@ -11,8 +11,7 @@ var baseMean = require('./meanBy.js');
  * @returns {number} Returns the mean.
  * @example
  *
- * mean([4, 2, 8, 6])
- * // => 5
+ * mean([4, 2, 8, 6]) => 5
  */
 function mean(array) {
     return baseMean(array, function (value) { return value; });

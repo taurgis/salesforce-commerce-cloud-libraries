@@ -20,11 +20,9 @@ var toKey = require('./internal/toKey.js');
  * const object = { 'a': { 'b': 2 } }
  * const other = create({ 'a': create({ 'b': 2 }) })
  *
- * hasPathIn({ 'a': { 'b': 2 } }, 'a.b')
- * // => true
+ * hasPathIn({ 'a': { 'b': 2 } }, 'a.b') => true
  *
- * hasPathIn(object, ['a', 'b'])
- * // => true
+ * hasPathIn(object, ['a', 'b']) => true
  */
 function hasPathIn(object, path) {
     path = castPath(path, object);

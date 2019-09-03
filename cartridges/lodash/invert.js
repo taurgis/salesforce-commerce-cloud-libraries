@@ -13,8 +13,7 @@
  *
  * const object = { 'a': 1, 'b': 2, 'c': 1 }
  *
- * invert(object)
- * // => { '1': 'c', '2': 'b' }
+ * invert(object) => { '1': 'c', '2': 'b' }
  */
 function invert(object) {
     const result = {};

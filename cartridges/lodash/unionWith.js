@@ -22,8 +22,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * unionWith(objects, others, isEqual)
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
+ * unionWith(objects, others, isEqual) => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
  */
 function unionWith() {
     var arrays = Array.prototype.slice.call(arguments);

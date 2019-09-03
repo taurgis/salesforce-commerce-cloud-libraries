@@ -8,7 +8,6 @@ var baseUnset = require('./internal/baseUnset');
  * **Note:** This method mutates `object`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -17,17 +16,13 @@ var baseUnset = require('./internal/baseUnset');
  * @example
  *
  * var object = { 'a': [{ 'b': { 'c': 7 } }] };
- * unset(object, 'a[0].b.c');
- * // => true
+ * unset(object, 'a[0].b.c'); => true
  *
- * console.log(object);
- * // => { 'a': [{ 'b': {} }] };
+ * console.log(object); => { 'a': [{ 'b': {} }] };
  *
- * unset(object, ['a', '0', 'b', 'c']);
- * // => true
+ * unset(object, ['a', '0', 'b', 'c']); => true
  *
- * console.log(object);
- * // => { 'a': [{ 'b': {} }] };
+ * console.log(object); => { 'a': [{ 'b': {} }] };
  */
 function unset(object, path) {
     return object == null ? true : baseUnset(object, path);

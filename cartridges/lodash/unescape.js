@@ -16,15 +16,13 @@ var reHasEscapedHtml = RegExp(reEscapedHtml.source);
  * HTML entities use a third-party library like [_he_](https://mths.be/he).
  *
  * @static
- * @memberOf _
  * @since 0.6.0
  * @category String
  * @param {string} [string=''] The string to unescape.
  * @returns {string} Returns the unescaped string.
  * @example
  *
- * unescape('fred, barney, &amp; pebbles');
- * // => 'fred, barney, & pebbles'
+ * unescape('fred, barney, &amp; pebbles'); => 'fred, barney, & pebbles'
  */
 function unescape(string) {
     string = toString(string);

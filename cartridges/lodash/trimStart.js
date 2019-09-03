@@ -13,7 +13,6 @@ var reTrimStart = /^\s+/;
  * Removes leading whitespace or specified characters from `string`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to trim.
@@ -22,11 +21,9 @@ var reTrimStart = /^\s+/;
  * @returns {string} Returns the trimmed string.
  * @example
  *
- * trimStart('  abc  ');
- * // => 'abc  '
+ * trimStart('  abc  '); => 'abc  '
  *
- * trimStart('-_-abc-_-', '_-');
- * // => 'abc-_-'
+ * trimStart('-_-abc-_-', '_-'); => 'abc-_-'
  */
 function trimStart(string, chars, guard) {
     string = toString(string);

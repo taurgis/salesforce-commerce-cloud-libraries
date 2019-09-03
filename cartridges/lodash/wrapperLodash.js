@@ -118,17 +118,14 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * var wrapped = _([1, 2, 3]);
  *
  * // Returns an unwrapped value.
- * wrapped.reduce(_.add);
- * // => 6
+ * wrapped.reduce(_.add); => 6
  *
  * // Returns a wrapped value.
  * var squares = wrapped.map(square);
  *
- * isArray(squares);
- * // => false
+ * isArray(squares); => false
  *
- * isArray(squares.value());
- * // => true
+ * isArray(squares.value()); => true
  */
 function lodash(value) {
     if (isObjectLike(value) && !isArray(value) && !(value instanceof LazyWrapper)) {

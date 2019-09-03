@@ -16,8 +16,7 @@ var baseEachRight = require('./internal/baseEachRight');
  * @see forEach, forIn, forInRight, forOwn, forOwnRight
  * @example
  *
- * forEachRight([1, 2], value => console.log(value))
- * // => Logs `2` then `1`.
+ * forEachRight([1, 2], value => console.log(value)) => Logs `2` then `1`.
  */
 function forEachRight(collection, iteratee) {
     var func = Array.isArray(collection) ? arrayEachRight : baseEachRight;

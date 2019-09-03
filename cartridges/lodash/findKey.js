@@ -9,7 +9,6 @@ var baseIteratee = require('./internal/baseIteratee');
  * element `predicate` returns truthy for instead of the element itself.
  *
  * @static
- * @memberOf _
  * @since 1.1.0
  * @category Object
  * @param {Object} object The object to inspect.
@@ -24,20 +23,16 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'age': 1,  'active': true }
  * };
  *
- * findKey(users, function(o) { return o.age < 40; });
- * // => 'barney' (iteration order is not guaranteed)
+ * findKey(users, function(o) { return o.age < 40; }); => 'barney' (iteration order is not guaranteed)
  *
  * // The `_.matches` iteratee shorthand.
- * findKey(users, { 'age': 1, 'active': true });
- * // => 'pebbles'
+ * findKey(users, { 'age': 1, 'active': true }); => 'pebbles'
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * findKey(users, ['active', false]);
- * // => 'fred'
+ * findKey(users, ['active', false]); => 'fred'
  *
  * // The `_.property` iteratee shorthand.
- * findKey(users, 'active');
- * // => 'barney'
+ * findKey(users, 'active'); => 'barney'
  */
 function findKey(object, predicate) {
     return baseFindKey(object, baseIteratee(predicate, 3), baseForOwn);

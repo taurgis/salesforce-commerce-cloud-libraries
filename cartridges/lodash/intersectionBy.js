@@ -15,7 +15,6 @@ var last = require('./last');
  * (value).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -23,12 +22,10 @@ var last = require('./last');
  * @returns {Array} Returns the new array of intersecting values.
  * @example
  *
- * intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor);
- * // => [2.1]
+ * intersectionBy([2.1, 1.2], [2.3, 3.4], Math.floor); => [2.1]
  *
  * // The `_.property` iteratee shorthand.
- * intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
- * // => [{ 'x': 1 }]
+ * intersectionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x'); => [{ 'x': 1 }]
  */
 var intersectionBy = baseRest(function (arrays) {
     var iteratee = last(arrays);

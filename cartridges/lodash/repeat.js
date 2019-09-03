@@ -9,7 +9,6 @@ var toString = require('./toString');
  * Repeats the given string `n` times.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to repeat.
@@ -18,14 +17,11 @@ var toString = require('./toString');
  * @returns {string} Returns the repeated string.
  * @example
  *
- * repeat('*', 3);
- * // => '***'
+ * repeat('*', 3); => '***'
  *
- * repeat('abc', 2);
- * // => 'abcabc'
+ * repeat('abc', 2); => 'abcabc'
  *
- * repeat('abc', 0);
- * // => ''
+ * repeat('abc', 0); => ''
  */
 function repeat(string, n, guard) {
     if ((guard ? isIterateeCall(string, n, guard) : n === undefined)) {

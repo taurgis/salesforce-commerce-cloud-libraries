@@ -10,7 +10,6 @@ var pickBy = require('./pickBy');
  * arguments: (value, key).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The source object.
@@ -20,8 +19,7 @@ var pickBy = require('./pickBy');
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * omitBy(object, _.isNumber);
- * // => { 'b': '2' }
+ * omitBy(object, _.isNumber); => { 'b': '2' }
  */
 function omitBy(object, predicate) {
     return pickBy(object, negate(baseIteratee(predicate)));

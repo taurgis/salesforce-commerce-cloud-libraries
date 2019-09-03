@@ -18,8 +18,7 @@
  *
  * Foo.prototype.c = () => 'c'
  *
- * functions(new Foo)
- * // => ['a', 'b']
+ * functions(new Foo) => ['a', 'b']
  */
 function functions(object) {
     if (object == null) {

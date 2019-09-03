@@ -12,11 +12,9 @@ var isObjectLike = require('./isObjectLike.js');
  * @returns {boolean} Returns `true` if `value` is a boolean, else `false`.
  * @example
  *
- * isBoolean(false)
- * // => true
+ * isBoolean(false) => true
  *
- * isBoolean(null)
- * // => false
+ * isBoolean(null) => false
  */
 function isBoolean(value) {
     return value === true || value === false ||

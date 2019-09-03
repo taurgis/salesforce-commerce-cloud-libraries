@@ -15,17 +15,13 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
  * @example
  *
- * isLength(3)
- * // => true
+ * isLength(3) => true
  *
- * isLength(Number.MIN_VALUE)
- * // => false
+ * isLength(Number.MIN_VALUE) => false
  *
- * isLength(Infinity)
- * // => false
+ * isLength(Infinity) => false
  *
- * isLength('3')
- * // => false
+ * isLength('3') => false
  */
 function isLength(value) {
     var result = typeof value === 'number' &&

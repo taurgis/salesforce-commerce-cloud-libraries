@@ -9,7 +9,6 @@ var toInteger = require('./toInteger');
  * the nth argument from the end is returned.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Util
  * @param {number} [n=0] The index of the argument to return.
@@ -17,12 +16,10 @@ var toInteger = require('./toInteger');
  * @example
  *
  * var func = _.nthArg(1);
- * func('a', 'b', 'c', 'd');
- * // => 'b'
+ * func('a', 'b', 'c', 'd'); => 'b'
  *
  * var func = _.nthArg(-2);
- * func('a', 'b', 'c', 'd');
- * // => 'c'
+ * func('a', 'b', 'c', 'd'); => 'c'
  */
 function nthArg(n) {
     n = toInteger(n);

@@ -11,7 +11,6 @@ var basePullAt = require('./internal/basePullAt');
  * to pull elements from an array by value.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -24,11 +23,9 @@ var basePullAt = require('./internal/basePullAt');
  *   return n % 2 == 0;
  * });
  *
- * console.log(array);
- * // => [1, 3]
+ * console.log(array); => [1, 3]
  *
- * console.log(evens);
- * // => [2, 4]
+ * console.log(evens); => [2, 4]
  */
 function remove(array, predicate) {
     var result = [];

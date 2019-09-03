@@ -15,11 +15,9 @@ const nodeIsDate = nodeTypes && nodeTypes.isDate;
  * @returns {boolean} Returns `true` if `value` is a date object, else `false`.
  * @example
  *
- * isDate(new Date)
- * // => true
+ * isDate(new Date) => true
  *
- * isDate('Mon April 23 2012')
- * // => false
+ * isDate('Mon April 23 2012') => false
  */
 const isDate = nodeIsDate
     ? function (value) {

@@ -14,8 +14,7 @@ var baseSortedIndex = require('./internal/baseSortedIndex.js');
  *  into `array`.
  * @example
  *
- * sortedIndex([30, 50], 40)
- * // => 1
+ * sortedIndex([30, 50], 40) => 1
  */
 function sortedIndex(array, value) {
     return baseSortedIndex(array, value);

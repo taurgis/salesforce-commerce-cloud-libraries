@@ -17,8 +17,7 @@
  *
  * map({ 'a': 4, 'b': 8 }, function square(n) {
  *   return n * n
- * })
- * // => [16, 64] (iteration order is not guaranteed)
+ * }) => [16, 64] (iteration order is not guaranteed)
  */
 function mapObject(object, iteratee) {
     const props = Object.keys(object);

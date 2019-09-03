@@ -20,26 +20,19 @@ var createRange = require('./internal/createRange.js');
  * @see inRange, rangeRight
  * @example
  *
- * range(4)
- * // => [0, 1, 2, 3]
+ * range(4) => [0, 1, 2, 3]
  *
- * range(-4)
- * // => [0, -1, -2, -3]
+ * range(-4) => [0, -1, -2, -3]
  *
- * range(1, 5)
- * // => [1, 2, 3, 4]
+ * range(1, 5) => [1, 2, 3, 4]
  *
- * range(0, 20, 5)
- * // => [0, 5, 10, 15]
+ * range(0, 20, 5) => [0, 5, 10, 15]
  *
- * range(0, -4, -1)
- * // => [0, -1, -2, -3]
+ * range(0, -4, -1) => [0, -1, -2, -3]
  *
- * range(1, 4, 0)
- * // => [1, 1, 1]
+ * range(1, 4, 0) => [1, 1, 1]
  *
- * range(0)
- * // => []
+ * range(0) => []
  */
 const range = createRange();
 

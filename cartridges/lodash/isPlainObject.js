@@ -17,17 +17,13 @@ var isObjectLike = require('./isObjectLike');
  *   this.a = 1
  * }
  *
- * isPlainObject(new Foo)
- * // => false
+ * isPlainObject(new Foo) => false
  *
- * isPlainObject([1, 2, 3])
- * // => false
+ * isPlainObject([1, 2, 3]) => false
  *
- * isPlainObject({ 'x': 0, 'y': 0 })
- * // => true
+ * isPlainObject({ 'x': 0, 'y': 0 }) => true
  *
- * isPlainObject(Object.create(null))
- * // => true
+ * isPlainObject(Object.create(null)) => true
  */
 function isPlainObject(value) {
     if (!isObjectLike(value) || getTag(value) !== '[object Object]') {

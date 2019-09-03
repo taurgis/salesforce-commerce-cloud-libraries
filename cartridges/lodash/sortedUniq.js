@@ -14,8 +14,7 @@ var baseSortedUniq = require('./internal/baseSortedUniq.js');
  * @returns {Array} Returns the new duplicate free array.
  * @example
  *
- * sortedUniq([1, 1, 2])
- * // => [1, 2]
+ * sortedUniq([1, 1, 2]) => [1, 2]
  */
 function sortedUniq(array) {
     return (array != null && array.length)

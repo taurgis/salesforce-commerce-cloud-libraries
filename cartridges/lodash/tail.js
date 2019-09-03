@@ -9,8 +9,7 @@
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * tail([1, 2, 3])
- * // => [2, 3]
+ * tail([1, 2, 3]) => [2, 3]
  */
 function tail(array) {
     const length = array == null ? 0 : array.length;

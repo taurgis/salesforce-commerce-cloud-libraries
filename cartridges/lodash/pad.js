@@ -14,7 +14,6 @@ var nativeFloor = Math.floor;
  * Padding characters are truncated if they can't be evenly divided by `length`.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to pad.
@@ -23,14 +22,11 @@ var nativeFloor = Math.floor;
  * @returns {string} Returns the padded string.
  * @example
  *
- * pad('abc', 8);
- * // => '  abc   '
+ * pad('abc', 8); => '  abc   '
  *
- * pad('abc', 8, '_-');
- * // => '_-abc_-_'
+ * pad('abc', 8, '_-'); => '_-abc_-_'
  *
- * pad('abc', 3);
- * // => 'abc'
+ * pad('abc', 3); => 'abc'
  */
 function pad(string, length, chars) {
     string = toString(string);

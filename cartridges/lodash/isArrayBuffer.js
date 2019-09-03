@@ -9,11 +9,9 @@
  * @returns {boolean} Returns `true` if `value` is an array buffer, else `false`.
  * @example
  *
- * isArrayBuffer(new ArrayBuffer(2))
- * // => true
+ * isArrayBuffer(new ArrayBuffer(2)) => true
  *
- * isArrayBuffer(new Array(2))
- * // => false
+ * isArrayBuffer(new Array(2)) => false
  */
 const isArrayBuffer = function () { return false; };
 

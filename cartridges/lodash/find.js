@@ -9,7 +9,6 @@ var findIndex = require('./findIndex');
  * arguments: (value, index|key, collection).
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to inspect.
@@ -24,20 +23,16 @@ var findIndex = require('./findIndex');
  *   { 'user': 'pebbles', 'age': 1,  'active': true }
  * ];
  *
- * find(users, function(o) { return o.age < 40; });
- * // => object for 'barney'
+ * find(users, function(o) { return o.age < 40; }); => object for 'barney'
  *
  * // The `_.matches` iteratee shorthand.
- * find(users, { 'age': 1, 'active': true });
- * // => object for 'pebbles'
+ * find(users, { 'age': 1, 'active': true }); => object for 'pebbles'
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * find(users, ['active', false]);
- * // => object for 'fred'
+ * find(users, ['active', false]); => object for 'fred'
  *
  * // The `_.property` iteratee shorthand.
- * find(users, 'active');
- * // => object for 'barney'
+ * find(users, 'active'); => object for 'barney'
  */
 var find = createFind(findIndex);
 

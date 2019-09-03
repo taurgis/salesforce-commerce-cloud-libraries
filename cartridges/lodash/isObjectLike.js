@@ -10,17 +10,13 @@
  * @returns {boolean} Returns `true` if `value` is object-like, else `false`.
  * @example
  *
- * isObjectLike({})
- * // => true
+ * isObjectLike({}) => true
  *
- * isObjectLike([1, 2, 3])
- * // => true
+ * isObjectLike([1, 2, 3]) => true
  *
- * isObjectLike(Function)
- * // => false
+ * isObjectLike(Function) => false
  *
- * isObjectLike(null)
- * // => false
+ * isObjectLike(null) => false
  */
 function isObjectLike(value) {
     return value != null && typeof value === 'object';

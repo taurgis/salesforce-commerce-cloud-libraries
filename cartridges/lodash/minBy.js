@@ -16,8 +16,7 @@ var isSymbol = require('./isSymbol.js');
  *
  * const objects = [{ 'n': 1 }, { 'n': 2 }]
  *
- * minBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n; })
- * // => { 'n': 1 }
+ * minBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n; }) => { 'n': 1 }
  */
 function minBy(array, iteratee) {
     let result;

@@ -9,7 +9,6 @@ var keysIn = require('./keysIn');
  * `object` in the opposite order.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -27,8 +26,7 @@ var keysIn = require('./keysIn');
  *
  * forInRight(new Foo, function(value, key) {
  *   console.log(key);
- * });
- * // => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.
+ * }); => Logs 'c', 'b', then 'a' assuming `_.forIn` logs 'a', 'b', then 'c'.
  */
 function forInRight(object, iteratee) {
     return object == null

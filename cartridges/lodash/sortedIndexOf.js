@@ -14,8 +14,7 @@ var eq = require('./eq.js');
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * sortedIndexOf([4, 5, 5, 5, 6], 5)
- * // => 1
+ * sortedIndexOf([4, 5, 5, 5, 6], 5) => 1
  */
 function sortedIndexOf(array, value) {
     const length = array == null ? 0 : array.length;

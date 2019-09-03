@@ -17,8 +17,7 @@ var castArrayLikeObject = require('./internal/castArrayLikeObject.js');
  * @returns {Array} Returns the new array of intersecting values.
  * @example
  *
- * intersection([2, 1], [2, 3])
- * // => [2]
+ * intersection([2, 1], [2, 3]) => [2]
  */
 function intersection() {
     var arrays = Array.prototype.slice.call(arguments);

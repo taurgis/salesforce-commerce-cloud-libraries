@@ -16,11 +16,9 @@ const nodeIsSet = nodeTypes && nodeTypes.isSet;
  * @returns {boolean} Returns `true` if `value` is a set, else `false`.
  * @example
  *
- * isSet(new Set)
- * // => true
+ * isSet(new Set) => true
  *
- * isSet(new WeakSet)
- * // => false
+ * isSet(new WeakSet) => false
  */
 const isSet = nodeIsSet
     ? (value) => nodeIsSet(value)

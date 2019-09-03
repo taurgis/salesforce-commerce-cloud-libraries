@@ -9,7 +9,6 @@ var baseSum = require('./internal/baseSum');
  * The iteratee is invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
@@ -19,12 +18,10 @@ var baseSum = require('./internal/baseSum');
  *
  * var objects = [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }];
  *
- * sumBy(objects, function(o) { return o.n; });
- * // => 20
+ * sumBy(objects, function(o) { return o.n; }); => 20
  *
  * // The `_.property` iteratee shorthand.
- * sumBy(objects, 'n');
- * // => 20
+ * sumBy(objects, 'n'); => 20
  */
 function sumBy(array, iteratee) {
     return (array && array.length)

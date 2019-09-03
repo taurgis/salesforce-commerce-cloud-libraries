@@ -25,24 +25,19 @@ var freeParseInt = parseInt;
  * Converts `value` to a number.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to process.
  * @returns {number} Returns the number.
  * @example
  *
- * toNumber(3.2);
- * // => 3.2
+ * toNumber(3.2); => 3.2
  *
- * toNumber(Number.MIN_VALUE);
- * // => 5e-324
+ * toNumber(Number.MIN_VALUE); => 5e-324
  *
- * toNumber(Infinity);
- * // => Infinity
+ * toNumber(Infinity); => Infinity
  *
- * toNumber('3.2');
- * // => 3.2
+ * toNumber('3.2'); => 3.2
  */
 function toNumber(value) {
     if (typeof value == 'number') {

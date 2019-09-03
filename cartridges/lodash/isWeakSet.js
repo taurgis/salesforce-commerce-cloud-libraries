@@ -12,11 +12,9 @@ var isObjectLike = require('./isObjectLike.js');
  * @returns {boolean} Returns `true` if `value` is a weak set, else `false`.
  * @example
  *
- * isWeakSet(new WeakSet)
- * // => true
+ * isWeakSet(new WeakSet) => true
  *
- * isWeakSet(new Set)
- * // => false
+ * isWeakSet(new Set) => false
  */
 function isWeakSet(value) {
     return isObjectLike(value) && getTag(value) == '[object WeakSet]';

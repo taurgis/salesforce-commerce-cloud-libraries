@@ -19,18 +19,15 @@ var nativeMin = Math.min;
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Util
  * @param {number} n The number of times to invoke `iteratee`.
  * @param {Function} [iteratee=_.identity] The function invoked per iteration.
  * @returns {Array} Returns the array of results.
  * @example
  *
- * times(3, String);
- * // => ['0', '1', '2']
+ * times(3, String); => ['0', '1', '2']
  *
- *  _.times(4, _.constant(0));
- * // => [0, 0, 0, 0]
+ *  _.times(4, _.constant(0)); => [0, 0, 0, 0]
  */
 function times(n, iteratee) {
     n = toInteger(n);

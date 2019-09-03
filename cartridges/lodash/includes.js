@@ -17,7 +17,6 @@ var nativeMax = Math.max;
  * the offset from the end of `collection`.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object|string} collection The collection to inspect.
@@ -27,17 +26,13 @@ var nativeMax = Math.max;
  * @returns {boolean} Returns `true` if `value` is found, else `false`.
  * @example
  *
- * includes([1, 2, 3], 1);
- * // => true
+ * includes([1, 2, 3], 1); => true
  *
- * includes([1, 2, 3], 1, 2);
- * // => false
+ * includes([1, 2, 3], 1, 2); => false
  *
- * includes({ 'a': 1, 'b': 2 }, 1);
- * // => true
+ * includes({ 'a': 1, 'b': 2 }, 1); => true
  *
- * includes('abcd', 'bc');
- * // => true
+ * includes('abcd', 'bc'); => true
  */
 function includes(collection, value, fromIndex, guard) {
     collection = isArrayLike(collection) ? collection : values(collection);

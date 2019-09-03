@@ -16,8 +16,7 @@ var isSymbol = require('./isSymbol.js');
  *
  * const objects = [{ 'n': 1 }, { 'n': 2 }]
  *
- * maxBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n;})
- * // => { 'n': 2 }
+ * maxBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n;}) => { 'n': 2 }
  */
 function maxBy(array, iteratee) {
     let result;

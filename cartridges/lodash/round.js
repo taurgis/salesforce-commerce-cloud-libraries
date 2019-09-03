@@ -12,14 +12,11 @@ var createRound = require('./internal/createRound.js');
  * @returns {number} Returns the rounded number.
  * @example
  *
- * round(4.006)
- * // => 4
+ * round(4.006) => 4
  *
- * round(4.006, 2)
- * // => 4.01
+ * round(4.006, 2) => 4.01
  *
- * round(4060, -2)
- * // => 4100
+ * round(4060, -2) => 4100
  */
 const round = createRound('round');
 

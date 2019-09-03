@@ -12,24 +12,19 @@ var nativeIsFinite = root.isFinite;
  * [`Number.isFinite`](https://mdn.io/Number/isFinite).
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a finite number, else `false`.
  * @example
  *
- * isFinite(3);
- * // => true
+ * isFinite(3); => true
  *
- * isFinite(Number.MIN_VALUE);
- * // => true
+ * isFinite(Number.MIN_VALUE); => true
  *
- * isFinite(Infinity);
- * // => false
+ * isFinite(Infinity); => false
  *
- * isFinite('3');
- * // => false
+ * isFinite('3'); => false
  */
 function isFinite(value) {
     return typeof value == 'number' && nativeIsFinite(value);

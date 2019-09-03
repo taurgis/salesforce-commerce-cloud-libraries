@@ -18,8 +18,7 @@ var baseUniq = require('./internal/baseUniq.js');
  *
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * uniqWith(objects, isEqual)
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
+ * uniqWith(objects, isEqual) => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  */
 function uniqWith(array, comparator) {
     comparator = typeof comparator === 'function' ? comparator : undefined;

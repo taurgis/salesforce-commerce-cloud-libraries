@@ -12,7 +12,6 @@ var nativeMax = Math.max;
  * element `predicate` returns truthy for instead of the element itself.
  *
  * @static
- * @memberOf _
  * @since 1.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -27,20 +26,16 @@ var nativeMax = Math.max;
  *   { 'user': 'pebbles', 'active': true }
  * ];
  *
- * findIndex(users, function(o) { return o.user == 'barney'; });
- * // => 0
+ * findIndex(users, function(o) { return o.user == 'barney'; }); => 0
  *
  * // The `_.matches` iteratee shorthand.
- * findIndex(users, { 'user': 'fred', 'active': false });
- * // => 1
+ * findIndex(users, { 'user': 'fred', 'active': false }); => 1
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * findIndex(users, ['active', false]);
- * // => 0
+ * findIndex(users, ['active', false]); => 0
  *
  * // The `_.property` iteratee shorthand.
- * findIndex(users, 'active');
- * // => 2
+ * findIndex(users, 'active'); => 2
  */
 function findIndex(array, predicate, fromIndex) {
     var length = array == null ? 0 : array.length;

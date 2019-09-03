@@ -11,17 +11,13 @@
  * @returns {boolean} Returns `true` if `value` is an object, else `false`.
  * @example
  *
- * isObject({})
- * // => true
+ * isObject({}) => true
  *
- * isObject([1, 2, 3])
- * // => true
+ * isObject([1, 2, 3]) => true
  *
- * isObject(Function)
- * // => true
+ * isObject(Function) => true
  *
- * isObject(null)
- * // => false
+ * isObject(null) => false
  */
 function isObject(value) {
     const type = typeof value;

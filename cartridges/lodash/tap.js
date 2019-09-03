@@ -6,7 +6,6 @@
  * "tap into" a method chain sequence in order to modify intermediate results.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Seq
  * @param {*} value The value to provide to `interceptor`.
@@ -20,8 +19,7 @@
  *    array.pop();
  *  })
  *  .reverse()
- *  .value();
- * // => [2, 1]
+ *  .value(); => [2, 1]
  */
 function tap(value, interceptor) {
     interceptor(value);

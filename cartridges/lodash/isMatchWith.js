@@ -30,8 +30,7 @@ var getMatchData = require('./internal/getMatchData.js');
  * const object = { 'greeting': 'hello' }
  * const source = { 'greeting': 'hi' }
  *
- * isMatchWith(object, source, customizer)
- * // => true
+ * isMatchWith(object, source, customizer) => true
  */
 function isMatchWith(object, source, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

@@ -13,7 +13,6 @@ var baseIsEqual = require('./internal/baseIsEqual');
  * nodes are compared by strict equality, i.e. `===`.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to compare.
@@ -24,11 +23,9 @@ var baseIsEqual = require('./internal/baseIsEqual');
  * var object = { 'a': 1 };
  * var other = { 'a': 1 };
  *
- * isEqual(object, other);
- * // => true
+ * isEqual(object, other); => true
  *
- * object === other;
- * // => false
+ * object === other; => false
  */
 function isEqual(value, other) {
     return baseIsEqual(value, other);

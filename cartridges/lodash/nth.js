@@ -8,7 +8,6 @@ var toInteger = require('./toInteger');
  * element from the end is returned.
  *
  * @static
- * @memberOf _
  * @since 4.11.0
  * @category Array
  * @param {Array} array The array to query.
@@ -18,11 +17,9 @@ var toInteger = require('./toInteger');
  *
  * var array = ['a', 'b', 'c', 'd'];
  *
- * nth(array, 1);
- * // => 'b'
+ * nth(array, 1); => 'b'
  *
- * nth(array, -2);
- * // => 'c';
+ * nth(array, -2); => 'c';
  */
 function nth(array, n) {
     return (array && array.length) ? baseNth(array, toInteger(n)) : undefined;

@@ -15,8 +15,7 @@ const INFINITY = 1 / 0;
  * @see flatMap, flatMapDeep, flatMapDepth, flatten, flattenDepth
  * @example
  *
- * flattenDeep([1, [2, [3, [4]], 5]])
- * // => [1, 2, 3, 4, 5]
+ * flattenDeep([1, [2, [3, [4]], 5]]) => [1, 2, 3, 4, 5]
  */
 function flattenDeep(array) {
     const length = array == null ? 0 : array.length;

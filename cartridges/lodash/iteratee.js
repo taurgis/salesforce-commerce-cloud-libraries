@@ -15,7 +15,6 @@ var CLONE_DEEP_FLAG = 1;
  *
  * @static
  * @since 4.0.0
- * @memberOf _
  * @category Util
  * @param {*} [func=_.identity] The value to convert to a callback.
  * @returns {Function} Returns the callback.
@@ -27,16 +26,13 @@ var CLONE_DEEP_FLAG = 1;
  * ];
  *
  * // The `_.matches` iteratee shorthand.
- * filter(users, _.iteratee({ 'user': 'barney', 'active': true }));
- * // => [{ 'user': 'barney', 'age': 36, 'active': true }]
+ * filter(users, _.iteratee({ 'user': 'barney', 'active': true })); => [{ 'user': 'barney', 'age': 36, 'active': true }]
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * filter(users, _.iteratee(['user', 'fred']));
- * // => [{ 'user': 'fred', 'age': 40 }]
+ * filter(users, _.iteratee(['user', 'fred'])); => [{ 'user': 'fred', 'age': 40 }]
  *
  * // The `_.property` iteratee shorthand.
- * map(users, _.iteratee('user'));
- * // => ['barney', 'fred']
+ * map(users, _.iteratee('user')); => ['barney', 'fred']
  *
  * // Create custom iteratee shorthands.
  * iteratee = _.wrap(_.iteratee, function(iteratee, func) {
@@ -45,8 +41,7 @@ var CLONE_DEEP_FLAG = 1;
  *   };
  * });
  *
- * filter(['abc', 'def'], /ef/);
- * // => ['def']
+ * filter(['abc', 'def'], /ef/); => ['def']
  */
 function iteratee(func) {
     return baseIteratee(typeof func == 'function' ? func : baseClone(func, CLONE_DEEP_FLAG));

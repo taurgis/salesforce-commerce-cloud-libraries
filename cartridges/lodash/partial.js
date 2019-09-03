@@ -20,7 +20,6 @@ var WRAP_PARTIAL_FLAG = 32;
  * applied functions.
  *
  * @static
- * @memberOf _
  * @since 0.2.0
  * @category Function
  * @param {Function} func The function to partially apply arguments to.
@@ -33,13 +32,11 @@ var WRAP_PARTIAL_FLAG = 32;
  * }
  *
  * var sayHelloTo = _.partial(greet, 'hello');
- * sayHelloTo('fred');
- * // => 'hello fred'
+ * sayHelloTo('fred'); => 'hello fred'
  *
  * // Partially applied with placeholders.
  * var greetFred = _.partial(greet, _, 'fred');
- * greetFred('hi');
- * // => 'hi fred'
+ * greetFred('hi'); => 'hi fred'
  */
 var partial = baseRest(function (func, partials) {
     var holders = replaceHolders(partials, getHolder(partial));

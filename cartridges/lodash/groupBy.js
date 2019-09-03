@@ -16,7 +16,6 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * key. The iteratee is invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -24,12 +23,10 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * @returns {Object} Returns the composed aggregate object.
  * @example
  *
- * groupBy([6.1, 4.2, 6.3], Math.floor);
- * // => { '4': [4.2], '6': [6.1, 6.3] }
+ * groupBy([6.1, 4.2, 6.3], Math.floor); => { '4': [4.2], '6': [6.1, 6.3] }
  *
  * // The `_.property` iteratee shorthand.
- * groupBy(['one', 'two', 'three'], 'length');
- * // => { '3': ['one', 'two'], '5': ['three'] }
+ * groupBy(['one', 'two', 'three'], 'length'); => { '3': ['one', 'two'], '5': ['three'] }
  */
 var groupBy = createAggregator(function (result, value, key) {
     if (hasOwnProperty.call(result, key)) {

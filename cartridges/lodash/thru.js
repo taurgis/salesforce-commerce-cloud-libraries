@@ -6,7 +6,6 @@
  * results in a method chain sequence.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Seq
  * @param {*} value The value to provide to `interceptor`.
@@ -20,8 +19,7 @@
  *  .thru(function(value) {
  *    return [value];
  *  })
- *  .value();
- * // => ['abc']
+ *  .value(); => ['abc']
  */
 function thru(value, interceptor) {
     return interceptor(value);

@@ -10,7 +10,6 @@ var baseIteratee = require('./internal/baseIteratee');
  * (value, key, object).
  *
  * @static
- * @memberOf _
  * @since 2.4.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -24,12 +23,10 @@ var baseIteratee = require('./internal/baseIteratee');
  *   'pebbles': { 'user': 'pebbles', 'age': 1 }
  * };
  *
- * mapValues(users, function(o) { return o.age; });
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ * mapValues(users, function(o) { return o.age; }); => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  *
  * // The `_.property` iteratee shorthand.
- * mapValues(users, 'age');
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ * mapValues(users, 'age'); => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValues(object, iteratee) {
     var result = {};

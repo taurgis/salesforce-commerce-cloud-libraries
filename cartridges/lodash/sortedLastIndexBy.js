@@ -9,7 +9,6 @@ var baseSortedIndexBy = require('./internal/baseSortedIndexBy');
  * sort ranking. The iteratee is invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The sorted array to inspect.
@@ -21,12 +20,10 @@ var baseSortedIndexBy = require('./internal/baseSortedIndexBy');
  *
  * var objects = [{ 'x': 4 }, { 'x': 5 }];
  *
- * sortedLastIndexBy(objects, { 'x': 4 }, function(o) { return o.x; });
- * // => 1
+ * sortedLastIndexBy(objects, { 'x': 4 }, function(o) { return o.x; }); => 1
  *
  * // The `_.property` iteratee shorthand.
- * sortedLastIndexBy(objects, { 'x': 4 }, 'x');
- * // => 1
+ * sortedLastIndexBy(objects, { 'x': 4 }, 'x'); => 1
  */
 function sortedLastIndexBy(array, value, iteratee) {
     return baseSortedIndexBy(array, value, baseIteratee(iteratee, 2), true);

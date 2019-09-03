@@ -12,11 +12,9 @@ var isPlainObject = require('./isPlainObject.js');
  * @returns {boolean} Returns `true` if `value` is a DOM element, else `false`.
  * @example
  *
- * isElement(document.body)
- * // => true
+ * isElement(document.body) => true
  *
- * isElement('<body>')
- * // => false
+ * isElement('<body>') => false
  */
 function isElement(value) {
     return isObjectLike(value) && value.nodeType === 1 && !isPlainObject(value);

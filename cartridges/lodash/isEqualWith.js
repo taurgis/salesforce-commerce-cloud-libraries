@@ -29,8 +29,7 @@ var baseIsEqual = require('./internal/baseIsEqual.js');
  * const array = ['hello', 'goodbye']
  * const other = ['hi', 'goodbye']
  *
- * isEqualWith(array, other, customizer)
- * // => true
+ * isEqualWith(array, other, customizer) => true
  */
 function isEqualWith(value, other, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

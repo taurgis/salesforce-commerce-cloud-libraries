@@ -15,7 +15,6 @@ var last = require('./last');
  * (value).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -23,12 +22,10 @@ var last = require('./last');
  * @returns {Array} Returns the new array of combined values.
  * @example
  *
- * unionBy([2.1], [1.2, 2.3], Math.floor);
- * // => [2.1, 1.2]
+ * unionBy([2.1], [1.2, 2.3], Math.floor); => [2.1, 1.2]
  *
  * // The `_.property` iteratee shorthand.
- * unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x');
- * // => [{ 'x': 1 }, { 'x': 2 }]
+ * unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x'); => [{ 'x': 1 }, { 'x': 2 }]
  */
 var unionBy = baseRest(function (arrays) {
     var iteratee = last(arrays);

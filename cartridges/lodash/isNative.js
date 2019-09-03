@@ -25,11 +25,9 @@ const reIsNative = RegExp('^' +
  *  else `false`.
  * @example
  *
- * isNative(Array.prototype.push)
- * // => true
+ * isNative(Array.prototype.push) => true
  *
- * isNative(isDate)
- * // => false
+ * isNative(isDate) => false
  */
 function isNative(value) {
     return isObject(value) && reIsNative.test(value);

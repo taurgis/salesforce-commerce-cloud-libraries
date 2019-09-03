@@ -10,6 +10,7 @@
  * [everything is true](https://en.wikipedia.org/wiki/Vacuous_truth) of
  * elements of empty objects.
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -18,8 +19,7 @@
  *  else `false`.
  * @example
  *
- * everyValue({ 'a': 0, 'b': 'yes', 'c': false }, Boolean)
- * // => false
+ * everyValue({ 'a': 0, 'b': 'yes', 'c': false }, Boolean) => false
  */
 function everyValue(object, predicate) {
     object = Object(object);

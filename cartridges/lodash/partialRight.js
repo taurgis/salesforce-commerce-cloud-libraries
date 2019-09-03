@@ -19,7 +19,6 @@ var WRAP_PARTIAL_RIGHT_FLAG = 64;
  * applied functions.
  *
  * @static
- * @memberOf _
  * @since 1.0.0
  * @category Function
  * @param {Function} func The function to partially apply arguments to.
@@ -32,13 +31,11 @@ var WRAP_PARTIAL_RIGHT_FLAG = 64;
  * }
  *
  * var greetFred = _.partialRight(greet, 'fred');
- * greetFred('hi');
- * // => 'hi fred'
+ * greetFred('hi'); => 'hi fred'
  *
  * // Partially applied with placeholders.
  * var sayHelloTo = _.partialRight(greet, 'hello', _);
- * sayHelloTo('fred');
- * // => 'hello fred'
+ * sayHelloTo('fred'); => 'hello fred'
  */
 var partialRight = baseRest(function (func, partials) {
     var holders = replaceHolders(partials, getHolder(partialRight));

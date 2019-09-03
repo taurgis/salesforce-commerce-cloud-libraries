@@ -11,7 +11,6 @@ var isArray = require('./isArray');
  * `collection` from right to left.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -25,8 +24,7 @@ var isArray = require('./isArray');
  *
  * reduceRight(array, function(flattened, other) {
  *   return flattened.concat(other);
- * }, []);
- * // => [4, 5, 2, 3, 0, 1]
+ * }, []); => [4, 5, 2, 3, 0, 1]
  */
 function reduceRight(collection, iteratee, accumulator) {
     var func = isArray(collection) ? arrayReduceRight : baseReduce;

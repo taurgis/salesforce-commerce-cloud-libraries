@@ -21,8 +21,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * xorWith(objects, others, isEqual)
- * // => [{ 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
+ * xorWith(objects, others, isEqual) => [{ 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
  */
 function xorWith() {
     var arrays = Array.prototype.slice.call(arguments);

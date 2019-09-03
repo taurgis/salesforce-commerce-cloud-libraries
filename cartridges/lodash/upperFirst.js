@@ -12,11 +12,9 @@ var createCaseFirst = require('./internal/createCaseFirst');
  * @see camelCase, kebabCase, lowerCase, snakeCase, startCase, upperCase
  * @example
  *
- * upperFirst('fred')
- * // => 'Fred'
+ * upperFirst('fred') => 'Fred'
  *
- * upperFirst('FRED')
- * // => 'FRED'
+ * upperFirst('FRED') => 'FRED'
  */
 var upperFirst = createCaseFirst('toUpperCase');
 

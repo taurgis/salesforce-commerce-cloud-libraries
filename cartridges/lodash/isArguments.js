@@ -16,7 +16,6 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  * Checks if `value` is likely an `arguments` object.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
@@ -24,11 +23,9 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  *  else `false`.
  * @example
  *
- * isArguments(function() { return arguments; }());
- * // => true
+ * isArguments(function() { return arguments; }()); => true
  *
- * isArguments([1, 2, 3]);
- * // => false
+ * isArguments([1, 2, 3]); => false
  */
 var isArguments = baseIsArguments(function () { return arguments; }()) ? baseIsArguments : function (value) {
     return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&

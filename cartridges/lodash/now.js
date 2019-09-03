@@ -7,7 +7,6 @@ var root = require('./internal/root');
  * the Unix epoch (1 January 1970 00:00:00 UTC).
  *
  * @static
- * @memberOf _
  * @since 2.4.0
  * @category Date
  * @returns {number} Returns the timestamp.
@@ -15,8 +14,7 @@ var root = require('./internal/root');
  *
  * defer(function(stamp) {
  *   console.log(_.now() - stamp);
- * }, _.now());
- * // => Logs the number of milliseconds it took for the deferred invocation.
+ * }, _.now()); => Logs the number of milliseconds it took for the deferred invocation.
  */
 var now = function () {
     return root.Date.now();

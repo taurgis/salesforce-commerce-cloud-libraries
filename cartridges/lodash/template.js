@@ -54,7 +54,6 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category String
  * @param {string} [string=''] The template string.
  * @param {Object} [options={}] The options object.
@@ -76,50 +75,41 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  *
  * // Use the "interpolate" delimiter to create a compiled template.
  * var compiled = _.template('hello <%= user %>!');
- * compiled({ 'user': 'fred' });
- * // => 'hello fred!'
+ * compiled({ 'user': 'fred' }); => 'hello fred!'
  *
  * // Use the HTML "escape" delimiter to escape data property values.
  * var compiled = _.template('<b><%- value %></b>');
- * compiled({ 'value': '<script>' });
- * // => '<b>&lt;script&gt;</b>'
+ * compiled({ 'value': '<script>' }); => '<b>&lt;script&gt;</b>'
  *
  * // Use the "evaluate" delimiter to execute JavaScript and generate HTML.
  * var compiled = _.template('<% _.forEach(users, function(user) { %><li><%- user %></li><% }); %>');
- * compiled({ 'users': ['fred', 'barney'] });
- * // => '<li>fred</li><li>barney</li>'
+ * compiled({ 'users': ['fred', 'barney'] }); => '<li>fred</li><li>barney</li>'
  *
  * // Use the internal `print` function in "evaluate" delimiters.
  * var compiled = _.template('<% print("hello " + user); %>!');
- * compiled({ 'user': 'barney' });
- * // => 'hello barney!'
+ * compiled({ 'user': 'barney' }); => 'hello barney!'
  *
  * // Use the ES template literal delimiter as an "interpolate" delimiter.
  * // Disable support by replacing the "interpolate" delimiter.
  * var compiled = _.template('hello ${ user }!');
- * compiled({ 'user': 'pebbles' });
- * // => 'hello pebbles!'
+ * compiled({ 'user': 'pebbles' }); => 'hello pebbles!'
  *
  * // Use backslashes to treat delimiters as plain text.
  * var compiled = _.template('<%= "\\<%- value %\\>" %>');
- * compiled({ 'value': 'ignored' });
- * // => '<%- value %>'
+ * compiled({ 'value': 'ignored' }); => '<%- value %>'
  *
  * // Use the `imports` option to import `jQuery` as `jq`.
  * var text = '<% jq.each(users, function(user) { %><li><%- user %></li><% }); %>';
  * var compiled = _.template(text, { 'imports': { 'jq': jQuery } });
- * compiled({ 'users': ['fred', 'barney'] });
- * // => '<li>fred</li><li>barney</li>'
+ * compiled({ 'users': ['fred', 'barney'] }); => '<li>fred</li><li>barney</li>'
  *
  * // Use the `sourceURL` option to specify a custom sourceURL for the template.
  * var compiled = _.template('hello <%= user %>!', { 'sourceURL': '/basic/greeting.jst' });
- * compiled(data);
- * // => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
+ * compiled(data); => Find the source of "greeting.jst" under the Sources tab or Resources panel of the web inspector.
  *
  * // Use the `variable` option to ensure a with-statement isn't used in the compiled template.
  * var compiled = _.template('hi <%= data.user %>!', { 'variable': 'data' });
- * compiled.source;
- * // => function(data) {
+ * compiled.source; => function(data) {
  * //   var __t, __p = '';
  * //   __p += 'hi ' + ((__t = ( data.user )) == null ? '' : __t) + '!';
  * //   return __p;
@@ -128,8 +118,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * // Use custom template delimiters.
  * templateSettings.interpolate = /{{([\s\S]+?)}}/g;
  * var compiled = _.template('hello {{ user }}!');
- * compiled({ 'user': 'mustache' });
- * // => 'hello mustache!'
+ * compiled({ 'user': 'mustache' }); => 'hello mustache!'
  *
  * // Use the `source` property to inline compiled templates for meaningful
  * // line numbers in error messages and stack traces.

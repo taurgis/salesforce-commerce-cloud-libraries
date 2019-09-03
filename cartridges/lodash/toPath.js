@@ -15,11 +15,9 @@ var toKey = require('./internal/toKey.js');
  * @returns {Array} Returns the new property path array.
  * @example
  *
- * toPath('a.b.c')
- * // => ['a', 'b', 'c']
+ * toPath('a.b.c') => ['a', 'b', 'c']
  *
- * toPath('a[0].b.c')
- * // => ['a', '0', 'b', 'c']
+ * toPath('a[0].b.c') => ['a', '0', 'b', 'c']
  */
 function toPath(value) {
     if (Array.isArray(value)) {

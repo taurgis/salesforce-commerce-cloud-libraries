@@ -17,8 +17,7 @@
  *
  * const object = { 'a': 5, 'b': 8, 'c': 10 }
  *
- * filterObject(object, (n) => !(n % 5))
- * // => [5, 10]
+ * filterObject(object, (n) => !(n % 5)) => [5, 10]
  */
 function filterObject(object, predicate) {
     object = Object(object);

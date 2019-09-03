@@ -26,11 +26,9 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
  * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
  * @example
  *
- * isBuffer(new Buffer(2))
- * // => true
+ * isBuffer(new Buffer(2)) => true
  *
- * isBuffer(new Uint8Array(2))
- * // => false
+ * isBuffer(new Uint8Array(2)) => false
  */
 var isBuffer = nativeIsBuffer || (function () { return false; });
 

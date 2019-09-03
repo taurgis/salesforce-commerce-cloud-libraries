@@ -18,8 +18,7 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  * @see difference, union, unionBy, unionWith, xor, xorBy, xorWith
  * @example
  *
- * without([2, 1, 2, 3], 1, 2)
- * // => [3]
+ * without([2, 1, 2, 3], 1, 2) => [3]
  */
 function without(array) {
     var values = Array.prototype.slice.call(arguments);

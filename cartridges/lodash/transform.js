@@ -21,7 +21,6 @@ var isTypedArray = require('./isTypedArray');
  * Iteratee functions may exit iteration early by explicitly returning `false`.
  *
  * @static
- * @memberOf _
  * @since 1.3.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -33,13 +32,11 @@ var isTypedArray = require('./isTypedArray');
  * transform([2, 3, 4], function(result, n) {
  *   result.push(n *= n);
  *   return n % 2 == 0;
- * }, []);
- * // => [4, 9]
+ * }, []); => [4, 9]
  *
  * transform({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
  *   (result[value] || (result[value] = [])).push(key);
- * }, {});
- * // => { '1': ['a', 'c'], '2': ['b'] }
+ * }, {}); => { '1': ['a', 'c'], '2': ['b'] }
  */
 function transform(object, iteratee, accumulator) {
     var isArr = isArray(object);

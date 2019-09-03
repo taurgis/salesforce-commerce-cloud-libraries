@@ -9,7 +9,6 @@ var createAggregator = require('./internal/createAggregator');
  * invoked with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -23,20 +22,16 @@ var createAggregator = require('./internal/createAggregator');
  *   { 'user': 'pebbles', 'age': 1,  'active': false }
  * ];
  *
- * partition(users, function(o) { return o.active; });
- * // => objects for [['fred'], ['barney', 'pebbles']]
+ * partition(users, function(o) { return o.active; }); => objects for [['fred'], ['barney', 'pebbles']]
  *
  * // The `_.matches` iteratee shorthand.
- * partition(users, { 'age': 1, 'active': false });
- * // => objects for [['pebbles'], ['barney', 'fred']]
+ * partition(users, { 'age': 1, 'active': false }); => objects for [['pebbles'], ['barney', 'fred']]
  *
  * // The `_.matchesProperty` iteratee shorthand.
- * partition(users, ['active', false]);
- * // => objects for [['barney', 'pebbles'], ['fred']]
+ * partition(users, ['active', false]); => objects for [['barney', 'pebbles'], ['fred']]
  *
  * // The `_.property` iteratee shorthand.
- * partition(users, 'active');
- * // => objects for [['fred'], ['barney', 'pebbles']]
+ * partition(users, 'active'); => objects for [['fred'], ['barney', 'pebbles']]
  */
 var partition = createAggregator(function (result, value, key) {
     result[key ? 0 : 1].push(value);

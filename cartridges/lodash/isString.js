@@ -11,11 +11,9 @@ var getTag = require('./internal/getTag.js');
  * @returns {boolean} Returns `true` if `value` is a string, else `false`.
  * @example
  *
- * isString('abc')
- * // => true
+ * isString('abc') => true
  *
- * isString(1)
- * // => false
+ * isString(1) => false
  */
 function isString(value) {
     const type = typeof value;

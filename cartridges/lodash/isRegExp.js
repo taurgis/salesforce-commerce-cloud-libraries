@@ -16,11 +16,9 @@ const nodeIsRegExp = nodeTypes && nodeTypes.isRegExp;
  * @returns {boolean} Returns `true` if `value` is a regexp, else `false`.
  * @example
  *
- * isRegExp(/abc/)
- * // => true
+ * isRegExp(/abc/) => true
  *
- * isRegExp('/abc/')
- * // => false
+ * isRegExp('/abc/') => false
  */
 const isRegExp = nodeIsRegExp
     ? function (value) { return nodeIsRegExp(value); }

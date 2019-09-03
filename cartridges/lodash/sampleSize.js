@@ -11,7 +11,6 @@ var toInteger = require('./toInteger');
  * size of `collection`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to sample.
@@ -20,11 +19,9 @@ var toInteger = require('./toInteger');
  * @returns {Array} Returns the random elements.
  * @example
  *
- * sampleSize([1, 2, 3], 2);
- * // => [3, 1]
+ * sampleSize([1, 2, 3], 2); => [3, 1]
  *
- * sampleSize([1, 2, 3], 4);
- * // => [2, 3, 1]
+ * sampleSize([1, 2, 3], 4); => [2, 3, 1]
  */
 function sampleSize(collection, n, guard) {
     if ((guard ? isIterateeCall(collection, n, guard) : n === undefined)) {

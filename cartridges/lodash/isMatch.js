@@ -23,11 +23,9 @@ var getMatchData = require('./internal/getMatchData.js');
  *
  * const object = { 'a': 1, 'b': 2 }
  *
- * isMatch({ 'a': 1, 'b': 2 }, { 'b': 2 })
- * // => true
+ * isMatch({ 'a': 1, 'b': 2 }, { 'b': 2 }) => true
  *
- * isMatch(object, { 'b': 1 })
- * // => false
+ * isMatch(object, { 'b': 1 }) => false
  */
 function isMatch(object, source) {
     return object === source || baseIsMatch(object, source, getMatchData(source));

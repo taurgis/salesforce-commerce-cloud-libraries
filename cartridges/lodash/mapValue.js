@@ -22,8 +22,7 @@
  * mapValue({
  *   'fred':    { 'user': 'fred',    'age': 40 },
  *   'pebbles': { 'user': 'pebbles', 'age': 1 }
- * }, function({ age }) { return age; })
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ * }, function({ age }) { return age; }) => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValue(object, iteratee) {
     object = Object(object);

@@ -15,8 +15,7 @@
  * @see truncate, trim
  * @example
  *
- * replace('Hi Fred', 'Fred', 'Barney')
- * // => 'Hi Barney'
+ * replace('Hi Fred', 'Fred', 'Barney') => 'Hi Barney'
  */
 function replace() {
     var args = Array.prototype.slice.call(arguments);

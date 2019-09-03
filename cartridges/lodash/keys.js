@@ -24,11 +24,9 @@ var isArrayLike = require('./isArrayLike');
  *
  * Foo.prototype.c = 3
  *
- * keys(new Foo)
- * // => ['a', 'b'] (iteration order is not guaranteed)
+ * keys(new Foo) => ['a', 'b'] (iteration order is not guaranteed)
  *
- * keys('hi')
- * // => ['0', '1']
+ * keys('hi') => ['0', '1']
  */
 function keys(object) {
     return isArrayLike(object)

@@ -13,7 +13,6 @@ var reTrimEnd = /\s+$/;
  * Removes trailing whitespace or specified characters from `string`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to trim.
@@ -22,11 +21,9 @@ var reTrimEnd = /\s+$/;
  * @returns {string} Returns the trimmed string.
  * @example
  *
- * trimEnd('  abc  ');
- * // => '  abc'
+ * trimEnd('  abc  '); => '  abc'
  *
- * trimEnd('-_-abc-_-', '_-');
- * // => '-_-abc'
+ * trimEnd('-_-abc-_-', '_-'); => '-_-abc'
  */
 function trimEnd(string, chars, guard) {
     string = toString(string);

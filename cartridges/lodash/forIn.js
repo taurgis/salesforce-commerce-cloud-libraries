@@ -11,7 +11,6 @@ var keysIn = require('./keysIn');
  * iteration early by explicitly returning `false`.
  *
  * @static
- * @memberOf _
  * @since 0.3.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -29,8 +28,7 @@ var keysIn = require('./keysIn');
  *
  * forIn(new Foo, function(value, key) {
  *   console.log(key);
- * });
- * // => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
+ * }); => Logs 'a', 'b', then 'c' (iteration order is not guaranteed).
  */
 function forIn(object, iteratee) {
     return object == null

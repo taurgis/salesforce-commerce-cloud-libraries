@@ -10,7 +10,6 @@ var getAllKeysIn = require('./internal/getAllKeysIn');
  * truthy for. The predicate is invoked with two arguments: (value, key).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Object
  * @param {Object} object The source object.
@@ -20,8 +19,7 @@ var getAllKeysIn = require('./internal/getAllKeysIn');
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * pickBy(object, _.isNumber);
- * // => { 'a': 1, 'c': 3 }
+ * pickBy(object, _.isNumber); => { 'a': 1, 'c': 3 }
  */
 function pickBy(object, predicate) {
     if (object == null) {

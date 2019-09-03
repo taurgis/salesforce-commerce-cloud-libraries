@@ -9,7 +9,6 @@ var toInteger = require('./toInteger');
  * mapped results up to `depth` times.
  *
  * @static
- * @memberOf _
  * @since 4.7.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -22,8 +21,7 @@ var toInteger = require('./toInteger');
  *   return [[[n, n]]];
  * }
  *
- * flatMapDepth([1, 2], duplicate, 2);
- * // => [[1, 1], [2, 2]]
+ * flatMapDepth([1, 2], duplicate, 2); => [[1, 1], [2, 2]]
  */
 function flatMapDepth(collection, iteratee, depth) {
     depth = depth === undefined ? 1 : toInteger(depth);

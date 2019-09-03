@@ -18,7 +18,6 @@ var keys = require('./keys');
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Util
  * @param {Function|Object} [object=lodash] The destination object.
  * @param {Object} source The object of functions to add.
@@ -34,15 +33,12 @@ var keys = require('./keys');
  * }
  *
  * mixin({ 'vowels': vowels });
- * vowels('fred');
- * // => ['e']
+ * vowels('fred'); => ['e']
  *
- * _('fred').vowels().value();
- * // => ['e']
+ * _('fred').vowels().value(); => ['e']
  *
  * mixin({ 'vowels': vowels }, { 'chain': false });
- * _('fred').vowels();
- * // => ['e']
+ * _('fred').vowels(); => ['e']
  */
 function mixin(object, source, options) {
     var props = keys(source);

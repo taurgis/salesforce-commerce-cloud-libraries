@@ -15,8 +15,7 @@ var isArray = require('./isArray');
  *  else `false`.
  * @example
  *
- * some([null, 0, 'yes', false], Boolean)
- * // => true
+ * some([null, 0, 'yes', false], Boolean) => true
  */
 function some(array, predicate) {
     let index = -1;

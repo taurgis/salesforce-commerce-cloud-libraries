@@ -14,8 +14,7 @@ var baseZipObject = require('./internal/baseZipObject.js');
  * @see unzip, unzipWith, zip, zipObject, zipWith
  * @example
  *
- * zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2])
- * // => { 'a': { 'b': [{ 'c': 1 }, { 'd': 2 }] } }
+ * zipObjectDeep(['a.b[0].c', 'a.b[1].d'], [1, 2]) => { 'a': { 'b': [{ 'c': 1 }, { 'd': 2 }] } }
  */
 function zipObjectDeep(props, values) {
     return baseZipObject(props || [], values || [], baseSet);

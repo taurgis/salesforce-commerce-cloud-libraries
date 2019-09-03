@@ -22,11 +22,9 @@ var keys = require('./keys.js');
  *
  * Foo.prototype.c = 3
  *
- * values(new Foo)
- * // => [1, 2] (iteration order is not guaranteed)
+ * values(new Foo) => [1, 2] (iteration order is not guaranteed)
  *
- * values('hi')
- * // => ['h', 'i']
+ * values('hi') => ['h', 'i']
  */
 function values(object) {
     return object == null ? [] : baseValues(object, keys(object));

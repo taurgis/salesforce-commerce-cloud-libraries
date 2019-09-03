@@ -21,7 +21,6 @@ var isArray = require('./isArray');
  * and `sortBy`
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -33,14 +32,12 @@ var isArray = require('./isArray');
  *
  * reduce([1, 2], function(sum, n) {
  *   return sum + n;
- * }, 0);
- * // => 3
+ * }, 0); => 3
  *
  * reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
  *   (result[value] || (result[value] = [])).push(key);
  *   return result;
- * }, {});
- * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+ * }, {}); => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
  */
 function reduce(collection, iteratee, accumulator) {
     var func = isArray(collection) ? arrayReduce : baseReduce;

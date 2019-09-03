@@ -15,11 +15,9 @@ var baseGet = require('./internal/baseGet.js');
  * const array = [0, 1, 2]
  * const object = { 'a': array, 'b': array, 'c': array }
  *
- * map(['a[2]', 'c[0]'], propertyOf(object))
- * // => [2, 0]
+ * map(['a[2]', 'c[0]'], propertyOf(object)) => [2, 0]
  *
- * map([['a', '2'], ['c', '0']], propertyOf(object))
- * // => [2, 0]
+ * map([['a', '2'], ['c', '0']], propertyOf(object)) => [2, 0]
  */
 function propertyOf(object) {
     return function (path) { return object == null ? undefined : baseGet(object, path); };

@@ -14,11 +14,9 @@ var isPlainObject = require('./isPlainObject');
  * @returns {boolean} Returns `true` if `value` is an error object, else `false`.
  * @example
  *
- * isError(new Error)
- * // => true
+ * isError(new Error) => true
  *
- * isError(Error)
- * // => false
+ * isError(Error) => false
  */
 function isError(value) {
     if (!isObjectLike(value)) {

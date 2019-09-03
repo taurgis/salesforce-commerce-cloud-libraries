@@ -17,11 +17,9 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  * @see unzipWith, zip, zipObject, zipObjectDeep, zipWith
  * @example
  *
- * const zipped = zip(['a', 'b'], [1, 2], [true, false])
- * // => [['a', 1, true], ['b', 2, false]]
+ * const zipped = zip(['a', 'b'], [1, 2], [true, false]) => [['a', 1, true], ['b', 2, false]]
  *
- * unzip(zipped)
- * // => [['a', 'b'], [1, 2], [true, false]]
+ * unzip(zipped) => [['a', 'b'], [1, 2], [true, false]]
  */
 function unzip(array) {
     if (!(array != null && array.length)) {

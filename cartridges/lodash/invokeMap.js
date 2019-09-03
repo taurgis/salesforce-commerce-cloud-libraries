@@ -12,7 +12,6 @@ var isArrayLike = require('./isArrayLike');
  * for, and `this` bound to, each element in `collection`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
@@ -22,11 +21,9 @@ var isArrayLike = require('./isArrayLike');
  * @returns {Array} Returns the array of results.
  * @example
  *
- * invokeMap([[5, 1, 7], [3, 2, 1]], 'sort');
- * // => [[1, 5, 7], [1, 2, 3]]
+ * invokeMap([[5, 1, 7], [3, 2, 1]], 'sort'); => [[1, 5, 7], [1, 2, 3]]
  *
- * invokeMap([123, 456], String.prototype.split, '');
- * // => [['1', '2', '3'], ['4', '5', '6']]
+ * invokeMap([123, 456], String.prototype.split, ''); => [['1', '2', '3'], ['4', '5', '6']]
  */
 var invokeMap = baseRest(function (collection, path, args) {
     var index = -1;

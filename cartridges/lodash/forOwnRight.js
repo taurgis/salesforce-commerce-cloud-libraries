@@ -8,7 +8,6 @@ var castFunction = require('./internal/castFunction');
  * `object` in the opposite order.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -26,8 +25,7 @@ var castFunction = require('./internal/castFunction');
  *
  * forOwnRight(new Foo, function(value, key) {
  *   console.log(key);
- * });
- * // => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
+ * }); => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
  */
 function forOwnRight(object, iteratee) {
     return object && baseForOwnRight(object, castFunction(iteratee));

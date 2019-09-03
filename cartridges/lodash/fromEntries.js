@@ -10,8 +10,7 @@
  * @returns {Object} Returns the new object.
  * @example
  *
- * fromEntries([['a', 1], ['b', 2]])
- * // => { 'a': 1, 'b': 2 }
+ * fromEntries([['a', 1], ['b', 2]]) => { 'a': 1, 'b': 2 }
  */
 function fromEntries(pairs) {
     const result = {};

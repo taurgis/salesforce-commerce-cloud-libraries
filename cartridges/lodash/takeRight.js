@@ -7,7 +7,6 @@ var toInteger = require('./toInteger');
  * Creates a slice of `array` with `n` elements taken from the end.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to query.
@@ -16,17 +15,13 @@ var toInteger = require('./toInteger');
  * @returns {Array} Returns the slice of `array`.
  * @example
  *
- * takeRight([1, 2, 3]);
- * // => [3]
+ * takeRight([1, 2, 3]); => [3]
  *
- * takeRight([1, 2, 3], 2);
- * // => [2, 3]
+ * takeRight([1, 2, 3], 2); => [2, 3]
  *
- * takeRight([1, 2, 3], 5);
- * // => [1, 2, 3]
+ * takeRight([1, 2, 3], 5); => [1, 2, 3]
  *
- * takeRight([1, 2, 3], 0);
- * // => []
+ * takeRight([1, 2, 3], 0); => []
  */
 function takeRight(array, n, guard) {
     var length = array == null ? 0 : array.length;

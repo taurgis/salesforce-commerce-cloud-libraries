@@ -14,7 +14,6 @@ var nativeReverse = arrayProto.reverse;
  * [`Array#reverse`](https://mdn.io/Array/reverse).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -23,11 +22,9 @@ var nativeReverse = arrayProto.reverse;
  *
  * var array = [1, 2, 3];
  *
- * reverse(array);
- * // => [3, 2, 1]
+ * reverse(array); => [3, 2, 1]
  *
- * console.log(array);
- * // => [3, 2, 1]
+ * console.log(array); => [3, 2, 1]
  */
 function reverse(array) {
     return array == null ? array : nativeReverse.call(array);

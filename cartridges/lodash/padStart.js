@@ -10,7 +10,6 @@ var toString = require('./toString');
  * characters are truncated if they exceed `length`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to pad.
@@ -19,14 +18,11 @@ var toString = require('./toString');
  * @returns {string} Returns the padded string.
  * @example
  *
- * padStart('abc', 6);
- * // => '   abc'
+ * padStart('abc', 6); => '   abc'
  *
- * padStart('abc', 6, '_-');
- * // => '_-_abc'
+ * padStart('abc', 6, '_-'); => '_-_abc'
  *
- * padStart('abc', 3);
- * // => 'abc'
+ * padStart('abc', 3); => 'abc'
  */
 function padStart(string, length, chars) {
     string = toString(string);

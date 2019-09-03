@@ -7,7 +7,6 @@ var wrapperClone = require('./internal/wrapperClone');
  * Creates a clone of the chain sequence planting `value` as the wrapped value.
  *
  * @name plant
- * @memberOf _
  * @since 3.2.0
  * @category Seq
  * @param {*} value The value to plant.
@@ -21,11 +20,9 @@ var wrapperClone = require('./internal/wrapperClone');
  * var wrapped = _([1, 2]).map(square);
  * var other = wrapped.plant([3, 4]);
  *
- * other.value();
- * // => [9, 16]
+ * other.value(); => [9, 16]
  *
- * wrapped.value();
- * // => [1, 4]
+ * wrapped.value(); => [1, 4]
  */
 function wrapperPlant(value) {
     var result;

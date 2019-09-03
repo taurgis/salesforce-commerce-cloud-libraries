@@ -8,7 +8,6 @@ var eq = require('./eq');
  * search on a sorted `array`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -16,8 +15,7 @@ var eq = require('./eq');
  * @returns {number} Returns the index of the matched value, else `-1`.
  * @example
  *
- * sortedLastIndexOf([4, 5, 5, 5, 6], 5);
- * // => 3
+ * sortedLastIndexOf([4, 5, 5, 5, 6], 5); => 3
  */
 function sortedLastIndexOf(array, value) {
     var length = array == null ? 0 : array.length;

@@ -11,8 +11,7 @@ var baseSum = require('./internal/baseSum.js');
  * @returns {number} Returns the sum.
  * @example
  *
- * sum([4, 2, 8, 6])
- * // => 20
+ * sum([4, 2, 8, 6]) => 20
  */
 function sum(array) {
     return (array != null && array.length)

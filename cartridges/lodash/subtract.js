@@ -12,8 +12,7 @@ var createMathOperation = require('./internal/createMathOperation.js');
  * @returns {number} Returns the difference.
  * @example
  *
- * subtract(6, 4)
- * // => 2
+ * subtract(6, 4) => 2
  */
 const subtract = createMathOperation(function (minuend, subtrahend) { return minuend - subtrahend; }, 0);
 

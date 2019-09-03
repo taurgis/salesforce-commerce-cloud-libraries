@@ -17,7 +17,6 @@ var nativeParseInt = parseInt;
  * [ES5 implementation](https://es5.github.io/#x15.1.2.2) of `parseInt`.
  *
  * @static
- * @memberOf _
  * @since 1.1.0
  * @category String
  * @param {string} string The string to convert.
@@ -26,11 +25,9 @@ var nativeParseInt = parseInt;
  * @returns {number} Returns the converted integer.
  * @example
  *
- * parseInt('08');
- * // => 8
+ * parseInt('08'); => 8
  *
- * map(['6', '08', '10'], _.parseInt);
- * // => [6, 8, 10]
+ * map(['6', '08', '10'], _.parseInt); => [6, 8, 10]
  */
 function parseIntLodash(string, radix, guard) {
     if (guard || radix == null) {

@@ -12,8 +12,7 @@ var createMathOperation = require('./internal/createMathOperation.js');
  * @returns {number} Returns the product.
  * @example
  *
- * multiply(6, 4)
- * // => 24
+ * multiply(6, 4) => 24
  */
 const multiply = createMathOperation(function (multiplier, multiplicand) { return multiplier * multiplicand; }, 1);
 

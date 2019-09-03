@@ -18,11 +18,9 @@ var toKey = require('./internal/toKey');
  *   { 'a': { 'b': 1 } }
  * ]
  *
- * map(objects, property('a.b'))
- * // => [2, 1]
+ * map(objects, property('a.b')) => [2, 1]
  *
- * map(sortBy(objects, property(['a', 'b'])), 'a.b')
- * // => [1, 2]
+ * map(sortBy(objects, property(['a', 'b'])), 'a.b') => [1, 2]
  */
 function property(path) {
     return isKey(path) ? baseProperty(toKey(path)) : basePropertyDeep(path);

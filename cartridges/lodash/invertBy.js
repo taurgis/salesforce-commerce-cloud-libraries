@@ -24,7 +24,6 @@ var nativeObjectToString = objectProto.toString;
  * with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 4.1.0
  * @category Object
  * @param {Object} object The object to invert.
@@ -34,13 +33,11 @@ var nativeObjectToString = objectProto.toString;
  *
  * var object = { 'a': 1, 'b': 2, 'c': 1 };
  *
- * invertBy(object);
- * // => { '1': ['a', 'c'], '2': ['b'] }
+ * invertBy(object); => { '1': ['a', 'c'], '2': ['b'] }
  *
  * invertBy(object, function(value) {
  *   return 'group' + value;
- * });
- * // => { 'group1': ['a', 'c'], 'group2': ['b'] }
+ * }); => { 'group1': ['a', 'c'], 'group2': ['b'] }
  */
 var invertBy = createInverter(function (result, value, key) {
     if (value != null &&

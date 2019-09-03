@@ -14,7 +14,6 @@ var reTrim = /^\s+|\s+$/g;
  * Removes leading and trailing whitespace or specified characters from `string`.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to trim.
@@ -23,14 +22,11 @@ var reTrim = /^\s+|\s+$/g;
  * @returns {string} Returns the trimmed string.
  * @example
  *
- * trim('  abc  ');
- * // => 'abc'
+ * trim('  abc  '); => 'abc'
  *
- * trim('-_-abc-_-', '_-');
- * // => 'abc'
+ * trim('-_-abc-_-', '_-'); => 'abc'
  *
- * map(['  foo  ', '  bar  '], _.trim);
- * // => ['foo', 'bar']
+ * map(['  foo  ', '  bar  '], _.trim); => ['foo', 'bar']
  */
 function trim(string, chars, guard) {
     string = toString(string);

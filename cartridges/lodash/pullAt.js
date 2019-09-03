@@ -14,7 +14,6 @@ var isIndex = require('./internal/isIndex');
  * **Note:** Unlike `_.at`, this method mutates `array`.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -25,11 +24,9 @@ var isIndex = require('./internal/isIndex');
  * var array = ['a', 'b', 'c', 'd'];
  * var pulled = _.pullAt(array, [1, 3]);
  *
- * console.log(array);
- * // => ['a', 'c']
+ * console.log(array); => ['a', 'c']
  *
- * console.log(pulled);
- * // => ['b', 'd']
+ * console.log(pulled); => ['b', 'd']
  */
 var pullAt = flatRest(function (array, indexes) {
     var length = array == null ? 0 : array.length;

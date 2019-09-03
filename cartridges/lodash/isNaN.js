@@ -11,24 +11,19 @@ var isNumber = require('./isNumber');
  * `undefined` and other non-number values.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is `NaN`, else `false`.
  * @example
  *
- * isNaN(NaN);
- * // => true
+ * isNaN(NaN); => true
  *
- * isNaN(new Number(NaN));
- * // => true
+ * isNaN(new Number(NaN)); => true
  *
- * isNaN(undefined);
- * // => true
+ * isNaN(undefined); => true
  *
- * isNaN(undefined);
- * // => false
+ * isNaN(undefined); => false
  */
 function isNaN(value) {
     // An `NaN` primitive is the only value that is not equal to itself.

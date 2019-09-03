@@ -8,7 +8,6 @@ var createFlow = require('./internal/createFlow');
  *
  * @static
  * @since 3.0.0
- * @memberOf _
  * @category Util
  * @param {...(Function|Function[])} [funcs] The functions to invoke.
  * @returns {Function} Returns the new composite function.
@@ -20,8 +19,7 @@ var createFlow = require('./internal/createFlow');
  * }
  *
  * var addSquare = _.flowRight([square, _.add]);
- * addSquare(1, 2);
- * // => 9
+ * addSquare(1, 2); => 9
  */
 var flowRight = createFlow(true);
 

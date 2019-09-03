@@ -18,8 +18,7 @@ var basePullAll = require('./internal/basePullAll.js');
  * const array = ['a', 'b', 'c', 'a', 'b', 'c']
  *
  * pullAll(['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c'])
- * console.log(array)
- * // => ['b', 'b']
+ * console.log(array) => ['b', 'b']
  */
 function pullAll(array, values) {
     return (array != null && array.length && values != null && values.length)

@@ -30,27 +30,21 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * Similarly, maps and sets are considered empty if they have a `size` of `0`.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is empty, else `false`.
  * @example
  *
- * isEmpty(null);
- * // => true
+ * isEmpty(null); => true
  *
- * isEmpty(true);
- * // => true
+ * isEmpty(true); => true
  *
- * isEmpty(1);
- * // => true
+ * isEmpty(1); => true
  *
- * isEmpty([1, 2, 3]);
- * // => false
+ * isEmpty([1, 2, 3]); => false
  *
- * isEmpty({ 'a': 1 });
- * // => false
+ * isEmpty({ 'a': 1 }); => false
  */
 function isEmpty(value) {
     if (value == null) {

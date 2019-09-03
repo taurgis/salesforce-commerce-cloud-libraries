@@ -16,17 +16,13 @@ var isObjectLike = require('./isObjectLike.js');
  * @see isInteger, toInteger, toNumber
  * @example
  *
- * isNumber(3)
- * // => true
+ * isNumber(3) => true
  *
- * isNumber(Number.MIN_VALUE)
- * // => true
+ * isNumber(Number.MIN_VALUE) => true
  *
- * isNumber(Infinity)
- * // => true
+ * isNumber(Infinity) => true
  *
- * isNumber('3')
- * // => false
+ * isNumber('3') => false
  */
 function isNumber(value) {
     return typeof value === 'number' ||

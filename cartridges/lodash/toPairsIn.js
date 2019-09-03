@@ -9,7 +9,6 @@ var keysIn = require('./keysIn');
  * or set, its entries are returned.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @alias entriesIn
  * @category Object
@@ -24,8 +23,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * toPairsIn(new Foo);
- * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
+ * toPairsIn(new Foo); => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
  */
 var toPairsIn = createToPairs(keysIn);
 

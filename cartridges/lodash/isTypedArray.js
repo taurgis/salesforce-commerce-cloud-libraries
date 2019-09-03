@@ -19,11 +19,9 @@ var nodeIsTypedArray = nodeTypes && nodeTypes.isTypedArray;
  * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
  * @example
  *
- * isTypedArray(new Uint8Array)
- * // => true
+ * isTypedArray(new Uint8Array) => true
  *
- * isTypedArray([])
- * // => false
+ * isTypedArray([]) => false
  */
 var isTypedArray = nodeIsTypedArray
     ? function (value) { return nodeIsTypedArray(value); }
