@@ -32,7 +32,7 @@ var nativeMin = Math.min;
  *   return n * n;
  * }
  *
- * var func = _.overArgs(function(x, y) {
+ * var func = overArgs(function(x, y) {
  *   return [x, y];
  * }, [square, doubled]);
  *

@@ -15,7 +15,7 @@ var createOver = require('./internal/createOver');
  * @returns {Function} Returns the new function.
  * @example
  *
- * var func = _.overSome([Boolean, isFinite]);
+ * var func = overSome([Boolean, isFinite]);
  *
  * func('1'); => true
  *

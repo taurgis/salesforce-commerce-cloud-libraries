@@ -23,6 +23,10 @@ server.get('Test', function (req, res, next) {
     var HashMap = require('dw/util/HashMap');
     var HashSet = require('dw/util/HashSet');
     var memoize = require('lodash/memoize');
+    var partial = require('lodash/partial');
+    var partialRight = require('lodash/partialRight');
+    var overArgs = require('lodash/overArgs');
+    var once = require('lodash/once');
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -161,7 +165,32 @@ server.get('Test', function (req, res, next) {
 
     var arrayMethodOf = times(3, constant)
     var objectMethodOf = { 'a': arrayMethodOf, 'b': arrayMethodOf, 'c': arrayMethodOf };
+    var onlyOnceCount = 0;
+    var onlyOnce = once(function () {
+        onlyOnceCount++;
+    });
 
+    onlyOnce();
+    onlyOnce();
+
+    function doubled(n) {
+        return n * 2;
+    }
+
+    function square(n) {
+        return n * n;
+    }
+
+    var overArgsFunc = overArgs(function (x, y) {
+        return [x, y];
+    }, [square, doubled]);
+
+    function greetPartial(greeting, name) {
+        return greeting + ' ' + name;
+    }
+
+    var sayHelloTo = partial(greetPartial, 'hello')
+    var greetFred = partialRight(greetPartial, 'fred');
     res.json(
         {
             wrapped: chained.value(),
@@ -377,13 +406,17 @@ server.get('Test', function (req, res, next) {
             ], require('lodash/method')('a.b')),
             methodOf: timeFunction(require('lodash/map'), ['a[2]', 'c[0]'], require('lodash/methodOf')(objectMethodOf)),
             min: timeFunction(require('lodash/min'), [4, 2, 8, 6]),
-            minBy: timeFunction(require('lodash/minBy'), [{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n; }),
+            minBy: timeFunction(require('lodash/minBy'), [{ 'n': 1 }, { 'n': 2 }], function ({ n }) { return n; }),
             meanBy: timeFunction(require('lodash/meanBy'), [{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], function ({ n }) { return n; }),
             multiply: timeFunction(require('lodash/multiply'), 6, 4),
             negate: timeFunction(require('lodash/filter'), [1, 2, 3, 4, 5, 6], require('lodash/negate')(function (n) { return n % 2 == 0; })),
             noop: timeFunction(times, 2, require('lodash/noop')),
             now: timeFunction(require('lodash/now')),
             nth: timeFunction(require('lodash/nth'), ['a', 'b', 'c', 'd'], -1),
+            nthArg: timeFunction(require('lodash/nthArg')(-1), 'a', 'b', 'c', 'd'),
+            omit: timeFunction(require('lodash/omit'), { 'a': 1, 'b': '2', 'c': 3 }, ['a', 'c']),
+            omitBy: timeFunction(require('lodash/omitBy'), { 'a': 1, 'b': '2', 'c': 3 }, require('lodash/isNumber')),
+            once: onlyOnceCount,
             orderBy: require('lodash/orderBy')([
                 { user: 'fred', age: 48 },
                 { user: 'barney', age: 34 },
@@ -391,12 +424,15 @@ server.get('Test', function (req, res, next) {
                 { user: 'barney', age: 36 }
             ], ['user', 'age'], ['asc', 'desc']),
             over: require('lodash/over')([Math.max, Math.min])(1, 2, 3, 4),
-            overEvery: require('lodash/overEvery')([Boolean, isFinite])(null),
-            overSome: require('lodash/overSome')([Boolean, isFinite])(null),
+            overArg: timeFunction(overArgsFunc, 9, 3),
+            overEvery: timeFunction(require('lodash/overEvery')([Boolean, isFinite]), '1'),
+            overSome: timeFunction(require('lodash/overSome')([Boolean, isFinite]), null),
             pad: timeFunction(require('lodash/pad'), 'abc', 8),
             padEnd: timeFunction(require('lodash/padEnd'), 'abc', 8),
             padStart: timeFunction(require('lodash/padStart'), 'abc', 8),
             parseInt: timeFunction(require('lodash/parseInt'), '08'),
+            partial: timeFunction(sayHelloTo, 'fred'),
+            partialRight: timeFunction(greetFred, 'hi'),
             partition: timeFunction(require('lodash/partition'), [
                 { user: 'barney', age: 36, active: false },
                 { user: 'fred', age: 40, active: true },

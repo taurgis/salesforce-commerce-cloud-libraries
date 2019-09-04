@@ -30,11 +30,11 @@ var WRAP_PARTIAL_RIGHT_FLAG = 64;
  *   return greeting + ' ' + name;
  * }
  *
- * var greetFred = _.partialRight(greet, 'fred');
+ * var greetFred = partialRight(greet, 'fred');
  * greetFred('hi'); => 'hi fred'
  *
  * // Partially applied with placeholders.
- * var sayHelloTo = _.partialRight(greet, 'hello', _);
+ * var sayHelloTo = partialRight(greet, 'hello', _);
  * sayHelloTo('fred'); => 'hello fred'
  */
 var partialRight = baseRest(function (func, partials) {

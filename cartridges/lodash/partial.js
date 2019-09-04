@@ -31,11 +31,11 @@ var WRAP_PARTIAL_FLAG = 32;
  *   return greeting + ' ' + name;
  * }
  *
- * var sayHelloTo = _.partial(greet, 'hello');
+ * var sayHelloTo = partial(greet, 'hello');
  * sayHelloTo('fred'); => 'hello fred'
  *
- * // Partially applied with placeholders.
- * var greetFred = _.partial(greet, _, 'fred');
+ * * Partially applied with placeholders. *
+ * var greetFred = partial(greet, _, 'fred');
  * greetFred('hi'); => 'hi fred'
  */
 var partial = baseRest(function (func, partials) {

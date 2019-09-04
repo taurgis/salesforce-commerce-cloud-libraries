@@ -27,7 +27,7 @@ var nativeParseInt = parseInt;
  *
  * parseInt('08'); => 8
  *
- * map(['6', '08', '10'], _.parseInt); => [6, 8, 10]
+ * map(['6', '08', '10'], parseInt); => [6, 8, 10]
  */
 function parseIntLodash(string, radix, guard) {
     if (guard || radix == null) {

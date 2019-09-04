@@ -39,8 +39,8 @@ function pad(string, length, chars) {
     var mid = (length - strLength) / 2;
     return (
         createPadding(nativeFloor(mid), chars) +
-    string +
-    createPadding(nativeCeil(mid), chars)
+        string +
+        createPadding(nativeCeil(mid), chars)
     );
 }
 

@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayEvery = require('./internal/arrayEvery');
 var createOver = require('./internal/createOver');
 
@@ -14,7 +15,7 @@ var createOver = require('./internal/createOver');
  * @returns {Function} Returns the new function.
  * @example
  *
- * var func = _.overEvery([Boolean, isFinite]);
+ * var func = overEvery([Boolean, isFinite]);
  *
  * func('1'); => true
  *

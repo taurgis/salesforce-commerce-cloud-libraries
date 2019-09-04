@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayMap = require('./internal/arrayMap');
 var createOver = require('./internal/createOver');
 
@@ -14,7 +15,7 @@ var createOver = require('./internal/createOver');
  * @returns {Function} Returns the new function.
  * @example
  *
- * var func = _.over([Math.max, Math.min]);
+ * var func = over([Math.max, Math.min]);
  *
  * func(1, 2, 3, 4); => [4, 1]
  */

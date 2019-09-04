@@ -1,10 +1,11 @@
 'use strict';
+
 var baseIteratee = require('./internal/baseIteratee');
 var negate = require('./negate');
 var pickBy = require('./pickBy');
 
 /**
- * The opposite of `_.pickBy`; this method creates an object composed of
+ * The opposite of `pickBy`; this method creates an object composed of
  * the own and inherited enumerable string keyed properties of `object` that
  * `predicate` doesn't return truthy for. The predicate is invoked with two
  * arguments: (value, key).
@@ -19,7 +20,7 @@ var pickBy = require('./pickBy');
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * omitBy(object, _.isNumber); => { 'b': '2' }
+ * omitBy(object, isNumber); => { 'b': '2' }
  */
 function omitBy(object, predicate) {
     return pickBy(object, negate(baseIteratee(predicate)));

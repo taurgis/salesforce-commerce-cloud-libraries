@@ -15,10 +15,10 @@ var toInteger = require('./toInteger');
  * @returns {Function} Returns the new pass-thru function.
  * @example
  *
- * var func = _.nthArg(1);
+ * var func = nthArg(1);
  * func('a', 'b', 'c', 'd'); => 'b'
  *
- * var func = _.nthArg(-2);
+ * var func = nthArg(-2);
  * func('a', 'b', 'c', 'd'); => 'c'
  */
 function nthArg(n) {
