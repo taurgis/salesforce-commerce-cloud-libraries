@@ -6,6 +6,7 @@ var createRange = require('./internal/createRange');
  * This method is like `range` except that it populates values in
  * descending order.
  *
+ * @static
  * @since 4.0.0
  * @category Util
  * @param {number} [start=0] The start of the range.

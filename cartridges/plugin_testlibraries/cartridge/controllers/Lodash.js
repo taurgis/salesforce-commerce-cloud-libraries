@@ -444,10 +444,19 @@ server.get('Test', function (req, res, next) {
                 { a: { b: 2 } },
                 { a: { b: 1 } }
             ], require('lodash/property')('a.b')),
+            prototype: timeFunction(require('lodash/map'), [
+                { 'a': { 'b': 2 } },
+                { 'a': { 'b': 1 } }
+            ], require('lodash/property')('a.b')),
+            propertyOf: timeFunction(require('lodash/map'), [['a', '2'], ['c', '0']],
+                require('lodash/propertyOf')({ 'a': [0, 1, 2], 'b': [0, 1, 2], 'c': [0, 1, 2] })),
             pull: timeFunction(require('lodash/pull'), ['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c'),
             pullAll: timeFunction(require('lodash/pullAll'), ['a', 'b', 'c', 'a', 'b', 'c'], ['a', 'c']),
+            pullAllBy: timeFunction(require('lodash/pullAllBy'), [{ 'x': 1 }, { 'x': 2 }, { 'x': 3 }, { 'x': 1 }], [{ 'x': 1 }, { 'x': 3 }],
+                'x'),
+            pullAllWith: timeFunction(require('lodash/pullAllWith'), [{ 'x': 1, 'y': 2 }, { 'x': 3, 'y': 4 }, { 'x': 5, 'y': 6 }], [{ 'x': 3, 'y': 4 }], isEqual),
             pullAt: timeFunction(require('lodash/pullAt'), ['a', 'b', 'c', 'd'], [1, 3]),
-
+            random: timeFunction(require('lodash/random'), 0 , 5),
             range: timeFunction(require('lodash/range'), 4),
             rangeRight: timeFunction(require('lodash/rangeRight'), 4),
             reduce: timeFunction(require('lodash/reduce'), { a: 1, b: 2, c: 1 }, function (result, value, key) {

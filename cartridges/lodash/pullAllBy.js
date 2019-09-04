@@ -1,6 +1,7 @@
 'use strict';
 
 var basePullAll = require('./internal/basePullAll');
+var baseIteratee = require('./internal/baseIteratee');
 
 /**
  * This method is like `pullAll` except that it accepts `iteratee` which is
@@ -9,6 +10,7 @@ var basePullAll = require('./internal/basePullAll');
  *
  * **Note:** Unlike `differenceBy`, this method mutates `array`.
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -25,7 +27,7 @@ var basePullAll = require('./internal/basePullAll');
  */
 function pullAllBy(array, values, iteratee) {
     return (array != null && array.length && values != null && values.length)
-        ? basePullAll(array, values, iteratee)
+        ? basePullAll(array, values, baseIteratee(iteratee))
         : array;
 }
 

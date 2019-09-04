@@ -6,6 +6,7 @@ var wrapperClone = require('./internal/wrapperClone');
 /**
  * Creates a clone of the chain sequence planting `value` as the wrapped value.
  *
+ * @static
  * @name plant
  * @since 3.2.0
  * @category Seq

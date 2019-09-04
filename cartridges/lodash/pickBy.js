@@ -19,7 +19,7 @@ var getAllKeysIn = require('./internal/getAllKeysIn');
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * pickBy(object, _.isNumber); => { 'a': 1, 'c': 3 }
+ * pickBy(object, isNumber); => { 'a': 1, 'c': 3 }
  */
 function pickBy(object, predicate) {
     if (object == null) {

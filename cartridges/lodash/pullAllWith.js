@@ -9,6 +9,7 @@ var basePullAll = require('./internal/basePullAll');
  *
  * **Note:** Unlike `differenceWith`, this method mutates `array`.
  *
+ * @static
  * @since 4.6.0
  * @category Array
  * @param {Array} array The array to modify.

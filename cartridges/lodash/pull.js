@@ -10,6 +10,7 @@ var pullAll = require('./pullAll');
  * **Note:** Unlike `without`, this method mutates `array`. Use `remove`
  * to remove elements= require(an array by predicate.);
  *
+ * @static
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to modify.
