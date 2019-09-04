@@ -1,4 +1,5 @@
 'use strict';
+
 var baseAssignValue = require('./internal/baseAssignValue');
 var createAggregator = require('./internal/createAggregator');
 

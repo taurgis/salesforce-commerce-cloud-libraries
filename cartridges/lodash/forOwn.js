@@ -15,7 +15,7 @@ var castFunction = require('./internal/castFunction');
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
- * @see _.forOwnRight
+ * @see forOwnRight
  * @example
  *
  * function Foo() {

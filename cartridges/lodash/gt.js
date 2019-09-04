@@ -3,6 +3,7 @@
 /**
  * Checks if `value` is greater than `other`.
  *
+ * @static
  * @since 3.9.0
  * @category Lang
  * @param {*} value The value to compare.

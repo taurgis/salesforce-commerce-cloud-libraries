@@ -6,6 +6,7 @@ var baseGet = require('./internal/baseGet');
  * Gets the value at `path` of `object`. If the resolved value is
  * `undefined`, the `defaultValue` is returned in its place.
  *
+ * @static
  * @since 3.7.0
  * @category Object
  * @param {Object} object The object to query.

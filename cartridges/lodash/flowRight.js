@@ -3,7 +3,7 @@
 var createFlow = require('./internal/createFlow');
 
 /**
- * This method is like `_.flow` except that it creates a function that
+ * This method is like `flow` except that it creates a function that
  * invokes the given functions from right to left.
  *
  * @static
@@ -11,14 +11,14 @@ var createFlow = require('./internal/createFlow');
  * @category Util
  * @param {...(Function|Function[])} [funcs] The functions to invoke.
  * @returns {Function} Returns the new composite function.
- * @see _.flow
+ * @see flow
  * @example
  *
  * function square(n) {
  *   return n * n;
  * }
  *
- * var addSquare = _.flowRight([square, _.add]);
+ * var addSquare = flowRight([square, add]);
  * addSquare(1, 2); => 9
  */
 var flowRight = createFlow(true);

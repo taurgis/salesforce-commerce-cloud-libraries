@@ -16,7 +16,7 @@ var keysIn = require('./keysIn');
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
- * @see _.forInRight
+ * @see forInRight
  * @example
  *
  * function Foo() {

@@ -1,3 +1,5 @@
+'use strict';
+
 var baseHas = require('./internal/baseHas');
 var hasPath = require('./internal/hasPath');
 
@@ -13,7 +15,7 @@ var hasPath = require('./internal/hasPath');
  * @example
  *
  * var object = { 'a': { 'b': 2 } };
- * var other = _.create({ 'a': _.create({ 'b': 2 }) });
+ * var other = create({ 'a': create({ 'b': 2 }) });
  *
  * has(object, 'a'); => true
  *

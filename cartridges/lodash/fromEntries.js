@@ -4,6 +4,7 @@
  * The inverse of `entries`is method returns an object composed
  *= require(key-value `pairs`.);
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} pairs The key-value pairs.

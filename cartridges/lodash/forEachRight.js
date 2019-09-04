@@ -7,6 +7,7 @@ var baseEachRight = require('./internal/baseEachRight');
  * This method is like `forEach` except that it iterates over elements of
  * `collection`= require(right to left.);
  *
+ * @static
  * @since 2.0.0
  * @alias eachRight
  * @category Collection

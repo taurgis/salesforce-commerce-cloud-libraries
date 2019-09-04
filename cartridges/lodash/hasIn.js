@@ -1,3 +1,5 @@
+'use strict';
+
 var baseHasIn = require('./internal/baseHasIn');
 var hasPath = require('./internal/hasPath');
 
@@ -12,7 +14,7 @@ var hasPath = require('./internal/hasPath');
  * @returns {boolean} Returns `true` if `path` exists, else `false`.
  * @example
  *
- * var object = _.create({ 'a': _.create({ 'b': 2 }) });
+ * var object = create({ 'a': create({ 'b': 2 }) });
  *
  * hasIn(object, 'a'); => true
  *

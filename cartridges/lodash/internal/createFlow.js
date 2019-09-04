@@ -1,6 +1,6 @@
 'use strict';
 
-var LodashWrapper = require('./LodashWrapper');
+var LodashWrapper = require('./lodashWrapper');
 var flatRest = require('./flatRest');
 var getData = require('./getData');
 var getFuncName = require('./getFuncName');

@@ -8,6 +8,16 @@ server.get('Test', function (req, res, next) {
     var conforms = require('lodash/conforms');
     var filter = require('lodash/filter');
     var isEqual = require('lodash/isEqual');
+    var flip = require('lodash/flip');
+    var toArray = require('lodash/toArray');
+    var flow = require('lodash/flow');
+    var flowRight = require('lodash/flowRight');
+    var add = require('lodash/add');
+    var forIn = require('lodash/forIn');
+    var forInRight = require('lodash/forInRight');
+    var forOwn = require('lodash/forOwn');
+    var forOwnRight = require('lodash/forOwnRight');
+    var create = require('lodash/create');
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -96,6 +106,46 @@ server.get('Test', function (req, res, next) {
 
     function duplicate(n) {
         return [[[n, n]]]
+    }
+
+    var flipped = flip(function () {
+        return toArray(arguments);
+    });
+
+    function square(n) {
+        return n * n;
+    }
+
+    var addSquare = flow([add, square]);
+    var addSquareRight = flowRight([square, add])
+
+    function FooIn() {
+        this.a = 1;
+        this.b = 2;
+    }
+
+    FooIn.prototype.c = 3;
+    var forInResult = [];
+    forIn(new FooIn, function (value, key) {
+        forInResult.push(key);
+    });
+
+    forInRight(new FooIn, function (value, key) {
+        forInResult.push(key);
+    });
+
+    var forOwnResult = [];
+    forOwn(new FooIn, function (value, key) {
+        forOwnResult.push(key);
+    });
+
+    forOwnRight(new FooIn, function (value, key) {
+        forOwnResult.push(key);
+    });
+
+    function FooFunction() {
+        this.a = function() { return 'a'; }
+        this.b = function() { return 'b'; }
     }
 
     res.json(
@@ -201,13 +251,23 @@ server.get('Test', function (req, res, next) {
             }, 2),
             flatten: timeFunction(require('lodash/flatten'), [1, [2, [3, [4]], 5]]),
             flattenDeep: timeFunction(require('lodash/flattenDeep'), [1, [2, [3, [4]], 5]]),
+            flattenDepth: timeFunction(require('lodash/flattenDepth'), [1, [2, [3, [4]], 5]], 1),
+            flip: timeFunction(flipped, 'a', 'b', 'c', 'd'),
             floor: timeFunction(require('lodash/floor'), 4060, -2),
+            flow: timeFunction(addSquare, 1, 2),
+            flowRight: timeFunction(addSquareRight, 1, 2),
             forEach: forEachTest,
+            forIn: forInResult,
+            forOwn: forOwnResult,
             fromEntries: timeFunction(require('lodash/fromEntries'), [['a', 1], ['b', 2]]),
+            fromPairs: timeFunction(require('lodash/fromPairs'), [['a', 1], ['b', 2]]),
+            functions: timeFunction(require('lodash/functions'), new FooFunction()),
+            get: timeFunction(require('lodash/get'), { 'a': [{ 'b': { 'c': 3 } }] }, 'a[0].b.c'),
             groupBy: timeFunction(require('lodash/groupBy'), [6.1, 4.2, 6.3], Math.floor),
             gt: timeFunction(require('lodash/gt'), 1, 3),
             gte: timeFunction(require('lodash/gte'), 3, 3),
             has: timeFunction(require('lodash/has'), { a: { b: 2 } }, 'a'),
+            hasIn: timeFunction(require('lodash/hasIn'), create({ 'a': create({ 'b': 2 }) }), 'a.b'),
             hasPath: timeFunction(require('lodash/hasPath'), { a: { b: 2 } }, 'a.c'),
             hasPathIn: timeFunction(require('lodash/hasPathIn'), { a: { c: 2 } }, 'a.b'),
             head: timeFunction(require('lodash/head'), [1, 2, 3]),
@@ -380,7 +440,6 @@ server.get('Test', function (req, res, next) {
             zip: timeFunction(require('lodash/zip'), ['a', 'b'], [1, 2], [true, false]),
             zipObject: timeFunction(require('lodash/zipObject'), ['a', 'b'], [1, 2]),
             zipObjectDeep: timeFunction(require('lodash/zipObjectDeep'), ['a.b[0].c', 'a.b[1].d'], [1, 2]),
-            get: timeFunction(require('lodash/get'), { a: [{ b: { c: 3 } }] }, 'a[0].b.c')
         });
 
     next();
