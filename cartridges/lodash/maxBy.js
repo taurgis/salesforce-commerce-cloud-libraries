@@ -7,6 +7,7 @@ var isSymbol = require('./isSymbol');
  * invoked for each element in `array` to generate the criterion by which
  * the value is ranked. The iteratee is invoked with one argument: (value).
  *
+ * @static
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.

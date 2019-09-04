@@ -29,7 +29,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * var object = { 'a': 1, 'b': 2 };
  * var other = { 'c': 3, 'd': 4 };
  *
- * var values = _.memoize(_.values);
+ * var values = memoize(values);
  * values(object); => [1, 2]
  *
  * values(other); => [3, 4]
@@ -37,11 +37,11 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * object.a = 2;
  * values(object); => [1, 2]
  *
- * // Modify the result cache.
+ * * Modify the result cache. *
  * values.cache.set(object, ['a', 'b']);
  * values(object); => ['a', 'b']
  *
- * // Replace `_.memoize.Cache`.
+ * * Replace `_.memoize.Cache`. *
  * memoize.Cache = WeakMap;
  */
 function memoize(func, resolver) {

@@ -13,7 +13,7 @@ var keys = require('./keys');
  * object to the destination object. If `object` is a function, then methods
  * are added to its prototype as well.
  *
- * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
+ * **Note:** Use `runInContext` to create a pristine `lodash` function to
  * avoid conflicts caused by modifying the original.
  *
  * @static
@@ -27,7 +27,7 @@ var keys = require('./keys');
  * @example
  *
  * function vowels(string) {
- *   return _.filter(string, function(v) {
+ *   return filter(string, function(v) {
  *     return /[aeiou]/i.test(v);
  *   });
  * }

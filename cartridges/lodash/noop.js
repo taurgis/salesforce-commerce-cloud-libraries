@@ -8,7 +8,7 @@
  * @category Util
  * @example
  *
- * times(2, _.noop); => [undefined, undefined]
+ * times(2, noop); => [undefined, undefined]
  */
 function noop() {
     // No operation performed.

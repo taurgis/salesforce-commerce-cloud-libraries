@@ -1,4 +1,5 @@
 'use strict';
+
 var baseInvoke = require('./internal/baseInvoke');
 var baseRest = require('./internal/baseRest');
 
@@ -15,13 +16,13 @@ var baseRest = require('./internal/baseRest');
  * @example
  *
  * var objects = [
- *   { 'a': { 'b': _.constant(2) } },
- *   { 'a': { 'b': _.constant(1) } }
+ *   { 'a': { 'b': constant(2) } },
+ *   { 'a': { 'b': constant(1) } }
  * ];
  *
- * map(objects, _.method('a.b')); => [2, 1]
+ * map(objects, method('a.b')); => [2, 1]
  *
- * map(objects, _.method(['a', 'b'])); => [2, 1]
+ * map(objects, method(['a', 'b'])); => [2, 1]
  */
 var method = baseRest(function (path, args) {
     return function (object) {

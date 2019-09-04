@@ -4,7 +4,7 @@ var baseIteratee = require('./internal/baseIteratee');
 var baseMean = require('./internal/baseMean');
 
 /**
- * This method is like `_.mean` except that it accepts `iteratee` which is
+ * This method is like `mean` except that it accepts `iteratee` which is
  * invoked for each element in `array` to generate the value to be averaged.
  * The iteratee is invoked with one argument: (value).
  *
@@ -20,7 +20,7 @@ var baseMean = require('./internal/baseMean');
  *
  * meanBy(objects, function(o) { return o.n; }); => 5
  *
- * // The `_.property` iteratee shorthand.
+ * * The `&property` iteratee shorthand. *
  * meanBy(objects, 'n'); => 5
  */
 function meanBy(array, iteratee) {

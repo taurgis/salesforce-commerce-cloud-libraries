@@ -7,6 +7,7 @@ var isSymbol = require('./isSymbol');
  * invoked for each element in `array` to generate the criterion by which
  * the value is ranked. The iteratee is invoked with one argument: (value).
  *
+ * @static
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
@@ -16,7 +17,7 @@ var isSymbol = require('./isSymbol');
  *
  * const objects = [{ 'n': 1 }, { 'n': 2 }]
  *
- * minBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n; }) => { 'n': 1 }
+ * minBy(objects, function({ n }) { return n; }) => { 'n': 1 }
  */
 function minBy(array, iteratee) {
     let result;

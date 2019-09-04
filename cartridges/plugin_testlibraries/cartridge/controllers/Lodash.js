@@ -9,8 +9,10 @@ server.get('Test', function (req, res, next) {
     var filter = require('lodash/filter');
     var isEqual = require('lodash/isEqual');
     var flip = require('lodash/flip');
+    var constant = require('lodash/constant');
     var toArray = require('lodash/toArray');
     var flow = require('lodash/flow');
+    var times = require('lodash/times');
     var flowRight = require('lodash/flowRight');
     var add = require('lodash/add');
     var forIn = require('lodash/forIn');
@@ -20,6 +22,7 @@ server.get('Test', function (req, res, next) {
     var create = require('lodash/create');
     var HashMap = require('dw/util/HashMap');
     var HashSet = require('dw/util/HashSet');
+    var memoize = require('lodash/memoize');
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -97,7 +100,7 @@ server.get('Test', function (req, res, next) {
         { 'a': 1, 'b': 2 }
     ];
     var object = { 'a': 1, 'b': 2 };
-
+    var memoizeValues = memoize(require('lodash/values'));
     var abc = function (a, b, c) {
         return [a, b, c];
     };
@@ -149,6 +152,15 @@ server.get('Test', function (req, res, next) {
         this.a = function () { return 'a'; }
         this.b = function () { return 'b'; }
     }
+
+    function mergeCustomizer(objValue, srcValue) {
+        if (Array.isArray(objValue)) {
+            return objValue.concat(srcValue)
+        }
+    }
+
+    var arrayMethodOf = times(3, constant)
+    var objectMethodOf = { 'a': arrayMethodOf, 'b': arrayMethodOf, 'c': arrayMethodOf };
 
     res.json(
         {
@@ -349,13 +361,28 @@ server.get('Test', function (req, res, next) {
                 { a: 1, b: 2, c: 3 },
                 { a: 4, b: 5, c: 6 }
             ], require('lodash/matches')({ a: 4, c: 6 })),
+            matchesProperty: timeFunction(require('lodash/find'), [
+                { 'a': 1, 'b': 2, 'c': 3 },
+                { 'a': 4, 'b': 5, 'c': 6 }
+            ], require('lodash/matchesProperty')('a', 4)),
+            max: timeFunction(require('lodash/max'), [4, 2, 8, 6]),
             maxBy: timeFunction(require('lodash/maxBy'), [{ n: 1 }, { n: 2 }], function ({ n }) { return n; }),
             mean: timeFunction(require('lodash/mean'), [4, 2, 8, 6]),
+            memoize: memoizeValues(object),
+            merge: timeFunction(require('lodash/merge'), { 'a': [{ 'b': 2 }, { 'd': 4 }] }, { 'a': [{ 'c': 3 }, { 'e': 5 }] }),
+            mergeWith: timeFunction(require('lodash/mergeWith'), { 'a': [1], 'b': [2] }, { 'a': [3], 'b': [4] }, mergeCustomizer),
+            method: timeFunction(require('lodash/map'), [
+                { 'a': { 'b': require('lodash/constant')(2) } },
+                { 'a': { 'b': require('lodash/constant')(1) } }
+            ], require('lodash/method')('a.b')),
+            methodOf: timeFunction(require('lodash/map'), ['a[2]', 'c[0]'], require('lodash/methodOf')(objectMethodOf)),
+            min: timeFunction(require('lodash/min'), [4, 2, 8, 6]),
+            minBy: timeFunction(require('lodash/minBy'), [{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n; }),
             meanBy: timeFunction(require('lodash/meanBy'), [{ n: 4 }, { n: 2 }, { n: 8 }, { n: 6 }], function ({ n }) { return n; }),
-            // merge: require('lodash/merge')({ a: [{ b: 2 }, { d: 4 }] }, { a: [{ c: 3 }, { e: 5 }] })
-            minBy: timeFunction(require('lodash/minBy'), [{ n: 1 }, { n: 2 }], function ({ n }) { return n; }),
             multiply: timeFunction(require('lodash/multiply'), 6, 4),
             negate: timeFunction(require('lodash/filter'), [1, 2, 3, 4, 5, 6], require('lodash/negate')(function (n) { return n % 2 == 0; })),
+            noop: timeFunction(times, 2, require('lodash/noop')),
+            now: timeFunction(require('lodash/now')),
             nth: timeFunction(require('lodash/nth'), ['a', 'b', 'c', 'd'], -1),
             orderBy: require('lodash/orderBy')([
                 { user: 'fred', age: 48 },

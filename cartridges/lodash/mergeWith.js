@@ -12,6 +12,7 @@ var createAssigner = require('./internal/createAssigner');
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
  * @since 4.0.0
  * @category Object
  * @param {Object} object The destination object.

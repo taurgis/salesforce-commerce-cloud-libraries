@@ -14,6 +14,7 @@ var createAssigner = require('./internal/createAssigner');
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
  * @since 0.5.0
  * @category Object
  * @param {Object} object The destination object.
@@ -25,7 +26,7 @@ var createAssigner = require('./internal/createAssigner');
  *
  * const other = {'a': [{ 'c': 3 }, { 'e': 5 }] }
  *
- * merge({'a': [{ 'b': 2 }, { 'd': 4 }] }, {'a': [{ 'c': 3 }, { 'e': 5 }] }) => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
+ * merge(object, other) => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
  */
 const merge = createAssigner(function (object, source, srcIndex) {
     return baseMerge(object, source, srcIndex);
