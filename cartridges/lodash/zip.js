@@ -1,6 +1,6 @@
 'use strict';
 
-var unzip = require('./unzip.js');
+var unzip = require('./unzip');
 
 /**
  * Creates an array of grouped elements, the first of which contains the

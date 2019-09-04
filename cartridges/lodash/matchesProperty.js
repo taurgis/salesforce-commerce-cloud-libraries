@@ -1,7 +1,7 @@
 'use strict';
 
-var baseClone = require('./internal/baseClone.js');
-var baseMatchesProperty = require('./internal/baseMatchesProperty.js');
+var baseClone = require('./internal/baseClone');
+var baseMatchesProperty = require('./internal/baseMatchesProperty');
 
 /** Used to compose bitmasks for cloning. */
 const CLONE_DEEP_FLAG = 1;
@@ -15,6 +15,7 @@ const CLONE_DEEP_FLAG = 1;
  * `srcValue` values against any array or object value, respectively. See
  * `isEqual` for a list of supported value comparisons.
  *
+ * @static
  * @since 3.2.0
  * @category Util
  * @param {Array|string} path The path of the property to get.

@@ -1,9 +1,9 @@
 'use strict';
 
-var map = require('./map.js');
-var baseIntersection = require('./internal/baseIntersection.js');
-var castArrayLikeObject = require('./internal/castArrayLikeObject.js');
-var last = require('./last.js');
+var map = require('./map');
+var baseIntersection = require('./internal/baseIntersection');
+var castArrayLikeObject = require('./internal/castArrayLikeObject');
+var last = require('./last');
 
 /**
  * This method is like `intersection` except that it accepts `comparator`

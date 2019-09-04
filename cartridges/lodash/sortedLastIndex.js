@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
 
 /**
  * This method is like `sortedIndex` except that it returns the highest

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUpdate = require('./internal/baseUpdate.js');
+var baseUpdate = require('./internal/baseUpdate');
 
 /**
  * This method is like `update` except that it accepts `customizer` which is

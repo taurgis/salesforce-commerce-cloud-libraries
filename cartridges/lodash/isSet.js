@@ -1,8 +1,8 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
-var nodeTypes = require('./internal/nodeTypes.js');
-var isObjectLike = require('./isObjectLike.js');
+var getTag = require('./internal/getTag');
+var nodeTypes = require('./internal/nodeTypes');
+var isObjectLike = require('./isObjectLike');
 var isNil = require('./isNil');
 
 /* Node.js helper references. */

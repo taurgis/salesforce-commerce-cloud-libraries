@@ -1,9 +1,9 @@
 'use strict';
 
-var baseFlatten = require('./internal/baseFlatten.js');
-var baseUniq = require('./internal/baseUniq.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
-var last = require('./last.js');
+var baseFlatten = require('./internal/baseFlatten');
+var baseUniq = require('./internal/baseUniq');
+var isArrayLikeObject = require('./isArrayLikeObject');
+var last = require('./last');
 
 /**
  * This method is like `union` except that it accepts `comparator` which

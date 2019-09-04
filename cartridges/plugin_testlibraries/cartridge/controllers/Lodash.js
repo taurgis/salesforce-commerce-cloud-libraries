@@ -333,10 +333,15 @@ server.get('Test', function (req, res, next) {
             lte: timeFunction(require('lodash/lte'), 3, 3),
             map: timeFunction(require('lodash/map'), [4, 8], function square(n) { return n * n; }),
             mapKey: timeFunction(require('lodash/mapKey'), { a: 1, b: 2 }, function (value, key) { return key + value; }),
+            mapKeys: timeFunction(require('lodash/mapKeys'), { a: 1, b: 2 }, function (value, key) { return key + value; }),
             mapObject: timeFunction(require('lodash/mapObject'), { a: 4, b: 8 }, function square(n) {
                 return n * n;
             }),
             mapValue: timeFunction(require('lodash/mapValue'), {
+                fred: { user: 'fred', age: 40 },
+                pebbles: { user: 'pebbles', age: 1 }
+            }, function ({ age }) { return age; }),
+            mapValues: timeFunction(require('lodash/mapValues'), {
                 fred: { user: 'fred', age: 40 },
                 pebbles: { user: 'pebbles', age: 1 }
             }, function ({ age }) { return age; }),

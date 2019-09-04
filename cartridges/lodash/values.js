@@ -1,7 +1,7 @@
 'use strict';
 
-var baseValues = require('./internal/baseValues.js');
-var keys = require('./keys.js');
+var baseValues = require('./internal/baseValues');
+var keys = require('./keys');
 
 /**
  * Creates an array of the own enumerable string keyed property values of `object`.

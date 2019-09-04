@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUniq = require('./internal/baseUniq.js');
+var baseUniq = require('./internal/baseUniq');
 
 /**
  * Creates a duplicate-free version of an array, using

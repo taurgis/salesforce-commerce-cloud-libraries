@@ -1,7 +1,7 @@
 'use strict';
 
-var baseSet = require('./internal/baseSet.js');
-var baseZipObject = require('./internal/baseZipObject.js');
+var baseSet = require('./internal/baseSet');
+var baseZipObject = require('./internal/baseZipObject');
 
 /**
  * This method is like `zipObject` except that it supports property paths.

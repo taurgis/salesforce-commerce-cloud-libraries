@@ -1,12 +1,12 @@
 'use strict';
 
-var baseIsEqual = require('./baseIsEqual.js');
-var get = require('../get.js');
-var hasIn = require('../hasIn.js');
-var isKey = require('./isKey.js');
-var isStrictComparable = require('./isStrictComparable.js');
-var matchesStrictComparable = require('./matchesStrictComparable.js');
-var toKey = require('./toKey.js');
+var baseIsEqual = require('./baseIsEqual');
+var get = require('../get');
+var hasIn = require('../hasIn');
+var isKey = require('./isKey');
+var isStrictComparable = require('./isStrictComparable');
+var matchesStrictComparable = require('./matchesStrictComparable');
+var toKey = require('./toKey');
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;

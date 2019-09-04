@@ -1,6 +1,6 @@
 'use strict';
 
-var unzipWith = require('./unzipWith.js');
+var unzipWith = require('./unzipWith');
 
 /**
  * This method is like `zip` except that it accepts `iteratee` to specify

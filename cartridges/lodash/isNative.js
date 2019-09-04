@@ -1,6 +1,6 @@
 'use strict';
 
-var isObject = require('./isObject.js');
+var isObject = require('./isObject');
 
 /**
  * Used to match `RegExp`

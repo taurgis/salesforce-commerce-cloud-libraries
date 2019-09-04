@@ -1,6 +1,6 @@
 'use strict';
 
-var createRound = require('./internal/createRound.js');
+var createRound = require('./internal/createRound');
 
 /**
  * Computes `number` rounded down to `precision`.

@@ -1,7 +1,7 @@
 'use strict';
 
-var isObjectLike = require('./isObjectLike.js');
-var nodeTypes = require('./internal/nodeTypes.js');
+var isObjectLike = require('./isObjectLike');
+var nodeTypes = require('./internal/nodeTypes');
 
 /* Node.js helper references. */
 const nodeIsDate = nodeTypes && nodeTypes.isDate;

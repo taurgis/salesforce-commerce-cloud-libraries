@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSet = require('./internal/baseSet.js');
+var baseSet = require('./internal/baseSet');
 
 /**
  * This method is like `set` except that it accepts `customizer` which is

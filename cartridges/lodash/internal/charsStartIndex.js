@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIndexOf = require('./baseIndexOf.js');
+var baseIndexOf = require('./baseIndexOf');
 
 /**
  * Used by `trim` and `trimStart` to get the index of the first string symbol

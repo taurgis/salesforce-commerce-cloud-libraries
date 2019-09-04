@@ -1,11 +1,11 @@
 'use strict';
 
-var repeat = require('../repeat.js');
-var baseToString = require('./baseToString.js');
-var castSlice = require('./castSlice.js');
-var hasUnicode = require('./hasUnicode.js');
-var stringSize = require('./stringSize.js');
-var stringToArray = require('./stringToArray.js');
+var repeat = require('../repeat');
+var baseToString = require('./baseToString');
+var castSlice = require('./castSlice');
+var hasUnicode = require('./hasUnicode');
+var stringSize = require('./stringSize');
+var stringToArray = require('./stringToArray');
 
 /**
  * Creates the padding for `string` based on `length`. The `chars` string

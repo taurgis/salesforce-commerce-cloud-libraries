@@ -1,6 +1,6 @@
 'use strict';
 
-var isSymbol = require('./isSymbol.js');
+var isSymbol = require('./isSymbol');
 
 /**
  * This method is like `max` except that it accepts `iteratee` which is

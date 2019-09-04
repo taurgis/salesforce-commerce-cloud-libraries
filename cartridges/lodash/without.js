@@ -1,7 +1,7 @@
 'use strict';
 
-var baseDifference = require('./internal/baseDifference.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var baseDifference = require('./internal/baseDifference');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * Creates an array excluding all given values using

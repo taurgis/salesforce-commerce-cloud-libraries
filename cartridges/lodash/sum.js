@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSum = require('./internal/baseSum.js');
+var baseSum = require('./internal/baseSum');
 
 /**
  * Computes the sum of the values in `array`.

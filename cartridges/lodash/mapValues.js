@@ -1,4 +1,5 @@
 'use strict';
+
 var baseAssignValue = require('./internal/baseAssignValue');
 var baseForOwn = require('./internal/baseForOwn');
 var baseIteratee = require('./internal/baseIteratee');
@@ -15,7 +16,7 @@ var baseIteratee = require('./internal/baseIteratee');
  * @param {Object} object The object to iterate over.
  * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Object} Returns the new mapped object.
- * @see _.mapKeys
+ * @see mapKeys
  * @example
  *
  * var users = {
@@ -25,7 +26,7 @@ var baseIteratee = require('./internal/baseIteratee');
  *
  * mapValues(users, function(o) { return o.age; }); => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  *
- * // The `_.property` iteratee shorthand.
+ * * The `_.property` iteratee shorthand. *
  * mapValues(users, 'age'); => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValues(object, iteratee) {

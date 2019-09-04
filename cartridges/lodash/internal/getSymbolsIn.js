@@ -1,6 +1,6 @@
 'use strict';
 
-var getSymbols = require('./getSymbols.js');
+var getSymbols = require('./getSymbols');
 
 /**
  * Creates an array of the own and inherited enumerable symbols of `object`.

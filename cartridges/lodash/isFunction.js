@@ -1,7 +1,7 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
-var isObject = require('./isObject.js');
+var getTag = require('./internal/getTag');
+var isObject = require('./isObject');
 
 /**
  * Checks if `value` is classified as a `Function` object.

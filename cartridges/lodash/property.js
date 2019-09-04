@@ -1,9 +1,9 @@
 'use strict';
 
-var baseProperty = require('./internal/baseProperty.js');
-var basePropertyDeep = require('./internal/basePropertyDeep.js');
-var isKey = require('./internal/isKey.js');
-var toKey = require('./internal/toKey.js');
+var baseProperty = require('./internal/baseProperty');
+var basePropertyDeep = require('./internal/basePropertyDeep');
+var isKey = require('./internal/isKey');
+var toKey = require('./internal/toKey');
 
 /**
  * Creates a function that returns the value at `path` of a given object.

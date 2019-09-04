@@ -1,7 +1,7 @@
 'use strict';
 
-var baseXor = require('./internal/baseXor.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var baseXor = require('./internal/baseXor');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * Creates an array of unique values that is the

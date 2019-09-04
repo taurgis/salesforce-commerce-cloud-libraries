@@ -1,8 +1,8 @@
 'use strict';
 
-var baseFlatten = require('./internal/baseFlatten.js');
-var baseUniq = require('./internal/baseUniq.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var baseFlatten = require('./internal/baseFlatten');
+var baseUniq = require('./internal/baseUniq');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * Creates an array of unique values, in order,= require(all given arrays using);

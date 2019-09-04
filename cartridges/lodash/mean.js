@@ -1,6 +1,6 @@
 'use strict';
 
-var baseMean = require('./meanBy.js');
+var baseMean = require('./meanBy');
 
 /**
  * Computes the mean of the values in `array`.

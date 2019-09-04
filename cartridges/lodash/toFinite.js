@@ -1,6 +1,6 @@
 'use strict';
 
-var toNumber = require('./toNumber.js');
+var toNumber = require('./toNumber');
 
 /** Used as references for various `Number` constants. */
 const INFINITY = 1 / 0;

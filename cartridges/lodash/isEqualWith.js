@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIsEqual = require('./internal/baseIsEqual.js');
+var baseIsEqual = require('./internal/baseIsEqual');
 
 /**
  * This method is like `isEqual` except that it accepts `customizer` which

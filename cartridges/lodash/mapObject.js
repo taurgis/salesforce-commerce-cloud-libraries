@@ -4,6 +4,7 @@
  * Creates an array of values by running each property of `object` thru
  * `iteratee`. The iteratee is invoked with three arguments: (value, key, object).
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to iterate over.

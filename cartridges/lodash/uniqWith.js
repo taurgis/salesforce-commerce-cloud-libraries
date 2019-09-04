@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUniq = require('./internal/baseUniq.js');
+var baseUniq = require('./internal/baseUniq');
 
 /**
  * This method is like `uniq` except that it accepts `comparator` which

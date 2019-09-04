@@ -1,7 +1,7 @@
 'use strict';
 
-var isStrictComparable = require('./isStrictComparable.js');
-var keys = require('../keys.js');
+var isStrictComparable = require('./isStrictComparable');
+var keys = require('../keys');
 
 /**
  * Gets the property names, values, and compare flags of `object`.

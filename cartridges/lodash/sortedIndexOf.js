@@ -1,7 +1,7 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
-var eq = require('./eq.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
+var eq = require('./eq');
 
 /**
  * This method is like `indexOf` except that it performs a binary

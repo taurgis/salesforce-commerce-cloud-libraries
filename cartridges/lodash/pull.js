@@ -1,6 +1,6 @@
 'use strict';
 
-var pullAll = require('./pullAll.js');
+var pullAll = require('./pullAll');
 
 /**
  * Removes all given values= require(`array` using);

@@ -1,11 +1,11 @@
 'use strict';
 
-var SetCache = require('./SetCache.js');
-var arrayIncludes = require('./arrayIncludes.js');
-var arrayIncludesWith = require('./arrayIncludesWith.js');
-var cacheHas = require('./cacheHas.js');
-var createSet = require('./createSet.js');
-var setToArray = require('./setToArray.js');
+var SetCache = require('./SetCache');
+var arrayIncludes = require('./arrayIncludes');
+var arrayIncludesWith = require('./arrayIncludesWith');
+var cacheHas = require('./cacheHas');
+var createSet = require('./createSet');
+var setToArray = require('./setToArray');
 
 /** Used as the size to enable large array optimizations. */
 var LARGE_ARRAY_SIZE = 200;

@@ -1,6 +1,6 @@
 'use strict';
 
-var before = require('./before.js');
+var before = require('./before');
 
 /**
  * Creates a function that is restricted to invoking `func` once. Repeat calls

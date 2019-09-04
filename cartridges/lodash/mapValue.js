@@ -6,6 +6,7 @@
  * `iteratee`. The iteratee is invoked with three arguments:
  * (value, key, object).
  *
+ * @static
  * @since 2.4.0
  * @category Object
  * @param {Object} object The object to iterate over.

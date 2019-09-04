@@ -1,8 +1,8 @@
 'use strict';
 
-var baseIsMatch = require('./baseIsMatch.js');
-var getMatchData = require('./getMatchData.js');
-var matchesStrictComparable = require('./matchesStrictComparable.js');
+var baseIsMatch = require('./baseIsMatch');
+var getMatchData = require('./getMatchData');
+var matchesStrictComparable = require('./matchesStrictComparable');
 
 /**
  * The base implementation of `matches` which doesn't clone `source`.

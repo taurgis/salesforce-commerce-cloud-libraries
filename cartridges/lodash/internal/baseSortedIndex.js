@@ -1,7 +1,7 @@
 'use strict';
 
-var baseSortedIndexBy = require('./baseSortedIndexBy.js');
-var isSymbol = require('../isSymbol.js');
+var baseSortedIndexBy = require('./baseSortedIndexBy');
+var isSymbol = require('../isSymbol');
 
 /** Used as references for the maximum length and index of an array. */
 var MAX_ARRAY_LENGTH = 4294967295;

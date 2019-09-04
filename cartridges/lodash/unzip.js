@@ -1,9 +1,9 @@
 'use strict';
 
-var filter = require('./filter.js');
-var map = require('./map.js');
-var baseProperty = require('./internal/baseProperty.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var filter = require('./filter');
+var map = require('./map');
+var baseProperty = require('./internal/baseProperty');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * This method is like `zip` except that it accepts an array of grouped

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
 
 /**
  * Uses a binary search to determine the lowest index at which `value`

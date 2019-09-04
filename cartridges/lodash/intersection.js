@@ -1,8 +1,8 @@
 'use strict';
 
-var map = require('./map.js');
-var baseIntersection = require('./internal/baseIntersection.js');
-var castArrayLikeObject = require('./internal/castArrayLikeObject.js');
+var map = require('./map');
+var baseIntersection = require('./internal/baseIntersection');
+var castArrayLikeObject = require('./internal/castArrayLikeObject');
 
 /**
  * Creates an array of unique values that are included in all given arrays

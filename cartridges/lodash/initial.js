@@ -1,6 +1,6 @@
 'use strict';
 
-var slice = require('./slice.js');
+var slice = require('./slice');
 
 /**
  * Gets all but the last element of `array`.

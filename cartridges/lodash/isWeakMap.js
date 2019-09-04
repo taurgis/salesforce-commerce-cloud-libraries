@@ -1,7 +1,7 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
-var isObjectLike = require('./isObjectLike.js');
+var getTag = require('./internal/getTag');
+var isObjectLike = require('./isObjectLike');
 
 /**
  * Checks if `value` is classified as a `WeakMap` object.

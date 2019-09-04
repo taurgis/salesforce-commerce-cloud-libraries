@@ -1,7 +1,7 @@
 'use strict';
 
-var baseToNumber = require('./baseToNumber.js');
-var baseToString = require('./baseToString.js');
+var baseToNumber = require('./baseToNumber');
+var baseToString = require('./baseToString');
 
 /**
  * Creates a function that performs a mathematical operation on two values.

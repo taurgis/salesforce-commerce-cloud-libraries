@@ -1,7 +1,7 @@
 'use strict';
 
-var isObjectLike = require('./isObjectLike.js');
-var isPlainObject = require('./isPlainObject.js');
+var isObjectLike = require('./isObjectLike');
+var isPlainObject = require('./isPlainObject');
 
 /**
  * Checks if `value` is likely a DOM element.

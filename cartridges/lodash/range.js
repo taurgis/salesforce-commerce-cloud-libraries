@@ -1,6 +1,6 @@
 'use strict';
 
-var createRange = require('./internal/createRange.js');
+var createRange = require('./internal/createRange');
 
 /**
  * Creates an array of numbers (positive and/or negative) progressing from
