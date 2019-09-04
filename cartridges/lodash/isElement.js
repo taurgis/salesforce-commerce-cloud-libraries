@@ -6,6 +6,7 @@ var isPlainObject = require('./isPlainObject.js');
 /**
  * Checks if `value` is likely a DOM element.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
@@ -15,6 +16,8 @@ var isPlainObject = require('./isPlainObject.js');
  * isElement(document.body) => true
  *
  * isElement('<body>') => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 function isElement(value) {
     return isObjectLike(value) && value.nodeType === 1 && !isPlainObject(value);

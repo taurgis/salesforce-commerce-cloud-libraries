@@ -23,7 +23,7 @@ var nativeMax = Math.max;
  *
  * indexOf([1, 2, 1, 2], 2); => 1
  *
- * // Search from the `fromIndex`.
+ * * Search from the `fromIndex`. *
  * indexOf([1, 2, 1, 2], 2, 2); => 3
  */
 function indexOf(array, value, fromIndex) {

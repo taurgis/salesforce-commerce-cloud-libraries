@@ -6,12 +6,10 @@ var isIndex = require('./internal/isIndex.js');
 var isLength = require('./isLength.js');
 var toKey = require('./internal/toKey.js');
 
-/** Used to check objects for own properties. */
-
-
 /**
  * Checks if `path` is a direct property of `object`.
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to query.

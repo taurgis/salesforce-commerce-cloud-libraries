@@ -11,6 +11,7 @@ var last = require('./last.js');
  * of result values are determined by the first array. The comparator is
  * invoked with two arguments: (arrVal, othVal).
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.

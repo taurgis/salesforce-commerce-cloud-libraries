@@ -20,6 +20,7 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
 /**
  * Checks if `value` is a buffer.
  *
+ * @static
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
@@ -29,6 +30,8 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
  * isBuffer(new Buffer(2)) => true
  *
  * isBuffer(new Uint8Array(2)) => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 var isBuffer = nativeIsBuffer || (function () { return false; });
 

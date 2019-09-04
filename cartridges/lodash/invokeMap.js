@@ -1,4 +1,5 @@
 'use strict';
+
 var apply = require('./internal/apply');
 var baseEach = require('./internal/baseEach');
 var baseInvoke = require('./internal/baseInvoke');

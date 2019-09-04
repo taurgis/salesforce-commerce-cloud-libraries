@@ -3,6 +3,7 @@
 /**
  * Checks if `value` is classified as an `ArrayBuffer` object.
  *
+ * @static
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
@@ -12,6 +13,8 @@
  * isArrayBuffer(new ArrayBuffer(2)) => true
  *
  * isArrayBuffer(new Array(2)) => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 const isArrayBuffer = function () { return false; };
 

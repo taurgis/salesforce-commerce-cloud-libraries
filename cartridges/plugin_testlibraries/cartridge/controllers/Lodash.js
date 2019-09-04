@@ -144,8 +144,8 @@ server.get('Test', function (req, res, next) {
     });
 
     function FooFunction() {
-        this.a = function() { return 'a'; }
-        this.b = function() { return 'b'; }
+        this.a = function () { return 'a'; }
+        this.b = function () { return 'b'; }
     }
 
     res.json(
@@ -269,24 +269,29 @@ server.get('Test', function (req, res, next) {
             has: timeFunction(require('lodash/has'), { a: { b: 2 } }, 'a'),
             hasIn: timeFunction(require('lodash/hasIn'), create({ 'a': create({ 'b': 2 }) }), 'a.b'),
             hasPath: timeFunction(require('lodash/hasPath'), { a: { b: 2 } }, 'a.c'),
-            hasPathIn: timeFunction(require('lodash/hasPathIn'), { a: { c: 2 } }, 'a.b'),
+            hasPathIn: timeFunction(require('lodash/hasPathIn'), { a: { b: 2 } }, 'a.b'),
             head: timeFunction(require('lodash/head'), [1, 2, 3]),
+            identity: timeFunction(require('lodash/identity'), { 'a': 1 }),
+            includes: timeFunction(require('lodash/includes'), { 'a': 1, 'b': 2 }, 1),
             indexOf: timeFunction(require('lodash/indexOf'), [1, 2, 1, 2], 2, 2),
             initial: timeFunction(require('lodash/initial'), [1, 2, 3]),
             inRange: timeFunction(require('lodash/inRange'), -3, -2, -6),
             intersection: timeFunction(require('lodash/intersection'), [2, 1], [2, 3]),
             intersectionBy: timeFunction(require('lodash/intersectionBy'), [2.1, 1.2], [2.3, 3.4], Math.floor),
+            intersectionWith: timeFunction(require('lodash/intersectionWith'), [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual),
             invert: timeFunction(require('lodash/invert'), { a: 1, b: 2, c: 1 }),
             invertBy: timeFunction(require('lodash/invertBy'), { a: 1, b: 2, c: 1 }, function (value) { return 'group' + value; }),
-            invoke: timeFunction(require('lodash/invoke'), { a: [{ b: { c: [1, 2, 3, 4] } }] }, 'a[0].b.c.slice', [1, 3]),
+            invoke: timeFunction(require('lodash/invoke'), { 'a': [{ 'b': { 'c': [1, 2, 3, 4] } }] }, 'a[0].b.c.slice', 1, 3),
             invokeMap: timeFunction(require('lodash/invokeMap'), [[5, 1, 7], [3, 2, 1]], 'sort'),
             isArguments: timeFunction(require('lodash/isArguments'), (function () { return arguments; }())),
+            isArray: timeFunction(require('lodash/isArray'), [1, 2, 3]),
             isArrayLike: timeFunction(require('lodash/isArrayLike'), [1, 2, 3]),
             isArrayLikeObject: timeFunction(require('lodash/isArrayLikeObject'), [1, 2, 3]),
             isBoolean: timeFunction(require('lodash/isBoolean'), null),
             isBuffer: timeFunction(require('lodash/isBuffer'), 'test'),
-            isDate: timeFunction(require('lodash/isDate'), 'test'),
-            isEmpty: timeFunction(require('lodash/isEmpty'), [1, 2, 3]),
+            isDate: timeFunction(require('lodash/isDate'), new Date()),
+            isEmpty: timeFunction(require('lodash/isEmpty'), null),
+            isEqual: timeFunction(require('lodash/isEqualWith'), array, other),
             isEqualWith: timeFunction(require('lodash/isEqualWith'), array, other, customizerGreeting),
             isError: timeFunction(require('lodash/isError'), new Error()),
             isFunction: timeFunction(require('lodash/isFunction'), CustomerMgr.getCustomerByLogin),

@@ -7,6 +7,7 @@ var isObjectLike = require('./isObjectLike');
  * This method is like `isArrayLike` except that it also checks if `value`
  * is an object.
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.

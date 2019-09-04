@@ -1,3 +1,5 @@
+'use strict';
+
 /**
  * This method returns the first argument it receives.
  *
@@ -10,7 +12,7 @@
  *
  * var object = { 'a': 1 };
  *
- * console.log(_.identity(object) === object); => true
+ * console.log(identity(object) === object); => true
  */
 function identity(value) {
     return value;

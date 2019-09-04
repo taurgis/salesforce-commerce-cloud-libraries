@@ -17,7 +17,7 @@ var toNumber = require('./toNumber');
  * @param {number} [start=0] The start of the range.
  * @param {number} end The end of the range.
  * @returns {boolean} Returns `true` if `number` is in the range, else `false`.
- * @see _.range, _.rangeRight
+ * @see range, rangeRight
  * @example
  *
  * inRange(3, 2, 4); => true
