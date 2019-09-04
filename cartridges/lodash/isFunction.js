@@ -6,6 +6,7 @@ var isObject = require('./isObject.js');
 /**
  * Checks if `value` is classified as a `Function` object.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.

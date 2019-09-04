@@ -6,7 +6,6 @@ var arrayLikeKeys = require('./internal/arrayLikeKeys');
 /**
  * Creates an array of the own and inherited enumerable property names of `object`.
  *
- *
  * @static
  * @since 3.0.0
  * @category Object

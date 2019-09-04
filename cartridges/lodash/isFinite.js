@@ -1,9 +1,7 @@
 'use strict';
 
-var root = require('./internal/root');
-
 /* Built-in method references for those with the same name as other `lodash` methods. */
-var nativeIsFinite = root.isFinite;
+var nativeIsFinite = isFinite;
 
 /**
  * Checks if `value` is a finite primitive number.
@@ -26,8 +24,8 @@ var nativeIsFinite = root.isFinite;
  *
  * isFinite('3'); => false
  */
-function isFinite(value) {
+function isFiniteLodash(value) {
     return typeof value == 'number' && nativeIsFinite(value);
 }
 
-module.exports = isFinite;
+module.exports = isFiniteLodash;

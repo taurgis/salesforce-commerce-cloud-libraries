@@ -9,6 +9,7 @@ var isObjectLike = require('./isObjectLike.js');
  * **Note:** To exclude `Infinity`, `-Infinity`, and `NaN`, which are
  * classified as numbers, use the `Number.isFinite` method.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.

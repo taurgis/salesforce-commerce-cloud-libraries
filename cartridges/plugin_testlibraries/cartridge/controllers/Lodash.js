@@ -18,6 +18,8 @@ server.get('Test', function (req, res, next) {
     var forOwn = require('lodash/forOwn');
     var forOwnRight = require('lodash/forOwnRight');
     var create = require('lodash/create');
+    var HashMap = require('dw/util/HashMap');
+    var HashSet = require('dw/util/HashSet');
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -294,9 +296,14 @@ server.get('Test', function (req, res, next) {
             isEqual: timeFunction(require('lodash/isEqualWith'), array, other),
             isEqualWith: timeFunction(require('lodash/isEqualWith'), array, other, customizerGreeting),
             isError: timeFunction(require('lodash/isError'), new Error()),
+            isFinite: timeFunction(require('lodash/isFinite'), Infinity),
             isFunction: timeFunction(require('lodash/isFunction'), CustomerMgr.getCustomerByLogin),
+            isInteger: timeFunction(require('lodash/isInteger'), 3),
             isLength: timeFunction(require('lodash/isLength'), 3),
+            isMap: timeFunction(require('lodash/isMap'), new HashMap()),
             isMatch: timeFunction(require('lodash/isMatch'), { a: 1, b: 2 }, { b: 2 }),
+            isMatchWith: timeFunction(require('lodash/isMatchWith'), { 'greeting': 'hello' }, { 'greeting': 'hi' }, customizerGreeting),
+            isNaN: timeFunction(require('lodash/isNaN'), NaN),
             isNative: timeFunction(require('lodash/isNative'), Array.prototype.push),
             isNil: timeFunction(require('lodash/isNil'), null),
             isNull: timeFunction(require('lodash/isNull'), null),
@@ -304,12 +311,20 @@ server.get('Test', function (req, res, next) {
             isObject: timeFunction(require('lodash/isObject'), '{}'),
             isObjectLike: timeFunction(require('lodash/isObjectLike'), [1, 2, 3]),
             isPlainObject: timeFunction(require('lodash/isPlainObject'), request),
-            // isRegExp: require('lodash/isRegExp')(/abc/),
+            isRegExp: timeFunction(require('lodash/isRegExp'), /abc/),
+            isSafeInteger: timeFunction(require('lodash/isSafeInteger'), 3),
+            isSet: timeFunction(require('lodash/isSet'), new HashSet()),
             isString: timeFunction(require('lodash/isString'), 'abc'),
             isUndefined: timeFunction(require('lodash/isUndefined'), undefined),
+            iteratee: timeFunction(require('lodash/filter'), [
+                { 'user': 'barney', 'age': 36, 'active': true },
+                { 'user': 'fred', 'age': 40, 'active': false }
+            ], require('lodash/iteratee')({ 'user': 'barney', 'active': true })),
+            join: timeFunction(require('lodash/join'), [1, 2, 3], '~'),
             kebabCase: timeFunction(require('lodash/kebabCase'), 'fooBar'),
             keyBy: timeFunction(require('lodash/keyBy'), [{ dir: 'left', code: 97 }, { dir: 'right', code: 100 }], function ({ code }) { return String.fromCharCode(code); }),
             keys: timeFunction(require('lodash/keys'), { a: 1, b: 2 }),
+            keysIn: timeFunction(require('lodash/keysIn'), new Foo()),
             last: timeFunction(require('lodash/last'), ['test1', 'test2']),
             lastIndexOf: timeFunction(require('lodash/lastIndexOf'), [1, 2, 1, 2], 2),
             lowerCase: timeFunction(require('lodash/lowerCase'), '--Foo-Bar--'),

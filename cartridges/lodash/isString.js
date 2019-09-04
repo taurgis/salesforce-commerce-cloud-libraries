@@ -5,6 +5,7 @@ var getTag = require('./internal/getTag.js');
 /**
  * Checks if `value` is classified as a `String` primitive or object.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.

@@ -14,6 +14,7 @@ var getMatchData = require('./internal/getMatchData.js');
  * values against any array or object value, respectively. See `isEqual`
  * for a list of supported value comparisons.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {Object} object The object to inspect.

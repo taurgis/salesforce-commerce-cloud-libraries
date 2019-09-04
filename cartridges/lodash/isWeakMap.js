@@ -6,6 +6,7 @@ var isObjectLike = require('./isObjectLike.js');
 /**
  * Checks if `value` is classified as a `WeakMap` object.
  *
+ * @static
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
@@ -15,6 +16,8 @@ var isObjectLike = require('./isObjectLike.js');
  * isWeakMap(new WeakMap) => true
  *
  * isWeakMap(new Map) => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 function isWeakMap(value) {
     return isObjectLike(value) && getTag(value) == '[object WeakMap]';

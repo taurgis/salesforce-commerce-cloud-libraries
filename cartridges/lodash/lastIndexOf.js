@@ -24,7 +24,7 @@ var nativeMin = Math.min;
  *
  * lastIndexOf([1, 2, 1, 2], 2); => 3
  *
- * // Search from the `fromIndex`.
+ * * Search from the `fromIndex` *
  * lastIndexOf([1, 2, 1, 2], 2, 2); => 1
  */
 function lastIndexOf(array, value, fromIndex) {

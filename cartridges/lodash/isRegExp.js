@@ -10,6 +10,7 @@ const nodeIsRegExp = nodeTypes && nodeTypes.isRegExp;
 /**
  * Checks if `value` is classified as a `RegExp` object.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
