@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIsEqual = require('./internal/baseIsEqual.js');
+var baseIsEqual = require('./internal/baseIsEqual');
 
 /**
  * This method is like `isEqual` except that it accepts `customizer` which
@@ -8,6 +8,7 @@ var baseIsEqual = require('./internal/baseIsEqual.js');
  * are handled by the method instead. The `customizer` is invoked with up to
  * six arguments: (objValue, othValue [, index|key, object, other, stack]).
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to compare.
@@ -29,8 +30,7 @@ var baseIsEqual = require('./internal/baseIsEqual.js');
  * const array = ['hello', 'goodbye']
  * const other = ['hi', 'goodbye']
  *
- * isEqualWith(array, other, customizer)
- * // => true
+ * isEqualWith(array, other, customizer) => true
  */
 function isEqualWith(value, other, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

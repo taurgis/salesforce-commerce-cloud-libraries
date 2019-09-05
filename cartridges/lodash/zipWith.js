@@ -1,12 +1,13 @@
 'use strict';
 
-var unzipWith = require('./unzipWith.js');
+var unzipWith = require('./unzipWith');
 
 /**
  * This method is like `zip` except that it accepts `iteratee` to specify
  * how grouped values should be combined. The iteratee is invoked with the
  * elements of each group: (...group).
  *
+ * @static
  * @since 3.8.0
  * @category Array
  * @param {...Array} [arrays] The arrays to process.
@@ -16,8 +17,7 @@ var unzipWith = require('./unzipWith.js');
  * @see unzip, unzipWith, zip, zipObject, zipObjectDeep, zipWith
  * @example
  *
- * zipWith([1, 2], [10, 20], [100, 200], (a, b, c) => a + b + c)
- * // => [111, 222]
+ * zipWith([1, 2], [10, 20], [100, 200], function(a, b, c) { return a + b + c; }); => [111, 222]
  */
 function zipWith() {
     var arrays = Array.prototype.slice.call(arguments);

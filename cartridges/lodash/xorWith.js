@@ -1,8 +1,8 @@
 'use strict';
 
-var baseXor = require('./internal/baseXor.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
-var last = require('./last.js');
+var baseXor = require('./internal/baseXor');
+var isArrayLikeObject = require('./isArrayLikeObject');
+var last = require('./last');
 
 /**
  * This method is like `xor` except that it accepts `comparator` which is
@@ -10,6 +10,7 @@ var last = require('./last.js');
  * determined by the order they occur in the arrays. The comparator is invoked
  * with two arguments: (arrVal, othVal).
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -21,8 +22,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * xorWith(objects, others, isEqual)
- * // => [{ 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
+ * xorWith(objects, others, isEqual) => [{ 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
  */
 function xorWith() {
     var arrays = Array.prototype.slice.call(arguments);

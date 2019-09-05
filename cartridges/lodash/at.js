@@ -7,7 +7,6 @@ var flatRest = require('./internal/flatRest');
  * Creates an array of values corresponding to `paths` of `object`.
  *
  * @static
- * @memberOf _
  * @since 1.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -17,8 +16,7 @@ var flatRest = require('./internal/flatRest');
  *
  * var object = { 'a': [{ 'b': { 'c': 3 } }, 4] };
  *
- * _.at(object, ['a[0].b.c', 'a[1]']);
- * // => [3, 4]
+ * at(object, ['a[0].b.c', 'a[1]']); => [3, 4]
  */
 var at = flatRest(baseAt);
 

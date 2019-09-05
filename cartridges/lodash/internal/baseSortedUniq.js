@@ -1,6 +1,6 @@
 'use strict';
 
-var eq = require('../eq.js');
+var eq = require('../eq');
 
 /**
  * The base implementation of `sortedUniq` and `sortedUniqBy`.

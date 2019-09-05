@@ -10,17 +10,14 @@ var identity = require('./identity');
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Math
  * @param {Array} array The array to iterate over.
  * @returns {*} Returns the maximum value.
  * @example
  *
- * _.max([4, 2, 8, 6]);
- * // => 8
+ * max([4, 2, 8, 6]); => 8
  *
- * _.max([]);
- * // => undefined
+ * max([]); => undefined
  */
 function max(array) {
     return (array && array.length)

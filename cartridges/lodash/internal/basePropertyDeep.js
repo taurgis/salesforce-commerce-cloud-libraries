@@ -1,6 +1,6 @@
 'use strict';
 
-var baseGet = require('./baseGet.js');
+var baseGet = require('./baseGet');
 
 /**
  * A specialized version of `baseProperty` which supports deep paths.

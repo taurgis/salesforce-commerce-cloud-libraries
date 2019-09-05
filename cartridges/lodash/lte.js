@@ -3,6 +3,7 @@
 /**
  * Checks if `value` is less than or equal to `other`.
  *
+ * @static
  * @since 3.9.0
  * @category Lang
  * @param {*} value The value to compare.
@@ -12,14 +13,11 @@
  * @see gt, gte, lt
  * @example
  *
- * lte(1, 3)
- * // => true
+ * lte(1, 3) => true
  *
- * lte(3, 3)
- * // => true
+ * lte(3, 3) => true
  *
- * lte(3, 1)
- * // => false
+ * lte(3, 1) => false
  */
 function lte(value, other) {
     if (!(typeof value === 'string' && typeof other === 'string')) {

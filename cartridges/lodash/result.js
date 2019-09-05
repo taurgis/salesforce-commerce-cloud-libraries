@@ -1,13 +1,14 @@
 'use strict';
 
-var castPath = require('./internal/castPath.js');
-var toKey = require('./internal/toKey.js');
+var castPath = require('./internal/castPath');
+var toKey = require('./internal/toKey');
 
 /**
  * This method is like `get` except that if the resolved value is a
  * function it's invoked with the `this` binding of its parent object and
  * its result is returned.
  *
+ * @static
  * @since 0.1.0
  * @category Object
  * @param {Object} object The object to query.
@@ -18,17 +19,13 @@ var toKey = require('./internal/toKey.js');
  *
  * const object = { 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }
  *
- * result({ 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }, 'a[0].b.c1')
- * // => 3
+ * result({ 'a': [{ 'b': { 'c1': 3, 'c2': function() { return 4; } } }] }, 'a[0].b.c1') => 3
  *
- * result(object, 'a[0].b.c2')
- * // => 4
+ * result(object, 'a[0].b.c2') => 4
  *
- * result(object, 'a[0].b.c3', 'default')
- * // => 'default'
+ * result(object, 'a[0].b.c3', 'default') => 'default'
  *
- * result(object, 'a[0].b.c3', () => 'default')
- * // => 'default'
+ * result(object, 'a[0].b.c3', () => 'default') => 'default'
  */
 function result(object, path, defaultValue) {
     path = castPath(path, object);

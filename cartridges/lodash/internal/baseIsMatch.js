@@ -1,7 +1,7 @@
 'use strict';
 
-var Stack = require('./Stack.js');
-var baseIsEqual = require('./baseIsEqual.js');
+var Stack = require('./Stack');
+var baseIsEqual = require('./baseIsEqual');
 
 /** Used to compose bitmasks for value comparisons. */
 var COMPARE_PARTIAL_FLAG = 1;

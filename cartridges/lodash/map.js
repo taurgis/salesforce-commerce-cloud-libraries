@@ -20,11 +20,10 @@ var isArray = require('./isArray');
  * `template`, `trim`, `trimEnd`, `trimStart`, and `words`
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Array} Returns the new mapped array.
  * @example
  *
@@ -32,11 +31,9 @@ var isArray = require('./isArray');
  *   return n * n;
  * }
  *
- * map([4, 8], square);
- * // => [16, 64]
+ * map([4, 8], square); => [16, 64]
  *
- * map({ 'a': 4, 'b': 8 }, square);
- * // => [16, 64] (iteration order is not guaranteed)
+ * map({ 'a': 4, 'b': 8 }, square); => [16, 64] (iteration order is not guaranteed)
  *
  * var users = [
  *   { 'user': 'barney' },
@@ -44,8 +41,7 @@ var isArray = require('./isArray');
  * ];
  *
  * // The `_.property` iteratee shorthand.
- * _.map(users, 'user');
- * // => ['barney', 'fred']
+ * map(users, 'user'); => ['barney', 'fred']
  */
 function map(collection, iteratee) {
     var func = isArray(collection) ? arrayMap : baseMap;

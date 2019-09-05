@@ -7,7 +7,6 @@ var toInteger = require('./toInteger');
  * Recursively flatten `array` up to `depth` times.
  *
  * @static
- * @memberOf _
  * @since 4.4.0
  * @category Array
  * @param {Array} array The array to flatten.
@@ -17,11 +16,9 @@ var toInteger = require('./toInteger');
  *
  * var array = [1, [2, [3, [4]], 5]];
  *
- * _.flattenDepth(array, 1);
- * // => [1, 2, [3, [4]], 5]
+ * flattenDepth(array, 1); => [1, 2, [3, [4]], 5]
  *
- * _.flattenDepth(array, 2);
- * // => [1, 2, 3, [4], 5]
+ * flattenDepth(array, 2); => [1, 2, 3, [4], 5]
  */
 function flattenDepth(array, depth) {
     var length = array == null ? 0 : array.length;

@@ -1,6 +1,6 @@
 'use strict';
 
-var isObject = require('./isObject.js');
+var isObject = require('./isObject');
 
 /**
  * Used to match `RegExp`
@@ -18,6 +18,7 @@ const reIsNative = RegExp('^' +
 /**
  * Checks if `value` is a pristine native function.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {*} value The value to check.
@@ -25,11 +26,9 @@ const reIsNative = RegExp('^' +
  *  else `false`.
  * @example
  *
- * isNative(Array.prototype.push)
- * // => true
+ * isNative(Array.prototype.push) => true
  *
- * isNative(isDate)
- * // => false
+ * isNative(isDate) => false
  */
 function isNative(value) {
     return isObject(value) && reIsNative.test(value);

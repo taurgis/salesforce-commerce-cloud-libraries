@@ -9,7 +9,6 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * created function.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Function
  * @param {Function} predicate The predicate to negate.
@@ -20,8 +19,7 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  *   return n % 2 == 0;
  * }
  *
- * _.filter([1, 2, 3, 4, 5, 6], _.negate(isEven));
- * // => [1, 3, 5]
+ * filter([1, 2, 3, 4, 5, 6], negate(isEven)); => [1, 3, 5]
  */
 function negate(predicate) {
     if (typeof predicate != 'function') {

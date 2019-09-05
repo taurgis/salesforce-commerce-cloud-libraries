@@ -1,7 +1,7 @@
 'use strict';
 
-var baseIsMatch = require('./internal/baseIsMatch.js');
-var getMatchData = require('./internal/getMatchData.js');
+var baseIsMatch = require('./internal/baseIsMatch');
+var getMatchData = require('./internal/getMatchData');
 
 /**
  * This method is like `isMatch` except that it accepts `customizer` which
@@ -9,6 +9,7 @@ var getMatchData = require('./internal/getMatchData.js');
  * are handled by the method instead. The `customizer` is invoked with five
  * arguments: (objValue, srcValue, index|key, object, source).
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {Object} object The object to inspect.
@@ -30,8 +31,7 @@ var getMatchData = require('./internal/getMatchData.js');
  * const object = { 'greeting': 'hello' }
  * const source = { 'greeting': 'hi' }
  *
- * isMatchWith(object, source, customizer)
- * // => true
+ * isMatchWith(object, source, customizer) => true
  */
 function isMatchWith(object, source, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

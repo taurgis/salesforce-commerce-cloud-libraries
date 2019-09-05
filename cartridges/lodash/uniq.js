@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUniq = require('./internal/baseUniq.js');
+var baseUniq = require('./internal/baseUniq');
 
 /**
  * Creates a duplicate-free version of an array, using
@@ -9,6 +9,7 @@ var baseUniq = require('./internal/baseUniq.js');
  * is kept. The order of result values is determined by the order they occur
  * in the array.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -16,8 +17,7 @@ var baseUniq = require('./internal/baseUniq.js');
  * @see uniqBy, uniqWith
  * @example
  *
- * uniq([2, 1, 2])
- * // => [2, 1]
+ * uniq([2, 1, 2]) => [2, 1]
  */
 function uniq(array) {
     return (array != null && array.length)

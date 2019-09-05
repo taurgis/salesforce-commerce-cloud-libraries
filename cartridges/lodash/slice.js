@@ -12,7 +12,6 @@ var toInteger = require('./toInteger');
  * returned.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Array
  * @param {Array} array The array to slice.

@@ -1,8 +1,9 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
-var isObjectLike = require('./isObjectLike.js');
-var nodeTypes = require('./internal/nodeTypes.js');
+var getTag = require('./internal/getTag');
+var isObjectLike = require('./isObjectLike');
+var nodeTypes = require('./internal/nodeTypes');
+var isNil = require('./isNil');
 
 /* Node.js helper references. */
 const nodeIsMap = nodeTypes && nodeTypes.isMap;
@@ -16,14 +17,20 @@ const nodeIsMap = nodeTypes && nodeTypes.isMap;
  * @returns {boolean} Returns `true` if `value` is a map, else `false`.
  * @example
  *
- * isMap(new Map)
- * // => true
+ * isMap(new Map) => true
  *
- * isMap(new WeakMap)
- * // => false
+ * isMap(new WeakMap) => false
  */
 const isMap = nodeIsMap
-    ? (value) => nodeIsMap(value)
-    : (value) => isObjectLike(value) && getTag(value) === '[object Map]';
+    ? function (value) { return nodeIsMap(value); }
+    : function (value) {
+        var tag = getTag(value);
+
+        if (tag === '[object JavaObject]') {
+            return !isNil(value.put);
+        }
+
+        return isObjectLike(value) && (getTag(value) === '[object Map]');
+    };
 
 module.exports = isMap;

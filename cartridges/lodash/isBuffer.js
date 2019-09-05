@@ -1,6 +1,6 @@
 'use strict';
 
-var root = require('./internal/root.js');
+var root = require('./internal/root');
 
 /** Detect free variable `exports`. */
 var freeExports = typeof exports === 'object' && exports !== null && !exports.nodeType && exports;
@@ -20,17 +20,18 @@ var nativeIsBuffer = Buffer ? Buffer.isBuffer : undefined;
 /**
  * Checks if `value` is a buffer.
  *
+ * @static
  * @since 4.3.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a buffer, else `false`.
  * @example
  *
- * isBuffer(new Buffer(2))
- * // => true
+ * isBuffer(new Buffer(2)) => true
  *
- * isBuffer(new Uint8Array(2))
- * // => false
+ * isBuffer(new Uint8Array(2)) => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 var isBuffer = nativeIsBuffer || (function () { return false; });
 

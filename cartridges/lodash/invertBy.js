@@ -24,23 +24,20 @@ var nativeObjectToString = objectProto.toString;
  * with one argument: (value).
  *
  * @static
- * @memberOf _
  * @since 4.1.0
  * @category Object
  * @param {Object} object The object to invert.
- * @param {Function} [iteratee=_.identity] The iteratee invoked per element.
+ * @param {Function} [iteratee=identity] The iteratee invoked per element.
  * @returns {Object} Returns the new inverted object.
  * @example
  *
  * var object = { 'a': 1, 'b': 2, 'c': 1 };
  *
- * _.invertBy(object);
- * // => { '1': ['a', 'c'], '2': ['b'] }
+ * invertBy(object); => { '1': ['a', 'c'], '2': ['b'] }
  *
- * _.invertBy(object, function(value) {
+ * invertBy(object, function(value) {
  *   return 'group' + value;
- * });
- * // => { 'group1': ['a', 'c'], 'group2': ['b'] }
+ * }); => { 'group1': ['a', 'c'], 'group2': ['b'] }
  */
 var invertBy = createInverter(function (result, value, key) {
     if (value != null &&

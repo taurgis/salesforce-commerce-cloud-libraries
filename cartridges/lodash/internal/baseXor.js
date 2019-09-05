@@ -1,8 +1,8 @@
 'use strict';
 
-var baseDifference = require('./baseDifference.js');
-var baseFlatten = require('./baseFlatten.js');
-var baseUniq = require('./baseUniq.js');
+var baseDifference = require('./baseDifference');
+var baseFlatten = require('./baseFlatten');
+var baseUniq = require('./baseUniq');
 
 /**
  * The base implementation of methods like `xor` which accepts an array of

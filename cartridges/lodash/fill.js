@@ -1,4 +1,5 @@
 'use strict';
+
 var baseFill = require('./internal/baseFill');
 var isIterateeCall = require('./internal/isIterateeCall');
 
@@ -9,7 +10,6 @@ var isIterateeCall = require('./internal/isIterateeCall');
  * **Note:** This method mutates `array`.
  *
  * @static
- * @memberOf _
  * @since 3.2.0
  * @category Array
  * @param {Array} array The array to fill.
@@ -22,14 +22,11 @@ var isIterateeCall = require('./internal/isIterateeCall');
  * var array = [1, 2, 3];
  *
  * fill(array, 'a');
- * console.log(array);
- * // => ['a', 'a', 'a']
+ * console.log(array); => ['a', 'a', 'a']
  *
- * fill(Array(3), 2);
- * // => [2, 2, 2]
+ * fill(Array(3), 2); => [2, 2, 2]
  *
- * fill([4, 6, 8, 10], '*', 1, 3);
- * // => [4, '*', '*', 10]
+ * fill([4, 6, 8, 10], '*', 1, 3); => [4, '*', '*', 10]
  */
 function fill(array, value, start, end) {
     var length = array == null ? 0 : array.length;

@@ -10,17 +10,14 @@ var identity = require('./identity');
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Math
  * @param {Array} array The array to iterate over.
  * @returns {*} Returns the minimum value.
  * @example
  *
- * _.min([4, 2, 8, 6]);
- * // => 2
+ * min([4, 2, 8, 6]); => 2
  *
- * _.min([]);
- * // => undefined
+ * min([]); => undefined
  */
 function min(array) {
     return (array && array.length)

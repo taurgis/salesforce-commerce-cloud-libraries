@@ -6,6 +6,7 @@
  * **Note:** This method is based on
  * [`String#replace`](https://mdn.io/String/replace).
  *
+ * @static
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to modify.
@@ -15,8 +16,7 @@
  * @see truncate, trim
  * @example
  *
- * replace('Hi Fred', 'Fred', 'Barney')
- * // => 'Hi Barney'
+ * replace('Hi Fred', 'Fred', 'Barney') => 'Hi Barney'
  */
 function replace() {
     var args = Array.prototype.slice.call(arguments);

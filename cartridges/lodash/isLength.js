@@ -9,23 +9,20 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * **Note:** This method is loosely based on
  * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a valid length, else `false`.
  * @example
  *
- * isLength(3)
- * // => true
+ * isLength(3) => true
  *
- * isLength(Number.MIN_VALUE)
- * // => false
+ * isLength(Number.MIN_VALUE) => false
  *
- * isLength(Infinity)
- * // => false
+ * isLength(Infinity) => false
  *
- * isLength('3')
- * // => false
+ * isLength('3') => false
  */
 function isLength(value) {
     var result = typeof value === 'number' &&

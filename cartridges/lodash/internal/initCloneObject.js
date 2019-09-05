@@ -1,3 +1,5 @@
+'use strict';
+
 var baseCreate = require('./baseCreate');
 var getPrototype = require('./getPrototype');
 var isPrototype = require('./isPrototype');

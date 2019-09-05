@@ -4,6 +4,7 @@
  * Converts `value` to a plain object flattening inherited enumerable string
  * keyed properties of `value` to own properties of the plain object.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {*} value The value to convert.
@@ -16,11 +17,9 @@
  *
  * Foo.prototype.c = 3
  *
- * assign({ 'a': 1 }, new Foo)
- * // => { 'a': 1, 'b': 2 }
+ * assign({ 'a': 1 }, new Foo) => { 'a': 1, 'b': 2 }
  *
- * assign({ 'a': 1 }, toPlainObject(new Foo))
- * // => { 'a': 1, 'b': 2, 'c': 3 }
+ * assign({ 'a': 1 }, toPlainObject(new Foo)) => { 'a': 1, 'b': 2, 'c': 3 }
  */
 function toPlainObject(value) {
     value = Object(value);

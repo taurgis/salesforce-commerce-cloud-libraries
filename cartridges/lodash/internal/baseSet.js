@@ -1,10 +1,10 @@
 'use strict';
 
-var assignValue = require('./assignValue.js');
-var castPath = require('./castPath.js');
-var isIndex = require('./isIndex.js');
-var isObject = require('../isObject.js');
-var toKey = require('./toKey.js');
+var assignValue = require('./assignValue');
+var castPath = require('./castPath');
+var isIndex = require('./isIndex');
+var isObject = require('../isObject');
+var toKey = require('./toKey');
 
 /**
  * The base implementation of `set`.

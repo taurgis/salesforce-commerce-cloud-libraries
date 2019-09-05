@@ -3,33 +3,27 @@
 /**
  * Casts `value` as an array if it's not one.
  *
+ * @static
  * @since 4.4.0
  * @category Lang
  * @param {*} value The value to inspect.
  * @returns {Array} Returns the cast array.
  * @example
  *
- * castArray(1)
- * // => [1]
+ * castArray(1) => [1]
  *
- * castArray({ 'a': 1 })
- * // => [{ 'a': 1 }]
+ * castArray({ 'a': 1 }) => [{ 'a': 1 }]
  *
- * castArray('abc')
- * // => ['abc']
+ * castArray('abc') => ['abc']
  *
- * castArray(null)
- * // => [null]
+ * castArray(null) => [null]
  *
- * castArray(undefined)
- * // => [undefined]
+ * castArray(undefined) => [undefined]
  *
- * castArray()
- * // => []
+ * castArray() => []
  *
  * var array = [1, 2, 3]
- * console.log(castArray(array) === array)
- * // => true
+ * console.log(castArray(array) === array) => true
  */
 function castArray() {
     if (!arguments.length) {

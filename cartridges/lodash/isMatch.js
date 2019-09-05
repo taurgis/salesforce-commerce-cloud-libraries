@@ -1,7 +1,7 @@
 'use strict';
 
-var baseIsMatch = require('./internal/baseIsMatch.js');
-var getMatchData = require('./internal/getMatchData.js');
+var baseIsMatch = require('./internal/baseIsMatch');
+var getMatchData = require('./internal/getMatchData');
 
 /**
  * Performs a partial deep comparison between `object` and `source` to
@@ -14,6 +14,7 @@ var getMatchData = require('./internal/getMatchData.js');
  * values against any array or object value, respectively. See `isEqual`
  * for a list of supported value comparisons.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {Object} object The object to inspect.
@@ -23,11 +24,9 @@ var getMatchData = require('./internal/getMatchData.js');
  *
  * const object = { 'a': 1, 'b': 2 }
  *
- * isMatch({ 'a': 1, 'b': 2 }, { 'b': 2 })
- * // => true
+ * isMatch({ 'a': 1, 'b': 2 }, { 'b': 2 }) => true
  *
- * isMatch(object, { 'b': 1 })
- * // => false
+ * isMatch(object, { 'b': 1 }) => false
  */
 function isMatch(object, source) {
     return object === source || baseIsMatch(object, source, getMatchData(source));

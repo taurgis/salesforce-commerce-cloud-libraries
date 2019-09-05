@@ -11,7 +11,6 @@ var keys = require('./keys');
  * partially applied.
  *
  * @static
- * @memberOf _
  * @since 4.14.0
  * @category Lang
  * @param {Object} object The object to inspect.
@@ -21,11 +20,9 @@ var keys = require('./keys');
  *
  * var object = { 'a': 1, 'b': 2 };
  *
- * _.conformsTo(object, { 'b': function(n) { return n > 1; } });
- * // => true
+ * conformsTo(object, { 'b': function(n) { return n > 1; } }); => true
  *
- * _.conformsTo(object, { 'b': function(n) { return n > 2; } });
- * // => false
+ * conformsTo(object, { 'b': function(n) { return n > 2; } }); => false
  */
 function conformsTo(object, source) {
     return source == null || baseConformsTo(object, source, keys(source));

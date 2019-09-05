@@ -22,7 +22,6 @@ var CLONE_SYMBOLS_FLAG = 4;
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Object
  * @param {Object} object The source object.
  * @param {...(string|string[])} [paths] The property paths to omit.
@@ -31,8 +30,7 @@ var CLONE_SYMBOLS_FLAG = 4;
  *
  * var object = { 'a': 1, 'b': '2', 'c': 3 };
  *
- * _.omit(object, ['a', 'c']);
- * // => { 'b': '2' }
+ * omit(object, ['a', 'c']); => { 'b': '2' }
  */
 var omit = flatRest(function (object, paths) {
     var result = {};

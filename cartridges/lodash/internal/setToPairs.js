@@ -11,7 +11,7 @@ function setToPairs(set) {
     let index = -1;
     var result = new Array(set.size);
 
-    set.forEach((value) => {
+    set.forEach(function (value) {
         result[++index] = [value, value];
     });
     return result;

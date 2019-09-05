@@ -33,7 +33,14 @@ function hasPath(object, path, hasFunc) {
     if (result || ++index != length) {
         return result;
     }
-    length = object == null ? 0 : object.length;
+
+    /** If this is true, its a Salesforce Commerce Cloud Object */
+    if (object !== null && (typeof object === 'object') && !Object.hasOwnProperty.call(object, 'length')) {
+        length = 0;
+    } else {
+        length = object == null ? 0 : object.length;
+    }
+
     return !!length && isLength(length) && isIndex(key, length) && // eslint-disable-line
         (isArray(object) || isArguments(object));
 }

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseIndexOf = require('./baseIndexOf.js');
+var baseIndexOf = require('./baseIndexOf');
 
 /**
  * Used by `trim` and `trimEnd` to get the index of the last string symbol

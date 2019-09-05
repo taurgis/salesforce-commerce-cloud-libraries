@@ -1,6 +1,6 @@
 'use strict';
 
-var baseUniq = require('./internal/baseUniq.js');
+var baseUniq = require('./internal/baseUniq');
 
 /**
  * This method is like `uniq` except that it accepts `comparator` which
@@ -8,6 +8,7 @@ var baseUniq = require('./internal/baseUniq.js');
  * determined by the order they occur in the array. The comparator is invoked
  * with two arguments: (arrVal, othVal).
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -18,8 +19,7 @@ var baseUniq = require('./internal/baseUniq.js');
  *
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * uniqWith(objects, isEqual)
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
+ * uniqWith(objects, isEqual) => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  */
 function uniqWith(array, comparator) {
     comparator = typeof comparator === 'function' ? comparator : undefined;

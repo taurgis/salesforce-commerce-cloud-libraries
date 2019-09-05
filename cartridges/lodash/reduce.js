@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayReduce = require('./internal/arrayReduce');
 var baseEach = require('./internal/baseEach');
 var baseIteratee = require('./internal/baseIteratee');
@@ -14,33 +15,30 @@ var isArray = require('./isArray');
  * (accumulator, value, index|key, collection).
  *
  * Many lodash methods are guarded to work as iteratees for methods like
- * `_.reduce`, `_.reduceRight`, and `_.transform`.
+ * `reduce`, `reduceRight`, and `transform`.
  *
  * The guarded methods are:
  * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
  * and `sortBy`
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
  * @returns {*} Returns the accumulated value.
- * @see _.reduceRight
+ * @see reduceRight
  * @example
  *
- * _.reduce([1, 2], function(sum, n) {
+ * reduce([1, 2], function(sum, n) {
  *   return sum + n;
- * }, 0);
- * // => 3
+ * }, 0); => 3
  *
- * _.reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
+ * reduce({ 'a': 1, 'b': 2, 'c': 1 }, function(result, value, key) {
  *   (result[value] || (result[value] = [])).push(key);
  *   return result;
- * }, {});
- * // => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
+ * }, {}); => { '1': ['a', 'c'], '2': ['b'] } (iteration order is not guaranteed)
  */
 function reduce(collection, iteratee, accumulator) {
     var func = isArray(collection) ? arrayReduce : baseReduce;

@@ -1,12 +1,13 @@
 'use strict';
 
-var isSymbol = require('./isSymbol.js');
+var isSymbol = require('./isSymbol');
 
 /**
  * This method is like `max` except that it accepts `iteratee` which is
  * invoked for each element in `array` to generate the criterion by which
  * the value is ranked. The iteratee is invoked with one argument: (value).
  *
+ * @static
  * @since 4.0.0
  * @category Math
  * @param {Array} array The array to iterate over.
@@ -16,8 +17,7 @@ var isSymbol = require('./isSymbol.js');
  *
  * const objects = [{ 'n': 1 }, { 'n': 2 }]
  *
- * maxBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n;})
- * // => { 'n': 2 }
+ * maxBy([{ 'n': 1 }, { 'n': 2 }], function({ n }) { return n;}) => { 'n': 2 }
  */
 function maxBy(array, iteratee) {
     let result;

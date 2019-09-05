@@ -1,6 +1,6 @@
 'use strict';
 
-var isObject = require('../isObject.js');
+var isObject = require('../isObject');
 
 /**
  * Checks if `value` is suitable for strict equality comparisons, i.e. `===`.

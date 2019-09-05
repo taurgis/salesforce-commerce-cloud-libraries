@@ -8,7 +8,6 @@ var createFlow = require('./internal/createFlow');
  * invocation is supplied the return value of the previous.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category Util
  * @param {...(Function|Function[])} [funcs] The functions to invoke.
@@ -20,9 +19,8 @@ var createFlow = require('./internal/createFlow');
  *   return n * n;
  * }
  *
- * var addSquare = _.flow([_.add, square]);
- * addSquare(1, 2);
- * // => 9
+ * var addSquare = flow([add, square]);
+ * addSquare(1, 2); => 9
  */
 var flow = createFlow();
 

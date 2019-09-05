@@ -1,6 +1,6 @@
 'use strict';
 
-var cloneArrayBuffer = require('./cloneArrayBuffer.js');
+var cloneArrayBuffer = require('./cloneArrayBuffer');
 
 /**
  * Creates a clone of `dataView`.

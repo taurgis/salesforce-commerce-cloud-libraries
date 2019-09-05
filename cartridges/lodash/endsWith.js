@@ -1,4 +1,5 @@
 'use strict';
+
 var baseClamp = require('./internal/baseClamp');
 var baseToString = require('./internal/baseToString');
 var toInteger = require('./toInteger');
@@ -8,7 +9,6 @@ var toString = require('./toString');
  * Checks if `string` ends with the given target string.
  *
  * @static
- * @memberOf _
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to inspect.
@@ -18,14 +18,11 @@ var toString = require('./toString');
  *  else `false`.
  * @example
  *
- * _.endsWith('abc', 'c');
- * // => true
+ * endsWith('abc', 'c'); => true
  *
- * _.endsWith('abc', 'b');
- * // => false
+ * endsWith('abc', 'b'); => false
  *
- * _.endsWith('abc', 'b', 2);
- * // => true
+ * endsWith('abc', 'b', 2); => true
  */
 function endsWith(string, target, position) {
     string = toString(string);

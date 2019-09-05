@@ -1,4 +1,5 @@
 'use strict';
+
 var baseInvoke = require('./internal/baseInvoke');
 var baseRest = require('./internal/baseRest');
 
@@ -8,7 +9,6 @@ var baseRest = require('./internal/baseRest');
  * provided to the invoked method.
  *
  * @static
- * @memberOf _
  * @since 3.7.0
  * @category Util
  * @param {Object} object The object to query.
@@ -16,14 +16,12 @@ var baseRest = require('./internal/baseRest');
  * @returns {Function} Returns the new invoker function.
  * @example
  *
- * var array = _.times(3, _.constant),
- *     object = { 'a': array, 'b': array, 'c': array };
+ * var array = times(3, constant);
+ * var object = { 'a': array, 'b': array, 'c': array };
  *
- * _.map(['a[2]', 'c[0]'], _.methodOf(object));
- * // => [2, 0]
+ * map(['a[2]', 'c[0]'], methodOf(object)); => [2, 0]
  *
- * _.map([['a', '2'], ['c', '0']], _.methodOf(object));
- * // => [2, 0]
+ * map([['a', '2'], ['c', '0']], methodOf(object)); => [2, 0]
  */
 var methodOf = baseRest(function (object, args) {
     return function (path) {

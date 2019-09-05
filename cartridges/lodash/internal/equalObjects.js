@@ -1,4 +1,5 @@
 'use strict';
+
 var getAllKeys = require('./getAllKeys');
 
 /** Used to compose bitmasks for value comparisons. */

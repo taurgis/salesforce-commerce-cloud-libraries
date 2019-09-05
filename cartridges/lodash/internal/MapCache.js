@@ -1,6 +1,5 @@
 'use strict';
 
-
 var Hash = require('./Hash');
 var HashMap;
 
@@ -99,7 +98,12 @@ MapCache.prototype.get = function (key) {
  * @returns {boolean} Returns `true` if an entry for `key` exists, else `false`.
  */
 MapCache.prototype.has = function (key) {
-    return getMapData(this, key).has(key);
+    var map = getMapData(this, key);
+    if (map.has) {
+        return map.has(key);
+    } else if (map.containsKey) {
+        return map.containsKey(key);
+    }
 };
 
 /**
@@ -111,11 +115,16 @@ MapCache.prototype.has = function (key) {
  * @returns {Object} Returns the map cache instance.
  */
 MapCache.prototype.set = function (key, value) {
-    var data = getMapData(this, key);
-    var size = data.size;
+    var map = getMapData(this, key);
+    var size = map.size;
 
-    data.set(key, value);
-    this.size += data.size == size ? 0 : 1;
+    if (map.set) {
+        map.set(key, value);
+    } else if (map.put) {
+        map.put(key, value);
+    }
+
+    this.size += map.size == size ? 0 : 1;
     return this;
 };
 

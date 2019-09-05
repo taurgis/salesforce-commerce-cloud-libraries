@@ -17,7 +17,6 @@ var nativeMin = Math.min;
  *
  * @static
  * @since 4.0.0
- * @memberOf _
  * @category Function
  * @param {Function} func The function to wrap.
  * @param {...(Function|Function[])} [transforms=[_.identity]]
@@ -33,15 +32,13 @@ var nativeMin = Math.min;
  *   return n * n;
  * }
  *
- * var func = _.overArgs(function(x, y) {
+ * var func = overArgs(function(x, y) {
  *   return [x, y];
  * }, [square, doubled]);
  *
- * func(9, 3);
- * // => [81, 6]
+ * func(9, 3); => [81, 6]
  *
- * func(10, 5);
- * // => [100, 10]
+ * func(10, 5); => [100, 10]
  */
 var overArgs = castRest(function (func, transforms) {
     transforms = (transforms.length == 1 && isArray(transforms[0]))

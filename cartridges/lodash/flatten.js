@@ -1,10 +1,11 @@
 'use strict';
 
-var baseFlatten = require('./internal/baseFlatten.js');
+var baseFlatten = require('./internal/baseFlatten');
 
 /**
  * Flattens `array` a single level deep.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to flatten.
@@ -12,8 +13,7 @@ var baseFlatten = require('./internal/baseFlatten.js');
  * @see flatMap, flatMapDeep, flatMapDepth, flattenDeep, flattenDepth
  * @example
  *
- * flatten([1, [2, [3, [4]], 5]])
- * // => [1, 2, [3, [4]], 5]
+ * flatten([1, [2, [3, [4]], 5]]) => [1, 2, [3, [4]], 5]
  */
 function flatten(array) {
     const length = array == null ? 0 : array.length;

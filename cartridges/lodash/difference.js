@@ -1,6 +1,5 @@
 'use strict';
 
-
 var baseDifference = require('./internal/baseDifference');
 var baseFlatten = require('./internal/baseFlatten');
 var isArrayLikeObject = require('./isArrayLikeObject');
@@ -13,6 +12,7 @@ var isArrayLikeObject = require('./isArrayLikeObject');
  *
  * **Note:** Unlike `pullAll`, this method returns a new array.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -21,8 +21,7 @@ var isArrayLikeObject = require('./isArrayLikeObject');
  * @see union, unionBy, unionWith, without, xor, xorBy, xorWith,
  * @example
  *
- * difference([2, 1], [2, 3])
- * // => [1]
+ * difference([2, 1], [2, 3]) => [1]
  */
 function difference(array) {
     var values = Array.prototype.slice.call(arguments);

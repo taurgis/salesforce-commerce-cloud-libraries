@@ -1,4 +1,5 @@
 'use strict';
+
 var getNative = require('./_getNative');
 var root = require('./_root');
 

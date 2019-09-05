@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayEvery = require('./internal/arrayEvery');
 var baseEvery = require('./internal/baseEvery');
 var baseIteratee = require('./internal/baseIteratee');
@@ -16,35 +17,30 @@ var isIterateeCall = require('./internal/isIterateeCall');
  * elements of empty collections.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Collection
  * @param {Array|Object} collection The collection to iterate over.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {boolean} Returns `true` if all elements pass the predicate check,
  *  else `false`.
  * @example
  *
- * _.every([true, 1, null, 'yes'], Boolean);
- * // => false
+ * every([true, 1, null, 'yes'], Boolean); => false
  *
  * var users = [
  *   { 'user': 'barney', 'age': 36, 'active': false },
  *   { 'user': 'fred',   'age': 40, 'active': false }
  * ];
  *
- * // The `_.matches` iteratee shorthand.
- * _.every(users, { 'user': 'barney', 'active': false });
- * // => false
+ * * The `_.matches` iteratee shorthand. *
+ * every(users, { 'user': 'barney', 'active': false }); => false
  *
- * // The `_.matchesProperty` iteratee shorthand.
- * _.every(users, ['active', false]);
- * // => true
+ * * The `_.matchesProperty` iteratee shorthand. *
+ * every(users, ['active', false]); => true
  *
- * // The `_.property` iteratee shorthand.
- * _.every(users, 'active');
- * // => false
+ * * The `_.property` iteratee shorthand. *
+ * every(users, 'active'); => false
  */
 function every(collection, predicate, guard) {
     var func = isArray(collection) ? arrayEvery : baseEvery;

@@ -11,20 +11,17 @@ var toInteger = require('./toInteger');
  * size of `collection`.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Collection
  * @param {Array|Object} collection The collection to sample.
  * @param {number} [n=1] The number of elements to sample.
- * @param- {Object} [guard] Enables use as an iteratee for methods like `_.map`.
+ * @param {Object} [guard] Enables use as an iteratee for methods like `map`.
  * @returns {Array} Returns the random elements.
  * @example
  *
- * _.sampleSize([1, 2, 3], 2);
- * // => [3, 1]
+ * sampleSize([1, 2, 3], 2); => [3, 1]
  *
- * _.sampleSize([1, 2, 3], 4);
- * // => [2, 3, 1]
+ * sampleSize([1, 2, 3], 4); => [2, 3, 1]
  */
 function sampleSize(collection, n, guard) {
     if ((guard ? isIterateeCall(collection, n, guard) : n === undefined)) {

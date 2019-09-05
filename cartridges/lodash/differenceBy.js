@@ -14,6 +14,7 @@ var last = require('./last');
  *
  * **Note:** Unlike `pullAllBy`, this method returns a new array.
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -22,8 +23,7 @@ var last = require('./last');
  * @returns {Array} Returns the new array of filtered values.
  * @example
  *
- * differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor)
- * // => [1.2]
+ * differenceBy([2.1, 1.2], [2.3, 3.4], Math.floor) => [1.2]
  */
 function differenceBy(array) {
     var values = Array.prototype.slice.call(arguments);

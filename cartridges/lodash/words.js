@@ -6,7 +6,6 @@ var hasUnicodeWord = RegExp.prototype.test.bind(
     /[a-z][A-Z]|[A-Z]{2,}[a-z]|[0-9][a-zA-Z]|[a-zA-Z][0-9]|[^a-zA-Z0-9 ]/
 );
 
-
 const reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g; // eslint-disable-line
 
 /**
@@ -18,9 +17,11 @@ const reAsciiWord = /[^\x00-\x2f\x3a-\x40\x5b-\x60\x7b-\x7f]+/g; // eslint-disab
 function asciiWords(string) {
     return string.match(reAsciiWord);
 }
+
 /**
  * Splits `string` into an array of its words.
  *
+ * @static
  * @since 3.0.0
  * @category String
  * @param {string} [string=''] The string to inspect.
@@ -28,11 +29,9 @@ function asciiWords(string) {
  * @returns {Array} Returns the words of `string`.
  * @example
  *
- * words('fred, barney, & pebbles')
- * // => ['fred', 'barney', 'pebbles']
+ * words('fred, barney, & pebbles') => ['fred', 'barney', 'pebbles']
  *
- * words('fred, barney, & pebbles', /[^, ]+/g)
- * // => ['fred', 'barney', '&', 'pebbles']
+ * words('fred, barney, & pebbles', /[^, ]+/g) => ['fred', 'barney', '&', 'pebbles']
  */
 function words(string, pattern) {
     if (pattern === undefined) {

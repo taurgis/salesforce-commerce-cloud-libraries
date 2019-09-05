@@ -1,9 +1,13 @@
 'use strict';
 
+var baseFunctions = require('./internal/baseFunctions');
+var keys = require('./keys');
+
 /**
- * Creates an array of function property names= require(own enumerable properties);
+ * Creates an array of function property names from own enumerable properties
  * of `object`.
  *
+ * @static
  * @since 0.1.0
  * @category Object
  * @param {Object} object The object to inspect.
@@ -12,20 +16,16 @@
  * @example
  *
  * function Foo() {
- *   this.a = () => 'a'
- *   this.b = () => 'b'
+ *   this.a = constant('a');
+ *   this.b = constant('b');
  * }
  *
- * Foo.prototype.c = () => 'c'
+ * Foo.prototype.c = constant('c');
  *
- * functions(new Foo)
- * // => ['a', 'b']
+ * functions(new Foo); => ['a', 'b']
  */
 function functions(object) {
-    if (object == null) {
-        return [];
-    }
-    return Object.keys(object).filter((key) => typeof object[key] === 'function');
+    return object == null ? [] : baseFunctions(object, keys(object));
 }
 
 module.exports = functions;
