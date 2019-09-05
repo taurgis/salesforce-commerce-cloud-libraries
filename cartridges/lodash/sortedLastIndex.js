@@ -1,12 +1,13 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
 
 /**
  * This method is like `sortedIndex` except that it returns the highest
  * index at which `value` should be inserted into `array` in order to
  * maintain its sort order.
  *
+ * @static
  * @since 3.0.0
  * @category Array
  * @param {Array} array The sorted array to inspect.
@@ -15,8 +16,7 @@ var baseSortedIndex = require('./internal/baseSortedIndex.js');
  *  into `array`.
  * @example
  *
- * sortedLastIndex([4, 5, 5, 5, 6], 5)
- * // => 4
+ * sortedLastIndex([4, 5, 5, 5, 6], 5) => 3
  */
 function sortedLastIndex(array, value) {
     return baseSortedIndex(array, value, true);

@@ -1,7 +1,7 @@
 'use strict';
 
-var baseGet = require('./baseGet.js');
-var slice = require('../slice.js');
+var baseGet = require('./baseGet');
+var slice = require('../slice');
 
 /**
  * Gets the parent value at `path` of `object`.

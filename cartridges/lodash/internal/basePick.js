@@ -1,7 +1,7 @@
 'use strict';
 
-var basePickBy = require('./basePickBy.js');
-var hasIn = require('../hasIn.js');
+var basePickBy = require('./basePickBy');
+var hasIn = require('../hasIn');
 
 /**
  * The base implementation of `pick` without support for individual

@@ -8,7 +8,6 @@ var lodash = require('./wrapperLodash');
  * with `_#value`.
  *
  * @static
- * @memberOf _
  * @since 1.3.0
  * @category Seq
  * @param {*} value The value to wrap.
@@ -28,8 +27,7 @@ var lodash = require('./wrapperLodash');
  *     return o.user + ' is ' + o.age;
  *   })
  *   .head()
- *   .value();
- * // => 'pebbles is 1'
+ *   .value(); => 'pebbles is 1'
  */
 function chain(value) {
     var result = lodash(value);

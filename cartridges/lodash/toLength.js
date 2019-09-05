@@ -1,6 +1,6 @@
 'use strict';
 
-var toInteger = require('./toInteger.js');
+var toInteger = require('./toInteger');
 
 /** Used as references for the maximum length and index of an array. */
 const MAX_ARRAY_LENGTH = 4294967295;
@@ -12,23 +12,20 @@ const MAX_ARRAY_LENGTH = 4294967295;
  * **Note:** This method is based on
  * [`ToLength`](http://ecma-international.org/ecma-262/7.0/#sec-tolength).
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted integer.
  * @example
  *
- * toLength(3.2)
- * // => 3
+ * toLength(3.2) => 3
  *
- * toLength(Number.MIN_VALUE)
- * // => 0
+ * toLength(Number.MIN_VALUE) => 0
  *
- * toLength(Infinity)
- * // => 4294967295
+ * toLength(Infinity) => 4294967295
  *
- * toLength('3.2')
- * // => 3
+ * toLength('3.2') => 3
  */
 function toLength(value) {
     if (!value) {

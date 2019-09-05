@@ -6,6 +6,7 @@ var baseGet = require('./internal/baseGet');
  * Gets the value at `path` of `object`. If the resolved value is
  * `undefined`, the `defaultValue` is returned in its place.
  *
+ * @static
  * @since 3.7.0
  * @category Object
  * @param {Object} object The object to query.
@@ -17,14 +18,11 @@ var baseGet = require('./internal/baseGet');
  *
  * var object = { 'a': [{ 'b': { 'c': 3 } }] }
  *
- * get(object, 'a[0].b.c')
- * // => 3
+ * get(object, 'a[0].b.c') => 3
  *
- * get(object, ['a', '0', 'b', 'c'])
- * // => 3
+ * get(object, ['a', '0', 'b', 'c']) => 3
  *
- * get(object, 'a.b.c', 'default')
- * // => 'default'
+ * get(object, 'a.b.c', 'default') => 'default'
  */
 function get(object, path, defaultValue) {
     var result = object == null ? undefined : baseGet(object, path);

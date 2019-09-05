@@ -1,7 +1,7 @@
 'use strict';
 
-var baseDifference = require('./internal/baseDifference.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var baseDifference = require('./internal/baseDifference');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * Creates an array excluding all given values using
@@ -10,6 +10,7 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  *
  * **Note:** Unlike `pull`, this method returns a new array.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The array to inspect.
@@ -18,8 +19,7 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  * @see difference, union, unionBy, unionWith, xor, xorBy, xorWith
  * @example
  *
- * without([2, 1, 2, 3], 1, 2)
- * // => [3]
+ * without([2, 1, 2, 3], 1, 2) => [3]
  */
 function without(array) {
     var values = Array.prototype.slice.call(arguments);

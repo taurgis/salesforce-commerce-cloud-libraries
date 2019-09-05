@@ -10,13 +10,12 @@ var castFunction = require('./internal/castFunction');
  * early by explicitly returning `false`.
  *
  * @static
- * @memberOf _
  * @since 0.3.0
  * @category Object
  * @param {Object} object The object to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
- * @see _.forOwnRight
+ * @see forOwnRight
  * @example
  *
  * function Foo() {
@@ -26,10 +25,9 @@ var castFunction = require('./internal/castFunction');
  *
  * Foo.prototype.c = 3;
  *
- * _.forOwn(new Foo, function(value, key) {
+ * forOwn(new Foo, function(value, key) {
  *   console.log(key);
- * });
- * // => Logs 'a' then 'b' (iteration order is not guaranteed).
+ * }); => Logs 'a' then 'b' (iteration order is not guaranteed).
  */
 function forOwn(object, iteratee) {
     return object && baseForOwn(object, castFunction(iteratee));

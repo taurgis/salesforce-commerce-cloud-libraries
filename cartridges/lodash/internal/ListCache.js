@@ -1,3 +1,5 @@
+'use strict';
+
 var listCacheClear = require('./listCacheClear');
 var listCacheDelete = require('./listCacheDelete');
 var listCacheGet = require('./listCacheGet');

@@ -22,13 +22,12 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * [`Object.assign`](https://mdn.io/Object/assign).
  *
  * @static
- * @memberOf _
  * @since 0.10.0
  * @category Object
  * @param {Object} object The destination object.
  * @param {...Object} [sources] The source objects.
  * @returns {Object} Returns `object`.
- * @see _.assignIn
+ * @see assignIn
  * @example
  *
  * function Foo() {
@@ -42,8 +41,7 @@ var hasOwnProperty = objectProto.hasOwnProperty;
  * Foo.prototype.b = 2;
  * Bar.prototype.d = 4;
  *
- * _.assign({ 'a': 0 }, new Foo, new Bar);
- * // => { 'a': 1, 'c': 3 }
+ * assign({ 'a': 0 }, new Foo, new Bar); => { 'a': 1, 'c': 3 }
  */
 var assign = createAssigner(function (object, source) {
     if (isPrototype(source) || isArrayLike(source)) {

@@ -11,7 +11,6 @@ var reInterpolate = require('./internal/reInterpolate');
  * following template settings to use alternative delimiters.
  *
  * @static
- * @memberOf _
  * @type {Object}
  */
 var templateSettings = {

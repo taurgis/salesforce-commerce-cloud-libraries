@@ -1,4 +1,5 @@
 'use strict';
+
 var toFinite = require('./toFinite');
 
 /**
@@ -8,24 +9,19 @@ var toFinite = require('./toFinite');
  * [`ToInteger`](http://www.ecma-international.org/ecma-262/7.0/#sec-tointeger).
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to convert.
  * @returns {number} Returns the converted integer.
  * @example
  *
- * _.toInteger(3.2);
- * // => 3
+ * toInteger(3.2); => 3
  *
- * _.toInteger(Number.MIN_VALUE);
- * // => 0
+ * toInteger(Number.MIN_VALUE); => 0
  *
- * _.toInteger(Infinity);
- * // => 1.7976931348623157e+308
+ * toInteger(Infinity); => 1.7976931348623157e+308
  *
- * _.toInteger('3.2');
- * // => 3
+ * toInteger('3.2'); => 3
  */
 function toInteger(value) {
     var result = toFinite(value);

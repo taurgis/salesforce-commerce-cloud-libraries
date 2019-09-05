@@ -1,8 +1,8 @@
 'use strict';
 
-var asciiSize = require('./asciiSize.js');
-var hasUnicode = require('./hasUnicode.js');
-var unicodeSize = require('./unicodeSize.js');
+var asciiSize = require('./asciiSize');
+var hasUnicode = require('./hasUnicode');
+var unicodeSize = require('./unicodeSize');
 
 /**
  * Gets the number of symbols in `string`.

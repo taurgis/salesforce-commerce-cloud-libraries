@@ -1,4 +1,5 @@
 'use strict';
+
 var baseRest = require('./baseRest');
 var isIterateeCall = require('./isIterateeCall');
 

@@ -5,11 +5,10 @@ var keys = require('./keys');
 
 /**
  * Creates an array of own enumerable string keyed-value pairs for `object`
- * which can be consumed by `_.fromPairs`. If `object` is a map or set, its
+ * which can be consumed by `fromPairs`. If `object` is a map or set, its
  * entries are returned.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @alias entries
  * @category Object
@@ -24,8 +23,7 @@ var keys = require('./keys');
  *
  * Foo.prototype.c = 3;
  *
- * _.toPairs(new Foo);
- * // => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
+ * toPairs(new Foo); => [['a', 1], ['b', 2]] (iteration order is not guaranteed)
  */
 var toPairs = createToPairs(keys);
 

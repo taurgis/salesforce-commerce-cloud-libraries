@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSet = require('./internal/baseSet.js');
+var baseSet = require('./internal/baseSet');
 
 /**
  * Sets the value at `path` of `object`. If a portion of `path` doesn't exist,
@@ -10,6 +10,7 @@ var baseSet = require('./internal/baseSet.js');
  *
  * **Note:** This method mutates `object`.
  *
+ * @strict
  * @since 3.7.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -22,12 +23,10 @@ var baseSet = require('./internal/baseSet.js');
  * const object = { 'a': [{ 'b': { 'c': 3 } }] }
  *
  * set(object, 'a[0].b.c', 4)
- * console.log(object.a[0].b.c)
- * // => 4
+ * console.log(object.a[0].b.c) => 4
  *
  * set(object, ['x', '0', 'y', 'z'], 5)
- * console.log(object.x[0].y.z)
- * // => 5
+ * console.log(object.x[0].y.z) => 5
  */
 function set(object, path, value) {
     return object == null ? object : baseSet(object, path, value);

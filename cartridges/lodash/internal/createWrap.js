@@ -1,4 +1,5 @@
 'use strict';
+
 var baseSetData = require('./baseSetData');
 var createBind = require('./createBind');
 var createCurry = require('./createCurry');

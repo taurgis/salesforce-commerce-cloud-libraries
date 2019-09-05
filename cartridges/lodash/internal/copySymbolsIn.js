@@ -1,7 +1,7 @@
 'use strict';
 
-var copyObject = require('./copyObject.js');
-var getSymbolsIn = require('./getSymbolsIn.js');
+var copyObject = require('./copyObject');
+var getSymbolsIn = require('./getSymbolsIn');
 
 /**
  * Copies own and inherited symbols of `source` to `object`.

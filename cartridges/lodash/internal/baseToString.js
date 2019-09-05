@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayMap = require('./arrayMap');
 var isArray = require('../isArray');
 var isSymbol = require('../isSymbol');

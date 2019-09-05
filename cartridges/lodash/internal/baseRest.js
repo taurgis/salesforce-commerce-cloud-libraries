@@ -1,4 +1,5 @@
 'use strict';
+
 var identity = require('../identity');
 var overRest = require('./overRest');
 var setToString = require('./setToString');

@@ -20,7 +20,6 @@ var WRAP_PARTIAL_FLAG = 32;
  * property of bound functions.
  *
  * @static
- * @memberOf _
  * @since 0.1.0
  * @category Function
  * @param {Function} func The function to bind.
@@ -35,14 +34,13 @@ var WRAP_PARTIAL_FLAG = 32;
  *
  * var object = { 'user': 'fred' };
  *
- * var bound = _.bind(greet, object, 'hi');
- * bound('!');
- * // => 'hi fred!'
+ * var bound = bind(greet, object, 'hi');
+ * bound('!'); => 'hi fred!'
  *
- * // Bound with placeholders.
- * var bound = _.bind(greet, object, _, '!');
- * bound('hi');
- * // => 'hi fred!'
+ * * Bound with placeholders. *
+ *
+ * var bound = bind(greet, object, _, '!');
+ * bound('hi');=> 'hi fred!'
  */
 var bind = baseRest(function (func, thisArg, partials) {
     var bitmask = WRAP_BIND_FLAG;

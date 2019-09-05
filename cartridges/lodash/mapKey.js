@@ -6,6 +6,7 @@
  * string keyed property of `object` thru `iteratee`. The iteratee is invoked
  * with three arguments: (value, key, object).
  *
+ * @static
  * @since 3.8.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -16,8 +17,7 @@
  *
  * mapKey({ 'a': 1, 'b': 2 }, function(value, key) {
  *   return key + value
- * })
- * // => { 'a1': 1, 'b2': 2 }
+ * }) => { 'a1': 1, 'b2': 2 }
  */
 function mapKey(object, iteratee) {
     object = Object(object);

@@ -1,6 +1,6 @@
 'use strict';
 
-var baseSet = require('./internal/baseSet.js');
+var baseSet = require('./internal/baseSet');
 
 /**
  * This method is like `set` except that it accepts `customizer` which is
@@ -10,6 +10,7 @@ var baseSet = require('./internal/baseSet.js');
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
  * @since 4.0.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -21,8 +22,7 @@ var baseSet = require('./internal/baseSet.js');
  *
  * const object = {}
  *
- * setWith(object, '[0][1]', 'a', Object)
- * // => { '0': { '1': 'a' } }
+ * setWith(object, '[0][1]', 'a', Object) => { '0': { '1': 'a' } }
  */
 function setWith(object, path, value, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

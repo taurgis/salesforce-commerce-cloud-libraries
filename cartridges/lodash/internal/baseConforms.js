@@ -1,7 +1,7 @@
 'use strict';
 
-var baseConformsTo = require('./baseConformsTo.js');
-var keys = require('../keys.js');
+var baseConformsTo = require('./baseConformsTo');
+var keys = require('../keys');
 
 /**
  * The base implementation of `conforms` which doesn't clone `source`.
@@ -12,7 +12,7 @@ var keys = require('../keys.js');
  */
 function baseConforms(source) {
     var props = keys(source);
-    return (object) => baseConformsTo(object, source, props);
+    return function (object) { return baseConformsTo(object, source, props); };
 }
 
 module.exports = baseConforms;

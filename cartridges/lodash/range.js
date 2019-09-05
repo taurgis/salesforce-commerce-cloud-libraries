@@ -1,6 +1,6 @@
 'use strict';
 
-var createRange = require('./internal/createRange.js');
+var createRange = require('./internal/createRange');
 
 /**
  * Creates an array of numbers (positive and/or negative) progressing from
@@ -11,6 +11,7 @@ var createRange = require('./internal/createRange.js');
  * **Note:** JavaScript follows the IEEE-754 standard for resolving
  * floating-point values which can produce unexpected results.
  *
+ * @static
  * @since 0.1.0
  * @category Util
  * @param {number} [start=0] The start of the range.
@@ -20,26 +21,19 @@ var createRange = require('./internal/createRange.js');
  * @see inRange, rangeRight
  * @example
  *
- * range(4)
- * // => [0, 1, 2, 3]
+ * range(4) => [0, 1, 2, 3]
  *
- * range(-4)
- * // => [0, -1, -2, -3]
+ * range(-4) => [0, -1, -2, -3]
  *
- * range(1, 5)
- * // => [1, 2, 3, 4]
+ * range(1, 5) => [1, 2, 3, 4]
  *
- * range(0, 20, 5)
- * // => [0, 5, 10, 15]
+ * range(0, 20, 5) => [0, 5, 10, 15]
  *
- * range(0, -4, -1)
- * // => [0, -1, -2, -3]
+ * range(0, -4, -1) => [0, -1, -2, -3]
  *
- * range(1, 4, 0)
- * // => [1, 1, 1]
+ * range(1, 4, 0) => [1, 1, 1]
  *
- * range(0)
- * // => []
+ * range(0) => []
  */
 const range = createRange();
 

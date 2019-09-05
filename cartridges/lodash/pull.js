@@ -1,6 +1,6 @@
 'use strict';
 
-var pullAll = require('./pullAll.js');
+var pullAll = require('./pullAll');
 
 /**
  * Removes all given values= require(`array` using);
@@ -10,6 +10,7 @@ var pullAll = require('./pullAll.js');
  * **Note:** Unlike `without`, this method mutates `array`. Use `remove`
  * to remove elements= require(an array by predicate.);
  *
+ * @static
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -21,8 +22,7 @@ var pullAll = require('./pullAll.js');
  * const array = ['a', 'b', 'c', 'a', 'b', 'c']
  *
  * pull(['a', 'b', 'c', 'a', 'b', 'c'], 'a', 'c')
- * console.log(array)
- * // => ['b', 'b']
+ * console.log(array) => ['b', 'b']
  */
 function pull(array) {
     var values = Array.prototype.slice.call(arguments);

@@ -9,15 +9,14 @@ var nativeMax = Math.max;
 var nativeMin = Math.min;
 
 /**
- * This method is like `_.findIndex` except that it iterates over elements
+ * This method is like `findIndex` except that it iterates over elements
  * of `collection` from right to left.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Array
  * @param {Array} array The array to inspect.
- * @param {Function} [predicate=_.identity] The function invoked per iteration.
+ * @param {Function} [predicate=identity] The function invoked per iteration.
  * @param {number} [fromIndex=array.length-1] The index to search from.
  * @returns {number} Returns the index of the found element, else `-1`.
  * @example
@@ -28,20 +27,16 @@ var nativeMin = Math.min;
  *   { 'user': 'pebbles', 'active': false }
  * ];
  *
- * _.findLastIndex(users, function(o) { return o.user == 'pebbles'; });
- * // => 2
+ * findLastIndex(users, function(o) { return o.user == 'pebbles'; }); => 2
  *
- * // The `_.matches` iteratee shorthand.
- * _.findLastIndex(users, { 'user': 'barney', 'active': true });
- * // => 0
+ * * The `_.matches` iteratee shorthand. *
+ * findLastIndex(users, { 'user': 'barney', 'active': true }); => 0
  *
- * // The `_.matchesProperty` iteratee shorthand.
- * _.findLastIndex(users, ['active', false]);
- * // => 2
+ * * The `_.matchesProperty` iteratee shorthand. *
+ * findLastIndex(users, ['active', false]); => 2
  *
- * // The `_.property` iteratee shorthand.
- * _.findLastIndex(users, 'active');
- * // => 0
+ * * The `_.property` iteratee shorthand. *
+ * findLastIndex(users, 'active'); => 0
  */
 function findLastIndex(array, predicate, fromIndex) {
     var length = array == null ? 0 : array.length;

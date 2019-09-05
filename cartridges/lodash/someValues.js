@@ -5,6 +5,7 @@
  * Iteration is stopped once `predicate` returns truthy. The predicate is
  * invoked with three arguments: (value, key, object).
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -13,15 +14,14 @@
  *  else `false`.
  * @example
  *
- * someValues({ 'a': 0, 'b': 'yes', 'c': false }, Boolean)
- * // => true
+ * someValues({ 'a': 0, 'b': 'yes', 'c': false }, Boolean) => true
  */
 function someValues(object, predicate) {
     object = Object(object);
     const props = Object.keys(object);
 
-    for (const key of props) {
-        if (predicate(object[key], key, object)) {
+    for (var key in props) {
+        if (predicate(object[props[key]], key, object)) {
             return true;
         }
     }

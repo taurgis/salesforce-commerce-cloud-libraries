@@ -1,17 +1,15 @@
 'use strict';
 
-var castPath = require('./internal/castPath.js');
-var isArguments = require('./isArguments.js');
-var isIndex = require('./internal/isIndex.js');
-var isLength = require('./isLength.js');
-var toKey = require('./internal/toKey.js');
-
-/** Used to check objects for own properties. */
-
+var castPath = require('./internal/castPath');
+var isArguments = require('./isArguments');
+var isIndex = require('./internal/isIndex');
+var isLength = require('./isLength');
+var toKey = require('./internal/toKey');
 
 /**
  * Checks if `path` is a direct property of `object`.
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to query.
@@ -23,11 +21,9 @@ var toKey = require('./internal/toKey.js');
  * const object = { 'a': { 'b': 2 } }
  * const other = create({ 'a': create({ 'b': 2 }) })
  *
- * hasPath({ 'a': { 'b': 2 } }, 'a.b')
- * // => true
+ * hasPath({ 'a': { 'b': 2 } }, 'a.b') => true
  *
- * hasPath(object, ['a', 'b'])
- * // => true
+ * hasPath(object, ['a', 'b']) => true
  */
 function hasPath(object, path) {
     path = castPath(path, object);

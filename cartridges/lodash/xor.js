@@ -1,7 +1,7 @@
 'use strict';
 
-var baseXor = require('./internal/baseXor.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
+var baseXor = require('./internal/baseXor');
+var isArrayLikeObject = require('./isArrayLikeObject');
 
 /**
  * Creates an array of unique values that is the
@@ -9,6 +9,7 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  * of the given arrays. The order of result values is determined by the order
  * they occur in the arrays.
  *
+ * @static
  * @since 2.4.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -16,8 +17,7 @@ var isArrayLikeObject = require('./isArrayLikeObject.js');
  * @see difference, union, unionBy, unionWith, without, xorBy, xorWith
  * @example
  *
- * xor([2, 1], [2, 3])
- * // => [1, 3]
+ * xor([2, 1], [2, 3]) => [1, 3]
  */
 function xor() {
     var arrays = Array.prototype.slice.call(arguments);

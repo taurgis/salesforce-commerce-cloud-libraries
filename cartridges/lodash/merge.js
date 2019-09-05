@@ -1,7 +1,7 @@
 'use strict';
 
-var baseMerge = require('./internal/baseMerge.js');
-var createAssigner = require('./internal/createAssigner.js');
+var baseMerge = require('./internal/baseMerge');
+var createAssigner = require('./internal/createAssigner');
 
 /**
  * This method is like `assign` except that it recursively merges own and
@@ -14,6 +14,7 @@ var createAssigner = require('./internal/createAssigner.js');
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
  * @since 0.5.0
  * @category Object
  * @param {Object} object The destination object.
@@ -25,8 +26,7 @@ var createAssigner = require('./internal/createAssigner.js');
  *
  * const other = {'a': [{ 'c': 3 }, { 'e': 5 }] }
  *
- * merge({'a': [{ 'b': 2 }, { 'd': 4 }] }, {'a': [{ 'c': 3 }, { 'e': 5 }] })
- * // => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
+ * merge(object, other) => { 'a': [{ 'b': 2, 'c': 3 }, { 'd': 4, 'e': 5 }] }
  */
 const merge = createAssigner(function (object, source, srcIndex) {
     return baseMerge(object, source, srcIndex);

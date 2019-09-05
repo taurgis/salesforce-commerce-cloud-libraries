@@ -7,21 +7,17 @@ var baseToString = require('./internal/baseToString');
  * and `undefined` values. The sign of `-0` is preserved.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to convert.
  * @returns {string} Returns the converted string.
  * @example
  *
- * _.toString(null);
- * // => ''
+ * toString(null); => ''
  *
- * _.toString(-0);
- * // => '-0'
+ * toString(-0); => '-0'
  *
- * _.toString([1, 2, 3]);
- * // => '1,2,3'
+ * toString([1, 2, 3]); => '1,2,3'
  */
 function toString(value) {
     return value == null ? '' : baseToString(value);

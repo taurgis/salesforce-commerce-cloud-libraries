@@ -7,6 +7,7 @@
  *
  * If you want an object in return, consider `pickBy`.
  *
+ * @static
  * @since 5.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -17,8 +18,7 @@
  *
  * const object = { 'a': 5, 'b': 8, 'c': 10 }
  *
- * filterObject(object, (n) => !(n % 5))
- * // => [5, 10]
+ * filterObject(object, (n) => !(n % 5)) => [5, 10]
  */
 function filterObject(object, predicate) {
     object = Object(object);

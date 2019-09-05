@@ -1,3 +1,5 @@
+'use strict';
+
 var baseCreate = require('./baseCreate');
 var baseLodash = require('./baseLodash');
 var each = require('../each');

@@ -1,9 +1,9 @@
 'use strict';
 
-var baseFlatten = require('./internal/baseFlatten.js');
-var baseUniq = require('./internal/baseUniq.js');
-var isArrayLikeObject = require('./isArrayLikeObject.js');
-var last = require('./last.js');
+var baseFlatten = require('./internal/baseFlatten');
+var baseUniq = require('./internal/baseUniq');
+var isArrayLikeObject = require('./isArrayLikeObject');
+var last = require('./last');
 
 /**
  * This method is like `union` except that it accepts `comparator` which
@@ -11,6 +11,7 @@ var last = require('./last.js');
  * the first array in which the value occurs. The comparator is invoked
  * with two arguments: (arrVal, othVal).
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -22,8 +23,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * unionWith(objects, others, isEqual)
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
+ * unionWith(objects, others, isEqual) => [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 1 }]
  */
 function unionWith() {
     var arrays = Array.prototype.slice.call(arguments);

@@ -7,6 +7,7 @@ var isObjectLike = require('./isObjectLike');
  * Checks if `value` is a plain object, that is, an object created by the
  * `Object` constructor or one with a `[[Prototype]]` of `null`.
  *
+ * @static
  * @since 0.8.0
  * @category Lang
  * @param {*} value The value to check.
@@ -17,17 +18,13 @@ var isObjectLike = require('./isObjectLike');
  *   this.a = 1
  * }
  *
- * isPlainObject(new Foo)
- * // => false
+ * isPlainObject(new Foo) => false
  *
- * isPlainObject([1, 2, 3])
- * // => false
+ * isPlainObject([1, 2, 3]) => false
  *
- * isPlainObject({ 'x': 0, 'y': 0 })
- * // => true
+ * isPlainObject({ 'x': 0, 'y': 0 }) => true
  *
- * isPlainObject(Object.create(null))
- * // => true
+ * isPlainObject(Object.create(null)) => true
  */
 function isPlainObject(value) {
     if (!isObjectLike(value) || getTag(value) !== '[object Object]') {

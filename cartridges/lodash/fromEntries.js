@@ -4,14 +4,14 @@
  * The inverse of `entries`is method returns an object composed
  *= require(key-value `pairs`.);
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} pairs The key-value pairs.
  * @returns {Object} Returns the new object.
  * @example
  *
- * fromEntries([['a', 1], ['b', 2]])
- * // => { 'a': 1, 'b': 2 }
+ * fromEntries([['a', 1], ['b', 2]]) => { 'a': 1, 'b': 2 }
  */
 function fromEntries(pairs) {
     const result = {};

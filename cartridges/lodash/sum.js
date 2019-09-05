@@ -1,18 +1,18 @@
 'use strict';
 
-var baseSum = require('./internal/baseSum.js');
+var baseSum = require('./internal/baseSum');
 
 /**
  * Computes the sum of the values in `array`.
  *
+ * @static
  * @since 3.4.0
  * @category Math
  * @param {Array} array The array to iterate over.
  * @returns {number} Returns the sum.
  * @example
  *
- * sum([4, 2, 8, 6])
- * // => 20
+ * sum([4, 2, 8, 6]) => 20
  */
 function sum(array) {
     return (array != null && array.length)

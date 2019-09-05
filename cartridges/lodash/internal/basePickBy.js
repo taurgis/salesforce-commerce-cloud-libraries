@@ -1,8 +1,8 @@
 'use strict';
 
-var baseGet = require('./baseGet.js');
-var baseSet = require('./baseSet.js');
-var castPath = require('./castPath.js');
+var baseGet = require('./baseGet');
+var baseSet = require('./baseSet');
+var castPath = require('./castPath');
 
 /**
  * The base implementation of `pickBy`.

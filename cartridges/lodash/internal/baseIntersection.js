@@ -1,10 +1,10 @@
 'use strict';
 
-var SetCache = require('./SetCache.js');
-var arrayIncludes = require('./arrayIncludes.js');
-var arrayIncludesWith = require('./arrayIncludesWith.js');
-var map = require('../map.js');
-var cacheHas = require('./cacheHas.js');
+var SetCache = require('./SetCache');
+var arrayIncludes = require('./arrayIncludes');
+var arrayIncludesWith = require('./arrayIncludesWith');
+var map = require('../map');
+var cacheHas = require('./cacheHas');
 
 /**
  * The base implementation of methods like `intersection` that accepts an

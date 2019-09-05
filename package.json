@@ -1,6 +1,6 @@
 {
   "name": "salesforce-commerce-cloud-libraries",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "version-sfra": "4.1.0",
   "description": "A cartridge containing popuplar libraries converted / checked to work in the Salesforce Commerce Cloud B2C.",
   "main": "index.js",

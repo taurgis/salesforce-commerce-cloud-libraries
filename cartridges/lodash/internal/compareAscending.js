@@ -1,3 +1,5 @@
+'use strict';
+
 var isSymbol = require('../isSymbol');
 
 /**

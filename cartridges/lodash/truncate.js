@@ -10,7 +10,7 @@ var stringToArray = require('./internal/stringToArray');
 var toInteger = require('./toInteger');
 var toString = require('./toString');
 
-/** Used as default options for `_.truncate`. */
+/** Used as default options for `truncate`. */
 var DEFAULT_TRUNC_LENGTH = 30;
 var DEFAULT_TRUNC_OMISSION = '...';
 
@@ -23,7 +23,6 @@ var reFlags = /\w*$/;
  * string which defaults to "...".
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to truncate.
@@ -34,25 +33,21 @@ var reFlags = /\w*$/;
  * @returns {string} Returns the truncated string.
  * @example
  *
- * _.truncate('hi-diddly-ho there, neighborino');
- * // => 'hi-diddly-ho there, neighbo...'
+ * truncate('hi-diddly-ho there, neighborino'); => 'hi-diddly-ho there, neighbo...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': ' '
- * });
- * // => 'hi-diddly-ho there,...'
+ * }); => 'hi-diddly-ho there,...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'length': 24,
  *   'separator': /,? +/
- * });
- * // => 'hi-diddly-ho there...'
+ * }); => 'hi-diddly-ho there...'
  *
- * _.truncate('hi-diddly-ho there, neighborino', {
+ * truncate('hi-diddly-ho there, neighborino', {
  *   'omission': ' [...]'
- * });
- * // => 'hi-diddly-ho there, neig [...]'
+ * }); => 'hi-diddly-ho there, neig [...]'
  */
 function truncate(string, options) {
     var length = DEFAULT_TRUNC_LENGTH;

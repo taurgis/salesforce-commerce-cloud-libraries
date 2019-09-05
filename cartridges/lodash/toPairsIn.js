@@ -5,11 +5,10 @@ var keysIn = require('./keysIn');
 
 /**
  * Creates an array of own and inherited enumerable string keyed-value pairs
- * for `object` which can be consumed by `_.fromPairs`. If `object` is a map
+ * for `object` which can be consumed by `fromPairs`. If `object` is a map
  * or set, its entries are returned.
  *
  * @static
- * @memberOf _
  * @since 4.0.0
  * @alias entriesIn
  * @category Object
@@ -24,8 +23,7 @@ var keysIn = require('./keysIn');
  *
  * Foo.prototype.c = 3;
  *
- * _.toPairsIn(new Foo);
- * // => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
+ * toPairsIn(new Foo); => [['a', 1], ['b', 2], ['c', 3]] (iteration order is not guaranteed)
  */
 var toPairsIn = createToPairs(keysIn);
 

@@ -13,17 +13,18 @@ var nodeIsTypedArray = nodeTypes && nodeTypes.isTypedArray;
 /**
  * Checks if `value` is classified as a typed array.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a typed array, else `false`.
  * @example
  *
- * isTypedArray(new Uint8Array)
- * // => true
+ * isTypedArray(new Uint8Array) => true
  *
- * isTypedArray([])
- * // => false
+ * isTypedArray([]) => false
+ *
+ * @implNote This is not supported by Salesforce Commerce Cloud
  */
 var isTypedArray = nodeIsTypedArray
     ? function (value) { return nodeIsTypedArray(value); }

@@ -1,26 +1,26 @@
 'use strict';
 
 var Stack = require('./Stack');
-var arrayEach = require('./arrayEach.js');
-var assignValue = require('./assignValue.js');
-var cloneBuffer = require('./cloneBuffer.js');
-var copyArray = require('./copyArray.js');
-var copyObject = require('./copyObject.js');
-var cloneArrayBuffer = require('./cloneArrayBuffer.js');
-var cloneDataView = require('./cloneDataView.js');
-var cloneRegExp = require('./cloneRegExp.js');
-var cloneSymbol = require('./cloneSymbol.js');
-var cloneTypedArray = require('./cloneTypedArray.js');
-var copySymbols = require('./copySymbols.js');
-var copySymbolsIn = require('./copySymbolsIn.js');
-var getAllKeys = require('./getAllKeys.js');
-var getAllKeysIn = require('./getAllKeysIn.js');
-var getTag = require('./getTag.js');
-var initCloneObject = require('./initCloneObject.js');
-var isBuffer = require('../isBuffer.js');
-var isObject = require('../isObject.js');
-var keys = require('../keys.js');
-var keysIn = require('../keysIn.js');
+var arrayEach = require('./arrayEach');
+var assignValue = require('./assignValue');
+var cloneBuffer = require('./cloneBuffer');
+var copyArray = require('./copyArray');
+var copyObject = require('./copyObject');
+var cloneArrayBuffer = require('./cloneArrayBuffer');
+var cloneDataView = require('./cloneDataView');
+var cloneRegExp = require('./cloneRegExp');
+var cloneSymbol = require('./cloneSymbol');
+var cloneTypedArray = require('./cloneTypedArray');
+var copySymbols = require('./copySymbols');
+var copySymbolsIn = require('./copySymbolsIn');
+var getAllKeys = require('./getAllKeys');
+var getAllKeysIn = require('./getAllKeysIn');
+var getTag = require('./getTag');
+var initCloneObject = require('./initCloneObject');
+var isBuffer = require('../isBuffer');
+var isObject = require('../isObject');
+var keys = require('../keys');
+var keysIn = require('../keysIn');
 
 /** Used to compose bitmasks for cloning. */
 var CLONE_DEEP_FLAG = 1;

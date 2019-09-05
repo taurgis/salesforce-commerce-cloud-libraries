@@ -13,12 +13,11 @@ var keys = require('./keys');
  * object to the destination object. If `object` is a function, then methods
  * are added to its prototype as well.
  *
- * **Note:** Use `_.runInContext` to create a pristine `lodash` function to
+ * **Note:** Use `runInContext` to create a pristine `lodash` function to
  * avoid conflicts caused by modifying the original.
  *
  * @static
  * @since 0.1.0
- * @memberOf _
  * @category Util
  * @param {Function|Object} [object=lodash] The destination object.
  * @param {Object} source The object of functions to add.
@@ -28,21 +27,18 @@ var keys = require('./keys');
  * @example
  *
  * function vowels(string) {
- *   return _.filter(string, function(v) {
+ *   return filter(string, function(v) {
  *     return /[aeiou]/i.test(v);
  *   });
  * }
  *
- * _.mixin({ 'vowels': vowels });
- * _.vowels('fred');
- * // => ['e']
+ * mixin({ 'vowels': vowels });
+ * vowels('fred'); => ['e']
  *
- * _('fred').vowels().value();
- * // => ['e']
+ * _('fred').vowels().value(); => ['e']
  *
- * _.mixin({ 'vowels': vowels }, { 'chain': false });
- * _('fred').vowels();
- * // => ['e']
+ * mixin({ 'vowels': vowels }, { 'chain': false });
+ * _('fred').vowels(); => ['e']
  */
 function mixin(object, source, options) {
     var props = keys(source);

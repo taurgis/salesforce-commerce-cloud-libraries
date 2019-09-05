@@ -1,3 +1,5 @@
+'use strict';
+
 var ListCache = require('./ListCache');
 var stackClear = require('./stackClear');
 var stackDelete = require('./stackDelete');

@@ -23,7 +23,6 @@ var WRAP_PARTIAL_FLAG = 32;
  * builds, may be used as a placeholder for partially applied arguments.
  *
  * @static
- * @memberOf _
  * @since 0.10.0
  * @category Function
  * @param {Object} object The object to invoke the method on.
@@ -39,21 +38,19 @@ var WRAP_PARTIAL_FLAG = 32;
  *   }
  * };
  *
- * var bound = _.bindKey(object, 'greet', 'hi');
- * bound('!');
- * // => 'hi fred!'
+ * var bound = bindKey(object, 'greet', 'hi');
+ * bound('!');// => 'hi fred!'
  *
  * object.greet = function(greeting, punctuation) {
  *   return greeting + 'ya ' + this.user + punctuation;
  * };
  *
- * bound('!');
- * // => 'hiya fred!'
+ * bound('!'); => 'hiya fred!'
  *
- * // Bound with placeholders.
- * var bound = _.bindKey(object, 'greet', _, '!');
- * bound('hi');
- * // => 'hiya fred!'
+ * * Bound with placeholders. *
+ *
+ * var bound = bindKey(object, 'greet', _, '!');
+ * bound('hi'); => 'hiya fred!'
  */
 var bindKey = baseRest(function (object, key, partials) {
     var bitmask = WRAP_BIND_FLAG | WRAP_BIND_KEY_FLAG;

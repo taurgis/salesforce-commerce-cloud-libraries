@@ -1,11 +1,12 @@
 'use strict';
 
-var isError = require('./isError.js');
+var isError = require('./isError');
 
 /**
  * Attempts to invoke `func`, returning either the result or the caught error
  * object. Any additional arguments are provided to `func` when it's invoked.
  *
+ * @static
  * @since 3.0.0
  * @category Util
  * @param {Function} func The function to attempt.

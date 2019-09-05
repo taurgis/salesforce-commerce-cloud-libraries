@@ -1,22 +1,21 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
-var isObject = require('./isObject.js');
+var getTag = require('./internal/getTag');
+var isObject = require('./isObject');
 
 /**
  * Checks if `value` is classified as a `Function` object.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a function, else `false`.
  * @example
  *
- * isFunction(_)
- * // => true
+ * isFunction(_) => true
  *
- * isFunction(/abc/)
- * // => false
+ * isFunction(/abc/) => false
  */
 function isFunction(value) {
     if (!isObject(value)) {

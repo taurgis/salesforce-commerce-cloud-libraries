@@ -7,6 +7,7 @@ var isObjectLike = require('./isObjectLike');
  * This method is like `isArrayLike` except that it also checks if `value`
  * is an object.
  *
+ * @static
  * @since 4.0.0
  * @category Lang
  * @param {*} value The value to check.
@@ -14,17 +15,13 @@ var isObjectLike = require('./isObjectLike');
  *  else `false`.
  * @example
  *
- * isArrayLikeObject([1, 2, 3])
- * // => true
+ * isArrayLikeObject([1, 2, 3]) => true
  *
- * isArrayLikeObject(document.body.children)
- * // => true
+ * isArrayLikeObject(document.body.children) => true
  *
- * isArrayLikeObject('abc')
- * // => false
+ * isArrayLikeObject('abc') => false
  *
- * isArrayLikeObject(Function)
- * // => false
+ * isArrayLikeObject(Function) => false
  */
 function isArrayLikeObject(value) {
     return isObjectLike(value) && isArrayLike(value);

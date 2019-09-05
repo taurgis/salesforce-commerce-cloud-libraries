@@ -1,13 +1,14 @@
 'use strict';
 
-var baseValues = require('./internal/baseValues.js');
-var keys = require('./keys.js');
+var baseValues = require('./internal/baseValues');
+var keys = require('./keys');
 
 /**
  * Creates an array of the own enumerable string keyed property values of `object`.
  *
  * **Note:** Non-object values are coerced to objects.
  *
+ * @static
  * @since 0.1.0
  * @category Object
  * @param {Object} object The object to query.
@@ -22,11 +23,9 @@ var keys = require('./keys.js');
  *
  * Foo.prototype.c = 3
  *
- * values(new Foo)
- * // => [1, 2] (iteration order is not guaranteed)
+ * values(new Foo) => [1, 2] (iteration order is not guaranteed)
  *
- * values('hi')
- * // => ['h', 'i']
+ * values('hi') => ['h', 'i']
  */
 function values(object) {
     return object == null ? [] : baseValues(object, keys(object));

@@ -1,9 +1,9 @@
 'use strict';
 
-var map = require('./map.js');
-var baseIntersection = require('./internal/baseIntersection.js');
-var castArrayLikeObject = require('./internal/castArrayLikeObject.js');
-var last = require('./last.js');
+var map = require('./map');
+var baseIntersection = require('./internal/baseIntersection');
+var castArrayLikeObject = require('./internal/castArrayLikeObject');
+var last = require('./last');
 
 /**
  * This method is like `intersection` except that it accepts `comparator`
@@ -11,6 +11,7 @@ var last = require('./last.js');
  * of result values are determined by the first array. The comparator is
  * invoked with two arguments: (arrVal, othVal).
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.
@@ -21,8 +22,7 @@ var last = require('./last.js');
  * const objects = [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }]
  * const others = [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }]
  *
- * intersectionWith([{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual)
- * // => [{ 'x': 1, 'y': 2 }]
+ * intersectionWith([{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual) => [{ 'x': 1, 'y': 2 }]
  */
 function intersectionWith() {
     var arrays = Array.prototype.slice.call(arguments);

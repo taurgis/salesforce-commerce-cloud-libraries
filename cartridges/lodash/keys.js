@@ -10,6 +10,7 @@ var isArrayLike = require('./isArrayLike');
  * [ES spec](http://ecma-international.org/ecma-262/7.0/#sec-object.keys)
  * for more details.
  *
+ * @static
  * @since 0.1.0
  * @category Object
  * @param {Object} object The object to query.
@@ -24,11 +25,9 @@ var isArrayLike = require('./isArrayLike');
  *
  * Foo.prototype.c = 3
  *
- * keys(new Foo)
- * // => ['a', 'b'] (iteration order is not guaranteed)
+ * keys(new Foo) => ['a', 'b'] (iteration order is not guaranteed)
  *
- * keys('hi')
- * // => ['0', '1']
+ * keys('hi') => ['0', '1']
  */
 function keys(object) {
     return isArrayLike(object)

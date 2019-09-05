@@ -4,17 +4,16 @@ var baseForOwnRight = require('./internal/baseForOwnRight');
 var castFunction = require('./internal/castFunction');
 
 /**
- * This method is like `_.forOwn` except that it iterates over properties of
+ * This method is like `forOwn` except that it iterates over properties of
  * `object` in the opposite order.
  *
  * @static
- * @memberOf _
  * @since 2.0.0
  * @category Object
  * @param {Object} object The object to iterate over.
- * @param {Function} [iteratee=_.identity] The function invoked per iteration.
+ * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @returns {Object} Returns `object`.
- * @see _.forOwn
+ * @see forOwn
  * @example
  *
  * function Foo() {
@@ -24,10 +23,9 @@ var castFunction = require('./internal/castFunction');
  *
  * Foo.prototype.c = 3;
  *
- * _.forOwnRight(new Foo, function(value, key) {
+ * forOwnRight(new Foo, function(value, key) {
  *   console.log(key);
- * });
- * // => Logs 'b' then 'a' assuming `_.forOwn` logs 'a' then 'b'.
+ * }); => Logs 'b' then 'a' assuming `forOwn` logs 'a' then 'b'.
  */
 function forOwnRight(object, iteratee) {
     return object && baseForOwnRight(object, castFunction(iteratee));

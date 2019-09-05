@@ -1,10 +1,11 @@
 'use strict';
 
-var createMathOperation = require('./internal/createMathOperation.js');
+var createMathOperation = require('./internal/createMathOperation');
 
 /**
  * Multiply two numbers.
  *
+ * @static
  * @since 4.7.0
  * @category Math
  * @param {number} multiplier The first number in a multiplication.
@@ -12,8 +13,7 @@ var createMathOperation = require('./internal/createMathOperation.js');
  * @returns {number} Returns the product.
  * @example
  *
- * multiply(6, 4)
- * // => 24
+ * multiply(6, 4) => 24
  */
 const multiply = createMathOperation(function (multiplier, multiplicand) { return multiplier * multiplicand; }, 1);
 

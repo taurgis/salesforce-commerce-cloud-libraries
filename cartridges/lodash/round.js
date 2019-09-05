@@ -1,10 +1,11 @@
 'use strict';
 
-var createRound = require('./internal/createRound.js');
+var createRound = require('./internal/createRound');
 
 /**
  * Computes `number` rounded to `precision`.
  *
+ * @static
  * @since 3.10.0
  * @category Math
  * @param {number} number The number to round.
@@ -12,14 +13,11 @@ var createRound = require('./internal/createRound.js');
  * @returns {number} Returns the rounded number.
  * @example
  *
- * round(4.006)
- * // => 4
+ * round(4.006) => 4
  *
- * round(4.006, 2)
- * // => 4.01
+ * round(4.006, 2) => 4.01
  *
- * round(4060, -2)
- * // => 4100
+ * round(4060, -2) => 4100
  */
 const round = createRound('round');
 

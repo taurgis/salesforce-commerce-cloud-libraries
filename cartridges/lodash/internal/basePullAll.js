@@ -1,9 +1,9 @@
 'use strict';
 
-var map = require('../map.js');
-var baseIndexOf = require('./baseIndexOf.js');
-var baseIndexOfWith = require('./baseIndexOfWith.js');
-var copyArray = require('./copyArray.js');
+var map = require('../map');
+var baseIndexOf = require('./baseIndexOf');
+var baseIndexOfWith = require('./baseIndexOfWith');
+var copyArray = require('./copyArray');
 
 /**
  * The base implementation of `pullAllBy`.

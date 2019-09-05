@@ -1,6 +1,6 @@
 'use strict';
 
-var basePullAll = require('./internal/basePullAll.js');
+var basePullAll = require('./internal/basePullAll');
 
 /**
  * This method is like `pullAll` except that it accepts `comparator` which
@@ -9,6 +9,7 @@ var basePullAll = require('./internal/basePullAll.js');
  *
  * **Note:** Unlike `differenceWith`, this method mutates `array`.
  *
+ * @static
  * @since 4.6.0
  * @category Array
  * @param {Array} array The array to modify.
@@ -21,8 +22,7 @@ var basePullAll = require('./internal/basePullAll.js');
  * const array = [{ 'x': 1, 'y': 2 }, { 'x': 3, 'y': 4 }, { 'x': 5, 'y': 6 }]
  *
  * pullAllWith(array, [{ 'x': 3, 'y': 4 }], isEqual)
- * console.log(array)
- * // => [{ 'x': 1, 'y': 2 }, { 'x': 5, 'y': 6 }]
+ * console.log(array) => [{ 'x': 1, 'y': 2 }, { 'x': 5, 'y': 6 }]
  */
 function pullAllWith(array, values, comparator) {
     return (array != null && array.length && values != null && values.length)

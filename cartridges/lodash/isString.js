@@ -1,21 +1,20 @@
 'use strict';
 
-var getTag = require('./internal/getTag.js');
+var getTag = require('./internal/getTag');
 
 /**
  * Checks if `value` is classified as a `String` primitive or object.
  *
+ * @static
  * @since 0.1.0
  * @category Lang
  * @param {*} value The value to check.
  * @returns {boolean} Returns `true` if `value` is a string, else `false`.
  * @example
  *
- * isString('abc')
- * // => true
+ * isString('abc') => true
  *
- * isString(1)
- * // => false
+ * isString(1) => false
  */
 function isString(value) {
     const type = typeof value;

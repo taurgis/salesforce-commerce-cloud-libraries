@@ -6,6 +6,7 @@
  * `iteratee`. The iteratee is invoked with three arguments:
  * (value, key, object).
  *
+ * @static
  * @since 2.4.0
  * @category Object
  * @param {Object} object The object to iterate over.
@@ -22,8 +23,7 @@
  * mapValue({
  *   'fred':    { 'user': 'fred',    'age': 40 },
  *   'pebbles': { 'user': 'pebbles', 'age': 1 }
- * }, function({ age }) { return age; })
- * // => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
+ * }, function({ age }) { return age; }) => { 'fred': 40, 'pebbles': 1 } (iteration order is not guaranteed)
  */
 function mapValue(object, iteratee) {
     object = Object(object);

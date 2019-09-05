@@ -1,11 +1,12 @@
 'use strict';
 
-var baseSortedIndex = require('./internal/baseSortedIndex.js');
+var baseSortedIndex = require('./internal/baseSortedIndex');
 
 /**
  * Uses a binary search to determine the lowest index at which `value`
  * should be inserted into `array` in order to maintain its sort order.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The sorted array to inspect.
@@ -14,8 +15,7 @@ var baseSortedIndex = require('./internal/baseSortedIndex.js');
  *  into `array`.
  * @example
  *
- * sortedIndex([30, 50], 40)
- * // => 1
+ * sortedIndex([30, 50], 40) => 1
  */
 function sortedIndex(array, value) {
     return baseSortedIndex(array, value);

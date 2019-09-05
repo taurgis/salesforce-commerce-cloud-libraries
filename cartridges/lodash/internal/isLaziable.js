@@ -1,6 +1,6 @@
 'use strict';
 
-var LazyWrapper = require('./LazyWrapper');
+var LazyWrapper = require('./lazyWrapper');
 var getData = require('./getData');
 var getFuncName = require('./getFuncName');
 var lodash = require('../wrapperLodash');
