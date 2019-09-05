@@ -22,9 +22,9 @@ var FUNC_ERROR_TEXT = 'Expected a function';
  * @returns {Function} Returns the new function.
  * @example
  *
- * var say = _.rest(function(what, names) {
+ * var say = rest(function(what, names) {
  *   return what + ' ' + _.initial(names).join(', ') +
- *     (_.size(names) > 1 ? ', & ' : '') + _.last(names);
+ *     (size(names) > 1 ? ', & ' : '') + last(names);
  * });
  *
  * say('hello', 'fred', 'barney', 'pebbles'); => 'hello fred, barney, & pebbles'

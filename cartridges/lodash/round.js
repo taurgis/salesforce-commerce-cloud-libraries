@@ -5,6 +5,7 @@ var createRound = require('./internal/createRound');
 /**
  * Computes `number` rounded to `precision`.
  *
+ * @static
  * @since 3.10.0
  * @category Math
  * @param {number} number The number to round.

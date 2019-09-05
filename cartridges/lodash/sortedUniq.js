@@ -8,6 +8,7 @@ var baseSortedUniq = require('./internal/baseSortedUniq');
  * If the input array is known to be sorted `sortedUniq` is
  * faster than `uniq`.
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.

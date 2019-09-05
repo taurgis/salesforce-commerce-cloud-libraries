@@ -1,3 +1,5 @@
+'use strict';
+
 var baseFlatten = require('./internal/baseFlatten');
 var baseOrderBy = require('./internal/baseOrderBy');
 var baseRest = require('./internal/baseRest');

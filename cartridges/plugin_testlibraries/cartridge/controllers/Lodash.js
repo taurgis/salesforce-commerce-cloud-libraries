@@ -27,6 +27,13 @@ server.get('Test', function (req, res, next) {
     var partialRight = require('lodash/partialRight');
     var overArgs = require('lodash/overArgs');
     var once = require('lodash/once');
+    var rest = require('lodash/rest');
+    var initial = require('lodash/initial');
+    var size = require('lodash/size');
+    var last = require('lodash/last');
+    var rearg = require('lodash/rearg');
+    var spread = require('lodash/spread');
+
     var afterTest = '';
 
     var afterTestFunction = require('lodash/after')(2, function () {
@@ -191,6 +198,21 @@ server.get('Test', function (req, res, next) {
 
     var sayHelloTo = partial(greetPartial, 'hello')
     var greetFred = partialRight(greetPartial, 'fred');
+
+    var rearged = rearg(function (a, b, c) {
+        return [a, b, c];
+    }, [2, 0, 1]);
+
+
+    var say = rest(function (what, names) {
+        return what + ' ' + initial(names).join(', ') +
+            (size(names) > 1 ? ', & ' : '') + last(names);
+    });
+
+    var spreadSay = spread(function (who, what) {
+        return who + ' says ' + what;
+    });
+
     res.json(
         {
             wrapped: chained.value(),
@@ -456,13 +478,17 @@ server.get('Test', function (req, res, next) {
                 'x'),
             pullAllWith: timeFunction(require('lodash/pullAllWith'), [{ 'x': 1, 'y': 2 }, { 'x': 3, 'y': 4 }, { 'x': 5, 'y': 6 }], [{ 'x': 3, 'y': 4 }], isEqual),
             pullAt: timeFunction(require('lodash/pullAt'), ['a', 'b', 'c', 'd'], [1, 3]),
-            random: timeFunction(require('lodash/random'), 0 , 5),
+            random: timeFunction(require('lodash/random'), 0, 5),
             range: timeFunction(require('lodash/range'), 4),
             rangeRight: timeFunction(require('lodash/rangeRight'), 4),
+            rearg: timeFunction(rearged, 'b', 'c', 'a'),
             reduce: timeFunction(require('lodash/reduce'), { a: 1, b: 2, c: 1 }, function (result, value, key) {
                 (result[value] || (result[value] = [])).push(key);
                 return result;
             }, {}),
+            reduceRight: timeFunction(require('lodash/reduceRight'), [[0, 1], [2, 3], [4, 5]], function (flattened, other) {
+                return flattened.concat(other);
+            }, []),
             reject: timeFunction(require('lodash/reject'), [
                 { user: 'barney', active: true },
                 { user: 'fred', active: false }
@@ -470,7 +496,9 @@ server.get('Test', function (req, res, next) {
             remove: timeFunction(require('lodash/remove'), [1, 2, 3, 4], function (n) { return n % 2 === 0; }),
             repeat: timeFunction(require('lodash/repeat'), 'abc', 2),
             replace: timeFunction(require('lodash/replace'), 'Hi Fred', 'Fred', 'Barney'),
+            rest: timeFunction(say, 'hello', 'fred', 'barney', 'pebbles'),
             result: timeFunction(require('lodash/result'), { a: [{ b: { c1: 3, c2: function () { return 4; } } }] }, 'a[0].b.c1'),
+            reverse: timeFunction(require('lodash/reverse'), [1, 2, 3]),
             round: timeFunction(require('lodash/round'), 4.006, 2),
             sample: timeFunction(require('lodash/sample'), [1, 2, 3, 4]),
             sampleSize: timeFunction(require('lodash/sampleSize'), [1, 2, 3], 4),
@@ -481,16 +509,27 @@ server.get('Test', function (req, res, next) {
             slice: timeFunction(require('lodash/slice'), [1, 2, 3, 4], 2),
             snakeCase: timeFunction(require('lodash/snakeCase'), '--FOO-BAR--'),
             some: timeFunction(require('lodash/some'), [null, 0, 'yes', false], Boolean),
+            someValues: timeFunction(require('lodash/someValues'), { 'a': 0, 'b': 'yes', 'c': false }, Boolean),
+            sortBy: timeFunction(require('lodash/sortBy'), [
+                { 'user': 'fred', 'age': 48 },
+                { 'user': 'barney', 'age': 36 },
+                { 'user': 'fred', 'age': 40 },
+                { 'user': 'barney', 'age': 34 }
+            ], [function (o) { return o.user; }]),
             sortedIndex: timeFunction(require('lodash/sortedIndex'), [30, 50], 40),
+            sortedIndexBy: timeFunction(require('lodash/sortedIndexBy'), [{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, function (o) { return o.x; }),
             sortedIndexOf: timeFunction(require('lodash/sortedIndexOf'), [4, 5, 5, 5, 6], 5),
+            sortedLastIndexBy: timeFunction(require('lodash/sortedLastIndexBy'), [{ 'x': 4 }, { 'x': 5 }], { 'x': 4 }, 'x'),
             sortedLastIndexOf: timeFunction(require('lodash/sortedLastIndexOf'), [4, 5, 5, 5, 6], 5),
             sortedUniq: timeFunction(require('lodash/sortedUniq'), [1, 1, 2]),
             sortedUniqBy: timeFunction(require('lodash/sortedUniqBy'), [1.1, 1.2, 2.3, 2.4], Math.floor),
             split: timeFunction(require('lodash/split'), 'a-b-c', '-', 2),
+            spread: timeFunction(spreadSay, ['fred', 'hello']),
             startCase: timeFunction(require('lodash/startCase'), 'fooBar'),
             startsWith: timeFunction(require('lodash/startsWith'), 'abc', 'a'),
             subtract: timeFunction(require('lodash/subtract'), 6, 4),
             sum: timeFunction(require('lodash/sum'), [4, 2, 8, 6]),
+            sumBy: timeFunction(require('lodash/sumBy'), [{ 'n': 4 }, { 'n': 2 }, { 'n': 8 }, { 'n': 6 }], 'n'),
             tail: timeFunction(require('lodash/tail'), [1, 2, 3]),
             take: timeFunction(require('lodash/take'), [1, 2, 3], 2),
             takeRight: timeFunction(require('lodash/takeRight'), [1, 2, 3], 2),
@@ -499,11 +538,18 @@ server.get('Test', function (req, res, next) {
                 { user: 'fred', active: true },
                 { user: 'pebbles', active: true }
             ], function ({ active }) { return active; }),
+            takeWhile: timeFunction(require('lodash/takeWhile'), [
+                { 'user': 'barney', 'active': false },
+                { 'user': 'fred', 'active': false },
+                { 'user': 'pebbles', 'active': true }
+            ],  ['active', false]),
+            template: require('lodash/template')('hello <%= user %>!')({ 'user': 'fred' }),
             times: timeFunction(require('lodash/times'), 3, String),
             toArray: timeFunction(require('lodash/toArray'), { a: 1, b: 2 }),
             toFinite: timeFunction(require('lodash/toFinite'), '3.2'),
             toInteger: timeFunction(require('lodash/toInteger'), '3.2'),
             toLength: timeFunction(require('lodash/toLength'), '3.2'),
+            toLower: timeFunction(require('lodash/toLower'), '--Foo-Bar--'),
             toNumber: timeFunction(require('lodash/toNumber'), '3.2'),
             toPath: timeFunction(require('lodash/toPath'), 'a[0].b.c'),
             toSafeInteger: timeFunction(require('lodash/toSafeInteger'), '3.2'),

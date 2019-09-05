@@ -4,7 +4,7 @@ var baseIteratee = require('./internal/baseIteratee');
 var baseSortedIndexBy = require('./internal/baseSortedIndexBy');
 
 /**
- * This method is like `_.sortedIndex` except that it accepts `iteratee`
+ * This method is like `sortedIndex` except that it accepts `iteratee`
  * which is invoked for `value` and each element of `array` to compute their
  * sort ranking. The iteratee is invoked with one argument: (value).
  *
@@ -22,7 +22,7 @@ var baseSortedIndexBy = require('./internal/baseSortedIndexBy');
  *
  * sortedIndexBy(objects, { 'x': 4 }, function(o) { return o.x; }); => 0
  *
- * // The `_.property` iteratee shorthand.
+ * * The `property` iteratee shorthand. *
  * sortedIndexBy(objects, { 'x': 4 }, 'x'); => 0
  */
 function sortedIndexBy(array, value, iteratee) {

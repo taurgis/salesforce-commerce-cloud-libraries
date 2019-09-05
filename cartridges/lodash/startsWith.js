@@ -18,14 +18,11 @@ var toString = require('./toString');
 *  else `false`.
 * @example
 *
-* _.startsWith('abc', 'a');
-* // => true
+* startsWith('abc', 'a'); => true
 *
-* _.startsWith('abc', 'b');
-* // => false
+* startsWith('abc', 'b'); => false
 *
-* _.startsWith('abc', 'b', 1);
-* // => true
+* startsWith('abc', 'b', 1); => true
 */
 function startsWith(string, target, position) {
     string = toString(string);

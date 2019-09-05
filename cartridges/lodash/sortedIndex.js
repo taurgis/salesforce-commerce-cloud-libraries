@@ -6,6 +6,7 @@ var baseSortedIndex = require('./internal/baseSortedIndex');
  * Uses a binary search to determine the lowest index at which `value`
  * should be inserted into `array` in order to maintain its sort order.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {Array} array The sorted array to inspect.

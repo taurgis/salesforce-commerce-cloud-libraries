@@ -4,7 +4,7 @@ var baseSortedIndex = require('./internal/baseSortedIndex');
 var eq = require('./eq');
 
 /**
- * This method is like `_.lastIndexOf` except that it performs a binary
+ * This method is like `lastIndexOf` except that it performs a binary
  * search on a sorted `array`.
  *
  * @static

@@ -2,11 +2,13 @@
 
 var isFunction = require('./isFunction');
 var isArray = require('./isArray');
+
 /**
  * Checks if `predicate` returns truthy for **any** element of `array`.
  * Iteration is stopped once `predicate` returns truthy. The predicate is
  * invoked with three arguments: (value, index, array).
  *
+ * @static
  * @since 5.0.0
  * @category Array
  * @param {Array} array The array to iterate over.

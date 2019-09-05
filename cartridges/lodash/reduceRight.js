@@ -17,7 +17,7 @@ var isArray = require('./isArray');
  * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
  * @returns {*} Returns the accumulated value.
- * @see _.reduce
+ * @see reduce
  * @example
  *
  * var array = [[0, 1], [2, 3], [4, 5]];

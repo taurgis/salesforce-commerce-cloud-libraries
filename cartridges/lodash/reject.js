@@ -7,7 +7,7 @@ var isArray = require('./isArray');
 var negate = require('./negate');
 
 /**
- * The opposite of `_.filter`; this method returns the elements of `collection`
+ * The opposite of `filter`; this method returns the elements of `collection`
  * that `predicate` does **not** return truthy for.
  *
  * @static
@@ -26,13 +26,13 @@ var negate = require('./negate');
  *
  * reject(users, function(o) { return !o.active; }); => objects for ['fred']
  *
- * // The `_.matches` iteratee shorthand.
+ * * The `_.matches` iteratee shorthand. *
  * reject(users, { 'age': 40, 'active': true }); => objects for ['barney']
  *
- * // The `_.matchesProperty` iteratee shorthand.
+ * * The `_.matchesProperty` iteratee shorthand. *
  * reject(users, ['active', false]); => objects for ['fred']
  *
- * // The `_.property` iteratee shorthand.
+ * * The `_.property` iteratee shorthand. *
  * reject(users, 'active'); => objects for ['barney']
  */
 function reject(collection, predicate) {

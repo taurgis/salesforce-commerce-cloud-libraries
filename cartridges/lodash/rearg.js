@@ -20,7 +20,7 @@ var WRAP_REARG_FLAG = 256;
  * @returns {Function} Returns the new function.
  * @example
  *
- * var rearged = _.rearg(function(a, b, c) {
+ * var rearged = rearg(function(a, b, c) {
  *   return [a, b, c];
  * }, [2, 0, 1]);
  *

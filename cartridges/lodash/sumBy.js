@@ -4,7 +4,7 @@ var baseIteratee = require('./internal/baseIteratee');
 var baseSum = require('./internal/baseSum');
 
 /**
- * This method is like `_.sum` except that it accepts `iteratee` which is
+ * This method is like `sum` except that it accepts `iteratee` which is
  * invoked for each element in `array` to generate the value to be summed.
  * The iteratee is invoked with one argument: (value).
  *
@@ -20,7 +20,7 @@ var baseSum = require('./internal/baseSum');
  *
  * sumBy(objects, function(o) { return o.n; }); => 20
  *
- * // The `_.property` iteratee shorthand.
+ * * The `property` iteratee shorthand. *
  * sumBy(objects, 'n'); => 20
  */
 function sumBy(array, iteratee) {

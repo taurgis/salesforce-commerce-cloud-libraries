@@ -4,7 +4,7 @@ var baseIteratee = require('./internal/baseIteratee');
 var baseSortedUniq = require('./internal/baseSortedUniq');
 
 /**
- * This method is like `_.uniqBy` except that it's designed and optimized
+ * This method is like `uniqBy` except that it's designed and optimized
  * for sorted arrays.
  *
  * @static

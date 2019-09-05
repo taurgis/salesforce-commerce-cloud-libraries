@@ -7,6 +7,7 @@ var eq = require('./eq');
  * This method is like `indexOf` except that it performs a binary
  * search on a sorted `array`.
  *
+ * @static
  * @since 4.0.0
  * @category Array
  * @param {Array} array The array to inspect.

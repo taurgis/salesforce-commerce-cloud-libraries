@@ -1,4 +1,5 @@
 'use strict';
+
 var arrayReduce = require('./internal/arrayReduce');
 var baseEach = require('./internal/baseEach');
 var baseIteratee = require('./internal/baseIteratee');
@@ -14,7 +15,7 @@ var isArray = require('./isArray');
  * (accumulator, value, index|key, collection).
  *
  * Many lodash methods are guarded to work as iteratees for methods like
- * `_.reduce`, `_.reduceRight`, and `_.transform`.
+ * `reduce`, `reduceRight`, and `transform`.
  *
  * The guarded methods are:
  * `assign`, `defaults`, `defaultsDeep`, `includes`, `merge`, `orderBy`,
@@ -27,7 +28,7 @@ var isArray = require('./isArray');
  * @param {Function} [iteratee=identity] The function invoked per iteration.
  * @param {*} [accumulator] The initial value.
  * @returns {*} Returns the accumulated value.
- * @see _.reduceRight
+ * @see reduceRight
  * @example
  *
  * reduce([1, 2], function(sum, n) {

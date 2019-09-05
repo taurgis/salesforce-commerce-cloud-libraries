@@ -24,13 +24,13 @@ var baseWhile = require('./internal/baseWhile');
  *
  * takeWhile(users, function(o) { return !o.active; }); => objects for ['barney', 'fred']
  *
- * // The `_.matches` iteratee shorthand.
+ * * The `matches` iteratee shorthand. *
  * takeWhile(users, { 'user': 'barney', 'active': false }); => objects for ['barney']
  *
- * // The `_.matchesProperty` iteratee shorthand.
+ * * The `matchesProperty` iteratee shorthand. *
  * takeWhile(users, ['active', false]); => objects for ['barney', 'fred']
  *
- * // The `_.property` iteratee shorthand.
+ * * The `property` iteratee shorthand. *
  * takeWhile(users, 'active'); => []
  */
 function takeWhile(array, predicate) {

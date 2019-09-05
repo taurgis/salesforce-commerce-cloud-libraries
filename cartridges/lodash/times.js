@@ -27,7 +27,7 @@ var nativeMin = Math.min;
  *
  * times(3, String); => ['0', '1', '2']
  *
- *  _.times(4, _.constant(0)); => [0, 0, 0, 0]
+ *  times(4, constant(0)); => [0, 0, 0, 0]
  */
 function times(n, iteratee) {
     n = toInteger(n);
