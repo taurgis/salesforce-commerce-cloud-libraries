@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayAggregator = require('./arrayAggregator');
 var baseAggregator = require('./baseAggregator');
 var baseIteratee = require('./baseIteratee');

@@ -1,3 +1,5 @@
+'use strict';
+
 var compareAscending = require('./compareAscending');
 
 /**

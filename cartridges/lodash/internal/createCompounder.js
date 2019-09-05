@@ -1,3 +1,5 @@
+'use strict';
+
 var arrayReduce = require('./arrayReduce');
 var deburr = require('../deburr');
 var words = require('../words');

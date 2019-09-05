@@ -1,6 +1,5 @@
 'use strict';
 
-
 var isArguments = require('../isArguments');
 var isArray = require('../isArray');
 
