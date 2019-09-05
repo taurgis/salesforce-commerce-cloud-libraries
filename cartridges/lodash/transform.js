@@ -12,7 +12,7 @@ var isObject = require('./isObject');
 var isTypedArray = require('./isTypedArray');
 
 /**
- * An alternative to `_.reduce`; this method transforms `object` to a new
+ * An alternative to `reduce`; this method transforms `object` to a new
  * `accumulator` object which is the result of running each of its own
  * enumerable string keyed properties thru `iteratee`, with each invocation
  * potentially mutating the `accumulator` object. If `accumulator` is not

@@ -5,6 +5,7 @@ var createCaseFirst = require('./internal/createCaseFirst');
 /**
  * Converts the first character of `string` to upper case.
  *
+ * @static
  * @since 4.0.0
  * @category String
  * @param {string} [string=''] The string to convert.

@@ -26,7 +26,7 @@ var reTrim = /^\s+|\s+$/g;
  *
  * trim('-_-abc-_-', '_-'); => 'abc'
  *
- * map(['  foo  ', '  bar  '], _.trim); => ['foo', 'bar']
+ * map(['  foo  ', '  bar  '], trim); => ['foo', 'bar']
  */
 function trim(string, chars, guard) {
     string = toString(string);

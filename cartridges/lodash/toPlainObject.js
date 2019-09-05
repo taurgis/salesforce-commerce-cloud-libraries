@@ -4,6 +4,7 @@
  * Converts `value` to a plain object flattening inherited enumerable string
  * keyed properties of `value` to own properties of the plain object.
  *
+ * @static
  * @since 3.0.0
  * @category Lang
  * @param {*} value The value to convert.

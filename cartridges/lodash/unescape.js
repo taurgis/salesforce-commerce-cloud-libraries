@@ -8,7 +8,7 @@ var reEscapedHtml = /&(?:amp|lt|gt|quot|#39);/g;
 var reHasEscapedHtml = RegExp(reEscapedHtml.source);
 
 /**
- * The inverse of `_.escape`; this method converts the HTML entities
+ * The inverse of `escape`; this method converts the HTML entities
  * `&amp;`, `&lt;`, `&gt;`, `&quot;`, and `&#39;` in `string` to
  * their corresponding characters.
  *

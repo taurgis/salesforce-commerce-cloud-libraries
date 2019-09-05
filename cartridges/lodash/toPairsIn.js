@@ -5,7 +5,7 @@ var keysIn = require('./keysIn');
 
 /**
  * Creates an array of own and inherited enumerable string keyed-value pairs
- * for `object` which can be consumed by `_.fromPairs`. If `object` is a map
+ * for `object` which can be consumed by `fromPairs`. If `object` is a map
  * or set, its entries are returned.
  *
  * @static

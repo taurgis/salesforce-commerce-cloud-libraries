@@ -10,7 +10,7 @@ var stringToArray = require('./internal/stringToArray');
 var toInteger = require('./toInteger');
 var toString = require('./toString');
 
-/** Used as default options for `_.truncate`. */
+/** Used as default options for `truncate`. */
 var DEFAULT_TRUNC_LENGTH = 30;
 var DEFAULT_TRUNC_OMISSION = '...';
 

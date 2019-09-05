@@ -24,7 +24,7 @@ var last = require('./last');
  *
  * unionBy([2.1], [1.2, 2.3], Math.floor); => [2.1, 1.2]
  *
- * // The `_.property` iteratee shorthand.
+ * * The `property` iteratee shorthand. *
  * unionBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x'); => [{ 'x': 1 }, { 'x': 2 }]
  */
 var unionBy = baseRest(function (arrays) {

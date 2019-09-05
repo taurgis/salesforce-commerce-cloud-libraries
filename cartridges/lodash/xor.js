@@ -9,6 +9,7 @@ var isArrayLikeObject = require('./isArrayLikeObject');
  * of the given arrays. The order of result values is determined by the order
  * they occur in the arrays.
  *
+ * @static
  * @since 2.4.0
  * @category Array
  * @param {...Array} [arrays] The arrays to inspect.

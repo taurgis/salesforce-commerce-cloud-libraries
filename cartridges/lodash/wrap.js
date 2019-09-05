@@ -17,7 +17,7 @@ var partial = require('./partial');
  * @returns {Function} Returns the new function.
  * @example
  *
- * var p = _.wrap(_.escape, function(func, text) {
+ * var p = wrap(escape, function(func, text) {
  *   return '<p>' + func(text) + '</p>';
  * });
  *

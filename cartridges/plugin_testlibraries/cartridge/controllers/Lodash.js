@@ -213,6 +213,11 @@ server.get('Test', function (req, res, next) {
         return who + ' says ' + what;
     });
 
+    var zipped = require('lodash/zip')([1, 2], [10, 20], [100, 200]);
+    var p = require('lodash/wrap')(require('lodash/escape'), function (func, text) {
+        return '<p>' + func(text) + '</p>';
+    });
+
     res.json(
         {
             wrapped: chained.value(),
@@ -542,7 +547,7 @@ server.get('Test', function (req, res, next) {
                 { 'user': 'barney', 'active': false },
                 { 'user': 'fred', 'active': false },
                 { 'user': 'pebbles', 'active': true }
-            ],  ['active', false]),
+            ], ['active', false]),
             template: require('lodash/template')('hello <%= user %>!')({ 'user': 'fred' }),
             times: timeFunction(require('lodash/times'), 3, String),
             toArray: timeFunction(require('lodash/toArray'), { a: 1, b: 2 }),
@@ -551,38 +556,52 @@ server.get('Test', function (req, res, next) {
             toLength: timeFunction(require('lodash/toLength'), '3.2'),
             toLower: timeFunction(require('lodash/toLower'), '--Foo-Bar--'),
             toNumber: timeFunction(require('lodash/toNumber'), '3.2'),
+            toPairs: timeFunction(require('lodash/toPairs'), new Foo),
+            toPairsIn: timeFunction(require('lodash/toPairsIn'), new Foo),
             toPath: timeFunction(require('lodash/toPath'), 'a[0].b.c'),
+            toPlainObject: timeFunction(require('lodash/assign'), { 'c': 1 }, require('lodash/toPlainObject')(new Foo)),
             toSafeInteger: timeFunction(require('lodash/toSafeInteger'), '3.2'),
             toString: timeFunction(require('lodash/toString'), [1, 2, 3]),
+            toUpper: timeFunction(require('lodash/toUpper'), 'fooBar'),
             transform: timeFunction(require('lodash/transform'), [2, 3, 4], function (result, n) {
                 result.push(n *= n);
                 return n % 2 == 0;
             }, []),
-            trim2: timeFunction(require('lodash/trim'), '  abc  '),
+            trim: timeFunction(require('lodash/trim'), '  abc  '),
             trimEnd: timeFunction(require('lodash/trimEnd'), '  abc  '),
             trimStart: timeFunction(require('lodash/trimStart'), '  abc  '),
             truncate: timeFunction(require('lodash/truncate'), 'hi-diddly-ho there, neighborino', {
                 length: 24,
                 separator: ' '
             }),
+            unary: timeFunction(require('lodash/map'), ['6', '8', '10'], require('lodash/unary')(parseInt)),
             unescape: timeFunction(require('lodash/unescape'), 'fred, barney, &amp; pebbles'),
             union: timeFunction(require('lodash/union'), [2, 3], [1, 2]),
             unionBy: timeFunction(require('lodash/unionBy'), [2.1], [1.2, 2.3], Math.floor),
+            unionWith: timeFunction(require('lodash/unionWith'), [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual),
             uniq: timeFunction(require('lodash/uniq'), [2, 1, 2]),
+            uniqBy: timeFunction(require('lodash/uniqBy'), [2.1, 1.2, 2.3], Math.floor),
             uniqueId: timeFunction(require('lodash/uniqueId'), 'contact_'),
+            uniqWith: timeFunction(require('lodash/uniqWith'), [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual),
             unset: timeFunction(require('lodash/unset'), { a: [{ b: { c: 7 } }] }, ['a', '0', 'b', 'c']),
             unzip: timeFunction(require('lodash/unzip'), [['a', 1, true], ['b', 2, false]]),
+            unzipWith: timeFunction(require('lodash/unzipWith'), zipped, require('lodash/add')),
             update: timeFunction(require('lodash/update'), { a: [{ b: { c: 3 } }] }, 'a[0].b.c', function (n) { return n ? n * n : 0; }),
+            updateWith: timeFunction(require('lodash/updateWith'), {}, '[0][1]', function () { return 'a'; }, Object),
             upperCase: timeFunction(require('lodash/upperCase'), '--foo-bar'),
             upperFirst: timeFunction(require('lodash/upperFirst'), 'fred'),
             values: timeFunction(require('lodash/values'), new Foo()),
+            valuesIn: timeFunction(require('lodash/valuesIn'), new Foo()),
             without: timeFunction(require('lodash/without'), [2, 1, 2, 3], 1, 2),
             words: timeFunction(require('lodash/words'), 'fred, barney, & pebbles'),
+            wrap: timeFunction(p, 'fred, barney, & pebbles'),
             xor: timeFunction(require('lodash/xor'), [2, 1], [2, 3]),
             xorBy: timeFunction(require('lodash/xorBy'), [2.1, 1.2], [2.3, 3.4], Math.floor),
+            xorWith: timeFunction(require('lodash/xorWith'), [{ 'x': 1, 'y': 2 }, { 'x': 2, 'y': 1 }], [{ 'x': 1, 'y': 1 }, { 'x': 1, 'y': 2 }], isEqual),
             zip: timeFunction(require('lodash/zip'), ['a', 'b'], [1, 2], [true, false]),
             zipObject: timeFunction(require('lodash/zipObject'), ['a', 'b'], [1, 2]),
             zipObjectDeep: timeFunction(require('lodash/zipObjectDeep'), ['a.b[0].c', 'a.b[1].d'], [1, 2]),
+            zipWith: timeFunction(require('lodash/zipWith'), [1, 2], [10, 20], [100, 200], function(a, b, c) { return a + b + c; })
         });
 
     next();

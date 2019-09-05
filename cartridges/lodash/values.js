@@ -8,6 +8,7 @@ var keys = require('./keys');
  *
  * **Note:** Non-object values are coerced to objects.
  *
+ * @static
  * @since 0.1.0
  * @category Object
  * @param {Object} object The object to query.

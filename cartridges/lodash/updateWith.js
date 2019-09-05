@@ -10,6 +10,7 @@ var baseUpdate = require('./internal/baseUpdate');
  *
  * **Note:** This method mutates `object`.
  *
+ * @static
  * @since 4.6.0
  * @category Object
  * @param {Object} object The object to modify.
@@ -21,7 +22,7 @@ var baseUpdate = require('./internal/baseUpdate');
  *
  * const object = {}
  *
- * updateWith(object, '[0][1]', () => 'a', Object) => { '0': { '1': 'a' } }
+ * updateWith({}, '[0][1]', function() { return 'a'; }, Object) => { '0': { '1': 'a' } }
  */
 function updateWith(object, path, updater, customizer) {
     customizer = typeof customizer === 'function' ? customizer : undefined;

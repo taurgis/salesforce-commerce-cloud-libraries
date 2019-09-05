@@ -8,7 +8,7 @@ var isArrayLikeObject = require('./isArrayLikeObject');
 var last = require('./last');
 
 /**
- * This method is like `_.xor` except that it accepts `iteratee` which is
+ * This method is like `xor` except that it accepts `iteratee` which is
  * invoked for each element of each `arrays` to generate the criterion by
  * which by which they're compared. The order of result values is determined
  * by the order they occur in the arrays. The iteratee is invoked with one
@@ -24,7 +24,7 @@ var last = require('./last');
  *
  * xorBy([2.1, 1.2], [2.3, 3.4], Math.floor); => [1.2, 3.4]
  *
- * // The `_.property` iteratee shorthand.
+ * * The `property` iteratee shorthand. *
  * xorBy([{ 'x': 1 }], [{ 'x': 2 }, { 'x': 1 }], 'x'); => [{ 'x': 2 }]
  */
 var xorBy = baseRest(function (arrays) {

@@ -4,8 +4,8 @@ var baseUpdate = require('./internal/baseUpdate');
 var castFunction = require('./internal/castFunction');
 
 /**
- * This method is like `_.set` except that accepts `updater` to produce the
- * value to set. Use `_.updateWith` to customize `path` creation. The `updater`
+ * This method is like `set` except that accepts `updater` to produce the
+ * value to set. Use `updateWith` to customize `path` creation. The `updater`
  * is invoked with one argument: (value).
  *
  * **Note:** This method mutates `object`.

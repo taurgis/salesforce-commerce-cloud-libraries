@@ -6,6 +6,7 @@ var baseZipObject = require('./internal/baseZipObject');
 /**
  * This method is like `zipObject` except that it supports property paths.
  *
+ * @static
  * @since 4.1.0
  * @category Array
  * @param {Array} [props=[]] The property identifiers.

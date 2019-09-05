@@ -7,6 +7,7 @@ var unzip = require('./unzip');
  * first elements of the given arrays, the second of which contains the
  * second elements of the given arrays, and so on.
  *
+ * @static
  * @since 0.1.0
  * @category Array
  * @param {...Array} [arrays] The arrays to process.
