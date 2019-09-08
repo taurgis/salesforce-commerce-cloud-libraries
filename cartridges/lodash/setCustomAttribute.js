@@ -7,7 +7,7 @@ var isError = require('./isError');
  * Sets a custom attribute to the object if possible.
  *
  * @static
- * @since 6.0.0
+ * @since Commerce Cloud Conversion
  * @category Object
  * @param {Object} object The object to update.
  * @param {string} attributeName The custom attribute to set

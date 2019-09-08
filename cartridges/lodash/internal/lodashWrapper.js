@@ -127,7 +127,7 @@ each(['countBy', 'sortBy', 'flattenDepth', 'reject', 'reduce',
     'assignIn', 'defaults', 'defaultsDeep', 'merge', 'assign', 'reduce', 'reduceRight',
     'result', 'reverse', 'pull', 'last', 'split', 'tail', 'takeRightWhile', 'takeWhile',
     'tap', 'toArray', 'toString', 'trim', 'trimStart', 'trimEnd', 'xor', 'xorWith',
-    'xorBy', 'zipObject', 'zipObjectDeep'], function (method) {
+    'xorBy', 'zipObject', 'zipObjectDeep', 'replace'], function (method) {
     LodashWrapper.prototype[method] = function () {
         var args = Array.prototype.slice.call(arguments);
         args.unshift(this.__wrapped__);

@@ -8,7 +8,7 @@ var isNil = require('./isNil');
  * not exist the fallback value is returned.
  *
  * @static
- * @since 6.0.0
+ * @since Commerce Cloud Conversion
  * @category Object
  * @param {Object} object The object to query.
  * @param {string} attributeName The custom attribute to get
