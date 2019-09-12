@@ -1,3 +1,4 @@
+/* eslint-ignore */
 'use strict';
 
 var server = require('server');
