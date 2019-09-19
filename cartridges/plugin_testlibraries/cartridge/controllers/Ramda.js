@@ -106,6 +106,10 @@ server.get('Test', function (req, res, next) {
         y: R.lt(R.__, 20)
     });
 
+    var CustomerMgr = require('dw/customer/CustomerMgr');
+
+    var customerProfile = CustomerMgr.searchProfile('email != null', null);
+
     res.json(
         {
             add: add(4)(6),
@@ -147,6 +151,7 @@ server.get('Test', function (req, res, next) {
             groupBy: byGrade(students),
             gte: R.gte(2, 1),
             hasPath: R.hasPath(['a', 'b'], { a: { c: 2 } }),
+            hasPathProfile: R.hasPath(['custom', 'intakePreferences'])(customerProfile),
             identical: R.identical(1, '1'),
             ifElse: incCount({}),
             includes: R.includes(3, [1, 2, 3]),
