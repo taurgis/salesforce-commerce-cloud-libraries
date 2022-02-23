@@ -1,0 +1,29 @@
+{
+    "step-types": {
+        "script-module-step": [{
+                "@type-id": "custom.libraries.test.jsPDF",
+                "module": "plugin_testlibraries/cartridge/scripts/jobsteps/jsPDF.js",
+                "description": "Copy or move files from one directory to another.",
+                "function": "Run",
+                "parameters": {
+                   
+                },
+                "status-codes": {
+                    "status": [{
+                            "@code": "ERROR",
+                            "description": "Used when an error occurred."
+                        },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        },
+                        {
+                            "@code": "NO_FILE_FOUND",
+                            "description": "Used when no file could be found in the source directory."
+                        }
+                    ]
+                }
+            }
+        ]
+    }
+}
