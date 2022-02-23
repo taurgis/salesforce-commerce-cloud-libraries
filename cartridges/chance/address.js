@@ -1,5 +1,4 @@
 'use strict';
-
 var initOptions = require('./lib/initOptions');
 var natural = require('./natural');
 var street = require('./street');

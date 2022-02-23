@@ -16,6 +16,7 @@ With this project I hope to convert some of these libraries to work with Salesfo
 - fast-xml-parser
 - chance
 - ramda
+- jsPDF
 
 ## Setting up the libraries in your project ##
 
@@ -50,6 +51,7 @@ _____
 | fast-xml-parser | https://github.com/NaturalIntelligence/fast-xml-parser | 3.12.16 | Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
 | chance | https://github.com/chancejs/chancejs | 1.1.0 | Utility library to generate anything random
 | ramda | https://github.com/ramda/ramda | 0.26.1 | A practical functional library for JavaScript programmers.
+| jsPDF | https://github.com/parallax/jsPDF | 1.3.5 | A library to generate PDFs in JavaScript.
 
 ### Example code ###
 
@@ -98,7 +100,19 @@ var add = require('ramda/add');
 
 add(4)(6)
 ```
+___
 
+``` javascript
+    var jsPDF = require('jsPDF')
+
+    var doc = new jsPDF()
+
+    doc.setFontSize(25)
+    doc.text(35, 5, 'Forward loves jsPDF')
+
+    response.setContentType('application/pdf; charset=iso-8859-1');
+    response.writer.print(doc.output())
+```
 # Linting
 Currently the same setup is used as SFRA. You can run a linting test with:
 

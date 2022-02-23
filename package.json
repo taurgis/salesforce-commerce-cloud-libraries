@@ -7,7 +7,7 @@
   "scripts": {
     "lint": "sgmf-scripts --lint js",
     "upload": "sgmf-scripts --upload",
-    "uploadCartridge": "sgmf-scripts --uploadCartridge moment",
+    "uploadCartridge": "sgmf-scripts --uploadCartridge jsPDF && sgmf-scripts --uploadCartridge plugin_testlibraries",
     "uploadDw": "sgmf-scripts",
     "watch": "sgmf-scripts --watch",
     "precommit": "npm run lint --loglevel=silent",
@@ -20,27 +20,16 @@
   "author": {
     "name": "Thomas Theunen",
     "email": "thomas.theunen@forward.eu",
-    "url": "https://thomastheunen.eu"
+    "url": "https://forward.eu"
   },
   "license": "MIT",
   "homepage": "https://github.com/taurgis/salesforce-commerce-cloud-libraries.git#readme",
   "devDependencies": {
-    "eslint": "^6.2.2",
-    "eslint-config-airbnb": "^17.1.0",
+    "eslint": "^3.19.0",
     "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-formatter-pretty": "^1.3.0",
-    "eslint-formatter-summary": "^1.0.2",
-    "eslint-plugin-import": "^2.14.0",
-    "eslint-plugin-jsx-a11y": "^6.1.2",
-    "eslint-plugin-react": "^7.11.1",
-    "sgmf-scripts": "^2.3.0"
-  },
-  "dependencies": {
-    "@babel/core": "^7.4.4",
-    "@babel/preset-env": "^7.4.4",
-    "babel-loader": "^8.0.5",
-    "eslint-config-airbnb": "^17.1.0",
-    "eslint-plugin-jsx-a11y": "^6.1.1"
+    "eslint-plugin-import": "^1.16.0",
+    "eslint-plugin-sitegenesis": "~1.0.0",
+    "sgmf-scripts": "^2.4.1"
   },
   "pre-commit": [
     "precommit"
