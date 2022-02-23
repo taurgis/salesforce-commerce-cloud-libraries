@@ -51,7 +51,7 @@ _____
 | fast-xml-parser | https://github.com/NaturalIntelligence/fast-xml-parser | 3.12.16 | Validate XML or Parse XML to JS/JSON very fast without C/C++ based libraries
 | chance | https://github.com/chancejs/chancejs | 1.1.0 | Utility library to generate anything random
 | ramda | https://github.com/ramda/ramda | 0.26.1 | A practical functional library for JavaScript programmers.
-| jsPDF | https://github.com/parallax/jsPDF | 1.3.5 | A library to generate PDFs in JavaScript.
+| jsPDF | https://github.com/parallax/jsPDF | 1.5.3 | A library to generate PDFs in JavaScript.
 
 ### Example code ###
 
