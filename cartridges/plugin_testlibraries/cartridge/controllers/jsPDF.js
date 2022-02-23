@@ -1,7 +1,7 @@
 'use strict';
 
 var server = require('server');
-
+var jsPDF = require('jsPDF/jsPDF')
 /** Just an example controlle to test moment functions */
 server.get('Test', function (req, res, next) {
     var doc = new jsPDF()
