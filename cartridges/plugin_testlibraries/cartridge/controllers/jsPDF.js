@@ -1,8 +1,6 @@
 'use strict';
 
 var server = require('server');
-var timeFunction = require('../scripts/util/timeFunction');
-
 
 /** Just an example controlle to test moment functions */
 server.get('Test', function (req, res, next) {
