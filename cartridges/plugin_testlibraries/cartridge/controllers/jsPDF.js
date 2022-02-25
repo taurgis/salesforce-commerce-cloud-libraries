@@ -45,6 +45,14 @@ server.get('Test', function () {
 
     doc.addImage(jpg, 'jpg', 100, 200, 280, 210, undefined, 'none');
 
+    doc.addJS('app.alert("This is injected JS inside of the PDF.", 3);');
+
+    doc.viewerPreferences({
+        HideWindowUI: true,
+        PrintArea: 'CropBox',
+        NumCopies: 10
+    });
+
     response.setContentType('application/pdf; charset=iso-8859-1');
 
     response.writer.print(doc.output());
