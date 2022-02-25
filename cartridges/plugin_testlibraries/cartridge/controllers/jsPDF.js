@@ -53,6 +53,21 @@ server.get('Test', function () {
         NumCopies: 10
     });
 
+    doc.setLanguage('nl-BE');
+
+    doc.createAnnotation({
+        type: 'text',
+        title: 'note',
+        bounds: {
+            x: 10,
+            y: 10,
+            w: 200,
+            h: 80
+        },
+        contents: 'This is text annotation (open by default)',
+        open: true
+    });
+
     response.setContentType('application/pdf; charset=iso-8859-1');
 
     response.writer.print(doc.output());

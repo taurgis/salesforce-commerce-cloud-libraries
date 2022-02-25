@@ -212,6 +212,7 @@ module.exports = function (jsPDFAPI) {
             this.internal.events.subscribe('putCatalog', function () {
                 var pdfDict = [];
                 var vPref;
+                // eslint-disable-next-line no-restricted-syntax
                 for (vPref in configuration) {
                     if (configuration[vPref].explicitSet === true) {
                         if (configuration[vPref].type === 'name') {
