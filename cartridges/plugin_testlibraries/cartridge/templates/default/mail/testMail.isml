@@ -1,0 +1,25 @@
+<iscontent type="multipart/mixed; boundary=001a113414f6401b9c04f1451632" compact="false" charset="ISO-8859-1">--001a113414f6401b9c04f1451632
+Content-Type: multipart/alternative; boundary=001a113414f6401b8604f1451630
+
+--001a113414f6401b8604f1451630
+Content-Type: text/plain; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<isif condition="${!empty(pdict.EmailMessage)}"><isprint value="${pdict.EmailMessage}" /></isif>
+
+--001a113414f6401b8604f1451630
+Content-Type: text/html; charset=ISO-8859-1
+Content-Transfer-Encoding: quoted-printable
+
+<isif condition="${!empty(pdict.EmailMessage)}"><isprint value="${pdict.EmailMessage}" /></isif>
+<isif condition="${!empty(pdict.EmailTemplate)}"><isinclude template="${pdict.EmailTemplate}" /></isif>
+
+<isif condition="${ !empty(pdict.Base64FileMap) }"><isloop items="${ pdict.Base64FileMap.keySet() }" var="key"><isset name="fileContent" value="${ pdict.Base64FileMap.get(key) }" scope="page"/>
+--001a113414f6401b9c04f1451632
+Content-Type: application/pdf; name="${key}";
+Content-Description: ${key}
+Content-Disposition: attachment; filename="${key}"; size=${fileContent.length}; creation-date="${(new Date()).toISOString()}"; modification-date="${(new Date()).toISOString()}"
+Content-Transfer-Encoding: base64
+
+${fileContent}</isloop>
+</isif>--001a113414f6401b9c04f1451632--
