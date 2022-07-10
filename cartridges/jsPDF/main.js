@@ -11,7 +11,7 @@ require('./plugins/annotations')(jsPDF.API);
 require('./plugins/arabic')(jsPDF.API);
 require('./plugins/cell')(jsPDF.API);
 require('./plugins/vfs')(jsPDF.API);
-//require('./plugins/ttfsupport')(jsPDF.API);
+// require('./plugins/ttfsupport')(jsPDF.API);
 
 // Custom Fonts
 require('./fonts/angin-senja-normal')(jsPDF.API);

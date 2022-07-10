@@ -6,6 +6,7 @@
 /**
 * @name ttfsupport
 * @module
+* @param {Object} jsPDFAPI The jsPDF API
 */
 module.exports = function (jsPDFAPI) {
     'use strict';
