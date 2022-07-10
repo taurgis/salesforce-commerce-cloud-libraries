@@ -20,7 +20,7 @@ module.exports = function (jsPDFAPI) {
                 if (typeof file !== 'string') {
                     throw new Error("Font is not stored as string-data in vFS, import fonts or remove declaration doc.addFont('" + font.postScriptName + "').");
                 }
-                font.metadata = jsPDFAPI.TTFFont.open(font.postScriptName, font.fontName, file, font.encoding);
+                font.metadata = instance.TTFFont.open(font.postScriptName, font.fontName, file, font.encoding);
                 font.metadata.Unicode = font.metadata.Unicode || { encoding: {}, kerning: {}, widths: [] };
                 font.metadata.glyIdsUsed = [0];
             } else if (font.isStandardFont === false) {

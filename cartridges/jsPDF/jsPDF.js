@@ -85,13 +85,9 @@ var jsPDF = (function (global) {
 
                 for (var token in topics[topic]) {
                     var sub = topics[topic][token];
-                    try {
-                        sub[0].apply(context, args);
-                    } catch (ex) {
-                        if (global.console) {
-                            console.error('jsPDF PubSub Error', ex.message, ex);
-                        }
-                    }
+                    
+                    sub[0].apply(context, args);
+                   
                     if (sub[1]) tokens.push(token);
                 }
                 if (tokens.length) tokens.forEach(this.unsubscribe);
@@ -1012,7 +1008,7 @@ var jsPDF = (function (global) {
 
             events.publish('addFont', {
                 font: font,
-                instance: instance
+                instance: API
             });
 
             if (fontKey !== undefined) {
