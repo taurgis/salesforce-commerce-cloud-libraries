@@ -10,5 +10,11 @@ require('./plugins/setlanguage')(jsPDF.API);
 require('./plugins/annotations')(jsPDF.API);
 require('./plugins/arabic')(jsPDF.API);
 require('./plugins/cell')(jsPDF.API);
+require('./plugins/vfs')(jsPDF.API);
+//require('./plugins/ttfsupport')(jsPDF.API);
+
+// Custom Fonts
+require('./fonts/angin-senja-normal')(jsPDF.API);
+require('./fonts/broc-webfont-normal')(jsPDF.API);
 
 module.exports = jsPDF;

@@ -64,6 +64,8 @@ function generatePDF() {
     doc.setFillColor(255, 0, 0);
     doc.rect(100, 20, 10, 10, 'F');
 
+    doc.setFont('Angin Senja');
+    doc.setFontType('normal');
     // I know the proper spelling is colour ;)
     doc.setTextColor(100);
     doc.text(20, 120, 'This is gray.');
