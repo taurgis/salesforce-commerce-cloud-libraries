@@ -75,6 +75,8 @@ function generatePDF() {
     doc.setTextColor(255, 0, 0);
     doc.text(20, 140, 'This is red.');
 
+    doc.setFont('broc-webfont', 'normal');
+
     doc.setTextColor(0, 255, 0);
     doc.text(20, 150, 'This is green.');
 

@@ -20,5 +20,6 @@ require('./plugins/utf8')(jsPDF.API);
 
 // Custom Fonts
 require('./fonts/angin-senja-normal')(jsPDF.API);
+require('./fonts/broc-webfont-normal')(jsPDF.API);
 
 module.exports = jsPDF;
