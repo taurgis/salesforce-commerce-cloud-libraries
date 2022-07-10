@@ -85,13 +85,9 @@ var jsPDF = (function (global) {
 
                 for (var token in topics[topic]) {
                     var sub = topics[topic][token];
-                    try {
-                        sub[0].apply(context, args);
-                    } catch (ex) {
-                        if (global.console) {
-                            console.error('jsPDF PubSub Error', ex.message, ex);
-                        }
-                    }
+                    
+                    sub[0].apply(context, args);
+                   
                     if (sub[1]) tokens.push(token);
                 }
                 if (tokens.length) tokens.forEach(this.unsubscribe);
@@ -1012,7 +1008,7 @@ var jsPDF = (function (global) {
 
             events.publish('addFont', {
                 font: font,
-                instance: instance
+                instance: API
             });
 
             if (fontKey !== undefined) {
@@ -1051,12 +1047,8 @@ var jsPDF = (function (global) {
                     if (~stack.indexOf(' at ')) stack = stack.split(" at ")[1];
                     var m = "Error in function " + stack.split("\n")[0].split('<')[
                         0] + ": " + e.message;
-                    if (global.console) {
-                        global.console.error(m, e);
-                        if (global.alert) alert(m);
-                    } else {
-                        throw new Error(m);
-                    }
+                    
+                    throw new Error(m);
                 }
             };
             fn.foo.bar = fn;

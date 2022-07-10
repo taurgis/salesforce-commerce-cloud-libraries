@@ -47,7 +47,7 @@ function generatePDF() {
     var doc = new JSPDF();
 
     doc.setFontSize(25);
-    doc.text(35, 5, 'Forward loves jsPDF');
+    doc.text(35, 10, 'Forward loves jsPDF');
     // Filled square
     doc.rect(40, 20, 10, 10, 'F');
 
@@ -64,6 +64,7 @@ function generatePDF() {
     doc.setFillColor(255, 0, 0);
     doc.rect(100, 20, 10, 10, 'F');
 
+    doc.setFont('Angin Senja', 'normal');
     // I know the proper spelling is colour ;)
     doc.setTextColor(100);
     doc.text(20, 120, 'This is gray.');
@@ -73,6 +74,8 @@ function generatePDF() {
 
     doc.setTextColor(255, 0, 0);
     doc.text(20, 140, 'This is red.');
+
+    doc.setFont('broc-webfont', 'normal');
 
     doc.setTextColor(0, 255, 0);
     doc.text(20, 150, 'This is green.');
