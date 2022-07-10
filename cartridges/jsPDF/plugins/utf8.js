@@ -1,3 +1,7 @@
+/* eslint-disable no-prototype-builtins */
+/* eslint-disable no-underscore-dangle */
+/* eslint-disable no-param-reassign */
+/* eslint-disable valid-jsdoc */
 /**
 * @name utf8
 * @module
@@ -29,11 +33,11 @@ module.exports = function (jsPDFAPI) {
             t = font.metadata.characterToGlyph(text.charCodeAt(i));
             font.metadata.glyIdsUsed.push(t);
             font.metadata.toUnicode[t] = text.charCodeAt(i);
-            if (widths.indexOf(t) == -1) {
+            if (widths.indexOf(t) === -1) {
                 widths.push(t);
                 widths.push([parseInt(font.metadata.widthOfGlyph(t), 10)]);
             }
-            if (t == '0') { // Spaces are not allowed in cmap.
+            if (t === '0') { // Spaces are not allowed in cmap.
                 return ar.join('');
             }
             t = t.toString(16);
@@ -43,13 +47,13 @@ module.exports = function (jsPDFAPI) {
     };
 
     var toUnicodeCmap = function (map) {
-        var code,
-            codes,
-            range,
-            unicode,
-            unicodeMap,
-            _i,
-            _len;
+        var code;
+        var codes;
+        var range;
+        var unicode;
+        var unicodeMap;
+        var _i;
+        var _len;
         unicodeMap = '/CIDInit /ProcSet findresource begin\n12 dict begin\nbegincmap\n/CIDSystemInfo <<\n  /Registry (Adobe)\n  /Ordering (UCS)\n  /Supplement 0\n>> def\n/CMapName /Adobe-Identity-UCS def\n/CMapType 2 def\n1 begincodespacerange\n<0000><ffff>\nendcodespacerange';
         codes = Object.keys(map).sort(function (a, b) {
             return a - b;
@@ -150,12 +154,11 @@ module.exports = function (jsPDFAPI) {
 
     var winAnsiEncodingFunction = function (font, out, newObject, putStream) {
         if ((font.metadata instanceof jsPDFAPI.TTFFont) && font.encoding === 'WinAnsiEncoding') { // Tag with WinAnsi encoding
-            var widths = font.metadata.Unicode.widths;
             var data = font.metadata.rawData;
             var pdfOutput = data;
             var pdfOutput2 = '';
-            for (var i = 0; i < pdfOutput.length; i++) {
-                pdfOutput2 += String.fromCharCode(pdfOutput[i]);
+            for (var i2 = 0; i2 < pdfOutput.length; i2++) {
+                pdfOutput2 += String.fromCharCode(pdfOutput[i2]);
             }
             var fontTable = newObject();
             putStream({ data: pdfOutput2, addLength1: true });
@@ -182,9 +185,9 @@ module.exports = function (jsPDFAPI) {
             out('endobj');
             font.objectNumber = newObject();
             for (var i = 0; i < font.metadata.hmtx.widths.length; i++) {
-                font.metadata.hmtx.widths[i] = parseInt(font.metadata.hmtx.widths[i] * (1000 / font.metadata.head.unitsPerEm)); // Change the width of Em units to Point units.
+                font.metadata.hmtx.widths[i] = parseInt(font.metadata.hmtx.widths[i] * (1000 / font.metadata.head.unitsPerEm), 10); // Change the width of Em units to Point units.
             }
-            out('<</Subtype/TrueType/Type/Font/ToUnicode ' + cmap + ' 0 R/BaseFont/' + font.fontName + '/FontDescriptor ' + fontDescriptor + ' 0 R' + '/Encoding/' + font.encoding + ' /FirstChar 29 /LastChar 255 /Widths ' + jsPDFAPI.PDFObject.convert(font.metadata.hmtx.widths) + '>>');
+            out('<</Subtype/TrueType/Type/Font/ToUnicode ' + cmap + ' 0 R/BaseFont/' + font.fontName + '/FontDescriptor ' + fontDescriptor + ' 0 R/Encoding/' + font.encoding + ' /FirstChar 29 /LastChar 255 /Widths ' + jsPDFAPI.PDFObject.convert(font.metadata.hmtx.widths) + '>>');
             out('endobj');
             font.isAlreadyPutted = true;
         }
@@ -202,24 +205,14 @@ module.exports = function (jsPDFAPI) {
         var x = args.x;
         var y = args.y;
         var options = args.options || {};
-        var tmp;
         var mutex = args.mutex || {};
 
         var pdfEscape = mutex.pdfEscape;
         var activeFontKey = mutex.activeFontKey;
         var fonts = mutex.fonts;
-        var key,
-            sum = 0,
-            fontSize = mutex.activeFontSize,
-            lineHeight = 0,
-            axisCache;
 
-        var str = '',
-            v = 0,
-            s = 0,
-            tkey,
-            widths,
-            cmapConfirm;
+        var str = '';
+        var cmapConfirm;
         var strText = '';
         var attr;
         var key = activeFontKey;
@@ -234,30 +227,16 @@ module.exports = function (jsPDFAPI) {
                 mutex: mutex
             };
         }
-        var i = 0;
+
         strText = text;
 
-        key = (attr) ? getFont(attr.font, attr.fontStyle) : activeFontKey;
+        key = (attr) ? jsPDFAPI.getFont(attr.font, attr.fontStyle) : activeFontKey;
         if (Object.prototype.toString.call(text) === '[object Array]') {
             strText = text[0];
         }
-        for (s = 0; s < strText.length; s += 1) {
+        for (var s = 0; s < strText.length; s += 1) {
             if (fonts[key].metadata.hasOwnProperty('cmap')) {
                 cmapConfirm = fonts[key].metadata.cmap.unicode.codeMap[strText[s].charCodeAt(0)];
-              /*
-             if (Object.prototype.toString.call(text) === '[object Array]') {
-                var i = 0;
-               // for (i = 0; i < text.length; i += 1) {
-                    if (Object.prototype.toString.call(text[s]) === '[object Array]') {
-                        cmapConfirm = fonts[key].metadata.cmap.unicode.codeMap[strText[s][0].charCodeAt(0)]; //Make sure the cmap has the corresponding glyph id
-                    } else {
-
-                    }
-                //}
-
-            } else {
-                cmapConfirm = fonts[key].metadata.cmap.unicode.codeMap[strText[s].charCodeAt(0)]; //Make sure the cmap has the corresponding glyph id
-            }*/
             }
             if (!cmapConfirm) {
                 if (strText[s].charCodeAt(0) < 256 && fonts[key].metadata.hasOwnProperty('Unicode')) {
@@ -270,7 +249,7 @@ module.exports = function (jsPDFAPI) {
             }
         }
         var result = '';
-        if ((parseInt(key.slice(1)) < 14) || encoding === 'WinAnsiEncoding') { // For the default 13 font
+        if ((parseInt(key.slice(1), 10) < 14) || encoding === 'WinAnsiEncoding') { // For the default 13 font
             result = toHex(pdfEscape(str, key));
         } else if (encoding === 'Identity-H') {
             result = pdfEscape16(str, fonts[key]);
@@ -287,14 +266,13 @@ module.exports = function (jsPDFAPI) {
     };
 
     var utf8EscapeFunction = function (parms) {
-        var text = parms.text || '',
-            x = parms.x,
-            y = parms.y,
-            options = parms.options,
-            mutex = parms.mutex;
-        var lang = options.lang;
+        var text = parms.text || '';
+        var x = parms.x;
+        var y = parms.y;
+        var options = parms.options;
+        var mutex = parms.mutex;
         var tmpText = [];
-        var tempPayLoad;
+
         var args = {
             text: text,
             x: x,
