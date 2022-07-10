@@ -1047,12 +1047,8 @@ var jsPDF = (function (global) {
                     if (~stack.indexOf(' at ')) stack = stack.split(" at ")[1];
                     var m = "Error in function " + stack.split("\n")[0].split('<')[
                         0] + ": " + e.message;
-                    if (global.console) {
-                        global.console.error(m, e);
-                        if (global.alert) alert(m);
-                    } else {
-                        throw new Error(m);
-                    }
+                    
+                    throw new Error(m);
                 }
             };
             fn.foo.bar = fn;

@@ -47,7 +47,7 @@ function generatePDF() {
     var doc = new JSPDF();
 
     doc.setFontSize(25);
-    doc.text(35, 5, 'Forward loves jsPDF');
+    doc.text(35, 10, 'Forward loves jsPDF');
     // Filled square
     doc.rect(40, 20, 10, 10, 'F');
 
