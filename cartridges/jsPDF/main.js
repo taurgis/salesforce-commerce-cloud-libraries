@@ -13,6 +13,7 @@ require('./plugins/standard_fonts_metrics')(jsPDF.API);
 require('./plugins/setlanguage')(jsPDF.API);
 require('./plugins/annotations')(jsPDF.API);
 require('./plugins/arabic')(jsPDF.API);
+require('./plugins/split_text_to_size')(jsPDF.API);
 require('./plugins/cell')(jsPDF.API);
 require('./plugins/vfs')(jsPDF.API);
 require('./plugins/ttfsupport')(jsPDF.API);
