@@ -7,6 +7,7 @@ require('./libs/ttffont')(jsPDF.API);
 require('./plugins/addImage')(jsPDF.API);
 require('./plugins/total_pages')(jsPDF.API);
 require('./plugins/javascript')(jsPDF.API);
+require('./plugins/split_text_to_size')(jsPDF.API);
 require('./plugins/autoprint')(jsPDF.API);
 require('./plugins/viewerpreferences')(jsPDF.API);
 require('./plugins/standard_fonts_metrics')(jsPDF.API);
