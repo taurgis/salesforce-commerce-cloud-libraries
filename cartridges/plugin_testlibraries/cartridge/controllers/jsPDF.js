@@ -83,10 +83,10 @@ function generatePDF() {
     doc.setTextColor(0, 0, 255);
     doc.text(20, 160, 'This is blue.');
 
-	doc.setFont('Open Sans', 'normal');
+    doc.setFont('Open Sans', 'normal');
 
-	doc.setTextColor('#fffff');
-	doc.textWithLink('This is link.', 20, 175, { url: 'http://www.google.com' });
+    doc.setTextColor('#fffff');
+    doc.textWithLink('This is link.', 20, 175, { url: 'http://www.google.com' });
 
     doc.addImage(jpg, 'jpg', 100, 200, 280, 210, undefined, 'none');
 
