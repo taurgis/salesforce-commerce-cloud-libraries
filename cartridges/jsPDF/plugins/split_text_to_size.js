@@ -23,6 +23,13 @@
  * WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  * ====================================================================
  */
+/* eslint-disable valid-jsdoc */
+/* eslint-disable camelcase */
+/* eslint-disable no-else-return */
+/* eslint-disable one-var */
+/* eslint-disable no-param-reassign */
+/* eslint-disable no-mixed-operators */
+/* eslint-disable no-shadow */
 
 /**
  * jsPDF split_text_to_size plugin
@@ -31,7 +38,7 @@
  * @module
  */
 module.exports = function (API) {
-    "use strict";
+    'use strict';
     /**
      * Returns an array of length matching length of the 'word' string, with each
      * cell occupied by the width of the char in that position.
@@ -42,7 +49,7 @@ module.exports = function (API) {
      * @param {Object} options
      * @returns {Array}
      */
-    var getCharWidthsArray = (API.getCharWidthsArray = function(text, options) {
+    var getCharWidthsArray = (API.getCharWidthsArray = function (text, options) {
         options = options || {};
 
         var activeFont = options.font || this.internal.getFont();
@@ -57,20 +64,21 @@ module.exports = function (API) {
             ? options.kerning
             : activeFont.metadata.Unicode.kerning;
         var kerningFractionOf = kerning.fof ? kerning.fof : 1;
+        // eslint-disable-next-line no-unneeded-ternary
         var doKerning = options.doKerning === false ? false : true;
         var kerningValue = 0;
 
         var i;
         var length = text.length;
         var char_code;
-        var prior_char_code = 0; //for kerning
+        var prior_char_code = 0; // for kerning
         var default_char_width = widths[0] || widthsFractionOf;
         var output = [];
 
         for (i = 0; i < length; i++) {
             char_code = text.charCodeAt(i);
 
-            if (typeof activeFont.metadata.widthOfString === "function") {
+            if (typeof activeFont.metadata.widthOfString === 'function') {
                 output.push(
                     (activeFont.metadata.widthOfGlyph(
                             activeFont.metadata.characterToGlyph(char_code)
@@ -80,7 +88,7 @@ module.exports = function (API) {
             } else {
                 if (
                     doKerning &&
-                    typeof kerning[char_code] === "object" &&
+                    typeof kerning[char_code] === 'object' &&
                     !isNaN(parseInt(kerning[char_code][prior_char_code], 10))
                 ) {
                     kerningValue =
@@ -102,7 +110,7 @@ module.exports = function (API) {
     /**
      * Returns a widths of string in a given font, if the font size is set as 1 point.
      *
-     * In other words, this is "proportional" value. For 1 unit of font size, the length
+     * In other words, this is 'proportional' value. For 1 unit of font size, the length
      * of the string will be that much.
      *
      * Multiply by font size to get actual width in *points*
@@ -115,7 +123,7 @@ module.exports = function (API) {
      * @param {string} options
      * @returns {number} result
      */
-    var getStringUnitWidth = (API.getStringUnitWidth = function(text, options) {
+    var getStringUnitWidth = (API.getStringUnitWidth = function (text, options) {
         options = options || {};
 
         var fontSize = options.fontSize || this.internal.getFontSize();
@@ -127,13 +135,13 @@ module.exports = function (API) {
             text = API.processArabic(text);
         }
 
-        if (typeof font.metadata.widthOfString === "function") {
+        if (typeof font.metadata.widthOfString === 'function') {
             result =
                 font.metadata.widthOfString(text, fontSize, charSpace) / fontSize;
         } else {
             result = getCharWidthsArray
                 .apply(this, arguments)
-                .reduce(function(pv, cv) {
+                .reduce(function (pv, cv) {
                     return pv + cv;
                 }, 0);
         }
@@ -143,7 +151,7 @@ module.exports = function (API) {
     /**
   returns array of lines
      */
-    var splitLongWord = function(word, widths_array, firstLineMaxLen, maxLen) {
+    var splitLongWord = function (word, widths_array, firstLineMaxLen, maxLen) {
         var answer = [];
 
         // 1st, chop off the piece that can fit on the hanging line.
@@ -176,9 +184,9 @@ module.exports = function (API) {
         return answer;
     };
 
-    // Note, all sizing inputs for this function must be in "font measurement units"
-    // By default, for PDF, it's "point".
-    var splitParagraphIntoLines = function(text, maxlen, options) {
+    // Note, all sizing inputs for this function must be in 'font measurement units'
+    // By default, for PDF, it's 'point'.
+    var splitParagraphIntoLines = function (text, maxlen, options) {
         // at this time works only on Western scripts, ones with space char
         // separating the words. Feel free to expand.
 
@@ -193,8 +201,8 @@ module.exports = function (API) {
             current_word_length = 0,
             word,
             widths_array,
-            words = text.split(" "),
-            spaceCharWidth = getCharWidthsArray.apply(this, [" ", options])[0],
+            words = text.split(' '),
+            spaceCharWidth = getCharWidthsArray.apply(this, [' ', options])[0],
             i,
             l,
             tmp,
@@ -206,14 +214,15 @@ module.exports = function (API) {
             lineIndent = options.lineIndent || 0;
         }
         if (lineIndent) {
-            var pad = Array(lineIndent).join(" "),
+            var pad = Array(lineIndent).join(' '),
                 wrds = [];
-            words.map(function(wrd) {
+            // eslint-disable-next-line array-callback-return
+            words.map(function (wrd) {
                 wrd = wrd.split(/\s*\n/);
                 if (wrd.length > 1) {
                     wrds = wrds.concat(
-                        wrd.map(function(wrd, idx) {
-                            return (idx && wrd.length ? "\n" : "") + wrd;
+                        wrd.map(function (wrd, idx) {
+                            return (idx && wrd.length ? '\n' : '') + wrd;
                         })
                     );
                 } else {
@@ -228,12 +237,13 @@ module.exports = function (API) {
             var force = 0;
 
             word = words[i];
-            if (lineIndent && word[0] == "\n") {
+            // eslint-disable-next-line eqeqeq
+            if (lineIndent && word[0] == '\n') {
                 word = word.substr(1);
                 force = 1;
             }
             widths_array = getCharWidthsArray.apply(this, [word, options]);
-            current_word_length = widths_array.reduce(function(pv, cv) {
+            current_word_length = widths_array.reduce(function (pv, cv) {
                 return pv + cv;
             }, 0);
 
@@ -260,7 +270,7 @@ module.exports = function (API) {
                     }
                     current_word_length = widths_array
                         .slice(word.length - (line[0] ? line[0].length : 0))
-                        .reduce(function(pv, cv) {
+                        .reduce(function (pv, cv) {
                             return pv + cv;
                         }, 0);
                 } else {
@@ -282,12 +292,13 @@ module.exports = function (API) {
 
         var postProcess;
         if (lineIndent) {
-            postProcess = function(ln, idx) {
-                return (idx ? pad : "") + ln.join(" ");
+            postProcess = function (ln, idx) {
+                // eslint-disable-next-line block-scoped-var
+                return (idx ? pad : '') + ln.join(' ');
             };
         } else {
-            postProcess = function(ln) {
-                return ln.join(" ");
+            postProcess = function (ln) {
+                return ln.join(' ');
             };
         }
 
@@ -297,7 +308,7 @@ module.exports = function (API) {
     /**
      * Splits a given string into an array of strings. Uses 'size' value
      * (in measurement units declared as default for the jsPDF instance)
-     * and the font's "widths" and "Kerning" tables, where available, to
+     * and the font's 'widths' and 'Kerning' tables, where available, to
      * determine display length of a given string for a given font.
      *
      * We use character's 100% of unit size (height) as width when Width
@@ -311,13 +322,13 @@ module.exports = function (API) {
      * @param {Object} options Optional flags needed for chopper to do the right thing.
      * @returns {Array} array Array with strings chopped to size.
      */
-    API.splitTextToSize = function(text, maxlen, options) {
-        "use strict";
+    API.splitTextToSize = function (text, maxlen, options) {
+        'use strict';
 
         options = options || {};
 
         var fsize = options.fontSize || this.internal.getFontSize(),
-            newOptions = function(options) {
+            newOptions = function (options) {
                 var widths = {
                         0: 1
                     },
@@ -325,7 +336,7 @@ module.exports = function (API) {
 
                 if (!options.widths || !options.kerning) {
                     var f = this.internal.getFont(options.fontName, options.fontStyle),
-                        encoding = "Unicode";
+                        encoding = 'Unicode';
                     // NOT UTF8, NOT UTF16BE/LE, NOT UCS2BE/LE
                     // Actual JavaScript-native String's 16bit char codes used.
                     // no multi-byte logic here
@@ -358,16 +369,16 @@ module.exports = function (API) {
             paragraphs = String(text).split(/\r?\n/);
         }
 
-        // now we convert size (max length of line) into "font size units"
-        // at present time, the "font size unit" is always 'point'
-        // 'proportional' means, "in proportion to font size"
+        // now we convert size (max length of line) into 'font size units'
+        // at present time, the 'font size unit' is always 'point'
+        // 'proportional' means, 'in proportion to font size'
         var fontUnit_maxLen = (1.0 * this.internal.scaleFactor * maxlen) / fsize;
-        // at this time, fsize is always in "points" regardless of the default measurement unit of the doc.
+        // at this time, fsize is always in 'points' regardless of the default measurement unit of the doc.
         // this may change in the future?
         // until then, proportional_maxlen is likely to be in 'points'
 
         // If first line is to be indented (shorter or longer) than maxLen
-        // we indicate that by using CSS-style "text-indent" option.
+        // we indicate that by using CSS-style 'text-indent' option.
         // here it's in font units too (which is likely 'points')
         // it can be negative (which makes the first line longer than maxLen)
         newOptions.textIndent = options.textIndent
