@@ -29,4 +29,3 @@ function flatMapDepth(collection, iteratee, depth) {
 }
 
 module.exports = flatMapDepth;
-

@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _xdropRepeatsWith = require('./internal/_xdropRepeatsWith');
 var last = require('./last');
 
-
 /**
  * Returns a new list without any consecutively repeating elements. Equality is
  * determined by applying the supplied predicate to each pair of consecutive elements. The

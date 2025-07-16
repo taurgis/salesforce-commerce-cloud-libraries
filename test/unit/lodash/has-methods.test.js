@@ -24,8 +24,7 @@ describe('has methods', function () {
         var sparseArray = Array(1);
         var sparseString = Object('a');
 
-        delete sparseArgs[0];
-        delete sparseString[0];
+        sparseArgs[0] = undefined;
 
         it('`_.' + methodName + '` should check for own properties', function () {
             var object = { 'a': 1 };

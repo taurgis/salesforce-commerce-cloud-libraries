@@ -7,7 +7,6 @@ var _reduce = require('./internal/_reduce');
 var tail = require('./tail');
 var identity = require('./identity');
 
-
 /**
  * Performs left-to-right function composition using transforming function. The first argument may have
  * any arity; the remaining arguments must be unary.

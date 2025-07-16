@@ -5,7 +5,6 @@ var _pipeP = require('./internal/_pipeP');
 var reduce = require('./reduce');
 var tail = require('./tail');
 
-
 /**
  * Performs left-to-right composition of one or more Promise-returning
  * functions. The first argument may have any arity; the remaining arguments

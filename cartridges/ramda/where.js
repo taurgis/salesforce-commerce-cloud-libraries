@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var _has = require('./internal/_has');
 
-
 /**
  * Takes a spec object and a test object; returns true if the test satisfies
  * the spec. Each of the spec's own properties must be a predicate function.

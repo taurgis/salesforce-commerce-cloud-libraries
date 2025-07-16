@@ -17,14 +17,14 @@ module.exports = function (options) {
 
     var guidPool = 'abcdef1234567890';
     var variantPool = 'ab89';
-    var guidResult = string({ pool: guidPool, length: 8 }) + '-' +
-        string({ pool: guidPool, length: 4 }) + '-' +
+    var guidResult = string({ pool: guidPool, length: 8 }) + '-'
+        + string({ pool: guidPool, length: 4 }) + '-'
         // The Version
-        guidOptions.version +
-        string({ pool: guidPool, length: 3 }) + '-' +
+        + guidOptions.version
+        + string({ pool: guidPool, length: 3 }) + '-'
         // The Variant
-        string({ pool: variantPool, length: 1 }) +
-        string({ pool: guidPool, length: 3 }) + '-' +
-        string({ pool: guidPool, length: 12 });
+        + string({ pool: variantPool, length: 1 })
+        + string({ pool: guidPool, length: 3 }) + '-'
+        + string({ pool: guidPool, length: 12 });
     return guidResult;
 };

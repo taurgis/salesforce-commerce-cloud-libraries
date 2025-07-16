@@ -4,7 +4,6 @@ var _includesWith = require('./internal/_includesWith');
 var _curry3 = require('./internal/_curry3');
 var _filter = require('./internal/_filter');
 
-
 /**
  * Takes a predicate `pred`, a list `xs`, and a list `ys`, and returns a list
  * `xs'` comprising each of the elements of `xs` which is equal to one or more

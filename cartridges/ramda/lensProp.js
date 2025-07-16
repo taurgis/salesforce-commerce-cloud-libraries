@@ -5,7 +5,6 @@ var assoc = require('./assoc');
 var lens = require('./lens');
 var prop = require('./prop');
 
-
 /**
  * Returns a lens whose focus is the specified property.
  *

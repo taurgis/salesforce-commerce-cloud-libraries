@@ -24,21 +24,21 @@ function _equals(a, b, stackA, stackB) {
     }
 
     if (typeof a['fantasy-land/equals'] === 'function' || typeof b['fantasy-land/equals'] === 'function') {
-        return typeof a['fantasy-land/equals'] === 'function' && a['fantasy-land/equals'](b) &&
-      typeof b['fantasy-land/equals'] === 'function' && b['fantasy-land/equals'](a);
+        return typeof a['fantasy-land/equals'] === 'function' && a['fantasy-land/equals'](b)
+      && typeof b['fantasy-land/equals'] === 'function' && b['fantasy-land/equals'](a);
     }
 
     if (typeof a.equals === 'function' || typeof b.equals === 'function') {
-        return typeof a.equals === 'function' && a.equals(b) &&
-      typeof b.equals === 'function' && b.equals(a);
+        return typeof a.equals === 'function' && a.equals(b)
+      && typeof b.equals === 'function' && b.equals(a);
     }
 
     switch (typeA) {
         case 'Arguments':
         case 'Array':
         case 'Object':
-            if (typeof a.constructor === 'function' &&
-        _functionName(a.constructor) === 'Promise') {
+            if (typeof a.constructor === 'function'
+        && _functionName(a.constructor) === 'Promise') {
                 return a === b;
             }
             break;
@@ -57,12 +57,12 @@ function _equals(a, b, stackA, stackB) {
         case 'Error':
             return a.name === b.name && a.message === b.message;
         case 'RegExp':
-            if (!(a.source === b.source &&
-          a.global === b.global &&
-          a.ignoreCase === b.ignoreCase &&
-          a.multiline === b.multiline &&
-          a.sticky === b.sticky &&
-          a.unicode === b.unicode)) {
+            if (!(a.source === b.source
+          && a.global === b.global
+          && a.ignoreCase === b.ignoreCase
+          && a.multiline === b.multiline
+          && a.sticky === b.sticky
+          && a.unicode === b.unicode)) {
                 return false;
             }
             break;

@@ -19,7 +19,7 @@ function lastWeek(day) {
     switch (day) {
         case 0: /* Sun */
         case 4: /* Wed */
-        case 6 /* Sat */:
+        case 6: /* Sat */
             return "'minulú " + weekday + " o' p";
         default:
             return "'minulý' eeee 'o' p";
@@ -41,7 +41,7 @@ function nextWeek(day) {
     switch (day) {
         case 0: /* Sun */
         case 4: /* Wed */
-        case 6 /* Sat */:
+        case 6:
             return "'budúcu' " + weekday + " 'o' p";
         default:
             return "'budúci' eeee 'o' p";

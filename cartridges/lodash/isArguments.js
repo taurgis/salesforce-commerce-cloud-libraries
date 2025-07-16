@@ -28,8 +28,8 @@ var propertyIsEnumerable = objectProto.propertyIsEnumerable;
  * isArguments([1, 2, 3]); => false
  */
 var isArguments = baseIsArguments(function () { return arguments; }()) ? baseIsArguments : function (value) {
-    return isObjectLike(value) && hasOwnProperty.call(value, 'callee') &&
-    !propertyIsEnumerable.call(value, 'callee');
+    return isObjectLike(value) && hasOwnProperty.call(value, 'callee')
+    && !propertyIsEnumerable.call(value, 'callee');
 };
 
 module.exports = isArguments;

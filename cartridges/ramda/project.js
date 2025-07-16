@@ -5,7 +5,6 @@ var identity = require('./identity');
 var pickAll = require('./pickAll');
 var useWith = require('./useWith');
 
-
 /**
  * Reasonable analog to SQL `select` statement.
  *

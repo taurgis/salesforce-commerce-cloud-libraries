@@ -6,7 +6,6 @@ var map = require('./map');
 var prepend = require('./prepend');
 var reduceRight = require('./reduceRight');
 
-
 /**
  * Transforms a [Traversable](https://github.com/fantasyland/fantasy-land#traversable)
  * of [Applicative](https://github.com/fantasyland/fantasy-land#applicative) into an
@@ -32,9 +31,9 @@ var reduceRight = require('./reduceRight');
  *      R.sequence(R.of, Nothing());       //=> [Nothing()]
  */
 var sequence = _curry2(function sequence(of, traversable) {
-    return typeof traversable.sequence === 'function' ?
-        traversable.sequence(of) :
-        reduceRight(
+    return typeof traversable.sequence === 'function'
+        ? traversable.sequence(of)
+        : reduceRight(
             function (x, acc) { return ap(map(prepend, x), acc); },
             of([]),
             traversable

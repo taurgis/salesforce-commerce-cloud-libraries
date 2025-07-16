@@ -30,7 +30,7 @@ module.exports = function (options) {
             break;
     }
 
-    return fl + character({ alpha: true, casing: 'upper' }) +
-            character({ alpha: true, casing: 'upper' }) +
-            character({ alpha: true, casing: 'upper' });
+    return fl + character({ alpha: true, casing: 'upper' })
+            + character({ alpha: true, casing: 'upper' })
+            + character({ alpha: true, casing: 'upper' });
 };

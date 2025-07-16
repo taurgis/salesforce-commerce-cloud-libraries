@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * A function that returns the `!` of its argument. It will return `true` when
  * passed false-y value, and `false` when passed a truth-y one.

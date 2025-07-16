@@ -14,11 +14,11 @@ function week(isFuture) {
     return function (date, _baseDate, _options) {
         var day = date.getUTCDay();
         return (
-            (isFuture ? '' : "'múlt' ") +
-      "'" +
-      accusativeWeekdays[day] +
-      "'" +
-      " p'-kor'"
+            (isFuture ? '' : "'múlt' ")
+      + "'"
+      + accusativeWeekdays[day]
+      + "'"
+      + " p'-kor'"
         );
     };
 }

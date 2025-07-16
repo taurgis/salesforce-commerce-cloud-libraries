@@ -4,7 +4,6 @@ var _curry3 = require('./internal/_curry3');
 var adjust = require('./adjust');
 var always = require('./always');
 
-
 /**
  * Returns a new copy of the array with the element at the provided index
  * replaced with the given value.

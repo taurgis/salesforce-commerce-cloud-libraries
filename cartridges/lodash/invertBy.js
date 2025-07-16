@@ -40,8 +40,8 @@ var nativeObjectToString = objectProto.toString;
  * }); => { 'group1': ['a', 'c'], 'group2': ['b'] }
  */
 var invertBy = createInverter(function (result, value, key) {
-    if (value != null &&
-      typeof value.toString != 'function') {
+    if (value != null
+      && typeof value.toString != 'function') {
         value = nativeObjectToString.call(value);
     }
 

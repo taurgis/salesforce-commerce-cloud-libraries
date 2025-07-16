@@ -180,11 +180,10 @@ function ordinalNumber(dirtyNumber, dirtyOptions) {
     } else if (unit === 'hour' || unit === 'minute' || unit === 'second') {
         suffix = '-я';
     } else {
-        suffix =
-      (number % 10 === 2 || number % 10 === 3) &&
-      (number % 100 !== 12 && number % 100 !== 13)
-          ? '-і'
-          : '-ы';
+        suffix = (number % 10 === 2 || number % 10 === 3)
+      && (number % 100 !== 12 && number % 100 !== 13)
+            ? '-і'
+            : '-ы';
     }
 
     return number + suffix;

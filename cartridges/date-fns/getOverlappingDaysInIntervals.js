@@ -91,15 +91,13 @@ module.exports = function getOverlappingDaysInIntervals(
         throw new RangeError('Invalid interval');
     }
 
-    var isOverlapping =
-    leftStartTime < rightEndTime && rightStartTime < leftEndTime;
+    var isOverlapping = leftStartTime < rightEndTime && rightStartTime < leftEndTime;
 
     if (!isOverlapping) {
         return 0;
     }
 
-    var overlapStartDate =
-    rightStartTime < leftStartTime ? leftStartTime : rightStartTime;
+    var overlapStartDate = rightStartTime < leftStartTime ? leftStartTime : rightStartTime;
 
     var overlapEndDate = rightEndTime > leftEndTime ? leftEndTime : rightEndTime;
 

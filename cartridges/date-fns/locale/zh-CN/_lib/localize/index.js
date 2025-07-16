@@ -146,10 +146,10 @@ function ordinalNumber(dirtyNumber, dirtyOptions) {
     var unit = String(options.unit);
 
     if (
-        unit === 'date' ||
-    unit === 'hour' ||
-    unit === 'minute' ||
-    unit === 'second'
+        unit === 'date'
+    || unit === 'hour'
+    || unit === 'minute'
+    || unit === 'second'
     ) {
         return number.toString();
     }

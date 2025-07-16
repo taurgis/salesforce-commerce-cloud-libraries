@@ -7,7 +7,6 @@ var _has = require('./internal/_has');
 var _reduce = require('./internal/_reduce');
 var _xreduceBy = require('./internal/_xreduceBy');
 
-
 /**
  * Groups the elements of the list according to the result of calling
  * the String-returning function `keyFn` on each element and reduces the elements
@@ -49,12 +48,15 @@ var _xreduceBy = require('./internal/_xreduceBy');
  *      reduceBy(groupNames, [], toGrade, students)
  *      //=> {"A": ["Dora"], "B": ["Abby", "Curt"], "F": ["Bart"]}
  */
-var reduceBy = _curryN(4, [], _dispatchable([], _xreduceBy,
+var reduceBy = _curryN(4, [], _dispatchable(
+    [],
+    _xreduceBy,
     function reduceBy(valueFn, valueAcc, keyFn, list) {
         return _reduce(function (acc, elt) {
             var key = keyFn(elt);
             acc[key] = valueFn(_has(key, acc) ? acc[key] : _clone(valueAcc, [], [], false), elt);
             return acc;
         }, {}, list);
-    }));
+    }
+));
 module.exports = reduceBy;

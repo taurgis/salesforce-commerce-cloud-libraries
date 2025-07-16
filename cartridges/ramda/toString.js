@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var _toString = require('./internal/_toString');
 
-
 /**
  * Returns the string representation of the given value. `eval`'ing the output
  * should result in a value equivalent to the input value. Many of the built-in

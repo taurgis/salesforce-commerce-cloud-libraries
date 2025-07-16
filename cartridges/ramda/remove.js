@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Removes the sub-list of `list` starting at index `start` and containing
  * `count` elements. _Note that this is not destructive_: it returns a copy of

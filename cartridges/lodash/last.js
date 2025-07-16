@@ -18,4 +18,3 @@ function last(array) {
 }
 
 module.exports = last;
-

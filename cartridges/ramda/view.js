@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 // `Const` is a functor that effectively ignores the function given to `map`.
 var Const = function (x) {
     return { value: x, 'fantasy-land/map': function () { return this; } };

@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _dropLast = require('./internal/_dropLast');
 var _xdropLast = require('./internal/_xdropLast');
 
-
 /**
  * Returns a list containing all but the last `n` elements of the given `list`.
  *

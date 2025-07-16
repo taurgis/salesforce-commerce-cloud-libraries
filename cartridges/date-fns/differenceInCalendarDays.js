@@ -52,10 +52,8 @@ module.exports = function differenceInCalendarDays(
     var startOfDayLeft = startOfDay(dirtyDateLeft);
     var startOfDayRight = startOfDay(dirtyDateRight);
 
-    var timestampLeft =
-    startOfDayLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfDayLeft);
-    var timestampRight =
-    startOfDayRight.getTime() - getTimezoneOffsetInMilliseconds(startOfDayRight);
+    var timestampLeft = startOfDayLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfDayLeft);
+    var timestampRight = startOfDayRight.getTime() - getTimezoneOffsetInMilliseconds(startOfDayRight);
 
     // Round the number of days to the nearest integer
     // because the number of milliseconds in a day is not constant

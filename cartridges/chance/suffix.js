@@ -16,7 +16,7 @@ var suffixes = require('./lib/suffixes');
 module.exports = function (options) {
     var suffixOptions = initOptions(options);
 
-    return suffixOptions.full ?
-        pick(suffixes).name :
-        pick(suffixes).abbreviation;
+    return suffixOptions.full
+        ? pick(suffixes).name
+        : pick(suffixes).abbreviation;
 };

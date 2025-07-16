@@ -134,11 +134,11 @@ function ordinalNumber(dirtyNumber, dirtyOptions) {
     if (unit === 'year' || unit === 'month') {
         suffix = 'ος';
     } else if (
-        unit === 'week' ||
-    unit === 'dayOfYear' ||
-    unit === 'day' ||
-    unit === 'hour' ||
-    unit === 'date'
+        unit === 'week'
+    || unit === 'dayOfYear'
+    || unit === 'day'
+    || unit === 'hour'
+    || unit === 'date'
     ) {
         suffix = 'η';
     } else {

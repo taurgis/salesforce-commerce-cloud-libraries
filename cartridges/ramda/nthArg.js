@@ -4,7 +4,6 @@ var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');
 var nth = require('./nth');
 
-
 /**
  * Returns a function which returns its nth argument.
  *

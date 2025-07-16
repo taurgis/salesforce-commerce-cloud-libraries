@@ -30,4 +30,3 @@ function flattenDepth(array, depth) {
 }
 
 module.exports = flattenDepth;
-

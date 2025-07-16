@@ -58,11 +58,9 @@ module.exports = function differenceInCalendarWeeks(
     var startOfWeekLeft = startOfWeek(dirtyDateLeft, dirtyOptions);
     var startOfWeekRight = startOfWeek(dirtyDateRight, dirtyOptions);
 
-    var timestampLeft =
-    startOfWeekLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfWeekLeft);
-    var timestampRight =
-    startOfWeekRight.getTime() -
-    getTimezoneOffsetInMilliseconds(startOfWeekRight);
+    var timestampLeft = startOfWeekLeft.getTime() - getTimezoneOffsetInMilliseconds(startOfWeekLeft);
+    var timestampRight = startOfWeekRight.getTime()
+    - getTimezoneOffsetInMilliseconds(startOfWeekRight);
 
     // Round the number of days to the nearest integer
     // because the number of milliseconds in a week is not constant

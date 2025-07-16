@@ -9,8 +9,8 @@ var isObject = require('./isObject');
 const reRegExpChar = /[\\^$.*+?()[\]{}|]/g;
 
 /** Used to detect if a method is native. */
-const reIsNative = RegExp('^' +
-    Function.prototype.toString.call(Object.prototype.hasOwnProperty)
+const reIsNative = RegExp('^'
+    + Function.prototype.toString.call(Object.prototype.hasOwnProperty)
         .replace(reRegExpChar, '\\$&')
         .replace(/hasOwnProperty|(function).*?(?=\\\()| for .+?(?=\\\])/g, '$1.*?')
  + '$');

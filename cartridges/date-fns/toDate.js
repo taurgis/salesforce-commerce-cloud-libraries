@@ -41,17 +41,17 @@ module.exports = function toDate(argument) {
 
     // Clone the date
     if (
-        argument instanceof Date ||
-    (typeof argument === 'object' && argStr === '[object Date]')
+        argument instanceof Date
+    || (typeof argument === 'object' && argStr === '[object Date]')
     ) {
     // Prevent the date to lose the milliseconds when passed to new Date() in IE10
         return new Date(argument.getTime());
-    } else if (typeof argument === 'number' || argStr === '[object Number]') {
+    } if (typeof argument === 'number' || argStr === '[object Number]') {
         return new Date(argument);
     }
     if (
-        (typeof argument === 'string' || argStr === '[object String]') &&
-      typeof console !== 'undefined'
+        (typeof argument === 'string' || argStr === '[object String]')
+      && typeof console !== 'undefined'
     ) {
         // eslint-disable-next-line no-console
         console.warn(

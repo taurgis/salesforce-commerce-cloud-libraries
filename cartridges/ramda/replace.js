@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Replace a substring or regex match in a string with a replacement.
  *

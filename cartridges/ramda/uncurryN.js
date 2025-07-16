@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var curryN = require('./curryN');
 
-
 /**
  * Returns a function of arity `n` from a (manually) curried function.
  *

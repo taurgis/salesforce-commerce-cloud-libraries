@@ -2,7 +2,6 @@
 
 var _filter = require('./_filter');
 
-
 /**
  * @private
  * @param {Function} fn The strategy for extracting function names from an object

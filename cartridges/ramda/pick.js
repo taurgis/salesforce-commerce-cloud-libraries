@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns a partial copy of an object containing only the keys specified. If
  * the key does not exist, the property is ignored.

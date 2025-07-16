@@ -29,6 +29,7 @@ module.exports = function (jsPDFAPI) {
     // eslint-disable-next-line no-param-reassign
     jsPDFAPI.putTotalPages = function (pageExpression) {
         'use strict';
+
         var replaceExpression = new RegExp(pageExpression, 'g');
         for (var n = 1; n <= this.internal.getNumberOfPages(); n++) {
             for (var i = 0; i < this.internal.pages[n].length; i++) { this.internal.pages[n][i] = this.internal.pages[n][i].replace(replaceExpression, this.internal.getNumberOfPages()); }

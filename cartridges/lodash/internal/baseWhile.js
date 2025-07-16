@@ -16,8 +16,8 @@ function baseWhile(array, predicate, isDrop, fromRight) {
     var { length } = array;
     let index = fromRight ? length : -1;
 
-    while ((fromRight ? index-- : ++index < length) &&
-    predicate(array[index], index, array)) {
+    while ((fromRight ? index-- : ++index < length)
+    && predicate(array[index], index, array)) {
         // DO NOTHING
     }
 

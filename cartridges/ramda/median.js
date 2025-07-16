@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var mean = require('./mean');
 
-
 /**
  * Returns the median of the given list of numbers.
  *

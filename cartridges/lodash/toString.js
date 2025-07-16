@@ -24,4 +24,3 @@ function toString(value) {
 }
 
 module.exports = toString;
-

@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * `o` is a curried composition function that returns a unary function.
  * Like [`compose`](#compose), `o` performs right-to-left function composition.

@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var curryN = require('./curryN');
 
-
 /**
  * Accepts a function `fn` and a list of transformer functions and returns a
  * new curried function. When the new function is invoked, it calls the

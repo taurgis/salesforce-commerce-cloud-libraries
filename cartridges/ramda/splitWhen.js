@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Takes a list and a predicate and returns a pair of lists with the following properties:
  *

@@ -4,7 +4,6 @@ var _curry3 = require('./internal/_curry3');
 var concat = require('./concat');
 var differenceWith = require('./differenceWith');
 
-
 /**
  * Finds the set (i.e. no duplicates) of all elements contained in the first or
  * second list, but not both. Duplication is determined according to the value

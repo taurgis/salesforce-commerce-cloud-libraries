@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Converts an object into an array of key, value arrays. The object's own
  * properties and prototype properties are used. Note that the order of the

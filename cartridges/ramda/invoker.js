@@ -5,7 +5,6 @@ var _isFunction = require('./internal/_isFunction');
 var curryN = require('./curryN');
 var toString = require('./toString');
 
-
 /**
  * Turns a named method with a specified arity into a function that can be
  * called directly supplied with arguments and a target object.

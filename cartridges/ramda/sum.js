@@ -3,7 +3,6 @@
 var add = require('./add');
 var reduce = require('./reduce');
 
-
 /**
  * Adds together all the elements of a list.
  *

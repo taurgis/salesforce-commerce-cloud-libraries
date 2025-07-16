@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var slice = require('./slice');
 
-
 /**
  * Splits a collection into slices of the specified length.
  *

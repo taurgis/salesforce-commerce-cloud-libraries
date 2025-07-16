@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * The `mapAccum` function behaves like a combination of map and reduce; it
  * applies a function to each element of a list, passing an accumulating

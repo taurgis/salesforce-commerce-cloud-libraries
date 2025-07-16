@@ -6,7 +6,6 @@ var map = require('./map');
 var max = require('./max');
 var reduce = require('./reduce');
 
-
 /**
  * Returns a function, `fn`, which encapsulates `if/else, if/else, ...` logic.
  * `R.cond` takes a list of [predicate, transformer] pairs. All of the arguments

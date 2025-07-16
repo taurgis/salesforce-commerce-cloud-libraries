@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');
 
-
 /**
  * Returns a curried equivalent of the provided function. The curried function
  * has two unusual capabilities. First, its arguments needn't be provided one

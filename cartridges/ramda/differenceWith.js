@@ -3,7 +3,6 @@
 var _includesWith = require('./internal/_includesWith');
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Finds the set (i.e. no duplicates) of all elements in the first list not
  * contained in the second list. Duplication is determined according to the
@@ -31,8 +30,8 @@ var differenceWith = _curry3(function differenceWith(pred, first, second) {
     var idx = 0;
     var firstLen = first.length;
     while (idx < firstLen) {
-        if (!_includesWith(pred, first[idx], second) &&
-        !_includesWith(pred, first[idx], out)) {
+        if (!_includesWith(pred, first[idx], second)
+        && !_includesWith(pred, first[idx], out)) {
             out.push(first[idx]);
         }
         idx += 1;

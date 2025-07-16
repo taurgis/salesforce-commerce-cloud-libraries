@@ -2,7 +2,6 @@
 
 var invoker = require('./invoker');
 
-
 /**
  * The upper case version of a string.
  *

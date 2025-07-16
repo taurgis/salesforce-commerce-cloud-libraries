@@ -1,4 +1,5 @@
 'use strict';
+
 // parse Empty Node as self closing node
 var buildOptions = require('./util').buildOptions;
 
@@ -37,7 +38,7 @@ var props = [
 function Parser(options) {
     this.options = buildOptions(options, defaultOptions, props);
     if (this.options.ignoreAttributes || this.options.attrNodeName) {
-        this.isAttribute = function (/* a*/) {
+        this.isAttribute = function (/* a */) {
             return false;
         };
     } else {
@@ -47,7 +48,7 @@ function Parser(options) {
     if (this.options.cdataTagName) {
         this.isCDATA = isCDATA;
     } else {
-        this.isCDATA = function (/* a*/) {
+        this.isCDATA = function (/* a */) {
             return false;
         };
     }
@@ -181,31 +182,31 @@ function replaceCDATAarr(str, cdata) {
 function buildObjectNode(val, key, attrStr, level) {
     if (attrStr && !val.includes('<')) {
         return (
-            this.indentate(level) +
-      '<' +
-      key +
-      attrStr +
-      '>' +
-      val +
+            this.indentate(level)
+      + '<'
+      + key
+      + attrStr
+      + '>'
+      + val
       // + this.newLine
       // + this.indentate(level)
-      '</' +
-      key +
-      this.tagEndChar
+      + '</'
+      + key
+      + this.tagEndChar
         );
     }
     return (
-        this.indentate(level) +
-      '<' +
-      key +
-      attrStr +
-      this.tagEndChar +
-      val +
+        this.indentate(level)
+      + '<'
+      + key
+      + attrStr
+      + this.tagEndChar
+      + val
       // + this.newLine
-      this.indentate(level) +
-      '</' +
-      key +
-      this.tagEndChar
+      + this.indentate(level)
+      + '</'
+      + key
+      + this.tagEndChar
     );
 }
 
@@ -219,15 +220,15 @@ function buildEmptyObjNode(val, key, attrStr, level) {
 
 function buildTextValNode(val, key, attrStr, level) {
     return (
-        this.indentate(level) +
-    '<' +
-    key +
-    attrStr +
-    '>' +
-    this.options.tagValueProcessor('' + val) +
-    '</' +
-    key +
-    this.tagEndChar
+        this.indentate(level)
+    + '<'
+    + key
+    + attrStr
+    + '>'
+    + this.options.tagValueProcessor('' + val)
+    + '</'
+    + key
+    + this.tagEndChar
     );
 }
 
@@ -242,7 +243,7 @@ function indentate(level) {
     return this.options.indentBy.repeat(level);
 }
 
-function isAttribute(name /* , options*/) {
+function isAttribute(name /* , options */) {
     if (name.startsWith(this.options.attributeNamePrefix)) {
         return name.substr(this.attrPrefixLen);
     }

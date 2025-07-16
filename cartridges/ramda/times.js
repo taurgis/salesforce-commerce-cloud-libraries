@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Calls an input function `n` times, returning an array containing the results
  * of those function calls.

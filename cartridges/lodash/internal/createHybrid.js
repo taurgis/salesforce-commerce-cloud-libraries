@@ -70,8 +70,16 @@ function createHybrid(func, bitmask, thisArg, partials, holders, partialsRight, 
         if (isCurried && length < arity) {
             var newHolders = replaceHolders(args, placeholder); // eslint-disable-line
             return createRecurry(
-                func, bitmask, createHybrid, wrapper.placeholder, thisArg,
-                args, newHolders, argPos, ary, arity - length
+                func,
+                bitmask,
+                createHybrid,
+                wrapper.placeholder,
+                thisArg,
+                args,
+                newHolders,
+                argPos,
+                ary,
+                arity - length
             );
         }
         var thisBinding = isBind ? thisArg : this;

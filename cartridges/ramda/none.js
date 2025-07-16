@@ -4,7 +4,6 @@ var _complement = require('./internal/_complement');
 var _curry2 = require('./internal/_curry2');
 var all = require('./all');
 
-
 /**
  * Returns `true` if no elements of the list match the predicate, `false`
  * otherwise.

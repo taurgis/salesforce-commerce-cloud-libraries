@@ -22,15 +22,18 @@ server.get('Test', function (req, res, next) {
         addISOWeekYears: timeFunction(require('date-fns/addISOWeekYears'), new Date(), 2),
         setISOWeek: timeFunction(require('date-fns/setISOWeek'), new Date(2004, 7, 7), 53),
         startOfDay: timeFunction(require('date-fns/startOfDay'), new Date()),
-        differenceInBusinessDays: timeFunction(require('date-fns/differenceInBusinessDays'),
+        differenceInBusinessDays: timeFunction(
+            require('date-fns/differenceInBusinessDays'),
             new Date(2014, 6, 20),
             new Date(2014, 0, 10)
         ),
-        differenceInSeconds: timeFunction(require('date-fns/differenceInSeconds'),
+        differenceInSeconds: timeFunction(
+            require('date-fns/differenceInSeconds'),
             new Date(2014, 6, 2, 12, 30, 20, 0),
             new Date(2014, 6, 2, 12, 30, 7, 999)
         ),
-        differenceInCalendarQuarters: timeFunction(require('date-fns/differenceInCalendarQuarters'),
+        differenceInCalendarQuarters: timeFunction(
+            require('date-fns/differenceInCalendarQuarters'),
             new Date(2014, 6, 2),
             new Date(2013, 11, 31)
         ),
@@ -57,12 +60,14 @@ server.get('Test', function (req, res, next) {
         getDaysInYear: timeFunction(require('date-fns/getDaysInYear'), new Date(2012, 0, 1)),
         format: timeFunction(require('date-fns/format'), new Date(2014, 6, 2, 15), "h 'o''clock'"),
         formatRelative: timeFunction(require('date-fns/formatRelative'), new Date(2019, 9, 8, 15), new Date(2019, 9, 9, 15)),
-        formatDistance: timeFunction(require('date-fns/formatDistance'),
+        formatDistance: timeFunction(
+            require('date-fns/formatDistance'),
             new Date(1986, 3, 4, 10, 32, 0),
             new Date(1986, 3, 4, 11, 32, 0),
             { addSuffix: true }
         ),
-        formatDistanceStrict: timeFunction(require('date-fns/formatDistanceStrict'),
+        formatDistanceStrict: timeFunction(
+            require('date-fns/formatDistanceStrict'),
             new Date(1986, 3, 4, 10, 32, 0),
             new Date(1987, 3, 4, 10, 33, 1),
             { unit: 'month' }

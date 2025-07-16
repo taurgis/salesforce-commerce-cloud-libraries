@@ -6,7 +6,6 @@ var _isTransformer = require('./internal/_isTransformer');
 var _reduce = require('./internal/_reduce');
 var _stepCat = require('./internal/_stepCat');
 
-
 /**
  * Transforms the items of the list with the transducer and appends the
  * transformed items to the accumulator using an appropriate iterator function
@@ -47,8 +46,8 @@ var _stepCat = require('./internal/_stepCat');
  *      intoArray(transducer, numbers); //=> [2, 3]
  */
 var into = _curry3(function into(acc, xf, list) {
-    return _isTransformer(acc) ?
-        _reduce(xf(acc), acc['@@transducer/init'](), list) :
-        _reduce(xf(_stepCat(acc)), _clone(acc, [], [], false), list);
+    return _isTransformer(acc)
+        ? _reduce(xf(acc), acc['@@transducer/init'](), list)
+        : _reduce(xf(_stepCat(acc)), _clone(acc, [], [], false), list);
 });
 module.exports = into;

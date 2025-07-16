@@ -15,7 +15,8 @@ server.get('Test', function (req, res, next) {
             getUTCFromTimezone: moment('Sat Apr 30 2016 16:59:46 GMT+0100'),
             compareDates: moment('2010-10-18').isAfter('2010-10-19'),
             formatString: moment(new Date()).format('DD/MM/YY hh:mm')
-        });
+        }
+    );
 
     next();
 });

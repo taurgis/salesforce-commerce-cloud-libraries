@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns the larger of its two arguments.
  *

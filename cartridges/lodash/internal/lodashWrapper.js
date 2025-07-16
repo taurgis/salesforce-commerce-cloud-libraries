@@ -75,7 +75,6 @@ LodashWrapper.prototype.tap = function () {
     return new LodashWrapper(require('../tap').apply(this, args));
 };
 
-
 LodashWrapper.prototype.concat = function () {
     var args = Array.prototype.slice.call(arguments);
     args.unshift(this.__wrapped__);
@@ -86,7 +85,6 @@ LodashWrapper.prototype.isArray = function () {
     return new LodashWrapper(require('../isArray').apply(this, [this.__wrapped__]));
 };
 
-
 LodashWrapper.prototype.flatten = function () {
     return new LodashWrapper(require('../flatten').apply(this, [this.__wrapped__]));
 };
@@ -94,7 +92,6 @@ LodashWrapper.prototype.flatten = function () {
 LodashWrapper.prototype.flattenDeep = function () {
     return new LodashWrapper(require('../flattenDeep').apply(this, [this.__wrapped__]));
 };
-
 
 LodashWrapper.prototype.head = function () {
     return new LodashWrapper(require('../head').apply(this, [this.__wrapped__]));
@@ -111,7 +108,6 @@ LodashWrapper.prototype.chain = function () {
 LodashWrapper.prototype.commit = function () {
     return require('../commit').apply(this);
 };
-
 
 each(['countBy', 'sortBy', 'flattenDepth', 'reject', 'reduce',
     'fill', 'take', 'drop', 'dropRight', 'dropWhile', 'dropRightWhile',

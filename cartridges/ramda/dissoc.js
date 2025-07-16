@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns a new object that does not contain a `prop` property.
  *

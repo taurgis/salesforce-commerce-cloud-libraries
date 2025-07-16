@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var equals = require('./equals');
 
-
 /**
  * Takes a function and two values in its domain and returns `true` if the
  * values map to the same value in the codomain; `false` otherwise.

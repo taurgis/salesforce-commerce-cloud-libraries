@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var _reduce = require('./internal/_reduce');
 
-
 /**
  * Returns a single item by iterating through the list, successively calling
  * the iterator function and passing it an accumulator value and the current

@@ -25,8 +25,8 @@ var MAX_SAFE_INTEGER = 9007199254740991;
  * isLength('3') => false
  */
 function isLength(value) {
-    var result = typeof value === 'number' &&
-    value > -1 && value % 1 === 0 && value <= MAX_SAFE_INTEGER;
+    var result = typeof value === 'number'
+    && value > -1 && value % 1 === 0 && value <= MAX_SAFE_INTEGER;
     return result;
 }
 

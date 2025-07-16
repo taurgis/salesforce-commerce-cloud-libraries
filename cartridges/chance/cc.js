@@ -20,9 +20,9 @@ module.exports = function (options) {
     var type; var number; var
         toGenerate;
 
-    type = (options.type) ?
-        ccType({ name: ccOptions.type, raw: true }) :
-        ccType({ raw: true });
+    type = (options.type)
+        ? ccType({ name: ccOptions.type, raw: true })
+        : ccType({ raw: true });
 
     number = type.prefix.split('');
     toGenerate = type.length - type.prefix.length - 1;

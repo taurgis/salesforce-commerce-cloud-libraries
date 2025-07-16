@@ -5,7 +5,6 @@ var lens = require('./lens');
 var nth = require('./nth');
 var update = require('./update');
 
-
 /**
  * Returns a lens whose focus is the specified index.
  *

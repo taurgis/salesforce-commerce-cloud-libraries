@@ -6,7 +6,6 @@ var _isFunction = require('./internal/_isFunction');
 var _isString = require('./internal/_isString');
 var toString = require('./toString');
 
-
 /**
  * Returns the result of concatenating the given lists or strings.
  *

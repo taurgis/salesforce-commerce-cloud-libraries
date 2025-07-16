@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Takes a predicate, a transformation function, and an initial value,
  * and returns a value of the same type as the initial value.

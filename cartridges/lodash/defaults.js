@@ -51,8 +51,8 @@ var defaults = baseRest(function (object, sources) {
             var key = props[propsIndex];
             var value = object[key];
 
-            if (value === undefined ||
-          (eq(value, objectProto[key]) && !hasOwnProperty.call(object, key))) {
+            if (value === undefined
+          || (eq(value, objectProto[key]) && !hasOwnProperty.call(object, key))) {
                 object[key] = source[key];
             }
         }

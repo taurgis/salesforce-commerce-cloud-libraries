@@ -34,5 +34,4 @@ function startsWith(string, target, position) {
     return string.slice(position, position + target.length) == target;
 }
 
-
 module.exports = startsWith;

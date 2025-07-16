@@ -39,8 +39,17 @@ function createCurry(func, bitmask, arity) {
         length -= holders.length;
         if (length < arity) {
             return createRecurry(
-                func, bitmask, createHybrid, wrapper.placeholder, undefined,
-                args, holders, undefined, undefined, arity - length);
+                func,
+                bitmask,
+                createHybrid,
+                wrapper.placeholder,
+                undefined,
+                args,
+                holders,
+                undefined,
+                undefined,
+                arity - length
+            );
         }
         var fn = (this && this !== root && this instanceof wrapper) ? Ctor : func;
         return apply(fn, this, args);

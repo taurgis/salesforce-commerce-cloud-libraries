@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var sum = require('./sum');
 
-
 /**
  * Returns the mean of the given list of numbers.
  *

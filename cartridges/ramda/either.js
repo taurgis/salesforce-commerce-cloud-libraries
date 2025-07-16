@@ -5,7 +5,6 @@ var _isFunction = require('./internal/_isFunction');
 var lift = require('./lift');
 var or = require('./or');
 
-
 /**
  * A function wrapping calls to the two functions in an `||` operation,
  * returning the result of the first function if it is truth-y and the result
@@ -37,10 +36,10 @@ var or = require('./or');
  *      R.either([false, false, 'a'], [11]) // => [11, 11, "a"]
  */
 var either = _curry2(function either(f, g) {
-    return _isFunction(f) ?
-        function _either() {
+    return _isFunction(f)
+        ? function _either() {
             return f.apply(this, arguments) || g.apply(this, arguments);
-        } :
-        lift(or)(f, g);
+        }
+        : lift(or)(f, g);
 });
 module.exports = either;

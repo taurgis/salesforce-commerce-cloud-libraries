@@ -38,7 +38,7 @@ var localize = {
                 return 2;
             }
             return 3;
-        } else if (hours < 12) {
+        } if (hours < 12) {
             return 0;
         }
         return 1;

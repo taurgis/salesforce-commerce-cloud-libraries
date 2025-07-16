@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var is = require('./is');
 
-
 /**
  * Returns `true` if the specified object property is of the given type;
  * `false` otherwise.

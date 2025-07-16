@@ -3,7 +3,6 @@
 var _objectAssign = require('./internal/_objectAssign');
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Merges a list of objects together into one object.
  *

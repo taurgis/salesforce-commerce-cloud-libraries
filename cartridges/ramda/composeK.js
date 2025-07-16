@@ -4,7 +4,6 @@ var chain = require('./chain');
 var compose = require('./compose');
 var map = require('./map');
 
-
 /**
  * Returns the right-to-left Kleisli composition of the provided functions,
  * each of which must return a value of a type supported by [`chain`](#chain).

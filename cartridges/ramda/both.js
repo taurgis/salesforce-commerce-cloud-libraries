@@ -5,7 +5,6 @@ var _isFunction = require('./internal/_isFunction');
 var and = require('./and');
 var lift = require('./lift');
 
-
 /**
  * A function which calls the two provided functions and returns the `&&`
  * of the results.
@@ -38,10 +37,10 @@ var lift = require('./lift');
  *      R.both([false, false, 'a'], [11]); //=> [false, false, 11]
  */
 var both = _curry2(function both(f, g) {
-    return _isFunction(f) ?
-        function _both() {
+    return _isFunction(f)
+        ? function _both() {
             return f.apply(this, arguments) && g.apply(this, arguments);
-        } :
-        lift(and)(f, g);
+        }
+        : lift(and)(f, g);
 });
 module.exports = both;

@@ -2,7 +2,6 @@
 
 var _isPlaceholder = require('./_isPlaceholder');
 
-
 /**
  * Optimized internal one-arity curry function.
  *

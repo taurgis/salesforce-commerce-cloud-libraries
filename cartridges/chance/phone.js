@@ -102,15 +102,6 @@ module.exports = function (options) {
                 phone = phoneOptions.formatted || numPick;
             }
             break;
-        case 'us':
-        default:
-            var areacodeResult = areacode(phoneOptions).toString();
-            var exchange = natural({ min: 2, max: 9 }).toString() +
-                natural({ min: 0, max: 9 }).toString() +
-                natural({ min: 0, max: 9 }).toString();
-            var subscriber = natural({ min: 1000, max: 9999 }).toString(); // this could be random [0-9]{4}
-            phone = phoneOptions.formatted ? areacodeResult + ' ' + exchange + '-' + subscriber : areacodeResult + exchange + subscriber;
-            break;
         case 'br':
             var areaCode = pick(['11', '12', '13', '14', '15', '16', '17', '18', '19', '21', '22', '24', '27', '28', '31', '32', '33', '34', '35', '37', '38', '41', '42', '43', '44', '45', '46', '47', '48', '49', '51', '53', '54', '55', '61', '62', '63', '64', '65', '66', '67', '68', '69', '71', '73', '74', '75', '77', '79', '81', '82', '83', '84', '85', '86', '87', '88', '89', '91', '92', '93', '94', '95', '96', '97', '98', '99']);
             var prefix;
@@ -123,6 +114,15 @@ module.exports = function (options) {
             }
             var mcdu = self.string({ pool: '0123456789', length: 4 });
             phone = phoneOptions.formatted ? '(' + areaCode + ') ' + prefix + '-' + mcdu : areaCode + prefix + mcdu;
+            break;
+        case 'us':
+        default:
+            var areacodeResult = areacode(phoneOptions).toString();
+            var exchange = natural({ min: 2, max: 9 }).toString()
+                + natural({ min: 0, max: 9 }).toString()
+                + natural({ min: 0, max: 9 }).toString();
+            var subscriber = natural({ min: 1000, max: 9999 }).toString(); // this could be random [0-9]{4}
+            phone = phoneOptions.formatted ? areacodeResult + ' ' + exchange + '-' + subscriber : areacodeResult + exchange + subscriber;
             break;
     }
     return phone;

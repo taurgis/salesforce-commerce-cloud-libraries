@@ -54,6 +54,7 @@ var applySpec = _curry1(function applySpec(spec) {
         function () {
             var args = arguments;
             return mapValues(function (f) { return apply(f, args); }, spec);
-        });
+        }
+    );
 });
 module.exports = applySpec;

@@ -22,8 +22,8 @@ function isKey(value, object) {
     if (type == 'number' || type == 'boolean' || value == null || isSymbol(value)) {
         return true;
     }
-    return reIsPlainProp.test(value) || !reIsDeepProp.test(value) ||
-    (object != null && value in Object(object));
+    return reIsPlainProp.test(value) || !reIsDeepProp.test(value)
+    || (object != null && value in Object(object));
 }
 
 module.exports = isKey;

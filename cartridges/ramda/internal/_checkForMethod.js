@@ -2,7 +2,6 @@
 
 var _isArray = require('./_isArray');
 
-
 /**
  * This checks whether a function has a [methodname] function. If it isn't an
  * array it will execute that function otherwise it will default to the ramda
@@ -20,8 +19,8 @@ module.exports = function _checkForMethod(methodname, fn) {
             return fn();
         }
         var obj = arguments[length - 1];
-        return (_isArray(obj) || typeof obj[methodname] !== 'function') ?
-            fn.apply(this, arguments) :
-            obj[methodname].apply(obj, Array.prototype.slice.call(arguments, 0, length - 1));
+        return (_isArray(obj) || typeof obj[methodname] !== 'function')
+            ? fn.apply(this, arguments)
+            : obj[methodname].apply(obj, Array.prototype.slice.call(arguments, 0, length - 1));
     };
 };

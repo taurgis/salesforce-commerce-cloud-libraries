@@ -4,7 +4,6 @@ var _curry3 = require('./internal/_curry3');
 var always = require('./always');
 var over = require('./over');
 
-
 /**
  * Returns the result of "setting" the portion of the given data structure
  * focused by the given lens to the given value.

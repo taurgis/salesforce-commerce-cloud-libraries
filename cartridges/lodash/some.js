@@ -26,7 +26,7 @@ function some(array, predicate) {
     while (++index < length) {
         if (isFunction(predicate) && predicate(array[index], index, array)) {
             return true;
-        } else if (isArray(predicate) && predicate.length === 2) {
+        } if (isArray(predicate) && predicate.length === 2) {
             if (array[index][predicate[0]] === predicate[1]) {
                 return true;
             }

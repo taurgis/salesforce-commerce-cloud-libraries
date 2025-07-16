@@ -4,7 +4,6 @@ var _isArrayLike = require('./_isArrayLike');
 var _xwrap = require('./_xwrap');
 var bind = require('../bind');
 
-
 function _arrayReduce(xf, acc, list) {
     var idx = 0;
     var len = list.length;

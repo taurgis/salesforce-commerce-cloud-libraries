@@ -5,7 +5,6 @@ var _curry2 = require('./internal/_curry2');
 var _isRegExp = require('./internal/_isRegExp');
 var toString = require('./toString');
 
-
 /**
  * Determines whether a given string matches a given regular expression.
  *

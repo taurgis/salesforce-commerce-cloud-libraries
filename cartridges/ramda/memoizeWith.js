@@ -4,7 +4,6 @@ var _arity = require('./internal/_arity');
 var _curry2 = require('./internal/_curry2');
 var _has = require('./internal/_has');
 
-
 /**
  * Creates a new function that, when invoked, caches the result of calling `fn`
  * for a given argument set and returns the result. Subsequent calls to the

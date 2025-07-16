@@ -3,7 +3,6 @@
 var multiply = require('./multiply');
 var reduce = require('./reduce');
 
-
 /**
  * Multiplies together all the elements of a list.
  *

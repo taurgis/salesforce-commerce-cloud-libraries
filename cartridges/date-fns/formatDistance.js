@@ -154,10 +154,9 @@ module.exports = function formatDistance(dirtyDate, dirtyBaseDate, dirtyOptions)
     }
 
     var seconds = differenceInSeconds(dateRight, dateLeft);
-    var offsetInSeconds =
-    (getTimezoneOffsetInMilliseconds(dateRight) -
-      getTimezoneOffsetInMilliseconds(dateLeft)) /
-    1000;
+    var offsetInSeconds = (getTimezoneOffsetInMilliseconds(dateRight)
+      - getTimezoneOffsetInMilliseconds(dateLeft))
+    / 1000;
     var minutes = Math.round((seconds - offsetInSeconds) / 60);
     var months;
 
@@ -166,13 +165,13 @@ module.exports = function formatDistance(dirtyDate, dirtyBaseDate, dirtyOptions)
         if (options.includeSeconds) {
             if (seconds < 5) {
                 return locale.formatDistance('lessThanXSeconds', 5, localizeOptions);
-            } else if (seconds < 10) {
+            } if (seconds < 10) {
                 return locale.formatDistance('lessThanXSeconds', 10, localizeOptions);
-            } else if (seconds < 20) {
+            } if (seconds < 20) {
                 return locale.formatDistance('lessThanXSeconds', 20, localizeOptions);
-            } else if (seconds < 40) {
+            } if (seconds < 40) {
                 return locale.formatDistance('halfAMinute', null, localizeOptions);
-            } else if (seconds < 60) {
+            } if (seconds < 60) {
                 return locale.formatDistance('lessThanXMinutes', 1, localizeOptions);
             }
             return locale.formatDistance('xMinutes', 1, localizeOptions);
@@ -182,31 +181,30 @@ module.exports = function formatDistance(dirtyDate, dirtyBaseDate, dirtyOptions)
         }
         return locale.formatDistance('xMinutes', minutes, localizeOptions);
 
-
     // 2 mins up to 0.75 hrs
-    } else if (minutes < 45) {
+    } if (minutes < 45) {
         return locale.formatDistance('xMinutes', minutes, localizeOptions);
 
     // 0.75 hrs up to 1.5 hrs
-    } else if (minutes < 90) {
+    } if (minutes < 90) {
         return locale.formatDistance('aboutXHours', 1, localizeOptions);
 
     // 1.5 hrs up to 24 hrs
-    } else if (minutes < MINUTES_IN_DAY) {
+    } if (minutes < MINUTES_IN_DAY) {
         var hours = Math.round(minutes / 60);
         return locale.formatDistance('aboutXHours', hours, localizeOptions);
 
     // 1 day up to 1.75 days
-    } else if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
+    } if (minutes < MINUTES_IN_ALMOST_TWO_DAYS) {
         return locale.formatDistance('xDays', 1, localizeOptions);
 
     // 1.75 days up to 30 days
-    } else if (minutes < MINUTES_IN_MONTH) {
+    } if (minutes < MINUTES_IN_MONTH) {
         var days = Math.round(minutes / MINUTES_IN_DAY);
         return locale.formatDistance('xDays', days, localizeOptions);
 
     // 1 month up to 2 months
-    } else if (minutes < MINUTES_IN_TWO_MONTHS) {
+    } if (minutes < MINUTES_IN_TWO_MONTHS) {
         months = Math.round(minutes / MINUTES_IN_MONTH);
         return locale.formatDistance('aboutXMonths', months, localizeOptions);
     }
@@ -228,7 +226,7 @@ module.exports = function formatDistance(dirtyDate, dirtyBaseDate, dirtyOptions)
         return locale.formatDistance('aboutXYears', years, localizeOptions);
 
         // N years 3 months up to N years 9 months
-    } else if (monthsSinceStartOfYear < 9) {
+    } if (monthsSinceStartOfYear < 9) {
         return locale.formatDistance('overXYears', years, localizeOptions);
 
         // N years 9 months up to N year 12 months

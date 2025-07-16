@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns `true` if the first argument is greater than or equal to the second;
  * `false` otherwise.

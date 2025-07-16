@@ -15,7 +15,9 @@ var word = require('./word');
  *      url({protocol: 'ftp'}) => 'ftp://mibfu.nr/kardate'
  */
 module.exports = function (options) {
-    var urlOptions = initOptions(options, { protocol: 'http', domain: domain(options), domain_prefix: '', path: word(), extensions: [] });
+    var urlOptions = initOptions(options, {
+        protocol: 'http', domain: domain(options), domain_prefix: '', path: word(), extensions: []
+    });
 
     var extension = urlOptions.extensions.length > 0 ? '.' + pick(urlOptions.extensions) : '';
     var resultDomain = urlOptions.domain_prefix ? urlOptions.domain_prefix + '.' + urlOptions.domain : urlOptions.domain;

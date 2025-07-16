@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _xtake = require('./internal/_xtake');
 var slice = require('./slice');
 
-
 /**
  * Returns the first `n` elements of the given list, string, or
  * transducer/transformer (or object with a `take` method).

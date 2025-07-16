@@ -3,7 +3,6 @@
 var pipe = require('./pipe');
 var reverse = require('./reverse');
 
-
 /**
  * Performs right-to-left function composition. The last argument may have
  * any arity; the remaining arguments must be unary.

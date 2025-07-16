@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _xany = require('./internal/_xany');
 
-
 /**
  * Returns `true` if at least one of the elements of the list match the predicate,
  * `false` otherwise.

@@ -2,7 +2,6 @@
 
 var slice = require('./slice');
 
-
 /**
  * Returns all but the last element of the given list or string.
  *

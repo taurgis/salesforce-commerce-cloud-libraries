@@ -3,7 +3,6 @@
 var initOptions = require('./lib/initOptions');
 var floating = require('./floating');
 
-
 /**
  * Return a random depth value.
  *

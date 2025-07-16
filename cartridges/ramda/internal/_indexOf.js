@@ -2,7 +2,6 @@
 
 var equals = require('../equals');
 
-
 module.exports = function _indexOf(list, a, idx) {
     var inf; var
         item;
@@ -21,7 +20,7 @@ module.exports = function _indexOf(list, a, idx) {
                         idx += 1;
                     }
                     return -1;
-                } else if (a !== a) {
+                } if (a !== a) {
                     // NaN
                     while (idx < list.length) {
                         item = list[idx];

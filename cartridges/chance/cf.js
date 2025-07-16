@@ -8,7 +8,6 @@ var pad = require('./lib/pad');
 var last = require('./last');
 var natural = require('./natural');
 
-
 var nameGenerator = function (name, isLast) {
     var temp;
     var returnValue = [];
@@ -42,9 +41,9 @@ var nameGenerator = function (name, isLast) {
 var dateGenerator = function (birthdayForDate, genderForDate) {
     var lettermonths = ['A', 'B', 'C', 'D', 'E', 'H', 'L', 'M', 'P', 'R', 'S', 'T'];
 
-    return birthdayForDate.getFullYear().toString().substr(2) +
-                lettermonths[birthdayForDate.getMonth()] +
-                pad(birthdayForDate.getDate() + ((genderForDate.toLowerCase() === 'female') ? 40 : 0), 2);
+    return birthdayForDate.getFullYear().toString().substr(2)
+                + lettermonths[birthdayForDate.getMonth()]
+                + pad(birthdayForDate.getDate() + ((genderForDate.toLowerCase() === 'female') ? 40 : 0), 2);
 };
 
 var checkDigitGenerator = function (cf) {
@@ -53,7 +52,6 @@ var checkDigitGenerator = function (cf) {
     var evens = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';
     var odds = 'BAKPLCQDREVOSFTGUHMINJWZYX';
     var digit = 0;
-
 
     for (var i = 0; i < 15; i++) {
         if (i % 2 !== 0) {
@@ -82,7 +80,6 @@ module.exports = function codeFiscale(options) {
     var birthdayOption = cfOptions.birthday ? cfOptions.birthday : birthday();
     var city = cfOptions.city ? cfOptions.city : pickOne(['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'L', 'M', 'Z']) + pad(natural({ max: 999 }), 3);
     var cf = [];
-
 
     cf = cf.concat(nameGenerator(lastOption, true), nameGenerator(firstOption), dateGenerator(birthdayOption, genderOption), city.toUpperCase().split('')).join('');
     cf += checkDigitGenerator(cf.toUpperCase(), this);

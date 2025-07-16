@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var _has = require('./internal/_has');
 
-
 /**
  * Converts an object into an array of key, value arrays. Only the object's
  * own properties are used.

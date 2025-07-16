@@ -6,7 +6,6 @@ var _makeFlat = require('./internal/_makeFlat');
 var _xchain = require('./internal/_xchain');
 var map = require('./map');
 
-
 /**
  * `chain` maps a function over a list and concatenates the results. `chain`
  * is also known as `flatMap` in some libraries.

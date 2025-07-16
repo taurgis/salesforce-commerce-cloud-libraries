@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var _Set = require('./internal/_Set');
 
-
 /**
  * Finds the set (i.e. no duplicates) of all elements in the first list not
  * contained in the second list. Objects and Arrays are compared in terms of

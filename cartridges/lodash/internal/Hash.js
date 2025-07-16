@@ -82,5 +82,4 @@ Hash.prototype.set = function (key, value) {
     return this;
 };
 
-
 module.exports = Hash;

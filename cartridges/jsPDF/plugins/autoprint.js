@@ -7,7 +7,7 @@
  */
 
 // eslint-disable-next-line valid-jsdoc
- /**
+/**
  * @name autoprint
  * @module
  */
@@ -15,7 +15,7 @@ module.exports = function (jsPDFAPI) {
     'use strict';
 
     // eslint-disable-next-line valid-jsdoc
-     /**
+    /**
      * Makes the PDF automatically print. This works in Chrome, Firefox, Acrobat
      * Reader.
      *
@@ -31,13 +31,14 @@ module.exports = function (jsPDFAPI) {
      */
     jsPDFAPI.autoPrint = function (options) {
         'use strict';
+
         var refAutoPrintTag;
         options = options || {};
         options.variant = options.variant || 'non-conform';
 
         switch (options.variant) {
             case 'javascript':
-        // https://github.com/Rob--W/pdf.js/commit/c676ecb5a0f54677b9f3340c3ef2cf42225453bb
+                // https://github.com/Rob--W/pdf.js/commit/c676ecb5a0f54677b9f3340c3ef2cf42225453bb
                 this.addJS('print({});');
                 break;
             case 'non-conform':

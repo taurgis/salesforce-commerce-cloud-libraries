@@ -27,13 +27,13 @@ function timeOfDay(dirtyHours, dirtyOptions) {
 
     if (type === 'uppercase') {
         return (hours / 12) >= 1 ? timeOfDayValues.uppercase[1] : timeOfDayValues.uppercase[0];
-    } else if (type === 'lowercase') {
+    } if (type === 'lowercase') {
         return (hours / 12) >= 1 ? timeOfDayValues.lowercase[1] : timeOfDayValues.lowercase[0];
     }
 
     if (hours <= 12) {
         return timeOfDayValues.long[0];
-    } else if (hours <= 16) {
+    } if (hours <= 16) {
         return timeOfDayValues.long[1];
     }
     return timeOfDayValues.long[2];

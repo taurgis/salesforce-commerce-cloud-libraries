@@ -3,7 +3,6 @@
 var _curry2 = require('./_curry2');
 var _xfBase = require('./_xfBase');
 
-
 function XDropWhile(f, xf) {
     this.xf = xf;
     this.f = f;

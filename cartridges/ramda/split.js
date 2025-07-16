@@ -2,7 +2,6 @@
 
 var invoker = require('./invoker');
 
-
 /**
  * Splits a string into an array of strings based on the given
  * separator.

@@ -39,6 +39,7 @@
  */
 module.exports = function (API) {
     'use strict';
+
     /**
      * Returns an array of length matching length of the 'word' string, with each
      * cell occupied by the width of the char in that position.
@@ -81,24 +82,23 @@ module.exports = function (API) {
             if (typeof activeFont.metadata.widthOfString === 'function') {
                 output.push(
                     (activeFont.metadata.widthOfGlyph(
-                            activeFont.metadata.characterToGlyph(char_code)
-                        ) +
-                        charSpace * (1000 / fontSize) || 0) / 1000
+                        activeFont.metadata.characterToGlyph(char_code)
+                    )
+                        + charSpace * (1000 / fontSize) || 0) / 1000
                 );
             } else {
                 if (
-                    doKerning &&
-                    typeof kerning[char_code] === 'object' &&
-                    !isNaN(parseInt(kerning[char_code][prior_char_code], 10))
+                    doKerning
+                    && typeof kerning[char_code] === 'object'
+                    && !isNaN(parseInt(kerning[char_code][prior_char_code], 10))
                 ) {
-                    kerningValue =
-                        kerning[char_code][prior_char_code] / kerningFractionOf;
+                    kerningValue = kerning[char_code][prior_char_code] / kerningFractionOf;
                 } else {
                     kerningValue = 0;
                 }
                 output.push(
-                    (widths[char_code] || default_char_width) / widthsFractionOf +
-                    kerningValue
+                    (widths[char_code] || default_char_width) / widthsFractionOf
+                    + kerningValue
                 );
             }
             prior_char_code = char_code;
@@ -136,8 +136,7 @@ module.exports = function (API) {
         }
 
         if (typeof font.metadata.widthOfString === 'function') {
-            result =
-                font.metadata.widthOfString(text, fontSize, charSpace) / fontSize;
+            result = font.metadata.widthOfString(text, fontSize, charSpace) / fontSize;
         } else {
             result = getCharWidthsArray
                 .apply(this, arguments)
@@ -248,8 +247,8 @@ module.exports = function (API) {
             }, 0);
 
             if (
-                line_length + separator_length + current_word_length > maxlen ||
-                force
+                line_length + separator_length + current_word_length > maxlen
+                || force
             ) {
                 if (current_word_length > maxlen) {
                     // this happens when you have space-less long URLs for example.

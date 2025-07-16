@@ -152,20 +152,21 @@ function template(string, options, guard) {
 
     // Compile the regexp to match each delimiter.
     var reDelimiters = RegExp(
-        (options.escape || reNoMatch).source + '|' +
-    interpolate.source + '|' +
-    (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|' +
-    (options.evaluate || reNoMatch).source + '|$'
-        , 'g');
+        (options.escape || reNoMatch).source + '|'
+    + interpolate.source + '|'
+    + (interpolate === reInterpolate ? reEsTemplate : reNoMatch).source + '|'
+    + (options.evaluate || reNoMatch).source + '|$',
+        'g'
+    );
 
     // Use a sourceURL for easier debugging.
     // The sourceURL gets injected into the source that's eval-ed, so be careful
     // with lookup (in case of e.g. prototype pollution), and strip newlines if any.
     // A newline wouldn't be a valid sourceURL anyway, and it'd enable code injection.
     var sourceURL = hasOwnProperty.call(options, 'sourceURL')
-        ? ('//# sourceURL=' +
-       (options.sourceURL + '').replace(/[\r\n]/g, ' ') +
-       '\n')
+        ? ('//# sourceURL='
+       + (options.sourceURL + '').replace(/[\r\n]/g, ' ')
+       + '\n')
         : '';
 
     string.replace(reDelimiters, function (match, escapeValue, interpolateValue, esTemplateValue, evaluateValue, offset) {
@@ -209,23 +210,23 @@ function template(string, options, guard) {
         .replace(reEmptyStringTrailing, '$1;');
 
     // Frame code as the function body.
-    source = 'function(' + (variable || 'obj') + ') {\n' +
-    (variable
+    source = 'function(' + (variable || 'obj') + ') {\n'
+    + (variable
         ? ''
         : 'obj || (obj = {});\n'
-    ) +
-    "var __t, __p = ''" +
-    (isEscaping
+    )
+    + "var __t, __p = ''"
+    + (isEscaping
         ? ', __e = _.escape'
         : ''
-    ) +
-    (isEvaluating
-        ? ', __j = Array.prototype.join;\n' +
-        "function print() { __p += __j.call(arguments, '') }\n"
+    )
+    + (isEvaluating
+        ? ', __j = Array.prototype.join;\n'
+        + "function print() { __p += __j.call(arguments, '') }\n"
         : ';\n'
-    ) +
-    source +
-    'return __p\n}';
+    )
+    + source
+    + 'return __p\n}';
 
     var result = attempt(function () {
         return Function(importsKeys, sourceURL + 'return ' + source) // eslint-disable-line

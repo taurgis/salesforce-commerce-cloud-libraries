@@ -7,7 +7,6 @@ var _isInteger = require('./internal/_isInteger');
 var assoc = require('./assoc');
 var isNil = require('./isNil');
 
-
 /**
  * Makes a shallow clone of an object, setting or overriding the nodes required
  * to create the given path, and placing the specific value at the tail end of

@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _xfindLastIndex = require('./internal/_xfindLastIndex');
 
-
 /**
  * Returns the index of the last element of the list which matches the
  * predicate, or `-1` if no element matches.

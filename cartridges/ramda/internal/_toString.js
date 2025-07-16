@@ -7,7 +7,6 @@ var _toISOString = require('./_toISOString');
 var keys = require('../keys');
 var reject = require('../reject');
 
-
 module.exports = function _toString(x, seen) {
     var recur = function recur(y) {
         var xs = seen.concat([x]);

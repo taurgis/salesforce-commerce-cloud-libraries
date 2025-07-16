@@ -105,7 +105,7 @@ function translate(number, addSuffix, key, isFuture) {
     var result = number + ' ';
     if (number === 1) {
         return result + translateSingular(number, addSuffix, key[0], isFuture);
-    } else if (!addSuffix) {
+    } if (!addSuffix) {
         return result + (special(number) ? forms(key)[1] : forms(key)[0]);
     }
     if (isFuture) {

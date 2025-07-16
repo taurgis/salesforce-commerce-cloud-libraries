@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var _isString = require('./internal/_isString');
 
-
 /**
  * Returns a new list or string with the elements or characters in reverse
  * order.

@@ -6,7 +6,6 @@ var _isArray = require('./internal/_isArray');
 var _isObject = require('./internal/_isObject');
 var _isString = require('./internal/_isString');
 
-
 /**
  * Returns the empty value of its argument's type. Ramda defines the empty
  * value of Array (`[]`), Object (`{}`), String (`''`), and Arguments. Other

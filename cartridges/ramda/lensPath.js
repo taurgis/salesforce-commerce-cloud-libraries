@@ -5,7 +5,6 @@ var assocPath = require('./assocPath');
 var lens = require('./lens');
 var path = require('./path');
 
-
 /**
  * Returns a lens whose focus is the specified path.
  *

@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _xdrop = require('./internal/_xdrop');
 var slice = require('./slice');
 
-
 /**
  * Returns all but the first `n` elements of the given list, string, or
  * transducer/transformer (or object with a `drop` method).

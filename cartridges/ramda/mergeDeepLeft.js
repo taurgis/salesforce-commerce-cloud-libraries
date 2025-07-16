@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var mergeDeepWithKey = require('./mergeDeepWithKey');
 
-
 /**
  * Creates a new object with the own properties of the first object merged with
  * the own properties of the second object. If a key exists in both objects:

@@ -5,13 +5,12 @@
   "description": "A cartridge containing popuplar libraries converted / checked to work in the Salesforce Commerce Cloud B2C.",
   "main": "index.js",
   "scripts": {
-    "lint": "sgmf-scripts --lint js",
-    "upload": "sgmf-scripts --upload",
-    "uploadCartridge": "sgmf-scripts --uploadCartridge jsPDF && sgmf-scripts --uploadCartridge plugin_testlibraries",
-    "uploadDw": "sgmf-scripts",
-    "watch": "sgmf-scripts --watch",
+    "lint": "eslint cartridges",
+    "uploadCartridge": "node ./bin/b2c-tools.js code deploy",
+    "watch:autoupload": "node bin/watch.js",
     "precommit": "npm run lint --loglevel=silent",
-    "test": "sgmf-scripts --test test/unit/**/*.js"
+    "test": "jest test/unit/**/*.js",
+    "start": "npm run uploadCartridge && npm run watch:autoupload"
   },
   "repository": {
     "type": "git",
@@ -25,11 +24,12 @@
   "license": "MIT",
   "homepage": "https://github.com/taurgis/salesforce-commerce-cloud-libraries.git#readme",
   "devDependencies": {
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb-base": "^5.0.3",
-    "eslint-plugin-import": "^1.16.0",
-    "eslint-plugin-sitegenesis": "~1.0.0",
-    "sgmf-scripts": "^2.4.1"
+    "@babel/preset-env": "7.28.0",
+    "eslint": "8.57.1",
+    "eslint-config-airbnb-base":"15.0.0",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-sitegenesis": "1.0.0",
+    "jest": "^30.0.4"
   },
   "pre-commit": [
     "precommit"

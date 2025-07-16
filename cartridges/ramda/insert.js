@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Inserts the supplied element into the list, at the specified `index`. _Note that
 

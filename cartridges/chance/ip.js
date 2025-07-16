@@ -13,8 +13,8 @@ var natural = require('./natural');
 module.exports = function () {
     // Todo: This could return some reserved IPs. See http://vq.io/137dgYy
     // this should probably be updated to account for that rare as it may be
-    return natural({ min: 1, max: 254 }) + '.' +
-               natural({ max: 255 }) + '.' +
-               natural({ max: 255 }) + '.' +
-               natural({ min: 1, max: 254 });
+    return natural({ min: 1, max: 254 }) + '.'
+               + natural({ max: 255 }) + '.'
+               + natural({ max: 255 }) + '.'
+               + natural({ min: 1, max: 254 });
 };

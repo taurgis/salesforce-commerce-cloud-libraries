@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Returns a list containing the names of all the properties of the supplied
  * object, including prototype properties.

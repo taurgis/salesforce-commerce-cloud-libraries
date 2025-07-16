@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var slice = require('./slice');
 
-
 /**
  * Returns a new list containing the last `n` elements of a given list, passing
  * each value to the supplied predicate function, and terminating when the

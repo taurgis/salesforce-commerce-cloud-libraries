@@ -3,7 +3,6 @@
 var identity = require('./identity');
 var uniqBy = require('./uniqBy');
 
-
 /**
  * Returns a new list containing only one copy of each element in the original
  * list. [`R.equals`](#equals) is used to determine equality.

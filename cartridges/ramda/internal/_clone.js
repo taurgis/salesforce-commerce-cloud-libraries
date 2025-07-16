@@ -3,7 +3,6 @@
 var _cloneRegExp = require('./_cloneRegExp');
 var type = require('../type');
 
-
 /**
  * Copies an object.
  *
@@ -27,8 +26,8 @@ module.exports = function _clone(value, refFrom, refTo, deep) {
         refFrom[idx + 1] = value;
         refTo[idx + 1] = copiedValue;
         for (var key in value) {
-            copiedValue[key] = deep ?
-                _clone(value[key], refFrom, refTo, true) : value[key];
+            copiedValue[key] = deep
+                ? _clone(value[key], refFrom, refTo, true) : value[key];
         }
         return copiedValue;
     };

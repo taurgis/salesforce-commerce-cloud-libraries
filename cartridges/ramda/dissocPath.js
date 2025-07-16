@@ -8,7 +8,6 @@ var dissoc = require('./dissoc');
 var remove = require('./remove');
 var update = require('./update');
 
-
 /**
  * Makes a shallow clone of an object, omitting the property at the given path.
  * Note that this copies and flattens prototype properties onto the new object
@@ -39,7 +38,7 @@ var dissocPath = _curry2(function dissocPath(path, obj) {
             var tail = Array.prototype.slice.call(path, 1);
             if (obj[head] == null) {
                 return obj;
-            } else if (_isInteger(head) && _isArray(obj)) {
+            } if (_isInteger(head) && _isArray(obj)) {
                 return update(head, dissocPath(tail, obj[head]), obj);
             }
             return assoc(head, dissocPath(tail, obj[head]), obj);

@@ -24,4 +24,3 @@ function sortedUniqBy(array, iteratee) {
 }
 
 module.exports = sortedUniqBy;
-

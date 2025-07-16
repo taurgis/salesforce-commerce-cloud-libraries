@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Makes a comparator function out of a function that reports whether the first
  * element is less than the second.

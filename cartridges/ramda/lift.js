@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var liftN = require('./liftN');
 
-
 /**
  * "lifts" a function of arity > 1 so that it may "map over" a list, Function or other
  * object that satisfies the [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply).

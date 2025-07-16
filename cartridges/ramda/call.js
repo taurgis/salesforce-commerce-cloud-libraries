@@ -2,7 +2,6 @@
 
 var curry = require('./curry');
 
-
 /**
  * Returns the result of calling its first argument with the remaining
  * arguments. This is occasionally useful as a converging function for

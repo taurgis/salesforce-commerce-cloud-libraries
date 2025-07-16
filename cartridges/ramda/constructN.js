@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var curry = require('./curry');
 var nAry = require('./nAry');
 
-
 /**
  * Wraps a constructor function inside a curried function that can be called
  * with the same arguments and returns the same type. The arity of the function

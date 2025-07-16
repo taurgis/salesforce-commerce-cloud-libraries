@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var map = require('./map');
 
-
 /**
  * Returns a lens for the given getter and setter functions. The getter "gets"
  * the value of the focus; the setter "sets" the value of the focus. The setter

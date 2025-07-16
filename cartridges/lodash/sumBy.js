@@ -30,4 +30,3 @@ function sumBy(array, iteratee) {
 }
 
 module.exports = sumBy;
-

@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Applies function `fn` to the argument list `args`. This is useful for
  * creating a fixed-arity function from a variadic function. `fn` should be a

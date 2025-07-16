@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Scan is similar to [`reduce`](#reduce), but returns a list of successively
  * reduced values from the left

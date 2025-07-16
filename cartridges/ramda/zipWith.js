@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Creates a new list out of the two supplied by applying the function to each
  * equally-positioned pair in the lists. The returned list is truncated to the

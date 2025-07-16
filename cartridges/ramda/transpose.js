@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Transposes the rows and columns of a 2D list.
  * When passed a list of `n` lists of length `x`,

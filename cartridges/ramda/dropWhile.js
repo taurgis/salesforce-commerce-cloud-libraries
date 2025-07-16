@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _xdropWhile = require('./internal/_xdropWhile');
 var slice = require('./slice');
 
-
 /**
  * Returns a new list excluding the leading elements of a given list which
  * satisfy the supplied predicate function. It passes each value to the supplied

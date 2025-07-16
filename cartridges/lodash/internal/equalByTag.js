@@ -46,16 +46,16 @@ var symbolValueOf = 'valueOf';
 function equalByTag(object, other, tag, bitmask, customizer, equalFunc, stack) {
     switch (tag) {
         case dataViewTag:
-            if ((object.byteLength != other.byteLength) ||
-          (object.byteOffset != other.byteOffset)) {
+            if ((object.byteLength != other.byteLength)
+          || (object.byteOffset != other.byteOffset)) {
                 return false;
             }
             object = object.buffer;
             other = other.buffer;
             break;
         case arrayBufferTag:
-            if ((object.byteLength != other.byteLength) ||
-          !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
+            if ((object.byteLength != other.byteLength)
+          || !equalFunc(new Uint8Array(object), new Uint8Array(other))) {
                 return false;
             }
             return true;

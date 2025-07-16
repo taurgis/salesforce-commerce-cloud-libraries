@@ -415,6 +415,7 @@ describe('isEqual', function () {
             'URIError'
         ], function (type, index, errorTypes) {
             var otherType = errorTypes[++index % errorTypes.length]; // eslint-disable-line
+            var root = globalThis || window || this; // eslint-disable-line
             var CtorA = root[type]; // eslint-disable-line
             var CtorB = root[otherType]; // eslint-disable-line
 

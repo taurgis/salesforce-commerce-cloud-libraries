@@ -3,7 +3,6 @@
 var _curry2 = require('./_curry2');
 var _xfBase = require('./_xfBase');
 
-
 function XDropLast(n, xf) {
     this.xf = xf;
     this.pos = 0;

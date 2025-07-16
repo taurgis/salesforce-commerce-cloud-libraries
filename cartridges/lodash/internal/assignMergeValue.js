@@ -13,8 +13,8 @@ var eq = require('../eq');
  * @param {*} value The value to assign.
  */
 function assignMergeValue(object, key, value) {
-    if ((value !== undefined && !eq(object[key], value)) ||
-      (value === undefined && !(key in object))) {
+    if ((value !== undefined && !eq(object[key], value))
+      || (value === undefined && !(key in object))) {
         baseAssignValue(object, key, value);
     }
 }

@@ -54,7 +54,7 @@ module.exports = function getISOWeekYear(dirtyDate) {
 
     if (date.getTime() >= startOfNextYear.getTime()) {
         return year + 1;
-    } else if (date.getTime() >= startOfThisYear.getTime()) {
+    } if (date.getTime() >= startOfThisYear.getTime()) {
         return year;
     }
     return year - 1;

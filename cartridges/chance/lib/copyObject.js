@@ -13,7 +13,6 @@ var oKeys = (Object.keys || function (obj) {
     return result;
 });
 
-
 /**
  * Copies an object
  *

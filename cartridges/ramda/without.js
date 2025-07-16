@@ -5,7 +5,6 @@ var _curry2 = require('./internal/_curry2');
 var flip = require('./flip');
 var reject = require('./reject');
 
-
 /**
  * Returns a new list without values in the first argument.
  * [`R.equals`](#equals) is used to determine equality.

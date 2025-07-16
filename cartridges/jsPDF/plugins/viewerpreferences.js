@@ -7,7 +7,7 @@
  */
 
 // eslint-disable-next-line valid-jsdoc
- /**
+/**
  * Adds the ability to set ViewerPreferences and by thus
  * controlling the way the document is to be presented on the
  * screen or in print.
@@ -16,13 +16,14 @@
  */
 module.exports = function (jsPDFAPI) {
     'use strict';
+
     // eslint-disable-next-line valid-jsdoc
     /**
      * Set the ViewerPreferences of the generated PDF
      *
      * @name viewerPreferences
-	 * @function
-	 * @public
+     * @function
+     * @public
      * @param {Object} options Array with the ViewerPreferences<br />
      * Example: doc.viewerPreferences({"FitWindow":true});<br />
      * <br />
@@ -112,23 +113,57 @@ module.exports = function (jsPDFAPI) {
 
         var configuration;
         var configurationTemplate = {
-            HideToolbar: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3 },
-            HideMenubar: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3 },
-            HideWindowUI: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3 },
-            FitWindow: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3 },
-            CenterWindow: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3 },
-            DisplayDocTitle: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.4 },
-            NonFullScreenPageMode: { defaultValue: 'UseNone', value: 'UseNone', type: 'name', explicitSet: false, valueSet: ['UseNone', 'UseOutlines', 'UseThumbs', 'UseOC'], pdfVersion: 1.3 },
-            Direction: { defaultValue: 'L2R', value: 'L2R', type: 'name', explicitSet: false, valueSet: ['L2R', 'R2L'], pdfVersion: 1.3 },
-            ViewArea: { defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4 },
-            ViewClip: { defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4 },
-            PrintArea: { defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4 },
-            PrintClip: { defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4 },
-            PrintScaling: { defaultValue: 'AppDefault', value: 'AppDefault', type: 'name', explicitSet: false, valueSet: ['AppDefault', 'None'], pdfVersion: 1.6 },
-            Duplex: { defaultValue: '', value: 'none', type: 'name', explicitSet: false, valueSet: ['Simplex', 'DuplexFlipShortEdge', 'DuplexFlipLongEdge', 'none'], pdfVersion: 1.7 },
-            PickTrayByPDFSize: { defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.7 },
-            PrintPageRange: { defaultValue: '', value: '', type: 'array', explicitSet: false, valueSet: null, pdfVersion: 1.7 },
-            NumCopies: { defaultValue: 1, value: 1, type: 'integer', explicitSet: false, valueSet: null, pdfVersion: 1.7 }
+            HideToolbar: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3
+            },
+            HideMenubar: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3
+            },
+            HideWindowUI: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3
+            },
+            FitWindow: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3
+            },
+            CenterWindow: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.3
+            },
+            DisplayDocTitle: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.4
+            },
+            NonFullScreenPageMode: {
+                defaultValue: 'UseNone', value: 'UseNone', type: 'name', explicitSet: false, valueSet: ['UseNone', 'UseOutlines', 'UseThumbs', 'UseOC'], pdfVersion: 1.3
+            },
+            Direction: {
+                defaultValue: 'L2R', value: 'L2R', type: 'name', explicitSet: false, valueSet: ['L2R', 'R2L'], pdfVersion: 1.3
+            },
+            ViewArea: {
+                defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4
+            },
+            ViewClip: {
+                defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4
+            },
+            PrintArea: {
+                defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4
+            },
+            PrintClip: {
+                defaultValue: 'CropBox', value: 'CropBox', type: 'name', explicitSet: false, valueSet: ['MediaBox', 'CropBox', 'TrimBox', 'BleedBox', 'ArtBox'], pdfVersion: 1.4
+            },
+            PrintScaling: {
+                defaultValue: 'AppDefault', value: 'AppDefault', type: 'name', explicitSet: false, valueSet: ['AppDefault', 'None'], pdfVersion: 1.6
+            },
+            Duplex: {
+                defaultValue: '', value: 'none', type: 'name', explicitSet: false, valueSet: ['Simplex', 'DuplexFlipShortEdge', 'DuplexFlipLongEdge', 'none'], pdfVersion: 1.7
+            },
+            PickTrayByPDFSize: {
+                defaultValue: false, value: false, type: 'boolean', explicitSet: false, valueSet: [true, false], pdfVersion: 1.7
+            },
+            PrintPageRange: {
+                defaultValue: '', value: '', type: 'array', explicitSet: false, valueSet: null, pdfVersion: 1.7
+            },
+            NumCopies: {
+                defaultValue: 1, value: 1, type: 'integer', explicitSet: false, valueSet: null, pdfVersion: 1.7
+            }
         };
 
         var configurationKeys = Object.keys(configurationTemplate);

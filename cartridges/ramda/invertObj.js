@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var keys = require('./keys');
 
-
 /**
  * Returns a new object with the keys of the given object as values, and the
  * values of the given object, which are coerced to strings, as keys. Note

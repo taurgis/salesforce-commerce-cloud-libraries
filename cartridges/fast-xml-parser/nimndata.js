@@ -1,4 +1,5 @@
 'use strict';
+
 var char = function (a) {
     return String.fromCharCode(a);
 };
@@ -90,7 +91,7 @@ var _e = function (node, e_schema, options) {
     return hasValidData;
 };
 
-var getValue = function (a /* , type*/) {
+var getValue = function (a /* , type */) {
     switch (a) {
         case undefined:
             return chars.missingPremitive;
@@ -117,12 +118,12 @@ var isAppChar = function (ch) {
 function hasData(jObj) {
     if (jObj === undefined) {
         return chars.missingChar;
-    } else if (jObj === null) {
+    } if (jObj === null) {
         return chars.nilChar;
-    } else if (
-        jObj.child &&
-    Object.keys(jObj.child).length === 0 &&
-    (!jObj.attrsMap || Object.keys(jObj.attrsMap).length === 0)
+    } if (
+        jObj.child
+    && Object.keys(jObj.child).length === 0
+    && (!jObj.attrsMap || Object.keys(jObj.attrsMap).length === 0)
     ) {
         return chars.emptyChar;
     }

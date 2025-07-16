@@ -19,9 +19,9 @@ module.exports = function (options) {
     var dash = ssnOptions.dashes ? '-' : '';
 
     if (!ssnOptions.ssnFour) {
-        ssn = string({ pool: ssnPool, length: 3 }) + dash +
-            string({ pool: ssnPool, length: 2 }) + dash +
-            string({ pool: ssnPool, length: 4 });
+        ssn = string({ pool: ssnPool, length: 3 }) + dash
+            + string({ pool: ssnPool, length: 2 }) + dash
+            + string({ pool: ssnPool, length: 4 });
     } else {
         ssn = string({ pool: ssnPool, length: 4 });
     }

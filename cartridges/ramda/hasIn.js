@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns whether or not an object or its prototype chain has a property with
  * the specified name

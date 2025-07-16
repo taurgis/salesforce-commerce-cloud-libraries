@@ -43,4 +43,3 @@ function unicodeToArray(string) {
 }
 
 module.exports = unicodeToArray;
-

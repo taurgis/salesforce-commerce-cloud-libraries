@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns `true` if both arguments are `true`; `false` otherwise.
  *

@@ -52,7 +52,7 @@ module.exports = function compareAsc(dirtyDateLeft, dirtyDateRight) {
 
     if (diff < 0) {
         return -1;
-    } else if (diff > 0) {
+    } if (diff > 0) {
         return 1;
     // Return 0 if diff is 0; return NaN if diff is NaN
     }

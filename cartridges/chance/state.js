@@ -46,7 +46,7 @@ module.exports = function (options) {
             break;
     }
 
-    return (stateOptions && stateOptions.full) ?
-        pick(states).name :
-        pick(states).abbreviation;
+    return (stateOptions && stateOptions.full)
+        ? pick(states).name
+        : pick(states).abbreviation;
 };

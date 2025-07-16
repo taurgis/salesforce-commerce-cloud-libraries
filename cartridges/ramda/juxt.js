@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var converge = require('./converge');
 
-
 /**
  * juxt applies a list of functions to a list of values.
  *

@@ -7,7 +7,6 @@ var max = require('./max');
 var pluck = require('./pluck');
 var reduce = require('./reduce');
 
-
 /**
  * Accepts a converging function and a list of branching functions and returns
  * a new function. The arity of the new function is the same as the arity of

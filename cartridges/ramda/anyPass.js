@@ -6,7 +6,6 @@ var max = require('./max');
 var pluck = require('./pluck');
 var reduce = require('./reduce');
 
-
 /**
  * Takes a list of predicates and returns a predicate that returns true for a
  * given list of arguments if at least one of the provided predicates is

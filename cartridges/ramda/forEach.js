@@ -3,7 +3,6 @@
 var _checkForMethod = require('./internal/_checkForMethod');
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Iterate over an input `list`, calling a provided function `fn` for each
  * element in the list.

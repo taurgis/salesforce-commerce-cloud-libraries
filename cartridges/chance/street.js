@@ -23,16 +23,16 @@ module.exports = function (options) {
             street = word({ syllables: streetOptions.syllables });
             street = capitalize(street);
             street += ' ';
-            street += options.short_suffix ?
-                streetSuffix(streetOptions).abbreviation :
-                streetSuffix(streetOptions).name;
+            street += options.short_suffix
+                ? streetSuffix(streetOptions).abbreviation
+                : streetSuffix(streetOptions).name;
             break;
         case 'it':
             street = word({ syllables: options.syllables });
             street = capitalize(street);
-            street = (options.short_suffix ?
-                streetSuffix(streetOptions).abbreviation :
-                streetSuffix(streetOptions).name) + ' ' + street;
+            street = (options.short_suffix
+                ? streetSuffix(streetOptions).abbreviation
+                : streetSuffix(streetOptions).name) + ' ' + street;
             break;
         default:
             break;

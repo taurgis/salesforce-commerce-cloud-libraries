@@ -6,7 +6,6 @@ var _isArrayLike = require('./_isArrayLike');
 var _isTransformer = require('./_isTransformer');
 var objOf = require('../objOf');
 
-
 var _stepCatArray = {
     '@@transducer/init': Array,
     '@@transducer/step': function (xs, x) {

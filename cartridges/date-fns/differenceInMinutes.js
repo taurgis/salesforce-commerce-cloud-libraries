@@ -36,8 +36,7 @@ module.exports = function differenceInMinutes(dirtyDateLeft, dirtyDateRight) {
         );
     }
 
-    var diff =
-    differenceInMilliseconds(dirtyDateLeft, dirtyDateRight) /
-    MILLISECONDS_IN_MINUTE;
+    var diff = differenceInMilliseconds(dirtyDateLeft, dirtyDateRight)
+    / MILLISECONDS_IN_MINUTE;
     return diff > 0 ? Math.floor(diff) : Math.ceil(diff);
 };

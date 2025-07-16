@@ -4,7 +4,7 @@ var MersenneTwister = function (seed) {
     var mersenneTwisterSeed;
     if (seed === undefined) {
         // kept random number same size as time used previously to ensure no unexpected results downstream
-        mersenneTwisterSeed = Math.floor(Math.random() * Math.pow(10, 13));
+        mersenneTwisterSeed = Math.floor(Math.random() * 10**13);
     } else {
         mersenneTwisterSeed = seed;
     }
@@ -126,7 +126,7 @@ MersenneTwister.prototype.genrand_real3 = function () {
     /* divided by 2^32 */
 };
 
-/* generates a random number on [0,1) with 53-bit resolution*/
+/* generates a random number on [0,1) with 53-bit resolution */
 MersenneTwister.prototype.genrand_res53 = function () {
     var a = this.genrand_int32() >>> 5; var
         b = this.genrand_int32() >>> 6;

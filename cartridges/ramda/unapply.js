@@ -2,7 +2,6 @@
 
 var _curry1 = require('./internal/_curry1');
 
-
 /**
  * Takes a function `fn`, which takes a single array argument, and returns a
  * function which:

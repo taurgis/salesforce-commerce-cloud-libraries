@@ -26,4 +26,3 @@ function baseUnset(object, path) {
 }
 
 module.exports = baseUnset;
-

@@ -8,10 +8,11 @@
 */
 module.exports = function (jsPDFAPI) {
     'use strict';
-      /** ************************************************/
-      /* function : toHex                               */
-      /* comment : Replace str with a hex string.       */
-      /** ************************************************/
+
+    /** *********************************************** */
+    /* function : toHex                               */
+    /* comment : Replace str with a hex string.       */
+    /** *********************************************** */
     function toHex(str) {
         var hex = '';
         for (var i = 0; i < str.length; i++) {
@@ -20,11 +21,11 @@ module.exports = function (jsPDFAPI) {
         return hex;
     }
 
-      /** *************************************************************************************************/
-      /* function : pdfEscape16                                                                          */
-      /* comment : The character id of a 2-byte string is converted to a hexadecimal number by obtaining */
-      /*   the corresponding glyph id and width, and then adding padding to the string.                  */
-      /** *************************************************************************************************/
+    /** ************************************************************************************************ */
+    /* function : pdfEscape16                                                                          */
+    /* comment : The character id of a 2-byte string is converted to a hexadecimal number by obtaining */
+    /*   the corresponding glyph id and width, and then adding padding to the string.                  */
+    /** ************************************************************************************************ */
     var pdfEscape16 = jsPDFAPI.pdfEscape16 = function (text, font) {
         var widths = font.metadata.Unicode.widths;
         var padz = ['', '0', '00', '000', '0000'];
@@ -144,13 +145,11 @@ module.exports = function (jsPDFAPI) {
         }
     };
 
-
     jsPDFAPI.events.push([
         'putFont',
         function (args) {
             identityHFunction(args.font, args.out, args.newObject, args.putStream);
         }]);
-
 
     var winAnsiEncodingFunction = function (font, out, newObject, putStream) {
         if ((font.metadata instanceof jsPDFAPI.TTFFont) && font.encoding === 'WinAnsiEncoding') { // Tag with WinAnsi encoding

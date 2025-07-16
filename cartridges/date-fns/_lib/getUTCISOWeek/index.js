@@ -16,8 +16,7 @@ module.exports = function getUTCISOWeek(dirtyDate) {
     }
 
     var date = toDate(dirtyDate);
-    var diff =
-    startOfUTCISOWeek(date).getTime() - startOfUTCISOWeekYear(date).getTime();
+    var diff = startOfUTCISOWeek(date).getTime() - startOfUTCISOWeekYear(date).getTime();
 
     // Round the number of days to the nearest integer
     // because the number of milliseconds in a week is not constant

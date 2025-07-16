@@ -110,7 +110,6 @@ module.exports = function (options) {
         return symbol + hexstring;
     }
 
-
     var colorValue;
 
     if (colorOptions.format === 'hex') {

@@ -23,10 +23,9 @@
  * ====================================================================
  */
 
-/* global jsPDF */
-
 module.exports = function (jsPDFAPI) {
     'use strict';
+
     var jsNamesObj;
     var jsJsObj;
     var text;

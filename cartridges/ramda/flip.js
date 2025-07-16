@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var curryN = require('./curryN');
 
-
 /**
  * Returns a new function much like the supplied one, except that the first two
  * arguments' order is reversed.

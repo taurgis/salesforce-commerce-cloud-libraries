@@ -101,7 +101,7 @@ MapCache.prototype.has = function (key) {
     var map = getMapData(this, key);
     if (map.has) {
         return map.has(key);
-    } else if (map.containsKey) {
+    } if (map.containsKey) {
         return map.containsKey(key);
     }
 };
@@ -127,6 +127,5 @@ MapCache.prototype.set = function (key, value) {
     this.size += map.size == size ? 0 : 1;
     return this;
 };
-
 
 module.exports = MapCache;

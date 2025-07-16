@@ -10,8 +10,7 @@ module.exports = function buildLocalizeFn(args) {
         if (context === 'formatting' && args.formattingValues) {
             const defaultWidth = args.defaultFormattingWidth || args.defaultWidth;
             const width = options.width ? String(options.width) : defaultWidth;
-            valuesArray =
-        args.formattingValues[width] || args.formattingValues[defaultWidth];
+            valuesArray = args.formattingValues[width] || args.formattingValues[defaultWidth];
         } else {
             const defaultWidthSecond = args.defaultWidth;
             const widthSecond = options.width ? String(options.width) : args.defaultWidth;

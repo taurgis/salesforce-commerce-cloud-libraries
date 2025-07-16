@@ -78,16 +78,13 @@ module.exports = function (options) {
     opts.fallback = FALLBACKS[opts.fallback] ? opts.fallback : '';
     opts.fileExtension = FILE_TYPES[opts.fileExtension] ? opts.fileExtension : '';
 
-    url =
-        opts.protocol +
-        URL_BASE +
-        bimd5.md5(opts.email) +
-        (opts.fileExtension ? '.' + opts.fileExtension : '') +
-        (opts.size || opts.rating || opts.fallback ? '?' : '') +
-        (opts.size ? '&s=' + opts.size.toString() : '') +
-        (opts.rating ? '&r=' + opts.rating : '') +
-        (opts.fallback ? '&d=' + opts.fallback : '')
-    ;
-
+    url = opts.protocol
+        + URL_BASE
+        + bimd5.md5(opts.email)
+        + (opts.fileExtension ? '.' + opts.fileExtension : '')
+        + (opts.size || opts.rating || opts.fallback ? '?' : '')
+        + (opts.size ? '&s=' + opts.size.toString() : '')
+        + (opts.rating ? '&r=' + opts.rating : '')
+        + (opts.fallback ? '&d=' + opts.fallback : '');
     return url;
 };

@@ -2,7 +2,6 @@
 
 var _includes = require('./_includes');
 
-
 function _Set() {
     this._nativeSet = typeof Set === 'function' ? new Set() : null;
     this._items = {};
@@ -67,14 +66,13 @@ function hasOrAdd(item, shouldAdd, set) {
                     set._items[type][item] = true;
                 }
                 return false;
-            } else if (item in set._items[type]) {
+            } if (item in set._items[type]) {
                 return true;
             }
             if (shouldAdd) {
                 set._items[type][item] = true;
             }
             return false;
-
 
         case 'boolean':
             // set._items['boolean'] holds a two element array
@@ -93,7 +91,6 @@ function hasOrAdd(item, shouldAdd, set) {
                 set._items[type] = item ? [false, true] : [true, false];
             }
             return false;
-
 
         case 'function':
             // compare functions for reference equality
@@ -120,7 +117,6 @@ function hasOrAdd(item, shouldAdd, set) {
             }
             return true;
 
-
         case 'undefined':
             if (set._items[type]) {
                 return true;
@@ -129,7 +125,6 @@ function hasOrAdd(item, shouldAdd, set) {
                 set._items[type] = true;
             }
             return false;
-
 
         case 'object':
             if (item === null) {

@@ -15,7 +15,7 @@ var prefixes = require('./lib/prefixes');
  */
 module.exports = function (options) {
     var prefixOptions = initOptions(options, { gender: 'all' });
-    return prefixOptions.full ?
-        pick(prefixes(prefixOptions.gender)).name :
-        pick(prefixes(prefixOptions.gender)).abbreviation;
+    return prefixOptions.full
+        ? pick(prefixes(prefixOptions.gender)).name
+        : pick(prefixes(prefixOptions.gender)).abbreviation;
 };

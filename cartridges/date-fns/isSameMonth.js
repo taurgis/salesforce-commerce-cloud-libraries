@@ -34,7 +34,7 @@ module.exports = function isSameMonth(dirtyDateLeft, dirtyDateRight) {
     var dateLeft = toDate(dirtyDateLeft);
     var dateRight = toDate(dirtyDateRight);
     return (
-        dateLeft.getFullYear() === dateRight.getFullYear() &&
-    dateLeft.getMonth() === dateRight.getMonth()
+        dateLeft.getFullYear() === dateRight.getFullYear()
+    && dateLeft.getMonth() === dateRight.getMonth()
     );
 };

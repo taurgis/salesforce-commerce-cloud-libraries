@@ -3,7 +3,6 @@
 var server = require('server');
 var timeFunction = require('../scripts/util/timeFunction');
 
-
 /** Just an example controlle to test moment functions */
 server.get('Test', function (req, res, next) {
     res.json(
@@ -81,7 +80,8 @@ server.get('Test', function (req, res, next) {
             radio: timeFunction(require('chance/radio')),
             rpg: timeFunction(require('chance/rpg'), '5d6'),
             weighted: timeFunction(require('chance/weighted'), [require('chance/fbid')(), require('chance/twitter')(), require('chance/ip')()], [10, 5, 1])
-        });
+        }
+    );
 
     next();
 });

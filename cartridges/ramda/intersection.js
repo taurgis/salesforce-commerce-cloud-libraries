@@ -6,7 +6,6 @@ var _filter = require('./internal/_filter');
 var flip = require('./flip');
 var uniq = require('./uniq');
 
-
 /**
  * Combines two lists into a set (i.e. no duplicates) composed of those
  * elements common to both lists.

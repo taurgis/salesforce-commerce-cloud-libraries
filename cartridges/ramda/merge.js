@@ -3,7 +3,6 @@
 var _objectAssign = require('./internal/_objectAssign');
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Create a new object with the own properties of the first object merged with
  * the own properties of the second object. If a key exists in both objects,

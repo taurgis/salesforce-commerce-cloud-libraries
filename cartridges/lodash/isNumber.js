@@ -26,8 +26,8 @@ var isObjectLike = require('./isObjectLike');
  * isNumber('3') => false
  */
 function isNumber(value) {
-    return typeof value === 'number' ||
-    (isObjectLike(value) && getTag(value) === '[object Number]');
+    return typeof value === 'number'
+    || (isObjectLike(value) && getTag(value) === '[object Number]');
 }
 
 module.exports = isNumber;

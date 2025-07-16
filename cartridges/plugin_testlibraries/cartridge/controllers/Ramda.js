@@ -158,11 +158,6 @@ server.get('Test', function (req, res, next) {
             indexOf: R.indexOf(3, [1, 2, 3, 4]),
             insertAll: R.insertAll(2, ['x', 'y', 'z'], [1, 2, 3, 4]),
             intersperse: R.intersperse('a', ['b', 'n', 'n', 's']),
-            invert: R.invert(raceResultsByFirstName = {
-                first: 'alice',
-                second: 'jake',
-                third: 'alice',
-            }),
             isEmpty: R.isEmpty([]),
             keys: R.keys({ a: 1, b: 2, c: 3 }),
             lens: R.view(R.lens(R.prop('x'), R.assoc('x')), { x: 1, y: 2 }),

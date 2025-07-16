@@ -13,6 +13,7 @@ var nonEnumerableProps = [
 // Safari bug
 var hasArgsEnumBug = (function () {
     'use strict';
+
     return arguments.propertyIsEnumerable('length');
 }());
 
@@ -45,11 +46,11 @@ var contains = function contains(list, item) {
  *
  *      R.keys({a: 1, b: 2, c: 3}); //=> ['a', 'b', 'c']
  */
-var keys = typeof Object.keys === 'function' && !hasArgsEnumBug ?
-    _curry1(function keys(obj) {
+var keys = typeof Object.keys === 'function' && !hasArgsEnumBug
+    ? _curry1(function keys(obj) {
         return Object(obj) !== obj ? [] : Object.keys(obj);
-    }) :
-    _curry1(function keys(obj) {
+    })
+    : _curry1(function keys(obj) {
         if (Object(obj) !== obj) {
             return [];
         }

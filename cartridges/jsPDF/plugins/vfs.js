@@ -6,26 +6,26 @@
  * http://opensource.org/licenses/mit-license
  */
 
- /**
+/**
  * Use the vFS to handle files
  * @param {Object} jsPDFAPI The jsPDF API
  *
  * @name vFS
  * @module
  */
-  module.exports = function (jsPDFAPI) {
-      'use strict';
+module.exports = function (jsPDFAPI) {
+    'use strict';
 
-      var initializeVFS = function (instance) {
-          if (typeof instance === 'undefined') {
-              return false;
-          }
+    var initializeVFS = function (instance) {
+        if (typeof instance === 'undefined') {
+            return false;
+        }
 
-          if (typeof instance.vFS === 'undefined') {
-              instance.vFS = {};
-          }
-          return true;
-      };
+        if (typeof instance.vFS === 'undefined') {
+            instance.vFS = {};
+        }
+        return true;
+    };
 
     /**
     * Check if the file exists in the vFS
@@ -37,12 +37,12 @@
     * @example
     * doc.existsFileInVFS("someFile.txt");
     */
-      jsPDFAPI.existsFileInVFS = function (filename) {
-          if (initializeVFS(this.internal)) {
-              return typeof this.internal.vFS[filename] !== 'undefined';
-          }
-          return false;
-      };
+    jsPDFAPI.existsFileInVFS = function (filename) {
+        if (initializeVFS(this.internal)) {
+            return typeof this.internal.vFS[filename] !== 'undefined';
+        }
+        return false;
+    };
 
     /**
     * Add a file to the vFS
@@ -55,11 +55,11 @@
     * @example
     * doc.addFileToVFS("someFile.txt", "BADFACE1");
     */
-      jsPDFAPI.addFileToVFS = function (filename, filecontent) {
-          initializeVFS(this.internal);
-          this.internal.vFS[filename] = filecontent;
-          return this;
-      };
+    jsPDFAPI.addFileToVFS = function (filename, filecontent) {
+        initializeVFS(this.internal);
+        this.internal.vFS[filename] = filecontent;
+        return this;
+    };
 
     /**
     * Get the file from the vFS
@@ -71,12 +71,12 @@
     * @example
     * doc.getFileFromVFS("someFile.txt");
     */
-      jsPDFAPI.getFileFromVFS = function (filename) {
-          initializeVFS(this.internal);
+    jsPDFAPI.getFileFromVFS = function (filename) {
+        initializeVFS(this.internal);
 
-          if (typeof this.internal.vFS[filename] !== 'undefined') {
-              return this.internal.vFS[filename];
-          }
-          return null;
-      };
-  };
+        if (typeof this.internal.vFS[filename] !== 'undefined') {
+            return this.internal.vFS[filename];
+        }
+        return null;
+    };
+};

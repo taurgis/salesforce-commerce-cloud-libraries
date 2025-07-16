@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var _isInteger = require('./internal/_isInteger');
 
-
 /**
  * `mathMod` behaves like the modulo operator should mathematically, unlike the
  * `%` operator (and by extension, [`R.modulo`](#modulo)). So while

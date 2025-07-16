@@ -6,7 +6,6 @@ var ap = require('./ap');
 var curryN = require('./curryN');
 var map = require('./map');
 
-
 /**
  * "lifts" a function to be the specified arity, so that it may "map over" that
  * many lists, Functions or other objects that satisfy the [FantasyLand Apply spec](https://github.com/fantasyland/fantasy-land#apply).

@@ -203,8 +203,8 @@ BlueImpMD5.prototype.rstr2hex = function (input) {
     var i;
     for (i = 0; i < input.length; i += 1) {
         x = input.charCodeAt(i);
-        output += hexTab.charAt((x >>> 4) & 0x0F) +
-            hexTab.charAt(x & 0x0F);
+        output += hexTab.charAt((x >>> 4) & 0x0F)
+            + hexTab.charAt(x & 0x0F);
     }
     return output;
 };

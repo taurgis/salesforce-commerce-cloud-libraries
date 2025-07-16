@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var map = require('./map');
 var prop = require('./prop');
 
-
 /**
  * Returns a new list by plucking the same named property off all objects in
  * the list supplied.

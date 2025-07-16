@@ -3,7 +3,6 @@
 var _arity = require('./_arity');
 var _isPlaceholder = require('./_isPlaceholder');
 
-
 /**
  * Internal curryN function.
  *
@@ -22,9 +21,9 @@ module.exports = function _curryN(length, received, fn) {
         var combinedIdx = 0;
         while (combinedIdx < received.length || argsIdx < arguments.length) {
             var result;
-            if (combinedIdx < received.length &&
-          (!_isPlaceholder(received[combinedIdx]) ||
-           argsIdx >= arguments.length)) {
+            if (combinedIdx < received.length
+          && (!_isPlaceholder(received[combinedIdx])
+           || argsIdx >= arguments.length)) {
                 result = received[combinedIdx];
             } else {
                 result = arguments[argsIdx];

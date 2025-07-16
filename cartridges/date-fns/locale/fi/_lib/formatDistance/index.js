@@ -116,8 +116,7 @@ module.exports = function formatDistance(token, count, options) {
     options = options || {};
 
     var distance = formatDistanceLocale[token];
-    var result =
-    count === 1 ? distance.one : distance.other.replace('{{count}}', count);
+    var result = count === 1 ? distance.one : distance.other.replace('{{count}}', count);
 
     if (options.addSuffix) {
         if (options.comparison > 0) {

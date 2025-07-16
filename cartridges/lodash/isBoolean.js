@@ -18,8 +18,8 @@ var isObjectLike = require('./isObjectLike');
  * isBoolean(null) => false
  */
 function isBoolean(value) {
-    return value === true || value === false ||
-    (isObjectLike(value) && getTag(value) === '[object Boolean]');
+    return value === true || value === false
+    || (isObjectLike(value) && getTag(value) === '[object Boolean]');
 }
 
 module.exports = isBoolean;

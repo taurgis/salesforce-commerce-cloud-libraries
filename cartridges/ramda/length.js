@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var _isNumber = require('./internal/_isNumber');
 
-
 /**
  * Returns the number of elements in the array by returning `list.length`.
  *

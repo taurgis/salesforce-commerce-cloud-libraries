@@ -20,4 +20,3 @@ function copyArray(source, array) {
 }
 
 module.exports = copyArray;
-

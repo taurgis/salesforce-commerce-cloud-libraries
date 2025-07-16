@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Creates a new list out of the two supplied by pairing up equally-positioned
  * items from both lists. The returned list is truncated to the length of the

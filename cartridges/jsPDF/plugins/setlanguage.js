@@ -19,8 +19,8 @@ module.exports = function (jsPDFAPI) {
     * Add Language Tag to the generated PDF
     *
     * @name setLanguage
-	* @function
-	* @param {string} langCode The Language code as ISO-639-1 (e.g. 'en') or as country language code (e.g. 'en-GB').
+    * @function
+    * @param {string} langCode The Language code as ISO-639-1 (e.g. 'en') or as country language code (e.g. 'en-GB').
     * @returns {jsPDF}
     * @example
     * var doc = new jsPDF()

@@ -4,7 +4,6 @@ var _curryN = require('./_curryN');
 var _has = require('./_has');
 var _xfBase = require('./_xfBase');
 
-
 function XReduceBy(valueFn, valueAcc, keyFn, xf) {
     this.valueFn = valueFn;
     this.valueAcc = valueAcc;
@@ -34,7 +33,9 @@ XReduceBy.prototype['@@transducer/step'] = function (result, input) {
     return result;
 };
 
-var _xreduceBy = _curryN(4, [],
+var _xreduceBy = _curryN(
+    4,
+    [],
     function _xreduceBy(valueFn, valueAcc, keyFn, xf) {
         return new XReduceBy(valueFn, valueAcc, keyFn, xf);
     }

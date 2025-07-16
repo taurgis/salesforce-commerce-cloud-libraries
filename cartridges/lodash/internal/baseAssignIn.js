@@ -17,4 +17,3 @@ function baseAssignIn(object, source) {
 }
 
 module.exports = baseAssignIn;
-

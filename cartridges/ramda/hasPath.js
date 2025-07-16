@@ -5,7 +5,6 @@ var _has = require('./internal/_has');
 
 var isNil = require('./isNil');
 
-
 /**
  * Returns whether or not a path exists in an object. Only the object's
  * own properties are checked.

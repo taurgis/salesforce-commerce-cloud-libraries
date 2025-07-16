@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var _isNumber = require('./internal/_isNumber');
 
-
 /**
  * Returns a list of numbers from `from` (inclusive) to `to` (exclusive).
  *

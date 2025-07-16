@@ -38,8 +38,8 @@ function split(string, separator, limit) {
     }
     string = toString(string);
     if (string && (
-        typeof separator == 'string' ||
-        (separator != null && !isRegExp(separator))
+        typeof separator == 'string'
+        || (separator != null && !isRegExp(separator))
     )) {
         separator = baseToString(separator);
         if (!separator && hasUnicode(string)) {

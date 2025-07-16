@@ -17,4 +17,3 @@ function arraySampleSize(array, n) {
 }
 
 module.exports = arraySampleSize;
-

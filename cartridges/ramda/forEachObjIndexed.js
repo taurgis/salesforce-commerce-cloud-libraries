@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var keys = require('./keys');
 
-
 /**
  * Iterate over an input `object`, calling a provided function `fn` for each
  * key and value in the object.

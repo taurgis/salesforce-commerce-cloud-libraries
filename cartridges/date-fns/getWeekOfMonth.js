@@ -39,12 +39,9 @@ module.exports = function getWeekOfMonth(date, dirtyOptions) {
 
     var options = dirtyOptions || {};
     var locale = options.locale;
-    var localeWeekStartsOn =
-    locale && locale.options && locale.options.weekStartsOn;
-    var defaultWeekStartsOn =
-    localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
-    var weekStartsOn =
-    options.weekStartsOn == null
+    var localeWeekStartsOn = locale && locale.options && locale.options.weekStartsOn;
+    var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+    var weekStartsOn = options.weekStartsOn == null
         ? defaultWeekStartsOn
         : toInteger(options.weekStartsOn);
 
@@ -56,8 +53,7 @@ module.exports = function getWeekOfMonth(date, dirtyOptions) {
     var startWeekDay = getDay(startOfMonth(date));
     var currentWeekDay = getDay(date);
 
-    var startWeekDayWithOptions =
-    startWeekDay < weekStartsOn ? 7 - weekStartsOn : startWeekDay;
+    var startWeekDayWithOptions = startWeekDay < weekStartsOn ? 7 - weekStartsOn : startWeekDay;
     var diff = startWeekDayWithOptions > currentWeekDay ? 7 - weekStartsOn : 0;
 
     return Math.ceil((getDate(date) + diff) / 7);

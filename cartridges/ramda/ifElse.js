@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var curryN = require('./curryN');
 
-
 /**
  * Creates a function that will process either the `onTrue` or the `onFalse`
  * function depending upon the result of the `condition` predicate.
@@ -30,7 +29,8 @@ var curryN = require('./curryN');
  *      incCount({ count: 1 }); //=> { count: 2 }
  */
 var ifElse = _curry3(function ifElse(condition, onTrue, onFalse) {
-    return curryN(Math.max(condition.length, onTrue.length, onFalse.length),
+    return curryN(
+        Math.max(condition.length, onTrue.length, onFalse.length),
         function _ifElse() {
             return condition.apply(this, arguments) ? onTrue.apply(this, arguments) : onFalse.apply(this, arguments);
         }

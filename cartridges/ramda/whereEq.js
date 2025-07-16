@@ -5,7 +5,6 @@ var equals = require('./equals');
 var map = require('./map');
 var where = require('./where');
 
-
 /**
  * Takes a spec object and a test object; returns true if the test satisfies
  * the spec, false otherwise. An object satisfies the spec if, for each of the

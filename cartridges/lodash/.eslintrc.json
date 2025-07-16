@@ -20,6 +20,9 @@
       "no-labels": "off",
       "no-continue": "off",
       "no-underscore-dangle": "off",
-      "block-scoped-var": "off"
+      "block-scoped-var": "off",
+      "no-bitwise": "off",
+      "no-plusplus": "off",
+      "no-use-before-define": "off"
     }
 }

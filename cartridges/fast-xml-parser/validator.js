@@ -129,7 +129,7 @@ exports.validate = function (xmlData, options) {
 
     if (!tagFound) {
         return { err: { code: 'InvalidXml', msg: 'Start tag expected.' } };
-    } else if (tags.length > 0) {
+    } if (tags.length > 0) {
         return {
             err: { code: 'InvalidXml', msg: 'Invalid ' + JSON.stringify(tags, null, 4).replace(/\r?\n/g, '') + ' found.' }
         };
@@ -151,7 +151,7 @@ function readPI(xmlData, i) {
             var tagname = xmlData.substr(start, i - start);
             if (i > 5 && tagname === 'xml') {
                 return { err: { code: 'InvalidXml', msg: 'XML declaration allowed only at the start of the document.' } };
-            } else if (xmlData[i] === '?' && xmlData[i + 1] === '>') {
+            } if (xmlData[i] === '?' && xmlData[i + 1] === '>') {
                 // check if valid attribut string
                 i++;
                 break;
@@ -173,14 +173,14 @@ function readCommentAndCDATA(xmlData, i) {
             }
         }
     } else if (
-        xmlData.length > i + 8 &&
-    xmlData[i + 1] === 'D' &&
-    xmlData[i + 2] === 'O' &&
-    xmlData[i + 3] === 'C' &&
-    xmlData[i + 4] === 'T' &&
-    xmlData[i + 5] === 'Y' &&
-    xmlData[i + 6] === 'P' &&
-    xmlData[i + 7] === 'E'
+        xmlData.length > i + 8
+    && xmlData[i + 1] === 'D'
+    && xmlData[i + 2] === 'O'
+    && xmlData[i + 3] === 'C'
+    && xmlData[i + 4] === 'T'
+    && xmlData[i + 5] === 'Y'
+    && xmlData[i + 6] === 'P'
+    && xmlData[i + 7] === 'E'
     ) {
         let angleBracketsCount = 1;
         for (i += 8; i < xmlData.length; i++) {
@@ -194,14 +194,14 @@ function readCommentAndCDATA(xmlData, i) {
             }
         }
     } else if (
-        xmlData.length > i + 9 &&
-    xmlData[i + 1] === '[' &&
-    xmlData[i + 2] === 'C' &&
-    xmlData[i + 3] === 'D' &&
-    xmlData[i + 4] === 'A' &&
-    xmlData[i + 5] === 'T' &&
-    xmlData[i + 6] === 'A' &&
-    xmlData[i + 7] === '['
+        xmlData.length > i + 9
+    && xmlData[i + 1] === '['
+    && xmlData[i + 2] === 'C'
+    && xmlData[i + 3] === 'D'
+    && xmlData[i + 4] === 'A'
+    && xmlData[i + 5] === 'T'
+    && xmlData[i + 6] === 'A'
+    && xmlData[i + 7] === '['
     ) {
         for (i += 8; i < xmlData.length; i++) {
             if (xmlData[i] === ']' && xmlData[i + 1] === ']' && xmlData[i + 2] === '>') {
@@ -270,7 +270,7 @@ function validateAttributeString(attrStr, options, regxAttrName) {
         if (matches[i][1].length === 0) {
             // nospace before attribute name: a="sd"b="saf"
             return { err: { code: 'InvalidAttr', msg: 'attribute ' + matches[i][2] + ' has no space in starting.' } };
-        } else if (matches[i][3] === undefined && !options.allowBooleanAttributes) {
+        } if (matches[i][3] === undefined && !options.allowBooleanAttributes) {
             // independent attribute: ab
             return { err: { code: 'InvalidAttr', msg: 'boolean attribute ' + matches[i][2] + ' is not allowed.' } };
         }
@@ -304,6 +304,6 @@ function validateAttrName(attrName, regxAttrName) {
 
 function validateTagName(tagname, regxTagName) {
     /* if(util.doesMatch(tagname,startsWithXML)) return false;
-    else*/
+    else */
     return !util.doesNotMatch(tagname, regxTagName);
 }

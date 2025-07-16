@@ -30,9 +30,9 @@ var dayGrammaticalGender = {
 function getAdjectives(token, date, baseDate, options) {
     if (isSameUTCWeek(date, baseDate, options)) {
         return adjectivesThisWeek;
-    } else if (token === 'lastWeek') {
+    } if (token === 'lastWeek') {
         return adjectivesLastWeek;
-    } else if (token === 'nextWeek') {
+    } if (token === 'nextWeek') {
         return adjectivesNextWeek;
     }
     throw new Error(`Cannot determine adjectives for token ${token}`);

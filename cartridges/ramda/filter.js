@@ -8,7 +8,6 @@ var _reduce = require('./internal/_reduce');
 var _xfilter = require('./internal/_xfilter');
 var keys = require('./keys');
 
-
 /**
  * Takes a predicate and a `Filterable`, and returns a new filterable of the
  * same type containing the members of the given filterable which satisfy the
@@ -38,15 +37,15 @@ var keys = require('./keys');
  */
 var filter = _curry2(_dispatchable(['filter'], _xfilter, function (pred, filterable) {
     return (
-        _isObject(filterable) ?
-            _reduce(function (acc, key) {
+        _isObject(filterable)
+            ? _reduce(function (acc, key) {
                 if (pred(filterable[key])) {
                     acc[key] = filterable[key];
                 }
                 return acc;
-            }, {}, keys(filterable)) :
+            }, {}, keys(filterable))
         // else
-            _filter(pred, filterable)
+            : _filter(pred, filterable)
     );
 }));
 module.exports = filter;

@@ -14,7 +14,7 @@ function declension(scheme, count) {
         return scheme.singularNominative.replace('{{count}}', count);
 
     // 2, 3, 4, 22, 23, 24, 32 ...
-    } else if (rem10 >= 2 && rem10 <= 4 && (rem100 < 10 || rem100 > 20)) {
+    } if (rem10 >= 2 && rem10 <= 4 && (rem100 < 10 || rem100 > 20)) {
         return scheme.singularGenitive.replace('{{count}}', count);
 
     // 5, 6, 7, 8, 9, 10, 11, ...

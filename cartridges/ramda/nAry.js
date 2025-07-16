@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Wraps a function of any arity (including nullary) in a function that accepts
  * exactly `n` parameters. Any extraneous parameters will not be passed to the

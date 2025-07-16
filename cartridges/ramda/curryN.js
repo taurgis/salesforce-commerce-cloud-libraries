@@ -5,7 +5,6 @@ var _curry1 = require('./internal/_curry1');
 var _curry2 = require('./internal/_curry2');
 var _curryN = require('./internal/_curryN');
 
-
 /**
  * Returns a curried equivalent of the provided function, with the specified
  * arity. The curried function has two unusual capabilities. First, its

@@ -5,7 +5,6 @@ var _curry2 = require('./internal/_curry2');
 var _reduce = require('./internal/_reduce');
 var map = require('./map');
 
-
 /**
  * ap applies a list of functions to a list of values.
  *

@@ -44,8 +44,8 @@ module.exports = function isDate(value) {
     }
 
     return (
-        value instanceof Date ||
-    (typeof value === 'object' &&
-      Object.prototype.toString.call(value) === '[object Date]')
+        value instanceof Date
+    || (typeof value === 'object'
+      && Object.prototype.toString.call(value) === '[object Date]')
     );
 };

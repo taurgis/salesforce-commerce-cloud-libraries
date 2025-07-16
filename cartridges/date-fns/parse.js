@@ -376,14 +376,11 @@ module.exports = function parse(
         throw new RangeError('locale must contain match property');
     }
 
-    var localeFirstWeekContainsDate =
-    locale.options && locale.options.firstWeekContainsDate;
-    var defaultFirstWeekContainsDate =
-    localeFirstWeekContainsDate == null
+    var localeFirstWeekContainsDate = locale.options && locale.options.firstWeekContainsDate;
+    var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null
         ? 1
         : toInteger(localeFirstWeekContainsDate);
-    var firstWeekContainsDate =
-    options.firstWeekContainsDate == null
+    var firstWeekContainsDate = options.firstWeekContainsDate == null
         ? defaultFirstWeekContainsDate
         : toInteger(options.firstWeekContainsDate);
 
@@ -395,10 +392,8 @@ module.exports = function parse(
     }
 
     var localeWeekStartsOn = locale.options && locale.options.weekStartsOn;
-    var defaultWeekStartsOn =
-    localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
-    var weekStartsOn =
-    options.weekStartsOn == null
+    var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+    var weekStartsOn = options.weekStartsOn == null
         ? defaultWeekStartsOn
         : toInteger(options.weekStartsOn);
 
@@ -450,14 +445,14 @@ module.exports = function parse(
         var token = tokens[i];
 
         if (
-            !options.useAdditionalWeekYearTokens &&
-      isProtectedWeekYearToken(token)
+            !options.useAdditionalWeekYearTokens
+      && isProtectedWeekYearToken(token)
         ) {
             throwProtectedError(token);
         }
         if (
-            !options.useAdditionalDayOfYearTokens &&
-      isProtectedDayOfYearToken(token)
+            !options.useAdditionalDayOfYearTokens
+      && isProtectedDayOfYearToken(token)
         ) {
             throwProtectedError(token);
         }
@@ -471,8 +466,8 @@ module.exports = function parse(
                 for (let i = 0; i < usedTokens.length; i++) {
                     const usedToken = usedTokens[i].token;
                     if (
-                        incompatibleTokens.indexOf(usedToken) !== -1 ||
-            usedToken === firstCharacter
+                        incompatibleTokens.indexOf(usedToken) !== -1
+            || usedToken === firstCharacter
                     ) {
                         incompatibleToken = usedTokens[i];
                         break;
@@ -514,9 +509,9 @@ module.exports = function parse(
         } else {
             if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
                 throw new RangeError(
-                    'Format string contains an unescaped latin alphabet character `' +
-            firstCharacter +
-            '`'
+                    'Format string contains an unescaped latin alphabet character `'
+            + firstCharacter
+            + '`'
                 );
             }
 
@@ -578,8 +573,8 @@ module.exports = function parse(
         var setter = uniquePrioritySetters[i];
 
         if (
-            setter.validate &&
-      !setter.validate(utcDate, setter.value, subFnOptions)
+            setter.validate
+      && !setter.validate(utcDate, setter.value, subFnOptions)
         ) {
             return new Date(NaN);
         }

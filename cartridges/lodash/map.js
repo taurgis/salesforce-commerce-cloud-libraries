@@ -49,4 +49,3 @@ function map(collection, iteratee) {
 }
 
 module.exports = map;
-

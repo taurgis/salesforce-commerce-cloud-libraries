@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var pipeWith = require('./pipeWith');
 var reverse = require('./reverse');
 
-
 /**
  * Performs right-to-left function composition using transforming function. The last argument may have
  * any arity; the remaining arguments must be unary.

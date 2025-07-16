@@ -3,7 +3,6 @@
 var _isArray = require('./_isArray');
 var _isTransformer = require('./_isTransformer');
 
-
 /**
  * Returns a function that dispatches with different strategies based on the
  * object in list position (last argument). If it is an array, executes [fn].

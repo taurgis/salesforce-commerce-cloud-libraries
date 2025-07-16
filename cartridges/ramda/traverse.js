@@ -4,7 +4,6 @@ var _curry3 = require('./internal/_curry3');
 var map = require('./map');
 var sequence = require('./sequence');
 
-
 /**
  * Maps an [Applicative](https://github.com/fantasyland/fantasy-land#applicative)-returning
  * function over a [Traversable](https://github.com/fantasyland/fantasy-land#traversable),
@@ -32,8 +31,8 @@ var sequence = require('./sequence');
  *      R.traverse(Maybe.of, safeDiv(10), [2, 0, 5]); //=> Maybe.Nothing
  */
 var traverse = _curry3(function traverse(of, f, traversable) {
-    return typeof traversable['fantasy-land/traverse'] === 'function' ?
-        traversable['fantasy-land/traverse'](f, of) :
-        sequence(of, map(f, traversable));
+    return typeof traversable['fantasy-land/traverse'] === 'function'
+        ? traversable['fantasy-land/traverse'](f, of)
+        : sequence(of, map(f, traversable));
 });
 module.exports = traverse;

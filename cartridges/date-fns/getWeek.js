@@ -57,9 +57,8 @@ module.exports = function getWeek(dirtyDate, options) {
     }
 
     var date = toDate(dirtyDate);
-    var diff =
-    startOfWeek(date, options).getTime() -
-    startOfWeekYear(date, options).getTime();
+    var diff = startOfWeek(date, options).getTime()
+    - startOfWeekYear(date, options).getTime();
 
     // Round the number of days to the nearest integer
     // because the number of milliseconds in a week is not constant

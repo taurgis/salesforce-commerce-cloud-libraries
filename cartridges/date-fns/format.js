@@ -353,14 +353,11 @@ module.exports = function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 
     var locale = options.locale || defaultLocale;
 
-    var localeFirstWeekContainsDate =
-    locale.options && locale.options.firstWeekContainsDate;
-    var defaultFirstWeekContainsDate =
-    localeFirstWeekContainsDate == null
+    var localeFirstWeekContainsDate = locale.options && locale.options.firstWeekContainsDate;
+    var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null
         ? 1
         : toInteger(localeFirstWeekContainsDate);
-    var firstWeekContainsDate =
-    options.firstWeekContainsDate == null
+    var firstWeekContainsDate = options.firstWeekContainsDate == null
         ? defaultFirstWeekContainsDate
         : toInteger(options.firstWeekContainsDate);
 
@@ -372,10 +369,8 @@ module.exports = function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
     }
 
     var localeWeekStartsOn = locale.options && locale.options.weekStartsOn;
-    var defaultWeekStartsOn =
-    localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
-    var weekStartsOn =
-    options.weekStartsOn == null
+    var defaultWeekStartsOn = localeWeekStartsOn == null ? 0 : toInteger(localeWeekStartsOn);
+    var weekStartsOn = options.weekStartsOn == null
         ? defaultWeekStartsOn
         : toInteger(options.weekStartsOn);
 
@@ -437,14 +432,14 @@ module.exports = function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
             var formatter = formatters[firstCharacter];
             if (formatter) {
                 if (
-                    !options.useAdditionalWeekYearTokens &&
-          isProtectedWeekYearToken(substring)
+                    !options.useAdditionalWeekYearTokens
+          && isProtectedWeekYearToken(substring)
                 ) {
                     throwProtectedError(substring);
                 }
                 if (
-                    !options.useAdditionalDayOfYearTokens &&
-          isProtectedDayOfYearToken(substring)
+                    !options.useAdditionalDayOfYearTokens
+          && isProtectedDayOfYearToken(substring)
                 ) {
                     throwProtectedError(substring);
                 }
@@ -453,9 +448,9 @@ module.exports = function format(dirtyDate, dirtyFormatStr, dirtyOptions) {
 
             if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
                 throw new RangeError(
-                    'Format string contains an unescaped latin alphabet character `' +
-            firstCharacter +
-            '`'
+                    'Format string contains an unescaped latin alphabet character `'
+            + firstCharacter
+            + '`'
                 );
             }
 

@@ -4,7 +4,6 @@ var filter = require('./filter');
 var juxt = require('./juxt');
 var reject = require('./reject');
 
-
 /**
  * Takes a predicate and a list or other `Filterable` object and returns the
  * pair of filterable objects of the same type of elements which do and do not

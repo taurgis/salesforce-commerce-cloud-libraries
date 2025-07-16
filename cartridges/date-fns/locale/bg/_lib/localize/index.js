@@ -42,9 +42,9 @@ var localize = {
     timeOfDay: buildLocalizeFn(timeOfDayValues, 'long', function (hours) {
         if (hours >= 17) {
             return 3;
-        } else if (hours >= 12) {
+        } if (hours >= 12) {
             return 2;
-        } else if (hours >= 4) {
+        } if (hours >= 4) {
             return 1;
         }
         return 0;

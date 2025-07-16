@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Returns `true` if the specified object property satisfies the given
  * predicate; `false` otherwise. You can test multiple properties with

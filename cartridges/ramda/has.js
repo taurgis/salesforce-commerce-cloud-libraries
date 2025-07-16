@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var hasPath = require('./hasPath');
 
-
 /**
  * Returns whether or not an object has an own property with the specified name
  *

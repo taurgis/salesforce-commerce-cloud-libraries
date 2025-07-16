@@ -13,15 +13,13 @@ module.exports = function startOfUTCWeekYear(dirtyDate, dirtyOptions) {
 
     var options = dirtyOptions || {};
     var locale = options.locale;
-    var localeFirstWeekContainsDate = locale &&
-    locale.options &&
-    locale.options.firstWeekContainsDate;
-    var defaultFirstWeekContainsDate =
-    localeFirstWeekContainsDate == null
+    var localeFirstWeekContainsDate = locale
+    && locale.options
+    && locale.options.firstWeekContainsDate;
+    var defaultFirstWeekContainsDate = localeFirstWeekContainsDate == null
         ? 1
         : toInteger(localeFirstWeekContainsDate);
-    var firstWeekContainsDate =
-    options.firstWeekContainsDate == null
+    var firstWeekContainsDate = options.firstWeekContainsDate == null
         ? defaultFirstWeekContainsDate
         : toInteger(options.firstWeekContainsDate);
 

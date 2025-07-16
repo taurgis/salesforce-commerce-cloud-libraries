@@ -4,7 +4,6 @@ var _curry1 = require('./internal/_curry1');
 var empty = require('./empty');
 var equals = require('./equals');
 
-
 /**
  * Returns `true` if the given value is its type's empty value; `false`
  * otherwise.

@@ -81,10 +81,10 @@ function parseTimezonePattern(pattern, string) {
 
     return {
         value:
-      sign *
-      (hours * MILLISECONDS_IN_HOUR +
-        minutes * MILLISECONDS_IN_MINUTE +
-        seconds * MILLISECONDS_IN_SECOND),
+      sign
+      * (hours * MILLISECONDS_IN_HOUR
+        + minutes * MILLISECONDS_IN_MINUTE
+        + seconds * MILLISECONDS_IN_SECOND),
         rest: string.slice(matchResult[0].length)
     };
 }
@@ -269,8 +269,8 @@ var parsers = {
                 case 'GG':
                 case 'GGG':
                     return (
-                        match.era(string, { width: 'abbreviated' }) ||
-            match.era(string, { width: 'narrow' })
+                        match.era(string, { width: 'abbreviated' })
+            || match.era(string, { width: 'narrow' })
                     );
                     // A, B
                 case 'GGGGG':
@@ -279,9 +279,9 @@ var parsers = {
                 case 'GGGG':
                 default:
                     return (
-                        match.era(string, { width: 'wide' }) ||
-            match.era(string, { width: 'abbreviated' }) ||
-            match.era(string, { width: 'narrow' })
+                        match.era(string, { width: 'wide' })
+            || match.era(string, { width: 'abbreviated' })
+            || match.era(string, { width: 'narrow' })
                     );
             }
         },
@@ -347,8 +347,7 @@ var parsers = {
                 return date;
             }
 
-            var year =
-        !('era' in flags) || flags.era === 1 ? value.year : 1 - value.year;
+            var year =        !('era' in flags) || flags.era === 1 ? value.year : 1 - value.year;
             date.setUTCFullYear(year, 0, 1);
             date.setUTCHours(0, 0, 0, 0);
             return date;
@@ -403,8 +402,7 @@ var parsers = {
                 return startOfUTCWeek(date, options);
             }
 
-            var year =
-        !('era' in flags) || flags.era === 1 ? value.year : 1 - value.year;
+            var year =        !('era' in flags) || flags.era === 1 ? value.year : 1 - value.year;
             date.setUTCFullYear(year, 0, options.firstWeekContainsDate);
             date.setUTCHours(0, 0, 0, 0);
             return startOfUTCWeek(date, options);
@@ -505,8 +503,8 @@ var parsers = {
                         match.quarter(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.quarter(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.quarter(string, { width: 'narrow', context: 'formatting' })
                     );
                     // 1, 2, 3, 4 (narrow quarter; could be not numerical)
                 case 'QQQQQ':
@@ -518,12 +516,12 @@ var parsers = {
                 case 'QQQQ':
                 default:
                     return (
-                        match.quarter(string, { width: 'wide', context: 'formatting' }) ||
-            match.quarter(string, {
+                        match.quarter(string, { width: 'wide', context: 'formatting' })
+            || match.quarter(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.quarter(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.quarter(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -575,8 +573,8 @@ var parsers = {
                         match.quarter(string, {
                             width: 'abbreviated',
                             context: 'standalone'
-                        }) ||
-            match.quarter(string, { width: 'narrow', context: 'standalone' })
+                        })
+            || match.quarter(string, { width: 'narrow', context: 'standalone' })
                     );
                     // 1, 2, 3, 4 (narrow quarter; could be not numerical)
                 case 'qqqqq':
@@ -588,12 +586,12 @@ var parsers = {
                 case 'qqqq':
                 default:
                     return (
-                        match.quarter(string, { width: 'wide', context: 'standalone' }) ||
-            match.quarter(string, {
+                        match.quarter(string, { width: 'wide', context: 'standalone' })
+            || match.quarter(string, {
                 width: 'abbreviated',
                 context: 'standalone'
-            }) ||
-            match.quarter(string, { width: 'narrow', context: 'standalone' })
+            })
+            || match.quarter(string, { width: 'narrow', context: 'standalone' })
                     );
             }
         },
@@ -658,8 +656,8 @@ var parsers = {
                         match.month(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.month(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.month(string, { width: 'narrow', context: 'formatting' })
                     );
                     // J, F, ..., D
                 case 'MMMMM':
@@ -668,12 +666,12 @@ var parsers = {
                 case 'MMMM':
                 default:
                     return (
-                        match.month(string, { width: 'wide', context: 'formatting' }) ||
-            match.month(string, {
+                        match.month(string, { width: 'wide', context: 'formatting' })
+            || match.month(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.month(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.month(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -737,8 +735,8 @@ var parsers = {
                         match.month(string, {
                             width: 'abbreviated',
                             context: 'standalone'
-                        }) ||
-            match.month(string, { width: 'narrow', context: 'standalone' })
+                        })
+            || match.month(string, { width: 'narrow', context: 'standalone' })
                     );
                     // J, F, ..., D
                 case 'LLLLL':
@@ -747,12 +745,12 @@ var parsers = {
                 case 'LLLL':
                 default:
                     return (
-                        match.month(string, { width: 'wide', context: 'standalone' }) ||
-            match.month(string, {
+                        match.month(string, { width: 'wide', context: 'standalone' })
+            || match.month(string, {
                 width: 'abbreviated',
                 context: 'standalone'
-            }) ||
-            match.month(string, { width: 'narrow', context: 'standalone' })
+            })
+            || match.month(string, { width: 'narrow', context: 'standalone' })
                     );
             }
         },
@@ -976,9 +974,9 @@ var parsers = {
                         match.day(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
                     // T
                 case 'EEEEE':
@@ -986,20 +984,20 @@ var parsers = {
                     // Tu
                 case 'EEEEEE':
                     return (
-                        match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+                        match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
                     // Tuesday
                 case 'EEEE':
                 default:
                     return (
-                        match.day(string, { width: 'wide', context: 'formatting' }) ||
-            match.day(string, {
+                        match.day(string, { width: 'wide', context: 'formatting' })
+            || match.day(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -1043,9 +1041,9 @@ var parsers = {
                         match.day(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
                     // T
                 case 'eeeee':
@@ -1053,20 +1051,20 @@ var parsers = {
                     // Tu
                 case 'eeeeee':
                     return (
-                        match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+                        match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
                     // Tuesday
                 case 'eeee':
                 default:
                     return (
-                        match.day(string, { width: 'wide', context: 'formatting' }) ||
-            match.day(string, {
+                        match.day(string, { width: 'wide', context: 'formatting' })
+            || match.day(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.day(string, { width: 'short', context: 'formatting' }) ||
-            match.day(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.day(string, { width: 'short', context: 'formatting' })
+            || match.day(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -1125,9 +1123,9 @@ var parsers = {
                         match.day(string, {
                             width: 'abbreviated',
                             context: 'standalone'
-                        }) ||
-            match.day(string, { width: 'short', context: 'standalone' }) ||
-            match.day(string, { width: 'narrow', context: 'standalone' })
+                        })
+            || match.day(string, { width: 'short', context: 'standalone' })
+            || match.day(string, { width: 'narrow', context: 'standalone' })
                     );
                     // T
                 case 'ccccc':
@@ -1135,20 +1133,20 @@ var parsers = {
                     // Tu
                 case 'cccccc':
                     return (
-                        match.day(string, { width: 'short', context: 'standalone' }) ||
-            match.day(string, { width: 'narrow', context: 'standalone' })
+                        match.day(string, { width: 'short', context: 'standalone' })
+            || match.day(string, { width: 'narrow', context: 'standalone' })
                     );
                     // Tuesday
                 case 'cccc':
                 default:
                     return (
-                        match.day(string, { width: 'wide', context: 'standalone' }) ||
-            match.day(string, {
+                        match.day(string, { width: 'wide', context: 'standalone' })
+            || match.day(string, {
                 width: 'abbreviated',
                 context: 'standalone'
-            }) ||
-            match.day(string, { width: 'short', context: 'standalone' }) ||
-            match.day(string, { width: 'narrow', context: 'standalone' })
+            })
+            || match.day(string, { width: 'short', context: 'standalone' })
+            || match.day(string, { width: 'narrow', context: 'standalone' })
                     );
             }
         },
@@ -1209,13 +1207,13 @@ var parsers = {
                             width: 'abbreviated',
                             context: 'formatting',
                             valueCallback: valueCallback
-                        }) ||
-            match.day(string, {
+                        })
+            || match.day(string, {
                 width: 'short',
                 context: 'formatting',
                 valueCallback: valueCallback
-            }) ||
-            match.day(string, {
+            })
+            || match.day(string, {
                 width: 'narrow',
                 context: 'formatting',
                 valueCallback: valueCallback
@@ -1235,8 +1233,8 @@ var parsers = {
                             width: 'short',
                             context: 'formatting',
                             valueCallback: valueCallback
-                        }) ||
-            match.day(string, {
+                        })
+            || match.day(string, {
                 width: 'narrow',
                 context: 'formatting',
                 valueCallback: valueCallback
@@ -1250,18 +1248,18 @@ var parsers = {
                             width: 'wide',
                             context: 'formatting',
                             valueCallback: valueCallback
-                        }) ||
-            match.day(string, {
+                        })
+            || match.day(string, {
                 width: 'abbreviated',
                 context: 'formatting',
                 valueCallback: valueCallback
-            }) ||
-            match.day(string, {
+            })
+            || match.day(string, {
                 width: 'short',
                 context: 'formatting',
                 valueCallback: valueCallback
-            }) ||
-            match.day(string, {
+            })
+            || match.day(string, {
                 width: 'narrow',
                 context: 'formatting',
                 valueCallback: valueCallback
@@ -1312,8 +1310,8 @@ var parsers = {
                         match.dayPeriod(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
                 case 'aaaaa':
                     return match.dayPeriod(string, {
@@ -1323,12 +1321,12 @@ var parsers = {
                 case 'aaaa':
                 default:
                     return (
-                        match.dayPeriod(string, { width: 'wide', context: 'formatting' }) ||
-            match.dayPeriod(string, {
+                        match.dayPeriod(string, { width: 'wide', context: 'formatting' })
+            || match.dayPeriod(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -1354,8 +1352,8 @@ var parsers = {
                         match.dayPeriod(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
                 case 'bbbbb':
                     return match.dayPeriod(string, {
@@ -1365,12 +1363,12 @@ var parsers = {
                 case 'bbbb':
                 default:
                     return (
-                        match.dayPeriod(string, { width: 'wide', context: 'formatting' }) ||
-            match.dayPeriod(string, {
+                        match.dayPeriod(string, { width: 'wide', context: 'formatting' })
+            || match.dayPeriod(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -1396,8 +1394,8 @@ var parsers = {
                         match.dayPeriod(string, {
                             width: 'abbreviated',
                             context: 'formatting'
-                        }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+                        })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
                 case 'BBBBB':
                     return match.dayPeriod(string, {
@@ -1407,12 +1405,12 @@ var parsers = {
                 case 'BBBB':
                 default:
                     return (
-                        match.dayPeriod(string, { width: 'wide', context: 'formatting' }) ||
-            match.dayPeriod(string, {
+                        match.dayPeriod(string, { width: 'wide', context: 'formatting' })
+            || match.dayPeriod(string, {
                 width: 'abbreviated',
                 context: 'formatting'
-            }) ||
-            match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
+            })
+            || match.dayPeriod(string, { width: 'narrow', context: 'formatting' })
                     );
             }
         },
@@ -1606,7 +1604,7 @@ var parsers = {
 
         parse: function (string, token, _match, _options) {
             var valueCallback = function (value) {
-                return Math.floor(value * Math.pow(10, -token.length + 3));
+                return Math.floor(value * Math.pow(10, (-token.length + 3)));
             };
             return parseNDigits(token.length, string, valueCallback);
         },

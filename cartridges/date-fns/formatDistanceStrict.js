@@ -197,8 +197,7 @@ module.exports = function formatDistanceStrict(
         dateRight = toDate(dirtyBaseDate);
     }
 
-    var roundingMethod =
-    options.roundingMethod == null ? 'round' : String(options.roundingMethod);
+    var roundingMethod = options.roundingMethod == null ? 'round' : String(options.roundingMethod);
     var roundingMethodFn;
 
     if (roundingMethod === 'floor') {
@@ -212,10 +211,9 @@ module.exports = function formatDistanceStrict(
     }
 
     var seconds = differenceInSeconds(dateRight, dateLeft);
-    var offsetInSeconds =
-    (getTimezoneOffsetInMilliseconds(dateRight) -
-      getTimezoneOffsetInMilliseconds(dateLeft)) /
-    1000;
+    var offsetInSeconds = (getTimezoneOffsetInMilliseconds(dateRight)
+      - getTimezoneOffsetInMilliseconds(dateLeft))
+    / 1000;
     var minutes = roundingMethodFn((seconds - offsetInSeconds) / 60);
 
     var unit;
@@ -242,26 +240,26 @@ module.exports = function formatDistanceStrict(
         return locale.formatDistance('xSeconds', seconds, localizeOptions);
 
     // 1 up to 60 mins
-    } else if (unit === 'minute') {
+    } if (unit === 'minute') {
         return locale.formatDistance('xMinutes', minutes, localizeOptions);
 
     // 1 up to 24 hours
-    } else if (unit === 'hour') {
+    } if (unit === 'hour') {
         var hours = roundingMethodFn(minutes / 60);
         return locale.formatDistance('xHours', hours, localizeOptions);
 
     // 1 up to 30 days
-    } else if (unit === 'day') {
+    } if (unit === 'day') {
         var days = roundingMethodFn(minutes / MINUTES_IN_DAY);
         return locale.formatDistance('xDays', days, localizeOptions);
 
     // 1 up to 12 months
-    } else if (unit === 'month') {
+    } if (unit === 'month') {
         var months = roundingMethodFn(minutes / MINUTES_IN_MONTH);
         return locale.formatDistance('xMonths', months, localizeOptions);
 
     // 1 year up to max Date
-    } else if (unit === 'year') {
+    } if (unit === 'year') {
         var years = roundingMethodFn(minutes / MINUTES_IN_YEAR);
         return locale.formatDistance('xYears', years, localizeOptions);
     }

@@ -3,13 +3,13 @@
 var util = require('./util');
 var buildOptions = require('./util').buildOptions;
 var XmlNode = require('./xmlNode');
-var TagType = { OPENING: 1, CLOSING: 2, SELF: 3, CDATA: 4 };
-let regx =
-  '<((!\\[CDATA\\[([\\s\\S]*?)(]]>))|(([\\w:\\-._]*:)?([\\w:\\-._]+))([^>]*)>|((\\/)(([\\w:\\-._]*:)?([\\w:\\-._]+))\\s*>))([^<]*)';
+var TagType = {
+    OPENING: 1, CLOSING: 2, SELF: 3, CDATA: 4
+};
+let regx = '<((!\\[CDATA\\[([\\s\\S]*?)(]]>))|(([\\w:\\-._]*:)?([\\w:\\-._]+))([^>]*)>|((\\/)(([\\w:\\-._]*:)?([\\w:\\-._]+))\\s*>))([^<]*)';
 
 // var tagsRegx = new RegExp("<(\\/?[\\w:\\-\._]+)([^>]*)>(\\s*"+cdataRegx+")*([^<]+)?","g");
 // var tagsRegx = new RegExp("<(\\/?)((\\w*:)?([\\w:\\-\._]+))([^>]*)>([^<]*)("+cdataRegx+"([^<]*))*([^<]+)?","g");
-
 
 var defaultOptions = {
     attributeNamePrefix: '@_',
@@ -148,9 +148,9 @@ function processTagValue(val, options) {
 function checkForTagType(match) {
     if (match[4] === ']]>') {
         return TagType.CDATA;
-    } else if (match[10] === '/') {
+    } if (match[10] === '/') {
         return TagType.CLOSING;
-    } else if (typeof match[8] !== 'undefined' && match[8].substr(match[8].length - 1) === '/') {
+    } if (typeof match[8] !== 'undefined' && match[8].substr(match[8].length - 1) === '/') {
         return TagType.SELF;
     }
     return TagType.OPENING;

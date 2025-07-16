@@ -47,4 +47,3 @@ function chunk(array, size, guard) {
 }
 
 module.exports = chunk;
-

@@ -83,22 +83,21 @@ module.exports = function parseISO(argument, dirtyOptions) {
 
     var options = dirtyOptions || {};
 
-    var additionalDigits =
-    options.additionalDigits == null
+    var additionalDigits = options.additionalDigits == null
         ? DEFAULT_ADDITIONAL_DIGITS
         : toInteger(options.additionalDigits);
     if (
-        additionalDigits !== 2 &&
-    additionalDigits !== 1 &&
-    additionalDigits !== 0
+        additionalDigits !== 2
+    && additionalDigits !== 1
+    && additionalDigits !== 0
     ) {
         throw new RangeError('additionalDigits must be 0, 1 or 2');
     }
 
     if (
         !(
-            typeof argument === 'string' ||
-      Object.prototype.toString.call(argument) === '[object String]'
+            typeof argument === 'string'
+      || Object.prototype.toString.call(argument) === '[object String]'
         )
     ) {
         return new Date(NaN);
@@ -141,8 +140,7 @@ module.exports = function parseISO(argument, dirtyOptions) {
         // Adjust time when it's coming from DST
         var fullTimeDateNextDay = new Date(fullTime);
         fullTimeDateNextDay.setDate(fullTimeDate.getDate() + 1);
-        var offsetDiff =
-      getTimezoneOffsetInMilliseconds(fullTimeDateNextDay) - offset;
+        var offsetDiff = getTimezoneOffsetInMilliseconds(fullTimeDateNextDay) - offset;
         if (offsetDiff > 0) {
             offset += offsetDiff;
         }
@@ -183,11 +181,11 @@ function splitDateString(dateString) {
 
 function parseYear(dateString, additionalDigits) {
     var regex = new RegExp(
-        '^(?:(\\d{4}|[+-]\\d{' +
-      (4 + additionalDigits) +
-      '})|(\\d{2}|[+-]\\d{' +
-      (2 + additionalDigits) +
-      '})$)'
+        '^(?:(\\d{4}|[+-]\\d{'
+      + (4 + additionalDigits)
+      + '})|(\\d{2}|[+-]\\d{'
+      + (2 + additionalDigits)
+      + '})$)'
     );
 
     var captures = dateString.match(regex);
@@ -226,8 +224,8 @@ function parseDate(dateString, year) {
     }
     var date = new Date(0);
     if (
-        !validateDate(year, month, day) ||
-      !validateDayOfYearDate(year, dayOfYear)
+        !validateDate(year, month, day)
+      || !validateDayOfYearDate(year, dayOfYear)
     ) {
         return new Date(NaN);
     }
@@ -252,9 +250,9 @@ function parseTime(timeString) {
     }
 
     return (
-        hours * MILLISECONDS_IN_HOUR +
-    minutes * MILLISECONDS_IN_MINUTE +
-    seconds * 1000
+        hours * MILLISECONDS_IN_HOUR
+    + minutes * MILLISECONDS_IN_MINUTE
+    + seconds * 1000
     );
 }
 
@@ -301,10 +299,10 @@ function isLeapYearIndex(year) {
 
 function validateDate(year, month, date) {
     return (
-        month >= 0 &&
-    month <= 11 &&
-    date >= 1 &&
-    date <= (daysInMonths[month] || (isLeapYearIndex(year) ? 29 : 28))
+        month >= 0
+    && month <= 11
+    && date >= 1
+    && date <= (daysInMonths[month] || (isLeapYearIndex(year) ? 29 : 28))
     );
 }
 
@@ -322,12 +320,12 @@ function validateTime(hours, minutes, seconds) {
     }
 
     return (
-        seconds >= 0 &&
-    seconds < 60 &&
-    minutes >= 0 &&
-    minutes < 60 &&
-    hours >= 0 &&
-    hours < 25
+        seconds >= 0
+    && seconds < 60
+    && minutes >= 0
+    && minutes < 60
+    && hours >= 0
+    && hours < 25
     );
 }
 

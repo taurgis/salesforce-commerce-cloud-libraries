@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Takes a function and two values, and returns whichever value produces the
  * smaller result when passed to the provided function.

@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var _assertPromise = require('./internal/_assertPromise');
 
-
 /**
  * Returns the result of applying the onSuccess function to the value inside
  * a successfully resolved promise. This is useful for working with promises

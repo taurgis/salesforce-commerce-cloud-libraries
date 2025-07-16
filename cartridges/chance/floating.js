@@ -23,7 +23,7 @@ module.exports = function (options) {
     );
 
     var num;
-    var fixed = Math.pow(10, floatingOptions.fixed);
+    var fixed = 10**floatingOptions.fixed;
 
     var max = MAX_INT / fixed;
     var min = -max;

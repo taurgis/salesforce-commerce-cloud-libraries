@@ -6,7 +6,6 @@ var _xdropRepeatsWith = require('./internal/_xdropRepeatsWith');
 var dropRepeatsWith = require('./dropRepeatsWith');
 var equals = require('./equals');
 
-
 /**
  * Returns a new list without any consecutively repeating elements.
  * [`R.equals`](#equals) is used to determine equality.

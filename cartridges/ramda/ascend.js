@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Makes an ascending comparator function out of a function that returns a value
  * that can be compared with `<` and `>`.

@@ -4,7 +4,6 @@ var _curry1 = require('./internal/_curry1');
 var _has = require('./internal/_has');
 var keys = require('./keys');
 
-
 /**
  * Same as [`R.invertObj`](#invertObj), however this accounts for objects with
  * duplicate values by putting the values into an array.

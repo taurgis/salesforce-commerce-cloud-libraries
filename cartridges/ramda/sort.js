@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Returns a copy of the list, sorted according to the comparator function,
  * which should accept two values at a time and return a negative number if the

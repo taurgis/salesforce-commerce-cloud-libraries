@@ -3,7 +3,6 @@
 var _identity = require('./internal/_identity');
 var chain = require('./chain');
 
-
 /**
  * Shorthand for `R.chain(R.identity)`, which removes one level of nesting from
  * any [Chain](https://github.com/fantasyland/fantasy-land#chain).

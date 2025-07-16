@@ -3,7 +3,6 @@
 var _curry1 = require('./internal/_curry1');
 var _identity = require('./internal/_identity');
 
-
 /**
  * A function that does nothing but return the parameter supplied to it. Good
  * as a default or placeholder function.

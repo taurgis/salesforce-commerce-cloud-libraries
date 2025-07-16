@@ -50,9 +50,9 @@ function createFlow(fromRight) {
             var funcName = getFuncName(func);
             var data = funcName == 'wrapper' ? getData(func) : undefined;
 
-            if (data && isLaziable(data[0]) &&
-            data[1] == (WRAP_ARY_FLAG | WRAP_CURRY_FLAG | WRAP_PARTIAL_FLAG | WRAP_REARG_FLAG) &&
-            !data[4].length && data[9] == 1
+            if (data && isLaziable(data[0])
+            && data[1] == (WRAP_ARY_FLAG | WRAP_CURRY_FLAG | WRAP_PARTIAL_FLAG | WRAP_REARG_FLAG)
+            && !data[4].length && data[9] == 1
             ) {
                 wrapper = wrapper[getFuncName(data[0])].apply(wrapper, data[3]);
             } else {

@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var path = require('./path');
 
-
 /**
  * Returns `true` if the specified object property at given path satisfies the
  * given predicate; `false` otherwise.

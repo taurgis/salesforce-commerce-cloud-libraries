@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var path = require('./path');
 
-
 /**
  * Returns a function that when supplied an object returns the indicated
  * property of that object, if it exists.

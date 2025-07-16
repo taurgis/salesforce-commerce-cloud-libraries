@@ -4,7 +4,6 @@ var _curryN = require('./internal/_curryN');
 var _reduce = require('./internal/_reduce');
 var _reduced = require('./internal/_reduced');
 
-
 /**
  * Like [`reduce`](#reduce), `reduceWhile` returns a single item by iterating
  * through the list, successively calling the iterator function. `reduceWhile`

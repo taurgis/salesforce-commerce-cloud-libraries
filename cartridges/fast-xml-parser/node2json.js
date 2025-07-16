@@ -16,7 +16,6 @@ var convertToJson = function (node, options) {
         }
     }
 
-
     util.merge(jObj, node.attrsMap);
 
     var keys = Object.keys(node.child);

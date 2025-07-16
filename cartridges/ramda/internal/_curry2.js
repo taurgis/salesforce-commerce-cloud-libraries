@@ -3,7 +3,6 @@
 var _curry1 = require('./_curry1');
 var _isPlaceholder = require('./_isPlaceholder');
 
-
 /**
  * Optimized internal two-arity curry function.
  *

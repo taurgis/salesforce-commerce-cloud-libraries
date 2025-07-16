@@ -2,7 +2,6 @@
 
 var _curry3 = require('./internal/_curry3');
 
-
 /**
  * Tests the final argument by passing it to the given predicate function. If
  * the predicate is not satisfied, the function will return the result of

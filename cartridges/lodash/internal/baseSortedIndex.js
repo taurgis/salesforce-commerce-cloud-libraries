@@ -27,8 +27,8 @@ function baseSortedIndex(array, value, retHighest) {
         while (low < high) {
             var mid = (low + high) >>> 1;
             var computed = array[mid];
-            if (computed !== null && !isSymbol(computed) &&
-          (retHighest ? (computed <= value) : (computed < value))) {
+            if (computed !== null && !isSymbol(computed)
+          && (retHighest ? (computed <= value) : (computed < value))) {
                 low = mid + 1;
             } else {
                 high = mid;

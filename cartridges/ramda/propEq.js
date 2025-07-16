@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var equals = require('./equals');
 
-
 /**
  * Returns `true` if the specified object property is equal, in
  * [`R.equals`](#equals) terms, to the given value; `false` otherwise.

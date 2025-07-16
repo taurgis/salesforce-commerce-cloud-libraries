@@ -3,7 +3,6 @@
 var _curry2 = require('./internal/_curry2');
 var path = require('./path');
 
-
 /**
  * Acts as multiple `prop`: array of keys in, array of values out. Preserves
  * order.

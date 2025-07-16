@@ -4,7 +4,6 @@ var _checkForMethod = require('./internal/_checkForMethod');
 var _curry1 = require('./internal/_curry1');
 var slice = require('./slice');
 
-
 /**
  * Returns all but the first element of the given list or string (or object
  * with a `tail` method).

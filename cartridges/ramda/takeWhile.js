@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _xtakeWhile = require('./internal/_xtakeWhile');
 var slice = require('./slice');
 
-
 /**
  * Returns a new list containing the first `n` elements of a given list,
  * passing each value to the supplied predicate function, and terminating when

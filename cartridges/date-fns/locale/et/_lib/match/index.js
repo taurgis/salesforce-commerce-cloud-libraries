@@ -47,7 +47,6 @@ var parseDayPatterns = {
     any: [/^p/i, /^e/i, /^t/i, /^k/i, /^n/i, /^r/i, /^l/i]
 };
 
-
 var matchDayPeriodPatterns = {
     any: /^(am|pm|kesköö|keskpäev|hommik|pärastlõuna|õhtu|öö)/i
 };

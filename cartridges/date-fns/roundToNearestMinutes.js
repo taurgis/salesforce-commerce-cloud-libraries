@@ -32,8 +32,7 @@ module.exports = function roundToNearestMinutes(dirtyDate, options) {
         throw new TypeError('1 argument required, but only none provided present');
     }
 
-    var nearestTo =
-    options && 'nearestTo' in options ? toInteger(options.nearestTo) : 1;
+    var nearestTo = options && 'nearestTo' in options ? toInteger(options.nearestTo) : 1;
 
     if (nearestTo < 1 || nearestTo > 30) {
         throw new RangeError('`options.nearestTo` must be between 1 and 30');

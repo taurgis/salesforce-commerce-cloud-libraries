@@ -8,7 +8,6 @@ var identity = function (x) {
     return { value: x, map: function (f) { return identity(f(x)); } };
 };
 
-
 /**
  * Returns the result of "setting" the portion of the given data structure
  * focused by the given lens to the result of applying the given function to

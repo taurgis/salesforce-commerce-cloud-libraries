@@ -4,7 +4,6 @@ var _reduce = require('./internal/_reduce');
 var _xwrap = require('./internal/_xwrap');
 var curryN = require('./curryN');
 
-
 /**
  * Initializes a transducer using supplied iterator function. Returns a single
  * item by iterating through the list, successively calling the transformed

@@ -30,7 +30,6 @@ function cleanEscapedString(input) {
     return input.match(escapedStringRegExp)[1].replace(doubleQuoteRegExp, "'");
 }
 
-
 /**
  * @name lightFormat
  * @category Common Helpers
@@ -128,9 +127,9 @@ module.exports = function lightFormat(dirtyDate, dirtyFormatStr) {
 
             if (firstCharacter.match(unescapedLatinCharacterRegExp)) {
                 throw new RangeError(
-                    'Format string contains an unescaped latin alphabet character `' +
-            firstCharacter +
-            '`'
+                    'Format string contains an unescaped latin alphabet character `'
+            + firstCharacter
+            + '`'
                 );
             }
 

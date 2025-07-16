@@ -122,8 +122,8 @@ var formattingDayPeriodValues = {
 function ordinalNumber(dirtyNumber, dirtyOptions) {
     var number = Number(dirtyNumber);
 
-    return dirtyOptions &&
-    (dirtyOptions.unit === 'minute' || dirtyOptions.unit === 'second')
+    return dirtyOptions
+    && (dirtyOptions.unit === 'minute' || dirtyOptions.unit === 'second')
         ? number.toString()
         : number + '번째';
 }

@@ -5,7 +5,6 @@ var _dispatchable = require('./internal/_dispatchable');
 var _dropLastWhile = require('./internal/_dropLastWhile');
 var _xdropLastWhile = require('./internal/_xdropLastWhile');
 
-
 /**
  * Returns a new list excluding all the tailing elements of a given list which
  * satisfy the supplied predicate function. It passes each value from the right

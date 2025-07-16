@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var _dispatchable = require('./internal/_dispatchable');
 var _xtap = require('./internal/_xtap');
 
-
 /**
  * Runs the given function with the supplied object, then returns the object.
  *

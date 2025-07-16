@@ -2,7 +2,6 @@
 
 var add = require('./add');
 
-
 /**
  * Decrements its argument.
  *

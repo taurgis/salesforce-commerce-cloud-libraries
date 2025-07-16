@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var _isArray = require('./internal/_isArray');
 var equals = require('./equals');
 
-
 /**
  * Returns the position of the last occurrence of an item in an array, or -1 if
  * the item is not included in the array. [`R.equals`](#equals) is used to

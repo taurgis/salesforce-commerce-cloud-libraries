@@ -2,7 +2,6 @@
 
 var _curry2 = require('./internal/_curry2');
 
-
 /**
  * Builds a list from a seed value. Accepts an iterator function, which returns
  * either false to stop iteration or an array of length 2 containing the value

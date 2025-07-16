@@ -191,24 +191,24 @@ module.exports = function formatDistance(token, count, options) {
 
     if (!options.addSuffix) {
         return (
-            prefixPreposition(preposition) +
-      suffixPreposition(preposition) +
-      declension(scheme, count, 'regular')
+            prefixPreposition(preposition)
+      + suffixPreposition(preposition)
+      + declension(scheme, count, 'regular')
         );
     }
 
     if (options.comparison > 0) {
         return (
-            prefixPreposition(preposition) +
-      'o ' +
-      suffixPreposition(preposition) +
-      declension(scheme, count, 'future')
+            prefixPreposition(preposition)
+      + 'o '
+      + suffixPreposition(preposition)
+      + declension(scheme, count, 'future')
         );
     }
     return (
-        prefixPreposition(preposition) +
-      'pred ' +
-      suffixPreposition(preposition) +
-      declension(scheme, count, 'past')
+        prefixPreposition(preposition)
+      + 'pred '
+      + suffixPreposition(preposition)
+      + declension(scheme, count, 'past')
     );
 };

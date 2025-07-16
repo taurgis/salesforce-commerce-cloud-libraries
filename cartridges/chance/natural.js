@@ -19,8 +19,8 @@ module.exports = function natural(options) {
     var naturalOptions = initOptions(options, { min: 0, max: MAX_INT });
     if (typeof naturalOptions.numerals === 'number') {
         testRange(options.numerals < 1, 'Chance: Numerals cannot be less than one.');
-        naturalOptions.min = Math.pow(10, options.numerals - 1);
-        naturalOptions.max = Math.pow(10, options.numerals) - 1;
+        naturalOptions.min = 10**(options.numerals - 1);
+        naturalOptions.max = 10**options.numerals - 1;
     }
     testRange(naturalOptions.min < 0, 'Chance: Min cannot be less than zero.');
 

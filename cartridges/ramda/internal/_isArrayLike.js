@@ -4,7 +4,6 @@ var _curry1 = require('./_curry1');
 var _isArray = require('./_isArray');
 var _isString = require('./_isString');
 
-
 /**
  * Tests whether or not an object is similar to an array.
  *

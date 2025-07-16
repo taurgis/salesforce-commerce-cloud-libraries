@@ -3,7 +3,6 @@
 var _curry3 = require('./internal/_curry3');
 var equals = require('./equals');
 
-
 /**
  * Reports whether two objects have the same value, in [`R.equals`](#equals)
  * terms, for the specified property. Useful as a curried predicate.

@@ -45,4 +45,3 @@ function trim(string, chars, guard) {
 }
 
 module.exports = trim;
-

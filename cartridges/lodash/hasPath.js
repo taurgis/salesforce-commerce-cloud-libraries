@@ -44,8 +44,8 @@ function hasPath(object, path) {
         return result;
     }
     length = object == null ? 0 : object.length;
-    return !!length && isLength(length) && isIndex(key, length) &&
-    (Array.isArray(object) || isArguments(object));
+    return !!length && isLength(length) && isIndex(key, length)
+    && (Array.isArray(object) || isArguments(object));
 }
 
 module.exports = hasPath;

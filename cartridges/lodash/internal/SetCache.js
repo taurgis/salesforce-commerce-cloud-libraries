@@ -43,7 +43,6 @@ SetCache.prototype.has = function (value) {
     return this.__data__.has(value);
 };
 
-
 SetCache.prototype.push = SetCache.prototype.add;
 
 module.exports = SetCache;

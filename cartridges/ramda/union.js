@@ -5,7 +5,6 @@ var _curry2 = require('./internal/_curry2');
 var compose = require('./compose');
 var uniq = require('./uniq');
 
-
 /**
  * Combines two lists into a set (i.e. no duplicates) composed of the elements
  * of each list.

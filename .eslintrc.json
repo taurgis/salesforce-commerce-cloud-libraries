@@ -23,7 +23,14 @@
         "no-shadow": ["error", {
             "allow": ["err", "callback"]
         }],
-        "max-len": "off"
+        "max-len": "off",
+        "no-plusplus": "off",
+        "no-bitwise": "off",
+        "no-restricted-globals": "off",
+        "strict": "off",
+        "no-multi-assign": "off",
+        "prefer-regex-literals": "off",
+        "no-misleading-character-class": "off"
     },
     "env": {
         "browser": true,

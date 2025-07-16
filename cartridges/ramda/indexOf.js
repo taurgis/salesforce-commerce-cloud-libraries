@@ -4,7 +4,6 @@ var _curry2 = require('./internal/_curry2');
 var _indexOf = require('./internal/_indexOf');
 var _isArray = require('./internal/_isArray');
 
-
 /**
  * Returns the position of the first occurrence of an item in an array, or -1
  * if the item is not included in the array. [`R.equals`](#equals) is used to
@@ -25,8 +24,8 @@ var _isArray = require('./internal/_isArray');
  *      R.indexOf(10, [1,2,3,4]); //=> -1
  */
 var indexOf = _curry2(function indexOf(target, xs) {
-    return typeof xs.indexOf === 'function' && !_isArray(xs) ?
-        xs.indexOf(target) :
-        _indexOf(xs, target, 0);
+    return typeof xs.indexOf === 'function' && !_isArray(xs)
+        ? xs.indexOf(target)
+        : _indexOf(xs, target, 0);
 });
 module.exports = indexOf;

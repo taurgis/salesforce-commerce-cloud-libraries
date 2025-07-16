@@ -8,7 +8,6 @@ var _xmap = require('./internal/_xmap');
 var curryN = require('./curryN');
 var keys = require('./keys');
 
-
 /**
  * Takes a function and
  * a [functor](https://github.com/fantasyland/fantasy-land#functor),

@@ -47,8 +47,7 @@ module.exports = function differenceInBusinessDays(
     if (!isValid(dateLeft) || !isValid(dateRight)) return new Date(NaN);
 
     var sign = compareAsc(dateLeft, dateRight);
-    var interval =
-    sign > 0
+    var interval = sign > 0
         ? { start: dateRight, end: dateLeft }
         : { start: dateLeft, end: dateRight };
 
