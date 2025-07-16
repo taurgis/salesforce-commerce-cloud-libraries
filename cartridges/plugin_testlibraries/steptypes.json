@@ -6,13 +6,71 @@
                 "description": "Copy or move files from one directory to another.",
                 "function": "Run",
                 "parameters": {
-                   
+
                 },
                 "status-codes": {
                     "status": [{
                             "@code": "ERROR",
                             "description": "Used when an error occurred."
                         },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        },
+                        {
+                            "@code": "NO_FILE_FOUND",
+                            "description": "Used when no file could be found in the source directory."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.libraries.test.rhinodb.addUser",
+                "module": "plugin_testlibraries/cartridge/scripts/jobsteps/addUser.js",
+                "description": "Add a user to the RhinoDB.",
+                "function": "Run",
+                "parameters": {
+                    "parameter": [
+                        {
+                            "@name": "UserName",
+                            "@type": "string",
+                            "description": "The name of the user to add."
+                        },
+                        {
+                            "@name": "UserEmail",
+                            "@type": "string",
+                            "description": "The email address of the user."
+                        }
+                    ]
+                },
+                "status-codes": {
+                    "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
+                        {
+                            "@code": "OK",
+                            "description": "Used when execution was successful."
+                        },
+                        {
+                            "@code": "NO_FILE_FOUND",
+                            "description": "Used when no file could be found in the source directory."
+                        }
+                    ]
+                }
+            },
+            {
+                "@type-id": "custom.libraries.test.rhinodb.addUsers",
+                "module": "plugin_testlibraries/cartridge/scripts/jobsteps/addBulkUsers.js",
+                "description": "Add a 1000 random users to the RhinoDB.",
+                "function": "Run",
+                "parameters": {
+                },
+                "status-codes": {
+                    "status": [{
+                        "@code": "ERROR",
+                        "description": "Used when an error occurred."
+                    },
                         {
                             "@code": "OK",
                             "description": "Used when execution was successful."
