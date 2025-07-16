@@ -39,8 +39,6 @@ LockManager.prototype.acquire = function () {
             Logger.getLogger(Constants.LOG_PREFIX).error('Error acquiring lock: {0}', e.message);
             throw e;
         }
-
-
     }
 
     if (!acquired) {

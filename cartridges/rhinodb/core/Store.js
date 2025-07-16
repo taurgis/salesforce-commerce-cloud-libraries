@@ -14,7 +14,6 @@ var FileUtils = require('../util/FileUtils');
 var LockManager = require('./LockManager');
 var QueryEngine = require('./QueryEngine');
 var Constants = require('../util/Constants');
-const { LOG_PREFIX } = require('../util/Constants');
 
 /**
  * Represents a single collection store.
@@ -33,7 +32,7 @@ function Store(collectionRoot, encryptionKey, lockTimeout, indexes) {
 
     if (FileUtils.safeMkdirs(this.root)) {
         Logger.getLogger(Constants.LOG_PREFIX).info('Created new collection directory: {0}', this.root.fullPath);
-        this._createIndexFiles();
+        this.createIndexFiles();
     }
 }
 
@@ -43,7 +42,7 @@ function Store(collectionRoot, encryptionKey, lockTimeout, indexes) {
  * Creates empty index files for the collection based on configuration.
  * @private
  */
-Store.prototype._createIndexFiles = function () {
+Store.prototype.createIndexFiles = function () {
     var self = this;
     this.indexes.forEach(function (indexDef) {
         var indexFile = new File(self.root, Constants.INDEX_FILE_PREFIX + indexDef.field + Constants.FILE_EXTENSION);
@@ -59,11 +58,11 @@ Store.prototype._createIndexFiles = function () {
  * @param {string} operation 'add', 'remove'
  * @private
  */
-Store.prototype._updateIndexes = function (doc, operation) {
+Store.prototype.updateIndexes = function (doc, operation) {
     var self = this;
     this.indexes.forEach(function (indexDef) {
         var field = indexDef.field;
-        if (doc.hasOwnProperty(field)) {
+        if (Object.prototype.hasOwnProperty.call(doc, field)) {
             var indexFile = new File(self.root, Constants.INDEX_FILE_PREFIX + field + Constants.FILE_EXTENSION);
             var readData = self.crypto.decrypt(FileUtils.safeRead(indexFile));
 
@@ -75,10 +74,10 @@ Store.prototype._updateIndexes = function (doc, operation) {
             var key = doc[field];
 
             if (operation === 'add') {
-                if (indexDef.unique && indexData.hasOwnProperty(key)) {
+                if (indexDef.unique && Object.prototype.hasOwnProperty.call(indexData, key)) {
                     throw new Error('RhinoDBError: Unique index violation on field "' + field + '" for value "' + key + '"');
                 }
-                indexData[key] = doc._id;
+                indexData[key] = doc.id;
             } else if (operation === 'remove') {
                 delete indexData[key];
             }
@@ -88,13 +87,12 @@ Store.prototype._updateIndexes = function (doc, operation) {
     });
 };
 
-
 // --- Public API Methods ---
 
 /**
  * Inserts a new document or an array of documents.
  * @param {Object|Array<Object>} docOrDocs The document or documents to insert.
- * @returns {Object|Array<Object>} The inserted document(s) with _id.
+ * @returns {Object|Array<Object>} The inserted document(s) with id.
  */
 Store.prototype.insert = function (docOrDocs) {
     FileUtils.assertWriteContext('insert');
@@ -106,24 +104,24 @@ Store.prototype.insert = function (docOrDocs) {
     try {
         for (var i = 0; i < docs.length; i++) {
             var doc = docs[i];
-            doc._id = doc._id || FileUtils.generateId();
+            doc.id = doc.id || FileUtils.generateId();
 
-            var docFile = FileUtils.getDocFile(this.root, doc._id);
+            var docFile = FileUtils.getDocFile(this.root, doc.id);
 
             if (docFile.exists()) {
-                throw new Error('RhinoDBError: Document with _id ' + doc._id + ' already exists.');
+                throw new Error('RhinoDBError: Document with id ' + doc.id + ' already exists.');
             }
 
             // Write document first, then update indexes
             FileUtils.atomicWrite(docFile, this.crypto.encrypt(JSON.stringify(doc)), this.crypto);
-            this._updateIndexes(doc, 'add');
+            this.updateIndexes(doc, 'add');
             insertedDocs.push(doc);
         }
     } finally {
         this.lockManager.release();
     }
 
-    return isArray? insertedDocs : insertedDocs;
+    return isArray ? insertedDocs : insertedDocs[0];
 };
 
 /**
@@ -143,9 +141,9 @@ Store.prototype.find = function (query, projection) {
  * @returns {Object|null} The first matching document or null.
  */
 Store.prototype.findOne = function (query, projection) {
-    // A direct lookup by _id is the most performant path
-    if (query && query._id && Object.keys(query).length === 1) {
-        var docFile = FileUtils.getDocFile(this.root, query._id);
+    // A direct lookup by id is the most performant path
+    if (query && query.id && Object.keys(query).length === 1) {
+        var docFile = FileUtils.getDocFile(this.root, query.id);
         if (docFile.exists()) {
             var doc = JSON.parse(this.crypto.decrypt(FileUtils.safeRead(docFile)));
             return this.queryEngine.applyProjection(doc, projection);
@@ -155,7 +153,7 @@ Store.prototype.findOne = function (query, projection) {
 
     // For other queries, use the full query engine but limit to 1 result
     var results = this.queryEngine.run(query, projection, { limit: 1 });
-    return results.length > 0? results : null;
+    return results.length > 0 ? results[0] : null;
 };
 
 /**
@@ -177,21 +175,21 @@ Store.prototype.update = function (query, update, options) {
         if (docsToUpdate.length === 0 && opts.upsert) {
             // Handle upsert: create a new document
             var newDoc = this.queryEngine.applyUpdate({}, update); // Apply update to an empty object
-            delete newDoc._id; // Ensure a new ID is generated
+            delete newDoc.id; // Ensure a new ID is generated
             this.insert(newDoc);
             updatedCount = 1;
         } else {
             for (var i = 0; i < docsToUpdate.length; i++) {
                 var originalDoc = docsToUpdate[i];
                 // Must remove old index entries before updating
-                this._updateIndexes(originalDoc, 'remove');
+                this.updateIndexes(originalDoc, 'remove');
 
                 var updatedDoc = this.queryEngine.applyUpdate(originalDoc, update);
-                var docFile = FileUtils.getDocFile(this.root, updatedDoc._id);
+                var docFile = FileUtils.getDocFile(this.root, updatedDoc.id);
 
                 // Write updated document and then add new index entries
                 FileUtils.atomicWrite(docFile, this.crypto.encrypt(JSON.stringify(updatedDoc)), this.crypto);
-                this._updateIndexes(updatedDoc, 'add');
+                this.updateIndexes(updatedDoc, 'add');
 
                 updatedCount++;
                 if (!opts.multi) {
@@ -223,10 +221,10 @@ Store.prototype.remove = function (query, options) {
 
         for (var i = 0; i < docsToRemove.length; i++) {
             var doc = docsToRemove[i];
-            var docFile = FileUtils.getDocFile(this.root, doc._id);
+            var docFile = FileUtils.getDocFile(this.root, doc.id);
 
             if (docFile.remove()) {
-                this._updateIndexes(doc, 'remove');
+                this.updateIndexes(doc, 'remove');
                 removedCount++;
             }
 
@@ -248,12 +246,15 @@ Store.prototype.remove = function (query, options) {
  */
 Store.prototype.ensureIndex = function (options) {
     FileUtils.assertWriteContext('ensureIndex');
-    if (!options ||!options.field) {
+    if (!options || !options.field) {
         throw new Error('RhinoDBError: Index options must include a "field" property.');
     }
 
     // Check if index already exists in memory
-    var exists = this.indexes.some(function(idx) { return idx.field === options.field; });
+    var exists = this.indexes.some(function (idx) {
+        return idx.field === options.field;
+    });
+
     if (exists) {
         return;
     }
@@ -269,13 +270,13 @@ Store.prototype.ensureIndex = function (options) {
         // This is a heavy operation: rebuild the index from all documents
         var allDocs = this.queryEngine.run({}, null, { skipIndex: true });
         var indexData = {};
-        allDocs.forEach(function(doc) {
-            if (doc.hasOwnProperty(options.field)) {
+        allDocs.forEach(function (doc) {
+            if (Object.prototype.hasOwnProperty.call(doc, options.field)) {
                 var key = doc[options.field];
-                if (options.unique && indexData.hasOwnProperty(key)) {
+                if (options.unique && Object.prototype.hasOwnProperty.call(indexData, key)) {
                     throw new Error('RhinoDBError: Cannot create unique index. Duplicate value found for field "' + options.field + '".');
                 }
-                indexData[key] = doc._id;
+                indexData[key] = doc.id;
             }
         });
 
@@ -284,6 +285,5 @@ Store.prototype.ensureIndex = function (options) {
         this.lockManager.release();
     }
 };
-
 
 module.exports = Store;

@@ -9,7 +9,7 @@ var name = require('chance/name');
 exports.Run = function () {
     try {
         var db = dbHelper.getDB();
-        var users = db.getCollection('users');
+        var users = db.getCollection('users2');
 
         for (var i = 0; i < 1000; i++) {
             // Create a new user object for each iteration

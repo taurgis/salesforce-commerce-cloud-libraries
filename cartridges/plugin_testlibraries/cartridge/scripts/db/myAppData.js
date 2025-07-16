@@ -1,14 +1,14 @@
 // in cartridge/scripts/helpers/myAppData.js
 
 var RhinoDB = require('rhinodb/db');
-var Site = require('dw/system/Site');
 
 var dbInstance = null;
 
 /**
  * Gets the singleton instance of RhinoDB.
  * If it does not exist, it initializes a new instance with the configuration
- * @returns {RhinoDB|*}
+ *
+ * @returns {RhinoDB} The singleton instance of RhinoDB.
  */
 function getDB() {
     if (dbInstance) {
@@ -27,6 +27,7 @@ function getDB() {
         encryptionKey: encryptionKey,
         indexes: [
             { collection: 'users', field: 'email', unique: true },
+            { collection: 'users2', field: 'email', unique: true },
             { collection: 'products', field: 'category' }
         ],
         lockTimeout: 60000 // 60 second timeout for job operations

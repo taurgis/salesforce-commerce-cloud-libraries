@@ -7,11 +7,8 @@
 'use strict';
 
 var Cipher = require('dw/crypto/Cipher');
-var Encoding = require('dw/crypto/Encoding');
 var Logger = require('dw/system/Logger');
 var Constants = require('./Constants');
-
-var AES_TRANSFORMATION = 'AES/GCM/NoPadding';
 
 /**
  * Crypto helper.
@@ -31,7 +28,7 @@ function Crypto(base64Key) {
 Crypto.prototype.encrypt = function (plaintext) {
     if (!plaintext) return '';
     try {
-        //var encryptedBytes = this.cipher.encrypt(plaintext, this.key, 'RSA', null, 1);
+        // var encryptedBytes = this.cipher.encrypt(plaintext, this.key, 'RSA', null, 1);
         return plaintext;
     } catch (e) {
         Logger.getLogger(Constants.LOG_PREFIX).error('Encryption failed: {0}', e.message);
@@ -47,7 +44,7 @@ Crypto.prototype.encrypt = function (plaintext) {
 Crypto.prototype.decrypt = function (base64Ciphertext) {
     if (!base64Ciphertext) return '';
     try {
-       return base64Ciphertext;
+        return base64Ciphertext;
     } catch (e) {
         Logger.getLogger(Constants.LOG_PREFIX).error('Decryption failed: {0}', e.message);
         // This can happen if the key is wrong or data is corrupt

@@ -48,7 +48,7 @@ var FileUtils = {
      * @param {string} dbName The database name.
      * @returns {dw.io.File} The file object for the database root.
      */
-    getDatabaseRoot: function(rootDirType, dbName) {
+    getDatabaseRoot: function (rootDirType, dbName) {
         var root = File.getRootDirectory(rootDirType);
         return new File(root, dbName);
     },
@@ -73,9 +73,9 @@ var FileUtils = {
      * Atomically writes content to a file.
      * @param {dw.io.File} file The destination file.
      * @param {string} content The content to write.
-     * @param {Crypto} crypto The crypto instance for temporary file name generation.
+     * @param {Crypto} crypto The crypto instance for temporary file name generation (unused).
      */
-    atomicWrite: function (file, content, crypto) {
+    atomicWrite: function (file, content) {
         this.assertWriteContext('atomicWrite');
         var tempFile = new File(file.fullPath + Constants.TEMP_FILE_SUFFIX + '.' + FileUtils.generateId());
         var writer = null;
@@ -130,7 +130,7 @@ var FileUtils = {
                     for (var j = 0; j < secondLevelDirs.length; j++) {
                         var dir2 = secondLevelDirs[j];
                         if (dir2.isDirectory()) {
-                            var docFiles = dir2.listFiles(function(f) { return f.isFile() && f.name.endsWith(Constants.FILE_EXTENSION); });
+                            var docFiles = dir2.listFiles(function (f) { return f.isFile() && f.name.endsWith(Constants.FILE_EXTENSION); });
                             if (docFiles) {
                                 allFiles.push.apply(allFiles, docFiles.toArray());
                             }
@@ -165,9 +165,7 @@ var FileUtils = {
 
     /**
      * Safely does the mkdirs operation, avoid it in storefront contexts.
-     *
      * @param {dw.io.File} file The directory to create.
-     *
      * @returns {boolean} True if the directory was created or already exists.
      */
     safeMkdirs: function (file) {
@@ -184,6 +182,10 @@ var FileUtils = {
         return true;
     },
 
+    /**
+     * Checks if the current context is a storefront context.
+     * @returns {boolean} True if in a storefront context.
+     */
     isStorefrontContext: function () {
         // This is a simple check to determine if the current context is a storefront context.
         // In SFCC, storefront requests have a 'request' global variable.

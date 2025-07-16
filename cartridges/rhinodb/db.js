@@ -68,7 +68,9 @@ RhinoDB.prototype.getCollection = function (collectionName) {
     var collectionRoot = new File(this.dbRoot, collectionName);
 
     // Ensure the collection directory exists
-    if (!collectionRoot.exists() && !collectionRoot.mkdirs()) {
+    if (!collectionRoot.exists()
+        && !FileUtils.safeMkdirs(collectionRoot)
+    ) {
         throw new Error('RhinoDBError: Could not create collection directory: ' + collectionRoot.fullPath);
     }
 
